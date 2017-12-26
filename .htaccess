@@ -1,0 +1,36 @@
+<IfModule mod_rewrite.c>
+    Options +FollowSymlinks
+    RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^axioma\.pro$ [NC]
+RewriteRule ^(.*)$ https://www.axioma.pro/$1 [R=301,L]
+
+</IfModule>
+ 
+<IfModule mod_rewrite.c>
+    RewriteCond %{REQUEST_URI} ^/.*
+    RewriteRule ^(.*)$ web/$1 [L]
+
+    RewriteCond %{REQUEST_URI} !^/web/
+    RewriteCond %{REQUEST_FILENAME} !-f [OR]
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^.*$ web/index.php
+Redirect 301 /antikrazhnye_vorota https://www.axioma.pro/category/antikrazhnye_vorota
+Redirect 301 /sistemyi_akustomagnitnyie https://www.axioma.pro/category/sistemyi_akustomagnitnyie
+Redirect 301 /protivokrazhnye-datchiki https://www.axioma.pro/category/protivokrazhnye-datchiki
+Redirect 301 /datchiki_akustomagnitnyie https://www.axioma.pro/category/datchiki_akustomagnitnyie
+Redirect 301 /datchiki_radiochastotnyie https://www.axioma.pro/category/datchiki_radiochastotnyie
+Redirect 301 /jestkiy_datchik_butyilochnyiy https://www.axioma.pro/category/jestkiy_datchik_butyilochnyiy
+Redirect 301 /deaktivatoryi_etiketok https://www.axioma.pro/category/deaktivatoryi_etiketok
+Redirect 301 /deaktivatoryi_akustomagnitnyie https://www.axioma.pro/category/deaktivatoryi_akustomagnitnyie
+Redirect 301 /deaktivatoryi_radiochastotnyie https://www.axioma.pro/category/deaktivatoryi_radiochastotnyie
+Redirect 301 /obzornyie_zerkala https://www.axioma.pro/category/obzornyie_zerkala
+Redirect 301 /akustomagnitnyie_sistemyi_sensormatik https://www.axioma.pro/category/akustomagnitnyie_sistemyi_sensormatik
+Redirect 301 /sistemyi_radiochastotnyie https://www.axioma.pro/category/sistemyi_radiochastotnyie
+Redirect 301 /schetchiki_posetiteley https://www.axioma.pro/category/schetchiki_posetiteley
+Redirect 301 /sjemnik-zhestkih-datchikov https://www.axioma.pro/category/sjemnik-zhestkih-datchikov
+Redirect 301 /protivokrazhnye-jetiketki https://www.axioma.pro/category/protivokrazhnye-jetiketki
+Redirect 301 /etiketki_akustomagnitnyie https://www.axioma.pro/category/etiketki_akustomagnitnyie
+Redirect 301 /etiketki_radiochastotnyie https://www.axioma.pro/category/etiketki_radiochastotnyie
+
+</IfModule> 

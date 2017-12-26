@@ -1,0 +1,1197 @@
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+	<html>
+	<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="robots" content="index, follow" />
+<link href="/bitrix/js/main/core/css/core.css?1363162617" type="text/css" rel="stylesheet" />
+<link href="/bitrix/components/bitrix/main.map/templates/.default/style.css?1326276448" type="text/css" rel="stylesheet" />
+<link href="/bitrix/templates/datakrat/styles.css?1380113095" type="text/css" rel="stylesheet" />
+<link href="/bitrix/templates/datakrat/template_styles.css?1380113095" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/bitrix/js/main/core/core.js?1363162622"></script>
+<script type="text/javascript">BX.message({'LANGUAGE_ID':'ru','FORMAT_DATE':'DD.MM.YYYY','FORMAT_DATETIME':'DD.MM.YYYY HH:MI:SS','COOKIE_PREFIX':'BITRIX_SM','USER_ID':'','SERVER_TIME':'1384411046','SERVER_TZ_OFFSET':'21600','USER_TZ_OFFSET':'0','USER_TZ_AUTO':'Y','bitrix_sessid':'73f62fbeb10fe6e8265ea412d545fef2','SITE_ID':'s1','JS_CORE_LOADING':'Загрузка...','JS_CORE_NO_DATA':'- Нет данных -','JS_CORE_WINDOW_CLOSE':'Закрыть','JS_CORE_WINDOW_EXPAND':'Развернуть','JS_CORE_WINDOW_NARROW':'Свернуть в окно','JS_CORE_WINDOW_SAVE':'Сохранить','JS_CORE_WINDOW_CANCEL':'Отменить','JS_CORE_H':'ч','JS_CORE_M':'м','JS_CORE_S':'с','JSADM_AI_HIDE_EXTRA':'Скрыть лишние','JSADM_AI_ALL_NOTIF':'Показать все','JSADM_AUTH_REQ':'Требуется авторизация!','JS_CORE_WINDOW_AUTH':'Войти'});</script>
+<script type="text/javascript" src="/bitrix/js/main/core/core_ajax.js?1363162622"></script>
+<script type="text/javascript" src="/bitrix/js/main/session.js?1326276438"></script>
+<script type="text/javascript">
+bxSession.Expand(1440, '73f62fbeb10fe6e8265ea412d545fef2', false, 'f2c3535f119aa352d8eedde126a364d8');
+</script>
+	<title>404 Not Found</title>
+	<meta http-equiv="Content-Type" content="text/html"; charset="utf-8">
+	<script type="text/javascript" src="/bitrix/templates/datakrat/jquery-1.7.1.js"></script>
+	<script type="text/javascript" src="/bitrix/templates/datakrat/ajax/ajax_test.js"></script>
+	<script type="text/javascript" src="/bitrix/templates/datakrat/main.js"></script>
+	<script type="text/javascript" src="/bitrix/templates/datakrat/wrapper.js"></script>
+	<script type="text/javascript" src="/bitrix/templates/datakrat/solutions.js"></script>
+	<!--[if IE 8]>
+		<link rel="stylesheet" type="text/css" href="/bitrix/templates/datakrat/ie8.css"/>
+	<![endif]-->
+	<!--[if IE 7]>
+		<link rel="stylesheet" type="text/css" href="/bitrix/templates/datakrat/ie7.css"/>
+	<![endif]-->
+
+	<!-- подключение карусели -->
+	<script type="text/javascript" src="/bitrix/templates/datakrat/components/jcarousel/lib/jquery.jcarousel.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/bitrix/templates/datakrat/components/jcarousel/skins/tango/skin.css" />
+
+	<script type="text/javascript" src="/bitrix/templates/datakrat/components/placeholder.js"></script>
+
+	<!-- яндекс кнопки соцсетей -->
+	<script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
+
+	<!-- подключение funcybox -->
+	<script type="text/javascript" src="/bitrix/templates/datakrat/components/fancyBox-v2.0.4/source/jquery.fancybox.js"></script>
+	<link rel="stylesheet" type="text/css" href="/bitrix/templates/datakrat/components/fancyBox-v2.0.4/source/jquery.fancybox.css" />
+	</head>
+	<body>
+		
+	<!-- проверка на МАК -->
+		<!-- проверка на МАК(конец) -->
+	
+	<div class="page-dk">
+	  <div class="wrap-dk">
+		<div id="header">
+		<div id="logo"><a href="/">
+			<img src="/bitrix/templates/datakrat/images/menu/logo.jpg" /></a>
+			<div class="medal"></div>
+		</div>
+		<div id="top5">
+			<a href="/corporation/awards/" class="top5-link">
+				<!-- загаловок списка топ5 -->
+<span>
+	Кстати, компания ДатаКрат</span>
+<ul>
+	<li>
+		сохраняет свое присутствие в рейтинге ТОП-100 крупнейших ИТ-компаний России в 2010г., 2011г.	</li>
+	<li>
+		входит в 6-ку крупнейших поставщиков ИТ для ритейла в России в 2010г., 2011г.	</li>
+	<li>
+		является крупнейшим предприятием Екатеринбурга в области автоматизации в 2010-2011гг.	</li>
+	<li>
+		сохраняет позицию абсолютного лидера продаж ПО &quot;R-Keeper&quot; с 2006 по 2011гг.	</li>
+	<li>
+		является лидером рынка по количеству автоматизированных горнолыжных курортов в России	</li>
+</ul>
+			</a>
+		</div>
+		<div id="telephone">
+			<p id="main-office" class="ie-fix">Главный офис в Екатеринбурге</p>
+			<p id="number_tel" class="ie-fix-tel">
+				<span id="code">(343)</span>
+				<span id="tel">365-13-40</span>
+			</p>
+			
+			<a class="call-back-header various fancybox.ajax" id="inline" href="/bitrix/templates/datakrat/ajax/header_form.php"><div id="zakaz-call" class="ie-fix-but"></div></a>
+			<script>
+			jQuery(document).ready(function() {
+				jQuery(".various").fancybox();
+				jQuery(".support-send").live("click",function(){
+					jQuery('.page-id').find('input').val('www.datakrat.ru/images/stories/ai/product/Bixolon/01k2.png');
+				});
+			});
+			</script>
+			<div id="flags">
+				<div id="rus" align="center" class="flag-select">
+					<div style="height: 4px; margin: 0pt auto; background: white; width: 21px;"></div>
+					<div style="height: 4px; margin: 0pt auto; background: blue; width: 21px;"></div>
+					<div style="height: 4px; margin: 0pt auto; background: red; width: 21px;"></div>
+					<span class="lang-select">Ru</span>
+				</div>
+				<a href="/en/"><div id="eng" align="center">
+					<img src="/bitrix/templates/datakrat/images/menu/flag_eng.jpg" /><br />
+					<span style="display:block; margin-top:-5px">Eng</span>
+				</div></a>
+			</div>
+			<!-- ссылка на старый сайт 
+			<div class="old-site"><a target="_blank" href="http://old.datakrat.ru"><div class="button"></div></a></div> -->
+			<div id="search">
+				<noindex>
+				<div class="search-form">
+<form action="/search/index.php">
+	<table border="0" cellspacing="0" cellpadding="2" align="center">
+		<tr>
+			<td align="center">
+							<input id="search_field" type="text" placeholder="Поиск..." name="q" value="" size="15" maxlength="50" />
+						</td>
+			<td align="right">
+				<input class="search_but" name="s" type="submit" value="" /></td>
+		</tr>
+	</table>
+</form>
+<script type="text/javascript">
+	jQuery('#search_field').placeholder();
+</script>
+</div>				</noindex>
+			</div>
+		</div>
+		<br />
+		<div id="header-menu-1">
+			
+<ul>
+
+			<li><a href="/corporation/">О корпорации</a></li>
+		
+			<li><a href="/services/">Услуги</a></li>
+		
+			<li><a href="/news/">Новости</a></li>
+		
+			<li><a href="/clients/">Клиенты</a></li>
+		
+			<li><a href="/contacts/">Контактная информация</a></li>
+		
+			<li><a href="/vacancy/">Работа в компании</a></li>
+		
+			<li><a href="/support/">Техническая поддержка</a></li>
+		
+
+</ul>
+ 
+		</div>
+		<div id="header-menu-line"></div>
+		<div id="header-menu-2">
+			
+<ul>
+
+			<li><a href="/industries/">Отрасли</a></li>
+		
+			<li><a href="/solutions/">Решения</a></li>
+		
+			<li><a href="/technology/">Технологии</a></li>
+		
+			<li><a href="/hardware/">Оборудование</a></li>
+		
+			<li><a href="/software/">Программное обеспечение</a></li>
+		
+			<li><a href="/partners/">Партнеры</a></li>
+		
+			<li><a href="/special/">Спецпредложения</a></li>
+		
+
+</ul>
+ 
+		</div>
+		
+		<div id="about_menu">
+			
+		</div>
+		<div id="about_menu-vac">
+			
+		</div>
+		<div id="bottom_header"></div>	
+	</div>
+	<div style="clear:both;"></div>
+
+  <table class="map-columns">
+<tr>
+	<td>
+		<ul class="map-level-0">
+
+		
+			
+
+			
+			
+				<li><a href="/corporation/">О корпорации</a>					<ul class="map-level-1">
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/corporation/">О ДатаКрат</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/corporation/history/">История</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/corporation/awards/">Награды</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/corporation/publications/">Публикации</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+				<li><a href="/industries/82/">Государственный сектор</a>					<ul class="map-level-2">
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/95/">Органы власти</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/96/">Силовые структуры</a></li>
+
+			
+
+			
+		
+							</ul></li>			
+
+			
+			
+				<li><a href="/industries/81/">Здравоохранение</a>					<ul class="map-level-2">
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/129/">Аптеки</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/126/">Больницы</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/128/">Поликлиники</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/127/">Санатории</a></li>
+
+			
+
+			
+		
+							</ul></li>			
+
+			
+			
+				<li><a href="/industries/83/">Санаторно-курортный бизнес</a>					<ul class="map-level-2">
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/132/">Базы отдыха</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/130/">Гостиницы</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/131/">Пансионаты</a></li>
+
+			
+
+			
+		
+							</ul></li>			
+
+			
+			
+				<li><a href="/industries/84/">Торговля</a>					<ul class="map-level-2">
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/135/">Магазины</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/134/">Магазины у дома</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/136/">Торговые сети</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/133/">Торговые центры</a></li>
+
+			
+
+			
+		
+							</ul></li>			
+
+			
+			
+				<li><a href="/industries/85/">Складская и транспортная логистика</a>					<ul class="map-level-2">
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/137/">Склады</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/138/">Транспортные компании</a></li>
+
+			
+
+			
+		
+							</ul></li>			
+
+			
+			
+				<li><a href="/industries/86/">Сферы обслуживания и общественного питания</a>					<ul class="map-level-2">
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/141/">Кафе</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/139/">Рестораны и бары</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/140/">Столовые</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/142/">Фаст Фуд</a></li>
+
+			
+
+			
+		
+							</ul></li>			
+
+			
+			
+				<li><a href="/industries/87/">Промышленность</a>					<ul class="map-level-2">
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/145/">Деревообрабатывающая</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/146/">Машиностроение</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/148/">Металлургическая</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/147/">Нефтегазовая</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/149/">Пищевая</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/150/">Ювелирная</a></li>
+
+			
+
+			
+		
+							</ul></li>			
+
+			
+			
+				<li><a href="/industries/88/">Банковская сфера</a>					<ul class="map-level-2">
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/143/">Государственные банки</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/144/">Коммерческие банки</a></li>
+
+			
+
+			
+		
+							</ul></li>			
+
+			
+			
+				<li><a href="/industries/89/">Образование</a>					<ul class="map-level-2">
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/151/">Бибилиотеки</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/152/">ВУЗы</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/153/">Школы</a></li>
+
+			
+
+			
+		
+							</ul></li>			
+
+			
+			
+				<li><a href="/industries/90/">Спортивная индустрия</a>					<ul class="map-level-2">
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/155/">Горнолыжные курорты</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/154/">Ледовые арены</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/156/">Стадионы</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/157/">Фитнес-центры</a></li>
+
+			
+
+			
+		
+							</ul></li>			
+
+			
+			
+				<li><a href="/industries/91/">Выставочный бизнес</a>					<ul class="map-level-2">
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/159/">Выставки</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/158/">Конгрессы и форумы</a></li>
+
+			
+
+			
+		
+							</ul></li>			
+
+			
+			
+				<li><a href="/industries/92/">Индустрия развлечений</a>					<ul class="map-level-2">
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/167/">Аквапарки и бассейны</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/160/">Бильярдные залы</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/163/">Залы игровых автоматов</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/165/">Катки</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/164/">Кинотеатры</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/162/">Клубы</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/166/">Парки развлечений</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/161/">Развлекательные центры</a></li>
+
+			
+
+			
+		
+							</ul></li>			
+
+			
+			
+				<li><a href="/industries/93/">Связь</a>					<ul class="map-level-2">
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/169/">Мобильные операторы</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/industries/168/">Телекоммуникационные компании</a></li>
+
+			
+
+			
+		
+							</ul></li></ul></li>			
+
+			
+			
+				<li><a href="/services/">Услуги</a>					<ul class="map-level-1">
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/services/">Услуги</a></li>
+
+			
+
+			
+		
+							</ul></li>			
+
+			
+			
+				<li><a href="/news/">Новости</a>					<ul class="map-level-1">
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/news/">Новости</a></li>
+
+			
+
+			
+		
+							</ul></li>			
+
+			
+			
+				<li><a href="/clients/">Клиенты</a>					<ul class="map-level-1">
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/clients/">Наши клиенты</a></li>
+
+			
+
+			
+		
+							</ul></li>			
+
+							</ul></td><td><ul class="map-level-0">
+			
+			
+				<li><a href="/contacts/">Контактная информация</a>					<ul class="map-level-1">
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/contacts/index.php">Свяжитесь с нами</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/contacts/service/">Список сервисных центров</a></li>
+
+			
+
+			
+		
+							</ul></li>			
+
+			
+			
+				<li><a href="/vacancy/">Работа в компании</a>					<ul class="map-level-1">
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/vacancy/list.php?SECTION_ID=170">Екатеринбург</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/vacancy/list.php?SECTION_ID=171">Москва</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/vacancy/list.php?SECTION_ID=4783">C-Петербург</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/vacancy/list.php?SECTION_ID=4781">Краснодар</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/vacancy/list.php?SECTION_ID=4782">Курган</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/vacancy/list.php?SECTION_ID=4779">Пермь</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/vacancy/list.php?SECTION_ID=4774">Самара</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/vacancy/list.php?SECTION_ID=4775">Тольятти</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/vacancy/list.php?SECTION_ID=4776">Тюмень</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/vacancy/list.php?SECTION_ID=4780">Ульяновск</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/vacancy/list.php?SECTION_ID=4777">Уфа</a></li>
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/vacancy/list.php?SECTION_ID=4778">Челябинск</a></li>
+
+			
+
+			
+		
+							</ul></li>			
+
+			
+			
+				<li><a href="/support/">Техническая поддержка</a>					<ul class="map-level-1">
+
+			
+
+			
+		
+			
+
+			
+			
+					<li><a href="/support/">Техническая поддержка</a></li>
+
+			
+
+			
+		
+		
+		</ul>
+	</td>
+</tr>
+</table></div>
+</div>
+<!-- FOOTER -->
+<div id="footer">
+	<div id="footer_left">
+		<div id="footer_menu1">
+			
+<ul>
+
+			<li><a href="/corporation/">О корпорации</a></li>
+		
+			<li><a href="/services/">Услуги</a></li>
+		
+			<li><a href="/news/">Новости</a></li>
+		
+			<li><a href="/clients/">Клиенты</a></li>
+		
+			<li><a href="/contacts/">Контактная информация</a></li>
+		
+			<li><a href="/vacancy/">Работа в компании</a></li>
+		
+			<li><a href="/support/">Техническая поддержка</a></li>
+		
+
+</ul>
+			
+		</div>
+		<div id="footer_menu2">
+			
+<ul>
+
+			<li><a href="/industries/">Отрасли</a></li>
+		
+			<li><a href="/solutions/">Решения</a></li>
+		
+			<li><a href="/technology/">Технологии</a></li>
+		
+			<li><a href="/hardware/">Оборудование</a></li>
+		
+			<li><a href="/software/">Программное обеспечение</a></li>
+		
+			<li><a href="/partners/">Партнеры</a></li>
+		
+			<li><a href="/special/">Спецпредложения</a></li>
+		
+
+</ul>
+ 
+		</div>
+		<div id="property">
+			<p>1992-2013 Корпорация «ДатаКрат». S-Market, семейство DKLink, семейство БАРС <br />Использование материалов разрешено при наличии активной ссылки на источник</p>
+		</div>
+	</div>
+	<div id="footer_contacts">
+		<p>Контактная информация</p>
+		<p>Корпорация «ДатаКрат»<br /> 620017, г. Екатеринбург,<br /> пр. Космонавтов, 18, литер 18 </p>
+		<p>+ 7 (343) 365-13-40<br /><a href="mailto:dk@datakrat.ru">dk@datakrat.ru</a><!--<br /> skype:datakrat --></p>
+		
+		<!--LiveInternet counter-->
+		<script type="text/javascript"><!--
+		document.write("<a href='http://www.liveinternet.ru/click' "+
+		"target=_blank><img src='//counter.yadro.ru/hit?t41.1;r"+
+		escape(document.referrer)+((typeof(screen)=="undefined")?"":
+		";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+		screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+		";h"+escape(document.title.substring(0,80))+";"+Math.random()+
+		"' alt='' title='LiveInternet' "+
+		"border='0' width='31' height='31'><\/a>")
+		//--></script>
+		<!--/LiveInternet-->
+	</div>
+</div>
+<div style="display: none;"> 	
+<img src="/bitrix/templates/datakrat/images/menu/zakaz_call.png"  /> 	<img src="/bitrix/templates/datakrat/images/menu/zakaz_call_hover.png"  /> 	<img src="/bitrix/templates/datakrat/images/menu/zakaz_call_active.png"  /> 	<img src="/bitrix/templates/datakrat/images/buttons/more.png"  /> 	<img src="/bitrix/templates/datakrat/images/buttons/more_active.png"  /> 	<img src="/bitrix/templates/datakrat/images/buttons/more_hover.png"  /> 	<img src="/bitrix/templates/datakrat/images/buttons/zakaz.png"  /> 	<img src="/bitrix/templates/datakrat/images/buttons/zakaz_active.png"  /> 	<img src="/bitrix/templates/datakrat/images/buttons/zakaz_hover.png"  /> </div>
+<!-- Yandex.Metrika counter -->
+<div style="display:none;"><script type="text/javascript">
+(function(w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter10288933 = new Ya.Metrika({id:10288933, enableAll: true});
+        }
+        catch(e) { }
+    });
+})(window, "yandex_metrika_callbacks");
+</script></div>
+<script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script>
+<noscript><div><img src="//mc.yandex.ru/watch/10288933" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<!-- Google Analytics Old -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2020190-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- // Google Analytics -->
+
+<!-- GA New -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-26222549-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- // GA New -->
+</body>
+</html>
+				
+					

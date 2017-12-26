@@ -1,0 +1,98 @@
+<?php
+/* @var $this \yii\web\View */
+/* @var $content string */
+
+use yii\helpers\Html;
+use yii\bootstrap\Nav;
+use yii\bootstrap\NavBar;
+use yii\widgets\Breadcrumbs;
+use app\assets\AdminAsset;
+use app\models\Info;
+
+AdminAsset::register($this);
+?>
+<?php $this->beginPage() ?>
+<!DOCTYPE html>
+<html lang="<?= Yii::$app->language ?>">
+    <head>
+        <meta charset="<?= Yii::$app->charset ?>">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <?= Html::csrfMetaTags() ?>
+        <title><?= Html::encode($this->title) ?></title>
+        <?php $this->head() ?>
+    </head>
+    <body>
+        <?php $this->beginBody() ?>
+
+        <div class="wrap">
+            <?php
+            NavBar::begin([
+                'brandLabel' => '',
+                'brandUrl' => Yii::$app->homeUrl,
+                'options' => [
+                    'class' => 'navbar-inverse  navbar-fixed-top',
+                ],
+            ]);
+            echo Nav::widget([
+                'options' => ['class' => 'navbar-nav navbar-right'],
+                'items' => [
+                    ['label' => 'Заказы', 'url' => ['/order/admin/index']],
+                    ['label' => 'Категории', 'url' => ['/category/admin/index']],
+                    ['label' => 'Каталог', 'url' => ['/catalog/admin/index']],
+                    ['label' => 'Слайдер', 'url' => ['/slider/admin/index']],
+                    ['label' => 'Новости', 'url' => ['/novosti/admin/index']],
+                    ['label' => 'Статьи', 'url' => ['/stati/admin/index']],
+//                    ['label' => 'Настройки', 'url' => ['/options/admin/index']],
+                    ['label' => 'Страницы', 'url' => ['#'], 'items' => [
+                            ['label' => 'Главная', 'url' => ['/page/admin/update/1']],
+                            ['label' => 'Вакансии', 'url' => ['/page/admin/update/189']],
+                            '<li class="divider"></li>',
+                            ['label' => 'Услуги', 'url' => ['/page/admin/update/4369']],
+                            ['label' => 'Сервисное обслуживание противокражных систем', 'url' => ['/page/admin/update/4873']],
+                            ['label' => 'Монтаж противокражного оборудования', 'url' => ['/page/admin/update/4872']],
+                            ['label' => 'Монтаж систем видеонаблюдения', 'url' => ['/page/admin/update/4370']],
+                            ['label' => 'Установка камер видеонаблюдения', 'url' => ['/page/admin/update/4371']],
+                            ['label' => 'Обслуживание систем видеонаблюдения', 'url' => ['/page/admin/update/4684']],
+                            '<li class="divider"></li>',
+                            ['label' => 'Контакты', 'url' => ['/page/admin/update/182']],
+                        ]],
+                    ['label' => 'Опции', 'url' => ['/options/admin/index']],
+                    Yii::$app->user->isGuest ? (
+                            ['label' => 'Login', 'url' => ['/auth/default/login']]
+                            ) : (
+                            '<li>'
+                            . Html::beginForm(['/auth/default/logout'], 'post')
+                            . Html::submitButton(
+                                    'Logout (' . Yii::$app->user->identity->username . ')', ['class' => 'btn btn-link logout']
+                            )
+                            . Html::endForm()
+                            . '</li>'
+                            )
+                ],
+            ]);
+            NavBar::end();
+            ?>
+
+            <div class="container">
+                <?=
+                Breadcrumbs::widget([
+                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                ])
+                ?>
+                <?= $content ?>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+
+                <p class="pull-right"><?= Yii::powered() ?></p>
+            </div>
+        </footer>
+
+        <?php $this->endBody() ?>
+    </body>
+</html>
+<?php $this->endPage() ?>

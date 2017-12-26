@@ -1,0 +1,8 @@
+User-agent: *
+
+Disallow: /videonabludenie/
+
+
+Host: https://www.axioma.pro
+
+Sitemap: https://www.axioma.pro/sitemap.xml

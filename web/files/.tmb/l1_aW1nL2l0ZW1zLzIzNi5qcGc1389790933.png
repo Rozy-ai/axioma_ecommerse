@@ -1,0 +1,340 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">                 
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Page Not Found</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+        
+        <!--
+        <link type="text/css" rel="stylesheet" href="/resources/Retail/css/styles.css" />
+        <link type="text/css" rel="stylesheet" href="/resources/Retail/css/proprietary.css" />
+         -->
+
+        <link type="text/css" rel="stylesheet" href="/css/styles.css" />
+        <link type="text/css" rel="stylesheet" href="/css/proprietary.css" />
+
+        
+<script type="text/javascript" src="/resources/jquery/jquery-1.7.1.min.js"></script>
+
+
+
+        <link type="text/css" rel="stylesheet" href="/resources/jquery/jqtransform/jqtransformplugin/jqtransform.css" />
+        <script type="text/javascript" src="/resources/jquery/jqtransform/jqtransformplugin/jquery.jqtransform.js"></script>
+
+        <script type="text/javascript" src="/resources/Retail/javascript/default.js"></script>
+
+      
+
+        <script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-182367-23']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+    </head>
+    <body  style="background-image:url('/Images/HomeBackground/homebackground.gif');">
+        
+        
+
+        <div id="Wrapper">
+            
+
+
+ <div id="HeaderContainer">
+            <a href="/">
+                <img src="/SiteImages/header/design_logo.gif" id="Logo" alt="The Barcode Warehouse" title="The Barcode Warehouse"  width="214px" height="94px"/></a>
+
+            <div id="SearchBasketLinks">
+                <div id="LinksContent">
+
+                    
+
+<div id="Currency">
+    <ul id="CurrencyLinks" class="nav">
+        <li><a href="/404Redirector.aspx?currency=1" title="Pounds"><span >&#163;</span>
+        <img src="/SiteImages/header/design_gb_flag.jpg" alt="Pound Sterling" /></a></li>
+        
+    </ul>
+</div>
+
+
+
+                    
+                    <div id="Links">
+                        <div class="left"></div>
+                        <div class="body">
+                        <ul id="PrimaryLinks" class="nav">
+                          
+                            
+    <li><a href="/contactus/" title="Contact Us">CONTACT US</a></li>
+
+
+                            
+                            <li class="AdditionalPrimaryLinks"><a href="/Login.aspx?redirectto=%2f404Redirector.aspx"
+                                title="Sign In">
+                                SIGN IN</a></li>
+                            
+                            <li class="AdditionalPrimaryLinks"><a href="/Register/Register" title="Register">
+                                REGISTER</a></li>
+                            
+                        </ul>
+                        </div>
+                        <div class="right"></div>
+                    </div>
+
+                    <div id="CallUs">
+                        <p>
+                           <span class ="phone-local-text" >Call free on: </span>&nbsp;<span class  ="phone-local" >0800 599 9899</span>
+                        </p>
+                        <p style="width:251px;"><span class ="phone-int-text" style="font-size:14px;">International:</span><span class  ="phone-int" >+44 (0) 1636 602000</span></p>
+                        
+                        
+                        
+
+                    </div>
+                </div>
+                <div id="SearchBasketContent">
+
+                    <div id="MiniShoppingBasket">
+                        
+
+
+<form method="get" action="/Checkout.aspx">
+<fieldset>
+
+    
+    <ul class="headerPrice noItems">
+        <li>
+            0 items in your basket
+        </li>
+    </ul>
+    
+</fieldset>
+</form>
+
+
+
+
+
+                    </div>
+
+                    <div id="Search">
+                        <form id="SearchForm" action="/home/search-results.html" method="get">
+                        <div>
+                            <span class="text search">
+                                <label for="searchtext" title="search"></label>
+                                
+                                <input type="text" id="searchterm" name="searchterm" class="clicktoclearhp inputtext search" value="Enter keyword or product code" />
+                                
+                            </span>
+                            <input type="submit" id="SearchButtonSubmit" value="Search" title="Search" name="searchterm_submit" />
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+           
+            
+            <div id="Menu">
+<ul class="nav">
+<li class="first"><a href="/barcode-scanners-and-readers/" class="doubleLine" title="Barcode Scanners">Barcode Scanners</a><ul><li class="first"><a href="/barcode-scanners-and-readers/handheld-barcode-scanners/" title="Handheld Barcode Scanners">Handheld Barcode Scanners</a></li><li><a href="/barcode-scanners-and-readers/wireless-barcode-scanners/" title="Wireless Barcode Scanners">Wireless Barcode Scanners</a></li><li><a href="/barcode-scanners-and-readers/bluetooth-barcode-scanners/" title="Bluetooth Barcode Scanners">Bluetooth Barcode Scanners</a></li><li><a href="/barcode-scanners-and-readers/hands-free-scanners/" title="Hands-Free Omnidirectional Barcode Scanners">Hands-Free Omnidirectional Barcode Scanners</a></li><li><a href="/barcode-scanners-and-readers/2d-barcode-scanners-readers/" title="2D Barcode Scanners">2D Barcode Scanners</a></li><li><a href="/barcode-scanners-and-readers/industrial-handheld-scanners/" title="Industrial Barcode Scanners">Industrial Barcode Scanners</a></li><li><a href="/barcode-scanners-and-readers/healthcare-scanners/" title="Healthcare Barcode Scanners">Healthcare Barcode Scanners</a></li><li><a href="/barcode-scanners-and-readers/sd-cf-barcode-scanners/" title="SD/CF Barcode Scanners">SD/CF Barcode Scanners</a></li><li><a href="/barcode-scanners-and-readers/fixed-mount-scanner/" title="Fixed Mount Barcode Scanners">Fixed Mount Barcode Scanners</a></li><li><a href="/barcode-scanners-and-readers/accessories/" title="Barcode Scanner Accessories">Barcode Scanner Accessories</a></li></ul></li><li><a href="/barcode-printers-label-printers/" class="doubleLine" title="Barcode Label Printers">Barcode Label Printers</a><ul><li class="first"><a href="/barcode-printers-label-printers/desktop/" title="Desktop Label Printers">Desktop Label Printers</a></li><li><a href="/barcode-printers-label-printers/mid-range/" title="Mid Range Label Printers">Mid Range Label Printers</a></li><li><a href="/barcode-printers-label-printers/industrial/" title="Industrial Label Printers">Industrial Label Printers</a></li><li><a href="/barcode-printers-label-printers/high-performance/" title="High Performance Label Printers">High Performance Label Printers</a></li><li><a href="/barcode-printers-label-printers/portable-printers/" title="Portable Label & Receipt Printers">Portable Label & Receipt Printers</a></li><li><a href="/barcode-printers-label-printers/colour-label-printers/" title="Colour Label Printers">Colour Label Printers</a></li><li><a href="/barcode-printers-label-printers/fixed-mount-printers/" title="Fixed Mount Printers">Fixed Mount Printers</a></li><li><a href="/barcode-printers-label-printers/print-station/" title="Print Stations">Print Stations</a></li><li><a href="/barcode-printers-label-printers/ticket-printers/" title="Ticket Printers">Ticket Printers</a></li><li><a href="/barcode-printers-label-printers/print-engines/" title="Print Engines for Applicators">Print Engines for Applicators</a></li><li><a href="/barcode-printers-label-printers/kiosk-printers/" title="Kiosk Printers">Kiosk Printers</a></li><li><a href="/barcode-printers-label-printers/printer-accessories/" title="Printer Accessories">Printer Accessories</a></li></ul></li><li><a href="/pdas-and-handheld-computers/" class="doubleLine" title="Mobile Computers">Mobile Computers</a><ul><li class="first"><a href="/pdas-and-handheld-computers/rugged-pdas/" title="Rugged PDAs">Rugged PDAs</a></li><li><a href="/pdas-and-handheld-computers/handheld-computers/" title="Handheld Computers">Handheld Computers</a></li><li><a href="/pdas-and-handheld-computers/mobile-computers-healthcare/" title="Mobile Computers - Healthcare">Mobile Computers - Healthcare</a></li><li><a href="/pdas-and-handheld-computers/rugged-tablets-and-laptops/" title="Rugged Tablet PCs & Laptops">Rugged Tablet PCs & Laptops</a></li><li><a href="/pdas-and-handheld-computers/wearable-computers/" title="Wearable Computers">Wearable Computers</a></li><li><a href="/pdas-and-handheld-computers/vehicle-mounted-computers/" title="Vehicle Mounted Computers">Vehicle Mounted Computers</a></li><li><a href="/pdas-and-handheld-computers/portable-handheld-rfid-readers/" title="Portable/Handheld RFID Readers">Portable/Handheld RFID Readers</a></li><li><a href="/pdas-and-handheld-computers/portable-data-collectors/" title="Portable Data Collectors">Portable Data Collectors</a></li><li><a href="/pdas-and-handheld-computers/mobile-computer-accessories/" title="Mobile Computer Accessories">Mobile Computer Accessories</a></li></ul></li><li><a href="/epos-systems/" class="doubleLine" title="EPOS Systems & Hardware">EPOS Systems & Hardware</a><ul><li class="first"><a href="/epos-systems/receipt-printers/" title="Thermal Receipt Printers">Thermal Receipt Printers</a></li><li><a href="/epos-systems/lcd-touch-screen-monitors/" title="Touchscreen Monitors">Touchscreen Monitors</a></li><li><a href="/epos-systems/touchscreen-computers/" title="Touchscreen POS Computers">Touchscreen POS Computers</a></li><li><a href="/epos-systems/customer-displays/" title="Customer Displays">Customer Displays</a></li><li><a href="/epos-systems/cash-drawers/" title="Cash Drawers">Cash Drawers</a></li><li><a href="/epos-systems/epos-software/" title="EPOS Software">EPOS Software</a></li><li><a href="/epos-systems/magnetic-card-readers/" title="Magnetic/Smart Card Readers">Magnetic/Smart Card Readers</a></li><li><a href="/epos-systems/cheque-printers/" title="Cheque Printers">Cheque Printers</a></li><li><a href="/epos-systems/in-counter-scanners/" title="In-Counter Scanners">In-Counter Scanners</a></li><li><a href="/epos-systems/kiosks/" title="Kiosks">Kiosks</a></li><li><a href="/epos-systems/interactive-digital-signage/" title="Interactive Digital Signage">Interactive Digital Signage</a></li></ul></li><li><a href="/id-card-printers/" class="doubleLine" title="ID Card Printers">ID Card Printers</a><ul><li class="first"><a href="/id-card-printers/entry-level/" title="Entry Level Plastic ID Card Printers">Entry Level Plastic ID Card Printers</a></li><li><a href="/id-card-printers/high-performance/" title="High Performance Plastic ID Card Printers">High Performance Plastic ID Card Printers</a></li><li><a href="/id-card-printers/high-security-retransfer/" title="High Security Retransfer Plastic ID Card Printers">High Security Retransfer Plastic ID Card Printers</a></li><li><a href="/id-card-printers/card-printer-ribbons/" title="Card Printer Ribbons">Card Printer Ribbons</a></li><li><a href="/id-card-printers/card-design-software/" title="Card Design Software">Card Design Software</a></li><li><a href="/id-card-printers/laminates-and-overlays/" title="Laminates & Overlays">Laminates & Overlays</a></li><li><a href="/id-card-printers/plastic-cards/" title="Plastic Cards">Plastic Cards</a></li><li><a href="/id-card-printers/cleaning-supplies/" title="Card Printer Cleaning Supplies">Card Printer Cleaning Supplies</a></li><li><a href="/id-card-printers/card-printer-accessories/" title="Card Printer Accessories">Card Printer Accessories</a></li></ul></li><li><a href="/barcode-software/" class="doubleLine" title="Barcode Software">Barcode Software</a><ul><li class="first"><a href="/barcode-software/label-design-software/" title="Label Design Software">Label Design Software</a></li><li><a href="/barcode-software/application-development-suites/" title="Application Development Suites">Application Development Suites</a></li><li><a href="/barcode-software/mobile-device-management/" title="Mobile Device Management">Mobile Device Management</a></li><li><a href="/barcode-software/barcode-fonts/" title="Barcode Fonts">Barcode Fonts</a></li><li><a href="/barcode-software/asset-tracking-software/" title="Asset Tracking Software">Asset Tracking Software</a></li><li><a href="/barcode-software/inventory-control-software/" title="Inventory Control Software">Inventory Control Software</a></li></ul></li><li><a href="/wireless-networking/" class="doubleLine" title="Wireless Networking">Wireless Networking</a><ul><li class="first"><a href="/wireless-networking/wireless-access-points/" title="Wireless Access Points">Wireless Access Points</a></li><li><a href="/wireless-networking/wireless-cards/" title="Wireless Cards">Wireless Cards</a></li><li><a href="/wireless-networking/wireless-switches/" title="Wireless Switches">Wireless Switches</a></li><li><a href="/wireless-networking/client-radio-devices/" title="Client Radio Devices">Client Radio Devices</a></li><li><a href="/wireless-networking/wireless-accessories/" title="Wireless Accessories">Wireless Accessories</a></li></ul></li><li><a href="/labels-and-ribbons/" class="doubleLine" title="Labels & Ribbons">Labels & Ribbons</a><ul><li class="first"><a href="/labels-and-ribbons/self-adhesive-labels/" title="Self Adhesive Labels">Self Adhesive Labels</a></li><li><a href="/labels-and-ribbons/thermal-transfer-ribbons/" title="Thermal Transfer Ribbons">Thermal Transfer Ribbons</a></li><li><a href="/labels-and-ribbons/till-rolls/" title="Till Rolls">Till Rolls</a></li></ul></li><li><a href="/rfid/" title="RFID">RFID</a><ul><li class="first"><a href="/rfid/rfid-smart-card-reader/" title="RFID Smart Card Readers">RFID Smart Card Readers</a></li><li><a href="/rfid/rfid-readers/" title="RFID Readers">RFID Readers</a></li><li><a href="/rfid/rfid-printers/" title="RFID Thermal Label Printers">RFID Thermal Label Printers</a></li></ul></li></ul>
+</div>
+
+        
+        
+        
+        </div>
+                
+            <div id="ContentContainer">
+                
+                   <div class="contentColumn">
+                        <div class="header"></div>
+                        <div class="title"><h1>Page Not Found</h1></div>
+                        <div class="body">
+                         <p>
+                         Sorry - the page you are looking for cannot be found Please remember to check your spelling and try using just a few keywords.<br /> 
+                         If you still can't find what you're looking for, please call our team of Advisors on <strong>0800 599 9899 or 01636 602000.</strong>
+
+                         </p>
+                        </div>
+                        <div class="foot"></div>
+                    </div>
+         
+            </div>
+
+            
+<div id="NewsLetter" class="footer_newsletter">
+    <form id="SignupForm" action="/404Redirector.aspx" method="post">
+    <fieldset>
+        <noscript>
+            <input type="hidden" name="newsletter_subscribe_display" value="1" />
+        </noscript>
+        <label for="email">
+             Sign up for our newsletter</label>
+        <div>
+            <span class="text newsletter">
+                <input id="footer_newsletter_subscribe_email" name="newsletter_subscribe_email" type="text" value="" class="inputtext newsletter clicktoclear" maxlength="128" />
+            </span>
+            <div class="silverButtonNewsletter">
+            <input type="submit" title="Go" class="buttonSilver" id="footer_newsletter_subscribe_submit" value="GO" />
+            </div>
+           
+        </div>
+    </fieldset>
+    </form>
+</div>
+
+<div id="FooterContainer">
+    
+        <div class="FooterColumn first" ><div class="head"></div><div class="body"  style="height:200px;"><ul><li class="title">Popular Sections</li><li><a href="/barcode-scanners-and-readers" title="Barcode Scanners" target="_self">Barcode Scanners</a></li><li><a href="/barcode-printers-label-printers" title="Barcode Label Printers" target="_self">Barcode Label Printers</a></li><li><a href="/labels-and-ribbons" title="Labels & Ribbons" target="_self">Labels & Ribbons</a></li><li><a href="/epos-systems" title="EPOS Systems" target="_self">EPOS Systems</a></li><li><a href="/shop/zebra/label-printers" title="Zebra Label Printers" target="_self">Zebra Label Printers</a></li></ul></div><div class="foot"></div></div><div class="FooterColumn"><div class="head"></div><div class="body" style="height:200px;"><ul><li class="title">About Us</li><li><a href="/site-information/sitemap/" title="Sitemap" target="_self">Sitemap</a></li><li><a href="/site-information/environmental-policy/" title="Environmental Policy" target="_self">Environmental Policy</a></li><li><a href="/site-information/terms-and-conditions/" title="Terms & Conditions" target="_self">Terms & Conditions</a></li><li><a href="/site-information/clients/" title="Clients" target="_self">Clients</a></li><li><a href="/site-information/careers/" title="Careers" target="_self">Careers</a></li><li><a href="/site-information/credit-accounts/" title="Credit Accounts" target="_self">Credit Accounts</a></li><li><a href="/site-information/flexible-leasing-and-finance/" title="Flexible Leasing & Finance" target="_self">Flexible Leasing & Finance</a></li><li><a href="/site-information/accreditations/" title="Accreditations" target="_self">Accreditations</a></li><li><a href="/site-information/" title="About Us" target="_self">About Us</a></li></ul></div><div class="foot"></div></div><div class="FooterColumn"><div class="head"></div><div class="body" style="height:200px;"><ul><li class="title">Service & Support</li><li><a href="/service-and-support/" title="Consultancy Services" target="_self">Consultancy Services</a></li><li><a href="/service-and-support/managed-services/" title="Managed Services" target="_self">Managed Services</a></li><li><a href="/service-and-support/service-repairs-and-spares/" title="Service, Repairs & Spares" target="_self">Service, Repairs & Spares</a></li><li><a href="" title="" target="_self"></a></li><li><a href="/service-and-support/helpdesk-support/" title="Helpdesk Support" target="_self">Helpdesk Support</a></li><li><a href="/service-and-support/surveys-and-installations/" title="Surveys & Installations" target="_self">Surveys & Installations</a></li><li><a href="/catalogue-request/" title="Catalogue Request" target="_self">Catalogue Request</a></li></ul></div><div class="foot"></div></div>
+
+
+    <!--
+    <div class="FooterColumn">
+        <form action="/404Redirector.aspx" method="post" id="FooterNewsletterSignup">
+        <noscript>
+            <input type="hidden" name="newsletter_subscribe_display" value="1" />
+        </noscript>
+        <label for="EmailFooter">
+            Sign up to our newsletter</label>
+        <input type="text" name="newsletter_subscribe_email" id="footer_newsletter_subscribe_email"
+            value="" maxlength="128" />
+
+        <button type="submit" value="Go" name="footer_newsletter_subscribe_submit" id="footer_newsletter_subscribe_submit">
+            Go</button>
+        </form>
+    </div>
+    -->
+
+    <!-- SOCIAL MEDIA LINKS -->
+    <div class="FooterColumn">
+        <div class="head">
+        </div>
+        <div class="body" style="height:200px;">
+            <ul>
+                <li class="title">Follow us on</li>
+                <li class="footer_image">
+                    <a href="http://www.facebook.com/thebarcodewarehouse"  title="Facebook" target ="_blank"  >
+                    <img src="/SiteImages/footer/design_fb.gif" alt="facebook icon" />
+                    </a> 
+                    <span><a href="http://www.facebook.com/thebarcodewarehouse" title="Facebook" target ="_blank">Facebook</a></span>
+                </li>
+                <li class="footer_image">
+                  <a href="http://twitter.com/#!/Barcode_UK" title="Twitter" target ="_blank">
+                    <img src="/SiteImages/footer/design_twit.gif" alt="twitter icon" /></a> 
+                    <span><a href="http://twitter.com/#!/Barcode_UK" title="Twitter" target ="_blank">Twitter</a></span>
+                </li>
+                <li class="footer_image">
+                 <a href="http://www.linkedin.com/company/the-barcode-warehouse-limited/" title="LinkedIn" target ="_blank">
+                    <img src="/SiteImages/footer/linkedin-icon.jpg" alt="LinkedIn icon" /></a> 
+                    <span><a href="http://www.linkedin.com/company/the-barcode-warehouse-limited/" title="LinkedIn" target ="_blank">LinkedIn</a></span>
+                </li>
+
+            </ul>
+        </div>
+        <div class="foot">
+        </div>
+    </div>
+
+    <div id="Address">
+        <p>
+            The Barcode Warehouse Limited, Telford Drive, Newark, Nottinghamshire NG24 2DX
+            <br />
+            Company Registration Number: 3842666 VAT Registration Number: 738109135
+            <br />
+            T: +44 (0)1636 602000 F: +44 (0)1636 602001
+            <br />
+            &copy; Copyright The Barcode Warehouse Limited 2013. All rights reserved.
+        </p>
+        <p>
+            eCommerce by <a href="http://www.redtechnology.com">RED</a></p>
+    </div>
+
+</div>
+
+        </div>
+
+        
+
+<div id="NewsletterSubscribe">
+     <div class="windowHead"></div>
+
+    <div class="NewsletterSubscribeInner">
+        <div class="head"></div>
+        <div class="title"> 
+            <h1>Newsletter Sign Up </h1>  
+            <span>Required fields are marked with an *</span><a href="?close=1" class="close" title="close">Close</a>
+        </div>
+        <div class="body">
+       
+
+        
+            <p>Please enter your details.</p>
+            <form action="/404Redirector.aspx" method="post" id="frmNewsletter">
+                <input type="hidden" name="newsletter_subscribe_action" id="action" value="1" />
+                <input type="hidden" name="newsletter_subscribe_display" value="1" />
+
+                <fieldset class="select">
+                    <label for="newsletter_subscribe_title">Title</label>
+                        
+    <select name="newsletter_subscribe_title"><option>Mr</option><option>Miss</option><option>Mrs</option></select>
+
+
+                </fieldset>
+
+                <fieldset>
+                    <label for="newsletter_subscribe_firstname">First Name</label>
+                    <span class="inputTextStyle">
+                        <span>
+                            <input type="text" name="newsletter_subscribe_firstname" value=""" id="newsletter_subscribe_firstname" />
+                        </span>
+                    </span>
+                     
+                </fieldset>
+
+                <fieldset>
+                    <label for="newsletter_subscribe_lastname">Last Name</label>
+                    <span class="inputTextStyle">
+                        <span>
+                            <input type="text" name="newsletter_subscribe_lastname"  value="" id="newsletter_subscribe_lastname" />
+                        </span>
+                    </span>
+                      
+                </fieldset>
+
+                <fieldset>
+                    <label for="newsletter_subscribe_email">Email Address*</label>
+                    <span class="inputTextStyle">
+                        <span>
+                            <input type="text" name="newsletter_subscribe_email" value="" id="newsletter_subscribe_email" />
+                        </span>
+                    </span>
+                     
+                </fieldset>
+
+                <fieldset>
+                 <div class="orangeButtonWhiteBg">
+                        <input type="submit" name="newsletter_subscribe_submit" value="Sign Up" title="Sign Up" />
+                    </div>
+                </fieldset>
+                
+            </form>
+        
+
+    </div>
+    </div>
+    <div class="windowFoot"></div>
+</div>
+
+<div class="overlayMask"></div>
+
+
+    </body>
+</html>
