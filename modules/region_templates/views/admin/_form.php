@@ -14,7 +14,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'city_id')->dropDownList(app\modules\city\models\City::getActiveCity()) ?>
 
-    <?= $form->field($model, 'name')->dropDownList(Yii::$app->params['info_templates']) ?>
+    <?= $form->field($model, 'name')->dropDownList(app\modules\shortcode\models\Shortcode::getList()) ?>
 
     <?= $form->field($model, 'value')->textarea(['rows' => 6]) ?>
 

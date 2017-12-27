@@ -25,6 +25,9 @@ $config = [
         'city' => [
             'class' => 'app\modules\city\City',
         ],
+        'yon' => [
+            'class' => 'app\components\YesNo',
+        ],
         'user' => [
             'identityClass' => 'app\modules\auth\models\User',
             'loginUrl' => ['/auth/default/login'],
