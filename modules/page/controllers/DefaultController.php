@@ -19,6 +19,8 @@ class DefaultController extends Controller {
         if (!$page)
             throw new HttpException(404, 'Страница не найдена');
 
+        $page->replaceCodes();
+
         Yii::$app->view->title = $page->h1 ? $page->h1 : $page->name;
 
         if ($page->description)

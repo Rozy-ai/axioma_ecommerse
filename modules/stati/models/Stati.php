@@ -17,4 +17,10 @@ class Stati extends \app\models\Core {
         return $model ? $model : false;
     }
 
+    public function beforeSave($insert) {
+
+        $this->parent_id = self::PARENT_ID;
+        return parent::beforeSave($insert);
+    }
+
 }

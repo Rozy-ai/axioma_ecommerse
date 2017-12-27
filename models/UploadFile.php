@@ -7,6 +7,67 @@ use yii\web\UploadedFile;
 
 class UploadFile extends \yii\db\ActiveRecord {
 
+//    const MASK = "/(\{\w+\})/";
+    const MASK = "/(\{\w+\})/";
+
+    /*
+     * Шаблон модели контента. С загрузкой изображений.
+     */
+
+    public function replaceCodes() {
+
+        /*
+         * Ищем вхождения шаблонов
+         */
+
+        if (($this->hasAttribute('h1')))
+            $this->h1 = $this->replaceShortCodes($this->h1);
+
+        if (($this->hasAttribute('anons')))
+            $this->anons = $this->replaceShortCodes($this->anons);
+
+        if (($this->hasAttribute('content')))
+            $this->content = $this->replaceShortCodes($this->content);
+
+        if (($this->hasAttribute('content2')))
+            $this->content2 = $this->replaceShortCodes($this->content2);
+
+        if (($this->hasAttribute('title')))
+            $this->title = $this->replaceShortCodes($this->title);
+
+        if (($this->hasAttribute('keyword')))
+            $this->keyword = $this->replaceShortCodes($this->keyword);
+
+        if (($this->hasAttribute('description')))
+            $this->description = $this->replaceShortCodes($this->description);
+    }
+
+    private function replaceShortCodes($text) {
+
+        if (preg_match_all(self::MASK, $text, $short_vars)) {
+
+            $short_vars = $short_vars[0];
+
+            foreach ($short_vars as $var):
+
+                $value = \app\modules\region_templates\models\RegionTemplates::findOne([
+                            'name' => str_replace(['{', '}'], '', $var),
+                            'city_id' => \Yii::$app->city->getId(),
+                ]);
+
+                if ($value)
+                    $text = str_replace($var, $value->value, $text);
+
+            endforeach;
+
+//            print_r($short_vars);
+        }
+
+//        exit();
+
+        return $text;
+    }
+
     public $img_file;
 
     public function rules() {
@@ -36,7 +97,7 @@ class UploadFile extends \yii\db\ActiveRecord {
     public function beforeValidate() {
 
 //        if ($_FILES)
-            $this->image = $this->upload();
+        $this->image = $this->upload();
 
         return parent::beforeValidate();
     }

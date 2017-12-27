@@ -20,6 +20,11 @@ class DefaultController extends Controller {
                         ->with('childs')->orderBy(['ord' => SORT_DESC])
                         ->where(['show' => 1, 'parent_id' => 187])->all();
 
+        $parent->replaceCodes();
+
+        foreach ($model as $_model)
+            $_model->replaceCodes();
+
         Yii::$app->view->title = $parent->seo_title ? $parent->seo_title : $parent->title;
 
         if ($parent->seo_description)
@@ -38,6 +43,8 @@ class DefaultController extends Controller {
 
         if (!$page)
             throw new HttpException(404, 'Страница не найдена');
+        
+        $page->replaceCodes();
 
         $this->setViewed($page->id);
 
@@ -71,32 +78,32 @@ class DefaultController extends Controller {
                 $data[] = $id;
                 $session['viewed'] = $data;
             } else {
-
+                
             } else {
             $data[] = $id;
             $session['viewed'] = $data;
         }
     }
 
-    public function actionTest() {
-
-        $pages = Catalog::find()->all();
-
-        foreach ($pages as $page):
-
-            $arr = explode('/', $page->url);
-
-//        print_r($arr);
-
-            if (count($arr) > 1) {
-                $page->url = $arr[(count($arr) - 1)];
-//                $page->save();
-                $connection = Yii::$app->db;
-                $connection->createCommand()->update('tbl_core', ['url' => $page->url], ['id' => $page->id])->execute();
-//                print_r($page->errors);
-            }
-
-        endforeach;
-    }
+//    public function actionTest() {
+//
+//        $pages = Catalog::find()->all();
+//
+//        foreach ($pages as $page):
+//
+//            $arr = explode('/', $page->url);
+//
+////        print_r($arr);
+//
+//            if (count($arr) > 1) {
+//                $page->url = $arr[(count($arr) - 1)];
+////                $page->save();
+//                $connection = Yii::$app->db;
+//                $connection->createCommand()->update('tbl_core', ['url' => $page->url], ['id' => $page->id])->execute();
+////                print_r($page->errors);
+//            }
+//
+//        endforeach;
+//    }
 
 }

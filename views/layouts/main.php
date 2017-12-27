@@ -81,8 +81,8 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                         <div class="col-xs-12 col-sm-3 text-center">
                             <?= app\modules\cart\widgets\CartWidget::widget(); ?>
                             <?php \app\modules\city\widgets\CityChoice::widget(); ?>
-                            <?php echo Yii::$app->city->get(); ?>
-                            <?php echo Yii::$app->city->getId(); ?>
+                            <?php Yii::$app->city->get(); ?>
+                            <?php Yii::$app->city->getId(); ?>
 
                         </div>
                         <div class="col-xs-12 col-sm-3 text-right">

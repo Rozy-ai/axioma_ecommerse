@@ -40,6 +40,8 @@ class DefaultController extends Controller {
         if (!$model)
             throw new HttpException(404, 'Page not Found');
 
+        $model->replaceCodes();
+
         Yii::$app->view->title = $model->h1 ? $model->h1 : $model->name;
 
         if ($model->description)

@@ -20,21 +20,19 @@ use Yii;
  * @property CategoryContent[] $categoryContents
  * @property RegionTemplates[] $regionTemplates
  */
-class City extends \yii\db\ActiveRecord
-{
+class City extends \yii\db\ActiveRecord {
+
     /**
      * @inheritdoc
      */
-    public static function tableName()
-    {
+    public static function tableName() {
         return 'city';
     }
 
     /**
      * @inheritdoc
      */
-    public function rules()
-    {
+    public function rules() {
         return [
             [['cid', 'rid', 'is_enable', 'is_default'], 'integer'],
             [['name', 'name_eng', 'latitude', 'longitude'], 'string', 'max' => 255],
@@ -44,8 +42,7 @@ class City extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
-    public function attributeLabels()
-    {
+    public function attributeLabels() {
         return [
             'id' => 'ID',
             'cid' => 'Cid',
@@ -55,23 +52,22 @@ class City extends \yii\db\ActiveRecord
             'latitude' => 'Широта',
             'longitude' => 'Долгота',
             'is_enable' => 'Включен',
-            'is_default' => 'Is Default',
+            'is_default' => 'Основной регион',
         ];
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getCategoryContents()
-    {
+    public function getCategoryContents() {
         return $this->hasMany(CategoryContent::className(), ['city_id' => 'id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getRegionTemplates()
-    {
+    public function getRegionTemplates() {
         return $this->hasMany(RegionTemplates::className(), ['city_id' => 'id']);
     }
+
 }
