@@ -24,7 +24,8 @@
         "vova07/yii2-imperavi-widget": "*",
         "2amigos/yii2-multi-select-widget": "*",
         "kartik-v/yii2-widget-select2": "@dev",
-        "kartik-v/yii2-widget-datetimepicker": "*"
+        "kartik-v/yii2-widget-datetimepicker": "*",
+        "kartik-v/yii2-popover-x": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

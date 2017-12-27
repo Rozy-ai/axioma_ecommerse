@@ -80,6 +80,10 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                         </div>
                         <div class="col-xs-12 col-sm-3 text-center">
                             <?= app\modules\cart\widgets\CartWidget::widget(); ?>
+                            <?php \app\modules\city\widgets\CityChoice::widget(); ?>
+                            <?php echo Yii::$app->city->get(); ?>
+                            <?php echo Yii::$app->city->getId(); ?>
+
                         </div>
                         <div class="col-xs-12 col-sm-3 text-right">
                             <p class="phone"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> <a href="tel:<?= Info::get(3) ?>"><?= Info::get(3) ?></a></p>
@@ -144,7 +148,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                             <?php //app\modules\menu\widgets\FooterMenu::widget();  ?>
 
                             <ul class="list-unstyled list-inline">
-                                <li><a href="/">Главная</a></li>
+                                <li><a href="///home/kognitiv/NetBeansProjects/axioma">Главная</a></li>
                                 <li><a href="/o_kompanii">О компании</a></li>
                                 <li><a href="/produktsiya">Каталог оборудования</a></li>
                                 <li><a href="/vakansii">Вакансии</a></li>
@@ -175,7 +179,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
 
         <?php $this->endBody() ?>
 
-	<script type="text/javascript" src="//cdn.callbackhunter.com/cbh.js?hunter_code=51124a1b34a5d693228b07c3c7665145" charset="UTF-8"></script>
+        <script type="text/javascript" src="//cdn.callbackhunter.com/cbh.js?hunter_code=51124a1b34a5d693228b07c3c7665145" charset="UTF-8"></script>
     </body>
 </html>
 <?php $this->endPage() ?>

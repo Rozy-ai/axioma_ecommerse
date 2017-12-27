@@ -22,6 +22,9 @@ $config = [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
+        'city' => [
+            'class' => 'app\modules\city\City',
+        ],
         'user' => [
             'identityClass' => 'app\modules\auth\models\User',
             'loginUrl' => ['/auth/default/login'],
@@ -53,6 +56,8 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 '/' => 'site/index',
+                'http://<city:\w+>.axioma.local/robots.txt' => '/robots/default/index',
+                '/root' => '/auth/default/login',
                 '/sitemap.xml' => '/sitemap/default/index',
                 '/novosti' => '/novosti/default/index',
                 '/catalog' => '/catalog/default/index',

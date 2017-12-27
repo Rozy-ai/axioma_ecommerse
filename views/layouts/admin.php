@@ -57,7 +57,13 @@ AdminAsset::register($this);
                             '<li class="divider"></li>',
                             ['label' => 'Контакты', 'url' => ['/page/admin/update/182']],
                         ]],
-                    ['label' => 'Опции', 'url' => ['/options/admin/index']],
+                    ['label' => 'SEO', 'url' => ['#'], 'items' => [
+                            ['label' => 'Города', 'url' => ['/city/admin/index']],
+                            ['label' => 'Имена меток', 'url' => ['/shortcode/admin/index']],
+                            ['label' => 'Метки', 'url' => ['/region_templates/admin/index']],
+                            ['label' => 'Опции', 'url' => ['/options/admin/index']],
+                            ['label' => 'Robots.txt', 'url' => ['/robots/admin/index']],
+                        ]],
                     Yii::$app->user->isGuest ? (
                             ['label' => 'Login', 'url' => ['/auth/default/login']]
                             ) : (
