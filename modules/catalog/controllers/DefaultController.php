@@ -25,7 +25,7 @@ class DefaultController extends Controller {
         foreach ($model as $_model)
             $_model->replaceCodes();
 
-        Yii::$app->view->title = $model->title ? $model->title : $model->name;
+        Yii::$app->view->title = $parent->title ? $parent->title : $parent->name;
 
         if ($parent->seo_description)
             \Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => $model->description]);
