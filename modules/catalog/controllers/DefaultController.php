@@ -28,10 +28,10 @@ class DefaultController extends Controller {
         Yii::$app->view->title = $parent->title ? $parent->title : $parent->name;
 
         if ($parent->seo_description)
-            \Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => $model->description]);
+            \Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => $parent->description]);
 
         if ($parent->seo_keywords)
-            \Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => $model->keywords]);
+            \Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => $parent->keywords]);
 
         return $this->render('index', ['model' => $model,
         ]);
