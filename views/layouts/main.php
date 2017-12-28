@@ -9,6 +9,7 @@ use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 use app\models\Info;
 use yii\bootstrap\ActiveForm;
+use app\modules\region_templates\models\RegionTemplates;
 
 AppAsset::register($this);
 
@@ -23,6 +24,10 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
         <meta charset="<?= Yii::$app->charset ?>">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <?=
+        // Свои метатеги
+        RegionTemplates::getInHeader();
+        ?>
         <?= Html::csrfMetaTags() ?>
         <title><?= Html::encode($this->title) ?></title>
         <?php $this->head() ?>
@@ -146,7 +151,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-12 col-sm-6">
-                            <?php //app\modules\menu\widgets\FooterMenu::widget();  ?>
+                            <?php //app\modules\menu\widgets\FooterMenu::widget();   ?>
 
                             <ul class="list-unstyled list-inline">
                                 <li><a href="///home/kognitiv/NetBeansProjects/axioma">Главная</a></li>

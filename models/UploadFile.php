@@ -49,6 +49,7 @@ class UploadFile extends \yii\db\ActiveRecord {
 
         if (($this->hasAttribute('seo_description')))
             $this->seo_description = $this->replaceShortCodes($this->seo_description);
+
     }
 
     private function replaceShortCodes($text) {

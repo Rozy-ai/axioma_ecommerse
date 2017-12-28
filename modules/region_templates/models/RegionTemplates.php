@@ -14,4 +14,15 @@ use Yii;
  */
 class RegionTemplates extends \app\models\RegionTemplates {
 
+    const LABEL = 'in_header';
+
+    public static function getInHeader() {
+
+        return
+                $value = \app\modules\region_templates\models\RegionTemplates::findOne([
+                    'name' => self::LABEL,
+                    'city_id' => \Yii::$app->city->getId(),
+                ]) ? $value : false;
+    }
+
 }
