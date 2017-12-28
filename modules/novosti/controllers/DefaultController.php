@@ -40,7 +40,7 @@ class DefaultController extends Controller {
         if (!$model)
             throw new HttpException(404, 'Page not Found');
 
-        Yii::$app->view->title = $model->h1 ? $model->h1 : $model->name;
+        Yii::$app->view->title = $page->title ? $page->title : $page->h1;
 
         if ($model->description)
             \Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => $model->description]);
