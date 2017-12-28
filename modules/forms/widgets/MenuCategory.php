@@ -33,7 +33,7 @@ class MenuCategory extends Widget {
 //        $this->_menu = $this->build_tree($this->_all, 187, $this->active_id);
 //        print_r($this->_all);
 //        exit();
-
+        
         return $this->render('menu_category', [
                     'model' => $model,
 //            'model' => $model, 'menu' => $this->_menu

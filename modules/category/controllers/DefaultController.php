@@ -30,6 +30,8 @@ class DefaultController extends Controller {
         if (!$category)
             throw new HttpException(404, ' Страница не найдена! ');
 
+        $category->replaceCodes();
+
         Yii::$app->view->title = $category->seo_title ? $category->seo_title : $category->title;
 
         if ($category->seo_description)

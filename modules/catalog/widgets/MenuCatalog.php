@@ -65,7 +65,7 @@ class MenuCatalog extends Widget {
     }
 
     private function getAll($id) {
-
+        
         $model = Catalog::find()->where(['parent_id' => $id, 'act' => 1])
                 ->andWhere(['not', ['model' => 'ProductionTab']])
                 ->orderBy(['ord' => SORT_DESC])
@@ -73,6 +73,7 @@ class MenuCatalog extends Widget {
 
         if ($model)
             foreach ($model as $item):
+                $item->replaceCodes();
                 $this->_all[$item->parent_id][] = [
                     'id' => $item->id,
                     'parentid' => $item->parent_id,

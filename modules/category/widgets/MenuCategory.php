@@ -25,6 +25,9 @@ class MenuCategory extends Widget {
                 ->all();
 
         $_menu = Category::find()->where(['show' => 1])->orderBy(['ord' => SORT_DESC])->all();
+        
+        foreach ($_menu as $item)
+            $item->replaceCodes();
 
         $menu = $this->form_tree($_menu);
 //        var_dump($menu);
