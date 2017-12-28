@@ -49,6 +49,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                     ['label' => 'Новости', 'url' => ['/novosti/default/index']],
                     ['label' => 'Контакты', 'url' => ['/kontaktyi']],
                     ['label' => 'Статьи', 'url' => ['/stati/default/index']],
+                    ['label' => '<span class="glyphicon glyphicon-shopping-cart"></span>', 'url' => ['/cart']],
                     Yii::$app->user->isGuest ? ( ''
                             ) : (
                             '<li>'

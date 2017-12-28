@@ -17,6 +17,10 @@ var Cart = {
 
         $.post("/cart/default/add-to-cart", data)
                 .done(function (data) {
+                    new jBox('Notice', {
+                        content: 'Товар добвлен в корзину',
+                        color: 'blue'
+                    });
                     Cart.UpdateCart();
                 });
 
@@ -34,10 +38,10 @@ var Cart = {
     },
     SetCount: function (id, count) {
 
-//        $.get("/cart/default/set-count?id=" + id + '&count=' + count)
-//                .done(function (data) {
-//                    $('.cart-widget').html(data);
-//                });
+        $.get("/cart/default/set-count?id=" + id + '&count=' + count)
+                .done(function (data) {
+                    $('.cart-widget').html(data);
+                });
         Cart.UpdateCart();
 
     },
