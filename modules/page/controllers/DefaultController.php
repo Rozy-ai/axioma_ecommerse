@@ -21,9 +21,9 @@ class DefaultController extends Controller {
 
         $page->replaceCodes();
         
-//        print_r($page);
+        print_r($page);
 
-        Yii::$app->view->title = $page->h1 ? $page->h1 : $page->name;
+        Yii::$app->view->title = $page->title ? $page->title : $page->h1;
 
         if ($page->description)
             \Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => $page->description]);
