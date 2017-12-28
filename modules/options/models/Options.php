@@ -14,6 +14,8 @@ use Yii;
  */
 class Options extends \yii\db\ActiveRecord {
 
+    const MASK = "/(\{\w+\})/";
+
     /**
      * @inheritdoc
      */
@@ -47,7 +49,33 @@ class Options extends \yii\db\ActiveRecord {
     public static function getVal($name) {
 
         return ($model = self::find()->where(['name' => $name])->one()) ?
-                $model->text : false;
+                self::replaceShortCodes($model->text) : false;
+    }
+
+    public static function replaceShortCodes($text) {
+
+        if (preg_match_all(self::MASK, $text, $short_vars)) {
+
+            $short_vars = $short_vars[0];
+
+            foreach ($short_vars as $var):
+
+                $value = \app\modules\region_templates\models\RegionTemplates::findOne([
+                            'name' => str_replace(['{', '}'], '', $var),
+                            'city_id' => \Yii::$app->city->getId(),
+                ]);
+
+                if ($value)
+                    $text = str_replace($var, $value->value, $text);
+
+            endforeach;
+
+//            print_r($short_vars);
+        }
+
+//        exit();
+
+        return $text;
     }
 
 }

@@ -69,9 +69,9 @@ class SiteController extends Controller {
 
         Yii::$app->view->title = Options::getVal('main_seo_title');
 
-        Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => Options::getVal('main_seo_title')]);
+        Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => Options::getVal('main_seo_description')]);
 
-        Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => Options::getVal('main_seo_title')]);
+        Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => Options::getVal('main_seo_keywords')]);
 
         return $this->render('index');
     }
