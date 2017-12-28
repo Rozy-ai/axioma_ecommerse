@@ -23,7 +23,7 @@ class DefaultController extends Controller {
         
 //        print_r($page);
 
-        Yii::$app->view->title = $page->title ? $page->title : $page->h1;
+        Yii::$app->view->title = $page->title ? $page->title : $page->name;
 
         if ($page->description)
             \Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => $page->description]);

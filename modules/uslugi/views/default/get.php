@@ -11,7 +11,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <div class="uslugi row">
     <div class="new col-xs-12">
-        <p class="h3"><?= $this->title ?></p>
+        <p class="h3"><?= $this->h1 ? $this->h1 : $this->name ?></p>
         <div class="content">
             <?= Html::img('/' . $model->image, ['class' => 'img img-responsive img-rounded']) ?>
             <?= $model->content ?>

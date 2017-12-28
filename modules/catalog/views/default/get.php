@@ -2,7 +2,7 @@
 //print_r($parent);
 if ($parent && $parent->id != 1)
     $this->params['breadcrumbs'][] = ['url' => '/catalog/', 'label' => 'Каталог'];
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = $page->name;
 ?>
 <div class="product_item">
 
@@ -12,7 +12,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <?= app\modules\category\widgets\MenuCategory::widget(); ?>
         </div>
         <div class="col-xs-12 col-sm-8">
-            <h1><?= $page->h1 ? $page->h1 : $this->title ?></h1>
+            <h1 good-id="<?= $page->id ?>"><?= $page->h1 ? $page->h1 : $this->name ?></h1>
 
 
             <?= $page->getCatLinks(); ?>

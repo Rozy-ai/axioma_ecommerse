@@ -5,7 +5,7 @@ if ($parent && $parent->id != 1)
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="page">
-    <h1><?= $page->h1 ? $page->h1 : $this->title ?></h1>
+    <h1><?= $page->h1 ? $page->h1 : $page->name ?></h1>
     <?= $page->content ?>
 </div>
 

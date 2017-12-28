@@ -25,13 +25,13 @@ class DefaultController extends Controller {
         foreach ($model as $_model)
             $_model->replaceCodes();
 
-        Yii::$app->view->title = $parent->seo_title ? $parent->seo_title : $parent->title;
+        Yii::$app->view->title = $model->title ? $model->title : $model->name;
 
         if ($parent->seo_description)
-            \Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => $parent->seo_description]);
+            \Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => $model->description]);
 
         if ($parent->seo_keywords)
-            \Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => $parent->seo_keywords]);
+            \Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => $model->keywords]);
 
         return $this->render('index', ['model' => $model,
         ]);
