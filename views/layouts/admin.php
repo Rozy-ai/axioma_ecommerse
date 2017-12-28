@@ -56,6 +56,8 @@ AdminAsset::register($this);
                             ['label' => 'Обслуживание систем видеонаблюдения', 'url' => ['/page/admin/update/4684']],
                             '<li class="divider"></li>',
                             ['label' => 'Контакты', 'url' => ['/page/admin/update/182']],
+                            '<li class="divider"></li>',
+                            ['label' => 'Согласие на обработку персональных данных', 'url' => ['/page/admin/update/4988']],
                         ]],
                     ['label' => 'SEO', 'url' => ['#'], 'items' => [
                             ['label' => 'Города', 'url' => ['/city/admin/index']],
