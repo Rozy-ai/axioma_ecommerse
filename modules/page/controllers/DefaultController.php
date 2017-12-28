@@ -21,7 +21,7 @@ class DefaultController extends Controller {
 
         $page->replaceCodes();
         
-        print_r($page);
+//        print_r($page);
 
         Yii::$app->view->title = $page->h1 ? $page->h1 : $page->name;
 
