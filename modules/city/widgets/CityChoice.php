@@ -29,7 +29,7 @@ class CityChoice extends Widget {
         $links = '';
         foreach ($cityes as $city):
             if ($city->name_eng == $this->current_city)
-                $links .= Html::tag('strong', $city->name);
+                $links .= Html::tag('strong', $city->name) . '<br/>';
             else
                 $links .= ($city->name_eng == $this->default_city) ?
                         Html::a($city->name, 'http://' . Yii::$app->params['defaultDomain'] . '<br/>') :
