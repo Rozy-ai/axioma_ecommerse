@@ -23,7 +23,7 @@ Modal::begin([
 <?= $form->field($model, 'count')->textInput(['value' => 1, 'type' => 'number']) ?>
 <?=
 $form->field($model, 'personal_accept')->checkbox()->label('Я даю согласие на обратобку персональных данных '
-        . Html::a('ознакомиться с условиями', ['//www.axioma.pro/soglasie'], ['target' => '_blank'])
+        . Html::a('ознакомиться с условиями', ['/soglasie'], ['target' => '_blank'])
 )
 ?>
 
