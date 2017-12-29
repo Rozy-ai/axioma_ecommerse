@@ -2,6 +2,7 @@
 
 return [
     'adminEmail' => 'admin@example.com',
-    'baseDomain' => $_SERVER['SERVER_NAME'],
+//    'baseDomain' => $_SERVER['SERVER_NAME'],
     'defaultDomain' => 'axioma.pro',
+    'baseDomain' => 'axioma.pro',
 ];
