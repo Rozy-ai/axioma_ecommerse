@@ -152,9 +152,9 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                             <?php //app\modules\menu\widgets\FooterMenu::widget();   ?>
 
                             <ul class="list-unstyled list-inline">
-                                <li><a href="///home/kognitiv/NetBeansProjects/axioma">Главная</a></li>
+                                <li><a href="/">Главная</a></li>
                                 <li><a href="/o_kompanii">О компании</a></li>
-                                <li><a href="/produktsiya">Каталог оборудования</a></li>
+                                <li><a href="/catalog">Каталог оборудования</a></li>
                                 <li><a href="/vakansii">Вакансии</a></li>
                                 <li><a href="/novosti">Новости</a></li>
                                 <li><a href="/kontaktyi">Контакты</a></li>
