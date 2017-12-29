@@ -24,7 +24,11 @@ $form = ActiveForm::begin(['id' => 'send-review-form',
 <?= $form->field($model, 'name')->textInput() ?>
 <?= $form->field($model, 'email')->textInput() ?>
 <?= $form->field($model, 'review')->textarea() ?>
-<?= $form->field($model, 'personal_accept')->checkbox() ?>
+<?=
+$form->field($model, 'personal_accept')->checkbox()->label('Я даю согласие на обратобку персональных данных '
+        . Html::a('ознакомиться с условиями', ['//www.axioma.pro/soglasie'], ['target' => '_blank'])
+)
+?>
 
 <div class="form-group">
     <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary']) ?>

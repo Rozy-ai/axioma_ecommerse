@@ -7,7 +7,7 @@ if ($model):
 
     <div class="home-news row">
         <div class="new col-xs-12 col-sm-6">
-            <p class="h3"><?= $model->title ?></p>
+            <p class="h3"><?= $model->name ?></p>
             <p class="date"><?= Yii::$app->formatter->asDate($model->create_time, 'long') ?></p>
             <div class="content">
                 <?= Html::img('/' . $model->image, ['class' => 'img img-responsive img-rounded']) ?>
