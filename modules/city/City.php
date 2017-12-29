@@ -15,7 +15,7 @@ class City {
 
     private function init() {
         $host = $_SERVER['HTTP_HOST'];
-        $this->current_city = ( count($arr = explode('.', $_SERVER['HTTP_HOST'])) == 3) ? $arr[0] : $this->default_city;
+         $this->current_city = ((count($arr = explode('.', $_SERVER['HTTP_HOST'])) == 3 && $arr[0] != 'www')) ? $arr[0] : $this->default_city;
 //        $this->current_city = $this->default_city;
     }
 
