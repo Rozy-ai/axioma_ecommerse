@@ -21,8 +21,8 @@ Modal::begin([
     <?= $form->field($model, 'name')->textInput() ?>
     <?= $form->field($model, 'phone')->textInput() ?>
     <?=
-    $form->field($model, 'personal_accept')->checkbox()->label('Я даю согласие на обратобку персональных данных '
-            . Html::a('ознакомиться с условиями', ['/soglasie'], ['target' => '_blank'])
+    $form->field($model, 'personal_accept')->checkbox()->label('Я даю согласие на обратобку персональных данных. '
+            . Html::a('Ознакомиться с условиями', ['/soglasie'], ['target' => '_blank'])
     )
     ?>
 </div>
