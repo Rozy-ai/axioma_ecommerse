@@ -4,7 +4,7 @@ use yii\widgets\Breadcrumbs;
 use yii\helpers\Html;
 
 $this->params['breadcrumbs'][] = ['label' => 'Новости', 'url' => '/news', 'title' => 'Новости'];
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = $model->h1 ? $model->h1 : $model->name;
 ?>
 
 <h1><?= $this->title ?></h1>
