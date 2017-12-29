@@ -31,7 +31,7 @@ use yii\helpers\Html;
                 ?>
                 <?=
                 Html::a($item->title, [
-                    '/category/' . $model->uri,
+                    '/category/' . $item->uri,
                         ], ['class' => 'link h5'])
                 ?>
             <?php endforeach; ?>
