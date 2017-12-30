@@ -7,8 +7,7 @@ use yii\web\UploadedFile;
 
 class UploadFile extends \yii\db\ActiveRecord {
 
-//    const MASK = "/(\{\w+\})/";
-    const MASK = "/(\{\w+\})/";
+    const MASK = "/\{[a-z0-9-]+}/";
 
     /*
      * Шаблон модели контента. С загрузкой изображений.
@@ -49,7 +48,6 @@ class UploadFile extends \yii\db\ActiveRecord {
 
         if (($this->hasAttribute('seo_description')))
             $this->seo_description = $this->replaceShortCodes($this->seo_description);
-
     }
 
     private function replaceShortCodes($text) {
