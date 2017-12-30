@@ -9,7 +9,7 @@ use yii\helpers\Url;
 /**
  * AdminController implements the CRUD actions for Theme model.
  */
-class DefaultController extends Controller {
+class DefaultController1 extends Controller {
 
     public function actionIndex() {
 
