@@ -52,7 +52,11 @@ $this->params['breadcrumbs'][] = $this->title;
 
             <?= $form->field($client, 'phone') ?>
 
-            <?= $form->field($client, 'personal_accept')->checkbox() ?>
+            <?=
+            $form->field($model, 'personal_accept')->checkbox()->label('Я даю согласие на обратобку персональных данных. '
+                    . Html::a('Ознакомиться с условиями', ['/soglasie'], ['target' => '_blank'])
+            )
+            ?>
 
             <div class="form-group">
                 <?= Html::submitButton('Оформить', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
