@@ -12,7 +12,7 @@ $this->params['breadcrumbs'][] = $page->name;
             <?= app\modules\category\widgets\MenuCategory::widget(); ?>
         </div>
         <div class="col-xs-12 col-sm-8">
-            <h1 good-id="<?= $page->id ?>"><?= $page->h1 ? $page->h1 : $this->name ?></h1>
+            <h1 good-id="<?= $page->id ?>"><?= $page->h1 ? $page->h1 : $page->name ?></h1>
 
 
             <?= $page->getCatLinks(); ?>
