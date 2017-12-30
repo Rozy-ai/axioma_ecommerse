@@ -11,16 +11,14 @@ use app\modules\robots\models\Robots;
  */
 class DefaultController extends Controller {
 
-    public function actionIndex($city) {
+    public function actionIndex() {
 
         Yii::$app->response->format = \yii\web\Response::FORMAT_RAW;
         Yii::$app->response->headers->add('Content-Type', 'text/plain');
 
-        if ($id = \app\modules\city\models\City::getCityIdByName($city)) {
 
-            return Robots::findOne(['city_id' => $id]) ? Robots::findOne(['city_id' => $id])->content : false;
-        }
-        return false;
+        return Robots::findOne(['city_id' => Yii::$app->city->getId()]) ?
+                Robots::findOne(['city_id' => Yii::$app->city->getId()])->content : false;
     }
 
 }
