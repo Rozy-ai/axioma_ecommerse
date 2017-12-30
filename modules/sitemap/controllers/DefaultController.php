@@ -13,6 +13,9 @@ class DefaultController extends Controller {
 
     public function actionIndex() {
 
+        Yii::$app->response->format = \yii\web\Response::FORMAT_RAW;
+        Yii::$app->response->headers->add('Content-Type', 'text/xml');
+
         $urls = [];
 
 //        // Страницы
@@ -53,10 +56,13 @@ class DefaultController extends Controller {
 //        $host = (isset($arr[0]) && count($arr) == 3) ? $arr[0] . Yii::$app->request->hostInfo : Yii::$app->request->hostInfo;
         $host = Yii::$app->request->hostInfo;
 
-        echo '<?xml version="1.0" encoding="utf-8"?>' . PHP_EOL;
-        echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
+        /*
+          $result = '<?xml version="1.0" encoding="utf-8"?>' . PHP_EOL;
+         *
+         */
+        $result = '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
 
-        echo "<url>
+        $result .= "<url>
                 <loc> $host</loc>
                 <changefreq>daily</changefreq>
                 <priority>1</priority>
@@ -89,17 +95,17 @@ class DefaultController extends Controller {
 
 
         foreach ($urls as $url) {
-            echo "<url>
+            $result .= "<url>
                 <loc> $host/$url </loc>
                 <changefreq>daily</changefreq>
                 <priority>0.5</priority>
             </url>";
         }
-        echo '</urlset>';
-        Yii::$app->end();
+        $result .= '</urlset>';
 
-//        return $this->render('index', [
-//        ]);
+        return $this->renderPartial('index', [
+                    'result' => $result
+        ]);
     }
 
 }
