@@ -50,8 +50,8 @@ class DefaultController extends Controller {
 
 //        echo Yii::$app->request->hostInfo;
 //        exit();
-
-        $host = (isset($arr[0]) && count($arr) == 3) ? $arr[0] . Yii::$app->request->hostInfo : Yii::$app->request->hostInfo;
+//        $host = (isset($arr[0]) && count($arr) == 3) ? $arr[0] . Yii::$app->request->hostInfo : Yii::$app->request->hostInfo;
+        $host = Yii::$app->request->hostInfo;
 
         echo '<?xml version="1.0" encoding="utf-8"?>' . PHP_EOL;
         echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
