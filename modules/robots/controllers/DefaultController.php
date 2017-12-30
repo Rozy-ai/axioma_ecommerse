@@ -13,6 +13,9 @@ class DefaultController extends Controller {
 
     public function actionIndex($city) {
 
+        Yii::$app->response->format = \yii\web\Response::FORMAT_RAW;
+        Yii::$app->response->headers->add('Content-Type', 'text/plain');
+
         if ($id = \app\modules\city\models\City::getCityIdByName($city)) {
 
             return Robots::findOne(['city_id' => $id]) ? Robots::findOne(['city_id' => $id])->content : false;

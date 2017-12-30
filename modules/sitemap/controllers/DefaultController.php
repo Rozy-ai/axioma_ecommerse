@@ -49,7 +49,7 @@ class DefaultController extends Controller {
         foreach ($uslugi as $uslug)
             $urls[] = Url::to($uslug->url);
 
-        $arr = explode('.', $_SERVER['HTTP_HOST']);
+//        $arr = explode('.', $_SERVER['HTTP_HOST']);
 
 //        echo Yii::$app->request->hostInfo;
 //        exit();
