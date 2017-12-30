@@ -46,7 +46,9 @@ class DefaultController extends Controller {
         foreach ($uslugi as $uslug)
             $urls[] = Url::to($uslug->url);
 
-        $host = Yii::$app->request->hostInfo;
+        $arr = explode('.', $_SERVER['HTTP_HOST']);
+
+        $host = (isset($arr[0])) ? $arr[0] . Yii::$app->request->hostInfo : Yii::$app->request->hostInfo;
 
         echo '<?xml version="1.0" encoding="UTF-8"?>' . PHP_EOL;
         echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
