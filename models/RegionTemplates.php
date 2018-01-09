@@ -30,7 +30,7 @@ class RegionTemplates extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['city_id', 'name', 'value'], 'required'],
+            [['city_id', 'name'], 'required'],
             [['city_id'], 'integer'],
             [['value'], 'string'],
             [['name'], 'string', 'max' => 255],
