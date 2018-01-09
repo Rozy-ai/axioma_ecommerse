@@ -36,11 +36,13 @@ use kartik\datetime\DateTimePicker;
                 'settings' => [
                     'lang' => 'ru',
                     'imageUpload' => Url::to(['/news/admin/image-upload']),
+                    'imageManagerJson' => Url::to(['/site/images-get']),
                     'minHeight' => 200,
                     'plugins' => [
                         'clips',
                         'fullscreen',
-                        'fontcolor'
+                        'fontcolor',
+                        'imagemanager'
                     ]
                 ]
             ]);
@@ -50,11 +52,13 @@ use kartik\datetime\DateTimePicker;
                 'settings' => [
                     'lang' => 'ru',
                     'imageUpload' => Url::to(['/news/admin/image-upload']),
+                    'imageManagerJson' => Url::to(['/site/images-get']),
                     'minHeight' => 200,
                     'plugins' => [
                         'clips',
                         'fullscreen',
-                        'fontcolor'
+                        'fontcolor',
+                        'imagemanager'
                     ]
                 ]
             ]);

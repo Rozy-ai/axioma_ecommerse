@@ -7,21 +7,22 @@ use kartik\datecontrol\DateControl;
 //use kartik\widgets\DateTimePicker;
 use vova07\imperavi\Widget;
 use kartik\datetime\DateTimePicker;
+
 /* @var $this yii\web\View */
 /* @var $model app\modules\news\models\News */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<?php //print_r($model->errors) ?>
+<?php //print_r($model->errors)  ?>
 
 <div class="news-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+<?php $form = ActiveForm::begin(); ?>
 
     <div class="row">
 
         <div class="form-group col-xs-12 text-right">
-            <?= Html::submitButton($model->isNewRecord ? 'Создать' : 'Обновить', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+<?= Html::submitButton($model->isNewRecord ? 'Создать' : 'Обновить', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
         </div>
 
         <div class="col-xs-12 col-md-8">
@@ -35,11 +36,13 @@ use kartik\datetime\DateTimePicker;
                 'settings' => [
                     'lang' => 'ru',
                     'imageUpload' => Url::to(['/news/admin/image-upload']),
+                    'imageManagerJson' => Url::to(['/site/images-get']),
                     'minHeight' => 200,
                     'plugins' => [
                         'clips',
                         'fullscreen',
-                        'fontcolor'
+                        'fontcolor',
+                        'imagemanager'
                     ]
                 ]
             ]);
@@ -49,11 +52,13 @@ use kartik\datetime\DateTimePicker;
                 'settings' => [
                     'lang' => 'ru',
                     'imageUpload' => Url::to(['/news/admin/image-upload']),
+                    'imageManagerJson' => Url::to(['/site/images-get']),
                     'minHeight' => 200,
                     'plugins' => [
                         'clips',
                         'fullscreen',
-                        'fontcolor'
+                        'fontcolor',
+                        'imagemanager'
                     ]
                 ]
             ]);
@@ -75,12 +80,12 @@ use kartik\datetime\DateTimePicker;
             <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
             <?= $form->field($model, 'keywords')->textInput(['maxlength' => true]) ?>
             <?= $form->field($model, 'ord')->textInput(['type' => 'number']) ?>
-            <?= $form->field($model, 'act')->dropDownList($model::$_act) ?>
+<?= $form->field($model, 'act')->dropDownList($model::$_act) ?>
 
         </div>
 
     </div>
 
-    <?php ActiveForm::end(); ?>
+<?php ActiveForm::end(); ?>
 
 </div>

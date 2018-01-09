@@ -62,11 +62,13 @@ use kartik\widgets\Select2;
                 'settings' => [
                     'lang' => 'ru',
                     'imageUpload' => Url::to(['/site/image-upload']),
+                    'imageManagerJson' => Url::to(['/site/images-get']),
                     'minHeight' => 200,
                     'plugins' => [
                         'clips',
                         'fullscreen',
-                        'fontcolor'
+                        'fontcolor',
+                        'imagemanager'
                     ]
                 ]
             ]);
