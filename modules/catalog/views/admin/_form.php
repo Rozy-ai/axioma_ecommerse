@@ -25,7 +25,7 @@ use kartik\widgets\Select2;
         <div class="col-xs-8">
 
             <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
- <?= $form->field($model, 'h1')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'h1')->textInput(['maxlength' => true]) ?>
 
             <?=
             $form->field($model, 'anons')->widget(Widget::className(), [
@@ -46,11 +46,13 @@ use kartik\widgets\Select2;
                 'settings' => [
                     'lang' => 'ru',
                     'imageUpload' => Url::to(['/site/image-upload']),
+                    'imageManagerJson' => Url::to(['/site/images-get']),
                     'minHeight' => 200,
                     'plugins' => [
                         'clips',
                         'fullscreen',
-                        'fontcolor'
+                        'fontcolor',
+                        'imagemanager'
                     ]
                 ]
             ]);
