@@ -8,11 +8,13 @@ use yii\base\Model;
 /**
  * ContactForm is the model behind the contact form.
  */
-class CallBackForm extends Model {
+class CallBackForm extends EmailForm {
 
     public $name;
     public $phone;
     public $personal_accept;
+    public $email = '';
+    public $subject = 'Запрос на звонок';
 
 //    public $verifyCode;
 
@@ -36,25 +38,6 @@ class CallBackForm extends Model {
             'phone' => 'Телефон',
             'personal_accept' => 'Я даю согласие на обратобку персональных данных',
         ];
-    }
-
-    /**
-     * Sends an email to the specified email address using the information collected by this model.
-     * @param string $email the target email address
-     * @return bool whether the model passes validation
-     */
-    public function contact($email) {
-        if ($this->validate()) {
-            Yii::$app->mailer->compose()
-                    ->setTo($email)
-                    ->setFrom([$this->email => $this->name])
-                    ->setSubject($this->subject)
-                    ->setTextBody($this->body)
-                    ->send();
-
-            return true;
-        }
-        return false;
     }
 
 }

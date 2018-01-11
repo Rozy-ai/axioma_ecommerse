@@ -8,12 +8,15 @@ use yii\base\Model;
 /**
  * ContactForm is the model behind the contact form.
  */
-class OneClickOrder extends Model {
+class OneClickOrder extends EmailForm {
 
     public $name;
     public $phone;
     public $good;
+    public $count;
+    public $email;
     public $personal_accept;
+    public $subject = 'Заказ в 1 клик';
 
 //    public $verifyCode;
 
@@ -22,7 +25,7 @@ class OneClickOrder extends Model {
      */
     public function rules() {
         return [
-            [['name', 'phone', 'personal_accept', 'count'], 'required'],
+            [['name', 'phone', 'personal_accept', 'count', 'good'], 'required'],
             ['personal_accept', 'in', 'range' => [1]],
         ];
     }
@@ -38,25 +41,6 @@ class OneClickOrder extends Model {
             'good' => 'Товар',
             'personal_accept' => 'Я даю согласие на обратобку персональных данных',
         ];
-    }
-
-    /**
-     * Sends an email to the specified email address using the information collected by this model.
-     * @param string $email the target email address
-     * @return bool whether the model passes validation
-     */
-    public function contact($email) {
-        if ($this->validate()) {
-            Yii::$app->mailer->compose()
-                    ->setTo($email)
-                    ->setFrom([$this->email => $this->name])
-                    ->setSubject($this->subject)
-                    ->setTextBody($this->body)
-                    ->send();
-
-            return true;
-        }
-        return false;
     }
 
 }

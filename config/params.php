@@ -1,7 +1,8 @@
 <?php
 
 return [
-    'adminEmail' => 'admin@example.com',
+    'adminEmail' => 'kpsmol@gmail.com',
+    'senderEmail' => 'noreply@axioma.pro',
 //    'baseDomain' => $_SERVER['SERVER_NAME'],
     'defaultDomain' => 'axioma.pro',
     'baseDomain' => 'axioma.pro',

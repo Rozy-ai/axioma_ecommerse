@@ -5,7 +5,7 @@ $('#send-review-form').on('beforeSubmit', function (evt) {
     evt.preventDefault();
     var formData = new FormData($(this)[0]);
     $.ajax({
-        url: '/forms/default/call-back',
+        url: '/forms/default/send-review',
         type: 'POST',
         data: formData,
         async: false,
