@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use yii\bootstrap\Modal;
 
-$this->registerJsFile('@web/js/form/one_click.js', ['depends' => ['app\assets\AppAsset']]);
+$this->registerJsFile('@web/js/form/callback.js', ['depends' => ['app\assets\AppAsset']]);
 ?>
 
 <?php
