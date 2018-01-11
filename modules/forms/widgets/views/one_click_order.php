@@ -20,6 +20,7 @@ Modal::begin([
 <?= $form->field($model, 'name')->textInput() ?>
 <?= $form->field($model, 'phone')->textInput() ?>
 <?= $form->field($model, 'good')->textInput(['value' => $product->name, 'disabled' => 'disabled']) ?>
+<?= $form->field($model, 'good')->hiddenInput(['value' => $product->name]) ?>
 <?= $form->field($model, 'count')->textInput(['value' => 1, 'type' => 'number']) ?>
 <?=
 $form->field($model, 'personal_accept')->checkbox()->label('Я даю согласие на обратобку персональных данных. '

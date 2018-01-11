@@ -62,8 +62,10 @@ class EmailForm extends Model {
                     ->send();
 
             return true;
+        } else {
+            Yii::error($this->errors);
+            return false;
         }
-        return false;
     }
 
 }

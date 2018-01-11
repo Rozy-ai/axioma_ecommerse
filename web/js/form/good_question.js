@@ -16,7 +16,7 @@ $('#good-question-form').on('beforeSubmit', function (evt) {
             console.log(response);
             $('#good-question-form-modal').modal('hide');
             new jBox('Notice', {
-                content: 'Спасибо вопрос. На него ответят в ближайшее время',
+                content: 'Спасибо за вопрос. На него ответят в ближайшее время',
                 color: 'black'
             });
              $('#good-question-form')[0].reset();
