@@ -17,6 +17,11 @@ class City extends \app\models\City {
         return (self::findOne(['name_eng' => $name])) ? self::findOne(['name_eng' => $name])->id : false;
     }
 
+    public static function getCityNameById($id) {
+
+        return (self::findOne($id)) ? self::findOne($id)->name : false;
+    }
+
     public static function getCityNameByCode($code) {
 
         return (self::findOne(['name_eng' => $code])) ? self::findOne(['name_eng' => $code])->name : false;

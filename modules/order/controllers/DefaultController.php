@@ -52,6 +52,7 @@ class DefaultController extends Controller {
                 $order->client_name = $client->name;
                 $order->email = $client->email;
                 $order->phone = $client->phone;
+                $order->city_id = Yii::$app->city->getId();
                 $order->created_at = time();
 
                 if ($order->save()) {

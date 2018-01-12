@@ -26,6 +26,13 @@ $this->params['breadcrumbs'][] = $this->title;
 //            ['class' => 'yii\grid\SerialColumn'],
 
             'id',
+            [
+                'attribute' => 'city_id',
+                'format' => 'raw',
+                'value' => function($row) {
+                    return \app\modules\city\models\City::getCityNameById($row->city_id);
+                }
+            ],
             'client_name',
             'email:email',
             'phone',
