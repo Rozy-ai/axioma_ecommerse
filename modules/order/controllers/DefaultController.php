@@ -3,6 +3,7 @@
 namespace app\modules\order\controllers;
 
 use Yii;
+use yii\bootstrap\Html;
 use yii\web\Controller;
 use app\models\ClientForm;
 use app\modules\catalog\models\Catalog;
@@ -74,6 +75,9 @@ class DefaultController extends Controller {
                         }
                     endforeach;
 
+                    $this->sendClientMail($order->email);
+                    $this->sendAdminMail($order->id);
+
                     $session['cart'] = [];
                 } else {
 
@@ -94,6 +98,26 @@ class DefaultController extends Controller {
     public function actionThankyou() {
 
         return $this->render('thank_you');
+    }
+
+    private function sendClientMail($email) {
+
+        Yii::$app->mailer->compose()
+                ->setTo($email)
+                ->setFrom([Yii::$app->params['senderEmail'] => 'Axioma email Robot'])
+                ->setSubject('Axioma order')
+                ->setTextBody('Ваш заказ принят и обрабатывается.')
+                ->send();
+    }
+
+    private function sendAdminMail($order_id) {
+
+        Yii::$app->mailer->compose()
+                ->setTo(\app\modules\options\models\Options::getVal('email'))
+                ->setFrom([Yii::$app->params['senderEmail'] => 'Axioma email Robot'])
+                ->setSubject('Новый заказ')
+                ->setHtmlBody(Html::a('Заказ', ['https://axioma.pro/order/admin/view/' . $order_id]))
+                ->send();
     }
 
 }
