@@ -116,7 +116,7 @@ class DefaultController extends Controller {
                 ->setTo(\app\modules\options\models\Options::getVal('email'))
                 ->setFrom([Yii::$app->params['senderEmail'] => 'Axioma email Robot'])
                 ->setSubject('Новый заказ')
-                ->setHtmlBody(Html::a('Заказ', ['https://axioma.pro/order/admin/view/' . $order_id]))
+                ->setHtmlBody(Html::a('Заказ', 'https://www.axioma.pro/order/admin/view/' . $order_id))
                 ->send();
     }
 
