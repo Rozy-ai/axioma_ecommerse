@@ -53,7 +53,7 @@ class SiteController extends Controller {
                 'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
             ],
             'image-upload' => [
-                'class' => 'vova07\imperavi\actions\UploadAction',
+                'class' => 'vova07\imperavi\actions\UploadFileAction',
                 'url' => '/uploads/', // Directory URL address, where files are stored.
                 'path' => '@webroot/uploads/' // Or absolute path to directory where files are stored.
             ],
