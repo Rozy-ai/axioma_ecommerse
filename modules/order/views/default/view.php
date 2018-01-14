@@ -17,8 +17,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 <tr>
                     <th width="15%">Изображение</th>
                     <th>Наименование</th>
-                    <th width="15%">Количество</th>
-                    <th>Цена за еденицу</th>
+                    <th class="hidden-xs" width="15%">Количество</th>
+                    <th class="hidden-xs">Цена за еденицу</th>
                     <th>Сумма</th>
                 </tr>
 
