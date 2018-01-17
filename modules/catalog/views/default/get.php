@@ -33,8 +33,8 @@ $this->params['breadcrumbs'][] = $page->name;
 
                 <div class="col-xs-12 col-sm-6">
                     <div class="btn-group" role="group">
-                        <?= app\modules\forms\widgets\GoodQuestion::widget(['product_id' => $page->id]) ?>
-                        <?= app\modules\forms\widgets\SendReview::widget(['product_id' => $page->id]) ?>
+                        <?php // app\modules\forms\widgets\GoodQuestion::widget(['product_id' => $page->id]) ?>
+                        <?php // app\modules\forms\widgets\SendReview::widget(['product_id' => $page->id]) ?>
                         <p>
                             <br/>
                             <br/>
