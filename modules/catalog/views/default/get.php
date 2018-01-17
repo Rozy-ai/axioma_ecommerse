@@ -31,18 +31,18 @@ $this->params['breadcrumbs'][] = $page->name;
                     </div>
                 </div>
 
-                <div class="col-xs-12 col-sm-6">
-                    <div class="btn-group" role="group">
-                        <?php // app\modules\forms\widgets\GoodQuestion::widget(['product_id' => $page->id]) ?>
-                        <?php // app\modules\forms\widgets\SendReview::widget(['product_id' => $page->id]) ?>
-                        <p>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                        </p>
-                    </div>
-                </div>
+                <!--                <div class="col-xs-12 col-sm-6 ">
+                                    <div class="btn-group" role="group">
+                <?php // app\modules\forms\widgets\GoodQuestion::widget(['product_id' => $page->id]) ?>
+                <?php // app\modules\forms\widgets\SendReview::widget(['product_id' => $page->id]) ?>
+                                        <p>
+                                            <br/>
+                                            <br/>
+                                            <br/>
+                                            <br/>
+                                        </p>
+                                    </div>
+                                </div>-->
 
 
                 <div class="content2 col-xs-12">
