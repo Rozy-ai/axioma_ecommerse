@@ -13,7 +13,7 @@ var Cart = {
 
 //        data = {id: id, time: count, start_time: start_time, right: right, repeat: repeat, compilation_id: compilation_id, csrf: csrfToken};
 
-        console.log(data);
+//        console.log(data);
 
         $.post("/cart/default/add-to-cart", data)
                 .done(function (data) {

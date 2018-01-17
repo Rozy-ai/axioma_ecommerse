@@ -60,6 +60,12 @@ class DefaultController extends Controller {
 
             $post = Yii::$app->request->post();
 
+            $session = Yii::$app->session;
+
+            if (!isset($session['cart'])) {
+                $session['cart'] = $post;
+            }
+
             if (isset($post['product_id']) && isset($post['count'])):
 
                 $this->setCart($post);
@@ -108,7 +114,6 @@ class DefaultController extends Controller {
         }
     }
 
-
     private function setCart($post) {
 
         $new = 1;
@@ -137,6 +142,8 @@ class DefaultController extends Controller {
             }
         } else {
             $session['cart'] = $post;
+
+//            Yii::error($session['cart']);
         }
     }
 
