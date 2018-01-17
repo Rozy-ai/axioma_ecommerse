@@ -11,7 +11,7 @@ $this->registerJsFile('@web/js/form/send_review.js', ['depends' => ['app\assets\
 Modal::begin([
     'id' => 'send-review-form-modal',
     'header' => '<p class="h2">Отправить отзыв о товаре</p>',
-    'toggleButton' => ['label' => 'Оставить отзыв', 'class' => 'btn btn-primary'],
+    'toggleButton' => ['label' => 'Оставить отзыв', 'class' => 'btn btn-default'],
 ]);
 ?>
 

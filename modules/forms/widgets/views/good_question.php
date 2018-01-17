@@ -11,7 +11,7 @@ $this->registerJsFile('@web/js/form/good_question.js', ['depends' => ['app\asset
 Modal::begin([
     'id' => 'good-question-form-modal',
     'header' => '<p class="h2">Задать вопрос о товаре</p>',
-    'toggleButton' => ['label' => 'Задать вопрос о товаре', 'class' => 'btn btn-success'],
+    'toggleButton' => ['label' => 'Задать вопрос о товаре', 'class' => 'btn btn-default'],
 ]);
 ?>
 
