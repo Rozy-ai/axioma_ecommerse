@@ -53,6 +53,8 @@ use vova07\imperavi\Widget;
 
     <?= $form->field($model, 'seo_keywords')->textInput(['maxlength' => true]) ?>
 
+    <?= $form->field($model, 'ord')->textInput(['maxlength' => true]) ?>
+
     <?= $form->field($model, 'show')->checkbox() ?>
 
     <div class="form-group">

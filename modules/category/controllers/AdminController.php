@@ -37,7 +37,7 @@ class AdminController extends \app\controllers\AdminController {
         $searchModel = new SearchCategory();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        $model = \app\models\Category::find()->all();
+        $model = \app\models\Category::find()->orderBy(['ord' => SORT_DESC])->all();
 //        $cats = $this->createTree();
 //        print_r($cats);
         $tree = $this->form_tree($model);

@@ -18,7 +18,7 @@ class Category extends \app\models\Category {
 
         $result[] = 'Не указан';
 
-        $model = self::find()->orderBy(['title' => SORT_ASC])->all();
+        $model = self::find()->orderBy(['ord' => SORT_DESC])->all();
 
         foreach ($model as $item):
 
@@ -35,7 +35,7 @@ class Category extends \app\models\Category {
 
     public static function getRoot() {
 
-        $model = self::find()->where(['parent_id' => 187, 'show' => 1])->all();
+        $model = self::find()->where(['parent_id' => 187, 'show' => 1])->orderBy(['ord' => SORT_DESC])->all();
 
         return $model ? $model : false;
     }

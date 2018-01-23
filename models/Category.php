@@ -32,7 +32,7 @@ class Category extends UploadFile {
      */
     public function rules() {
         return [
-            [['parent_id', 'created_at', 'show'], 'integer'],
+            [['parent_id', 'created_at', 'show', 'ord'], 'integer'],
             [['content'], 'string'],
             [['created_at'], 'required'],
             [['title', 'uri', 'image', 'seo_title', 'seo_description', 'seo_keywords'], 'string', 'max' => 255],
