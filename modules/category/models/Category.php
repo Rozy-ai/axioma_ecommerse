@@ -90,7 +90,9 @@ class Category extends \app\models\Category {
 
             $this->collectIds($model->id);
 
-            return \app\modules\catalog\models\Catalog::findAll($this->products);
+            return \app\modules\catalog\models\Catalog::find()
+                            ->where(['id' => $this->products])
+                            ->orderBy(['ord' => SORT_DESC])->all();
         }
 
         return false;
@@ -129,6 +131,7 @@ class Category extends \app\models\Category {
                         ->select(['id'])
                         ->where(['cat_main' => $id])
                         ->orWhere(['like', 'cats', "%{$id}%", false])
+                        ->orderBy(['ord' => SORT_DESC])
                         ->asArray()
                         ->all();
     }
