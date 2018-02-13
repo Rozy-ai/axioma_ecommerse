@@ -7,9 +7,9 @@ use yii\helpers\Html;
     <a href="/category/<?= $model->uri ?>">
         <div class="grid-item">
             <?= Html::img($model->image, ['class' => 'img', 'height' => 160]) ?>
-            <p>
-                <?= Html::a($model->title, ['/category/' . $model->uri], ['class' => 'link']) ?>
-            </p>
+            <!--<p>-->
+            <?= Html::tag('p',$model->title, ['class' => 'link']) ?>
+            <!--</p>-->
         </div>
     </a>
 </div>

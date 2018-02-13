@@ -10,7 +10,7 @@ $this->registerJsFile('@web/js/form/callback.js', ['depends' => ['app\assets\App
 <?php
 Modal::begin([
     'id' => 'callback-form-modal',
-    'header' => '<p class="h2" class="text-center">Заказать звонок</p>',
+    'header' => '<p class="h2 text-center">Заказать звонок</p>',
     'toggleButton' => ['label' => 'Заказать звонок', 'class' => 'btn-link'],
     'class' => 'text-left'
 ]);
