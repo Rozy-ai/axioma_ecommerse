@@ -58,7 +58,7 @@ class Category extends \app\models\Category {
 //
         if (count($url) > 0) {
 
-            $result[] = ['url' => '/catalog/', 'label' => 'Каталог'];
+            $result[] = ['url' => '/catalog', 'label' => 'Каталог'];
             $_url = '';
 
             for ($i = 1; $i < count($url); $i++) {

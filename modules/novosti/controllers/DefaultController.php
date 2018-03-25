@@ -10,6 +10,8 @@ use app\modules\novosti\models\News;
 
 class DefaultController extends Controller {
 
+    const NAME = 'Новости';
+
     public function actionIndex() {
 
         // Грузим все новости кто включён и ниже сегодняшней даты
@@ -20,11 +22,20 @@ class DefaultController extends Controller {
         // подключаем класс Pagination, выводим по 10 пунктов на страницу
         $pages = new Pagination(['totalCount' => $countQuery->count(), 'pageSize' => 5]);
         // приводим параметры в ссылке к ЧПУ
+
         $pages->pageSizeParam = false;
         $models = $query->offset($pages->offset)
                 ->limit($pages->limit)
                 ->all();
-        // Передаем данные в представление
+
+        $request = Yii::$app->request->get();
+
+//        print_r($request);
+//title
+        Yii::$app->view->title = self::NAME . ',  ' . ((isset($request['page'])) ? ' Страница - ' . $request['page'] . ' ,' : '') .
+                Yii::$app->session->get('current_city') . ', ' . Yii::$app->name;
+
+
         return $this->render('index', [
                     'models' => $models,
                     'pages' => $pages,

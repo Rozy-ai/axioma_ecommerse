@@ -4,7 +4,7 @@ use yii\bootstrap\Html;
 
 //print_r($parent);
 if ($parent && $parent->id != 1)
-    $this->params['breadcrumbs'][] = ['url' => '/catalog/', 'label' => 'Каталог'];
+    $this->params['breadcrumbs'][] = ['url' => '/catalog', 'label' => 'Каталог'];
 $this->params['breadcrumbs'][] = $page->name;
 ?>
 <div class="product_item">

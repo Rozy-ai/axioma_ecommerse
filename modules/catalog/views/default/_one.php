@@ -7,7 +7,7 @@ use yii\helpers\Html;
 
     <div class="col-sm-2 hidden-xs">
         <?=
-        Html::a(Html::img($model->image, ['class' => 'img pull-right img-rounded',
+        Html::a(Html::img($model->image, ['class' => 'img pull-right img-rounded img-responsive center-block',
                     'width' => 160
                 ]), ['/category/' . $model->uri], ['class' => 'link'])
         ?>
@@ -18,7 +18,7 @@ use yii\helpers\Html;
             <?= Html::a($model->title, ['/category/' . $model->uri], ['class' => 'link']) ?>
         </p>
         <?=
-        Html::a(Html::img($model->image, ['class' => 'img img-rounded'
+        Html::a(Html::img($model->image, ['class' => 'img img-rounded img-responsive  center-block'
                 ]), ['/category/' . $model->uri], ['class' => 'link hidden-sm hidden-md hidden-lg'])
         ?>
 

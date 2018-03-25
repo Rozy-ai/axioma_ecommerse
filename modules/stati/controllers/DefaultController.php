@@ -10,11 +10,14 @@ use app\modules\stati\models\Stati;
 
 class DefaultController extends Controller {
 
+    const NAME = 'Статьи';
+
     public function actionIndex() {
 
         // Грузим все новости кто включён и ниже сегодняшней даты
 
-        $query = Stati::find()->where(['parent_id' => Stati::PARENT_ID])->orderBy(['create_time' => SORT_DESC]);
+        $query = Stati::find()->where(['parent_id' => Stati::PARENT_ID])
+                ->orderBy(['create_time' => SORT_DESC]);
         // делаем копию выборки
         $countQuery = clone $query;
         // подключаем класс Pagination, выводим по 10 пунктов на страницу
@@ -24,7 +27,13 @@ class DefaultController extends Controller {
         $models = $query->offset($pages->offset)
                 ->limit($pages->limit)
                 ->all();
-        // Передаем данные в представление
+
+        // Заголовок с пагинацией
+        $request = Yii::$app->request->get();
+        Yii::$app->view->title = self::NAME . ',  ' . ((isset($request['page'])) ? ' Страница - ' . $request['page'] . ' ,' : '') .
+                Yii::$app->session->get('current_city') . ', ' . Yii::$app->name;
+
+//         Передаем данные в представление
         return $this->render('index', [
                     'models' => $models,
                     'pages' => $pages,

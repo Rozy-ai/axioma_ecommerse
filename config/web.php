@@ -9,6 +9,7 @@ $aliases = require(__DIR__ . '/aliases.php');
 
 $config = [
     'id' => 'basic',
+    'name' => 'Аксиома',
     'language' => 'ru-RU',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
@@ -73,6 +74,7 @@ $config = [
 //        'db_old' => $db2,
         'urlManager' => [
             'enablePrettyUrl' => true,
+            'enableStrictParsing' => true,
             'showScriptName' => false,
             'rules' => [
                 '/' => 'site/index',

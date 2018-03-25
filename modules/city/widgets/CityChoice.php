@@ -17,6 +17,9 @@ class CityChoice extends Widget {
 
         $host = $_SERVER['HTTP_HOST'];
         $this->current_city = ((count($arr = explode('.', $_SERVER['HTTP_HOST'])) == 3 && $arr[0] != 'www')) ? $arr[0] : $this->default_city;
+
+        // Добавляем текущий город в сессию для других модулей
+        Yii::$app->session->set('current_city', City::getCityNameByCode($this->current_city));
 //        $this->current_city = $this->default_city;
 
         parent::init();
