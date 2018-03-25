@@ -9,11 +9,19 @@ $aliases = require(__DIR__ . '/aliases.php');
 
 $config = [
     'id' => 'basic',
-    'language' => 'ru',
+    'language' => 'ru-RU',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'aliases' => $aliases,
     'components' => [
+        'formatter' => [
+            'class' => 'yii\i18n\Formatter',
+            'dateFormat' => 'php:d.m.Y',
+            'datetimeFormat' => 'php:j F, H:i',
+            'timeFormat' => 'php:H:i:s',
+            'defaultTimeZone' => 'Europe/Moscow',
+            'locale' => 'ru-RU'
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'lAY7hnMW853jpsz1y8s3cD-yfYzQFDBD',
