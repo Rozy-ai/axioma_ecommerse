@@ -26,6 +26,24 @@ use vova07\imperavi\Widget;
     <?= $form->field($model, 'uri')->textInput(['maxlength' => true]) ?>
 
     <?=
+    $form->field($model, 'preview')->widget(Widget::className(), [
+        'settings' => [
+            'lang' => 'ru',
+            'imageUpload' => Url::to(['/site/image-upload']),
+            'imageManagerJson' => Url::to(['/site/images-get']),
+            'minHeight' => 100,
+            'plugins' => [
+                'clips',
+                'fullscreen',
+                'fontcolor',
+                'imagemanager',
+            ],
+            'replaceDivs' => false,
+            'deniedTags' => ['style']
+        ]
+    ]);
+    ?>
+    <?=
     $form->field($model, 'content')->widget(Widget::className(), [
         'settings' => [
             'lang' => 'ru',
@@ -36,8 +54,10 @@ use vova07\imperavi\Widget;
                 'clips',
                 'fullscreen',
                 'fontcolor',
-                'imagemanager'
-            ]
+                'imagemanager',
+            ],
+            'replaceDivs' => false,
+            'deniedTags' => ['style']
         ]
     ]);
     ?>

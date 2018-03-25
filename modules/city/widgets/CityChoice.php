@@ -35,7 +35,7 @@ class CityChoice extends Widget {
                 $links .= Html::tag('strong', $city->name) . '<br/>';
             else
                 $links .= ($city->name_eng == $this->default_city) ?
-                        Html::a($city->name, 'https://' . Yii::$app->params['defaultDomain'] . '/' . Yii::$app->request->pathInfo) . '<br/>' :
+                        Html::a($city->name, 'https://www.' . Yii::$app->params['defaultDomain'] . '/' . Yii::$app->request->pathInfo) . '<br/>' :
                         Html::a($city->name, 'https://' . $city->name_eng . '.' . Yii::$app->params['baseDomain'] . '/' . Yii::$app->request->pathInfo) . '<br/>';
         endforeach;
 

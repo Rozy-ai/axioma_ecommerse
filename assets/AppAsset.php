@@ -19,6 +19,7 @@ class AppAsset extends AssetBundle {
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
+        'css/magnific-popup.css',
         'css/site.css',
         'css/slick.css',
         'css/slick-theme.css',
@@ -28,6 +29,7 @@ class AppAsset extends AssetBundle {
         'css/jBox/jBox.Notice.css',
     ];
     public $js = [
+        'js/jquery.magnific-popup.min.js',
         'js/common.js',
         'js/slick.min.js',
         'js/owl.carousel.min.js',

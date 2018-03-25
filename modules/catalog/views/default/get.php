@@ -14,7 +14,7 @@ $this->params['breadcrumbs'][] = $page->name;
         <div class="col-xs-12 col-sm-4 category-menu">
             <?= app\modules\category\widgets\MenuCategory::widget(); ?>
         </div>
-        <div class="col-xs-12 col-sm-8">
+        <div class="col-xs-12 col-sm-8 content-block">
             <h1 good-id="<?= $page->id ?>"><?= $page->h1 ? $page->h1 : $page->name ?></h1>
 
 
