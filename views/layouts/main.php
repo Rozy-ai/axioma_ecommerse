@@ -92,7 +92,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                         <div class="col-xs-12 col-sm-3 text-right">
                             <p class="phone"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> <a href="tel:<?= Info::get(3) ?>"><?= Info::get(3) ?></a></p>
                             <?= \app\modules\forms\widgets\CallBack::widget(); ?>
-                            <?php ActiveForm::begin(['method' => 'get', 'action' => '/search/default/index', 'id' => 'popup-search']); ?>
+                            <?php ActiveForm::begin(['method' => 'get', 'action' => '/search', 'id' => 'popup-search']); ?>
                             <div class="row">
                                 <div class="col-xs-12 search">
                                     <div class="input-group">
