@@ -29,7 +29,7 @@ Modal::begin([
     ?>
 </div>
 <div class="form-group">
-    <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary']) ?>
+    <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary', 'onClick' => "yaCounter23717086.reachGoal('callback-sent'); return true;"]) ?>
 </div>
 
 <?php

@@ -11,7 +11,7 @@ $this->registerJsFile('@web/js/form/one_click.js', ['depends' => ['app\assets\Ap
 Modal::begin([
     'id' => 'oneclick-form-modal',
     'header' => '<p class="h2">Купить в 1 клик</p>',
-    'toggleButton' => ['label' => 'Купить в 1 клик', 'class' => 'btn btn-success'],
+    'toggleButton' => ['label' => 'Купить в 1 клик', 'class' => 'btn btn-success', 'onClick' => "yaCounter23717086.reachGoal('oneclick'); return true;"],
 ]);
 ?>
 
@@ -29,7 +29,9 @@ $form->field($model, 'personal_accept')->checkbox()->label('Я даю согла
 ?>
 
 <div class="form-group">
-    <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary']) ?>
+    <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary',
+        'onClick' => "yaCounter23717086.reachGoal('oneclick-sent'); return true;"])
+    ?>
 </div>
 
 <?php

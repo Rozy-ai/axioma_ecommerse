@@ -33,7 +33,7 @@ use yii\bootstrap\ActiveForm;
 
             <?= $model->price ? '' : '<p>После оформления заказа с вами свяжется менеджер.</p>' ?>
             <div class="btn-group" role="group">
-                <?= Html::button('Добавить в корзину', ['class' => 'btn btn-primary', 'onclick' => 'Cart.AddCart()']) ?>
+                <?= Html::button('Добавить в корзину', ['class' => 'btn btn-primary', 'onclick' => "yaCounter23717086.reachGoal('addcart'); Cart.AddCart()"]) ?>
                 <?php ActiveForm::end(); ?>
                 <?= \app\modules\forms\widgets\OneClickOrder::widget(['product_id' => $model->id]) ?>
             </div>
