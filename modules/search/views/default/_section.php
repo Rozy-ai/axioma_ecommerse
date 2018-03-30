@@ -9,5 +9,5 @@ use yii\helpers\Html;
         <?= $model->anons ?>
     </p>
 
-    <?= Html::a('Подробнее', ['/catalog/default/get', 'url' => $model->url]); ?>
+    <?= Html::a('Подробнее', ['/catalog/default/get', 'uri' => $model->url]); ?>
 </div>
