@@ -95,6 +95,7 @@ $config = [
 //                '/category/<category:[-\w]+>/<subcategory:[-\w]+>' => 'category/default/get',
                 '/stati' => '/stati/default/index',
                 '/cart' => '/cart/default/index',
+                '/search' => '/search/default/index',
                 '/novosti/<url:[-\w]+>' => 'novosti/default/get',
                 '/stati/<url:[-\w]+>' => 'stati/default/get',
                 '<module:[-\w]+>/<controller:[-\w]+>/<action:[-\w]+>/<id:\d+>' => '<module>/<controller>/<action>',
