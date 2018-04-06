@@ -43,6 +43,7 @@ AdminAsset::register($this);
                     ['label' => 'Слайдер', 'url' => ['/slider/admin/index']],
                     ['label' => 'Новости', 'url' => ['/novosti/admin/index']],
                     ['label' => 'Статьи', 'url' => ['/stati/admin/index']],
+                    ['label' => 'ИнфоБлоки', 'url' => ['/info/admin/index']],
 //                    ['label' => 'Настройки', 'url' => ['/options/admin/index']],
                     ['label' => 'Страницы', 'url' => ['#'], 'items' => [
                             ['label' => 'Главная', 'url' => ['/page/admin/update/1']],
