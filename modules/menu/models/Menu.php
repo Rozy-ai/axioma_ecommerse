@@ -31,7 +31,7 @@ class Menu extends \app\models\Menu {
 
     public static function getFooterItems() {
 
-        $model = self::find()->where(['parent_id' => self::TOP_ID, 'act' => 1])
+        $model = self::find()->where(['parent_id' => self::FOOTER_ID, 'act' => 1])
                         ->orderBy(['ord' => SORT_ASC])->all();
 
         $result = '';
