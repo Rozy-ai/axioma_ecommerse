@@ -15,6 +15,8 @@ use app\modules\order\models\OrderItem;
  */
 class DefaultController extends Controller {
 
+    public $admin_mail_body;
+
     public function actionIndex() {
 
         return $this->render('index', [
@@ -56,7 +58,16 @@ class DefaultController extends Controller {
                 $order->city_id = Yii::$app->city->getId();
                 $order->created_at = time();
 
+
+
                 if ($order->save()) {
+
+                    $this->admin_mail_body = 'Заказ ' . $order->id . PHP_EOL .
+                            'Покупатель ' . $order->client_name . PHP_EOL .
+                            'Email ' . $order->email . PHP_EOL .
+                            'Телефон ' . $order->phone . PHP_EOL .
+                            ' --------------- ' . PHP_EOL .
+                            '';
 
                     foreach ($data as $k => $item):
                         if (isset($item['product_id'])) {
@@ -68,17 +79,25 @@ class DefaultController extends Controller {
                             $order_item->price = Catalog::getPrice($item['product_id']);
 
                             if ($order_item->save()) {
-                                $session['cart'] = [];
-                                $this->redirect('thankyou');
+
+                                $this->admin_mail_body .= ''
+                                        . $k . ' | ' . $order_item->name . ' | '
+                                        . $order_item->count . ' | '
+                                        . $order_item->price . PHP_EOL;
+//                                $session['cart'] = [];
+//                                $this->redirect('thankyou');
                             } else
                                 print_r($order->errors);
                         }
                     endforeach;
 
+
+
                     $this->sendClientMail($order->email);
                     $this->sendAdminMail($order->id);
 
                     $session['cart'] = [];
+                    $this->redirect('thankyou');
                 } else {
 
                     print_r($order->errors);
@@ -112,11 +131,12 @@ class DefaultController extends Controller {
 
     private function sendAdminMail($order_id) {
 
+
         Yii::$app->mailer->compose()
                 ->setTo(\app\modules\options\models\Options::getVal('email'))
                 ->setFrom([Yii::$app->params['senderEmail'] => 'Axioma email Robot'])
                 ->setSubject('Новый заказ')
-                ->setHtmlBody(Html::a('Заказ', 'https://www.axioma.pro/order/admin/view?id=' . $order_id))
+                ->setHtmlBody($this->admin_mail_body)
                 ->send();
     }
 
