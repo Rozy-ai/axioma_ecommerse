@@ -43,7 +43,7 @@ use kartik\datetime\DateTimePicker;
                         'fullscreen',
                         'fontcolor',
                         'imagemanager'
-                    ]
+                    ], 'replaceDivs' => false,
                 ]
             ]);
             ?>
@@ -59,7 +59,7 @@ use kartik\datetime\DateTimePicker;
                         'fullscreen',
                         'fontcolor',
                         'imagemanager'
-                    ]
+                    ], 'replaceDivs' => false,
                 ]
             ]);
             ?>

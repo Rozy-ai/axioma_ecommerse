@@ -35,7 +35,7 @@ use vova07\imperavi\Widget;
                         'clips',
                         'fullscreen',
                         'fontcolor'
-                    ]
+                    ], 'replaceDivs' => false,
                 ]
             ]);
             ?>

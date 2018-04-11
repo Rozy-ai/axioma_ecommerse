@@ -24,7 +24,7 @@ use yii\helpers\Url;
                 'clips',
                 'fullscreen',
                 'fontcolor'
-            ]
+            ], 'replaceDivs' => false,
         ]
     ]);
     ?>
@@ -38,7 +38,7 @@ use yii\helpers\Url;
                 'clips',
                 'fullscreen',
                 'fontcolor'
-            ]
+            ], 'replaceDivs' => false,
         ]
     ]);
     ?>
@@ -52,7 +52,7 @@ use yii\helpers\Url;
                 'clips',
                 'fullscreen',
                 'fontcolor'
-            ]
+            ], 'replaceDivs' => false,
         ]
     ]);
     ?>

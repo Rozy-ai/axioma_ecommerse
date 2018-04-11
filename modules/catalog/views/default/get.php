@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $page->name;
 
             <div class="row cart-item">
                 <div class="content col-xs-12 col-sm-6">
-                    <?= $page->image ? Html::img($page->image, ['class' => 'img img-responsive center-block']) : ''; ?>
+                    <?= $page->image ? Html::img($page->image, ['class' => 'img img-responsive center-block', 'alt' => $page->h1 ? $page->h1 : $page->name]) : ''; ?>
 
                 </div>
                 <div class="content col-xs-12 col-sm-6 ">

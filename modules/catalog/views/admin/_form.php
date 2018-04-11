@@ -37,7 +37,8 @@ use kartik\widgets\Select2;
                         'clips',
                         'fullscreen',
                         'fontcolor'
-                    ]
+                    ],
+                    'replaceDivs' => false,
                 ]
             ]);
             ?>
@@ -53,7 +54,8 @@ use kartik\widgets\Select2;
                         'fullscreen',
                         'fontcolor',
                         'imagemanager'
-                    ]
+                    ],
+                    'replaceDivs' => false,
                 ]
             ]);
             ?>
@@ -69,7 +71,8 @@ use kartik\widgets\Select2;
                         'fullscreen',
                         'fontcolor',
                         'imagemanager'
-                    ]
+                    ],
+                    'replaceDivs' => false,
                 ]
             ]);
             ?>

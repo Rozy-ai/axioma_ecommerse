@@ -25,6 +25,9 @@ class UploadFile extends \yii\db\ActiveRecord {
         if (($this->hasAttribute('anons')))
             $this->anons = $this->replaceShortCodes($this->anons);
 
+        if (($this->hasAttribute('preview')))
+            $this->preview = $this->replaceShortCodes($this->preview);
+
         if (($this->hasAttribute('content')))
             $this->content = $this->replaceShortCodes($this->content);
 

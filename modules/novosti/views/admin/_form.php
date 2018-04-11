@@ -17,12 +17,12 @@ use kartik\datetime\DateTimePicker;
 
 <div class="news-form">
 
-<?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin(); ?>
 
     <div class="row">
 
         <div class="form-group col-xs-12 text-right">
-<?= Html::submitButton($model->isNewRecord ? 'Создать' : 'Обновить', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+            <?= Html::submitButton($model->isNewRecord ? 'Создать' : 'Обновить', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
         </div>
 
         <div class="col-xs-12 col-md-8">
@@ -44,6 +44,7 @@ use kartik\datetime\DateTimePicker;
                         'fontcolor',
                         'imagemanager'
                     ]
+                    , 'replaceDivs' => false,
                 ]
             ]);
             ?>
@@ -60,6 +61,7 @@ use kartik\datetime\DateTimePicker;
                         'fontcolor',
                         'imagemanager'
                     ]
+                    , 'replaceDivs' => false,
                 ]
             ]);
             ?>
@@ -80,12 +82,12 @@ use kartik\datetime\DateTimePicker;
             <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
             <?= $form->field($model, 'keywords')->textInput(['maxlength' => true]) ?>
             <?= $form->field($model, 'ord')->textInput(['type' => 'number']) ?>
-<?= $form->field($model, 'act')->dropDownList($model::$_act) ?>
+            <?= $form->field($model, 'act')->dropDownList($model::$_act) ?>
 
         </div>
 
     </div>
 
-<?php ActiveForm::end(); ?>
+    <?php ActiveForm::end(); ?>
 
 </div>
