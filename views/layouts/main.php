@@ -159,7 +159,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                             <ul class="list-unstyled list-inline">
                                 <li><a href="/">Главная</a></li>
                                 <?= Menu::getFooterItems() ?>
-                                <li><a href="/soglaschenie">Соглашение о конфиденциальности личных данных</a></li>
+                                <!--<li><a href="/soglaschenie">Соглашение о конфиденциальности личных данных</a></li>-->
                             </ul>
 
                         </div>
