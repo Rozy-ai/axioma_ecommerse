@@ -35,7 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'news_type',
             // 'content:ntext',
             // 'content2:ntext',
-            // 'act',
+             'act',
              'ord',
             // 'url:url',
             // 'title',

@@ -3,67 +3,45 @@
 namespace app\modules\menu\models;
 
 use Yii;
+use yii\bootstrap\Html;
 
-/**
- * This is the model class for table "tbl_menu".
- *
- * @property integer $id
- * @property string $model
- * @property integer $parent_id
- * @property integer $core_id
- * @property integer $find_id
- * @property string $name
- * @property string $title
- * @property string $url
- * @property integer $act
- * @property integer $ord
- * @property string $menu_type
- * @property string $create_time
- * @property string $update_time
- */
-class Menu extends \yii\db\ActiveRecord
-{
-    /**
-     * @inheritdoc
-     */
-    public static function tableName()
-    {
-        return 'tbl_menu';
+class Menu extends \app\models\Menu {
+
+    const TOP_ID = 1;
+    const FOOTER_ID = 54;
+
+    public static function getTopItems() {
+
+        $model = self::find()->where(['parent_id' => self::TOP_ID, 'act' => 1])
+                        ->orderBy(['ord' => SORT_ASC])->all();
+
+        $result = [];
+
+        $result[] = ['label' => '<span class="glyphicon glyphicon-home"></span>', 'url' => ['/site/index']];
+
+        foreach ($model as $item):
+
+            $result[] = ['label' => $item->name, 'url' => ['/' . $item->url]];
+        endforeach;
+
+        $result[] = ['label' => '<span class="glyphicon glyphicon-shopping-cart"></span>', 'url' => ['/cart']];
+
+        return $result;
     }
 
-    /**
-     * @inheritdoc
-     */
-    public function rules()
-    {
-        return [
-            [['model', 'parent_id', 'name'], 'required'],
-            [['parent_id', 'core_id', 'find_id', 'act', 'ord'], 'integer'],
-            [['create_time', 'update_time'], 'safe'],
-            [['model', 'name', 'title', 'url'], 'string', 'max' => 255],
-            [['menu_type'], 'string', 'max' => 50],
-        ];
+    public static function getFooterItems() {
+
+        $model = self::find()->where(['parent_id' => self::TOP_ID, 'act' => 1])
+                        ->orderBy(['ord' => SORT_ASC])->all();
+
+        $result = '';
+
+        foreach ($model as $item):
+
+            $result .= Html::tag('li', Html::a($item->name, ['/' . $item->url]));
+        endforeach;
+
+        return $result;
     }
 
-    /**
-     * @inheritdoc
-     */
-    public function attributeLabels()
-    {
-        return [
-            'id' => 'ID',
-            'model' => 'Model',
-            'parent_id' => 'Parent ID',
-            'core_id' => 'Core ID',
-            'find_id' => 'Find ID',
-            'name' => 'Name',
-            'title' => 'Title',
-            'url' => 'Url',
-            'act' => 'Act',
-            'ord' => 'Ord',
-            'menu_type' => 'Menu Type',
-            'create_time' => 'Create Time',
-            'update_time' => 'Update Time',
-        ];
-    }
 }

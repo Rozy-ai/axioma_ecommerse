@@ -44,6 +44,7 @@ AdminAsset::register($this);
                     ['label' => 'Новости', 'url' => ['/novosti/admin/index']],
                     ['label' => 'Статьи', 'url' => ['/stati/admin/index']],
                     ['label' => 'ИнфоБлоки', 'url' => ['/info/admin/index']],
+                    ['label' => 'Меню', 'url' => ['/menu/admin/index']],
 //                    ['label' => 'Настройки', 'url' => ['/options/admin/index']],
                     ['label' => 'Страницы', 'url' => ['#'], 'items' => [
                             ['label' => 'Главная', 'url' => ['/page/admin/update/1']],
@@ -58,7 +59,7 @@ AdminAsset::register($this);
                             '<li class="divider"></li>',
                             ['label' => 'Контакты', 'url' => ['/page/admin/update/182']],
                             '<li class="divider"></li>',
-                            ['label' => 'Согласие на обработку персональных данных', 'url' => ['/page/admin/update/4988']],
+                            ['label' => 'Соглашение о конфиденциальности личной информации', 'url' => ['/page/admin/update/4434']],
                         ]],
                     ['label' => 'SEO', 'url' => ['#'], 'items' => [
                             ['label' => 'Города', 'url' => ['/city/admin/index']],

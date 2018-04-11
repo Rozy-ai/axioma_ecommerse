@@ -79,6 +79,10 @@ use kartik\datetime\DateTimePicker;
             <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
             <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
             <?= $form->field($model, 'keywords')->textInput(['maxlength' => true]) ?>
+            <label>Изображение</label><br/>
+            <?= !$model->image ? '' : Html::img($model->image, ['width' => '300']); ?>
+
+            <?= $form->field($model, 'img_file')->fileInput(['accept' => 'image/*']) ?>
             <?= $form->field($model, 'ord')->textInput(['type' => 'number']) ?>
             <?= $form->field($model, 'act')->dropDownList($model::$_act) ?>
 
