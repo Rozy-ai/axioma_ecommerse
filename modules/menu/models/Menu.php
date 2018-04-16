@@ -24,7 +24,7 @@ class Menu extends \app\models\Menu {
             if ($item->url == 'catalog/default/index') {
 
 
-                $items[] = ['label' => 'Категории', 'url' => ['/' . $item->url]];
+//                $items[] = ['label' => 'Категории', 'url' => ['/' . $item->url]];
 
                 $model = Category::getRoot();
 
