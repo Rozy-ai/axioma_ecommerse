@@ -29,7 +29,7 @@ class Menu extends \app\models\Menu {
                 $model = Category::getRoot();
 
                 foreach ($model as $_item)
-                    $items[] = ['label' => $_item->title, 'url' => ['/' . $_item->uri]];
+                    $items[] = ['label' => $_item->title, 'url' => ['/category/' . $_item->uri]];
 
                 $result[] = ['label' => $item->name,
                     'url' => ['/' . $item->url],
