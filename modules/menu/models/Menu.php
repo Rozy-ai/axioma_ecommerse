@@ -4,6 +4,7 @@ namespace app\modules\menu\models;
 
 use Yii;
 use yii\bootstrap\Html;
+use app\modules\category\models\Category;
 
 class Menu extends \app\models\Menu {
 
@@ -20,8 +21,22 @@ class Menu extends \app\models\Menu {
         $result[] = ['label' => '<span class="glyphicon glyphicon-home"></span>', 'url' => ['/site/index']];
 
         foreach ($model as $item):
+            if ($item->url == 'catalog/default/index') {
 
-            $result[] = ['label' => $item->name, 'url' => ['/' . $item->url]];
+
+                $items[] = ['label' => 'Категории', 'url' => ['/' . $item->url]];
+
+                $model = Category::getRoot();
+
+                foreach ($model as $_item)
+                    $items[] = ['label' => $_item->title, 'url' => ['/' . $_item->uri]];
+
+                $result[] = ['label' => $item->name,
+                    'url' => ['/' . $item->url],
+                    'items' => $items,
+                ];
+            } else
+                $result[] = ['label' => $item->name, 'url' => ['/' . $item->url]];
         endforeach;
 
         $result[] = ['label' => '<span class="glyphicon glyphicon-shopping-cart"></span>', 'url' => ['/cart']];

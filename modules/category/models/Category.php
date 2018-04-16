@@ -29,6 +29,11 @@ class Category extends \app\models\Category {
         return $result ? $result : false;
     }
 
+    public static function getAll() {
+
+        return ($model = self::findAll(['show' => 1])) ? $model : false;
+    }
+
     public function getChilds() {
         return $this->hasMany(self::className(), ['parent_id' => 'id']);
     }

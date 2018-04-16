@@ -12,7 +12,7 @@ use yii\bootstrap\ActiveForm;
 use app\modules\region_templates\models\RegionTemplates;
 use app\modules\menu\models\Menu;
 
-print_r(Menu::getTopItems());
+//print_r(Menu::getTopItems());
 
 AppAsset::register($this);
 
