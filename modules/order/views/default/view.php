@@ -53,7 +53,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <?= $form->field($client, 'phone') ?>
 
             <?=
-            $form->field($client, 'personal_accept')->checkbox()->label('Я даю согласие на обратобку персональных данных. '
+            $form->field($client, 'personal_accept')->checkbox()->label('Я даю согласие на обработку персональных данных. '
                     . Html::a('Ознакомиться с условиями', ['/soglasie'], ['target' => '_blank'])
             )
             ?>
