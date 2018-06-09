@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use yii\bootstrap\Modal;
+use yii\widgets\MaskedInput;
 
 $this->registerJsFile('@web/js/form/callback.js', ['depends' => ['app\assets\AppAsset']]);
 ?>
@@ -21,9 +22,14 @@ Modal::begin([
 <?php $form = ActiveForm::begin(['id' => 'callback-form', 'enableClientValidation' => true,]); ?>
 <div class="text-left">
     <?= $form->field($model, 'name')->textInput() ?>
-    <?= $form->field($model, 'phone')->textInput() ?>
     <?=
-    $form->field($model, 'personal_accept')->checkbox()->label('Я даю согласие на обратобку персональных данных. '
+    $form->field($model, 'phone')->widget(MaskedInput::className(), [
+        'mask' => '+7 (999) 999-9999',
+        'options' => ['placeholder' => 'Телефон', 'class' => 'form-control'],
+    ])
+    ?>
+    <?=
+    $form->field($model, 'personal_accept')->checkbox()->label('Я даю согласие на обработку персональных данных. '
             . Html::a('Ознакомиться с условиями', ['/soglasie'], ['target' => '_blank'])
     )
     ?>

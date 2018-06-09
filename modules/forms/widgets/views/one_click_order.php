@@ -23,7 +23,7 @@ Modal::begin([
 <?= $form->field($model, 'good')->hiddenInput(['value' => $product->name]) ?>
 <?= $form->field($model, 'count')->textInput(['value' => 1, 'type' => 'number']) ?>
 <?=
-$form->field($model, 'personal_accept')->checkbox()->label('Я даю согласие на обратобку персональных данных. '
+$form->field($model, 'personal_accept')->checkbox()->label('Я даю согласие на обработку персональных данных. '
         . Html::a('Ознакомиться с условиями', ['/soglasie'], ['target' => '_blank'])
 )
 ?>
