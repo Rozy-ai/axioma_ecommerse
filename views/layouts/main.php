@@ -95,7 +95,13 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
 
                         </div>
                         <div class="col-xs-12 col-sm-3 text-right">
-                            <p class="phone"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> <a href="tel:<?= Info::get(3) ?>"><?= Info::get(3) ?></a></p>
+                            <p class="phone"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+                                <a href="tel:<?= Info::get(3) ?>"><?= Info::get(3) ?></a><br/>
+                                <?php if ($work_time = Yii::$app->options::getVal('work_time')): ?>
+                                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                    <span class="work_time"><?= $work_time ?></span>
+                                <?php endif; ?>
+                            </p>
                             <?= \app\modules\forms\widgets\CallBack::widget(); ?>
                             <?php ActiveForm::begin(['method' => 'get', 'action' => '/search', 'id' => 'popup-search']); ?>
                             <div class="row">
@@ -103,7 +109,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                     <div class="input-group">
                                         <input  name="q" type="text" class="form-control" placeholder="Поиск..">
                                         <span class="input-group-btn">
-                                            <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+                                            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                                         </span>
                                     </div><!-- /input-group -->
                                 </div><!-- /.col-lg-6 -->
