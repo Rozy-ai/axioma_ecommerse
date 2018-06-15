@@ -1,4 +1,5 @@
 $(document).on('ready', function () {
+
     $(".vertical-center-4").slick({
         dots: true,
         vertical: true,
@@ -78,13 +79,13 @@ $(document).on('ready', function () {
     });
 
 //  popup image
-$('.popup').magnificPopup({
-    type: 'image',
-    gallery: {
-        // options for gallery
-        enabled: false
-    },
-    // other options
-});
+    $('.popup').magnificPopup({
+        type: 'image',
+        gallery: {
+            // options for gallery
+            enabled: false
+        },
+        // other options
+    });
 
 });

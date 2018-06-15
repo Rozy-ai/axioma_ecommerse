@@ -28,6 +28,9 @@ $config = [
             'cookieValidationKey' => 'lAY7hnMW853jpsz1y8s3cD-yfYzQFDBD',
             'baseUrl' => '',
         ],
+        'view' => [
+            'class' => 'app\components\CustomView',
+        ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],

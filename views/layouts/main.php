@@ -34,6 +34,11 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
         <?= Html::csrfMetaTags() ?>
         <title><?= Html::encode($this->title) ?></title>
         <?php $this->head() ?>
+        <style type="text/css">
+            body {
+                display: none;
+            }
+        </style>
     </head>
     <body>
         <?php $this->beginBody() ?>
