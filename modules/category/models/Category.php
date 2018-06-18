@@ -47,7 +47,9 @@ class Category extends \app\models\Category {
 
     public static function getByUri($uri) {
 
-        return ($model = self::find()->where(['uri' => $uri])->one()) ? $model : false;
+        return ($model = self::find()->where(
+                        'BINARY [[uri]]=:uri', ['uri' => $uri]
+                )->one()) ? $model : false;
     }
 
     public static function getByUriName($uri) {

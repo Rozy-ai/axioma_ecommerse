@@ -44,7 +44,11 @@ class DefaultController extends Controller {
 
         $url = 'stati/' . $url;
 
-        $model = Stati::find()->where(['url' => $url])->one();
+        $model = Stati::find()->where(
+                        'BINARY [[url]]=:url', ['url' => $url]
+                )->
+                andWhere(['act' => 1])
+                ->one();
 
         if (!$model)
             throw new HttpException(404, 'Page not Found');

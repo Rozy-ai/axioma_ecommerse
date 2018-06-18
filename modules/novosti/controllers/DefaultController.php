@@ -46,7 +46,11 @@ class DefaultController extends Controller {
 
         $url = 'novosti/' . $url;
 
-        $model = News::find()->where(['url' => $url])->one();
+        $model = News::find()->where(
+                        'BINARY [[url]]=:url', ['url' => $url]
+                )->
+                andWhere(['act' => 1])
+                ->one();
 
         if (!$model)
             throw new HttpException(404, 'Page not Found');

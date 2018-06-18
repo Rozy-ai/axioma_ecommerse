@@ -35,7 +35,11 @@ class DefaultController extends Controller {
 
         $url = 'uslugi/' . $url;
 
-        $model = uslugi::find()->where(['url' => $url])->one();
+        $model = Uslugi::find()->where(
+                        'BINARY [[url]]=:url', ['url' => $url]
+                )->
+                andWhere(['act' => 1])
+                ->one();
 
         if (!$model)
             throw new HttpException(404, 'Page not Found');

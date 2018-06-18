@@ -42,7 +42,12 @@ class Catalog extends \app\models\Core {
 
     public static function getByUrl($url) {
 
-        return ($model = self::find()->where(['url' => $url, 'act' => 1])->one()) ? $model : false;
+
+        return ($model = self::find()->where(
+                        'BINARY [[url]]=:url', ['url' => $url]
+                )->
+                andWhere(['act' => 1])
+                ->one()) ? $model : false;
     }
 
     public static function getName($id) {
