@@ -185,8 +185,11 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
             <a href="#" class="footer-up" onclick="$('html, body').stop().animate({scrollTop: 0}, 800, 'swing'); return false;">Наверх &nbsp; <i class="fa fa-angle-up" aria-hidden="true"></i></a>
 
         </footer>
-        <?= \app\modules\options\models\Options::getVal('counters') ?>
-
+        <?php
+        if (!isset($_SERVER['HTTP_USER_AGENT']) || stripos($_SERVER['HTTP_USER_AGENT'], 'Speed Insights') === false):
+            echo \app\modules\options\models\Options::getVal('counters');
+        endif;
+        ?>
         <?php $this->endBody() ?>
 
         <script type="text/javascript" src="//cdn.callbackhunter.com/cbh.js?hunter_code=51124a1b34a5d693228b07c3c7665145" charset="UTF-8"></script>

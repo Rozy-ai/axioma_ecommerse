@@ -27,13 +27,14 @@ class AppAsset extends AssetBundle {
         'css/owl/owl.theme.default.min.css',
         'css/jBox/jBox.css',
         'css/jBox/jBox.Notice.css',
+        'css/fa/web-fonts-with-css/css/fontawesome-all.min.css',
     ];
     public $js = [
         'js/jquery.magnific-popup.min.js',
         'js/common.js',
         'js/slick.min.js',
         'js/owl.carousel.min.js',
-        '//use.fontawesome.com/2feef9962c.js',
+//        '//use.fontawesome.com/2feef9962c.js',
         'css/jBox/jBox.min.js',
         'css/jBox/jBox.Notice.min.js',
     ];
