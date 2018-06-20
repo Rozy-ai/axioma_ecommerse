@@ -1,3 +1,7 @@
+<?php
+
+use yii\bootstrap\Html;
+?>
 <div class="site-index">
 
     <div class="home-slide-show">
@@ -7,6 +11,53 @@
     <div class="home-list-category">
         <div class="container">
             <?= app\modules\catalog\widgets\HomeCatalog::widget() ?>
+        </div>
+    </div>
+
+    <div class="home-advantages">
+        <div class="container">
+            <div class="advantages-wrap">
+
+                <p class="h3 text-center">Наши преимущества:</p>
+                <ul class="list-unstyled list-inline">
+                    <li>
+                        <?= Html::img('/image/advantages/worldwide-delivery.png', ['class' => 'img img-responsive']) ?>
+                        <p class="text-center">
+                            Прямые поставки<br/> из Китая
+                        </p>
+                    </li>
+                    <li>
+                        <?= Html::img('/image/advantages/delivery-truck.png', ['class' => 'img img-responsive']) ?>
+                        <p class="text-center">
+                            Бесплатная доставка от<br/> 10 000 ₽
+                        </p>
+                    </li>
+                    <li>
+                        <?= Html::img('/image/advantages/placeholder.png', ['class' => 'img img-responsive']) ?>
+                        <p class="text-center">
+                            Удобное<br/> расположение
+                        </p>
+                    </li>
+                    <li>
+                        <?= Html::img('/image/advantages/money.png', ['class' => 'img img-responsive']) ?>
+                        <p class="text-center">
+                            Отсрочка<br/> платежа
+                        </p>
+                    </li>
+                    <li>
+                        <?= Html::img('/image/advantages/worker.png', ['class' => 'img img-responsive']) ?>
+                        <p class="text-center">
+                            Квалифицированые<br/> инженеры
+                        </p>
+                    </li>
+                    <li>
+                        <?= Html::img('/image/advantages/call-center.png', ['class' => 'img img-responsive']) ?>
+                        <p class="text-center">
+                            Поддержка<br/> клиента
+                        </p>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 
