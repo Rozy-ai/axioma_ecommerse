@@ -59,6 +59,7 @@ class AdminController extends \app\controllers\AdminController {
      */
     public function actionCreate() {
         $model = new News();
+        $model->ord = 0;
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['index']);

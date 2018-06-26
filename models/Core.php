@@ -96,8 +96,8 @@ class Core extends UploadFile {
     public function beforeSave($insert) {
 
         if ($this->isNewRecord)
-            $this->create_time = time();
-        $this->update_time = time();
+            $this->create_time = date('Y-m-d h:m:s', time());
+        $this->update_time = date('Y-m-d h:m:s', time());
 
         return parent::beforeSave($insert);
     }
