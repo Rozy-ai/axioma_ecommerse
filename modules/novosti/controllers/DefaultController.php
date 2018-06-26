@@ -16,7 +16,7 @@ class DefaultController extends Controller {
 
         // Грузим все новости кто включён и ниже сегодняшней даты
 
-        $query = News::find()->where(['model' => News::MODEL])->orderBy(['create_time' => SORT_DESC]);
+        $query = News::find()->where(['model' => News::MODEL])->orderBy(['news_date' => SORT_DESC]);
         // делаем копию выборки
         $countQuery = clone $query;
         // подключаем класс Pagination, выводим по 10 пунктов на страницу

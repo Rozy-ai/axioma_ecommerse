@@ -33,21 +33,19 @@ use Yii;
  * @property double $price
  * @property double $price2
  */
-class Core extends UploadFile
-{
+class Core extends UploadFile {
+
     /**
      * @inheritdoc
      */
-    public static function tableName()
-    {
+    public static function tableName() {
         return 'tbl_core';
     }
 
     /**
      * @inheritdoc
      */
-    public function rules()
-    {
+    public function rules() {
         return [
             [['parent_id', 'user_id', 'news_type', 'act', 'ord', 'visit_counter', 'cat_main'], 'integer'],
 //            [['model', 'name', 'h1', 'anons', 'news_date', 'content', 'content2', 'ord', 'title', 'keywords', 'description'], 'required'],
@@ -55,7 +53,7 @@ class Core extends UploadFile
             [['news_date', 'create_time', 'update_time'], 'safe'],
             [['price', 'price2'], 'number'],
 //            [['model', 'name', 'h1', 'url', 'title', 'keywords', 'description', 'image', 'file'], 'string', 'max' => 255],
-            [['model', 'name', 'h1', 'url', 'title', 'keywords', 'description',  'file'], 'string', 'max' => 255],
+            [['model', 'name', 'h1', 'url', 'title', 'keywords', 'description', 'file'], 'string', 'max' => 255],
             [['priority'], 'string', 'max' => 2],
         ];
     }
@@ -63,8 +61,7 @@ class Core extends UploadFile
     /**
      * @inheritdoc
      */
-    public function attributeLabels()
-    {
+    public function attributeLabels() {
         return [
             'id' => 'ID',
             'parent_id' => 'Parent ID',
@@ -95,4 +92,14 @@ class Core extends UploadFile
             'cats' => 'Категории',
         ];
     }
+
+    public function beforeSave($insert) {
+
+        if ($this->isNewRecord)
+            $this->create_time = time();
+        $this->update_time = time();
+
+        return parent::beforeSave($insert);
+    }
+
 }
