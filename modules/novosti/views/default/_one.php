@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 ?>
 <div class="one row">
-    <div class="col-xs-12 date"><?= Yii::$app->formatter->asDate($model->create_time, 'long') ?></div>
+    <div class="col-xs-12 date"><?= Yii::$app->formatter->asDate($model->news_date, 'long') ?></div>
 
     <div class="img col-xs-12 col-sm-3">
         <?= Html::img($model->image, ['class' => 'img img-responsive img-rounded', 'alt' => $model->h1 ? $model->h1 : $model->name]) ?>
