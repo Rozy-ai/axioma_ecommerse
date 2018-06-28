@@ -92,16 +92,16 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                         </div>
                         <div class="col-xs-12 col-sm-3 text-center">
                             <?= app\modules\cart\widgets\CartWidget::widget(); ?>
-                            <?= \app\modules\city\widgets\CityChoice::widget(); ?>
-
+                            <?php // \app\modules\city\widgets\CityChoice::widget(); ?>
+                            <?php if ($work_time = Yii::$app->options::getVal('work_time')): ?>
+                                <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                <span class="work_time"><?= $work_time ?></span>
+                            <?php endif; ?>
                         </div>
                         <div class="col-xs-12 col-sm-3 text-right">
                             <p class="phone"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
                                 <a href="tel:<?= Info::get(3) ?>"><?= Info::get(3) ?></a><br/>
-                                <?php if ($work_time = Yii::$app->options::getVal('work_time')): ?>
-                                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                                    <span class="work_time"><?= $work_time ?></span>
-                                <?php endif; ?>
+
                             </p>
                             <?= \app\modules\forms\widgets\CallBack::widget(); ?>
                             <?php ActiveForm::begin(['method' => 'get', 'action' => '/search', 'id' => 'popup-search']); ?>
