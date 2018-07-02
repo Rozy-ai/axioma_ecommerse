@@ -19,7 +19,7 @@ class News extends \app\models\Core {
 
     public static function getLast($ignore_id) {
 
-        $model = News::find()->where(['model' => self::MODEL])->orderBy(['create_time' => SORT_DESC])->all();
+        $model = News::find()->where(['model' => self::MODEL])->orderBy(['news_date' => SORT_DESC])->all();
 
         $result = [];
 
