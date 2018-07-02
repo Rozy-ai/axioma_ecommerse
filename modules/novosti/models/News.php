@@ -21,7 +21,7 @@ class News extends \app\models\Core {
 
         $model = News::find()->where(['model' => self::MODEL])
                 ->orderBy(['news_date' => SORT_DESC])
-                ->limit(4)
+                ->limit(3)
                 ->all();
 
         return $model;
