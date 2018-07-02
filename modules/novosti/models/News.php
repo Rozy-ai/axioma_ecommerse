@@ -17,19 +17,14 @@ class News extends \app\models\Core {
         return parent::beforeValidate();
     }
 
-    public static function getLast($ignore_id) {
+    public static function getLast() {
 
-        $model = News::find()->where(['model' => self::MODEL])->orderBy(['news_date' => SORT_DESC])->all();
+        $model = News::find()->where(['model' => self::MODEL])
+                ->orderBy(['news_date' => SORT_DESC])
+                ->limit(4)
+                ->all();
 
-        $result = [];
-
-        for ($i = 1; count($result) < 3; $i++) {
-
-            if (array_key_exists($i, $model) && $model[$i]->id != $ignore_id)
-                $result[] = $model[$i];
-        }
-
-        return $result;
+        return $model;
     }
 
     public static function getLatestNew() {

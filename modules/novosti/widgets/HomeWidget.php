@@ -17,7 +17,7 @@ class HomeWidget extends Widget {
 
     public function run() {
 
-        $model = News::getLatestNew();
+        $model = News::getLast();
 
         return $this->render('home_widget', ['model' => $model]);
     }
