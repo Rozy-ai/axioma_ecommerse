@@ -18,7 +18,7 @@ var Cart = {
         $.post("/cart/default/add-to-cart", data)
                 .done(function (data) {
                     new jBox('Notice', {
-                        content: 'Товар добвлен в корзину',
+                        content: 'Товар добавлен в корзину',
                         color: 'blue'
                     });
                     Cart.UpdateCart();
