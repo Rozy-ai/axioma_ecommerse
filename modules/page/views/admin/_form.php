@@ -38,7 +38,9 @@ use yii\helpers\Url;
                 'clips',
                 'fullscreen',
                 'fontcolor'
-            ], 'replaceDivs' => false,
+            ],
+            'replaceDivs' => false,
+            'deniedTags' => ['style']
         ]
     ]);
     ?>
