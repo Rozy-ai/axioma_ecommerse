@@ -17,7 +17,7 @@ class CartAsset extends AssetBundle {
     public $css = [
     ];
     public $js = [
-        'js/cart-common.js'
+//        'js/cart-common.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',

@@ -32,6 +32,7 @@ class AppAsset extends AssetBundle {
     public $js = [
         'js/jquery.magnific-popup.min.js',
         'js/common.js',
+        'js/cart-common.js',
         'js/slick.min.js',
         'js/owl.carousel.min.js',
 //        '//use.fontawesome.com/2feef9962c.js',
