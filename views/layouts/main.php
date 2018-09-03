@@ -82,43 +82,60 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
             <div class="header">
                 <div class="container">
                     <div class="row">
-                        <div class="col-xs-12 col-sm-6 logo-wrap">
+                        <div class="col-xs-12 col-sm-3 logo-wrap">
                             <?php
-                            $img = Html::img('/image/logo.svg', ['class' => 'img img-responsive', 'alt' => 'Логотип']);
+                            $img = Html::img('/image/logo.png', ['class' => 'img img-responsive', 'alt' => 'Логотип']);
                             echo!$isHome ? Html::a($img, ['/']) : $img;
                             ?>
                             <!--<img src="/image/logo.png" class="img img-responsive">-->
                             <p class="slogan">СИСТЕМЫ ПРЕДОТВРАЩЕНИЯ КРАЖ</p>
                         </div>
-                        <div class="col-xs-12 col-sm-3 text-center">
-                            <?= app\modules\cart\widgets\CartWidget::widget(); ?>
-                            <?php // \app\modules\city\widgets\CityChoice::widget(); ?>
+                        <div class="col-xs-12 col-sm-2">
+                            <p class=""><strong>График работы</strong></p>
                             <?php if ($work_time = Yii::$app->options::getVal('work_time')): ?>
-                                <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                                <span class="work_time"><?= $work_time ?></span>
+                                <?= $work_time ?>
                             <?php endif; ?>
                         </div>
+                        <div class="col-xs-12 col-sm-2">
+                            <p class=""><strong>Офис-склад</strong></p>
+                            <p>
+                                Екатеринбург<br/>
+                                ул. Минометчиков 17, офис 4. <br/>
+                                Телефоны: +7 (343) 204-95-10
+                            </p>
+                        </div>
+                        <div class="col-xs-12 col-sm-2">
+                            <p>
+                                <br/>
+                                Москва<br/>
+                                ул. Чагинская , д. 4, оф. 17. <br/>
+                                Телефоны: +7 (495) 123-34-41
+                            </p>
+                        </div>
                         <div class="col-xs-12 col-sm-3 text-right">
-                            <p class="phone"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+                            <p class="phone">
                                 <a href="tel:<?= Info::get(3) ?>"><?= Info::get(3) ?></a><br/>
-
                             </p>
                             <?= \app\modules\forms\widgets\CallBack::widget(); ?>
-                            <?php ActiveForm::begin(['method' => 'get', 'action' => '/search', 'id' => 'popup-search']); ?>
-                            <div class="row">
-                                <div class="col-xs-12 search">
-                                    <div class="input-group">
-                                        <input  name="q" type="text" class="form-control" placeholder="Поиск..">
-                                        <span class="input-group-btn">
-                                            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                                        </span>
-                                    </div><!-- /input-group -->
-                                </div><!-- /.col-lg-6 -->
-                            </div><!-- /.row -->
-                            <?php ActiveForm::end(); ?>
-
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <div class="search-wrap">
+                <div class="container">
+                    <?php ActiveForm::begin(['method' => 'get', 'action' => '/search', 'id' => 'popup-search']); ?>
+                    <div class="row">
+                        <div class="col-xs-12 search">
+                            <div class="input-group">
+                                <input name="q" type="text" class="form-control q" placeholder="Поиск..">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                                </span>
+                            </div><!-- /input-group -->
+                        </div><!-- /.col-lg-6 -->
+                    </div><!-- /.row -->
+                    <?php ActiveForm::end(); ?>
                 </div>
             </div>
 

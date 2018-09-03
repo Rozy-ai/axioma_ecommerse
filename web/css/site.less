@@ -1,6 +1,8 @@
 @import "open-sans.less";
 @import "bootstrap/variables.less";
 
+
+
 html,
 body {
     height: 100%;
@@ -14,7 +16,8 @@ body {
     min-height: 100%;
     height: auto;
     padding: 50px 0 0 ;
-    background: url('../img/body.png');
+    /*background: url('../img/body.png');*/
+    background-color: #F5F3F3;
     background-attachment: fixed;
     background-size: cover;
 
@@ -44,13 +47,14 @@ body {
     border-bottom: 1px solid #aaa;
 
     .logo-wrap {
-        position: relative;
+        /*position: relative;*/
 
         .slogan {
-            position: absolute;
-            top: .5rem;
-            right: 2rem;
-            font-size: 1.6rem;
+            /*            position: absolute;
+                        top: .5rem;
+                        right: 2rem;*/
+            font-size: 1.4rem;
+            padding-top: 1rem;
             color: #444;
         }
     }
@@ -99,6 +103,23 @@ body {
     }
 }
 
+.search-wrap {
+    background: @color-black;
+    padding: 2rem 0;
+
+    .q {
+        font-size: 1.6rem;
+        padding: 1rem;
+        line-height: 3rem;
+        /*min-height: 4rem;*/
+
+        #placeholder {
+            padding: 1rem;
+        }
+    }
+
+}
+
 .content {
     padding: 30px 0;
 
@@ -120,10 +141,10 @@ body {
             padding-bottom: 2rem;
         }
         ul {
-            
+
             /*width: 100%;*/
             margin: 0 auto;
-            
+
             li {
                 min-width: 16%;
                 width: 15%;
@@ -177,9 +198,9 @@ body {
 .footer {
 
     .footer-up {
-        border-top-left-radius: 5px;
+        border-top-left-radius: 5px; 
         border-top-right-radius: 5px;
-        background: @brand-secondary;
+        background: @color-black;
         color: #fff;
         margin-top: 1rem;
         float: left;
@@ -200,7 +221,7 @@ body {
         padding: 1.2rem 0;
         color: #fff;
         border-top: 1px solid #ddd;
-        background-color: @brand-primary;
+        background-color:@color-black ;
     }
 
 }
@@ -387,7 +408,7 @@ a.desc:after {
 
     .grid-item {
         background: #fff;
-        min-height: 260px;
+        min-height: 200px;
         margin: 10px 0 30px;
         padding: 20px 10px;
 
@@ -406,6 +427,14 @@ a.desc:after {
             margin-top: 1rem;
         }
 
+    }
+    .panel-footer {
+        min-height: 75px;
+        background: @color-black;
+        color: white;
+        text-align: center;
+        font-weight: 600;
+        text-transform: uppercase;
     }
 
 }

@@ -7,6 +7,9 @@
 //
 //## Gray and brand colors for use across Bootstrap.
 
+@color-grey: #EBEBEB;
+@color-black: #3D3D3D;
+
 @gray-base:              #000;
 @gray-darker:            lighten(@gray-base, 13.5%); // #222
 @gray-dark:              lighten(@gray-base, 20%);   // #333
@@ -14,7 +17,7 @@
 @gray-light:             lighten(@gray-base, 46.7%); // #777
 @gray-lighter:           lighten(@gray-base, 93.5%); // #eee
 
-@brand-primary:         #4088B0;
+@brand-primary:         #B8CC76;
 @brand-success:         #5cb85c;
 @brand-info:            #5bc0de;
 @brand-warning:         #f0ad4e;
@@ -33,7 +36,7 @@
 @text-color:            @gray-dark;
 
 //** Global textual link color.
-@link-color:            @brand-primary;
+@link-color:            @color-black;
 //** Link hover color set via `darken()` function.
 @link-hover-color:      darken(@link-color, 15%);
 //** Link hover decoration.
@@ -147,7 +150,7 @@
 
 @btn-font-weight:                normal;
 
-@btn-default-color:              #333;
+@btn-default-color:              #EBEBEB;
 @btn-default-bg:                 #fff;
 @btn-default-border:             #ccc;
 
@@ -393,12 +396,12 @@
 
 //=== Inverted navbar
 // Reset inverted navbar basics
-@navbar-inverse-color:                      #fff;
-@navbar-inverse-bg:                         @brand-secondary;
+@navbar-inverse-color:                      @color-black;
+@navbar-inverse-bg:                         @color-grey;
 @navbar-inverse-border:                     darken(@navbar-inverse-bg, 10%);
 
 // Inverted navbar links
-@navbar-inverse-link-color:                 #fff;
+@navbar-inverse-link-color:                 @color-black;
 @navbar-inverse-link-hover-color:           #fff;
 @navbar-inverse-link-hover-bg:              @brand-primary;
 @navbar-inverse-link-active-color:          @navbar-inverse-link-hover-color;
