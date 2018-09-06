@@ -7,7 +7,7 @@ use Yii;
 /**
  * This is the model class for table "tbl_blocks".
  *
- * @property integer $id
+ * @property int $id
  * @property string $model
  * @property string $label
  * @property string $name
@@ -15,7 +15,7 @@ use Yii;
  * @property string $create_time
  * @property string $update_time
  */
-class TblBlocks extends \yii\db\ActiveRecord
+class TblBlocks extends \app\models\CustomAR
 {
     /**
      * @inheritdoc

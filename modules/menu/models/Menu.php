@@ -18,7 +18,7 @@ class Menu extends \app\models\Menu {
 
         $result = [];
 
-        $result[] = ['label' => '<span class="glyphicon glyphicon-home"></span>', 'url' => ['/site/index']];
+        $result['top'][] = ['label' => 'Главная', 'url' => ['/site/index']];
 
         foreach ($model as $item):
             if ($item->url == 'catalog/default/index') {
@@ -31,15 +31,15 @@ class Menu extends \app\models\Menu {
                 foreach ($model as $_item)
                     $items[] = ['label' => $_item->title, 'url' => ['/category/' . $_item->uri]];
 
-                $result[] = ['label' => $item->name,
+                $result['top'][] = ['label' => '<i class="fa fa-bars" aria-hidden="true"></i> ' . $item->name,
                     'url' => ['/' . $item->url],
                     'items' => $items,
                 ];
             } else
-                $result[] = ['label' => $item->name, 'url' => ['/' . $item->url]];
+                $result['top'][] = ['label' => $item->name, 'url' => ['/' . $item->url]];
         endforeach;
 
-        $result[] = ['label' => '<span class="glyphicon glyphicon-shopping-cart"></span>', 'url' => ['/cart']];
+        $result['bottom'][] = ['label' => '<span class="glyphicon glyphicon-shopping-cart"></span>', 'url' => ['/cart']];
 
         return $result;
     }

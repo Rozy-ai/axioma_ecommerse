@@ -7,32 +7,36 @@ use Yii;
 /**
  * This is the model class for table "city".
  *
- * @property integer $id
- * @property integer $cid
- * @property integer $rid
- * @property string $name
- * @property string $name_eng
- * @property string $latitude
- * @property string $longitude
- * @property integer $is_enable
- * @property integer $is_default
+ * @property int $id
+ * @property int $cid
+ * @property int $rid
+ * @property string $name Город
+ * @property string $name_eng Uri
+ * @property string $latitude Широта
+ * @property string $longitude Долгота
+ * @property int $is_enable Включен
+ * @property int $is_default
  *
  * @property CategoryContent[] $categoryContents
+ * @property RegionOptions[] $regionOptions
  * @property RegionTemplates[] $regionTemplates
+ * @property Robots[] $robots
  */
-class City extends \yii\db\ActiveRecord {
-
+class City extends \app\models\CustomAR
+{
     /**
      * @inheritdoc
      */
-    public static function tableName() {
+    public static function tableName()
+    {
         return 'city';
     }
 
     /**
      * @inheritdoc
      */
-    public function rules() {
+    public function rules()
+    {
         return [
             [['cid', 'rid', 'is_enable', 'is_default'], 'integer'],
             [['name', 'name_eng', 'latitude', 'longitude'], 'string', 'max' => 255],
@@ -42,7 +46,8 @@ class City extends \yii\db\ActiveRecord {
     /**
      * @inheritdoc
      */
-    public function attributeLabels() {
+    public function attributeLabels()
+    {
         return [
             'id' => 'ID',
             'cid' => 'Cid',
@@ -52,22 +57,39 @@ class City extends \yii\db\ActiveRecord {
             'latitude' => 'Широта',
             'longitude' => 'Долгота',
             'is_enable' => 'Включен',
-            'is_default' => 'Основной регион',
+            'is_default' => 'Is Default',
         ];
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getCategoryContents() {
+    public function getCategoryContents()
+    {
         return $this->hasMany(CategoryContent::className(), ['city_id' => 'id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getRegionTemplates() {
+    public function getRegionOptions()
+    {
+        return $this->hasMany(RegionOptions::className(), ['id_city' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getRegionTemplates()
+    {
         return $this->hasMany(RegionTemplates::className(), ['city_id' => 'id']);
     }
 
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getRobots()
+    {
+        return $this->hasMany(Robots::className(), ['city_id' => 'id']);
+    }
 }

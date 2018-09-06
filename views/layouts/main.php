@@ -47,34 +47,14 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                 ],
             ]);
             echo Nav::widget([
+                'options' => ['class' => 'navbar-nav navbar-left'],
+                'encodeLabels' => false,
+                'items' => Menu::getTopItems()['top'],
+            ]);
+            echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'encodeLabels' => false,
-//                'items' => [
-//                    Menu::getTopItems(),
-////                    ['label' => '<span class="glyphicon glyphicon-home"></span>', 'url' => ['/site/index']],
-////                    ['label' => 'О компании', 'url' => ['/o_kompanii']],
-////                    ['label' => 'Каталог', 'url' => ['/catalog/default/index']],
-////                    ['label' => 'Услуги', 'url' => ['/uslugi']],
-////                    ['label' => 'Вакансии', 'url' => ['/vakansii']],
-////                    ['label' => 'Новости', 'url' => ['/novosti/default/index']],
-////                    ['label' => 'Контакты', 'url' => ['/kontaktyi']],
-////                    ['label' => 'Статьи', 'url' => ['/stati/default/index']],
-////                    ['label' => '<span class="glyphicon glyphicon-shopping-cart"></span>', 'url' => ['/cart']],
-//                    Yii::$app->user->isGuest ? ( ''
-//                            ) : (
-//                            '<li>'
-//                            . Html::a('Администрирование', ['/order/admin/index'])
-//                            . '</li>' .
-//                            '<li>'
-//                            . Html::beginForm(['/auth/default/logout'], 'post')
-//                            . Html::submitButton(
-//                                    'Logout (' . Yii::$app->user->identity->username . ')', ['class' => 'btn btn-link logout']
-//                            )
-//                            . Html::endForm()
-//                            . '</li>'
-//                            )
-//                ],
-                'items' => Menu::getTopItems(),
+                'items' => Menu::getTopItems()['bottom'],
             ]);
             NavBar::end();
             ?>

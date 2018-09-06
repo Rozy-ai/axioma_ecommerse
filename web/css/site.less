@@ -32,12 +32,26 @@ body {
 
 .main-navbar {
 
-    box-shadow:#222 0 1px 3px;
+    /*box-shadow:#222 0 1px 3px;*/
+    background: #EBEBEB;
 
     .navbar-nav {
-        width: 100%;
-        display: flex;
-        justify-content:space-between;
+
+        li {
+        }
+        .active  a{
+
+            background: @color-dark-grey;
+
+            &:hover {
+                background: @color-dark-grey;
+            }
+
+        }
+
+        .open>a {
+            background: @color-dark-grey;
+        }
     }
 }
 

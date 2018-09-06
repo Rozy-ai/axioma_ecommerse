@@ -12,6 +12,7 @@ class AdminAsset extends AssetBundle {
         'css/admin.css',
     ];
     public $js = [
+        'js/translit_url.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

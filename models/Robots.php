@@ -7,13 +7,13 @@ use Yii;
 /**
  * This is the model class for table "robots".
  *
- * @property integer $id
- * @property integer $city_id
- * @property string $content
+ * @property int $id
+ * @property int $city_id Город
+ * @property string $content Содержание
  *
  * @property City $city
  */
-class Robots extends \yii\db\ActiveRecord
+class Robots extends \app\models\CustomAR
 {
     /**
      * @inheritdoc

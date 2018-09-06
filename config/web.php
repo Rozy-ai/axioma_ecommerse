@@ -100,6 +100,7 @@ $config = [
                 '/category/<category:[-\w\/]+>' => 'category/default/get',
 //                '/category/<category:[-\w]+>/<subcategory:[-\w]+>' => 'category/default/get',
                 '/stati' => '/stati/default/index',
+                '/uslugi' => '/uslugi/default/index',
                 '/cart' => '/cart/default/index',
                 '/search' => '/search/default/index',
                 '/novosti/<url:[-\w]+>' => 'novosti/default/get',

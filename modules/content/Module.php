@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\slider;
+namespace app\modules\content;
 
 use Yii;
 

@@ -11,7 +11,7 @@ use Yii;
  * @property string $name Имя
  * @property string $description Описание
  */
-class Shortcode extends \yii\db\ActiveRecord
+class Shortcode extends \app\models\CustomAR
 {
     /**
      * @inheritdoc

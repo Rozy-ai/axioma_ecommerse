@@ -7,14 +7,14 @@ use Yii;
 /**
  * This is the model class for table "region_templates".
  *
- * @property integer $id
- * @property integer $city_id
- * @property string $name
- * @property string $value
+ * @property int $id
+ * @property int $city_id Город
+ * @property string $name Имя шаблона
+ * @property string $value Значение
  *
  * @property City $city
  */
-class RegionTemplates extends \yii\db\ActiveRecord
+class RegionTemplates extends \app\models\CustomAR
 {
     /**
      * @inheritdoc
@@ -30,7 +30,7 @@ class RegionTemplates extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['city_id', 'name'], 'required'],
+            [['city_id', 'name', 'value'], 'required'],
             [['city_id'], 'integer'],
             [['value'], 'string'],
             [['name'], 'string', 'max' => 255],
