@@ -10,8 +10,9 @@ use Yii;
  * @property int $id
  * @property int $type_id Тип контента
  * @property string $header Заголовок
- * @property string $image
+ * @property string $image Изображение
  * @property string $url
+ * @property string $anons Анонс
  * @property string $content Содержание
  * @property int $ord Порядок
  * @property string $title
@@ -40,7 +41,7 @@ class Content extends \app\models\CustomAR
         return [
             [['type_id', 'url'], 'required'],
             [['type_id', 'ord', 'is_enable', 'created_at', 'updated_at', 'is_main'], 'integer'],
-            [['content'], 'string'],
+            [['anons', 'content'], 'string'],
             [['header', 'title', 'description', 'keywords'], 'string', 'max' => 500],
             [['image', 'url'], 'string', 'max' => 255],
             [['url'], 'unique'],
@@ -56,8 +57,9 @@ class Content extends \app\models\CustomAR
             'id' => 'ID',
             'type_id' => 'Тип контента',
             'header' => 'Заголовок',
-            'image' => 'Image',
+            'image' => 'Изображение',
             'url' => 'Url',
+            'anons' => 'Анонс',
             'content' => 'Содержание',
             'ord' => 'Порядок',
             'title' => 'Title',

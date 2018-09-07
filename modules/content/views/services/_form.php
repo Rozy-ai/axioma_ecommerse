@@ -41,6 +41,8 @@ use yii\helpers\Url;
             <?= $form->field($model, 'keywords')->textInput(['maxlength' => true]) ?>
 
             <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
+
+            <?= $form->field($model, 'is_main')->checkbox() ?>
         </div>
     </div>
 
