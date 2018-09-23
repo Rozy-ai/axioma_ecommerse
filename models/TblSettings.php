@@ -17,7 +17,7 @@ use Yii;
 class TblSettings extends \app\models\CustomAR
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public static function tableName()
     {
@@ -25,7 +25,7 @@ class TblSettings extends \app\models\CustomAR
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function rules()
     {
@@ -38,7 +38,7 @@ class TblSettings extends \app\models\CustomAR
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function attributeLabels()
     {

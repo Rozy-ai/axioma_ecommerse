@@ -18,7 +18,7 @@ use Yii;
 class TblBlocks extends \app\models\CustomAR
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public static function tableName()
     {
@@ -26,7 +26,7 @@ class TblBlocks extends \app\models\CustomAR
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function rules()
     {
@@ -39,7 +39,7 @@ class TblBlocks extends \app\models\CustomAR
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function attributeLabels()
     {

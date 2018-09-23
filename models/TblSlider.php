@@ -20,7 +20,7 @@ use Yii;
 class TblSlider extends \app\models\CustomAR
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public static function tableName()
     {
@@ -28,7 +28,7 @@ class TblSlider extends \app\models\CustomAR
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function rules()
     {
@@ -42,7 +42,7 @@ class TblSlider extends \app\models\CustomAR
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function attributeLabels()
     {

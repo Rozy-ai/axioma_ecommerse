@@ -24,7 +24,7 @@ use Yii;
 class TblMenu extends \app\models\CustomAR
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public static function tableName()
     {
@@ -32,7 +32,7 @@ class TblMenu extends \app\models\CustomAR
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function rules()
     {
@@ -46,7 +46,7 @@ class TblMenu extends \app\models\CustomAR
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function attributeLabels()
     {

@@ -25,7 +25,8 @@
         "2amigos/yii2-multi-select-widget": "*",
         "kartik-v/yii2-widget-select2": "@dev",
         "kartik-v/yii2-widget-datetimepicker": "*",
-        "kartik-v/yii2-popover-x": "*"
+        "kartik-v/yii2-popover-x": "*",
+        "moonlandsoft/yii2-phpexcel": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
@@ -38,7 +39,7 @@
     },
     "config": {
         "process-timeout": 1800,
-        "fxp-asset":{
+        "fxp-asset": {
             "installer-paths": {
                 "npm-asset-library": "vendor/npm",
                 "bower-asset-library": "vendor/bower"

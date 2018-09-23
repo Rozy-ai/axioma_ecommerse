@@ -4,14 +4,9 @@ namespace app\components;
 
 class Translite {
 
-    public static function Generate($string, $attempt = 0, $replace = array(), $delimiter = '-') {
+    public static function Generate($string) {
 
-//setlocale(LC_ALL, 'en_US.UTF8');
-        if (!empty($replace)) {
-            $string = str_replace((array) $replace, ' ', $string);
-        }
-
-        $replace_translit = array(
+        $replace_translit = [
             "{" => "",
             "}" => "",
             "'" => "",
@@ -53,20 +48,59 @@ class Translite {
             "і" => "i", "І" => "i",
             "ї" => "yi", "Ї" => "yi",
             "є" => "ie", "Є" => "ie"
-        );
+        ];
 
-
-        //$clean = iconv('UTF-8', 'ASCII//TRANSLIT', $str);
+        echo $string . PHP_EOL;
+        echo mb_detect_encoding($string) . PHP_EOL;
+//        $clean = iconv('UTF-8', 'ASCII//TRANSLIT', $string);
+//        echo $clean . PHP_EOL;
         $clean = strtr($string, $replace_translit);
-        $clean = preg_replace("/[^a-zA-Z0-9\_\s\-]/", '', $clean);
-        $clean = strtolower(trim($clean, '-'));
+        echo $clean . PHP_EOL;
+//        $clean = preg_replace("/[^a-zA-Z0-9\_\s\-]/", '', $clean);
+//        $clean = strtolower(trim($clean, '-'));
         //$clean = preg_replace("/[\_|+ -]+/", $delimiter, $clean);
-        $clean = preg_replace("/[\s]+/", $delimiter, $clean);
-
-        if ($attempt > 0)
-            $clean .= $delimiter . $attempt;
-
+//        $clean = preg_replace("/[\s]+/", '-', $clean);
         return $clean;
+    }
+
+    public static function rus2translit($string) {
+        $converter = array(
+            'а' => 'a', 'б' => 'b', 'в' => 'v',
+            'г' => 'g', 'д' => 'd', 'е' => 'e',
+            'ё' => 'e', 'ж' => 'zh', 'з' => 'z',
+            'и' => 'i', 'й' => 'y', 'к' => 'k',
+            'л' => 'l', 'м' => 'm', 'н' => 'n',
+            'о' => 'o', 'п' => 'p', 'р' => 'r',
+            'с' => 's', 'т' => 't', 'у' => 'u',
+            'ф' => 'f', 'х' => 'h', 'ц' => 'c',
+            'ч' => 'ch', 'ш' => 'sh', 'щ' => 'sch',
+            'ь' => '\'', 'ы' => 'y', 'ъ' => '\'',
+            'э' => 'e', 'ю' => 'yu', 'я' => 'ya',
+            'А' => 'A', 'Б' => 'B', 'В' => 'V',
+            'Г' => 'G', 'Д' => 'D', 'Е' => 'E',
+            'Ё' => 'E', 'Ж' => 'Zh', 'З' => 'Z',
+            'И' => 'I', 'Й' => 'Y', 'К' => 'K',
+            'Л' => 'L', 'М' => 'M', 'Н' => 'N',
+            'О' => 'O', 'П' => 'P', 'Р' => 'R',
+            'С' => 'S', 'Т' => 'T', 'У' => 'U',
+            'Ф' => 'F', 'Х' => 'H', 'Ц' => 'C',
+            'Ч' => 'Ch', 'Ш' => 'Sh', 'Щ' => 'Sch',
+            'Ь' => '\'', 'Ы' => 'Y', 'Ъ' => '\'',
+            'Э' => 'E', 'Ю' => 'Yu', 'Я' => 'Ya',
+        );
+        return strtr($string, $converter);
+    }
+
+    public static function str2url($str) {
+        // переводим в транслит
+        $str = self::rus2translit($str);
+        // в нижний регистр
+        $str = strtolower($str);
+        // заменям все ненужное нам на "-"
+        $str = preg_replace('~[^-a-z0-9_]+~u', '-', $str);
+        // удаляем начальные и конечные '-'
+        $str = trim($str, "-");
+        return $str;
     }
 
 }

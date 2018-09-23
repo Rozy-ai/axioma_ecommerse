@@ -5,12 +5,12 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "category".
+ * This is the model class for table "category2".
  *
  * @property int $id
  * @property int $parent_id Родитель
- * @property string $title Заголовок
- * @property string $uri Url
+ * @property string $header Заголовок
+ * @property string $url Url
  * @property string $preview Превью
  * @property string $content Содержание
  * @property string $image Изображение
@@ -21,16 +21,16 @@ use Yii;
  * @property int $created_at Создано
  * @property int $show
  *
- * @property CategoryContent[] $categoryContents
+ * @property Product[] $products
  */
-class Category extends \app\models\CustomAR
+class Category2 extends \app\models\CustomAR
 {
     /**
      * {@inheritdoc}
      */
     public static function tableName()
     {
-        return 'category';
+        return 'category2';
     }
 
     /**
@@ -41,8 +41,7 @@ class Category extends \app\models\CustomAR
         return [
             [['parent_id', 'ord', 'created_at', 'show'], 'integer'],
             [['preview', 'content'], 'string'],
-            [['created_at'], 'required'],
-            [['title', 'uri', 'image', 'seo_title', 'seo_description', 'seo_keywords'], 'string', 'max' => 255],
+            [['header', 'url', 'image', 'seo_title', 'seo_description', 'seo_keywords'], 'string', 'max' => 255],
         ];
     }
 
@@ -54,8 +53,8 @@ class Category extends \app\models\CustomAR
         return [
             'id' => 'ID',
             'parent_id' => 'Родитель',
-            'title' => 'Заголовок',
-            'uri' => 'Url',
+            'header' => 'Заголовок',
+            'url' => 'Url',
             'preview' => 'Превью',
             'content' => 'Содержание',
             'image' => 'Изображение',
@@ -71,8 +70,8 @@ class Category extends \app\models\CustomAR
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getCategoryContents()
+    public function getProducts()
     {
-        return $this->hasMany(CategoryContent::className(), ['category_id' => 'id']);
+        return $this->hasMany(Product::className(), ['category_id' => 'id']);
     }
 }
