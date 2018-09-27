@@ -21,13 +21,10 @@ class MenuCategory extends Widget {
 
         $model = Category::find()
                 ->where(['is_enable' => 1])
-                ->with('childs')
+//                ->with('childs')
                 ->all();
 
-        $_menu = Category::find()->where(['show' => 1])->orderBy(['ord' => SORT_DESC])->all();
-
-        foreach ($_menu as $item)
-            $item->replaceCodes();
+        $_menu = Category::find()->where(['is_enable' => 1])->orderBy(['ord' => SORT_DESC])->all();
 
         $menu = $this->form_tree($_menu);
 //        var_dump($menu);

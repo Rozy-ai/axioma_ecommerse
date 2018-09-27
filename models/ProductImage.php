@@ -12,6 +12,7 @@ use Yii;
  * @property string $image
  * @property int $order
  * @property int $created_at
+ * @property int $is_main Основное изображение
  *
  * @property Product $product
  */
@@ -31,7 +32,7 @@ class ProductImage extends \app\models\CustomAR
     public function rules()
     {
         return [
-            [['product_id', 'order', 'created_at'], 'integer'],
+            [['product_id', 'order', 'created_at', 'is_main'], 'integer'],
             [['image'], 'string', 'max' => 255],
             [['product_id'], 'exist', 'skipOnError' => true, 'targetClass' => Product::className(), 'targetAttribute' => ['product_id' => 'id']],
         ];
@@ -48,6 +49,7 @@ class ProductImage extends \app\models\CustomAR
             'image' => 'Image',
             'order' => 'Order',
             'created_at' => 'Created At',
+            'is_main' => 'Основное изображение',
         ];
     }
 

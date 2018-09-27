@@ -37,6 +37,7 @@ class ImportCatalogController extends Controller {
             $cat_->header = $n;
             echo $n . PHP_EOL;
             $cat_->url = \app\components\Translite::str2url($n);
+            $cat_->is_enable = 1;
             if ($cat_->save())
                 ;
             else
@@ -103,6 +104,41 @@ class ImportCatalogController extends Controller {
 
         echo \app\components\Translite::Generate('Тест');
         echo \app\components\Translite::str2url('Тест');
+    }
+
+    public function actionUpdateImage() {
+
+        Yii::$app->db->createCommand()->truncateTable('product_image')->execute();
+
+        $model = \app\modules\products\models\Product::find()->all();
+
+        foreach ($model as $item):
+
+            echo $item->article . PHP_EOL;
+
+//            echo '___' . Yii::getAlias('@app') . PHP_EOL;
+            echo '___' . Yii::getAlias('@app') . "/web/image/catalog/" . $item->article . "*" . PHP_EOL;
+
+            foreach (glob(Yii::getAlias('@app') . "/web/image/catalog/" . $item->article . "*") as $k => $filename) {
+
+                echo basename($filename) . PHP_EOL;
+
+                $image = new \app\models\ProductImage();
+                $image->image = basename($filename);
+                $image->product_id = $item->id;
+                $image->order = $k;
+                $image->is_main = ($k == 0) ? 1 : 0;
+
+                if ($image->save())
+                    ;
+                else
+                    print_r($image->errors);
+            }
+
+//            if (!glob(Yii::getAlias('@app') . "/web/image/catalog/" . $item->article . "*"))
+//                echo $item->article . PHP_EOL;
+
+        endforeach;
     }
 
 }
