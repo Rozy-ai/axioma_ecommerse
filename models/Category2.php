@@ -14,12 +14,13 @@ use Yii;
  * @property string $preview Превью
  * @property string $content Содержание
  * @property string $image Изображение
+ * @property string $ico Иконка
  * @property int $ord Порядок
- * @property string $seo_title SEO Title
- * @property string $seo_description SEO Description
- * @property string $seo_keywords SEO Keyword
+ * @property string $title SEO Title
+ * @property string $description SEO Description
+ * @property string $keywords SEO Keyword
  * @property int $created_at Создано
- * @property int $show
+ * @property int $is_enable Включено
  *
  * @property Product[] $products
  */
@@ -39,9 +40,10 @@ class Category2 extends \app\models\CustomAR
     public function rules()
     {
         return [
-            [['parent_id', 'ord', 'created_at', 'show'], 'integer'],
+            [['parent_id', 'ord', 'created_at', 'is_enable'], 'integer'],
             [['preview', 'content'], 'string'],
-            [['header', 'url', 'image', 'seo_title', 'seo_description', 'seo_keywords'], 'string', 'max' => 255],
+            [['header', 'url', 'image', 'ico'], 'string', 'max' => 255],
+            [['title', 'description', 'keywords'], 'string', 'max' => 500],
         ];
     }
 
@@ -58,12 +60,13 @@ class Category2 extends \app\models\CustomAR
             'preview' => 'Превью',
             'content' => 'Содержание',
             'image' => 'Изображение',
+            'ico' => 'Иконка',
             'ord' => 'Порядок',
-            'seo_title' => 'SEO Title',
-            'seo_description' => 'SEO Description',
-            'seo_keywords' => 'SEO Keyword',
+            'title' => 'SEO Title',
+            'description' => 'SEO Description',
+            'keywords' => 'SEO Keyword',
             'created_at' => 'Создано',
-            'show' => 'Show',
+            'is_enable' => 'Включено',
         ];
     }
 

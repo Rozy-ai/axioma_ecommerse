@@ -20,12 +20,12 @@ class MenuCategory extends Widget {
     public function run() {
 
         $model = Category::find()
-                ->where(['parent_id' => 187, 'show' => 1])
+                ->where(['is_enable' => 1])
                 ->with('childs')
                 ->all();
 
         $_menu = Category::find()->where(['show' => 1])->orderBy(['ord' => SORT_DESC])->all();
-        
+
         foreach ($_menu as $item)
             $item->replaceCodes();
 

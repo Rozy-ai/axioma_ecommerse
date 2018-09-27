@@ -15,15 +15,17 @@ class ImportCatalogController extends Controller {
 
 
         echo 'start import';
-
-        Yii::$app->db->createCommand()->truncateTable('category2')->execute();
+        Yii::$app->db->createCommand()->checkIntegrity(false)->execute();
         Yii::$app->db->createCommand()->truncateTable('product')->execute();
+        Yii::$app->db->createCommand()->truncateTable('category2')->execute();
+        Yii::$app->db->createCommand()->checkIntegrity(true)->execute();
+
 
         $row = 1;
 
         $data = \moonland\phpexcel\Excel::widget([
                     'mode' => 'import',
-                    'fileName' => Yii::getAlias('@app') . '/commands/catalog .xlsx',
+                    'fileName' => Yii::getAlias('@app') . '/commands/catalog.xlsx',
                     'setFirstRecordAsKeys' => true, // if you want to set the keys of record column with first record, if it not set, the header with use the alphabet column on excel.
                     'setIndexSheetByName' => true, // set this if your excel data with multiple worksheet, the index of array will be set with the sheet name. If this not set, the index will use numeric.
 //                    'getOnlySheet' => 'Sheet1', // you can set this property if you want to get the specified sheet from the excel data with multiple worksheet.
@@ -33,6 +35,7 @@ class ImportCatalogController extends Controller {
 
             $cat_ = new Category2();
             $cat_->header = $n;
+            echo $n . PHP_EOL;
             $cat_->url = \app\components\Translite::str2url($n);
             if ($cat_->save())
                 ;
@@ -46,6 +49,7 @@ class ImportCatalogController extends Controller {
 //                exit();
 
                 if (isset($item['Артикул']) && $item['Артикул']) {
+                    echo $item['Наименование'] . PHP_EOL;
 
                     $model = new \app\modules\products\models\Product;
                     $model->category_id = $cat_->id;
@@ -57,6 +61,7 @@ class ImportCatalogController extends Controller {
                     $model->content_characteristics = isset($item['Техн. характеристики']) ? $item['Техн. характеристики'] : '';
                     $model->price = isset($item['Цена']) ? $item['Цена'] : '';
                     $model->content_install = isset($item['Схема расстановки']) ? $item['Схема расстановки'] : '';
+                    $model->product_type = isset($item['Расходники']) ? $item['Расходники'] : 0;
 
                     if ($model->save())
                         ;

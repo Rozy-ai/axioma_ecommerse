@@ -8,7 +8,7 @@ use Yii;
  * This is the model class for table "product".
  *
  * @property int $id
- * @property int $category_id Тип контента
+ * @property int $category_id Категория
  * @property string $article Артикул
  * @property string $header Заголовок
  * @property string $video_link Ссылка на видео
@@ -26,6 +26,7 @@ use Yii;
  * @property int $created_at
  * @property int $updated_at
  * @property string $supported_products
+ * @property int $product_type Расходник
  *
  * @property Category2 $category
  * @property ProductImage[] $productImages
@@ -47,7 +48,7 @@ class Product extends \app\models\CustomAR
     {
         return [
             [['category_id', 'article', 'url'], 'required'],
-            [['category_id', 'price', 'ord', 'is_enable', 'created_at', 'updated_at'], 'integer'],
+            [['category_id', 'price', 'ord', 'is_enable', 'created_at', 'updated_at', 'product_type'], 'integer'],
             [['content_info', 'content_description', 'content_characteristics', 'content_install'], 'string'],
             [['article', 'url'], 'string', 'max' => 255],
             [['header', 'video_link', 'title', 'description', 'keywords', 'supported_products'], 'string', 'max' => 500],
@@ -64,7 +65,7 @@ class Product extends \app\models\CustomAR
     {
         return [
             'id' => 'ID',
-            'category_id' => 'Тип контента',
+            'category_id' => 'Категория',
             'article' => 'Артикул',
             'header' => 'Заголовок',
             'video_link' => 'Ссылка на видео',
@@ -82,6 +83,7 @@ class Product extends \app\models\CustomAR
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
             'supported_products' => 'Supported Products',
+            'product_type' => 'Расходник',
         ];
     }
 

@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\modules\city\models\CitySearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Cities';
+$this->title = 'Категории';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="city-index">
@@ -20,9 +20,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-            'id',
+//            ['class' => 'yii\grid\SerialColumn'],
+//            'id',
             'header',
+            'ord',
             'url',
             ['class' => 'yii\grid\ActionColumn'],
         ],

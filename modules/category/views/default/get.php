@@ -8,8 +8,8 @@ if ($parent)
 //print_r($category->getBreadCrumbs());
 //exit();
 
-foreach ($category->getBreadCrumbs() as $item)
-    $this->params['breadcrumbs'][] = $item;
+//foreach ($category->getBreadCrumbs() as $item)
+//    $this->params['breadcrumbs'][] = $item;
 
 $this->params['breadcrumbs'][] = $category->title;
 ?>

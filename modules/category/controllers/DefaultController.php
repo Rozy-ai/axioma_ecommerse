@@ -25,20 +25,18 @@ class DefaultController extends Controller {
         if (isset($parent) && $parent)
             $category = $subcategory;
 
-        $category = Category::getByUri($category);
+        $category = Category::getByUrl($category);
 
         if (!$category)
             throw new HttpException(404, ' Страница не найдена! ');
 
-        $category->replaceCodes();
+        Yii::$app->view->title = $category->title ? $category->title : $category->header;
 
-        Yii::$app->view->title = $category->seo_title ? $category->seo_title : $category->title;
+        if ($category->description)
+            \Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => $category->description]);
 
-        if ($category->seo_description)
-            \Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => $category->seo_description]);
-
-        if ($category->seo_keywords)
-            \Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => $category->seo_keywords]);
+        if ($category->keywords)
+            \Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => $category->keywords]);
 
         if ($parent)
             $parent = Category::getByUri($parent);

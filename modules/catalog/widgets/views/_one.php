@@ -4,7 +4,7 @@ use yii\helpers\Html;
 ?>
 
 <div class="col-xs-12 col-sm-6 col-md-3">
-    <a href="/category/<?= $model->uri ?>">
+    <a href="/category/<?= $model->url ?>">
 
         <div class="panel ">
             <div class="panel-body grid-item">
@@ -12,7 +12,7 @@ use yii\helpers\Html;
 
             </div>
             <div class="panel-footer">
-                <?= Html::tag('p', $model->title, ['class' => 'link']) ?>
+                <?= Html::tag('p', $model->header, ['class' => 'link']) ?>
             </div>
         </div>
 

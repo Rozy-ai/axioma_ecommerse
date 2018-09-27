@@ -9,7 +9,7 @@ use yii\helpers\Html;
     <div class="panel panel-info">
         <div class="panel-heading">
             <p class="h4">
-                <?= Html::a($model->h1 ? $model->h1 : $model->name, ['/catalog/' . $model->url]) ?>
+                <?= Html::a($model->header, ['/catalog/' . $model->url]) ?>
             </p>
         </div>
         <div class="panel-body row">
@@ -17,7 +17,7 @@ use yii\helpers\Html;
                 <?= Html::a(Html::img($model->image, ['class' => 'img img-responsive']), ['/catalog/' . $model->url]) ?>
             </div>
             <div class="col-xs-8">
-                <?= Html::tag('p', $model->anons) ?>
+                <?= Html::tag('p', $model->content_info) ?>
             </div>
         </div>
         <div class="panel-footer">

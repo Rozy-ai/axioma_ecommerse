@@ -6,4 +6,8 @@ use Yii;
 
 class Product extends \app\models\Product {
 
+    public function getImage() {
+        return false;
+    }
+
 }
