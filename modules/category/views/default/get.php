@@ -7,7 +7,6 @@ if ($parent)
 //
 //print_r($category->getBreadCrumbs());
 //exit();
-
 //foreach ($category->getBreadCrumbs() as $item)
 //    $this->params['breadcrumbs'][] = $item;
 
@@ -40,7 +39,7 @@ $this->params['breadcrumbs'][] = $category->title;
                             <p class="h3">Продукция</p>
                             <?php
                             foreach ($products as $product):
-                                echo $this->render('_product', ['model' => $product]);
+                                echo $this->render('@app/modules/products/views/default/product-cart', ['model' => $product]);
                             endforeach;
                             ?>
                         </div>

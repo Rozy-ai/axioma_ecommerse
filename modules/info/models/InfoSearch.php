@@ -10,24 +10,22 @@ use app\modules\info\models\Info;
 /**
  * InfoSearch represents the model behind the search form of `app\modules\info\models\Info`.
  */
-class InfoSearch extends Info
-{
+class InfoSearch extends Info {
+
     /**
      * @inheritdoc
      */
-    public function rules()
-    {
+    public function rules() {
         return [
             [['id'], 'integer'],
-            [['model', 'label', 'name', 'value', 'create_time', 'update_time'], 'safe'],
+            [['label', 'name', 'value', 'created_at', 'updated_at'], 'safe'],
         ];
     }
 
     /**
      * @inheritdoc
      */
-    public function scenarios()
-    {
+    public function scenarios() {
         // bypass scenarios() implementation in the parent class
         return Model::scenarios();
     }
@@ -39,8 +37,7 @@ class InfoSearch extends Info
      *
      * @return ActiveDataProvider
      */
-    public function search($params)
-    {
+    public function search($params) {
         $query = Info::find();
 
         // add conditions that should always apply here
@@ -60,15 +57,15 @@ class InfoSearch extends Info
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'create_time' => $this->create_time,
-            'update_time' => $this->update_time,
+            'created_at' => $this->created_at,
+            'updated_at' => $this->updated_at,
         ]);
 
-        $query->andFilterWhere(['like', 'model', $this->model])
-            ->andFilterWhere(['like', 'label', $this->label])
-            ->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'value', $this->value]);
+        $query->andFilterWhere(['like', 'label', $this->label])
+                ->andFilterWhere(['like', 'name', $this->name])
+                ->andFilterWhere(['like', 'value', $this->value]);
 
         return $dataProvider;
     }
+
 }

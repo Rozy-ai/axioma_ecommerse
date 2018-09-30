@@ -5,7 +5,55 @@ use yii\bootstrap\Html;
 <div class="site-index">
 
     <div class="home-slide-show">
-        <?= app\modules\slider\widgets\MainSlider::widget(); ?>
+        <div class="container">
+            <?= app\modules\slider\widgets\MainSlider::widget(); ?>
+            <div class="home-advantages">
+                <div class="container">
+                    <div class="advantages-wrap">
+
+                        <ul class="list-unstyled list-inline">
+                            <li>
+                                <?= Html::img('/image/advantages/world.png', ['class' => 'img img-responsive']) ?>
+                                <p class="text-center">
+                                    Прямые поставки<br/> из Китая
+                                </p>
+                            </li>
+                            <li>
+                                <?= Html::img('/image/advantages/delivery.png', ['class' => 'img img-responsive']) ?>
+                                <p class="text-center">
+                                    Доставим бесплатно <br/>товар от 10 000 ₽
+                                </p>
+                            </li>
+                            <li>
+                                <?= Html::img('/image/advantages/pay.png', ['class' => 'img img-responsive']) ?>
+                                <p class="text-center">
+                                    Отсрочка<br/> платежа
+
+                                </p>
+                            </li>
+                            <li>
+                                <?= Html::img('/image/advantages/support.png', ['class' => 'img img-responsive']) ?>
+                                <p class="text-center">
+                                    Поддержка<br/> клиента
+                                </p>
+                            </li>
+                            <li>
+                                <?= Html::img('/image/advantages/ingeener.png', ['class' => 'img img-responsive']) ?>
+                                <p class="text-center">
+                                    Квалифицированые<br/> инженеры
+                                </p>
+                            </li>
+                            <li>
+                                <?= Html::img('/image/advantages/place.png', ['class' => 'img img-responsive']) ?>
+                                <p class="text-center">
+                                    Удобное<br/> расположение
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="home-list-category">
@@ -14,55 +62,13 @@ use yii\bootstrap\Html;
         </div>
     </div>
 
-    <div class="home-advantages">
-        <div class="container">
-            <div class="advantages-wrap">
 
-                <p class="h3 text-center">Наши преимущества:</p>
-                <ul class="list-unstyled list-inline">
-                    <li>
-                        <?= Html::img('/image/advantages/worldwide-delivery.png', ['class' => 'img img-responsive']) ?>
-                        <p class="text-center">
-                            Прямые поставки<br/> из Китая
-                        </p>
-                    </li>
-                    <li>
-                        <?= Html::img('/image/advantages/delivery-truck.png', ['class' => 'img img-responsive']) ?>
-                        <p class="text-center">
-                            Бесплатная доставка от<br/> 10 000 ₽
-                        </p>
-                    </li>
-                    <li>
-                        <?= Html::img('/image/advantages/placeholder.png', ['class' => 'img img-responsive']) ?>
-                        <p class="text-center">
-                            Удобное<br/> расположение
-                        </p>
-                    </li>
-                    <li>
-                        <?= Html::img('/image/advantages/money.png', ['class' => 'img img-responsive']) ?>
-                        <p class="text-center">
-                            Отсрочка<br/> платежа
-                        </p>
-                    </li>
-                    <li>
-                        <?= Html::img('/image/advantages/worker.png', ['class' => 'img img-responsive']) ?>
-                        <p class="text-center">
-                            Квалифицированые<br/> инженеры
-                        </p>
-                    </li>
-                    <li>
-                        <?= Html::img('/image/advantages/call-center.png', ['class' => 'img img-responsive']) ?>
-                        <p class="text-center">
-                            Поддержка<br/> клиента
-                        </p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
 
     <div class="home-about">
         <div class="container">
+            <p class="h2">
+                Возможности антикражного обордуования
+            </p>
             <p>Современное антикражное оборудование защищает магазины от воровства. Антикражные системы не позволят украсть товар и оповестят персонал торговой точки звуковым или световым сигналом. Купить противокражные системы в Екатеринбурге, Челябинске, Сургуте, Тюмени и Перми предлагает компания «Аксиома».</p>
             <p class="h3">Стандартный набор оборудования для торговой точки состоит из:</p>
             <ul>
@@ -85,6 +91,22 @@ use yii\bootstrap\Html;
             <p>Все перечисленные возможности противокражного оборудования обеспечивают снижение финансовых потерь магазина. Затраты на установку системы всегда компенсируются увеличением общей прибыли торговой точки.</p>
             <p></p>
 
+        </div>
+    </div>
+
+    <div class="recommended-goods">
+        <div class="container">
+            <p class="h2">
+                Рекомендуемые товары
+            </p>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                    <?= app\modules\products\widgets\RecommendetWidget::widget(['type' => 0]) ?>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <?= app\modules\products\widgets\RecommendetWidget::widget(['type' => 1]) ?>
+                </div>
+            </div>
         </div>
     </div>
 

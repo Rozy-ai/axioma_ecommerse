@@ -37,11 +37,11 @@ $config = [
         'city' => [
             'class' => 'app\modules\city\City',
         ],
-        'options' => [
-            'class' => 'app\modules\options\models\Options',
-        ],
         'yon' => [
             'class' => 'app\components\YesNo',
+        ],
+        'info' => [
+            'class' => 'app\modules\info\models\Info',
         ],
         'user' => [
             'identityClass' => 'app\modules\auth\models\User',

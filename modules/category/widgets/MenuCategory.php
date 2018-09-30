@@ -26,11 +26,14 @@ class MenuCategory extends Widget {
 
         $_menu = Category::find()->where(['is_enable' => 1])->orderBy(['ord' => SORT_DESC])->all();
 
-        $menu = $this->form_tree($_menu);
+        foreach ($model as $item):
+            $tree .= '<li class="dropdown ' . $active . '">' . Html::a($cat['title'], ['/category/' . $cat['uri']], ['class' => 'col-xs-10']) . '</li>';
+        endforeach;
+
+//        $menu = $this->form_tree($_menu);
 //        var_dump($menu);
 //        exit();
-        $menu = $this->build_tree($menu, 187);
-
+//        $menu = $this->build_tree($menu, 187);
 //        print_r($model);
 //        echo 12;
 //        $model = Category::getRootList();

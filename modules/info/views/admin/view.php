@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model app\modules\info\models\Info */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Infos', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Инфо Блоки', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="info-view">
@@ -15,27 +15,28 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+        <?= Html::a('Обновить', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?=
+        Html::a('Delete', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => 'Точно удалить?',
                 'method' => 'post',
             ],
-        ]) ?>
+        ])
+        ?>
     </p>
 
-    <?= DetailView::widget([
+    <?=
+    DetailView::widget([
         'model' => $model,
         'attributes' => [
             'id',
-            'model',
             'label',
             'name',
             'value:ntext',
-            'create_time',
-            'update_time',
         ],
-    ]) ?>
+    ])
+    ?>
 
 </div>

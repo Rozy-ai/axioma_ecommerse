@@ -8,7 +8,6 @@ use yii\bootstrap\NavBar;
 //use yii\widgets\Breadcrumbs;
 use app\components\Breadcrumbs;
 use app\assets\AppAsset;
-use app\models\Info;
 use yii\bootstrap\ActiveForm;
 use app\modules\region_templates\models\RegionTemplates;
 use app\modules\menu\models\Menu;
@@ -72,29 +71,23 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                         </div>
                         <div class="col-xs-12 col-sm-2">
                             <p class=""><strong>График работы</strong></p>
-                            <?php if ($work_time = Yii::$app->options::getVal('work_time')): ?>
+                            <?php if ($work_time = Yii::$app->info::get('work_time')): ?>
                                 <?= $work_time ?>
                             <?php endif; ?>
                         </div>
+                        <p class=""><strong>Офис-склад</strong></p>
                         <div class="col-xs-12 col-sm-2">
-                            <p class=""><strong>Офис-склад</strong></p>
-                            <p>
-                                Екатеринбург<br/>
-                                ул. Минометчиков 17, офис 4. <br/>
-                                Телефоны: +7 (343) 204-95-10
-                            </p>
+                            <?= Yii::$app->info::get('ekb_address') ?>
                         </div>
                         <div class="col-xs-12 col-sm-2">
-                            <p>
-                                <br/>
-                                Москва<br/>
-                                ул. Чагинская , д. 4, оф. 17. <br/>
-                                Телефоны: +7 (495) 123-34-41
-                            </p>
+                            <?= Yii::$app->info::get('mos_address') ?>
                         </div>
                         <div class="col-xs-12 col-sm-3 text-right">
                             <p class="phone">
-                                <a href="tel:<?= Info::get(3) ?>"><?= Info::get(3) ?></a><br/>
+                                <a href="tel:<?= Yii::$app->info::get('headTelephone') ?>">
+                                    <?= Yii::$app->info::get('headTelephone') ?>
+                                </a>
+                                <br/>
                             </p>
                             <?= \app\modules\forms\widgets\CallBack::widget(); ?>
                         </div>
@@ -157,7 +150,13 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
             <div class="footer-top">
                 <div class="container">
                     <div class="row">
+                        <div class="col-xs-12 col-sm-3">
+                            <p class="title">АДРЕС</p>
+                            <?= Yii::$app->info::get('ekb_address') ?>
+                            <?= Yii::$app->info::get('mos_address') ?>
+                        </div>
                         <div class="col-xs-12 col-sm-6">
+                            <p class="title">КАРТА САЙТА</p>
                             <?php //app\modules\menu\widgets\FooterMenu::widget();   ?>
 
                             <ul class="list-unstyled list-inline">
@@ -167,8 +166,19 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                             </ul>
 
                         </div>
-                        <div class="col-xs-12 col-sm-6">
-                            <?= Info::get(4) ?>
+                        <div class="col-xs-12 col-sm-3">
+                            <p class="email">
+                                <a href="mailto:<?= Yii::$app->info::get('email') ?>">
+                                    <?= Yii::$app->info::get('email') ?>
+                                </a>
+                            </p>
+                            <p class="phone">
+                                <a href="tel:<?= Yii::$app->info::get('headTelephone') ?>">
+                                    <?= Yii::$app->info::get('headTelephone') ?>
+                                </a>
+                                <br/>
+                            </p>
+                            <?= \app\modules\forms\widgets\CallBack::widget(); ?>
                         </div>
                     </div>
                 </div>
@@ -176,7 +186,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
 
             <div class="footer-bottom">
                 <div class="container">
-                    <p><?= Info::get(1) ?></p>
+                    <p><?= Yii::$app->info::get('copy') ?></p>
                 </div>
             </div>
 
@@ -185,7 +195,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
         </footer>
         <?php
         if (!isset($_SERVER['HTTP_USER_AGENT']) || stripos($_SERVER['HTTP_USER_AGENT'], 'Speed Insights') === false):
-            echo \app\modules\options\models\Options::getVal('counters');
+            echo Yii::$app->info::get('counters');
         endif;
         ?>
         <?php $this->endBody() ?>

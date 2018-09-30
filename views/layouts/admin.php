@@ -42,6 +42,7 @@ AdminAsset::register($this);
                     ['label' => 'Каталог', 'url' => ['/catalog/admin/index']],
                     ['label' => 'ИнфоБлоки', 'url' => ['/info/admin/index']],
                     ['label' => 'Меню', 'url' => ['/menu/admin/index']],
+                    ['label' => 'Слайдер', 'url' => ['/slider/admin/index']],
 //                    ['label' => 'Настройки', 'url' => ['/options/admin/index']],
                     ['label' => 'Страницы', 'url' => ['#'], 'items' => [
                             ['label' => 'Главная', 'url' => ['/page/admin/update/1']],

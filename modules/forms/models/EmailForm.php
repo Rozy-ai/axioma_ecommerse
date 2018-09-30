@@ -17,7 +17,7 @@ class EmailForm extends Model {
 
     public function init() {
 
-        $this->recipient = \app\modules\options\models\Options::getVal('email');
+        $this->recipient = Yii::$app->info::get('email');
         $this->sender_email = Yii::$app->params['senderEmail'];
         return parent::init();
     }

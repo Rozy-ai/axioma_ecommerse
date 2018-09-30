@@ -73,11 +73,17 @@ class SiteController extends Controller {
      */
     public function actionIndex() {
 
-        Yii::$app->view->title = Options::getVal('main_seo_title');
+        Yii::$app->view->title = Yii::$app->info::get('main_seo_title');
 
-        Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => Options::getVal('main_seo_description')]);
+        Yii::$app->view->registerMetaTag([
+            'name' => 'description',
+            'content' => Yii::$app->info::get('main_seo_description')
+        ]);
 
-        Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => Options::getVal('main_seo_keywords')]);
+        Yii::$app->view->registerMetaTag([
+            'name' => 'keywords',
+            'content' => Yii::$app->info::get('main_seo_keywords')
+        ]);
 
         return $this->render('index');
     }
