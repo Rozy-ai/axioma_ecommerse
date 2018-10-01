@@ -134,7 +134,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                             <?= \app\modules\catalog\widgets\ViewedGoods::widget(); ?>
                         </div>
                         <!--<div class="slider">-->
-                        <?= \app\modules\slider\widgets\MainSlider::widget(); ?>
+                        <?php \app\modules\slider\widgets\MainSlider::widget(); ?>
                         <!--</div>-->
                     </div>
                 </div>

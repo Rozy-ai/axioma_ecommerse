@@ -110,7 +110,9 @@ use yii\bootstrap\Html;
         </div>
     </div>
 
-    <div class="home-clients">
+    <?= app\modules\portfolio\widgets\PortfolioWidget::widget(); ?>
+
+    <div class="home-clients hidden">
         <div class="container">
             <?= \app\modules\client\widgets\ClientList::widget(); ?>
         </div>

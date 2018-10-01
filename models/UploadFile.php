@@ -9,6 +9,8 @@ class UploadFile extends \yii\db\ActiveRecord {
 
     const MASK = "/\{[a-z0-9-]+}/";
 
+    public $image_portfolio;
+
     /*
      * Шаблон модели контента. С загрузкой изображений.
      */
@@ -84,6 +86,7 @@ class UploadFile extends \yii\db\ActiveRecord {
     public function rules() {
         return [
             [['img_file'], 'file', 'skipOnEmpty' => true, 'extensions' => 'jpg, png, jpeg'],
+            [['image_portfolio'], 'file', 'skipOnEmpty' => false, 'extensions' => 'jpg, png, jpeg'],
         ];
     }
 

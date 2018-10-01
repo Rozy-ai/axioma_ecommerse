@@ -8,8 +8,8 @@ use Yii;
  * This is the model class for table "info_block".
  *
  * @property int $id
- * @property string $label Имя
- * @property string $name Системное имя
+ * @property string $name Имя
+ * @property string $label Системное имя
  * @property string $value Значение
  * @property int $created_at
  * @property int $updated_at
@@ -30,10 +30,10 @@ class InfoBlock extends \app\models\CustomAR
     public function rules()
     {
         return [
-            [['label', 'name'], 'required'],
+            [['name', 'label'], 'required'],
             [['value'], 'string'],
             [['created_at', 'updated_at'], 'integer'],
-            [['label', 'name'], 'string', 'max' => 255],
+            [['name', 'label'], 'string', 'max' => 255],
         ];
     }
 
@@ -44,8 +44,8 @@ class InfoBlock extends \app\models\CustomAR
     {
         return [
             'id' => 'ID',
-            'label' => 'Имя',
-            'name' => 'Системное имя',
+            'name' => 'Имя',
+            'label' => 'Системное имя',
             'value' => 'Значение',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',

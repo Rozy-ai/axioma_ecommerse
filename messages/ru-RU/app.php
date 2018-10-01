@@ -24,4 +24,8 @@ return [
     'Services' => 'Услуги',
     'Create Service' => 'Создать Услугу',
     'Update Service: {nameAttribute}' => 'Обновить Услугу  {nameAttribute}',
+//
+    'Portfolios' => 'Портфолио',
+    'Create Portfolio' => 'Создать Портфолио',
+    'Update Portfolio: {nameAttribute}' => 'Обновить Портфолио  {nameAttribute}',
 ];

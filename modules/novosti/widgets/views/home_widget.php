@@ -13,16 +13,16 @@ use Yii;
             ?>
 
             <?php if (!$k): ?>
-                <div class="new col-xs-12 col-sm-6">
+                <div class="new col-xs-12 col-sm-7">
+                    <p class="h2">Последние новости</p>
                     <p class="h3"><?= $item->name ?></p>
                     <p class="date"><?= Yii::$app->formatter->asDate($item->news_date, 'long') ?></p>
-                    <div class="content">
-                        <?= Html::img('/' . $item->image, ['class' => 'img img-responsive img-rounded']) ?>
+                    <p>
                         <?= $item->content ?>
-                    </div>
+                    </p>
                 </div>
             <?php else: ?>
-                <div class="col-xs-12 col-sm-6">
+                <div class="col-xs-12 col-sm-5">
                     <?= $this->render('_one', ['model' => $item]) ?>
                 </div>
             <?php endif; ?>

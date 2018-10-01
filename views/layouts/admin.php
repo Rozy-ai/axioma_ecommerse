@@ -40,7 +40,6 @@ AdminAsset::register($this);
                     ['label' => 'Заказы', 'url' => ['/order/admin/index']],
                     ['label' => 'Категории', 'url' => ['/category/admin/index']],
                     ['label' => 'Каталог', 'url' => ['/catalog/admin/index']],
-                    ['label' => 'ИнфоБлоки', 'url' => ['/info/admin/index']],
                     ['label' => 'Меню', 'url' => ['/menu/admin/index']],
                     ['label' => 'Слайдер', 'url' => ['/slider/admin/index']],
 //                    ['label' => 'Настройки', 'url' => ['/options/admin/index']],
@@ -71,6 +70,8 @@ AdminAsset::register($this);
                             ['label' => 'Новости', 'url' => ['/content/news/index']],
                             ['label' => 'Стати', 'url' => ['/content/articles/index']],
                             ['label' => 'Услуги', 'url' => ['/content/services/index']],
+                            ['label' => 'ИнфоБлоки', 'url' => ['/info/admin/index']],
+                            ['label' => 'Портфолио', 'url' => ['/portfolio/admin/index']],
                         ]],
                     Yii::$app->user->isGuest ? (
                             ['label' => 'Login', 'url' => ['/auth/default/login']]

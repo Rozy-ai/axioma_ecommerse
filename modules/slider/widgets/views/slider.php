@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\bootstrap\Carousel;
 ?>
 
 <?php
@@ -23,6 +24,8 @@ echo \Gevman\OwlCarousel\OwlCarousel::widget([
         'autoplay' => true,
     ]
 ]);
+
+
 ?>
 
 <section class="lazy slider" data-sizes="50vw">
