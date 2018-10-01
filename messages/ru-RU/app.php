@@ -28,4 +28,8 @@ return [
     'Portfolios' => 'Портфолио',
     'Create Portfolio' => 'Создать Портфолио',
     'Update Portfolio: {nameAttribute}' => 'Обновить Портфолио  {nameAttribute}',
+//
+    'Menus' => 'Меню',
+    'Create Menu' => 'Добавить пункт',
+    'Update Portfolio: {nameAttribute}' => 'Обновить Портфолио  {nameAttribute}',
 ];

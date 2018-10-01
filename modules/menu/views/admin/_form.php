@@ -12,13 +12,7 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'model')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'parent_id')->textInput() ?>
-
-    <?= $form->field($model, 'core_id')->textInput() ?>
-
-    <?= $form->field($model, 'find_id')->textInput() ?>
+    <?= $form->field($model, 'menu_type')->textInput() ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
@@ -26,18 +20,12 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'url')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'act')->textInput() ?>
+    <?= $form->field($model, 'is_active')->textInput() ?>
 
-    <?= $form->field($model, 'ord')->textInput() ?>
-
-    <?= $form->field($model, 'menu_type')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'create_time')->textInput() ?>
-
-    <?= $form->field($model, 'update_time')->textInput() ?>
+    <?= $form->field($model, 'order')->textInput() ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

@@ -13,18 +13,18 @@ use app\modules\menu\models\Menu;
 class MenuSearch extends Menu
 {
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function rules()
     {
         return [
-            [['id', 'menu_type', 'is_active', 'order'], 'integer'],
-            [['name', 'title', 'url'], 'safe'],
+            [['id', 'parent_id', 'core_id', 'find_id', 'act', 'ord'], 'integer'],
+            [['model', 'name', 'title', 'url', 'menu_type', 'create_time', 'update_time'], 'safe'],
         ];
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function scenarios()
     {
@@ -60,14 +60,20 @@ class MenuSearch extends Menu
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'menu_type' => $this->menu_type,
-            'is_active' => $this->is_active,
-            'order' => $this->order,
+            'parent_id' => $this->parent_id,
+            'core_id' => $this->core_id,
+            'find_id' => $this->find_id,
+            'act' => $this->act,
+            'ord' => $this->ord,
+            'create_time' => $this->create_time,
+            'update_time' => $this->update_time,
         ]);
 
-        $query->andFilterWhere(['like', 'name', $this->name])
+        $query->andFilterWhere(['like', 'model', $this->model])
+            ->andFilterWhere(['like', 'name', $this->name])
             ->andFilterWhere(['like', 'title', $this->title])
-            ->andFilterWhere(['like', 'url', $this->url]);
+            ->andFilterWhere(['like', 'url', $this->url])
+            ->andFilterWhere(['like', 'menu_type', $this->menu_type]);
 
         return $dataProvider;
     }

@@ -5,65 +5,51 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "tbl_menu".
+ * This is the model class for table "menu".
  *
- * @property integer $id
- * @property string $model
- * @property integer $parent_id
- * @property integer $core_id
- * @property integer $find_id
- * @property string $name
- * @property string $title
+ * @property int $id
+ * @property int $menu_type Меню
+ * @property string $name Имя пункта
+ * @property string $title Имя ссылки
  * @property string $url
- * @property integer $act
- * @property integer $ord
- * @property string $menu_type
- * @property string $create_time
- * @property string $update_time
+ * @property int $is_active Включено
+ * @property int $order Порядок
  */
-class Menu extends \yii\db\ActiveRecord
+class Menu extends \app\models\CustomAR
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public static function tableName()
     {
-        return 'tbl_menu';
+        return 'menu';
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function rules()
     {
         return [
-            [['model', 'parent_id', 'name'], 'required'],
-            [['parent_id', 'core_id', 'find_id', 'act', 'ord'], 'integer'],
-            [['create_time', 'update_time'], 'safe'],
-            [['model', 'name', 'title', 'url'], 'string', 'max' => 255],
-            [['menu_type'], 'string', 'max' => 50],
+            [['menu_type', 'name'], 'required'],
+            [['menu_type', 'is_active', 'order'], 'integer'],
+            [['name', 'title', 'url'], 'string', 'max' => 255],
         ];
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function attributeLabels()
     {
         return [
             'id' => 'ID',
-            'model' => 'Model',
-            'parent_id' => 'Parent ID',
-            'core_id' => 'Core ID',
-            'find_id' => 'Find ID',
-            'name' => 'Name',
-            'title' => 'Title',
+            'menu_type' => 'Меню',
+            'name' => 'Имя пункта',
+            'title' => 'Имя ссылки',
             'url' => 'Url',
-            'act' => 'Act',
-            'ord' => 'Ord',
-            'menu_type' => 'Menu Type',
-            'create_time' => 'Create Time',
-            'update_time' => 'Update Time',
+            'is_active' => 'Включено',
+            'order' => 'Порядок',
         ];
     }
 }
