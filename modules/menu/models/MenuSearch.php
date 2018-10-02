@@ -10,15 +10,14 @@ use app\modules\menu\models\Menu;
 /**
  * MenuSearch represents the model behind the search form of `app\modules\menu\models\Menu`.
  */
-class MenuSearch extends Menu
-{
+class MenuSearch extends Menu {
+
     /**
      * {@inheritdoc}
      */
-    public function rules()
-    {
+    public function rules() {
         return [
-            [['id', 'menu_type', 'is_active', 'order'], 'integer'],
+            [['id', 'menu_type', 'is_enable', 'order'], 'integer'],
             [['name', 'title', 'url'], 'safe'],
         ];
     }
@@ -26,8 +25,7 @@ class MenuSearch extends Menu
     /**
      * {@inheritdoc}
      */
-    public function scenarios()
-    {
+    public function scenarios() {
         // bypass scenarios() implementation in the parent class
         return Model::scenarios();
     }
@@ -39,8 +37,7 @@ class MenuSearch extends Menu
      *
      * @return ActiveDataProvider
      */
-    public function search($params)
-    {
+    public function search($params) {
         $query = Menu::find();
 
         // add conditions that should always apply here
@@ -61,14 +58,15 @@ class MenuSearch extends Menu
         $query->andFilterWhere([
             'id' => $this->id,
             'menu_type' => $this->menu_type,
-            'is_active' => $this->is_active,
+            'is_enable' => $this->is_enable,
             'order' => $this->order,
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'title', $this->title])
-            ->andFilterWhere(['like', 'url', $this->url]);
+                ->andFilterWhere(['like', 'title', $this->title])
+                ->andFilterWhere(['like', 'url', $this->url]);
 
         return $dataProvider;
     }
+
 }

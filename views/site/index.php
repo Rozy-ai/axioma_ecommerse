@@ -124,4 +124,18 @@ use yii\bootstrap\Html;
         </div>
     </div>
 
+    <div class="row thanks-contact-form">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-8">
+                    #thanks
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <?= app\modules\forms\widgets\Contact::widget(); ?>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 </div>

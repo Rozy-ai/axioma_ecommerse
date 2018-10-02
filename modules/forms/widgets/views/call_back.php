@@ -13,7 +13,7 @@ Modal::begin([
     'id' => 'callback-form-modal',
     'header' => '<p class="h2 text-center">Заказать звонок</p>',
     'toggleButton' => [
-        'label' => 'Заказать звонок', 'class' => 'btn-link', 'onClick' => "yaCounter23717086.reachGoal('callback-click'); return true;"
+        'label' => 'Заказать обратный звонок', 'class' => 'btn-link', 'onClick' => "yaCounter23717086.reachGoal('callback-click'); return true;"
     ],
     'class' => 'text-left'
 ]);

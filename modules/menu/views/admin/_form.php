@@ -12,7 +12,7 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'menu_type')->textInput() ?>
+    <?= $form->field($model, 'menu_type')->dropDownList($model->type) ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
@@ -20,7 +20,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'url')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'is_active')->textInput() ?>
+    <?= $form->field($model, 'is_enable')->checkbox() ?>
 
     <?= $form->field($model, 'order')->textInput() ?>
 

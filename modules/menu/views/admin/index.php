@@ -19,21 +19,33 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a(Yii::t('app', 'Create Menu'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?= GridView::widget([
+    <?=
+    GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
             'id',
-            'menu_type',
+            [
+                'attribute' => 'menu_type',
+                'filter' => \app\modules\menu\models\Menu::getType(),
+                'value' => function($row) {
+                    return $row->type[$row->menu_type];
+                },
+            ],
             'name',
             'title',
             'url:url',
-            //'is_active',
+            'order',
+            [
+                'attribute' => 'is_enable',
+                'value' => function($row) {
+                    return $row->is_enable ? 'Да' : 'Нет';
+                },
+            ],
             //'order',
-
             ['class' => 'yii\grid\ActionColumn'],
         ],
-    ]); ?>
+    ]);
+    ?>
 </div>

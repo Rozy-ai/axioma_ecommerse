@@ -12,7 +12,7 @@ use Yii;
  * @property string $name Имя пункта
  * @property string $title Имя ссылки
  * @property string $url
- * @property int $is_active Включено
+ * @property int $is_enable Включено
  * @property int $order Порядок
  */
 class Menu extends \app\models\CustomAR
@@ -32,7 +32,7 @@ class Menu extends \app\models\CustomAR
     {
         return [
             [['menu_type', 'name'], 'required'],
-            [['menu_type', 'is_active', 'order'], 'integer'],
+            [['menu_type', 'is_enable', 'order'], 'integer'],
             [['name', 'title', 'url'], 'string', 'max' => 255],
         ];
     }
@@ -48,7 +48,7 @@ class Menu extends \app\models\CustomAR
             'name' => 'Имя пункта',
             'title' => 'Имя ссылки',
             'url' => 'Url',
-            'is_active' => 'Включено',
+            'is_enable' => 'Включено',
             'order' => 'Порядок',
         ];
     }

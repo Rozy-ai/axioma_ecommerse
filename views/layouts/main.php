@@ -156,19 +156,35 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                             <?= Yii::$app->info::get('mos_address') ?>
                         </div>
                         <div class="col-xs-12 col-sm-6">
-                            <p class="title">КАРТА САЙТА</p>
-                            <?php //app\modules\menu\widgets\FooterMenu::widget();   ?>
 
-                            <ul class="list-unstyled list-inline">
-                                <li><a href="/">Главная</a></li>
-                                <?= Menu::getFooterItems() ?>
-                                <!--<li><a href="/soglaschenie">Соглашение о конфиденциальности личных данных</a></li>-->
-                            </ul>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <p class="title">КАРТА САЙТА</p>
+
+                                </div>
+                                <div class="col-xs-12 col-sm-4">
+                                    <ul class="list-unstyled list-inline">
+                                        <?= Menu::getFooterItems(1) ?>
+                                    </ul>
+
+                                </div>
+                                <div class="col-xs-12 col-sm-5">
+                                    <ul class="list-unstyled list-inline">
+                                        <?= Menu::getFooterItems(2) ?>
+                                    </ul>
+
+                                </div>
+                                <div class="col-xs-12 col-sm-3">
+                                    <ul class="list-unstyled list-inline">
+                                        <?= Menu::getFooterItems(3) ?>
+                                    </ul>
+                                </div>
+                            </div>
 
                         </div>
-                        <div class="col-xs-12 col-sm-3">
+                        <div class="col-xs-12 col-sm-3 right-side">
                             <p class="email">
-                                <a href="mailto:<?= Yii::$app->info::get('email') ?>">
+                                email: <a href="mailto:<?= Yii::$app->info::get('email') ?>">
                                     <?= Yii::$app->info::get('email') ?>
                                 </a>
                             </p>

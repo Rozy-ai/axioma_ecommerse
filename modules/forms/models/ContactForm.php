@@ -1,6 +1,6 @@
 <?php
 
-namespace app\models;
+namespace app\modules\forms\models;
 
 use Yii;
 use yii\base\Model;
@@ -10,10 +10,11 @@ use yii\base\Model;
  */
 class ContactForm extends Model {
 
+    const SUBJECT = 'Вопрос с сайта';
+
     public $name;
     public $email;
-    public $phone;
-    public $personal_accept;
+    public $message;
 
 //    public $verifyCode;
 
@@ -22,9 +23,8 @@ class ContactForm extends Model {
      */
     public function rules() {
         return [
-            [['name', 'email', 'phone', 'personal_accept'], 'required'],
+            [['name', 'email', 'message',], 'required'],
             ['email', 'email'],
-            ['personal_accept', 'in', 'range' => [1]],
         ];
     }
 
@@ -33,10 +33,9 @@ class ContactForm extends Model {
      */
     public function attributeLabels() {
         return [
-            'name' => 'Ваше имя',
-            'email' => 'E-mail',
-            'phone' => 'Телефон',
-            'personal_accept' => 'Я даю согласие на обратобку персональных данных',
+            'name' => 'Ваше имя *',
+            'email' => 'Ваш E-mail*',
+            'phone' => 'Ваше Сообщение',
         ];
     }
 
@@ -50,8 +49,8 @@ class ContactForm extends Model {
             Yii::$app->mailer->compose()
                     ->setTo($email)
                     ->setFrom([$this->email => $this->name])
-                    ->setSubject($this->subject)
-                    ->setTextBody($this->body)
+                    ->setSubject(self::SUBJECT)
+                    ->setTextBody($this->message)
                     ->send();
 
             return true;
