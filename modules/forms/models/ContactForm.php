@@ -33,9 +33,9 @@ class ContactForm extends Model {
      */
     public function attributeLabels() {
         return [
-            'name' => 'Ваше имя *',
-            'email' => 'Ваш E-mail*',
-            'phone' => 'Ваше Сообщение',
+            'name' => 'Ваше имя... *',
+            'email' => 'Ваш E-mail... *',
+            'message' => 'Ваше Сообщение',
         ];
     }
 
