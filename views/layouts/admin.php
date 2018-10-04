@@ -72,6 +72,7 @@ AdminAsset::register($this);
                             ['label' => 'Услуги', 'url' => ['/content/services/index']],
                             ['label' => 'ИнфоБлоки', 'url' => ['/info/admin/index']],
                             ['label' => 'Портфолио', 'url' => ['/portfolio/admin/index']],
+                            ['label' => 'Благодарности', 'url' => ['/thanks/admin/index']],
                         ]],
                     Yii::$app->user->isGuest ? (
                             ['label' => 'Login', 'url' => ['/auth/default/login']]

@@ -3,9 +3,11 @@
 use yii\bootstrap\Html;
 ?>
 
-<div class="row">
-    <div class="col-xs-4">
-        <?= Html::a(Html::img($model->image, ['class' => 'img img-responsive']), ['/catalog/' . $model->url]) ?>
+<div class="row product-cart">
+    <div class="col-xs-4 image-wrap">
+        <div class="image"
+             style="background: url(<?= $model->image ?>) top center no-repeat;">
+        </div>
     </div>
     <div class="col-xs-8">
         <p class="h4">
@@ -23,8 +25,14 @@ use yii\bootstrap\Html;
             </div>
         </div>
         <div class="col-xs-12">
-            <?= \app\modules\forms\widgets\OneClickOrder::widget(['product_id' => $model->id]) ?>
-            <?= \app\modules\cart\widgets\AddToCartWidget::widget(['product_id' => $page->id]) ?>
+            <?=
+            \app\modules\forms\widgets\OneClickOrder::widget([
+                'product_id' => $model->id])
+            ?>
+            <?=
+            \app\modules\cart\widgets\AddToCartWidget::widget([
+                'product_id' => $page->id])
+            ?>
         </div>
     </div>
 </div>

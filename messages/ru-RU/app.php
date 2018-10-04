@@ -32,4 +32,8 @@ return [
     'Menus' => 'Меню',
     'Create Menu' => 'Добавить пункт',
     'Update Portfolio: {nameAttribute}' => 'Обновить Портфолио  {nameAttribute}',
+//
+    'Thanks' => 'Благодарности',
+    'Create Thanks' => 'Добавить благодарность',
+    'Update Portfolio: {nameAttribute}' => 'Обновить Портфолио  {nameAttribute}',
 ];

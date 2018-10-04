@@ -211,12 +211,12 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
         </footer>
         <?php
         if (!isset($_SERVER['HTTP_USER_AGENT']) || stripos($_SERVER['HTTP_USER_AGENT'], 'Speed Insights') === false):
-            echo Yii::$app->info::get('counters');
+            Yii::$app->info::get('counters');
         endif;
         ?>
         <?php $this->endBody() ?>
 
-        <script type="text/javascript" src="//cdn.callbackhunter.com/cbh.js?hunter_code=51124a1b34a5d693228b07c3c7665145" charset="UTF-8"></script>
+        <!--<script type="text/javascript" src="//cdn.callbackhunter.com/cbh.js?hunter_code=51124a1b34a5d693228b07c3c7665145" charset="UTF-8"></script>-->
     </body>
 </html>
 <?php $this->endPage() ?>
