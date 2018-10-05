@@ -9,6 +9,7 @@ use app\modules\catalog\models\Catalog;
 class AddToCartWidget extends Widget {
 
     public $product_id;
+    public $type;
 
     public function init() {
 
@@ -19,7 +20,10 @@ class AddToCartWidget extends Widget {
 
         $model = Catalog::findOne($this->product_id);
 
-        return $this->render('add_to_cart_widget', ['model' => $model]);
+        if ($this->type == 'full')
+            return $this->render('add_to_cart_widget_full', ['model' => $model]);
+        else
+            return $this->render('add_to_cart_widget_small', ['model' => $model]);
     }
 
 }

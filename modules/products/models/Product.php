@@ -20,4 +20,11 @@ class Product extends \app\models\Product {
         return false;
     }
 
+    public function getShowPrice() {
+
+        return $this->price ?
+                $this->price . ' <i class="fa fa-rub" aria-hidden="true"></i>' :
+                ' по запросу';
+    }
+
 }

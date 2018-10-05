@@ -16,7 +16,7 @@
 @gray-dark:              lighten(@gray-base, 20%);   // #333
 @gray:                   lighten(@gray-base, 33.5%); // #555
 @gray-light:             lighten(@gray-base, 46.7%); // #777
-@gray-border:             lighten(@gray-base, 70.7%); // #777
+@gray-border:            lighten(@gray-base, 70.7%); // #777
 @gray-lighter:           lighten(@gray-base, 93.5%); // #eee
 
 @brand-primary:         #B8CC76;
@@ -72,10 +72,10 @@
 @line-height-computed:    floor((@font-size-base * @line-height-base)); // ~20px
 
 //** By default, this inherits from the `<body>`.
-@headings-font-family:    inherit;
-@headings-font-weight:    500;
-@headings-line-height:    1.1;
-@headings-color:          inherit;
+@headings-font-family:    inherit; 
+@headings-font-weight:    600;
+@headings-line-height:    1.1; 
+@headings-color:          @brand-primary;
 
 
 //== Iconography
@@ -152,13 +152,14 @@
 
 @btn-font-weight:                normal;
 
-@btn-default-color:              #EBEBEB;
-@btn-default-bg:                 #fff;
-@btn-default-border:             #ccc;
+@btn-default-color:              #fff;
+@btn-default-bg:                 @color-black;
+@btn-default-border:             transparent;
 
 @btn-primary-color:              #fff;
 @btn-primary-bg:                 @brand-primary;
-@btn-primary-border:             darken(@btn-primary-bg, 5%);
+/*@btn-primary-border:             darken(@btn-primary-bg, 5%);*/
+@btn-primary-border:             transparent;
 
 @btn-success-color:              #fff;
 @btn-success-bg:                 @brand-success;

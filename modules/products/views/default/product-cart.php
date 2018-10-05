@@ -10,29 +10,22 @@ use yii\bootstrap\Html;
         </div>
     </div>
     <div class="col-xs-8">
-        <p class="h4">
-            <?= Html::a($model->header, ['/catalog/' . $model->url]) ?>
-        </p>
-        <div class="col-xs-4">
-
+        <div class="product-description-wrap">
+            <p class="h4">
+                <?= Html::a($model->header, ['/catalog/' . $model->url]) ?>
+            </p>
+            <p>
+                <?= Html::tag('p', $model->content_info) ?>
+            </p>
+            <strong>Цена:</strong> <?= $model->showPrice ?>
         </div>
-        <div class="col-xs-8">
-            <?= Html::tag('p', $model->content_info) ?>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-6">
-                <strong>Цена:</strong> <?= $model->price ? '' . $model->price . ' <i class="fa fa-rub" aria-hidden="true"></i>' : ' по запросу'; ?>
-            </div>
-        </div>
-        <div class="col-xs-12">
-            <?=
-            \app\modules\forms\widgets\OneClickOrder::widget([
-                'product_id' => $model->id])
-            ?>
-            <?=
-            \app\modules\cart\widgets\AddToCartWidget::widget([
-                'product_id' => $page->id])
-            ?>
-        </div>
+    </div>
+    <div>
+        <?=
+        \app\modules\cart\widgets\AddToCartWidget::widget([
+            'product_id' => $page->id,
+            'type' => 'small',
+        ])
+        ?>
     </div>
 </div>

@@ -12,7 +12,7 @@ $this->registerJsFile('@web/js/form/one_click.js', ['depends' => ['app\assets\Ap
 Modal::begin([
     'id' => 'oneclick-form-modal',
     'header' => '<p class="h2">Купить в 1 клик</p>',
-    'toggleButton' => ['label' => 'Купить в 1 клик', 'class' => 'btn btn-success', 'onClick' => "yaCounter23717086.reachGoal('oneclick'); return true;"],
+    'toggleButton' => ['label' => 'Купить в 1 клик', 'class' => 'btn btn-primary', 'onClick' => "yaCounter23717086.reachGoal('oneclick'); return true;"],
 ]);
 ?>
 
