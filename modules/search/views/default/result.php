@@ -1,17 +1,17 @@
 <?php
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
+use yii\bootstrap\Html;
 ?>
 
 <li>
     <div class="row">
-        <div class="col-xs-4"></div>
+        <div class="col-xs-4">
+            <?= Html::img($result['image'], ['class' => 'img img-responsive']) ?>
+        </div>
         <div class="col-xs-8">
-            <p class="h4">Result</p>
-            <p>Result</p>
+            <a href="<?= $result['url'] ?>">
+                <p class="h4"><?= $result['name'] ?></p>
+            </a>
         </div>
     </div>
 </li>

@@ -35,12 +35,37 @@ class DefaultController extends Controller {
 
     private function getResult($search) {
 
-        $result;
+        $result = [];
 
-        for ($i = 1; $i < 4; $i++)
-            $result .= $this->renderAjax('result');
+        $product = \app\modules\products\models\Product::find()
+//                ->where('header', 'LIKE', $search)
+                ->andFilterWhere('like', 'header', $search)
+                ->all();
 
-        return $result;
+        Yii::error($product);
+
+        if ($product) {
+
+            foreach ($product as $item):
+                $result[] = [
+                    'name' => str_replace($search, '<strong>' . $search . '</strong>', $item->header),
+                    'link' => '/catalog/' . $item->url,
+                    'image' => '/image/catalog/' . $item->image,
+                ];
+            endforeach;
+        }
+
+        if ($result) {
+
+            foreach ($result as $arr)
+                $text .= $this->renderAjax('result', ['result' => $arr]);
+
+            Yii::error($text);
+
+            return $text;
+        }
+
+        return false;
     }
 
 }
