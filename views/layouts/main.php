@@ -95,22 +95,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                 </div>
             </div>
 
-            <div class="search-wrap">
-                <div class="container">
-                    <?php ActiveForm::begin(['method' => 'get', 'action' => '/search', 'id' => 'popup-search']); ?>
-                    <div class="row">
-                        <div class="col-xs-12 search">
-                            <div class="input-group">
-                                <input name="q" type="text" class="form-control q" placeholder="Поиск..">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                                </span>
-                            </div><!-- /input-group -->
-                        </div><!-- /.col-lg-6 -->
-                    </div><!-- /.row -->
-                    <?php ActiveForm::end(); ?>
-                </div>
-            </div>
+            <?= app\modules\search\widgets\Search::widget() ?>
 
             <?php if ($isHome): ?>
                 <div class="container-fluid">

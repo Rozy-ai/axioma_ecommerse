@@ -12,7 +12,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 
 
-<div class="search-wrap">
+<div class="search-result-wrap">
 
     <div class="container">
         <h1>Результаты поиска</h1>

@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\catalog\widgets;
+namespace app\modules\search\widgets;
 
 use yii\base;
 use yii\base\Widget;
@@ -14,9 +14,7 @@ class Search extends Widget {
 
     public function run() {
 
-        $model = Category::getRoot();
-
-        return $this->render('home_catalog', ['model' => $model]);
+        return $this->render('search');
     }
 
 }

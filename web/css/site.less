@@ -121,6 +121,18 @@ body {
     background: @color-black;
     padding: 2rem 0;
 
+    .search {
+
+        position:relative;
+
+        .ajax-result {
+            position: absolute;
+            background: #fff;
+            width: 60%;
+            z-index: 100;
+        }
+    }
+
     .q {
         font-size: 1.6rem;
         padding: 1rem;
@@ -512,7 +524,7 @@ a.desc:after {
 /* ---- PRODUCTS ---- */
 
 .product-cart {
-    
+
     margin-bottom: 1rem;
 
     .image-wrap {
@@ -530,11 +542,11 @@ a.desc:after {
         padding: .5rem  2rem;
         border: 1px solid @gray-border;
         min-height: 190px;
-        
+
         .h4 {
             text-transform: uppercase;
             font-weight: 600;
-            
+
             a {
                 text-decoration: none;
             }

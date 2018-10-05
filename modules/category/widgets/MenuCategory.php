@@ -27,7 +27,9 @@ class MenuCategory extends Widget {
         $_menu = Category::find()->where(['is_enable' => 1])->orderBy(['ord' => SORT_DESC])->all();
 
         foreach ($model as $item):
-            $tree .= '<li class="dropdown ' . $active . '">' . Html::a($cat['title'], ['/category/' . $cat['uri']], ['class' => 'col-xs-10']) . '</li>';
+            $tree .= '<li class="dropdown">' .
+                    Html::a($item->header, ['/category/' . $item->url]
+                            , ['class' => '']) . '</li>';
         endforeach;
 
 //        $menu = $this->form_tree($_menu);
@@ -47,7 +49,7 @@ class MenuCategory extends Widget {
 
         return $this->render('menu_category', [
                     'model' => $model,
-                    'menu' => $menu,
+                    'menu' => $tree,
 //            'model' => $model, 'menu' => $this->_menu
         ]);
     }
