@@ -25,8 +25,8 @@ $form->field($model, 'phone')->widget(MaskedInput::className(), [
     'options' => ['placeholder' => 'Телефон', 'class' => 'form-control'],
 ])
 ?>
-<?= $form->field($model, 'good')->textInput(['value' => $product->name, 'disabled' => 'disabled']) ?>
-<?= $form->field($model, 'good')->hiddenInput(['value' => $product->name])->label(false) ?>
+<?= $form->field($model, 'good')->textInput(['value' => $product->header, 'disabled' => 'disabled']) ?>
+<?= $form->field($model, 'good')->hiddenInput(['value' => $product->header])->label(false) ?>
 <?= $form->field($model, 'count')->textInput(['value' => 1, 'type' => 'number']) ?>
 <?=
 $form->field($model, 'personal_accept')->checkbox()->label('Я даю согласие на обработку персональных данных. '

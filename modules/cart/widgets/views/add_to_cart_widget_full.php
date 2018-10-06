@@ -9,7 +9,7 @@ use yii\bootstrap\ActiveForm;
         <div class="col-xs-11 col-xs-offset-1">
             <?php ActiveForm::begin(['id' => 'add_cart']) ?>
 
-            <p><strong><?= $model->name ?></strong></p>
+            <p><strong><?= $model->header ?></strong></p>
 
             <div class="col-xs-12">
                 <div class="input-group col-xs-8">

@@ -1,11 +1,12 @@
 <?php
 
 use yii\bootstrap\Html;
+use yii\bootstrap\Tabs;
 
 //print_r($parent);
 if ($parent && $parent->id != 1)
     $this->params['breadcrumbs'][] = ['url' => '/catalog', 'label' => 'Каталог'];
-$this->params['breadcrumbs'][] = $page->name;
+$this->params['breadcrumbs'][] = $page->header;
 ?>
 <div class="product_item">
 
@@ -15,26 +16,42 @@ $this->params['breadcrumbs'][] = $page->name;
             <?= app\modules\category\widgets\MenuCategory::widget(); ?>
         </div>
         <div class="col-xs-12 col-sm-8 content-block">
-            <h1 good-id="<?= $page->id ?>"><?= $page->h1 ? $page->h1 : $page->name ?></h1>
+            <h1 good-id="<?= $page->id ?>"><?= $page->header ?></h1>
 
-
-            <?= $page->getCatLinks(); ?>
 
             <div class="row cart-item">
                 <div class="content col-xs-12 col-sm-6">
-                    <?= $page->image ? Html::img($page->image, ['class' => 'img img-responsive center-block', 'alt' => $page->h1 ? $page->h1 : $page->name]) : ''; ?>
+
+                    <ul class="pgwSlider">
+                        <?php
+                        foreach ($page->productImages as $k => $image):
+//
+//                            if ($k > 3)
+//                                continue;
+                            ?>
+
+                            <li href="#">
+                                <?= Html::img('/image/catalog/' . $image->image) ?>
+                            </li>
+
+                        <?php endforeach; ?>
+                    </ul>
+                    <?php // Html::img($page->image, ['class' => 'img img-responsive center-block', 'alt' => $page->header]); ?>
 
                 </div>
                 <div class="content col-xs-12 col-sm-6 ">
-                    <div class="well">
-                        <?= \app\modules\cart\widgets\AddToCartWidget::widget(['product_id' => $page->id]) ?>
-                    </div>
+                    <?=
+                    \app\modules\cart\widgets\AddToCartWidget::widget([
+                        'product_id' => $page->id,
+                        'type' => 'full',
+                    ])
+                    ?>
                 </div>
 
                 <!--                <div class="col-xs-12 col-sm-6 ">
                                     <div class="btn-group" role="group">
-                <?php // app\modules\forms\widgets\GoodQuestion::widget(['product_id' => $page->id]) ?>
-                <?php // app\modules\forms\widgets\SendReview::widget(['product_id' => $page->id]) ?>
+                <?php // app\modules\forms\widgets\GoodQuestion::widget(['product_id' => $page->id])  ?>
+                <?php // app\modules\forms\widgets\SendReview::widget(['product_id' => $page->id])  ?>
                                         <p>
                                             <br/>
                                             <br/>
@@ -45,9 +62,32 @@ $this->params['breadcrumbs'][] = $page->name;
                                 </div>-->
 
 
-                <div class="content2 col-xs-12">
-                    <?= $page->content ?>
-                    <?= $page->content2 ?>
+                <div class="product-tabs col-xs-12 ">
+
+                    <?php
+                    echo Tabs::widget([
+                        'items' => [
+                            [
+                                'label' => 'Описание',
+                                'content' => $page->content_description,
+                                'active' => true
+                            ],
+                            [
+                                'label' => 'Характеристики',
+                                'content' => $page->content_characteristics,
+                            ],
+                            [
+                                'label' => 'Варианты установок',
+                                'content' => $page->content_install,
+                            ],
+                            [
+                                'label' => 'Сопутствующие товары',
+                                'content' => 'Anim pariatur cliche...',
+                            ],
+                        ],
+                    ]);
+                    ?>
+                    <?php // $page->content2  ?>
                 </div>
 
             </div>

@@ -37,20 +37,23 @@ class DefaultController extends Controller {
 
         $result = [];
 
-        $product = \app\modules\products\models\Product::find()
-//                ->where('header', 'LIKE', $search)
-                ->andFilterWhere('like', 'header', $search)
-                ->all();
+        $searchModel = new \app\modules\products\models\ProductSearch();
+        $dataProvider = $searchModel->search(
+                ['ProductSearch' => ['header' => $search]]
+        );
 
-        Yii::error($product);
+        $product = $dataProvider->getModels();
 
         if ($product) {
 
             foreach ($product as $item):
                 $result[] = [
+                    'type' => 'product',
                     'name' => str_replace($search, '<strong>' . $search . '</strong>', $item->header),
-                    'link' => '/catalog/' . $item->url,
-                    'image' => '/image/catalog/' . $item->image,
+                    'url' => '/catalog/' . $item->url,
+                    'image' => $item->image,
+                    'article' => $item->article,
+                    'category' => $item->category_id,
                 ];
             endforeach;
         }

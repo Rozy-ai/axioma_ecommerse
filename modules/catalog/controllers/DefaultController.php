@@ -43,12 +43,10 @@ class DefaultController extends Controller {
 
         if (!$page)
             throw new HttpException(404, 'Страница не найдена');
-        
-        $page->replaceCodes();
 
         $this->setViewed($page->id);
 
-        Yii::$app->view->title = $page->title ? $page->title : $page->name;
+        Yii::$app->view->title = $page->title ? $page->title : $page->header;
 
         if ($page->description)
             \Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => $page->description]);
@@ -59,13 +57,13 @@ class DefaultController extends Controller {
         if (isset($page->parent_id))
             $parent = Catalog::findOne($page->parent_id);
 
-        $childs = Catalog::find()->where(['parent_id' => $page->id, 'act' => 1])->all();
+//        $childs = Catalog::find()->where(['parent_id' => $page->id, 'act' => 1])->all();
 
 
         return $this->render('get', [
                     'parent' => $parent,
                     'page' => $page,
-                    'childs' => $childs,
+//                    'childs' => $childs,
         ]);
     }
 
@@ -78,7 +76,7 @@ class DefaultController extends Controller {
                 $data[] = $id;
                 $session['viewed'] = $data;
             } else {
-                
+
             } else {
             $data[] = $id;
             $session['viewed'] = $data;

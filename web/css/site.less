@@ -130,6 +130,18 @@ body {
             background: #fff;
             width: 60%;
             z-index: 100;
+
+            li {
+                margin-bottom: .5rem;
+
+                .h4 {
+                    color: @gray-dark;
+
+                    strong {
+                        color: @brand-primary;
+                    }
+                }
+            }
         }
     }
 
@@ -512,11 +524,35 @@ a.desc:after {
 .viewed-goods  {
     margin-top: 4rem;
     margin-bottom: 4rem;
+
+    .h3 {
+        padding-bottom: 2rem;
+    }
+
     .item {
         text-align: center;
+
+        a {
+            text-decoration: none;
+
+            :hover {
+                text-decoration: underline;
+            }
+        }
+
+        .category {
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
         img {
-            height: 100px;
+            height: 200px;
             margin: 0 auto;
+        }
+
+        .block-link {
+            display: block;
+            margin-bottom: 2rem;
         }
     }
 }

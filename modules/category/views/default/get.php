@@ -10,7 +10,7 @@ if ($parent)
 //foreach ($category->getBreadCrumbs() as $item)
 //    $this->params['breadcrumbs'][] = $item;
 
-$this->params['breadcrumbs'][] = $category->title;
+$this->params['breadcrumbs'][] = $category->header;
 ?>
 <div class="product_item">
 

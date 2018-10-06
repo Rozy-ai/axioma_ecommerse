@@ -3,6 +3,7 @@
 namespace app\modules\products\models;
 
 use Yii;
+use yii\bootstrap\Html;
 
 class Product extends \app\models\Product {
 
@@ -25,6 +26,12 @@ class Product extends \app\models\Product {
         return $this->price ?
                 $this->price . ' <i class="fa fa-rub" aria-hidden="true"></i>' :
                 ' по запросу';
+    }
+
+    public function getCategoryLink() {
+
+        return Html::a($this->category->header
+                        , ['/category/' . $this->category->url]);
     }
 
 }

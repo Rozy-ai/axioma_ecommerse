@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link http://www.yiiframework.com/
  * @copyright Copyright (c) 2008 Yii Software LLC
@@ -17,14 +18,34 @@ use yii\console\Controller;
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
  */
-class HelloController extends Controller
-{
+class HelloController extends Controller {
+
     /**
      * This command echoes what you have entered as the message.
      * @param string $message the message to be echoed.
      */
-    public function actionIndex($message = 'hello world')
-    {
+    public function actionIndex($message = 'hello world') {
         echo $message . "\n";
     }
+
+    public function actionTest($message = 'Деакт') {
+        $searchModel = new \app\modules\products\models\ProductSearch();
+        $dataProvider = $searchModel->search(
+                ['ProductSearch' => ['header' => $message]]
+        );
+
+        print_r($dataProvider);
+
+        $models = $dataProvider->getModels();
+
+        foreach ($models as $item):
+            echo $item->header . PHP_EOL;
+        endforeach;
+    }
+
+    public function actionEnableProducts() {
+
+        \app\modules\products\models\Product::updateAll(['is_enable' => 1]);
+    }
+
 }

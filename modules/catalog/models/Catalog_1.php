@@ -5,20 +5,22 @@ namespace app\modules\catalog\models;
 use yii\helpers\Html;
 use Yii;
 
-class Catalog extends \app\modules\products\models\Product {
+class Catalog extends \app\models\Core {
+
+    const PARENT_ID = 187;
 
     public function afterFind() {
-//        $this->cats = unserialize($this->cats);
+        $this->cats = unserialize($this->cats);
         parent::afterFind();
     }
 
     public function beforeValidate() {
 
-//        $this->model = 'ProductionCategory';
-//        $this->news_date = date('Y-m-d H:i:s', time());
-//        $this->cats = serialize($this->cats);
-//        if (!$this->ord)
-//            $this->ord = 0;
+        $this->model = 'ProductionCategory';
+        $this->news_date = date('Y-m-d H:i:s', time());
+        $this->cats = serialize($this->cats);
+        if (!$this->ord)
+            $this->ord = 0;
 
         return parent::beforeValidate();
     }
@@ -41,14 +43,15 @@ class Catalog extends \app\modules\products\models\Product {
     public static function getByUrl($url) {
 
 
-        return ($model = self::find()->where(['url' => $url]
+        return ($model = self::find()->where(
+                        'BINARY [[url]]=:url', ['url' => $url]
                 )->
-                andWhere(['is_enable' => 1])
+                andWhere(['act' => 1])
                 ->one()) ? $model : false;
     }
 
     public static function getName($id) {
-        return ($model = self::findOne($id)) ? $model->header : 'Имя товара не указано';
+        return ($model = self::findOne($id)) ? $model->name : 'Имя товара не указано';
     }
 
     public static function getPrice($id) {
