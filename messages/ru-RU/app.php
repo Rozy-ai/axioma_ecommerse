@@ -4,6 +4,7 @@ return [
     'Login' => 'Вход',
 //
     'Save' => 'Сохранить',
+    'Next' => 'Далее',
     'Update' => 'Обновить',
     'Delete' => 'Удалить',
     'Search' => 'Поиск',
@@ -35,5 +36,9 @@ return [
 //
     'Thanks' => 'Благодарности',
     'Create Thanks' => 'Добавить благодарность',
+    'Update Portfolio: {nameAttribute}' => 'Обновить Портфолио  {nameAttribute}',
+//
+    'Flyers' => 'Рекламные буклеты',
+    'Create Flyer' => 'Добавить Буклет',
     'Update Portfolio: {nameAttribute}' => 'Обновить Портфолио  {nameAttribute}',
 ];

@@ -28,6 +28,7 @@ use Yii;
  * @property string $supported_products
  * @property int $product_type Расходник
  *
+ * @property FlyerGoods[] $flyerGoods
  * @property Category2 $category
  * @property ProductImage[] $productImages
  */
@@ -85,6 +86,14 @@ class Product extends \app\models\CustomAR
             'supported_products' => 'Supported Products',
             'product_type' => 'Расходник',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getFlyerGoods()
+    {
+        return $this->hasMany(FlyerGoods::className(), ['product_id' => 'id']);
     }
 
     /**

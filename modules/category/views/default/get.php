@@ -20,23 +20,15 @@ $this->params['breadcrumbs'][] = $category->header;
             <?= \app\modules\category\widgets\MenuCategory::widget(['active_id' => $category->id]); ?>
         </div>
         <div class="col-xs-12 col-sm-8">
-            <h1><?= $category->title ?> </h1>
+
+
+            <h1><?= $category->header ?> </h1>
 
             <div class="row">
-
-                <?php if ($childs): ?>
-                    <p class="h2">Подкатегории</p>
-                    <?php
-                    foreach ($childs as $child)
-                        echo $this->render('_child', ['model' => $child]);
-                    ?>
-                <?php endif; ?>
-
 
                 <?php if ($products) : ?>
                     <div class="product-list col-xs-12">
                         <div class="row">
-                            <p class="h3">Продукция</p>
                             <?php
                             foreach ($products as $product):
                                 echo $this->render('@app/modules/products/views/default/product-cart', ['model' => $product]);

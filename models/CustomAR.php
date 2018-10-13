@@ -39,6 +39,12 @@ class CustomAR extends \yii\db\ActiveRecord {
         return ArrayHelper::map(self::__getAll(), 'id', 'name');
     }
 
+    // для списков
+    public static function __getHeaders() {
+
+        return ArrayHelper::map(self::__getAll(), 'id', 'header');
+    }
+
     public static function __getAll() {
 
         return self::find()->all();

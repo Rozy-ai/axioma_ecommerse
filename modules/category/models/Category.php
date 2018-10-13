@@ -8,6 +8,22 @@ class Category extends \app\models\Category2 {
 
     public $products = [];
 
+
+    public static function getList() {
+
+        $result[] = 'Не указан';
+
+        $model = self::find()->orderBy(['ord' => SORT_DESC])->all();
+
+        foreach ($model as $item):
+
+            $result[$item->id] = $item->header;
+
+        endforeach;
+
+        return $result ? $result : false;
+    }
+
     public static function getRoot() {
 
         $model = self::find()->orderBy(['header' => SORT_ASC])->all();

@@ -4,23 +4,19 @@ namespace app\modules\novosti\models;
 
 use Yii;
 
-class News extends \app\models\Core {
-
-    const MODEL = 'NewsItem';
+class News extends \app\modules\content\models\Content {
 
     static $_act = ['Нет', "Да"];
 
     public function beforeValidate() {
-
-        $this->model = self::MODEL;
 
         return parent::beforeValidate();
     }
 
     public static function getLast() {
 
-        $model = News::find()->where(['model' => self::MODEL])
-                ->orderBy(['news_date' => SORT_DESC])
+        $model = News::find()->where(['is_enable' => 1])
+                ->orderBy(['created_at' => SORT_DESC])
                 ->limit(3)
                 ->all();
 

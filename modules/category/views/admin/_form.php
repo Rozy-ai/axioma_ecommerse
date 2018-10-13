@@ -18,8 +18,8 @@ use vova07\imperavi\Widget;
 
 
             <?php
-//    echo $form->field($model, 'parent_id')->dropDownList(
-//            app\modules\category\models\Category::getList())
+    echo $form->field($model, 'parent_id')->dropDownList(
+                    app\modules\category\models\Category::getList())
             ?>
 
             <?= $form->field($model, 'header')->textInput(['maxlength' => true]) ?>

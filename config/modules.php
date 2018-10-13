@@ -25,18 +25,18 @@ $modules['datecontrol'] = [
     'class' => 'kartik\datecontrol\Module',
     // format settings for displaying each date attribute (ICU format example)
     'displaySettings' => [
-        Module::FORMAT_DATE => 'yyyy-MM-dd',
+        Module::FORMAT_DATE => 'dd-MM-yyyy',
         Module::FORMAT_TIME => 'hh:mm:ss a',
-        Module::FORMAT_DATETIME => 'yyyy-MM-dd hh:mm:ss a',
+        Module::FORMAT_DATETIME => 'dd-MM-yyyy hh:mm:ss a',
     ],
     // format settings for saving each date attribute (PHP format example)
     'saveSettings' => [
-        Module::FORMAT_DATE => 'hh:mm:ss',
-        Module::FORMAT_TIME => 'yyyy-MM-dd',
-        Module::FORMAT_DATETIME => 'yyyy-MM-dd hh:mm:ss a',
+        Module::FORMAT_DATE => 'php:U', // saves as unix timestamp
+        Module::FORMAT_TIME => 'php:U',
+        Module::FORMAT_DATETIME => 'php:U',
     ],
     // set your display timezone
-    'displayTimezone' => 'Asia/Moscow',
+    'displayTimezone' => 'Asia/Kolkata',
     // set your timezone for date saved to db
     'saveTimezone' => 'UTC',
     // automatically use kartik\widgets for each of the above formats
@@ -53,7 +53,7 @@ $modules['datecontrol'] = [
         Module::FORMAT_DATE => [
             'class' => 'yii\jui\DatePicker', // example
             'options' => [
-                'dateFormat' => 'yyyy-MM-dd hh:mm:ss',
+                'dateFormat' => 'php:d-M-Y',
                 'options' => ['class' => 'form-control'],
             ]
         ]

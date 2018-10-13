@@ -9,11 +9,7 @@ use yii\bootstrap\ActiveForm;
         <div class="col-xs-12">
             <?php ActiveForm::begin(['id' => 'add_cart']) ?>
 
-            <div class="col-xs-12">
-                <div class="input-group col-xs-8">
-                    <?= Html::textInput('product_id', $model->id, ['class' => 'hidden']) ?>
-                </div>
-            </div>
+            <?= Html::textInput('product_id', $model->id, ['class' => 'hidden']) ?>
             <div class="col-xs-12">
                 <div class="btn-group pull-right" role="group">
                     <?= Html::button('В КОРЗИНУ', ['class' => 'btn btn-default']) ?>

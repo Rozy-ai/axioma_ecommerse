@@ -48,4 +48,24 @@ class HelloController extends Controller {
         \app\modules\products\models\Product::updateAll(['is_enable' => 1]);
     }
 
+    public function actionUpdateProducts() {
+
+        $model = \app\modules\products\models\Product::find()->all();
+
+        foreach ($model as $item):
+
+            $str = $item->content_characteristics;
+
+            $str = str_replace(PHP_EOL, '<br/>', $str);
+            echo $str;
+            $item->content_characteristics = $str;
+            $item->save();
+
+//            foreach ($item)
+
+        endforeach;
+
+//        \app\modules\products\models\Product::updateAll(['is_enable' => 1]);
+    }
+
 }

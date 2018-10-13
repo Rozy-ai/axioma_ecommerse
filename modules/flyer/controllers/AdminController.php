@@ -1,27 +1,25 @@
 <?php
 
-namespace app\modules\content\controllers;
+namespace app\modules\flyer\controllers;
 
 use Yii;
-use app\modules\content\models\Content;
-use app\modules\content\models\NewsSearch;
+use app\modules\flyer\models\Flyer;
+use app\modules\flyer\models\FlyerSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * NewsController implements the CRUD actions for Content model.
+ * AdminController implements the CRUD actions for Flyer model.
  */
-class NewsController extends \app\controllers\AdminController {
-
-    const TYPE = 3;
+class AdminController extends \app\controllers\AdminController {
 
     /**
-     * Lists all Content models.
+     * Lists all Flyer models.
      * @return mixed
      */
     public function actionIndex() {
-        $searchModel = new NewsSearch();
+        $searchModel = new FlyerSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -31,28 +29,38 @@ class NewsController extends \app\controllers\AdminController {
     }
 
     /**
-     * Displays a single Content model.
+     * Displays a single Flyer model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionView($id) {
+
+        $model = $this->findModel($id);
+        $goods = $model->flyerGoods;
+
+        $good = new \app\modules\flyer\models\FlyerGoods();
+
+        if ($good->load(Yii::$app->request->post()) && $good->save()) {
+
+        }
+
         return $this->render('view', [
-                    'model' => $this->findModel($id),
+                    'model' => $model,
+                    'goods' => $goods,
         ]);
     }
 
     /**
-     * Creates a new Content model.
+     * Creates a new Flyer model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate() {
-        $model = new Content();
-        $model->type_id = self::TYPE;
+        $model = new Flyer();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['index']);
+            return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('create', [
@@ -61,7 +69,7 @@ class NewsController extends \app\controllers\AdminController {
     }
 
     /**
-     * Updates an existing Content model.
+     * Updates an existing Flyer model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -71,7 +79,7 @@ class NewsController extends \app\controllers\AdminController {
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['index']);
+            return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('update', [
@@ -80,7 +88,7 @@ class NewsController extends \app\controllers\AdminController {
     }
 
     /**
-     * Deletes an existing Content model.
+     * Deletes an existing Flyer model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -93,14 +101,14 @@ class NewsController extends \app\controllers\AdminController {
     }
 
     /**
-     * Finds the Content model based on its primary key value.
+     * Finds the Flyer model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Content the loaded model
+     * @return Flyer the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id) {
-        if (($model = Content::findOne($id)) !== null) {
+        if (($model = Flyer::findOne($id)) !== null) {
             return $model;
         }
 

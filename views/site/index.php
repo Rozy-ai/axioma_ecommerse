@@ -127,10 +127,10 @@ use yii\bootstrap\Html;
     <div class="row thanks-contact-form">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-sm-8">
+                <div class="col-xs-12 col-sm-8 thanks">
                     <?= app\modules\thanks\widgets\ThanksList::widget(); ?>
                 </div>
-                <div class="col-xs-12 col-sm-4">
+                <div class="col-xs-12 col-sm-4 contact-form">
                     <?= app\modules\forms\widgets\Contact::widget(); ?>
                 </div>
 

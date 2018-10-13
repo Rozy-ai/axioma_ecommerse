@@ -34,7 +34,7 @@ $this->registerJsFile('@web/js/form/contact_form.js', ['depends' => ['app\assets
     <p class="politic-text">Нажимая кнопку «Отправить» Вы соглашаетесь с
         <a href="/politic">политикой конфеденциальности</a> сайта.</p>
 
-    <div class="form-group">
+    <div class="form-group button-wrap">
         <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary']) ?>
     </div>
 </div>

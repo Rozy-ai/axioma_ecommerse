@@ -6,16 +6,16 @@ use Yii;
 <div class="one row">
 
     <div class="col-xs-12">
-        <p class="pull-left h4">
+        <p class="pull-left title-news">
             НОВОСТИ
         </p>
-        <p class="pull-right h4">
-            <?= Yii::$app->formatter->asDate($model->news_date, 'long') ?>
+        <p class="pull-right date">
+            <?= Yii::$app->formatter->asDate($model->created_at, 'long') ?>
         </p>
     </div>
     <div class="img col-xs-12">
-        <div class="title">
-            <?= Html::a($model->h1, ['/' . $model->url], ['class' => 'h4']) ?>
+        <div class="description">
+            <?= Html::a($model->header, ['/' . $model->url], ['class' => 'h4']) ?>
             <p><?= $model->anons ?></p>
         </div>
 
