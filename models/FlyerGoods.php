@@ -60,11 +60,5 @@ class FlyerGoods extends \app\models\CustomAR
         return $this->hasOne(Flyer::className(), ['id' => 'flyer_id']);
     }
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getProduct()
-    {
-        return $this->hasOne(Product::className(), ['id' => 'product_id']);
-    }
+
 }

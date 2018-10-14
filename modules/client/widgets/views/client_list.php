@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 ?>
-<div class="container content trust">
+<div class="container-fluid content trust">
     <div class="row">
         <div class="h2">Марки и бренды</div>
 

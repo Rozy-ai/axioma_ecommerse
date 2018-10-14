@@ -28,7 +28,6 @@ class AppAsset extends AssetBundle {
         'css/jBox/jBox.css',
         'css/jBox/jBox.Notice.css',
         'css/fa/web-fonts-with-css/css/fontawesome-all.min.css',
-        'css/fa/web-fonts-with-css/css/fontawesome-all.min.css',
         'css/pgwslider.min.css',
     ];
     public $js = [

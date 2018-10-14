@@ -5,12 +5,12 @@ use yii\bootstrap\Html;
 
 <div class="home-portfolio">
 
-    <div class="container">
+    <div class="container-fluid">
         <p class="h2">Готовые проекты</p>
     </div>
 
     <div class="gallery-wrap">
-        <div class="container">
+        <div class="container-fluid">
             <?php
             $elements = [];
 
