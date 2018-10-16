@@ -111,42 +111,6 @@ PrintAsset::register($this);
 
         </div>
 
-        <footer class="footer">
-
-            <div class="footer-top">
-                <div class="container-fluid">
-                    <div class="row">
-
-                        <div class="col-xs-3 col-xs-offset-1">
-                            <?= Yii::$app->info::get('mos_address') ?>
-                        </div>
-                        <div class="col-xs-3">
-                            <?= Yii::$app->info::get('ekb_address') ?>
-                        </div>
-                        <div class="col-xs-3">
-                            <p class="email">
-                                email:
-                                <?= Yii::$app->info::get('email') ?>
-                            </p>
-                            <p class="phone">
-                                <?= Yii::$app->info::get('headTelephone') ?>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-xs-9 col-xs-offset-1">
-                            <p><?= Yii::$app->info::get('copy') ?></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </footer>
         <?php $this->endBody() ?>
 
         <!--<script type="text/javascript" src="//cdn.callbackhunter.com/cbh.js?hunter_code=51124a1b34a5d693228b07c3c7665145" charset="UTF-8"></script>-->
