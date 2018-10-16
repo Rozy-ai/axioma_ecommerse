@@ -40,9 +40,7 @@ AdminAsset::register($this);
                     ['label' => 'Заказы', 'url' => ['/order/admin/index']],
                     ['label' => 'Категории', 'url' => ['/category/admin/index']],
                     ['label' => 'Каталог', 'url' => ['/catalog/admin/index']],
-                    ['label' => 'Меню', 'url' => ['/menu/admin/index']],
-                    ['label' => 'Слайдер', 'url' => ['/slider/admin/index']],
-//                    ['label' => 'Настройки', 'url' => ['/options/admin/index']],
+                    ['label' => 'Рекламные листовки', 'url' => ['/flyer/admin/index']],
                     ['label' => 'Страницы', 'url' => ['#'], 'items' => [
                             ['label' => 'Главная', 'url' => ['/page/admin/update/1']],
                             ['label' => 'Вакансии', 'url' => ['/page/admin/update/189']],
@@ -66,6 +64,8 @@ AdminAsset::register($this);
                             ['label' => 'Robots.txt', 'url' => ['/robots/admin/index']],
                         ]],
                     ['label' => 'Контент', 'url' => ['#'], 'items' => [
+                            ['label' => 'Меню', 'url' => ['/menu/admin/index']],
+                            ['label' => 'Слайдер', 'url' => ['/slider/admin/index']],
                             ['label' => 'Страницы', 'url' => ['/content/page/index']],
                             ['label' => 'Новости', 'url' => ['/content/news/index']],
                             ['label' => 'Стати', 'url' => ['/content/articles/index']],
