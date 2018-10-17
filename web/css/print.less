@@ -92,17 +92,38 @@ body {
 .products {
     padding: 1rem 0 6rem;
 
+
+    /*    .odd {
+            background: #EBEBEB;
+        }*/
+
     .product {
         margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 3px solid #F5F3F3;
+
 
         a {
             color: @brand-primary;
+        }
+
+        .image {
+            /*background-size: contain;*/
+            background-size: contain !important;
+            min-height: 240px;
+            width: 100%;
+        }
+        
+        .old-price {
+            text-decoration: line-through;
         }
     }
 }
 
 .header {
     padding: 0 2rem 1rem; 
+    /*background: #F5F3F3;*/
+    border-bottom: 3px solid #F5F3F3;
 
     .logo-wrap {
         /*position: relative;*/
@@ -162,13 +183,14 @@ body {
 }
 
 
-.footer {
+footer {
 
     background-color:@color-black;
-    color: @color-black;
+    color: white;
     /*border-top: 1px solid @color-black;*/
     margin-top: .5rem;
     margin: 0;
+    font-style: none;
 
     padding: 1rem;
 

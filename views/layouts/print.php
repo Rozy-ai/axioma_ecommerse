@@ -44,17 +44,27 @@ PrintAsset::register($this);
                                     </p>
                                 </div>
                                 <div class="col-xs-5 ">
-                                    <?= Yii::$app->info::get('ekb_address') ?>
+                                    <?= Yii::$app->info::get('mos_address') ?>
                                 </div>
                                 <div class="col-xs-5 text-right">
-                                    <?= Yii::$app->info::get('mos_address') ?>
+                                    <?= Yii::$app->info::get('ekb_address') ?>
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="slider" style="background: url('/print/image/slide.png') top center no-repeat; height: 300px;">
+
+
+
+            <div class="container-fluid">
+                <div class="row">
+                    <?= $content ?>
+                </div>
+            </div>
+
+            <div class="slider hidden" style="background: url('/print/image/slide.png') top center no-repeat; height: 300px;">
                 <!--<div class="container-fluid">-->
                 <?php Html::img('/print/image/slide.png', ['class' => 'img img-responsive']) ?>
                 <!--</div>-->
@@ -98,18 +108,12 @@ PrintAsset::register($this);
                 </div>
             </div>
 
-            <div class="phrase">
-                <div class="container-fluid ">
-                    <p class="h2 uppercase bold text-center">предложение ограничено</p>
-                </div>
+            <!--            <div class="phrase">
+                            <div class="container-fluid ">
+                                <p class="h2 uppercase bold text-center">предложение ограничено</p>
+                            </div>
 
-            </div>
-
-            <div class="container-fluid">
-                <div class="row">
-                    <?= $content ?>
-                </div>
-            </div>
+                        </div>-->
 
         </div>
 

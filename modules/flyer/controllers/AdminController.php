@@ -132,6 +132,8 @@ class AdminController extends \app\controllers\AdminController {
             'marginLeft' => 0,
             'marginRight' => 0,
             'marginBottom' => '30px',
+            'marginHeader' => 0,
+            'marginFooter' => 0,
 //            'marginBottom' => 0,
             'cssFile' => '/css/print.css',
 //            'cssFile' => '/css/bootstrap/bootstrap.css',
@@ -159,12 +161,16 @@ class AdminController extends \app\controllers\AdminController {
         $pdf = new Pdf([
             'mode' => Pdf::MODE_UTF8, // leaner size using standard fonts
             'content' => $this->render('test'),
-            'marginTop' => '10px',
+//            'marginTop' => '10px',
+            'marginTop' => 0,
             'marginLeft' => 0,
             'marginRight' => 0,
-            'marginBottom' => '30px',
+            'marginBottom' => 0,
+            'marginHeader' => 0,
+            'marginFooter' => 0,
+//            'paddingBottom' => '30px',
 //            'marginBottom' => 0,
-//            'cssFile' => '/css/print.css',
+            'cssFile' => '/css/test.css',
 //            'cssFile' => '/css/bootstrap/bootstrap.css',
 //            'cssInline' => '@page {margin: 0;}',
             'options' => [
@@ -173,7 +179,9 @@ class AdminController extends \app\controllers\AdminController {
             ],
             'methods' => [
 //                'SetFooter' => ['|Page {PAGENO}|'],
-                'SetFooter' => 'Test',
+                'SetFooter' => '<footer style="'
+                . 'background: #000; margin:0; padding:0;'
+                . 'height: 50px;">Test</footer>',
             ]
         ]);
         return $pdf->render();
