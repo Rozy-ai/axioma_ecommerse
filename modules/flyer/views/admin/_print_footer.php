@@ -1,4 +1,4 @@
-<footer class="footer">
+<footer class="page_footer">
 
     <div class="footer-top">
         <div class="container-fluid">

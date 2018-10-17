@@ -11,18 +11,26 @@ use yii\bootstrap\Html;
             <div class="col-xs-10 product">
                 <div class="row">
                     <div class="col-xs-2 col-xs-offset-1">
-                        <?= Html::img($model->product->image, ['class' => 'img img-responsive']) ?>
+                        <a href="https://axioma.pro/catalog/<?= $model->product->url ?>">
+                            <?= Html::img($model->product->image, ['class' => 'img img-responsive']) ?>
+                        </a>
                     </div>
                     <div class="col-xs-8">
                         <div class="row">
 
                             <div class="col-xs-10">
-                                <p class="h4 uppercase"><?= $model->product->header ?></p>
+
+                                <p class="h4 uppercase">
+                                    <a href="https://axioma.pro/catalog/<?= $model->product->url ?>">
+                                        <?= $model->product->header ?>
+                                    </a>
+                                </p>
+
                                 <br/>
                             </div>
                             <div class="col-xs-7">
                                 <p>
-                                    <?= $model->product->content_description ?>
+                                    <?= $model->custom_text ? $model->custom_text : $model->product->content_description ?>
                                 </p>
                             </div>
 

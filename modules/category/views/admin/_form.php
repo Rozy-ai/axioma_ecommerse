@@ -18,7 +18,7 @@ use vova07\imperavi\Widget;
 
 
             <?php
-    echo $form->field($model, 'parent_id')->dropDownList(
+            echo $form->field($model, 'parent_id')->dropDownList(
                     app\modules\category\models\Category::getList())
             ?>
 

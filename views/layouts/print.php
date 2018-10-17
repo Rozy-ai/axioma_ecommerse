@@ -30,9 +30,11 @@ PrintAsset::register($this);
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-xs-4">
-                            <?=
-                            $img = Html::img('/print/image/logo.png', ['class' => 'img img-responsive', 'alt' => 'Логотип']);
-                            ?>
+                            <a href="https://axioma.pro/">
+                                <?=
+                                $img = Html::img('/print/image/logo.png', ['class' => 'img img-responsive', 'alt' => 'Логотип']);
+                                ?>
+                            </a>
                         </div>
                         <div class="col-xs-7">
                             <div class="row">

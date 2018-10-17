@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use yii\bootstrap\Modal;
 use kartik\widgets\Select2;
+use vova07\imperavi\Widget;
 
 $model = new \app\modules\flyer\models\FlyerGoods;
 ?>
@@ -15,6 +16,9 @@ Modal::begin([
     'toggleButton' => [
         'label' => 'Добавить товар', 'class' => 'btn btn-primary'
     ],
+    'options' => [
+        'tabindex' => false,
+    ]
 ]);
 ?>
 
@@ -26,8 +30,23 @@ Modal::begin([
         'data' => \app\modules\products\models\Product::__getHeaders(),
         'options' => [
             'placeholder' => 'Товар',
-            'multiple' => false,
+//            'multiple' => false,
         ],
+    ]);
+    ?>
+    <?=
+    $form->field($model, 'custom_text')->widget(Widget::className(), [
+        'settings' => [
+            'lang' => 'ru',
+            'minHeight' => 100,
+            'plugins' => [
+                'clips',
+                'fullscreen',
+                'fontcolor',
+            ],
+            'replaceDivs' => false,
+            'deniedTags' => ['style']
+        ]
     ]);
     ?>
     <?= $form->field($model, 'price')->textInput() ?>

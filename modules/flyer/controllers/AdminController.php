@@ -131,7 +131,7 @@ class AdminController extends \app\controllers\AdminController {
             'marginTop' => '10px',
             'marginLeft' => 0,
             'marginRight' => 0,
-            'marginBottom' => '20px',
+            'marginBottom' => '30px',
 //            'marginBottom' => 0,
             'cssFile' => '/css/print.css',
 //            'cssFile' => '/css/bootstrap/bootstrap.css',
@@ -144,6 +144,36 @@ class AdminController extends \app\controllers\AdminController {
             'methods' => [
 //                'SetFooter' => ['|Page {PAGENO}|'],
                 'SetFooter' => $this->renderPartial('_print_footer'),
+            ]
+        ]);
+        return $pdf->render();
+
+        return $this->render('print', ['models' => $models]);
+    }
+
+    public function actionPrintTest() {
+
+        $this->layout = '@layouts/print';
+
+        Yii::$app->response->format = \yii\web\Response::FORMAT_RAW;
+        $pdf = new Pdf([
+            'mode' => Pdf::MODE_UTF8, // leaner size using standard fonts
+            'content' => $this->render('test'),
+            'marginTop' => '10px',
+            'marginLeft' => 0,
+            'marginRight' => 0,
+            'marginBottom' => '30px',
+//            'marginBottom' => 0,
+//            'cssFile' => '/css/print.css',
+//            'cssFile' => '/css/bootstrap/bootstrap.css',
+//            'cssInline' => '@page {margin: 0;}',
+            'options' => [
+//                'title' => 'Privacy Policy - Krajee.com',
+//                'subject' => 'Generating PDF files via yii2-mpdf extension has never been easy'
+            ],
+            'methods' => [
+//                'SetFooter' => ['|Page {PAGENO}|'],
+                'SetFooter' => 'Test',
             ]
         ]);
         return $pdf->render();
