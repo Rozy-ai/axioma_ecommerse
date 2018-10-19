@@ -10,7 +10,7 @@ use Yii;
  * @property int $id
  * @property int $flyer_id Буклет
  * @property int $product_id Продукт
- * @property int $price Цена
+ * @property double $price Цена
  * @property int $order Порядок
  * @property string $custom_text Новое описание
  *
@@ -33,7 +33,8 @@ class FlyerGoods extends \app\models\CustomAR
     public function rules()
     {
         return [
-            [['flyer_id', 'product_id', 'price', 'order'], 'integer'],
+            [['flyer_id', 'product_id', 'order'], 'integer'],
+            [['price'], 'number'],
             [['custom_text'], 'string'],
             [['flyer_id'], 'exist', 'skipOnError' => true, 'targetClass' => Flyer::className(), 'targetAttribute' => ['flyer_id' => 'id']],
             [['product_id'], 'exist', 'skipOnError' => true, 'targetClass' => Product::className(), 'targetAttribute' => ['product_id' => 'id']],

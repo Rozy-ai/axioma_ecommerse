@@ -103,6 +103,7 @@ $config = [
                 '/uslugi' => '/content/get/services',
                 '/cart' => '/cart/default/index',
                 '/search' => '/search/default/index',
+                '/enter' => '/auth/default/login',
                 '/novosti/<url:[-\w]+>' => 'novosti/default/get',
                 '/stati/<url:[-\w]+>' => 'stati/default/get',
                 '<module:[-\w]+>/<controller:[-\w]+>/<action:[-\w]+>/<id:\d+>' => '<module>/<controller>/<action>',

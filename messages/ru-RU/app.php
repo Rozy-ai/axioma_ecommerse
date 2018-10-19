@@ -15,6 +15,7 @@ return [
     'Create Page' => 'Создать Страницу',
     'Update Page: {nameAttribute}' => 'Обновить Страницу  {nameAttribute}',
 //
+
     'News' => 'Новости',
     'Create News' => 'Создать Новость',
     'Update News: {nameAttribute}' => 'Обновить Новость  {nameAttribute}',

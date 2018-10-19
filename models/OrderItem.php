@@ -10,9 +10,9 @@ use Yii;
  * @property int $id
  * @property int $order_id
  * @property int $good_id
- * @property string $name
- * @property int $count
- * @property double $price
+ * @property string $name Имя
+ * @property int $count Количество
+ * @property double $price Цена
  */
 class OrderItem extends \app\models\CustomAR
 {
@@ -45,9 +45,9 @@ class OrderItem extends \app\models\CustomAR
             'id' => 'ID',
             'order_id' => 'Order ID',
             'good_id' => 'Good ID',
-            'name' => 'Name',
-            'count' => 'Count',
-            'price' => 'Price',
+            'name' => 'Имя',
+            'count' => 'Количество',
+            'price' => 'Цена',
         ];
     }
 }

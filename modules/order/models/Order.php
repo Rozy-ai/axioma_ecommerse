@@ -28,7 +28,7 @@ class Order extends \yii\db\ActiveRecord {
     public function rules() {
         return [
             [['created_at'], 'required'],
-            [['created_at', 'city_id'], 'integer'],
+            [['created_at'], 'integer'],
             [['client_name', 'email', 'phone'], 'string', 'max' => 255],
         ];
     }
@@ -40,7 +40,6 @@ class Order extends \yii\db\ActiveRecord {
         return [
             'id' => 'ID',
             'client_name' => 'Client Name',
-            'city_id' => 'Город',
             'email' => 'Email',
             'phone' => 'Phone',
             'created_at' => 'Created At',

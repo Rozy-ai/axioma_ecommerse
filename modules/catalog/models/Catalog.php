@@ -4,6 +4,7 @@ namespace app\modules\catalog\models;
 
 use yii\helpers\Html;
 use Yii;
+use app\modules\category\models\Category;
 
 class Catalog extends \app\modules\products\models\Product {
 
@@ -67,6 +68,20 @@ class Catalog extends \app\modules\products\models\Product {
             $result .= ' ' . Html::a($item->title, ['/category/' . $item->uri]);
 
         return $result;
+    }
+
+    public function getCatLink() {
+
+        $category = Category::findOne($this->category_id);
+
+        return Html::a($category->header, ['/category/' . $model->uri, 'title' => $category->header]);
+    }
+
+    public function getBreadCatLink() {
+
+        $category = Category::findOne($this->category_id);
+
+        return ['url' => '/category/' . $category->url, 'label' => $category->header];
     }
 
 }

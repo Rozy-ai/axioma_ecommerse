@@ -65,7 +65,7 @@ var Cart = {
         count.val(_count);
 
         Cart.SetCount(id, _count);
-        this.UpdateSumm();
+        this.UpdateSumm(id);
         Cart.LoadCart();
     },
     Minus: function (id) {
@@ -79,19 +79,24 @@ var Cart = {
             count.val(_count);
 
         Cart.SetCount(id, _count);
-        this.UpdateSumm();
+        this.UpdateSumm(id);
         Cart.LoadCart();
     },
-    UpdateSumm: function () {
+    UpdateSumm: function (id) {
 
         var count = $('[name="count"]').val();
         var one = $('.cart__summ_one').html();
-        console.log(count);
-        console.log(one);
+
+        //btn  update
+
+        $('.btn-count-' + id).html(count);
+//        console.log(id);
+//        console.log(count);
+//        console.log(one);
         var all = $('.cart__summ_all');
 
         var sum = Number(one) * Number(count);
-        console.log(sum);
+//        console.log(sum);
         all.html(sum);
 
     },

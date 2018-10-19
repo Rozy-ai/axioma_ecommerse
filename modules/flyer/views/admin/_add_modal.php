@@ -6,15 +6,16 @@ use yii\bootstrap\Modal;
 use kartik\widgets\Select2;
 use vova07\imperavi\Widget;
 
-$model = new \app\modules\flyer\models\FlyerGoods;
+$model = isset($model) ? $model : new \app\modules\flyer\models\FlyerGoods;
 ?>
 
 <?php
 Modal::begin([
-    'id' => 'add-product-modal',
+    'id' => !isset($model->id) ? 'add-product-modal' : 'modal-' . $model->id,
     'header' => '<p class="h2 text-center">Добавить товар</p>',
     'toggleButton' => [
-        'label' => 'Добавить товар', 'class' => 'btn btn-primary'
+        'label' => !isset($model->id) ? 'Добавить товар' :
+                '<span class="glyphicon glyphicon-pencil text-info"></span>', 'class' => 'btn btn-primary'
     ],
     'options' => [
         'tabindex' => false,
@@ -22,7 +23,7 @@ Modal::begin([
 ]);
 ?>
 
-<?php $form = ActiveForm::begin(['id' => 'callback-form', 'enableClientValidation' => true,]); ?>
+<?php $form = ActiveForm::begin(['id' => 'form-' . $model->id, 'enableClientValidation' => true,]); ?>
 <div class="text-left">
     <?= $form->field($model, 'flyer_id')->hiddenInput(['value' => $flyer->id])->label(false) ?>
     <?=
@@ -53,7 +54,7 @@ Modal::begin([
     <?= $form->field($model, 'order')->textInput(['type' => 'number']) ?>
 </div>
 <div class="form-group">
-    <?= Html::submitButton('Добавить', ['class' => 'btn btn-primary', 'onClick' => "yaCounter23717086.reachGoal('callback-sent'); return true;"]) ?>
+    <?= Html::submitButton('Добавить', ['class' => 'btn btn-primary']) ?>
 </div>
 
 <?php

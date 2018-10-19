@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\menu;
+namespace app\modules\menu_old;
 
 use Yii;
 

@@ -8,10 +8,10 @@ use Yii;
  * This is the model class for table "order".
  *
  * @property int $id
- * @property string $client_name
+ * @property string $client_name Имя Клиента
  * @property string $email
- * @property string $phone
- * @property int $created_at
+ * @property string $phone Телефон
+ * @property int $created_at Создано
  */
 class Order extends \app\models\CustomAR
 {
@@ -42,10 +42,10 @@ class Order extends \app\models\CustomAR
     {
         return [
             'id' => 'ID',
-            'client_name' => 'Client Name',
+            'client_name' => 'Имя Клиента',
             'email' => 'Email',
-            'phone' => 'Phone',
-            'created_at' => 'Created At',
+            'phone' => 'Телефон',
+            'created_at' => 'Создано',
         ];
     }
 }

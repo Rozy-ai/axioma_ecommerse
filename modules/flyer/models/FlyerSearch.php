@@ -10,13 +10,12 @@ use app\modules\flyer\models\Flyer;
 /**
  * FlyerSearch represents the model behind the search form of `app\modules\flyer\models\Flyer`.
  */
-class FlyerSearch extends Flyer
-{
+class FlyerSearch extends Flyer {
+
     /**
      * {@inheritdoc}
      */
-    public function rules()
-    {
+    public function rules() {
         return [
             [['id', 'created_at'], 'integer'],
             [['name'], 'safe'],
@@ -26,8 +25,7 @@ class FlyerSearch extends Flyer
     /**
      * {@inheritdoc}
      */
-    public function scenarios()
-    {
+    public function scenarios() {
         // bypass scenarios() implementation in the parent class
         return Model::scenarios();
     }
@@ -39,8 +37,8 @@ class FlyerSearch extends Flyer
      *
      * @return ActiveDataProvider
      */
-    public function search($params)
-    {
+    public function search($params) {
+
         $query = Flyer::find();
 
         // add conditions that should always apply here
@@ -67,4 +65,5 @@ class FlyerSearch extends Flyer
 
         return $dataProvider;
     }
+
 }

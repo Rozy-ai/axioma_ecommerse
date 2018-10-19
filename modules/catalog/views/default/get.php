@@ -6,6 +6,7 @@ use yii\bootstrap\Tabs;
 //print_r($parent);
 if ($parent && $parent->id != 1)
     $this->params['breadcrumbs'][] = ['url' => '/catalog', 'label' => 'Каталог'];
+$this->params['breadcrumbs'][] = $page->breadCatLink;
 $this->params['breadcrumbs'][] = $page->header;
 ?>
 <div class="product_item">

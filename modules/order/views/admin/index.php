@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\modules\order\models\SearchOrder */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Orders';
+$this->title = 'Заказы';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="order-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Order', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Создать заказ', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?=
     GridView::widget([
@@ -26,13 +26,6 @@ $this->params['breadcrumbs'][] = $this->title;
 //            ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            [
-                'attribute' => 'city_id',
-                'format' => 'raw',
-                'value' => function($row) {
-                    return \app\modules\city\models\City::getCityNameById($row->city_id);
-                }
-            ],
             'client_name',
             'email:email',
             'phone',

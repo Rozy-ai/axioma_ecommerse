@@ -5,10 +5,12 @@ namespace app\modules\flyer\controllers;
 use Yii;
 use app\modules\flyer\models\Flyer;
 use app\modules\flyer\models\FlyerSearch;
+use app\modules\flyer\models\FlyerGoods;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use kartik\mpdf\Pdf;
+use yii\helpers\ArrayHelper;
 
 /**
  * AdminController implements the CRUD actions for Flyer model.
@@ -45,6 +47,10 @@ class AdminController extends \app\controllers\AdminController {
 
         $model = $this->findModel($id);
         $goods = $model->flyerGoods;
+
+        $goods = FlyerGoods::find()
+                        ->where(['id' => ArrayHelper::map($goods, 'id', 'id')])
+                        ->orderBy(['order' => SORT_DESC])->all();
 
         return $this->render('view', [
                     'model' => $model,
@@ -88,6 +94,19 @@ class AdminController extends \app\controllers\AdminController {
         ]);
     }
 
+    public function actionEditFlyerGood($id) {
+
+        $model = FlyerGoods::findOne($id);
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->flyer_id]);
+        }
+
+        return $this->render('edit_flyer_good', [
+                    'model' => $model,
+        ]);
+    }
+
     /**
      * Deletes an existing Flyer model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
@@ -119,6 +138,10 @@ class AdminController extends \app\controllers\AdminController {
         $flyer = Flyer::findOne($id);
 
         $models = $flyer->flyerGoods;
+
+        $models = FlyerGoods::find()
+                        ->where(['id' => ArrayHelper::map($models, 'id', 'id')])
+                        ->orderBy(['order' => SORT_DESC])->all();
 
 //        print_r($models);
 

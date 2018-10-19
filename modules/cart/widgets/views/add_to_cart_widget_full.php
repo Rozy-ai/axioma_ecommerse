@@ -15,18 +15,29 @@ use yii\bootstrap\ActiveForm;
 
             <div class="row">
                 <div class="col-xs-6">
-                    <button class="btn btn-default" type="button" onclick="Cart.Minus(<?= $model->id ?>)">-</button>
+                    <button class="btn btn-grey" type="button" onclick="Cart.Minus(<?= $model->id ?>)">
+                        <i class="fas fa-minus"></i>
+                    </button>
                     <?= Html::textInput('product_id', $model->id, ['class' => 'hidden']) ?>
-                    <?php // Html::textInput('count', 1, ['class' => 'form-control text-right count-' . $model->id, 'type' => 'number']) ?>
-                    <button class="btn btn-default" type="button"  onclick="Cart.Plus(<?= $model->id ?>)">1</button>
-                    <button class="btn btn-default" type="button"  onclick="Cart.Plus(<?= $model->id ?>)">+</button>
+                    <?=
+                    Html::textInput('count', 1, [
+                        'class' => 'hidden form-control text-right count-' . $model->id,
+                        'type' => 'number',
+                    ])
+                    ?>
+                    <button class="btn btn-grey " type="button">
+                        <strong class="btn-count-<?= $model->id ?>">1</strong>
+                    </button>
+                    <button class="btn btn-grey" type="button"  onclick="Cart.Plus(<?= $model->id ?>)">
+                        <i class="fas fa-plus"></i>
+                    </button>
                 </div>
                 <div class="col-xs-6">
-                    <button class="btn btn-default" type="button" onclick="Cart.Minus(<?= $model->id ?>)">
-                        <i class="fa fa-heart-o" aria-hidden="true"></i>
+                    <button class="btn btn-grey" type="button" onclick="Cart.Minus(<?= $model->id ?>)">
+                        <i class="far fa-heart"></i>
                     </button>
-                    <button class="btn btn-default" type="button"  onclick="Cart.Plus(<?= $model->id ?>)">
-                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                    <button class="btn btn-grey" type="button"  onclick="Cart.Plus(<?= $model->id ?>)">
+                        <i class="fas fa-chart-bar"></i>
                     </button>
                 </div>
             </div>
@@ -34,7 +45,7 @@ use yii\bootstrap\ActiveForm;
             <br/>
 
             <div class="" role="group">
-                <?= Html::button('Добавить в корзину', ['class' => 'btn btn-primary', 'onclick' => "yaCounter23717086.reachGoal('addcart'); Cart.AddCart()"]) ?>
+                <?= Html::button('Добавить в корзину', ['class' => 'btn btn-default']) ?>
                 <?php ActiveForm::end(); ?>
                 <?= \app\modules\forms\widgets\OneClickOrder::widget(['product_id' => $model->id]) ?>
             </div>

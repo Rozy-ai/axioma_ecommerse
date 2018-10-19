@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\menu\models;
+namespace app\modules\menu_old\models;
 
 use Yii;
 use yii\bootstrap\Html;
@@ -39,9 +39,9 @@ class Menu extends \app\models\Menu {
                 $result['top'][] = ['label' => $item->name, 'url' => ['/' . $item->url]];
         endforeach;
 
-        $result['bottom'][] = ['label' => '<span class="glyphicon glyphicon-shopping-cart"></span>', 'url' => ['/cart']];
-
-        return $result;
+//        $result['bottom'][] = ['label' => '<span class="glyphicon glyphicon-shopping-cart"></span>', 'url' => ['/cart']];
+//        $result['bottom'][] = ['label' => '<i class="fas fa-lock"></i>', 'url' => ['/enter']];
+//        return $result;
     }
 
     public static function getFooterItems() {

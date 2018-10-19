@@ -16,7 +16,10 @@ use yii\bootstrap\Html;
     <div class="col-xs-3">
         <?= Yii::$app->formatter->asCurrency($model->price) ?>
     </div>
-    <div class="col-xs-3">
-        <?= Html::a('Удалить', ['delete-flyer-good', 'id' => $model->id]) ?>
+    <div class="col-xs-1">
+        <?= Html::a('<span class="glyphicon glyphicon-pencil text-info"></span>', ['edit-flyer-good', 'id' => $model->id]) ?>
+    </div>
+    <div class="col-xs-1">
+        <?= Html::a('<span class="glyphicon glyphicon-trash text-danger"></span>', ['delete-flyer-good', 'id' => $model->id]) ?>
     </div>
 </div>

@@ -56,26 +56,19 @@ PrintAsset::register($this);
                 </div>
             </div>
 
-
-
-            <div class="container-fluid">
-                <div class="row">
-                    <?= $content ?>
-                </div>
-            </div>
-
-            <div class="slider hidden" style="background: url('/print/image/slide.png') top center no-repeat; height: 300px;">
+            <div class="slider" style="background: url('/image/slider/slide_3.jpg') top center no-repeat; height: 300px;">
                 <!--<div class="container-fluid">-->
-                <?php Html::img('/print/image/slide.png', ['class' => 'img img-responsive']) ?>
+                <?php Html::img('/image/slider/slide_3.jpg', ['class' => 'img img-responsive']) ?>
                 <!--</div>-->
             </div>
+
             <div class="advantages">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-xs-12">
 
-                            <p class="h2 text-center uppercase bold">
-                                специальные цены предоставляются в случаях:
+                            <p class="h3 text-center uppercase bold">
+                                <strong>специальные цены предоставляются в случаях:</strong>
                             </p>
                             <br/>
                         </div>
@@ -85,7 +78,9 @@ PrintAsset::register($this);
                             <br/>
                             <p>
                                 <br/>
-                                Открытие нового магазина
+                                <strong class="uppercase">
+                                    Открытие нового магазина
+                                </strong>
                             </p>
                         </div>
                         <div class="col-xs-3 text-center">
@@ -93,7 +88,9 @@ PrintAsset::register($this);
                             <br/>
                             <p>
                                 <br/>
-                                Сумма заказа более 200 тыс. рублей
+                                <strong class="uppercase">
+                                    Сумма заказа более 200 тыс. рублей
+                                </strong>
                             </p>
                         </div>
                         <div class="col-xs-3 text-center">
@@ -101,12 +98,25 @@ PrintAsset::register($this);
                             <br/>
                             <p>
                                 <br/>
-                                100% предоплата
+                                <strong class="uppercase">
+                                    100% предоплата
+                                </strong>
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
+
+
+
+            <div class="container-fluid">
+                <div class="row">
+                    <?= $content ?>
+                </div>
+            </div>
+
+
+
 
             <!--            <div class="phrase">
                             <div class="container-fluid ">
