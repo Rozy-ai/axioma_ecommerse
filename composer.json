@@ -30,7 +30,8 @@
         "kartik-v/yii2-widget-datepicker": "*",
         "gevman/yii2-owl-carousel": "*",
         "moonlandsoft/yii2-phpexcel": "*",
-        "kartik-v/yii2-mpdf": "dev-master"
+        "kartik-v/yii2-mpdf": "dev-master",
+        "yiisoft/yii2-imagine": "^2.1"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

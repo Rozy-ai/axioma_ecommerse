@@ -75,22 +75,29 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                 <?= $work_time ?>
                             <?php endif; ?>
                         </div>
-                        <p class=""><strong>Офис-склад</strong></p>
-                        <div class="col-xs-12 col-sm-2">
-                            <?= Yii::$app->info::get('ekb_address') ?>
+                        <div class="col-xs-12 col-sm-7">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <p class=""><strong>Офис-склад</strong></p>
+                                </div>
+                                <div class="col-xs-12 col-sm-4">
+                                    <?= Yii::$app->info::get('ekb_address') ?>
+                                </div>
+                                <div class="col-xs-12 col-sm-4">
+                                    <?= Yii::$app->info::get('mos_address') ?>
+                                </div>
+                                <div class="col-xs-12 col-sm-3 text-right" >
+                                    <p class="phone">
+                                        <a href="tel:<?= Yii::$app->info::get('headTelephone') ?>">
+                                            <?= Yii::$app->info::get('headTelephone') ?>
+                                        </a>
+                                        <br/>
+                                    </p>
+                                    <?= \app\modules\forms\widgets\CallBack::widget(); ?>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-xs-12 col-sm-2">
-                            <?= Yii::$app->info::get('mos_address') ?>
-                        </div>
-                        <div class="col-xs-12 col-sm-3 text-right">
-                            <p class="phone">
-                                <a href="tel:<?= Yii::$app->info::get('headTelephone') ?>">
-                                    <?= Yii::$app->info::get('headTelephone') ?>
-                                </a>
-                                <br/>
-                            </p>
-                            <?= \app\modules\forms\widgets\CallBack::widget(); ?>
-                        </div>
+
                     </div>
                 </div>
             </div>

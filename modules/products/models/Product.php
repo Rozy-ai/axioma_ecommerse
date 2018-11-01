@@ -11,12 +11,17 @@ class Product extends \app\models\Product {
 
     public function getImage() {
 
+        $_image = false;
+
         foreach ($this->productImages as $image):
 
             if ($image->is_main)
-                return self::IMAGE_PATH . $image->image;
+                $_image = self::IMAGE_PATH . $image->image;
 
         endforeach;
+
+        if ($_image)
+            return $this->setWaterMark($_image);
 
         return false;
     }
@@ -32,6 +37,10 @@ class Product extends \app\models\Product {
 
         return Html::a($this->category->header
                         , ['/category/' . $this->category->url]);
+    }
+
+    public function getProductImages() {
+        return $this->hasMany(ProductImage::className(), ['product_id' => 'id']);
     }
 
 }

@@ -12,7 +12,7 @@ use Yii;
  * @property string $article Артикул
  * @property string $header Заголовок
  * @property string $video_link Ссылка на видео
- * @property int $price Цена
+ * @property double $price Цена
  * @property string $url
  * @property string $content_info Информация
  * @property string $content_description Описание
@@ -49,7 +49,8 @@ class Product extends \app\models\CustomAR
     {
         return [
             [['category_id', 'article', 'url'], 'required'],
-            [['category_id', 'price', 'ord', 'is_enable', 'created_at', 'updated_at', 'product_type'], 'integer'],
+            [['category_id', 'ord', 'is_enable', 'created_at', 'updated_at', 'product_type'], 'integer'],
+            [['price'], 'number'],
             [['content_info', 'content_description', 'content_characteristics', 'content_install'], 'string'],
             [['article', 'url'], 'string', 'max' => 255],
             [['header', 'video_link', 'title', 'description', 'keywords', 'supported_products'], 'string', 'max' => 500],

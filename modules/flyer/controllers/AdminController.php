@@ -11,11 +11,21 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use kartik\mpdf\Pdf;
 use yii\helpers\ArrayHelper;
+use vova07\fileapi\actions\UploadAction as FileAPIUpload;
 
 /**
  * AdminController implements the CRUD actions for Flyer model.
  */
 class AdminController extends \app\controllers\AdminController {
+
+    public function actions() {
+        return [
+            'upload-image' => [
+                'class' => FileAPIUpload::className(),
+                'path' => '@webroot/image/flyer'
+            ],
+        ];
+    }
 
     /**
      * Lists all Flyer models.

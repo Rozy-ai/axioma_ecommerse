@@ -40,6 +40,7 @@ AdminAsset::register($this);
                     ['label' => 'Заказы', 'url' => ['/order/admin/index']],
                     ['label' => 'Категории', 'url' => ['/category/admin/index']],
                     ['label' => 'Каталог', 'url' => ['/catalog/admin/index']],
+                    ['label' => 'Продукция', 'url' => ['/products/admin/index']],
                     ['label' => 'Рекламные листовки', 'url' => ['/flyer/admin/index']],
                     ['label' => 'Страницы', 'url' => ['#'], 'items' => [
                             ['label' => 'Главная', 'url' => ['/page/admin/update/1']],

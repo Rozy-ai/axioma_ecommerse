@@ -8,13 +8,16 @@ use yii\bootstrap\Html;
         <?= $model->order ?>
     </div>
     <div class="col-xs-1">
-        <?= Html::img($model->product->image, ['class' => 'img img-responsive']) ?>
+        <?= Html::img($model->img, ['class' => 'img img-responsive']) ?>
     </div>
     <div class="col-xs-3">
-        <?= $model->product->header ?>
+        <?= $model->name ?>
     </div>
-    <div class="col-xs-3">
+    <div class="col-xs-1">
         <?= Yii::$app->formatter->asCurrency($model->price) ?>
+    </div>
+    <div class="col-xs-1">
+        <?= Yii::$app->formatter->asCurrency($model->price_new) ?>
     </div>
     <div class="col-xs-1">
         <?= Html::a('<span class="glyphicon glyphicon-pencil text-info"></span>', ['edit-flyer-good', 'id' => $model->id]) ?>

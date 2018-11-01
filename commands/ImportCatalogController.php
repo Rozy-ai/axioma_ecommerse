@@ -25,7 +25,8 @@ class ImportCatalogController extends Controller {
 
         $data = \moonland\phpexcel\Excel::widget([
                     'mode' => 'import',
-                    'fileName' => Yii::getAlias('@app') . '/commands/catalog.xlsx',
+//                    'fileName' => Yii::getAlias('@app') . '/commands/catalog.xlsx',
+                    'fileName' => Yii::getAlias('@app') . '/commands/catalog.ods',
                     'setFirstRecordAsKeys' => true, // if you want to set the keys of record column with first record, if it not set, the header with use the alphabet column on excel.
                     'setIndexSheetByName' => true, // set this if your excel data with multiple worksheet, the index of array will be set with the sheet name. If this not set, the index will use numeric.
 //                    'getOnlySheet' => 'Sheet1', // you can set this property if you want to get the specified sheet from the excel data with multiple worksheet.
@@ -35,12 +36,14 @@ class ImportCatalogController extends Controller {
 
             $cat_ = new Category2();
             $cat_->header = $n;
+            $cat_->ord = $row;
             echo $n . PHP_EOL;
             $cat_->url = \app\components\Translite::str2url($n);
             $cat_->is_enable = 1;
             if ($cat_->save())
                 ;
             else
+//                ;
                 print_r($cat_->errors);
 
             foreach ($cat as $k => $item):
@@ -55,7 +58,8 @@ class ImportCatalogController extends Controller {
                     $model = new \app\modules\products\models\Product;
                     $model->category_id = $cat_->id;
                     $model->article = isset($item['Артикул']) ? $item['Артикул'] : '';
-                    $model->header = isset($item['Наименование']) ? $item['Наименование'] : '';
+//                    $model->header = isset($item['Наименование']) ? $item['Наименование'] : '';
+                    $model->header = isset($item['name']) ? $item['name'] : '';
                     $model->url = \app\components\Translite::str2url($model->header);
                     $model->content_info = isset($item['Продукция']) ? $item['Продукция'] : '';
                     $model->content_description = isset($item['Описание']) ? $item['Описание'] : '';
@@ -67,7 +71,8 @@ class ImportCatalogController extends Controller {
                     if ($model->save())
                         ;
                     else
-                        print_r($model->errors);
+                        ;
+//                        print_r($model->errors);
                 }
 
             endforeach;
@@ -97,6 +102,7 @@ class ImportCatalogController extends Controller {
 //
 ////                exit();
 //            }
+            $row++;
         endforeach;
     }
 
@@ -135,8 +141,8 @@ class ImportCatalogController extends Controller {
                     print_r($image->errors);
             }
 
-//            if (!glob(Yii::getAlias('@app') . "/web/image/catalog/" . $item->article . "*"))
-//                echo $item->article . PHP_EOL;
+            if (!glob(Yii::getAlias('@app') . "/web/image/catalog/" . $item->article . "*"))
+                echo $item->article . PHP_EOL;
 
         endforeach;
     }

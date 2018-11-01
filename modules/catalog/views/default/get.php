@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = $page->header;
                             ?>
 
                             <li href="#">
-                                <?= Html::img('/image/catalog/' . $image->image) ?>
+                                <?= Html::img($image->Image) ?>
                             </li>
 
                         <?php endforeach; ?>

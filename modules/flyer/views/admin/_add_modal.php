@@ -5,6 +5,7 @@ use yii\bootstrap\ActiveForm;
 use yii\bootstrap\Modal;
 use kartik\widgets\Select2;
 use vova07\imperavi\Widget;
+use vova07\fileapi\Widget as FileAPI;
 
 $model = isset($model) ? $model : new \app\modules\flyer\models\FlyerGoods;
 ?>
@@ -27,13 +28,23 @@ Modal::begin([
 <div class="text-left">
     <?= $form->field($model, 'flyer_id')->hiddenInput(['value' => $flyer->id])->label(false) ?>
     <?=
-    $form->field($model, 'product_id')->widget(\kartik\select2\Select2::classname(), [
-        'data' => \app\modules\products\models\Product::__getHeaders(),
-        'options' => [
-            'placeholder' => 'Товар',
-//            'multiple' => false,
-        ],
-    ]);
+    $form->field($model, 'name')->textInput()
+//    $form->field($model, 'product_id')->widget(\kartik\select2\Select2::classname(), [
+//        'data' => \app\modules\products\models\Product::__getHeaders(),
+//        'options' => [
+//            'placeholder' => 'Товар',
+////            'multiple' => false,
+//        ],
+//    ]);
+    ?>
+    <?php
+    echo $form->field($model, 'image')->widget(
+            FileAPI::className(), [
+        'settings' => [
+            'url' => ['/flyer/admin/upload-image']
+        ]
+            ]
+    )->label('Изображение в шапке');
     ?>
     <?=
     $form->field($model, 'custom_text')->widget(Widget::className(), [
@@ -51,6 +62,7 @@ Modal::begin([
     ]);
     ?>
     <?= $form->field($model, 'price')->textInput() ?>
+    <?= $form->field($model, 'price_new')->textInput() ?>
     <?= $form->field($model, 'order')->textInput(['type' => 'number']) ?>
 </div>
 <div class="form-group">

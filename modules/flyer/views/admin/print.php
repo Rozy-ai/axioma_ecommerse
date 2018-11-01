@@ -11,9 +11,9 @@ use yii\bootstrap\Html;
             <div class="product <?= (($k % 2) == 0) ? 'odd' : 'even' ?>">
                 <div class="row">
                     <div class="col-xs-2 col-xs-offset-1">
-                        <a href="https://axioma.pro/catalog/<?= $model->product->url ?>">
-                            <!--<div class="image" style="background: url('<?= $model->product->image ?>') top center no-repeat"></div>-->
-                            <?= Html::img($model->product->image, ['class' => 'img img-responsive']) ?>
+                        <a href="https://axioma.pro/">
+                            <!--<div class="image" style="background: url('<?= $model->name ?>') top center no-repeat"></div>-->
+                            <?= Html::img($model->img, ['class' => 'img img-responsive']) ?>
                         </a>
                     </div>
                     <div class="col-xs-8">
@@ -22,8 +22,8 @@ use yii\bootstrap\Html;
                             <div class="col-xs-10">
 
                                 <p class="h4 uppercase">
-                                    <a href="https://axioma.pro/catalog/<?= $model->product->url ?>">
-                                        <?= $model->product->header ?>
+                                    <a href="https://axioma.pro/">
+                                        <?= $model->name ?>
                                     </a>
                                 </p>
 
@@ -36,8 +36,13 @@ use yii\bootstrap\Html;
                             </div>
 
                             <div class="col-xs-3 pull-right">
-                                <strong><?= Yii::$app->formatter->asCurrency($model->price) ?></strong>
-                                <p class="old-price"><?= Yii::$app->formatter->asCurrency($model->price) ?></p>
+
+                                <?php if ($model->price_new): ?>
+                                    <strong><?= Yii::$app->formatter->asCurrency($model->price_new) ?></strong>
+                                    <p class="old-price"><?= Yii::$app->formatter->asCurrency($model->price) ?></p>
+                                <?php else: ?>
+                                    <strong><?= Yii::$app->formatter->asCurrency($model->price) ?></strong>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
@@ -46,7 +51,8 @@ use yii\bootstrap\Html;
                 </div>
             </div>
 
-        <?php endforeach; ?>
+        <?php endforeach;
+        ?>
 
     </div>
 </div>

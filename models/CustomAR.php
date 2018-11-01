@@ -5,6 +5,7 @@ namespace app\models;
 use Yii;
 use yii\bootstrap\Html;
 use yii\helpers\ArrayHelper;
+use yii\imagine\Image;
 
 class CustomAR extends \yii\db\ActiveRecord {
 
@@ -48,6 +49,16 @@ class CustomAR extends \yii\db\ActiveRecord {
     public static function __getAll() {
 
         return self::find()->all();
+    }
+
+    public function setWaterMark($_image) {
+
+        $watermarkImage = '@webroot/image/water_mark.png';
+        $new_image = Image::watermark('@webroot/' . $_image, $watermarkImage);
+        $imageData = base64_encode($new_image->get('png'));
+        $imageHTML = "data:89504E470D0A1A0A;base64,{$imageData}";
+
+        return $imageHTML;
     }
 
 }

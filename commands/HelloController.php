@@ -59,6 +59,7 @@ class HelloController extends Controller {
             $str = str_replace(PHP_EOL, '<br/>', $str);
             echo $str;
             $item->content_characteristics = $str;
+            $item->is_enable = 1;
             $item->save();
 
 //            foreach ($item)
