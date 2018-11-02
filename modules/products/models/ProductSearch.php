@@ -19,7 +19,7 @@ class ProductSearch extends Product
     {
         return [
             [['id', 'category_id', 'price', 'ord', 'is_enable', 'created_at', 'updated_at'], 'integer'],
-            [['header', 'url', 'content_info', 'content_description', 'content_characteristics', 'content_install', 'title', 'description', 'keywords', 'supported_products'], 'safe'],
+            [['header', 'article', 'url', 'content_info', 'content_description', 'content_characteristics', 'content_install', 'title', 'description', 'keywords', 'supported_products'], 'safe'],
         ];
     }
 
@@ -70,6 +70,7 @@ class ProductSearch extends Product
 
         $query->andFilterWhere(['like', 'header', $this->header])
             ->andFilterWhere(['like', 'url', $this->url])
+            ->andFilterWhere(['like', 'article', $this->article])
             ->andFilterWhere(['like', 'content_info', $this->content_info])
             ->andFilterWhere(['like', 'content_description', $this->content_description])
             ->andFilterWhere(['like', 'content_characteristics', $this->content_characteristics])
