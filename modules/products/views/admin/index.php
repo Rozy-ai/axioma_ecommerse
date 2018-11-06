@@ -19,18 +19,24 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a(Yii::t('app', 'Create Product'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?= GridView::widget([
+    <?=
+    GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
             'id',
             'article',
             'category_id',
             'header',
             'price',
             'url:url',
+            [
+                'label' => 'Количество изображений',
+                'value' => function ($row) {
+                    return count($row->productImages);
+                }
+            ],
             //'content_info:ntext',
             //'content_description:ntext',
             //'content_characteristics:ntext',
@@ -43,8 +49,8 @@ $this->params['breadcrumbs'][] = $this->title;
             //'created_at',
             //'updated_at',
             //'supported_products',
-
             ['class' => 'yii\grid\ActionColumn'],
         ],
-    ]); ?>
+    ]);
+    ?>
 </div>
