@@ -25,12 +25,13 @@ use Yii;
  * @property int $is_enable Включено
  * @property int $created_at
  * @property int $updated_at
- * @property string $supported_products
  * @property int $product_type Расходник
  *
  * @property FlyerGoods[] $flyerGoods
  * @property Category2 $category
  * @property ProductImage[] $productImages
+ * @property SupportedGoods[] $supportedGoods
+ * @property SupportedGoods[] $supportedGoods0
  */
 class Product extends \app\models\CustomAR
 {
@@ -53,7 +54,7 @@ class Product extends \app\models\CustomAR
             [['price'], 'number'],
             [['content_info', 'content_description', 'content_characteristics', 'content_install'], 'string'],
             [['article', 'url'], 'string', 'max' => 255],
-            [['header', 'video_link', 'title', 'description', 'keywords', 'supported_products'], 'string', 'max' => 500],
+            [['header', 'video_link', 'title', 'description', 'keywords'], 'string', 'max' => 500],
             [['url'], 'unique'],
             [['article'], 'unique'],
             [['category_id'], 'exist', 'skipOnError' => true, 'targetClass' => Category2::className(), 'targetAttribute' => ['category_id' => 'id']],
@@ -84,7 +85,6 @@ class Product extends \app\models\CustomAR
             'is_enable' => 'Включено',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
-            'supported_products' => 'Supported Products',
             'product_type' => 'Расходник',
         ];
     }
@@ -111,5 +111,21 @@ class Product extends \app\models\CustomAR
     public function getProductImages()
     {
         return $this->hasMany(ProductImage::className(), ['product_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getSupportedGoods()
+    {
+        return $this->hasMany(SupportedGoods::className(), ['parent_product_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getSupportedGoods0()
+    {
+        return $this->hasMany(SupportedGoods::className(), ['child_product_id' => 'id']);
     }
 }

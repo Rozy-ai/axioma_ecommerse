@@ -14,6 +14,11 @@ class Category extends \app\models\Category {
         return parent::beforeValidate();
     }
 
+    public function getImg() {
+
+        return '/image/category/' . $this->image;
+    }
+
     public static function getList() {
 
         $result[] = 'Не указан';

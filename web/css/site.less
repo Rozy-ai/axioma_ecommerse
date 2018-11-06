@@ -17,9 +17,9 @@ body {
     height: auto;
     padding: 50px 0 0 ;
     /*background: url('../img/body.png');*/
-    background-color: #F5F3F3;
-    background-attachment: fixed;
-    background-size: cover;
+    /*background-color: #F5F3F3;*/
+    /*background-attachment: fixed;*/
+    /*background-size: cover;*/
 
     @media(max-width:@screen-sm) {
         background: transparent; 
@@ -38,6 +38,14 @@ body {
     text-transform: upppercase;
     font-weight: 700;
     letter-spacing: .1rem;
+}
+
+nav {
+    .navbar-nav {
+        li {
+            padding: 0 1rem;
+        }
+    }
 }
 
 .main-navbar {
@@ -681,7 +689,7 @@ a.desc:after {
 
         .image {
             min-height: 180px;
-            background-size: cover !important;
+            background-size: contain !important;
 
         }
     }
@@ -693,11 +701,15 @@ a.desc:after {
 
         .h4 {
             text-transform: uppercase;
-            font-weight: 600;
+            font-weight: 400;
 
             a {
                 text-decoration: none;
             }
+        }
+
+        .product-price {
+            font-size: 1.6rem;
         }
 
     }
@@ -711,13 +723,55 @@ a.desc:after {
 
     h1 {
         color: @color-black;
-        font-size: 2rem;
+        letter-spacing: 1px;
+        font-size: 2.2rem;
         margin: 0;
         font-weight: 500;
+        margin-bottom: 3rem;
+    }
+
+    .price {
+        font-size: 1.6rem;
     }
 
     .content {
         margin-bottom: 2rem;
+    }
+
+    .btn-grey {
+        padding: .8rem 1.6rem;
+    }
+
+    .btn-default, .btn-primary {
+        padding: .8rem 1.2rem;
+        /*text-transform: uppercase;*/
+    }
+
+    .product-tabs {
+
+        .active, li:hover {
+            a {
+                background: transparent;
+                border-top: 0px solid white !important;
+                border-left: 0px solid white !important;
+                border-right: 0px solid white !important;
+                border-bottom: 2px solid @brand-primary !important;
+                color: @brand-primary !important;
+                font-weight: 600;
+            }
+        }
+
+        li {
+            a {
+                text-transform: uppercase;
+                border-radius: 0;
+                text-decoration: none;
+            }
+        }
+
+        .nav-tabs {
+            margin-bottom: 2rem;
+        }
     }
 
 }
@@ -725,6 +779,19 @@ a.desc:after {
 .product-list {
     .item {
 
+    }
+}
+
+/* CATEGORY - MENU */
+
+.category-menu {
+    .category-link {
+        padding: 1rem 1rem;
+        margin-bottom: .5rem;
+
+        a {
+            text-decoration: none;
+        }
     }
 }
 

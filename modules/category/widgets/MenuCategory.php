@@ -20,16 +20,25 @@ class MenuCategory extends Widget {
     public function run() {
 
         $model = Category::find()
-                ->where(['is_enable' => 1])
+                ->where(['is_enable' => 1, 'parent_id' => 0])
+                ->orderBy(['ord' => SORT_ASC])
+//                ->andWhere(['not', ['parent_id' => NULL]])
 //                ->with('childs')
                 ->all();
 
         $_menu = Category::find()->where(['is_enable' => 1])->orderBy(['ord' => SORT_DESC])->all();
 
         foreach ($model as $item):
-            $tree .= '<li class="dropdown">' .
+            $tree .= '<li class="dropdown category-link"><div class="row">'
+                    . '<div class="col-xs-3">' .
+                    Html::img($item->Ico, ['class' => 'img img-responsive']) .
+                    '</div>'
+                    . '<div class="col-xs-9">' .
                     Html::a($item->header, ['/category/' . $item->url]
-                            , ['class' => '']) . '</li>';
+                            , []) . ''
+                    . '</div>'
+                    . '</div>'
+                    . '</li>';
         endforeach;
 
 //        $menu = $this->form_tree($_menu);

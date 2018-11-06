@@ -21,20 +21,19 @@ $this->params['breadcrumbs'][] = $category->header;
         </div>
         <div class="col-xs-12 col-sm-8">
 
-
-            <h1><?= $category->header ?> </h1>
-
+            <div class="row">
+                <h1><?= $category->header ?> </h1>
+            </div>
+            
             <div class="row">
 
                 <?php if ($products) : ?>
                     <div class="product-list col-xs-12">
-                        <div class="row">
-                            <?php
-                            foreach ($products as $product):
-                                echo $this->render('@app/modules/products/views/default/product-cart', ['model' => $product]);
-                            endforeach;
-                            ?>
-                        </div>
+                        <?php
+                        foreach ($products as $product):
+                            echo $this->render('@app/modules/products/views/default/product-cart', ['model' => $product]);
+                        endforeach;
+                        ?>
                     </div>
                 <?php endif; ?>
 

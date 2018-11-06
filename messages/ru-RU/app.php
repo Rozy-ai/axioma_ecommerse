@@ -15,7 +15,6 @@ return [
     'Create Page' => 'Создать Страницу',
     'Update Page: {nameAttribute}' => 'Обновить Страницу  {nameAttribute}',
 //
-
     'News' => 'Новости',
     'Create News' => 'Создать Новость',
     'Update News: {nameAttribute}' => 'Обновить Новость  {nameAttribute}',
@@ -43,4 +42,8 @@ return [
     'Flyers' => 'Рекламные буклеты',
     'Create Flyer' => 'Добавить Буклет',
     'Update Portfolio: {nameAttribute}' => 'Обновить Портфолио  {nameAttribute}',
+//
+    'Products' => 'Каталог',
+    'Create Product' => 'Добавить Позицию',
+    'Update Product: {nameAttribute}' => 'Обновить Портфолио  {nameAttribute}',
 ];

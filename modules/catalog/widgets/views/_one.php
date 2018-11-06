@@ -8,7 +8,7 @@ use yii\helpers\Html;
 
         <div class="panel ">
             <div class="panel-body grid-item">
-                <?= Html::img($model->image, ['class' => 'img', 'height' => 160]) ?>
+                <?= Html::img($model->img, ['class' => 'img', 'height' => 160]) ?>
 
             </div>
             <div class="panel-footer">

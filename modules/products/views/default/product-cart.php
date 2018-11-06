@@ -17,7 +17,9 @@ use yii\bootstrap\Html;
             <p>
                 <?= Html::tag('p', $model->content_info) ?>
             </p>
-            <strong>Цена:</strong> <?= $model->showPrice ?>
+            <div class="product-price">
+                <strong>Цена:</strong> <?= $model->showPrice ?>
+            </div>
         </div>
     </div>
     <div>

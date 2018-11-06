@@ -6,7 +6,7 @@ $this->registerCssFile('@web/css/category_menu.css', ['depends' => ['app\assets\
 $this->registerJsFile('@web/js/category_menu.js', ['depends' => ['app\assets\AppAsset']]);
 ?>
 
-<nav class="navbar navbar-default sidebar" role="navigation">
+<nav class="navbar navbar-default sidebar category-menu" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">

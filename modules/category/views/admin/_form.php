@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\Url;
 use vova07\imperavi\Widget;
+use vova07\fileapi\Widget as FileAPI;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Category */
@@ -63,10 +64,25 @@ use vova07\imperavi\Widget;
             ]);
             ?>
 
-            <label>Изображение</label><br/>
-            <?= !$model->image ? '' : Html::img($model->image, ['width' => '300']); ?>
+            <?php
+            echo $form->field($model, 'ico')->widget(
+                    FileAPI::className(), [
+                'settings' => [
+                    'url' => ['/category/admin/upload-image']
+                ]
+                    ]
+            )->label('Иконки');
+            ?>
 
-            <?= $form->field($model, 'image')->fileInput(['accept' => 'image/*']) ?>
+            <?php
+            echo $form->field($model, 'image')->widget(
+                    FileAPI::className(), [
+                'settings' => [
+                    'url' => ['/category/admin/upload-image']
+                ]
+                    ]
+            )->label('Изображение в шапке');
+            ?>
 
             <div class="form-group">
                 <?= Html::submitButton($model->isNewRecord ? 'Создать' : 'Обновить', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

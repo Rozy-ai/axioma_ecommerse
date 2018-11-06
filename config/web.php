@@ -21,7 +21,16 @@ $config = [
             'datetimeFormat' => 'php:j F, H:i',
             'timeFormat' => 'php:H:i:s',
             'defaultTimeZone' => 'Europe/Moscow',
-            'locale' => 'ru-RU'
+            'locale' => 'ru-RU',
+            'numberFormatterOptions' => [
+                NumberFormatter::DECIMAL_SEPARATOR_SYMBOL => '.',
+                NumberFormatter::MAX_FRACTION_DIGITS => 0,
+                NumberFormatter::FRACTION_DIGITS => 0,
+            ],
+            'numberFormatterSymbols' => [
+                NumberFormatter::CURRENCY_SYMBOL => '₽',
+            ],
+            'nullDisplay' => '',
         ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation

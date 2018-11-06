@@ -9,22 +9,18 @@ use app\modules\category\controllers\SearchCategory;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use vova07\fileapi\actions\UploadAction as FileAPIUpload;
 
 /**
  * AdminController implements the CRUD actions for Category model.
  */
 class AdminController extends \app\controllers\AdminController {
 
-    /**
-     * @inheritdoc
-     */
-    public function behaviors() {
+    public function actions() {
         return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
+            'upload-image' => [
+                'class' => FileAPIUpload::className(),
+                'path' => '@webroot/image/category'
             ],
         ];
     }
@@ -70,7 +66,7 @@ class AdminController extends \app\controllers\AdminController {
         $model = new Category();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['index']);
         } else {
             return $this->render('create', [
                         'model' => $model,

@@ -17,8 +17,14 @@ $this->params['breadcrumbs'][] = $page->header;
             <?= app\modules\category\widgets\MenuCategory::widget(); ?>
         </div>
         <div class="col-xs-12 col-sm-8 content-block">
-            <h1 good-id="<?= $page->id ?>"><?= $page->header ?></h1>
 
+            <?php
+            if ($page->product_type)
+                echo Html::img('/image/razh.png', ['class' => 'pull-right'])
+                ?>
+
+
+            <h1 class="pull-left" good-id="<?= $page->id ?>"><?= $page->header ?></h1>
 
             <div class="row cart-item">
                 <div class="content col-xs-12 col-sm-6">
@@ -37,7 +43,7 @@ $this->params['breadcrumbs'][] = $page->header;
 
                         <?php endforeach; ?>
                     </ul>
-                    <?php // Html::img($page->image, ['class' => 'img img-responsive center-block', 'alt' => $page->header]); ?>
+                    <?php // Html::img($page->image, ['class' => 'img img-responsive center-block', 'alt' => $page->header]);   ?>
 
                 </div>
                 <div class="content col-xs-12 col-sm-6 ">
@@ -52,7 +58,7 @@ $this->params['breadcrumbs'][] = $page->header;
                 <!--                <div class="col-xs-12 col-sm-6 ">
                                     <div class="btn-group" role="group">
                 <?php // app\modules\forms\widgets\GoodQuestion::widget(['product_id' => $page->id])  ?>
-                <?php // app\modules\forms\widgets\SendReview::widget(['product_id' => $page->id])  ?>
+                <?php // app\modules\forms\widgets\SendReview::widget(['product_id' => $page->id])    ?>
                                         <p>
                                             <br/>
                                             <br/>
@@ -83,19 +89,16 @@ $this->params['breadcrumbs'][] = $page->header;
                             ],
                             [
                                 'label' => 'Сопутствующие товары',
-                                'content' => 'Anim pariatur cliche...',
+                                'content' => \app\modules\products\widgets\SupportedGoodsWidget::widget([
+                                    'product_id' => $page->id
+                                ]),
                             ],
                         ],
                     ]);
                     ?>
-                    <?php // $page->content2  ?>
                 </div>
-
             </div>
-
         </div>
-
-
     </div>
 </div>
 
