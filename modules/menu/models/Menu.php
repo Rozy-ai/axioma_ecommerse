@@ -39,7 +39,7 @@ class Menu extends \app\models\Menu {
             $items[] = ['label' => $_item->header, 'url' => ['/category/' . $_item->url]];
 
         $result['top'][] = ['label' => '<i class="fa fa-bars" aria-hidden="true"></i> Каталог',
-            'url' => ['/' . $item->url],
+            'url' => ['/' . $_item->url],
             'items' => $items,
         ];
 
