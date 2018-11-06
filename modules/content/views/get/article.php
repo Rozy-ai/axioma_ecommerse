@@ -14,13 +14,25 @@ if ($model->type_id == 2) {
 $this->params['breadcrumbs'][] = $model->header;
 ?>
 
-<h1><?= $model->header ?></h1>
+<div class="article">
 
-<div class="uslugi row">
-    <div class="new col-xs-12">
+    <div class="col-xs-12 col-sm-3">
+
+        <?=
+        app\modules\content\widgets\MenuArticle::widget([
+            'current_id' => $model->id
+        ])
+        ?>
+
+    </div>
+    <div class="col-xs-12 col-sm-9">
+
+        <h1><?= $model->header ?></h1>
+
         <div class="content">
-            <?= Html::img('/' . $model->image, ['class' => 'img img-responsive img-rounded']) ?>
-            <?= $model->content ?>
+            <?= $model->content; ?>
         </div>
+
     </div>
 </div>
+

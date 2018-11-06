@@ -17,8 +17,6 @@ $this->params['breadcrumbs'][] = $this->title;
         ])
         ?>
 
-        #zakaz
-
     </div>
     <div class="col-xs-12 col-sm-9">
 

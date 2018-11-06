@@ -45,7 +45,7 @@ use yii\bootstrap\ActiveForm;
             <br/>
 
             <div class="" role="group">
-                <?= Html::button('Добавить в корзину', ['class' => 'btn btn-default']) ?>
+                <?= Html::button('Добавить в корзину', ['class' => 'btn btn-default', 'onclick' => 'Cart.AddCart()']) ?>
                 <?php ActiveForm::end(); ?>
                 <?= \app\modules\forms\widgets\OneClickOrder::widget(['product_id' => $model->id]) ?>
             </div>

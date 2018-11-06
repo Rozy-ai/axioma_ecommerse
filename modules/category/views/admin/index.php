@@ -25,6 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'header',
             'ord',
             'url',
+            'anons',
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]);

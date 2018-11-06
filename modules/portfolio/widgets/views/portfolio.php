@@ -5,7 +5,7 @@ use yii\bootstrap\Html;
 
 <div class="home-portfolio">
 
-    <div class="container-fluid">
+    <div class="container">
         <p class="h2">Готовые проекты</p>
     </div>
 

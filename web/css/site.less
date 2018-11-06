@@ -75,7 +75,7 @@ nav {
 
 .header {
     background: rgba(255, 255, 255, 0.8);
-    padding: 30px 0;
+    padding: 3rem 0 1rem;
     border-bottom: 1px solid #aaa;
 
     .logo-wrap {
@@ -121,7 +121,9 @@ nav {
     }
 
     .phone {
-        font-size: 2.4rem;
+        font-size: 2.2rem;
+        font-weight: 600;
+        margin-bottom: 0;
 
         a {
             color: #333;
@@ -132,6 +134,12 @@ nav {
             color: #999;
             font-weight: bold;
         }
+    }
+
+    .call-back {
+        color: @color-red;
+        font-size: 1.3rem;
+        font-weight: 600;
     }
 }
 
@@ -177,7 +185,7 @@ nav {
 }
 
 .content {
-    padding: 30px 0;
+    /*padding: 30px 0;*/
 
     a {
         text-decoration: underline;
@@ -363,6 +371,42 @@ nav {
 
         }
 
+    }
+}
+
+.uslugi, .news, .article {
+    h1 {
+        color: @gray-dark;
+        margin-top: 0;
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+    }
+
+    .h2 {
+        color: @gray-dark;
+        margin: 1rem 0 2rem;
+        display: block;
+    }
+}
+
+.menu-services, .menu-articles {
+
+    li, a {
+        margin-bottom: .5rem;
+    }
+
+    .header {
+        padding: 1.5rem;
+        text-align: center;
+        color:white;
+        background: @brand-primary;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    .active, a:hover {
+        background: @gray-dark !important;
+        color: white;
     }
 }
 

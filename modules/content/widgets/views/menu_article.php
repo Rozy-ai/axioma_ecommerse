@@ -3,9 +3,9 @@
 use yii\helpers\Html;
 ?>
 
-<section class="menu-articles">
+<section class="menu-services">
 
-    <li class="list-group-item header">Статьи</li>
+    <li class="list-group-item header">Дополнительные услуги</li>
 
     <?php
     foreach ($model as $item):

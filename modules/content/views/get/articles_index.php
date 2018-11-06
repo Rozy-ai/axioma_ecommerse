@@ -8,9 +8,10 @@ $title = 'Статьи';
 $this->params['breadcrumbs'][] = $title;
 ?>
 
-<h1><?= $title ?></h1>
-
 <div class="news">
+    <h1><?= $title ?></h1>
+
+
 
     <?php
     echo ($models) ? '' : 'Пока статей нет';

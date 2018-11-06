@@ -3,12 +3,13 @@
 use yii\helpers\Html;
 ?>
 <div class="one row">
-    <div class="col-xs-12 date"><?= Yii::$app->formatter->asDate($model->created_at, 'long') ?></div>
 
     <div class="img col-xs-12 col-sm-3">
-        <?= Html::img($model->image, ['class' => 'img img-responsive img-rounded', 'alt' => $model->header]) ?>
+        <?= Html::img($model->image, ['class' => 'img img-responsive img-thumbnail', 'alt' => $model->header]) ?>
     </div>
     <div class="img col-xs-12 col-sm-9">
+        <i class="far fa-calendar-alt"></i>
+        <?= Yii::$app->formatter->asDate($model->created_at, 'long') ?>
         <div class="title">
             <?= Html::a($model->header, ['/' . $model->url], ['class' => 'h2']) ?>
         </div>

@@ -41,4 +41,12 @@ class Content extends \app\models\Content {
         ]);
     }
 
+    public static function getArticles() {
+
+        return self::findAll([
+                    'type_id' => self::TYPE['Статьи'],
+                    'is_enable' => 1,
+        ]);
+    }
+
 }

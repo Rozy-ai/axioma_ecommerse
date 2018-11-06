@@ -13,7 +13,7 @@ Modal::begin([
     'id' => 'callback-form-modal',
     'header' => '<p class="h2 text-center">Заказать звонок</p>',
     'toggleButton' => [
-        'label' => 'Заказать обратный звонок', 'class' => 'btn-link', 'onClick' => "yaCounter23717086.reachGoal('callback-click'); return true;"
+        'label' => 'Заказать обратный звонок', 'class' => 'btn-link call-back'
     ],
     'class' => 'text-left'
 ]);
@@ -35,7 +35,7 @@ Modal::begin([
     ?>
 </div>
 <div class="form-group">
-    <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary', 'onClick' => "yaCounter23717086.reachGoal('callback-sent'); return true;"]) ?>
+    <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary']) ?>
 </div>
 
 <?php

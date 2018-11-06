@@ -86,7 +86,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                 <div class="col-xs-12 col-sm-4">
                                     <?= Yii::$app->info::get('mos_address') ?>
                                 </div>
-                                <div class="col-xs-12 col-sm-3 text-right" >
+                                <div class="col-xs-12 col-sm-4 text-right" >
                                     <p class="phone">
                                         <a href="tel:<?= Yii::$app->info::get('headTelephone') ?>">
                                             <?= Yii::$app->info::get('headTelephone') ?>
