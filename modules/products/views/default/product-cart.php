@@ -25,7 +25,7 @@ use yii\bootstrap\Html;
     <div>
         <?=
         \app\modules\cart\widgets\AddToCartWidget::widget([
-            'product_id' => $page->id,
+            'product_id' => $model->id,
             'type' => 'small',
         ])
         ?>
