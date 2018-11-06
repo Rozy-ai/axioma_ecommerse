@@ -1,7 +1,6 @@
 <?php
 
 use yii\helpers\Html;
-use Yii;
 ?>
 <div class="one row">
 
@@ -10,7 +9,7 @@ use Yii;
             НОВОСТИ
         </p>
         <p class="pull-right date">
-            <?= Yii::$app->formatter->asDate($model->created_at, 'long') ?>
+            <?= \Yii::$app->formatter->asDate($model->created_at, 'long') ?>
         </p>
     </div>
     <div class="img col-xs-12">
