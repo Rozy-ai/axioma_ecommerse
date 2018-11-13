@@ -1,18 +1,18 @@
 $(function () {
 
-    $('body').on('click', '.more', function () {
-
-//    $(this + '> .dropdown-menu').addClass('active');
-
-        console.log($(this));
-        console.log($(this).siblings('.dropdown-menu'));
-
-        if ($(this).siblings('.dropdown-menu').hasClass("active"))
-            $(this).siblings('.dropdown-menu').removeClass('active');
-//    ;
-        else
-            $(this).siblings('.dropdown-menu').addClass('active');
-    })
+//    $('body').on('click', '.more', function () {
+//
+////    $(this + '> .dropdown-menu').addClass('active');
+//
+//        console.log($(this));
+//        console.log($(this).siblings('.dropdown-menu'));
+//
+//        if ($(this).siblings('.dropdown-menu').hasClass("active"))
+//            $(this).siblings('.dropdown-menu').removeClass('active');
+////    ;
+//        else
+//            $(this).siblings('.dropdown-menu').addClass('active');
+//    })
 //$('body').on('mouseleave', '.dropdown', function () {
 //
 //    $(this).find('.dropdown-menu').removeClass('active');
@@ -22,11 +22,11 @@ $(function () {
 //CheckActive
 
 
-    var active = $('.dropdown._active');
+    var active = $('.active');
 
     if (active != 'undefined') {
 
-        active.parents('.forAnimate').addClass('active');
+        active.parents('.li-dropdown').addClass('active');
 //        alert(1);
     }
 

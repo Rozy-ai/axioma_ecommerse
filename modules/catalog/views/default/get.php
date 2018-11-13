@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = $page->header;
 
     <div class="row">
 
-        <div class="col-xs-12 col-sm-4 category-menu">
+        <div class="col-xs-12 col-sm-4  category-left-menu">
             <?= app\modules\category\widgets\MenuCategory::widget(); ?>
         </div>
         <div class="col-xs-12 col-sm-8 content-block">

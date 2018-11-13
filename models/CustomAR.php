@@ -54,7 +54,13 @@ class CustomAR extends \yii\db\ActiveRecord {
     public function setWaterMark($_image) {
 
         $watermarkImage = '@webroot/image/watermark.png';
-        $new_image = Image::watermark('@webroot/' . $_image, $watermarkImage);
+
+        if (file_exists($watermarkImage))
+            $new_image = Image::watermark('@webroot/' . $_image, $watermarkImage);
+        else {
+            $_image = '@webroot/image/no_img.jpg';
+            $new_image = Image::watermark($_image, $_image);
+        }
         $imageData = base64_encode($new_image->get('png'));
         $imageHTML = "data:89504E470D0A1A0A;base64,{$imageData}";
 

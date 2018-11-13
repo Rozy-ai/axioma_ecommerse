@@ -5,7 +5,7 @@ namespace app\modules\category\controllers;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Category2 as Category;
+use app\modules\category\models\Category;
 
 /**
  * SearchCategory represents the model behind the search form about `app\models\Category`.
@@ -38,7 +38,7 @@ class SearchCategory extends Category {
      * @return ActiveDataProvider
      */
     public function search($params) {
-        $query = Category::find();
+        $query = Category::find()->with('parent');
 
         // add conditions that should always apply here
 

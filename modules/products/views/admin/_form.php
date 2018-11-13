@@ -117,6 +117,13 @@ use kartik\widgets\Select2;
             ]);
             ?>
 
+            <?=
+            $form->field($model, 'cats')->widget(\kartik\select2\Select2::classname(), [
+                'data' => app\modules\category\models\Category::__getHeaders(),
+                'options' => ['placeholder' => 'Дополнительные категории', 'multiple' => true],
+            ]);
+            ?>
+
             <?= $form->field($model, 'url')->textInput(['maxlength' => true]) ?>
 
             <?= $form->field($model, 'ord')->textInput() ?>

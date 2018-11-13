@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $category->header;
 
     <div class="row">
 
-        <div class="col-xs-12 col-sm-4 category-menu">
+        <div class="col-xs-12 col-sm-4 category-left-menu">
             <?= \app\modules\category\widgets\MenuCategory::widget(['active_id' => $category->id]); ?>
         </div>
         <div class="col-xs-12 col-sm-8">
@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = $category->header;
             <div class="row">
                 <h1><?= $category->header ?> </h1>
             </div>
-            
+
             <div class="row">
 
                 <?php if ($products) : ?>

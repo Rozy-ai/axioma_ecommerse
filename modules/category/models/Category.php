@@ -47,7 +47,7 @@ class Category extends \app\models\Category2 {
 
     public static function getRoot() {
 
-        $model = self::find()->orderBy(['header' => SORT_ASC])->all();
+        $model = self::find()->orderBy(['header' => SORT_ASC, 'parent_id' => 1])->all();
 
         return $model ? $model : false;
     }
@@ -74,6 +74,10 @@ class Category extends \app\models\Category2 {
     public function getIco() {
 
         return '/image/category/' . $this->ico;
+    }
+
+    public function getParent() {
+        return $this->hasOne(self::className(), ['id' => 'parent_id']);
     }
 
 //    public function getIco() {

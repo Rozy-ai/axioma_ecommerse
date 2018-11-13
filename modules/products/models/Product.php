@@ -61,6 +61,7 @@ class Product extends \app\models\Product {
         ]);
 
         $this->supported_products = ArrayHelper::getColumn($model, 'child_product_id');
+        $this->cats = unserialize($this->cats);
 
 
         return parent::afterFind();
