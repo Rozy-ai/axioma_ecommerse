@@ -54,8 +54,8 @@ class DefaultController extends Controller {
         if ($page->keywords)
             \Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => $page->keywords]);
 
-        if (isset($page->parent_id))
-            $parent = Catalog::findOne($page->parent_id);
+//        if (isset($page->parent_id))
+        $parent = Catalog::findOne($page->parent_id);
 
 //        $childs = Catalog::find()->where(['parent_id' => $page->id, 'act' => 1])->all();
 
@@ -103,5 +103,4 @@ class DefaultController extends Controller {
 //
 //        endforeach;
 //    }
-
 }
