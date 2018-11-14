@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $page->header;
             <div class="row cart-item">
                 <div class="col-xs-12 col-sm-5 gallery-wrap">
 
-                    <div class="gallery-popup-link" product-id="<?= $model->id ?>">
+                    <div class="gallery-popup-link" product-id="<?= $page->id ?>">
                         <i class="fas fa-search-plus"></i>
                     </div>
 
