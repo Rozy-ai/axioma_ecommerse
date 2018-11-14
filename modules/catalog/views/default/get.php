@@ -51,7 +51,7 @@ $this->params['breadcrumbs'][] = $page->header;
                     <?php // Html::img($page->image, ['class' => 'img img-responsive center-block', 'alt' => $page->header]);   ?>
 
                     <script type="text/javascript">
-                        main['img_list_<?= $model->id ?>'] = [
+                        main['img_list_<?= $page->id ?>'] = [
 <?php
 foreach ($page->productImages as $item):
     echo "{ src: '" . $item->getImage() . "', type: 'image' },";
