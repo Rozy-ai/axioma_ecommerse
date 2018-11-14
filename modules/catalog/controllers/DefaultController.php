@@ -4,7 +4,7 @@ namespace app\modules\catalog\controllers;
 
 use Yii;
 use yii\web\Controller;
-use app\modules\catalog\models\Catalog;
+use app\modules\products\models\Product as Catalog;
 use yii\web\HttpException;
 
 /**
