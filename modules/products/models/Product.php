@@ -5,6 +5,7 @@ namespace app\modules\products\models;
 use Yii;
 use yii\bootstrap\Html;
 use yii\helpers\ArrayHelper;
+use app\modules\category\models\Category;
 
 class Product extends \app\models\Product {
 
