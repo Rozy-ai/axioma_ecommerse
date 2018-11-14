@@ -17,6 +17,8 @@ class HomeCatalog extends Widget {
 
         $model = Category::getRoot();
 
+//        print_r(count($model));
+
         return $this->render('home_catalog', ['model' => $model]);
     }
 

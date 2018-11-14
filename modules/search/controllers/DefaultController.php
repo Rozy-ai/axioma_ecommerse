@@ -3,6 +3,7 @@
 namespace app\modules\search\controllers;
 
 use Yii;
+use yii\bootstrap\Html;
 use yii\web\Controller;
 use app\modules\catalog\models\Catalog;
 
@@ -17,7 +18,7 @@ class DefaultController extends Controller {
      */
     public function actionIndex($q) {
 
-        $model = Catalog::find()->filterWhere(['like', 'content', $q])->all();
+        $model = $this->getProducts($q);
 
         \Yii::$app->view->title = 'Поиск: ' . $q;
 
@@ -28,9 +29,20 @@ class DefaultController extends Controller {
 
         if (Yii::$app->request->isAjax) {
 
-            if (isset(Yii::$app->request->post()['q']))
+            $q = Yii::$app->request->post()['q'];
+
+//            if ($q && (count($q) > 3))
+            if ($q)
                 return $this->getResult(Yii::$app->request->post()['q']);
         }
+    }
+
+    private function getProducts($search) {
+
+        return \app\modules\products\models\Product::find()
+                        ->where(['like', 'header', $search])
+                        ->orderBy(['header' => SORT_ASC])
+                        ->all();
     }
 
     private function getResult($search) {
@@ -46,7 +58,11 @@ class DefaultController extends Controller {
 
         if ($product) {
 
-            foreach ($product as $item):
+            foreach ($product as $k => $item):
+
+                if ($k > 4)
+                    continue;
+
                 $result[] = [
                     'type' => 'product',
                     'name' => str_replace($search, '<strong>' . $search . '</strong>', $item->header),
@@ -60,12 +76,17 @@ class DefaultController extends Controller {
 
         if ($result) {
 
-            foreach ($result as $arr)
+            foreach ($result as $k => $arr) {
+
                 $text .= $this->renderAjax('result', ['result' => $arr]);
+            }
 
-            Yii::error($text);
+            $text .= $this->renderAjax('last_row', [
+                'count' => count($product),
+                'q' => $search,
+            ]);
 
-            return $text;
+            return Html::tag('div', $text, ['class' => 'wrap']);
         }
 
         return false;

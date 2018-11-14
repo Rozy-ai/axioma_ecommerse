@@ -38,7 +38,10 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
     <body>
         <?php $this->beginBody() ?>
 
-        <div class="wrap">
+        <script type="text/javascript">
+            var main = [];
+        </script>
+        <div    class="wrap">
             <?php
             NavBar::begin([
                 'options' => [
@@ -66,7 +69,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                             $img = Html::img('/image/logo.png', ['class' => 'img img-responsive', 'alt' => 'Логотип']);
                             echo!$isHome ? Html::a($img, ['/']) : $img;
                             ?>
-                            <!--<img src="/image/logo.png" class="img img-responsive">-->
+                                                                        <!--<img src="/image/logo.png" class="img img-responsive">-->
                             <p class="slogan">СИСТЕМЫ ПРЕДОТВРАЩЕНИЯ КРАЖ</p>
                         </div>
                         <div class="col-xs-12 col-sm-2">
@@ -105,7 +108,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
             <?= app\modules\search\widgets\Search::widget() ?>
 
             <?php if ($isHome): ?>
-                <div class="container-fluid">
+                <div class="co                ntainer-fluid">
                     <div class="row">
                         <?= $content ?>
                     </div>
@@ -137,7 +140,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                             </div>
                             <!--<div class="slider">-->
                             <?php \app\modules\slider\widgets\MainSlider::widget(); ?>
-                            <!--</div>-->
+                            <!--</                                            div>-->
                         </div>
                     </div>
                 </div>

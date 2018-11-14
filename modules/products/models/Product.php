@@ -51,6 +51,8 @@ class Product extends \app\models\Product {
             $this->supported_products = '';
         }
 
+//        $this->supported_products = '';
+
         return parent::beforeValidate();
     }
 
@@ -74,7 +76,7 @@ class Product extends \app\models\Product {
         return parent::afterFind();
     }
 
-    public function getImage() {
+    public function getImage($size = 1200) {
 
         $_image = false;
 
@@ -85,7 +87,7 @@ class Product extends \app\models\Product {
 
         endforeach;
 
-        return $this->setWaterMark($_image);
+        return $this->setWaterMark($_image, $size);
     }
 
     public function getShowPrice() {

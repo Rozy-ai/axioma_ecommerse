@@ -27,7 +27,11 @@ $this->params['breadcrumbs'][] = $page->header;
             <h1 class="pull-left" good-id="<?= $page->id ?>"><?= $page->header ?></h1>
 
             <div class="row cart-item">
-                <div class="content col-xs-12 col-sm-6">
+                <div class="col-xs-12 col-sm-5 gallery-wrap">
+
+                    <div class="gallery-popup-link" product-id="<?= $model->id ?>">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
 
                     <ul class="pgwSlider">
                         <?php
@@ -39,14 +43,25 @@ $this->params['breadcrumbs'][] = $page->header;
 
                             <li href="#">
                                 <?= Html::img($image->Image) ?>
+
                             </li>
 
                         <?php endforeach; ?>
                     </ul>
                     <?php // Html::img($page->image, ['class' => 'img img-responsive center-block', 'alt' => $page->header]);   ?>
 
+                    <script type="text/javascript">
+                        main['img_list_<?= $model->id ?>'] = [
+<?php
+foreach ($page->productImages as $item):
+    echo "{ src: '" . $item->getImage() . "', type: 'image' },";
+endforeach;
+?>
+                        ];
+                    </script>
+
                 </div>
-                <div class="content col-xs-12 col-sm-6 ">
+                <div class="content col-xs-12 col-sm-7 ">
                     <?=
                     \app\modules\cart\widgets\AddToCartWidget::widget([
                         'product_id' => $page->id,

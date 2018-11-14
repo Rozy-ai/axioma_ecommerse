@@ -50,8 +50,7 @@ nav {
 
 .main-navbar {
 
-    /*box-shadow:#222 0 1px 3px;*/
-    background: #EBEBEB;
+    background: @color-back-grey;
 
     .navbar-nav {
 
@@ -74,7 +73,7 @@ nav {
 }
 
 .header {
-    background: rgba(255, 255, 255, 0.8);
+    /*background: rgba(255, 255, 255, 0.8);*/
     padding: 3rem 0 1rem;
     border-bottom: 1px solid #aaa;
 
@@ -154,17 +153,23 @@ nav {
         .ajax-result {
             position: absolute;
             background: #fff;
-            width: 60%;
+            width: 50%;
             z-index: 100;
 
-            li {
-                margin-bottom: .5rem;
 
-                .h4 {
-                    color: @gray-dark;
+            .wrap {
+                background: @color-back-grey;
+                padding: 1rem 2rem 2rem;
 
-                    strong {
-                        color: @brand-primary;
+                li {
+                    margin-bottom: .5rem;
+
+                    .h4 {
+                        color: @gray-dark;
+
+                        strong {
+                            color: @brand-primary;
+                        }
                     }
                 }
             }
@@ -590,7 +595,6 @@ a.desc:after {
 
 .home-about {
 
-    background: #fff;
     padding: 4rem 0;
 
 }
@@ -630,6 +634,12 @@ a.desc:after {
 
 .home-list-category {
 
+    background: @color-back-grey;
+
+    .panel-click {
+        cursor: pointer;
+    }
+
     h1 {
         text-transform: uppercase;
         font-weight: 600;
@@ -640,13 +650,29 @@ a.desc:after {
 
     .grid-item {
         background: #fff;
-        min-height: 200px;
+        min-height: 23rem;;
         margin: 10px 0 30px;
         padding: 20px 10px;
+        background-size: contain !important;
+        position: relative;
 
-        img {
-            display: block;
-            margin: 0 auto;
+        .btn-wrap {
+            top: 10rem;
+            position: absolute;
+            width: 100%;
+
+            .btn-hover {
+                display: none;
+                width: 60%;
+
+            }
+        }
+
+        &:hover {
+            .btn-hover {
+                display: block;
+
+            }
         }
 
         .link {
@@ -732,8 +758,25 @@ a.desc:after {
         border: 1px solid @gray-border;
 
         .image {
+            padding: 3rem;
             min-height: 180px;
             background-size: contain !important;
+            position: relative;
+
+            .gallery-popup-link, .gallery-popup-link-one {
+
+                position: absolute;
+                bottom: .5rem;
+                right: .5rem;
+                cursor: pointer;
+
+                i {
+                    font-size: 4rem;
+                    color: @gray-light;
+
+                }
+
+            }
 
         }
     }
@@ -742,14 +785,24 @@ a.desc:after {
         padding: .5rem  2rem;
         border: 1px solid @gray-border;
         min-height: 190px;
+        display:flex;
+        flex-direction: column;
+        justify-content: space-around;
 
         .h4 {
             text-transform: uppercase;
             font-weight: 400;
+            margin: 0;
+            font-size: 1.6rem;
 
             a {
                 text-decoration: none;
             }
+        }
+
+        .description {
+            max-height: 9rem;
+            overflow: hidden;
         }
 
         .product-price {
@@ -772,14 +825,32 @@ a.desc:after {
         margin: 0;
         font-weight: 500;
         margin-bottom: 3rem;
+        width: 90%;
     }
 
     .price {
         font-size: 1.6rem;
     }
 
-    .content {
+    .gallery-wrap {
         margin-bottom: 2rem;
+        position:relative;
+
+        .gallery-popup-link, .gallery-popup-link-one {
+
+            position: absolute;
+            top: .5rem;
+            right: .5rem;
+            cursor: pointer;
+            z-index: 10;
+
+            i {
+                font-size: 4rem;
+                color: @gray-light;
+
+            }
+
+        }
     }
 
     .btn-grey {

@@ -47,7 +47,10 @@ class Category extends \app\models\Category2 {
 
     public static function getRoot() {
 
-        $model = self::find()->orderBy(['header' => SORT_ASC, 'parent_id' => 1])->all();
+        $model = self::find()->orderBy([
+                    'ord' => SORT_DESC,
+                ])->where(['parent_id' => 1])
+                ->all();
 
         return $model ? $model : false;
     }
@@ -58,11 +61,10 @@ class Category extends \app\models\Category2 {
                 )->one()) ? $model : false;
     }
 
-
-    public function getImg() {
+    public function getImg($size = 1600) {
 
         if ($this->image)
-            return $this->setWaterMark('/image/category/' . $this->image);
+            return $this->setWaterMark('/image/category/' . $this->image, $size);
     }
 
     public function getIco() {

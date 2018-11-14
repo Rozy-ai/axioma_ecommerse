@@ -110,6 +110,8 @@ use kartik\widgets\Select2;
 
             <?= $form->field($model, 'is_enable')->checkbox() ?>
 
+            <?= $form->field($model, 'product_type')->checkbox() ?>
+
             <?=
             $form->field($model, 'category_id')->widget(\kartik\select2\Select2::classname(), [
                 'data' => app\modules\category\models\Category::__getHeaders(),

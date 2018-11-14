@@ -51,7 +51,7 @@ class CustomAR extends \yii\db\ActiveRecord {
         return self::find()->all();
     }
 
-    public function setWaterMark($_image) {
+    public function setWaterMark($_image, $size = 1200) {
 
         $_image_tmp = $_image;
 
@@ -67,6 +67,8 @@ class CustomAR extends \yii\db\ActiveRecord {
         } else {
             $new_image = Image::watermark($_image, $watermarkImage);
         }
+//        $new_image = $new_image->resize($new_image->get('png'), $size);
+        $new_image = Image::thumbnail($new_image, $size, $size);
         $imageData = base64_encode($new_image->get('png'));
         $imageHTML = "data:89504E470D0A1A0A;base64,{$imageData}";
 
