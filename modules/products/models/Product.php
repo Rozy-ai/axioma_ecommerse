@@ -107,4 +107,13 @@ class Product extends \app\models\Product {
         return $this->hasMany(ProductImage::className(), ['product_id' => 'id']);
     }
 
+    public static function getByUrl($url) {
+
+
+        return ($model = self::find()->where(['url' => $url]
+                )->
+                andWhere(['is_enable' => 1])
+                ->one()) ? $model : false;
+    }
+
 }
