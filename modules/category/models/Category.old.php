@@ -4,7 +4,7 @@ namespace app\modules\category\models;
 
 use Yii;
 
-class Category extends \app\models\Category {
+class Category_old extends \app\models\Category {
 
     public $products = [];
 
@@ -89,25 +89,11 @@ class Category extends \app\models\Category {
 
     public function getProducts() {
 
-        $model = self::findOne(['id' => $this->id]);
-//        print_r($model);
-
-        if ($model) {
-
-            $products = $this->_getProducts($model->id);
-//            print_r($products);
-            $this->products = array_merge($this->products, $products);
-
-//            print_r($this->products); exit();
-
-            $this->collectIds($model->id);
-
-            return \app\modules\catalog\models\Catalog::find()
-                            ->where(['id' => $this->products])
-                            ->orderBy(['ord' => SORT_DESC])->all();
-        }
-
-        return false;
+        return \app\modules\catalog\models\Catalog::find()
+                        ->where(['category_id' => $this->id])
+//                        ->orWhere(['like', 'cats', "%{$this->id}%", false])
+                        ->orderBy(['ord' => SORT_DESC])
+                        ->all();
     }
 
     public function collectIds($id) {

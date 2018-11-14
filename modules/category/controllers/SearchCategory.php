@@ -18,7 +18,7 @@ class SearchCategory extends Category {
     public function rules() {
         return [
             [['id', 'parent_id', 'ord', 'created_at'], 'integer'],
-            [['title', 'uri', 'preview', 'content', 'image', 'seo_title', 'seo_description', 'seo_keywords'], 'safe'],
+            [['header', 'url', 'preview', 'content', 'image', 'seo_title', 'seo_description', 'seo_keywords'], 'safe'],
         ];
     }
 

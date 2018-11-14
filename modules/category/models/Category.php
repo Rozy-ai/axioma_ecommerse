@@ -58,12 +58,6 @@ class Category extends \app\models\Category2 {
                 )->one()) ? $model : false;
     }
 
-    public function getProducts() {
-
-        return \app\modules\products\models\Product::findAll([
-                    'category_id' => $this->id,
-        ]);
-    }
 
     public function getImg() {
 
@@ -78,6 +72,15 @@ class Category extends \app\models\Category2 {
 
     public function getParent() {
         return $this->hasOne(self::className(), ['id' => 'parent_id']);
+    }
+
+    public function getProducts() {
+
+        return \app\modules\catalog\models\Catalog::find()
+                        ->where(['category_id' => $this->id])
+                        ->orWhere(['like', 'cats', "%{$this->id}%", false])
+                        ->orderBy(['ord' => SORT_DESC])
+                        ->all();
     }
 
 //    public function getIco() {

@@ -21,9 +21,12 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
 //            ['class' => 'yii\grid\SerialColumn'],
-//            'id',
+            'id',
             'header',
-            'parent.header',
+            [
+                'label' => 'Родительская категория',
+                'value' => 'parent.header',
+            ],
             'ord',
             'url',
 //            'anons',

@@ -15,7 +15,7 @@ class Product extends \app\models\Product {
     public function rules() {
         $array = parent::rules();
 
-        $array[] = ['supported_products', 'safe'];
+        $array[] = [['supported_products'], 'safe'];
 
         return $array;
     }
@@ -28,12 +28,12 @@ class Product extends \app\models\Product {
         return $labels;
     }
 
-    public function afterSave($insert, $changedAttributes) {
+    public function beforeValidate() {
 
-        // связанные товары
-//        print_r($this->tags);
-//        print_r($this->products);
-//        exit();
+//        echo ' - ' . $this->id . PHP_EOL;
+//        $this->primaryKey = $this->id;
+
+        $this->cats = serialize($this->cats);
 
         if ($this->supported_products && is_array($this->supported_products)) {
 
@@ -47,7 +47,14 @@ class Product extends \app\models\Product {
                 $model->child_product_id = $product;
                 $model->save();
             endforeach;
+
+            $this->supported_products = '';
         }
+
+        return parent::beforeValidate();
+    }
+
+    public function afterSave($insert, $changedAttributes) {
 
 
         return parent::afterSave($insert, $changedAttributes);
@@ -78,10 +85,7 @@ class Product extends \app\models\Product {
 
         endforeach;
 
-        if ($_image)
-            return $this->setWaterMark($_image);
-
-        return false;
+        return $this->setWaterMark($_image);
     }
 
     public function getShowPrice() {

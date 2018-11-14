@@ -189,4 +189,65 @@ class ImportCatalogController extends Controller {
         endforeach;
     }
 
+    public function actionArticul() {
+
+        $data = \moonland\phpexcel\Excel::widget([
+                    'mode' => 'import',
+                    'fileName' => Yii::getAlias('@app') . '/commands/_articul.xlsx',
+                    'setFirstRecordAsKeys' => true, // if you want to set the keys of record column with first record, if it not set, the header with use the alphabet column on excel.
+                    'setIndexSheetByName' => true, // set this if your excel data with multiple worksheet, the index of array will be set with the sheet name. If this not set, the index will use numeric.
+                    'getOnlySheet' => 'Worksheet', // you can set this property if you want to get the specified sheet from the excel data with multiple worksheet.
+        ]);
+
+        foreach ($data as $n => $row):
+
+            if ($row['ID']) {
+//                echo $row['ID'] . PHP_EOL;
+
+                $model = \app\modules\products\models\Product::findOne((int) $row['ID']);
+
+                if ($model) {
+                    echo $model->id . PHP_EOL;
+
+                    $model->article = $row['Артикул'];
+                    if ($model->save())
+                        ;
+                    else
+                        print_r($model->errors);
+
+//                    print_r($row);
+                }
+            }
+
+
+        endforeach;
+    }
+
+    public function actionUpdateId() {
+
+        $models = \app\modules\products\models\Product::find()->all();
+
+        foreach ($models as $model):
+
+            $old = \app\models\TblCore::findOne(['h1' => $model->header]);
+
+            if ($old) {
+
+                $command = Yii::$app->db->createCommand('UPDATE product SET id=' . $old->id . ' WHERE id=' . $model->id)->execute();
+//                Yii::$app->db->execute();
+//                echo $model->id . PHP_EOL;
+//                echo $old->id . PHP_EOL;
+//                $model->id = $old->id;
+//                echo $model->id . PHP_EOL;
+//                if ($model->save())
+//                    ;
+//                else
+//                    print_r($model->errors);
+//                echo \app\modules\products\models\Product::updateAll(['id' => $old->id], ['like', 'id', $model->id]);
+//                \app\modules\catalog\models\Catalog::update
+            }
+
+        endforeach;
+    }
+
 }

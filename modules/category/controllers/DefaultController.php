@@ -44,6 +44,7 @@ class DefaultController extends Controller {
         $childs = Category::find()->where(['parent_id' => $category->id])->all();
 
         $products = $category->getProducts();
+//        print_r($products);
 
 
         return $this->render('get', [
