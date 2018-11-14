@@ -116,4 +116,12 @@ class Product extends \app\models\Product {
                 ->one()) ? $model : false;
     }
 
+
+    public function getBreadCatLink() {
+
+        $category = Category::findOne($this->category_id);
+
+        return ['url' => '/category/' . $category->url, 'label' => $category->header];
+    }
+
 }
