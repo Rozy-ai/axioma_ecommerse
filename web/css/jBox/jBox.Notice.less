@@ -1,4 +1,4 @@
-
+@import "../bootstrap/variables";
 .jBox-Notice {
   transition: margin .2s;
 }
@@ -39,12 +39,14 @@
 
 .jBox-Notice-green .jBox-container {
   color: #fff;
-  background: #5d0;
+  background: @brand-primary;
 }
 
 .jBox-Notice-blue .jBox-container {
   color: #fff;
   background: #07d;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
 .jBox-Notice-yellow .jBox-container {

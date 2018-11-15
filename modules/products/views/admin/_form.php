@@ -14,7 +14,11 @@ use kartik\widgets\Select2;
 <div class="product-form">
 
     <div class="row">
-        <?php $form = ActiveForm::begin(); ?>
+        <?php
+        $form = ActiveForm::begin([
+                    'enableClientValidation' => false,
+        ]);
+        ?>
         <div class="col-xs-8">
             <?= $form->field($model, 'header')->textInput(['maxlength' => true]) ?>
 

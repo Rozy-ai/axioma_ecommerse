@@ -6,7 +6,7 @@ use Yii;
 use yii\web\Controller;
 use app\modules\cart\models\Cart;
 use yii\helpers\ArrayHelper;
-use app\modules\catalog\models\Catalog;
+use \app\modules\products\models\Product;
 
 /**
  * AdminController implements the CRUD actions for Theme model.
@@ -29,11 +29,11 @@ class DefaultController extends Controller {
 
             $data = $session['cart'];
 
-            foreach ($data as $item):
-                if (isset($item['product_id'])) {
-                    $model[] = Catalog::findOne($item['product_id']);
-                    $counts[] = $item['count'];
-                }
+            Yii::error($data);
+
+            foreach ($data as $k => $item):
+                $model[] = Product::findOne($k);
+                $counts[] = $item;
             endforeach;
         }
 
@@ -62,13 +62,12 @@ class DefaultController extends Controller {
 
             $session = Yii::$app->session;
 
-            if (!isset($session['cart'])) {
-                $session['cart'] = $post;
-            }
-
             if (isset($post['product_id']) && isset($post['count'])):
 
-                $this->setCart($post);
+                $result = $this->setCart($post);
+
+                Yii::error($post);
+                Yii::error($result);
 
             endif;
         }
@@ -82,12 +81,14 @@ class DefaultController extends Controller {
 
         if (isset($session['cart'])) {
 
-            $data = $session['cart'];
+            $data = [];
 
-            foreach ($data as $k => $item):
+            foreach ($session['cart'] as $k => $item):
 
-                if (isset($item['product_id']) && $item['product_id'] == $id)
-                    unset($data[$k]);
+                if ($k == $id)
+                    ;
+                else
+                    $data[$k] = $item;
 
             endforeach;
 
@@ -101,12 +102,14 @@ class DefaultController extends Controller {
 
         if (isset($session['cart'])) {
 
-            $data = $session['cart'];
+            $data = [];
 
-            foreach ($data as $k => &$item):
+            foreach ($session['cart'] as $k => $item):
 
-                if (isset($item['product_id']) && $item['product_id'] == $id)
-                    $item['count'] = $count;
+                if ($k == $id && $count > 2)
+                    $data[$k] = $count;
+                else
+                    $data[$k] = $item;
 
             endforeach;
 
@@ -116,35 +119,24 @@ class DefaultController extends Controller {
 
     private function setCart($post) {
 
-        $new = 1;
-
         $session = Yii::$app->session;
 
         if (isset($session['cart'])) {
 
             $data = $session['cart'];
 
-            foreach ($data as &$item):
+            foreach ($data as $k => &$item):
 
-                if (isset($item['product_id']))
-                    if ($item['product_id'] == $post['product_id']) {
-                        $item['count'] = $item['count'] + $post['count'];
-                        $new = 0;
-                    }
+                if ($k == $post['product_id']) {
 
+                    $item[$k] += $post['count'];
+                }
             endforeach;
-
-            if ($new) {
-                $data[] = $post;
-                $session['cart'] = $data;
-            } else {
-                $session['cart'] = $data;
-            }
         } else {
-            $session['cart'] = $post;
-
-//            Yii::error($session['cart']);
+            $session['cart'] = [$post['product_id'] => $post['count']];
         }
+
+        return $session['cart'];
     }
 
     private function getSumm() {

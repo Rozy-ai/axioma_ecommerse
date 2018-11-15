@@ -34,7 +34,9 @@ class Product extends \app\models\Product {
 //        echo ' - ' . $this->id . PHP_EOL;
 //        $this->primaryKey = $this->id;
 
+        Yii::error($this->cats);
         $this->cats = serialize($this->cats);
+        Yii::error($this->cats);
 
         if ($this->supported_products && is_array($this->supported_products)) {
 
@@ -116,7 +118,6 @@ class Product extends \app\models\Product {
                 andWhere(['is_enable' => 1])
                 ->one()) ? $model : false;
     }
-
 
     public function getBreadCatLink() {
 

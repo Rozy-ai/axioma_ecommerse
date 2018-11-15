@@ -9,6 +9,7 @@ use Yii;
  *
  * @property int $id
  * @property int $category_id Категория
+ * @property string $cats Дополнительные категории
  * @property string $article Артикул
  * @property string $header Заголовок
  * @property string $video_link Ссылка на видео
@@ -27,7 +28,6 @@ use Yii;
  * @property int $updated_at
  * @property int $product_type Расходник
  *
- * @property FlyerGoods[] $flyerGoods
  * @property Category2 $category
  * @property ProductImage[] $productImages
  * @property SupportedGoods[] $supportedGoods
@@ -53,7 +53,7 @@ class Product extends \app\models\CustomAR
             [['category_id', 'ord', 'is_enable', 'created_at', 'updated_at', 'product_type'], 'integer'],
             [['price'], 'number'],
             [['content_info', 'content_description', 'content_characteristics', 'content_install'], 'string'],
-            [['article', 'url'], 'string', 'max' => 255],
+            [['cats', 'article', 'url'], 'string', 'max' => 255],
             [['header', 'video_link', 'title', 'description', 'keywords'], 'string', 'max' => 500],
             [['url'], 'unique'],
             [['article'], 'unique'],
@@ -69,6 +69,7 @@ class Product extends \app\models\CustomAR
         return [
             'id' => 'ID',
             'category_id' => 'Категория',
+            'cats' => 'Дополнительные категории',
             'article' => 'Артикул',
             'header' => 'Заголовок',
             'video_link' => 'Ссылка на видео',
@@ -87,14 +88,6 @@ class Product extends \app\models\CustomAR
             'updated_at' => 'Updated At',
             'product_type' => 'Расходник',
         ];
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getFlyerGoods()
-    {
-        return $this->hasMany(FlyerGoods::className(), ['product_id' => 'id']);
     }
 
     /**

@@ -48,8 +48,8 @@ class Category extends \app\models\Category2 {
     public static function getRoot() {
 
         $model = self::find()->orderBy([
-                    'ord' => SORT_DESC,
-                ])->where(['parent_id' => 1])
+                    'in_home_order' => SORT_DESC,
+                ])->where(['show_in_home' => 1])
                 ->all();
 
         return $model ? $model : false;

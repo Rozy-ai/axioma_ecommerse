@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'ord',
             'url',
-//            'anons',
+            'show_in_home',
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]);

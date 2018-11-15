@@ -58,7 +58,7 @@ use yii\bootstrap\Html;
 
     <div class="home-list-category">
         <div class="container">
-            <?= app\modules\catalog\widgets\HomeCatalog::widget() ?>
+            <?= \app\modules\category\widgets\HomeCategory::widget() ?>
         </div>
     </div>
 

@@ -424,16 +424,74 @@ nav {
         padding: 0 1rem;
 
         .tb-header {
-            font-weight: 600;
-            border: 1px solid #ccc;
+            font-weight: 400;
+            border-top: 1px solid @gray-border;
+            border-bottom: 2px solid @brand-primary;
             padding: 1rem 0;
         }
 
         .tb-col {
-            padding: 1rem 0;
+            padding: 1rem 0 .5rem;
+            border-bottom: 1px solid @gray-border;
+
             .col-xs-12 {
                 padding: 1rem 0;
             }
+
+            .name-wrap {
+
+                padding-left: 1rem;
+
+                .cart-item-title {
+                    text-transform: uppercase;
+                    font-size: 1.6rem;
+                    font-weight: 600;
+                }
+            }
+
+            .summ-one-wrap, .count-wrap, .summ-wrap, .delete-wrap {
+                padding-top: 2rem;
+                text-align: center;
+            }
+
+            .summ-wrap {
+                font-weight: 600;
+                font-size: 1.6rem;
+            }
+
+            .delete-wrap {
+                .cart-delete {
+                    background-color: @color-grey;
+                    color: @color-black;
+                }
+            }
+        }
+
+        .img-wrap {
+
+
+        }
+
+        .bottom-row {
+            padding: 2rem 0 ; 
+
+            .full-summ, {
+                text-transform: uppercase;
+                font-size: 2rem;
+                font-weight: 600;
+            }
+
+            .bottom-summ {
+                text-transform: uppercase;
+                font-size: 2.4rem;
+                font-weight: 400;
+            }
+        }
+
+        .btn-lg {
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: 600;
         }
     }
 }

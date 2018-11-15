@@ -21,6 +21,8 @@ use Yii;
  * @property int $created_at Создано
  * @property int $is_enable Включено
  * @property int $parent_id Родительская категория
+ * @property int $show_in_home Показывать на главной
+ * @property int $in_home_order Порядок на главной
  *
  * @property Product[] $products
  */
@@ -41,7 +43,7 @@ class Category2 extends \app\models\CustomAR
     {
         return [
             [['preview', 'content'], 'string'],
-            [['ord', 'created_at', 'is_enable', 'parent_id'], 'integer'],
+            [['ord', 'created_at', 'is_enable', 'parent_id', 'show_in_home', 'in_home_order'], 'integer'],
             [['header', 'url', 'image', 'ico'], 'string', 'max' => 255],
             [['title', 'description', 'keywords'], 'string', 'max' => 500],
         ];
@@ -67,6 +69,8 @@ class Category2 extends \app\models\CustomAR
             'created_at' => 'Создано',
             'is_enable' => 'Включено',
             'parent_id' => 'Родительская категория',
+            'show_in_home' => 'Показывать на главной',
+            'in_home_order' => 'Порядок на главной',
         ];
     }
 

@@ -4,12 +4,11 @@ use yii\helpers\Html;
 ?>
 
 <div class="row tb-header hidden-xs">
-    <div class="col-sm-1">#</div>
-    <div class="col-sm-2">Изображение</div>
-    <div class="col-sm-2">Наименование</div>
-    <div class="col-sm-2">Количество</div>
-    <div class="col-sm-2">Цена за еденицу</div>
-    <div class="col-sm-2">Сумма</div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-4 text-center">ТОВАР</div>
+    <div class="col-sm-2 text-center">ЦЕНА</div>
+    <div class="col-sm-2 text-center">КОЛИЧЕСТВО</div>
+    <div class="col-sm-2 text-center">ИТОГО</div>
     <div class="col-sm-1"></div>
 </div>
 
@@ -18,9 +17,12 @@ use yii\helpers\Html;
 <?php
 $summ = 0;
 
+//print_r($model);
+
 if ($model)
     foreach ($model as $k => $item):
-        echo $this->render('_cart_item', ['model' => $item, 'count' => $counts[$k]]);
+        echo $this->render('_cart_item'
+                , ['model' => $item, 'count' => $counts[$k]]);
         $summ += $item->price * $counts[$k];
 
     endforeach;
@@ -28,10 +30,13 @@ else
     echo 'Корзина пуста';
 ?>
 
-<div class="row">
-    <div class="col-xs-6 col-sm-9"><p class="pull-right"><strong>Общая сумма:</strong></p></div>
-    <div class="col-xs-6 col-sm-2"><?= $summ ?></div>
-    <div class="col-sm-1"></div>
+<div class="row bottom-row">
+    <div class="col-xs-6 col-sm-10">
+        <p class="full-summ"><strong>Итоговая сумма:</strong></p>
+    </div>
+    <div class="col-xs-6 col-sm-2 text-right bottom-summ">
+        <?= Yii::$app->formatter->asCurrency($summ) ?>
+    </div>
 
 </div>
 

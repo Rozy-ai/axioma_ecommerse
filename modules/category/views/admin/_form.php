@@ -98,6 +98,8 @@ use vova07\fileapi\Widget as FileAPI;
             <?= $form->field($model, 'ord')->textInput(['maxlength' => true]) ?>
 
             <?= $form->field($model, 'is_enable')->checkbox() ?>
+            <?= $form->field($model, 'show_in_home')->checkbox() ?>
+            <?= $form->field($model, 'in_home_order')->textInput(['maxlength' => true]) ?>
         </div>
     </div>
 

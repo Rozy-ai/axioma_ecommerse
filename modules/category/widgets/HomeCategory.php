@@ -1,12 +1,12 @@
 <?php
 
-namespace app\modules\catalog\widgets;
+namespace app\modules\category\widgets;
 
 use yii\base;
 use yii\base\Widget;
 use app\modules\category\models\Category;
 
-class HomeCatalog extends Widget {
+class HomeCategory extends Widget {
 
     public function init() {
 
@@ -19,7 +19,7 @@ class HomeCatalog extends Widget {
 
 //        print_r(count($model));
 
-        return $this->render('home_catalog', ['model' => $model]);
+        return $this->render('home_category', ['model' => $model]);
     }
 
 }

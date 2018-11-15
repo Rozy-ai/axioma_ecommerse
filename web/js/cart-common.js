@@ -19,7 +19,7 @@ var Cart = {
                 .done(function (data) {
                     new jBox('Notice', {
                         content: 'Товар добавлен в корзину',
-                        color: 'blue'
+                        color: 'green'
                     });
                     Cart.UpdateCart();
                 });

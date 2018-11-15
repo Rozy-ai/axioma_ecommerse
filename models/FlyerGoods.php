@@ -18,7 +18,6 @@ use Yii;
  * @property string $image Изображение
  *
  * @property Flyer $flyer
- * @property Product $product
  */
 class FlyerGoods extends \app\models\CustomAR
 {
@@ -41,7 +40,6 @@ class FlyerGoods extends \app\models\CustomAR
             [['custom_text'], 'string'],
             [['name', 'image'], 'string', 'max' => 255],
             [['flyer_id'], 'exist', 'skipOnError' => true, 'targetClass' => Flyer::className(), 'targetAttribute' => ['flyer_id' => 'id']],
-            [['product_id'], 'exist', 'skipOnError' => true, 'targetClass' => Product::className(), 'targetAttribute' => ['product_id' => 'id']],
         ];
     }
 
@@ -69,13 +67,5 @@ class FlyerGoods extends \app\models\CustomAR
     public function getFlyer()
     {
         return $this->hasOne(Flyer::className(), ['id' => 'flyer_id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getProduct()
-    {
-        return $this->hasOne(Product::className(), ['id' => 'product_id']);
     }
 }
