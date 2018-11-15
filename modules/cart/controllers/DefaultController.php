@@ -43,6 +43,31 @@ class DefaultController extends Controller {
         ]);
     }
 
+    public function actionAjaxTopCart() {
+
+        $session = Yii::$app->session;
+
+        $model = [];
+        $counts = [];
+
+        if (isset($session['cart'])) {
+
+            $data = $session['cart'];
+
+            Yii::error($data);
+
+            foreach ($data as $k => $item):
+                $model[] = Product::findOne($k);
+                $counts[] = $item;
+            endforeach;
+        }
+
+        return $this->renderAjax('top_cart', [
+                    'model' => $model,
+                    'counts' => $counts,
+        ]);
+    }
+
     public function actionUpdateCart() {
 
         $session = Yii::$app->session;
