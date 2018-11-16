@@ -110,7 +110,20 @@ use yii\bootstrap\Html;
         </div>
     </div>
 
-    <?= app\modules\portfolio\widgets\PortfolioWidget::widget(); ?>
+    <div class="home-portfolio">
+
+        <div class="container">
+            <p class="h2">Готовые проекты</p>
+        </div>
+
+        <div class="gallery-wrap">
+            <div class="container">
+                <?= app\modules\portfolio\widgets\PortfolioWidget::widget(); ?>
+
+            </div>
+        </div>
+    </div>
+
 
     <div class="home-clients hidden">
         <div class="container">
