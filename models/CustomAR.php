@@ -57,22 +57,31 @@ class CustomAR extends \yii\db\ActiveRecord {
 
         $_image = str_replace('//', '/', Yii::getAlias('@webroot') . $_image);
 
-//        Yii::error($_image);
-
         $watermarkImage = Yii::getAlias('@webroot') . '/image/watermark.png';
 
-        if (!$_image_tmp || !file_exists($_image)) {
-            $_image = Yii::getAlias('@webroot') . '/image/no_img.jpg';
-            $new_image = Image::watermark($_image, $_image);
-        } else {
-            $new_image = Image::watermark($_image, $watermarkImage);
-        }
-//        $new_image = $new_image->resize($new_image->get('png'), $size);
-        $new_image = Image::thumbnail($new_image, $size, $size);
-        $imageData = base64_encode($new_image->get('png'));
-        $imageHTML = "data:89504E470D0A1A0A;base64,{$imageData}";
+        $image_ready = Yii::getAlias('@webroot') . '/image/ready/' . basename($_image);
 
-        return $imageHTML;
+        if (!file_exists($image_ready)) {
+            if (!$_image_tmp || !file_exists($_image)) {
+                $_image = Yii::getAlias('@webroot') . '/image/no_img.jpg';
+                $new_image = Image::watermark($_image, $_image);
+            } else {
+
+                $sizes = getimagesize($_image);
+//            Yii::error($sizes);
+                $wm = Image::thumbnail($watermarkImage, $sizes[0], $size[1]);
+
+                $watermarkImage = Yii::getAlias('@webroot') . '/image/watermark_' . $sizes[0] . '.png';
+                $wm->save($watermarkImage);
+
+                $new_image = Image::watermark($_image, $watermarkImage);
+            }
+//        $new_image = $new_image->resize($new_image->get('png'), $size);
+            $new_image = Image::thumbnail($new_image, $size, $size);
+            $new_image->save($image_ready);
+        }
+
+        return '/image/ready/' . basename($_image);
     }
 
 }
