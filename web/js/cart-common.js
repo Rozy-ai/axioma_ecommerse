@@ -25,6 +25,20 @@ var Cart = {
                 });
 
     },
+    OneAddCart: function (id) {
+
+        data = {product_id: id, count: '1'};
+
+        $.post("/cart/default/add-to-cart", data)
+                .done(function (data) {
+                    new jBox('Notice', {
+                        content: 'Товар добавлен в корзину',
+                        color: 'green'
+                    });
+                    Cart.UpdateCart();
+                });
+
+    },
     LoadCart: function () {
 
         if ("cart" in window) {

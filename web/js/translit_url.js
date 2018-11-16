@@ -15,6 +15,21 @@ $(function() {
 
     })
 
+    $('body').on('change', '#product-header', function () {
+
+        var uri = $('#product-url');
+
+        console.log(1);
+
+        if (uri.val())
+            return true;
+
+        uri.val(translit($(this).val()));
+        
+        console.log(2);
+
+    })
+
 })
 
 function translit(text) {

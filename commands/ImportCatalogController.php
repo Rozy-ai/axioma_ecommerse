@@ -106,6 +106,51 @@ class ImportCatalogController extends Controller {
         endforeach;
     }
 
+    public function actionActual() {
+
+        echo 'start actual';
+
+        $row = 1;
+
+        $data = \moonland\phpexcel\Excel::widget([
+                    'mode' => 'import',
+//                    'fileName' => Yii::getAlias('@app') . '/commands/catalog.xlsx',
+                    'fileName' => Yii::getAlias('@app') . '/commands/catalog.ods',
+                    'setFirstRecordAsKeys' => true, // if you want to set the keys of record column with first record, if it not set, the header with use the alphabet column on excel.
+                    'setIndexSheetByName' => true, // set this if your excel data with multiple worksheet, the index of array will be set with the sheet name. If this not set, the index will use numeric.
+//                    'getOnlySheet' => 'Sheet1', // you can set this property if you want to get the specified sheet from the excel data with multiple worksheet.
+        ]);
+
+        foreach ($data as $n => $cat):
+
+            foreach ($cat as $k => $item):
+
+
+
+                if (isset($item['Артикул']) && $item['Артикул']) {
+
+                    $model = \app\modules\products\models\Product::findOne([
+                                'article' => $item['Артикул']
+                    ]);
+
+                    if ($model) {
+//                        echo $item['Артикул'] . ' - ' . $item['name'] . PHP_EOL;
+
+                        $model->price = $item['Цена'] ? (float) $item['Цена'] : $model->price;
+                        if ($model->save())
+                            ;
+                        else
+                            print_r($model->errors);
+                    }
+                }
+
+
+            endforeach;
+
+            $row++;
+        endforeach;
+    }
+
     public function actionTest() {
 
         echo \app\components\Translite::Generate('Тест');

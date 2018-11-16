@@ -21,6 +21,7 @@ foreach ($dir as $item) {
 }
 
 $modules['treemanager'] = ['class' => '\kartik\tree\Module',];
+$modules['gridview'] = ['class' => '\kartik\grid\Module',];
 $modules['datecontrol'] = [
     'class' => 'kartik\datecontrol\Module',
     // format settings for displaying each date attribute (ICU format example)

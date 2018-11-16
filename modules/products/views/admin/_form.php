@@ -112,10 +112,6 @@ use kartik\widgets\Select2;
         </div>
         <div class="col-xs-4">
 
-            <?= $form->field($model, 'is_enable')->checkbox() ?>
-
-            <?= $form->field($model, 'product_type')->checkbox() ?>
-
             <?=
             $form->field($model, 'category_id')->widget(\kartik\select2\Select2::classname(), [
                 'data' => app\modules\category\models\Category::__getHeaders(),
@@ -130,9 +126,15 @@ use kartik\widgets\Select2;
             ]);
             ?>
 
+            <?= $form->field($model, 'article')->textInput(['maxlength' => true]) ?>
+
             <?= $form->field($model, 'url')->textInput(['maxlength' => true]) ?>
 
             <?= $form->field($model, 'ord')->textInput() ?>
+
+            <?= $form->field($model, 'is_enable')->checkbox() ?>
+
+            <?= $form->field($model, 'product_type')->checkbox() ?>
 
             <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 

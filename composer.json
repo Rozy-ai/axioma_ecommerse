@@ -31,7 +31,9 @@
         "gevman/yii2-owl-carousel": "*",
         "moonlandsoft/yii2-phpexcel": "*",
         "kartik-v/yii2-mpdf": "dev-master",
-        "yiisoft/yii2-imagine": "^2.1"
+        "yiisoft/yii2-imagine": "^2.1",
+        "kartik-v/yii2-grid": "@dev",
+        "kartik-v/yii2-export": "@dev"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

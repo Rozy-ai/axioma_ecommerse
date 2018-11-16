@@ -18,11 +18,11 @@ class SupportedGoodsWidget extends Widget {
     public function run() {
 
         $model = Product::findOne($this->product_id);
-//        echo 12;
-//        echo $this->product_id;
-//        print_r($model);
 
-        return $this->render('supported_goods', ['model' => $model]);
+        $models = Product::findAll($model['supported_products']);
+//        print_r($models);
+
+        return $this->render('supported_goods', ['models' => $models]);
     }
 
 }

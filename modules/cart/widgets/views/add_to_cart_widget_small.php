@@ -12,7 +12,7 @@ use yii\bootstrap\ActiveForm;
             <?= Html::textInput('product_id', $model->id, ['class' => 'hidden']) ?>
             <div class="col-xs-12">
                 <div class="btn-group pull-right" role="group">
-                    <?= Html::button('В КОРЗИНУ', ['class' => 'btn btn-default']) ?>
+                    <?= Html::button('В КОРЗИНУ', ['class' => 'btn btn-default', 'onclick' => 'Cart.OneAddCart(' . (string) $model->id . ')']) ?>
                     <?php ActiveForm::end(); ?>
                     <?= \app\modules\forms\widgets\OneClickOrder::widget(['product_id' => $model->id]) ?>
                 </div>

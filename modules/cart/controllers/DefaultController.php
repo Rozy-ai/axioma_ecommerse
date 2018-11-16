@@ -85,6 +85,8 @@ class DefaultController extends Controller {
 
             $post = Yii::$app->request->post();
 
+            Yii::error($post);
+
             $session = Yii::$app->session;
 
             if (isset($post['product_id']) && isset($post['count'])):
@@ -131,7 +133,7 @@ class DefaultController extends Controller {
 
             foreach ($session['cart'] as $k => $item):
 
-                if ($k == $id && $count > 2)
+                if ($k == $id && $count >= 1)
                     $data[$k] = $count;
                 else
                     $data[$k] = $item;
@@ -148,15 +150,24 @@ class DefaultController extends Controller {
 
         if (isset($session['cart'])) {
 
-            $data = $session['cart'];
+            $data = [];
+            $new = true;
 
-            foreach ($data as $k => &$item):
+            foreach ($session['cart'] as $k => $item):
 
                 if ($k == $post['product_id']) {
-
-                    $item[$k] += $post['count'];
+                    $new = false;
+                    $data[$k] += $post['count'];
                 }
+
+                $data[$k] = $item;
+
             endforeach;
+
+            if ($new)
+                $data[$post['product_id']] = $post['count'];
+
+            $session['cart'] = $data;
         } else {
             $session['cart'] = [$post['product_id'] => $post['count']];
         }

@@ -1,9 +1,8 @@
 <?php
 
-foreach ($model->supportedGoods as $good->parentProduct):
+foreach ($models as $model):
 
-    $product = \app\modules\products\models\Product::findOne($good->parentProduct->id);
-    echo $this->render('@app/modules/products/views/default/product-cart', ['model' => $product]);
+    echo $this->render('@app/modules/products/views/default/product-cart', ['model' => $model]);
 
 endforeach;
 ?>
