@@ -82,8 +82,8 @@ use kartik\widgets\Select2;
             $form->field($model, 'content_install')->widget(Widget::className(), [
                 'settings' => [
                     'lang' => 'ru',
-                    'imageUpload' => Url::to(['/site/image-upload']),
-                    'imageManagerJson' => Url::to(['/site/images-get']),
+                    'imageUpload' => Url::to(['/products/admin/image-upload']),
+                    'imageManagerJson' => Url::to(['/products/admin/images-get']),
                     'minHeight' => 200,
                     'plugins' => [
                         'clips',

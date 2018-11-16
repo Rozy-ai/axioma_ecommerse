@@ -12,21 +12,35 @@ use yii\filters\VerbFilter;
 /**
  * AdminController implements the CRUD actions for Product model.
  */
-class AdminController extends \app\controllers\AdminController
-{
+class AdminController extends \app\controllers\AdminController {
+
+    public function actions() {
+        return [
+            'image-upload' => [
+                'class' => 'vova07\imperavi\actions\UploadFileAction',
+                'url' => '/uploads/', // Directory URL address, where files are stored.
+                'path' => '@webroot/uploads/' // Or absolute path to directory where files are stored.
+            ],
+            'images-get' => [
+                'class' => 'vova07\imperavi\actions\GetImagesAction',
+                'url' => '/uploads/', // URL адрес папки где хранятся изображения.
+                'path' => '@webroot/uploads/', // Или абсолютный путь к папке с изображениями.
+//                'type' => \vova07\imperavi\actions\GetAction::TYPE_IMAGES,
+            ],
+        ];
+    }
 
     /**
      * Lists all Product models.
      * @return mixed
      */
-    public function actionIndex()
-    {
+    public function actionIndex() {
         $searchModel = new ProductSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+                    'searchModel' => $searchModel,
+                    'dataProvider' => $dataProvider,
         ]);
     }
 
@@ -36,10 +50,9 @@ class AdminController extends \app\controllers\AdminController
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($id)
-    {
+    public function actionView($id) {
         return $this->render('view', [
-            'model' => $this->findModel($id),
+                    'model' => $this->findModel($id),
         ]);
     }
 
@@ -48,8 +61,7 @@ class AdminController extends \app\controllers\AdminController
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
-    {
+    public function actionCreate() {
         $model = new Product();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -57,7 +69,7 @@ class AdminController extends \app\controllers\AdminController
         }
 
         return $this->render('create', [
-            'model' => $model,
+                    'model' => $model,
         ]);
     }
 
@@ -68,8 +80,7 @@ class AdminController extends \app\controllers\AdminController
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($id)
-    {
+    public function actionUpdate($id) {
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -77,7 +88,7 @@ class AdminController extends \app\controllers\AdminController
         }
 
         return $this->render('update', [
-            'model' => $model,
+                    'model' => $model,
         ]);
     }
 
@@ -88,8 +99,7 @@ class AdminController extends \app\controllers\AdminController
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionDelete($id)
-    {
+    public function actionDelete($id) {
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
@@ -102,12 +112,12 @@ class AdminController extends \app\controllers\AdminController
      * @return Product the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id)
-    {
+    protected function findModel($id) {
         if (($model = Product::findOne($id)) !== null) {
             return $model;
         }
 
         throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
     }
+
 }

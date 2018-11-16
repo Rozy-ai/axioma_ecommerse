@@ -100,7 +100,9 @@ endforeach;
                             ],
                             [
                                 'label' => 'Варианты установок',
-                                'content' => $page->content_install,
+                                'content' => preg_replace('/<img src="([^"]+)"+>/i'
+                                        , Html::a(Html::img('$1', ['class' => 'img img-responsive']), '$1'
+                                                , ['class' => 'popup-link']), $page->content_install),
                             ],
                             [
                                 'label' => 'Сопутствующие товары',
