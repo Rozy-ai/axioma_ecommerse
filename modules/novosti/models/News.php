@@ -15,7 +15,7 @@ class News extends \app\modules\content\models\Content {
 
     public static function getLast() {
 
-        $model = News::find()->where(['is_enable' => 1])
+        $model = News::find()->where(['is_enable' => 1, 'type_id' => 3])
                 ->orderBy(['created_at' => SORT_DESC])
                 ->limit(3)
                 ->all();
