@@ -20,26 +20,12 @@ class DefaultController extends Controller {
 
     public function actionAjaxIndex() {
 
-        $session = Yii::$app->session;
-
-        $model = [];
-        $counts = [];
-
-        if (isset($session['cart'])) {
-
-            $data = $session['cart'];
-
-            Yii::error($data);
-
-            foreach ($data as $k => $item):
-                $model[] = Product::findOne($k);
-                $counts[] = $item;
-            endforeach;
-        }
+        // get Products and count
+        $data = Cart::_Products();
 
         return $this->renderAjax('ajax_index', [
-                    'model' => $model,
-                    'counts' => $counts,
+                    'model' => $data['models'],
+                    'counts' => $data['counts'],
         ]);
     }
 

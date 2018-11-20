@@ -1,6 +1,6 @@
 <div class="cart-wrap">
 
-    <a href="/cart">
+    <a href="/cart" >
         <div class="text-center">
             <!--<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>-->
             <p class="">

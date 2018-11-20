@@ -6,7 +6,7 @@ use Yii;
 use yii\imagine\Image;
 use vova07\fileapi\behaviors\UploadBehavior;
 
-class Category extends \app\models\Category2 {
+class Category extends \app\models\Category {
 
     public $products = [];
 

@@ -17,7 +17,6 @@ use Yii;
  * @property int $is_enable Включен
  * @property int $is_default
  *
- * @property CategoryContent[] $categoryContents
  * @property RegionOptions[] $regionOptions
  * @property RegionTemplates[] $regionTemplates
  * @property Robots[] $robots
@@ -59,14 +58,6 @@ class City extends \app\models\CustomAR
             'is_enable' => 'Включен',
             'is_default' => 'Is Default',
         ];
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getCategoryContents()
-    {
-        return $this->hasMany(CategoryContent::className(), ['city_id' => 'id']);
     }
 
     /**

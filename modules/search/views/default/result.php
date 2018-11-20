@@ -13,7 +13,10 @@ use yii\bootstrap\Html;
                 <p class="h4"><?= $result['name'] ?></p>
             </a>
             <p class="category-link">Артикул: <?= $result['article'] ?></p>
-            <p class="category-link">Категория: <?= $model->categoryLink ?></p>
+            <p class="category-link">Категория: <?=
+                ( $model = \app\modules\category\models\Category::findOne($result['category'])) ?
+                        Html::a($model->header, [$model->url]) : ''
+                ?></p>
         </div>
     </div>
 </li>

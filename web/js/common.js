@@ -49,7 +49,7 @@ $(document).ready(function () {
             type: 'image',
         }).magnificPopup('open');
 
-        console.log(eval('image_' + id));
+//        console.log(eval('image_' + id));
     })
     //gallery
     $('.gallery-popup-link').click(function () {
@@ -63,5 +63,9 @@ $(document).ready(function () {
         }).magnificPopup('open');
     })
 
-    console.log(main);
+    $(function () {
+        $('[data-toggle="popover"]').popover()
+    })
+
+//    console.log(main);
 });

@@ -29,6 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'header',
         'price',
         'url:url',
+        'ord',
         [
             'label' => 'Количество изображений',
             'value' => function ($row) {

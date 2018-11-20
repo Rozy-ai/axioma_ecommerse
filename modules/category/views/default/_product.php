@@ -9,7 +9,7 @@ use yii\helpers\Html;
     <div class="panel panel-info">
         <div class="panel-heading">
             <p class="h4">
-                <?= Html::a($model->header, ['/catalog/' . $model->url]) ?>
+                <?= Html::a($model->header, ['/catalog/' . $model->url]) ?> 
             </p>
         </div>
         <div class="panel-body row">

@@ -28,7 +28,7 @@ use Yii;
  * @property int $updated_at
  * @property int $product_type Расходник
  *
- * @property Category2 $category
+ * @property Category $category
  * @property ProductImage[] $productImages
  * @property SupportedGoods[] $supportedGoods
  * @property SupportedGoods[] $supportedGoods0
@@ -57,7 +57,7 @@ class Product extends \app\models\CustomAR
             [['header', 'video_link', 'title', 'description', 'keywords'], 'string', 'max' => 500],
             [['url'], 'unique'],
             [['article'], 'unique'],
-            [['category_id'], 'exist', 'skipOnError' => true, 'targetClass' => Category2::className(), 'targetAttribute' => ['category_id' => 'id']],
+            [['category_id'], 'exist', 'skipOnError' => true, 'targetClass' => Category::className(), 'targetAttribute' => ['category_id' => 'id']],
         ];
     }
 
@@ -95,7 +95,7 @@ class Product extends \app\models\CustomAR
      */
     public function getCategory()
     {
-        return $this->hasOne(Category2::className(), ['id' => 'category_id']);
+        return $this->hasOne(Category::className(), ['id' => 'category_id']);
     }
 
     /**

@@ -76,6 +76,8 @@ class DefaultController extends Controller {
 
         if ($result) {
 
+            $text = '';
+
             foreach ($result as $k => $arr) {
 
                 $text .= $this->renderAjax('result', ['result' => $arr]);

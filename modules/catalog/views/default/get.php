@@ -70,47 +70,37 @@ endforeach;
                     ?>
                 </div>
 
-                <!--                <div class="col-xs-12 col-sm-6 ">
-                                    <div class="btn-group" role="group">
-                <?php // app\modules\forms\widgets\GoodQuestion::widget(['product_id' => $page->id])  ?>
-                <?php // app\modules\forms\widgets\SendReview::widget(['product_id' => $page->id])    ?>
-                                        <p>
-                                            <br/>
-                                            <br/>
-                                            <br/>
-                                            <br/>
-                                        </p>
-                                    </div>
-                                </div>-->
-
 
                 <div class="product-tabs col-xs-12 ">
 
                     <?php
+                    $items = [];
+                    $items[] = [
+                        'label' => 'Описание',
+                        'content' => $page->content_description,
+                        'active' => true
+                    ];
+                    $items[] = [
+                        'label' => 'Характеристики',
+                        'content' => $page->content_characteristics,
+                    ];
+                    if ($page->content_install)
+                        $items[] = [
+                            'label' => 'Варианты установок',
+                            'content' => preg_replace('/<img src="([^"]+)"+>/i'
+                                    , Html::a(Html::img('$1', ['class' => 'img img-responsive']), '$1'
+                                            , ['class' => 'popup-link']), $page->content_install),
+                        ];
+                    $items[] = [
+                        'label' => 'Сопутствующие товары',
+                        'content' => \app\modules\products\widgets\SupportedGoodsWidget::widget([
+                            'product_id' => $page->id
+                        ]),
+                    ];
+
+
                     echo Tabs::widget([
-                        'items' => [
-                            [
-                                'label' => 'Описание',
-                                'content' => $page->content_description,
-                                'active' => true
-                            ],
-                            [
-                                'label' => 'Характеристики',
-                                'content' => $page->content_characteristics,
-                            ],
-                            [
-                                'label' => 'Варианты установок',
-                                'content' => preg_replace('/<img src="([^"]+)"+>/i'
-                                        , Html::a(Html::img('$1', ['class' => 'img img-responsive']), '$1'
-                                                , ['class' => 'popup-link']), $page->content_install),
-                            ],
-                            [
-                                'label' => 'Сопутствующие товары',
-                                'content' => \app\modules\products\widgets\SupportedGoodsWidget::widget([
-                                    'product_id' => $page->id
-                                ]),
-                            ],
-                        ],
+                        'items' => $items
                     ]);
                     ?>
                 </div>

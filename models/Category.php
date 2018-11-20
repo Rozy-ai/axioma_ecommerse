@@ -8,20 +8,24 @@ use Yii;
  * This is the model class for table "category".
  *
  * @property int $id
- * @property int $parent_id Родитель
- * @property string $title Заголовок
- * @property string $uri Url
+ * @property string $header Заголовок
+ * @property string $url Url
  * @property string $preview Превью
  * @property string $content Содержание
  * @property string $image Изображение
+ * @property string $ico Иконка
  * @property int $ord Порядок
- * @property string $seo_title SEO Title
- * @property string $seo_description SEO Description
- * @property string $seo_keywords SEO Keyword
+ * @property string $title SEO Title
+ * @property string $description SEO Description
+ * @property string $keywords SEO Keyword
  * @property int $created_at Создано
- * @property int $show
+ * @property int $is_enable Включено
+ * @property int $parent_id Родительская категория
+ * @property int $show_in_home Показывать на главной
+ * @property int $in_home_order Порядок на главной
+ * @property double $price Цена на главной
  *
- * @property CategoryContent[] $categoryContents
+ * @property Product[] $products
  */
 class Category extends \app\models\CustomAR
 {
@@ -39,10 +43,11 @@ class Category extends \app\models\CustomAR
     public function rules()
     {
         return [
-            [['parent_id', 'ord', 'created_at', 'show'], 'integer'],
             [['preview', 'content'], 'string'],
-            [['created_at'], 'required'],
-            [['title', 'uri', 'image', 'seo_title', 'seo_description', 'seo_keywords'], 'string', 'max' => 255],
+            [['ord', 'created_at', 'is_enable', 'parent_id', 'show_in_home', 'in_home_order'], 'integer'],
+            [['price'], 'number'],
+            [['header', 'url', 'image', 'ico'], 'string', 'max' => 255],
+            [['title', 'description', 'keywords'], 'string', 'max' => 500],
         ];
     }
 
@@ -53,26 +58,30 @@ class Category extends \app\models\CustomAR
     {
         return [
             'id' => 'ID',
-            'parent_id' => 'Родитель',
-            'title' => 'Заголовок',
-            'uri' => 'Url',
+            'header' => 'Заголовок',
+            'url' => 'Url',
             'preview' => 'Превью',
             'content' => 'Содержание',
             'image' => 'Изображение',
+            'ico' => 'Иконка',
             'ord' => 'Порядок',
-            'seo_title' => 'SEO Title',
-            'seo_description' => 'SEO Description',
-            'seo_keywords' => 'SEO Keyword',
+            'title' => 'SEO Title',
+            'description' => 'SEO Description',
+            'keywords' => 'SEO Keyword',
             'created_at' => 'Создано',
-            'show' => 'Show',
+            'is_enable' => 'Включено',
+            'parent_id' => 'Родительская категория',
+            'show_in_home' => 'Показывать на главной',
+            'in_home_order' => 'Порядок на главной',
+            'price' => 'Цена на главной',
         ];
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getCategoryContents()
+    public function getProducts()
     {
-        return $this->hasMany(CategoryContent::className(), ['category_id' => 'id']);
+        return $this->hasMany(Product::className(), ['category_id' => 'id']);
     }
 }

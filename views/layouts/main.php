@@ -134,14 +134,14 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                             </div>
 
                             <div class="col-xs-12 col-sm-8 thanks">
-                                <?= app\modules\thanks\widgets\ThanksList::widget(); ?>
+                                <?php // app\modules\thanks\widgets\ThanksList::widget(); ?>
                             </div>
                             <div class="col-xs-12 col-sm-4 contact-form">
-                                <?= app\modules\forms\widgets\Contact::widget(); ?>
+                                <?php // app\modules\forms\widgets\Contact::widget(); ?>
                             </div>
 
                             <!--<div class="slider">-->
-                            <?php \app\modules\slider\widgets\MainSlider::widget(); ?>
+                            <?php //\app\modules\slider\widgets\MainSlider::widget(); ?>
                             <!--</                                            div>-->
                         </div>
                     </div>

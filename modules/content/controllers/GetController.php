@@ -90,7 +90,7 @@ class GetController extends Controller {
         if (!$model)
             throw new HttpException(404, 'Page not Found');
 
-        Yii::$app->view->title = $model->title ? $model->title : $model->name;
+        Yii::$app->view->title = $model->title ? $model->title : $model->header;
 
         if ($model->description)
             \Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => $model->description]);

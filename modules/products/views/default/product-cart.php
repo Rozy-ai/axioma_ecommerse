@@ -19,6 +19,7 @@ use yii\bootstrap\Html;
         <div class="product-description-wrap">
             <div class="h4">
                 <?= Html::a($model->header, ['/catalog/' . $model->url]) ?>
+                <?php //  $model->ord?>
             </div>
             <div class="description">
                 <?= Html::tag('p', $model->content_info) ?>

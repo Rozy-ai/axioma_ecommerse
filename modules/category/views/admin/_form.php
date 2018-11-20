@@ -95,6 +95,8 @@ use vova07\fileapi\Widget as FileAPI;
 
             <?= $form->field($model, 'keywords')->textInput(['maxlength' => true]) ?>
 
+            <?= $form->field($model, 'price')->textInput(['maxlength' => true]) ?>
+
             <?= $form->field($model, 'ord')->textInput(['maxlength' => true]) ?>
 
             <?= $form->field($model, 'is_enable')->checkbox() ?>

@@ -151,6 +151,56 @@ class ImportCatalogController extends Controller {
         endforeach;
     }
 
+    public function actionOrder() {
+
+        echo 'start set order';
+
+
+
+        $data = \moonland\phpexcel\Excel::widget([
+                    'mode' => 'import',
+//                    'fileName' => Yii::getAlias('@app') . '/commands/catalog.xlsx',
+                    'fileName' => Yii::getAlias('@app') . '/commands/catalog.ods',
+                    'setFirstRecordAsKeys' => true, // if you want to set the keys of record column with first record, if it not set, the header with use the alphabet column on excel.
+                    'setIndexSheetByName' => true, // set this if your excel data with multiple worksheet, the index of array will be set with the sheet name. If this not set, the index will use numeric.
+//                    'getOnlySheet' => 'Sheet1', // you can set this property if you want to get the specified sheet from the excel data with multiple worksheet.
+        ]);
+
+        foreach ($data as $n => $cat):
+            $order = 500;
+
+            foreach ($cat as $k => $item):
+
+
+
+                if (isset($item['Артикул']) && $item['Артикул']) {
+
+                    echo $item['Артикул'] .' - ' . ' ' . $order. PHP_EOL;
+
+                    $model = \app\modules\products\models\Product::findOne([
+                                'article' => $item['Артикул']
+                    ]);
+
+                    if ($model) {
+//                        echo $item['Артикул'] . ' - ' . $item['name'] . PHP_EOL;
+//                        $model->price = $item['Цена'] ? (float) $item['Цена'] : $model->price;
+                        $model->ord = $order - 10;
+                        if ($model->save())
+                            ;
+                        else
+                            print_r($model->errors);
+                    }
+                }
+
+                $order = $order - 10;
+
+
+            endforeach;
+
+
+        endforeach;
+    }
+
     public function actionTest() {
 
         echo \app\components\Translite::Generate('Тест');

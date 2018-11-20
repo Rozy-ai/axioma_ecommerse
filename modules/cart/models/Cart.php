@@ -3,30 +3,21 @@
 namespace app\modules\cart\models;
 
 use Yii;
+use app\modules\products\models\Product;
 
-/**
- * This is the model class for table "cart".
- *
- * @property integer $id
- * @property string $session
- * @property integer $product_id
- * @property integer $count
- */
-class Cart extends \yii\db\ActiveRecord
-{
+class Cart extends \yii\db\ActiveRecord {
+
     /**
      * @inheritdoc
      */
-    public static function tableName()
-    {
+    public static function tableName() {
         return 'cart';
     }
 
     /**
      * @inheritdoc
      */
-    public function rules()
-    {
+    public function rules() {
         return [
             [['session', 'product_id', 'count'], 'required'],
             [['product_id', 'count'], 'integer'],
@@ -37,8 +28,7 @@ class Cart extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
-    public function attributeLabels()
-    {
+    public function attributeLabels() {
         return [
             'id' => 'ID',
             'session' => 'Session',
@@ -46,4 +36,27 @@ class Cart extends \yii\db\ActiveRecord
             'count' => 'Count',
         ];
     }
+
+    public static function _Products() {
+
+        $session = Yii::$app->session;
+
+        $model = [];
+        $counts = [];
+
+        if (isset($session['cart'])) {
+
+            $data = $session['cart'];
+
+//            Yii::error($data);
+
+            foreach ($data as $k => $item):
+                $model[] = Product::findOne($k);
+                $counts[] = $item;
+            endforeach;
+        }
+
+        return ['models' => $model, 'counts' => $counts];
+    }
+
 }
