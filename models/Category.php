@@ -14,7 +14,7 @@ use Yii;
  * @property string $content Содержание
  * @property string $image Изображение
  * @property string $ico Иконка
- * @property int $ord Порядок
+ * @property int $ord Порядок (обратный)
  * @property string $title SEO Title
  * @property string $description SEO Description
  * @property string $keywords SEO Keyword
@@ -64,7 +64,7 @@ class Category extends \app\models\CustomAR
             'content' => 'Содержание',
             'image' => 'Изображение',
             'ico' => 'Иконка',
-            'ord' => 'Порядок',
+            'ord' => 'Порядок (обратный)',
             'title' => 'SEO Title',
             'description' => 'SEO Description',
             'keywords' => 'SEO Keyword',

@@ -15,7 +15,7 @@
         color: white;
     }
 
-    .li-dropdown {
+    .li-dropdown, .first {
 
         margin-bottom: .5rem;
         border: 1px solid @gray-border;
@@ -68,12 +68,16 @@
 
         > a {
 
+            background: @brand-primary;
             padding: 1rem 2rem;
+            color: white;
             font-size: 1.6rem;
-            font-weight: 400;
+            font-weight: 600;
+            text-transform: uppercase;
             line-height: 2.4rem;
             display: block;
-            border: 1px solid @gray-border;
+            position: relative;
+            padding-left: 3rem;
 
             &:hover {
                 background: @gray-dark;

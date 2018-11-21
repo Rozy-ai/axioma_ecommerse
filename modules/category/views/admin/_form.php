@@ -5,6 +5,7 @@ use yii\widgets\ActiveForm;
 use yii\helpers\Url;
 use vova07\imperavi\Widget;
 use vova07\fileapi\Widget as FileAPI;
+use kartik\widgets\Select2;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Category */
@@ -14,13 +15,18 @@ use vova07\fileapi\Widget as FileAPI;
 <div class="category-form">
 
     <div class="row">
-        <?php $form = ActiveForm::begin(); ?>
+        <?php
+        $form = ActiveForm::begin(
+                        [
+                            'enableClientValidation' => false,
+        ]);
+        ?>
         <div class="col-xs-8">
-
-
-            <?php
-            echo $form->field($model, 'parent_id')->dropDownList(
-                    app\modules\category\models\Category::getList())
+            <?=
+            $form->field($model, 'parent_id')->widget(\kartik\select2\Select2::classname(), [
+                'data' => app\modules\category\models\Category::getList(),
+                'options' => ['placeholder' => 'Категория', 'multiple' => false],
+            ]);
             ?>
 
             <?= $form->field($model, 'header')->textInput(['maxlength' => true]) ?>

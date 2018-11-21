@@ -19,7 +19,7 @@ use Yii;
  * @property string $content_description Описание
  * @property string $content_characteristics Характеристики
  * @property string $content_install Варианты установок
- * @property int $ord Порядок
+ * @property int $ord Порядок обратный
  * @property string $title
  * @property string $description
  * @property string $keywords
@@ -79,7 +79,7 @@ class Product extends \app\models\CustomAR
             'content_description' => 'Описание',
             'content_characteristics' => 'Характеристики',
             'content_install' => 'Варианты установок',
-            'ord' => 'Порядок',
+            'ord' => 'Порядок обратный',
             'title' => 'Title',
             'description' => 'Description',
             'keywords' => 'Keywords',
