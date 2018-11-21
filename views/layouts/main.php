@@ -72,13 +72,13 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                                                         <!--<img src="/image/logo.png" class="img img-responsive">-->
                             <p class="slogan">СИСТЕМЫ ПРЕДОТВРАЩЕНИЯ КРАЖ</p>
                         </div>
-                        <div class="col-xs-12 col-sm-2">
+                        <div class="col-xs-12 col-sm-2 work-time">
                             <p class=""><strong>График работы</strong></p>
                             <?php if ($work_time = Yii::$app->info::get('work_time')): ?>
                                 <?= $work_time ?>
                             <?php endif; ?>
                         </div>
-                        <div class="col-xs-12 col-sm-7">
+                        <div class="col-xs-12 col-sm-7 office">
                             <div class="row">
                                 <div class="col-xs-12">
                                     <p class=""><strong>Офис-склад</strong></p>
@@ -89,7 +89,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                 <div class="col-xs-12 col-sm-4">
                                     <?= Yii::$app->info::get('mos_address') ?>
                                 </div>
-                                <div class="col-xs-12 col-sm-4 text-right" >
+                                <div class="col-xs-12 col-sm-4 phone-wrap" >
                                     <p class="phone">
                                         <a href="tel:<?= Yii::$app->info::get('headTelephone') ?>">
                                             <?= Yii::$app->info::get('headTelephone') ?>

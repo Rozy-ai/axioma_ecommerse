@@ -9,7 +9,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <div class="uslugi">
 
-    <div class="col-xs-12 col-sm-3">
+    <div class="col-xs-12 col-sm-4">
 
         <?=
         app\modules\content\widgets\MenuService::widget([
@@ -18,12 +18,12 @@ $this->params['breadcrumbs'][] = $this->title;
         ?>
 
     </div>
-    <div class="col-xs-12 col-sm-9">
+    <div class="col-xs-12 col-sm-8">
 
         <h1><?= $model->header ?></h1>
 
         <div class="content">
-<?= $model->content; ?>
+            <?= $model->content; ?>
         </div>
 
     </div>

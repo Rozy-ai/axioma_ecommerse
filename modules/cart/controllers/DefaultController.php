@@ -3,6 +3,7 @@
 namespace app\modules\cart\controllers;
 
 use Yii;
+use yii\bootstrap\Html;
 use yii\web\Controller;
 use app\modules\cart\models\Cart;
 use yii\helpers\ArrayHelper;
@@ -56,13 +57,31 @@ class DefaultController extends Controller {
 
     public function actionUpdateCart() {
 
-        $session = Yii::$app->session;
+        $data = Cart::_Products();
 
-//        print_r($session['cart']);
 
-        $model = ['summ' => $this->getSumm(), 'count' => $this->getCount()];
+        $content = Html::a('<i class="fas fa-times"></i>', ['#']
+                        , ['class' => 'close-btn']);
 
-        return $this->renderAjax('update_cart', ['model' => $model]);
+//        print_r($data['models']);
+
+        if (isset($data['models']) && $data['models']) {
+            foreach ($data['models'] as $k => $model)
+                $content .= $this->renderAjax('_one_top', [
+                    'model' => $model,
+                    'count' => $data['counts'][$k],
+                ]);
+
+            $content .= Html::a('К ЗАКАЗУ', ['/cart']
+                            , ['class' => 'btn btn-primary center-block']);
+        } else
+            $content = 'Корзина пуста';
+
+//        return $this->render('top_cart_widget', ['count' => array_sum($data['counts'])]);
+        return $this->renderAjax('top_cart_widget', [
+                    'count' => count($data['counts']),
+                    'content' => $content,
+        ]);
     }
 
     public function actionAddToCart() {

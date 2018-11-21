@@ -8,6 +8,7 @@ use app\modules\content\models\ServicesSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use vova07\fileapi\actions\UploadAction as FileAPIUpload;
 
 /**
  * ServicesController implements the CRUD actions for Content model.
@@ -15,6 +16,15 @@ use yii\filters\VerbFilter;
 class ServicesController extends \app\controllers\AdminController {
 
     const TYPE = 2;
+
+    public function actions() {
+        return [
+            'upload-image' => [
+                'class' => FileAPIUpload::className(),
+                'path' => '@webroot/image/content'
+            ],
+        ];
+    }
 
     /**
      * Lists all Content models.

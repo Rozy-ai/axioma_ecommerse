@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use vova07\imperavi\Widget;
 use yii\helpers\Url;
+use vova07\fileapi\Widget as FileAPI;
 ?>
 
 <div class="page-form">
@@ -12,6 +13,15 @@ use yii\helpers\Url;
         <div class="col-xs-8">
             <?= $form->field($model, 'header')->textInput(['maxlength' => true]) ?>
 
+            <?php
+            echo $form->field($model, 'image')->widget(
+                    FileAPI::className(), [
+                'settings' => [
+                    'url' => ['/content/services/upload-image']
+                ]
+                    ]
+            )->label('Иконкa');
+            ?>
             <?=
             $form->field($model, 'content')->widget(Widget::className(), [
                 'settings' => [

@@ -53,10 +53,17 @@ nav {
     background: @color-back-grey;
 
     .navbar-left {
-        li {
+        > li {
             a {
                 padding-top: 2rem;
                 padding-bottom: 2rem;
+            }
+
+        }
+        .dropdown-menu {
+
+            li a {
+                padding: 1rem 0 1rem 2rem;
             }
         }
 
@@ -68,20 +75,24 @@ nav {
 
             .count {
                 position: absolute;
-                top: 0;
-                right: 0;
+                top: 0.5rem;
+                right: 0.5rem;
                 background: @brand-primary;
                 color: black;
             }
         }
 
         .cart {
-            
+
             padding: 0;
-            
+
             a {
-                display: block;
-                padding: 1.5rem;
+                /*display: block;*/
+                padding: 0;
+
+                .cart-top {
+                    padding: 1.5rem;
+                }
             }
         }
 
@@ -108,6 +119,39 @@ nav {
     }
 }
 
+.popover {
+    min-width: 40rem;
+    position: relative;
+
+    .popover-title {
+        background: transparent;
+        text-align: center;
+        color: @color-black;
+        padding: 2rem 0 2rem;
+        border-bottom: 1px solid @gray-border;
+        font-size: 2rem;
+        font-weight: 300;
+    }
+
+    .top-cart-item {
+        padding: 1rem 0;
+        border-bottom: 1px solid @gray-border;
+
+        .image-wrap {}
+
+        .header-wrap {
+            text-transform: uppercase;
+        }
+    }
+
+    .close-btn {
+        position: absolute;
+        top: .5rem;
+        right: .5rem;
+        font-size: 2rem;
+    }
+}
+
 .header {
     /*background: rgba(255, 255, 255, 0.8);*/
     padding: 3rem 0 1rem;
@@ -116,13 +160,34 @@ nav {
     .logo-wrap {
         /*position: relative;*/
 
+        .img {
+            @media(max-width:@screen-sm) {
+                text-align: center;
+                margin: 0 auto;
+            }
+        }
+
         .slogan {
-            /*            position: absolute;
-                        top: .5rem;
-                        right: 2rem;*/
+
             font-size: 1.4rem;
             padding-top: 1rem;
             color: #444;
+
+            @media(max-width:@screen-sm) {
+                text-align: center;
+            }
+        }
+    }
+
+    .work-time {
+        @media(max-width:@screen-sm) {
+            text-align: center;
+        }
+    }
+
+    .office {
+        @media(max-width:@screen-sm) {
+            text-align: center;
         }
     }
 

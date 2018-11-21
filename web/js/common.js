@@ -67,5 +67,25 @@ $(document).ready(function () {
         $('[data-toggle="popover"]').popover()
     })
 
+
+    //cart
+
+    $('.navbar-right [href="/cart"]').click(function (e) {
+
+        e.preventDefault();
+        $(this).find('.cart-top').popover('show');
+//        if ($(this).find('.cart-top').is(':visible')) {
+//            $(this).find('.cart-top').popover('hide');
+//        } else {
+//            $(this).find('.cart-top').popover('show');
+//        }
+
+    })
+
+    $('body').on('click', '.popover-content .close-btn', function (e) {
+        e.preventDefault();
+        $('.cart-top').popover('hide');
+    })
+
 //    console.log(main);
 });

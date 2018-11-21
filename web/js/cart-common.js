@@ -1,7 +1,7 @@
 var Cart = {
     UpdateCart: function () {
 
-        var wrap = $('.cart-widget');
+        var wrap = $('.navbar-right [href="/cart"]');
 
         $.get("/cart/default/update-cart", function (data) {
             wrap.html(data);

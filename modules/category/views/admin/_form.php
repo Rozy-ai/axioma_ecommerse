@@ -71,7 +71,7 @@ use vova07\fileapi\Widget as FileAPI;
                     'url' => ['/category/admin/upload-image']
                 ]
                     ]
-            )->label('Иконки');
+            )->label('Иконкa');
             ?>
 
             <?php
@@ -81,7 +81,7 @@ use vova07\fileapi\Widget as FileAPI;
                     'url' => ['/category/admin/upload-image']
                 ]
                     ]
-            )->label('Изображение в шапке');
+            )->label('Изображение');
             ?>
 
             <div class="form-group">

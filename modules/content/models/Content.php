@@ -3,6 +3,7 @@
 namespace app\modules\content\models;
 
 use Yii;
+use vova07\fileapi\behaviors\UploadBehavior;
 
 class Content extends \app\models\Content {
 
@@ -19,6 +20,21 @@ class Content extends \app\models\Content {
         'Новости' => 3,
         'Статьи' => 4,
     ];
+
+    public function behaviors() {
+        return [
+            'uploadBehavior' => [
+                'class' => UploadBehavior::className(),
+                'attributes' => [
+                    'image' => [
+                        'path' => '@webroot/image/content',
+                        'tempPath' => '@webroot/image/content',
+                        'url' => '/image/content/'
+                    ],
+                ]
+            ]
+        ];
+    }
 
     public function beforeSave($insert) {
 
@@ -47,6 +63,11 @@ class Content extends \app\models\Content {
                     'type_id' => self::TYPE['Статьи'],
                     'is_enable' => 1,
         ]);
+    }
+
+    public function getImageService() {
+
+        return '/image/content/' . $this->image;
     }
 
 }
