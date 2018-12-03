@@ -86,7 +86,9 @@ class MenuCategory extends Widget {
                 $is_first = ($cat->parent_id == 1) ? 'first' : '';
                 $is_drop_down = $this->build_tree($cats, $cat->id) ? 'li-dropdown' : false;
                 $button = $this->build_tree($cats, $cat->id) ?
-                        Html::button('<i class="fas fa-angle-double-down"></i>', ['class' => 'pull-right btn-link more']) : '';
+                        Html::button($active ? '<i class="fas fa-minus"></i>' :
+                                '<i class="fas fa-plus"></i>'
+                                , ['class' => 'pull-right btn-link more']) : '';
 
                 $tree .= '<li class="' . $active . ' ' . $is_drop_down . ' ' . $is_first . '">'
                         . Html::a($cat->header . $button, ['/category/' . $cat->url], ['title' => $cat->title]);

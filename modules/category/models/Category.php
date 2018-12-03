@@ -5,6 +5,7 @@ namespace app\modules\category\models;
 use Yii;
 use yii\imagine\Image;
 use vova07\fileapi\behaviors\UploadBehavior;
+use corpsepk\yml\behaviors\YmlCategoryBehavior;
 
 class Category extends \app\models\Category {
 
@@ -26,7 +27,22 @@ class Category extends \app\models\Category {
                         'url' => '/image/category/'
                     ],
                 ]
-            ]
+            ],
+            'ymlCategory' => [
+                'class' => YmlCategoryBehavior::className(),
+                'scope' => function ($model) {
+                    /** @var \yii\db\ActiveQuery $model */
+                    $model->select(['id', 'header', 'parent_id']);
+                },
+                'dataClosure' => function ($model) {
+                    /** @var self $model */
+                    return [
+                        'id' => $model->id,
+                        'name' => $model->header,
+                        'parentId' => $model->parent_id
+                    ];
+                }
+            ],
         ];
     }
 

@@ -9,7 +9,7 @@ class Info extends \app\models\InfoBlock {
     public static function get($sys_name) {
 
         return ($model = self::findOne(['name' => $sys_name])) ?
-                $model->value : '';
+                trim($model->value) : '';
     }
 
 }

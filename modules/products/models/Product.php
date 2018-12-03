@@ -5,13 +5,50 @@ namespace app\modules\products\models;
 use Yii;
 use yii\bootstrap\Html;
 use yii\helpers\ArrayHelper;
+use corpsepk\yml\behaviors\YmlOfferBehavior;
+use corpsepk\yml\models\Offer;
 use app\modules\category\models\Category;
+use yii\helpers\Url;
 
 class Product extends \app\models\Product {
 
     const IMAGE_PATH = '/image/catalog/';
 
     public $supported_products;
+
+    public function behaviors() {
+        return [
+            'ymlOffer' => [
+                'class' => YmlOfferBehavior::className(),
+                'scope' => function ($model) {
+                    /** @var \yii\db\ActiveQuery $model */
+                    $model->andWhere(['is_enable' => true]);
+                },
+                'dataClosure' => function ($model) {
+                    /** @var self $model */
+                    return new Offer([
+                        'id' => $model->id,
+                        'url' => $model->getUrl(true), // absolute url e.g. http://example.com/item/1256
+                        'price' => $model->price,
+                        'currencyId' => 'RUR',
+                        'categoryId' => $model->category_id,
+//                        'picture' => $model->cover ? $model->cover->getUrl() : null,
+                        /**
+                         * Or as array
+                         * don't forget that yandex-market accepts 10 pictures max
+                         * @see https://yandex.ru/support/partnermarket/picture.xml
+                         */
+//                        'picture' => ArrayHelper::map($model->images, 'id', function ($image) {
+//                                    return $image->getUrl();
+//                                }),
+                        'name' => $model->header,
+//                        'vendor' => $model->brand ? $model->brand->name : null,
+                        'description' => $model->content_info,
+                    ]);
+                }
+            ],
+        ];
+    }
 
     public function rules() {
         $array = parent::rules();
@@ -33,7 +70,6 @@ class Product extends \app\models\Product {
 
 //        echo ' - ' . $this->id . PHP_EOL;
 //        $this->primaryKey = $this->id;
-
 //        Yii::error($this->cats);
         $this->cats = serialize($this->cats);
 //        Yii::error($this->cats);
@@ -124,6 +160,13 @@ class Product extends \app\models\Product {
         $category = Category::findOne($this->category_id);
 
         return ['url' => '/category/' . $category->url, 'label' => $category->header];
+    }
+
+    public function getUrl($is_full = false) {
+
+        return ($is_full) ?
+                Url::toRoute('/catalog/' . $this->url, true) :
+                '/catalog/' . $this->url;
     }
 
 }

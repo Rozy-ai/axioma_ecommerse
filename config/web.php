@@ -93,6 +93,7 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 '/' => 'site/index',
+                '/yml' => 'YandexMarketYml/default/index',
                 '/root' => '/auth/default/login',
                 '/sitemap.xml' => '/sitemap/default/index',
                 '/robots.txt' => '/robots/default/index',

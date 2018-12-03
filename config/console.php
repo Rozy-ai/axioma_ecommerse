@@ -5,6 +5,7 @@ $db = require(__DIR__ . '/db.php');
 
 $config = [
     'id' => 'basic-console',
+    'language' => 'ru-RU',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'app\commands',
@@ -23,13 +24,13 @@ $config = [
         'db' => $db,
     ],
     'params' => $params,
-    /*
-    'controllerMap' => [
-        'fixture' => [ // Fixture generation command line.
-            'class' => 'yii\faker\FixtureController',
-        ],
-    ],
-    */
+        /*
+          'controllerMap' => [
+          'fixture' => [ // Fixture generation command line.
+          'class' => 'yii\faker\FixtureController',
+          ],
+          ],
+         */
 ];
 
 if (YII_ENV_DEV) {

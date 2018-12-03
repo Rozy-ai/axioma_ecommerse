@@ -12,7 +12,7 @@ use yii\filters\VerbFilter;
 /**
  * NewsController implements the CRUD actions for Content model.
  */
-class NewsController extends \app\controllers\AdminController {
+class NewsController extends ContentController {
 
     const TYPE = 3;
 

@@ -224,6 +224,7 @@ nav {
         font-size: 2.2rem;
         font-weight: 600;
         margin-bottom: 0;
+        text-align: right;
 
         a {
             color: #333;
@@ -240,6 +241,13 @@ nav {
         color: @color-red;
         font-size: 1.3rem;
         font-weight: 600;
+        margin: 0;
+        padding: 0;
+        float: right;
+        display: inline !important;
+        
+        /*float: right;*/
+        /*text-align: right;*/
     }
 
 }
@@ -445,7 +453,7 @@ nav {
 
 .thanks-contact-form {
     padding: 5rem 0;
-    background: white;
+    background: @color-back-grey;
 
     .h2 {
         margin-bottom: 3rem;
@@ -817,6 +825,10 @@ a.desc:after {
 
     background: @color-back-grey;
 
+    .panel {
+        border-radius: 0px;
+    }
+
     .panel-click {
         cursor: pointer;
     }
@@ -828,6 +840,31 @@ a.desc:after {
         margin-top: 4rem;
         margin-bottom: 6rem;
         color: @brand-primary;
+    }
+
+    .panel-heading {
+        padding: 0;
+        min-height: 4rem;
+        /*background: rgba(67, 146, 128, .6);*/
+        /*background: rgba(67, 146, 128, 1);*/
+        /*background: #6EA89A;*/
+        background: #B6D7DC;
+        border-radius: 0px;
+
+        .cat-price {
+            /*color: @color-black;*/
+            color: white;
+            font-weight: 600;
+            line-height: 4rem;
+            font-size: 2.4rem;
+            background: url('/image/cat-header-bg.png') top center no-repeat;
+            background-size: cover;
+            min-width: 200px;
+            min-height: 4rem;
+            text-align: right;
+            padding-right: 1rem;
+
+        }
     }
 
     .grid-item {
@@ -1007,6 +1044,11 @@ a.desc:after {
 
         .product-price {
             font-size: 1.6rem;
+            font-weight: 600;
+
+            span {
+                font-weight: 400;
+            }
         }
 
     }

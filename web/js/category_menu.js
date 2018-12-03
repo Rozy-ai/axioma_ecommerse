@@ -19,6 +19,27 @@ $(function () {
 //
 //})
 
+    $('body').on('click', '.more', function (e) {
+
+        e.preventDefault();
+
+        var parent = $(this).closest('.li-dropdown');
+
+        console.log(1);
+        console.log(parent);
+
+        if (parent.hasClass("active")) {
+            parent.removeClass('active');
+            $(this).html('<i class="fas fa-plus"></i>');
+        } else
+        {
+            parent.addClass('active');
+            $(this).html('<i class="fas fa-minus"></i>');
+        }
+
+
+    })
+
 //CheckActive
 
 

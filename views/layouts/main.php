@@ -94,7 +94,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                         <a href="tel:<?= Yii::$app->info::get('headTelephone') ?>">
                                             <?= Yii::$app->info::get('headTelephone') ?>
                                         </a>
-                                        <br/>
+                                        <!--<br/>-->
                                     </p>
                                     <?= \app\modules\forms\widgets\CallBack::widget(); ?>
                                 </div>
@@ -127,23 +127,23 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                     </div>
 
                     <div class="thanks-contact-form">
-                        <div class="row">
+                        <!--<div class="row">-->
 
-                            <div class="viewed-goods">
-                                <?= \app\modules\catalog\widgets\ViewedGoods::widget(); ?>
-                            </div>
-
-                            <div class="col-xs-12 col-sm-8 thanks">
-                                <?php // app\modules\thanks\widgets\ThanksList::widget(); ?>
-                            </div>
-                            <div class="col-xs-12 col-sm-4 contact-form">
-                                <?php // app\modules\forms\widgets\Contact::widget(); ?>
-                            </div>
-
-                            <!--<div class="slider">-->
-                            <?php //\app\modules\slider\widgets\MainSlider::widget(); ?>
-                            <!--</                                            div>-->
+                        <div class="viewed-goods">
+                            <?= \app\modules\catalog\widgets\ViewedGoods::widget(); ?>
                         </div>
+
+                        <!--<div class="col-xs-12 col-sm-8 thanks">-->
+                        <?php // app\modules\thanks\widgets\ThanksList::widget(); ?>
+                        <!--</div>-->
+                        <!--<div class="col-xs-12 col-sm-4 contact-form">-->
+                        <?php // app\modules\forms\widgets\Contact::widget(); ?>
+                        <!--</div>-->
+
+                        <!--<div class="slider">-->
+                        <?php //\app\modules\slider\widgets\MainSlider::widget(); ?>
+                        <!--</                                            div>-->
+                        <!--</div>-->
                     </div>
                 </div>
 

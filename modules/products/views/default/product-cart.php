@@ -6,7 +6,7 @@ use yii\bootstrap\Html;
 <div class="row product-cart">
     <div class="col-xs-4 image-wrap">
         <div class="image"
-             style="background: url(<?= $model->image ?>) top center no-repeat;">
+             style="background: url('<?= $model->image ?>') top center no-repeat;">
 
             <div class="gallery-popup-link-one" product-id="<?= $model->id ?>">
                 <i class="fas fa-search-plus"></i>
@@ -25,7 +25,7 @@ use yii\bootstrap\Html;
                 <?= Html::tag('p', $model->content_info) ?>
             </div>
             <div class="product-price">
-                <strong>Цена:</strong> <?= $model->showPrice ?>
+                <span>Цена:</span> <?= $model->showPrice ?>
             </div>
         </div>
     </div>

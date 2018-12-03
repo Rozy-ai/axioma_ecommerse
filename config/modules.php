@@ -63,4 +63,26 @@ $modules['datecontrol'] = [
 ];
 
 
+$modules['YandexMarketYml'] = [
+    'class' => 'corpsepk\yml\YandexMarketYml',
+    'enableGzip' => true, // default is false
+    'cacheExpire' => 1, // 1 second. Default is 24 hours
+    'categoryModel' => 'app\modules\category\models\Category',
+    'shopOptions' => [
+        'name' => 'Axioma',
+        'company' => 'Аксиома',
+        'url' => 'https://axioma.pro',
+        'currencies' => [
+            [
+                'id' => 'RUR',
+                'rate' => 1
+            ]
+        ],
+    ],
+    'offerModels' => [
+        ['class' => 'app\modules\products\models\Product'],
+    ],
+];
+
+
 return $modules;

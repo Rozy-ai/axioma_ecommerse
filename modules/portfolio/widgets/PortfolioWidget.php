@@ -16,11 +16,13 @@ class PortfolioWidget extends Widget {
 
     public function run() {
 
-        $model = Portfolio::find()->orderBy(new Expression('rand()'))->all();
+        foreach (glob(\Yii::getAlias('@webroot') . '/image/portfolio/*.jpg') as $file):
+            $images[] = basename($file);
+        endforeach;
 
-
+//        print_r($imgage);
         return $this->render('portfolio', [
-                    'model' => $model,
+                    'images' => $images,
         ]);
     }
 

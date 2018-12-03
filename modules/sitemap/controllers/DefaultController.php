@@ -5,6 +5,7 @@ namespace app\modules\sitemap\controllers;
 use Yii;
 use yii\web\Controller;
 use yii\helpers\Url;
+use app\modules\content\models\Content;
 
 /**
  * AdminController implements the CRUD actions for Theme model.
@@ -24,33 +25,33 @@ class DefaultController extends Controller {
 //            $urls[] = Url::to($post->url);
 //        }
         // Категории
-        $cats = \app\modules\category\models\Category::find()->where(['show' => 1])->all();
+        $cats = \app\modules\category\models\Category::find()->where(['is_enable' => 1])->all();
         foreach ($cats as $cat) {
-            $urls[] = Url::to('category/' . $cat->uri);
+            $urls[] = Url::to('category/' . $cat->url);
 
-            $goods = \app\modules\catalog\models\Catalog::find()->where(['parent_id' => $cat->id, 'act' => 1])->all();
+            $goods = \app\modules\catalog\models\Catalog::find()->where(['category_id' => $cat->id, 'is_enable' => 1])->all();
 
             foreach ($goods as $good)
                 $urls[] = Url::to('catalog/' . $good->url);
         }
 
         // Новости
-        $news = \app\modules\novosti\models\News::getAll();
+        $news = Content::find()->where(['type_id' => 3])->all();
         foreach ($news as $new)
             $urls[] = Url::to($new->url);
 
         // Статьи
-        $statis = \app\modules\stati\models\Stati::getAll();
+        $statis = Content::find()->where(['type_id' => 4])->all();
         foreach ($statis as $stati)
             $urls[] = Url::to($stati->url);
 
         // Услуги
-        $uslugi = \app\modules\uslugi\models\Uslugi::getAll();
+        $uslugi = Content::find()->where(['type_id' => 2])->all();
+        ;
         foreach ($uslugi as $uslug)
             $urls[] = Url::to($uslug->url);
 
 //        $arr = explode('.', $_SERVER['HTTP_HOST']);
-
 //        echo Yii::$app->request->hostInfo;
 //        exit();
 //        $host = (isset($arr[0]) && count($arr) == 3) ? $arr[0] . Yii::$app->request->hostInfo : Yii::$app->request->hostInfo;

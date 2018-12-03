@@ -13,18 +13,9 @@ use vova07\fileapi\actions\UploadAction as FileAPIUpload;
 /**
  * ServicesController implements the CRUD actions for Content model.
  */
-class ServicesController extends \app\controllers\AdminController {
+class ServicesController extends ContentController {
 
     const TYPE = 2;
-
-    public function actions() {
-        return [
-            'upload-image' => [
-                'class' => FileAPIUpload::className(),
-                'path' => '@webroot/image/content'
-            ],
-        ];
-    }
 
     /**
      * Lists all Content models.
