@@ -32,7 +32,7 @@ use yii\bootstrap\ActiveForm;
                         <i class="fas fa-plus"></i>
                     </button>
                 </div>
-                <div class="col-xs-6">
+                <div class="col-xs-6 hidden">
                     <button class="btn btn-grey" type="button" onclick="Cart.Minus(<?= $model->id ?>)">
                         <i class="far fa-heart"></i>
                     </button>

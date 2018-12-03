@@ -109,6 +109,10 @@ use kartik\widgets\Select2;
             ]);
             ?>
 
+            <div class="form-group">
+                <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>
+            </div>
+
         </div>
         <div class="col-xs-4">
 
@@ -142,17 +146,22 @@ use kartik\widgets\Select2;
 
             <?= $form->field($model, 'keywords')->textInput(['maxlength' => true]) ?>
 
+            <?php ActiveForm::end(); ?>
 
 
+
+            <h2>Изображения</h2>
+            <div id="image-list" class="well row">
+            </div>
+
+            <?= app\modules\image\widgets\ImageUpload::widget() ?>
         </div>
 
+    </div>
 
 
-    </div>
-    <div class="col-xs-12">
-        <div class="form-group">
-            <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>
-        </div>
-    </div>
-    <?php ActiveForm::end(); ?>
+    <script type="text/javascript">
+        var object_id = <?= $model->id ?>;
+    </script>
+
 </div>
