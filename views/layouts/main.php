@@ -41,7 +41,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
         <script type="text/javascript">
             var main = [];
         </script>
-        <div    class="wrap">
+        <div class="wrap">
             <?php
             NavBar::begin([
                 'options' => [
@@ -84,10 +84,11 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                     <p class=""><strong>Офис-склад</strong></p>
                                 </div>
                                 <div class="col-xs-12 col-sm-4">
-                                    <?= Yii::$app->info::get('ekb_address') ?>
+
+                                    <?= Yii::$app->info::get('mos_address') ?>
                                 </div>
                                 <div class="col-xs-12 col-sm-4">
-                                    <?= Yii::$app->info::get('mos_address') ?>
+                                    <?= Yii::$app->info::get('ekb_address') ?>
                                 </div>
                                 <div class="col-xs-12 col-sm-4 phone-wrap" >
                                     <p class="phone">
@@ -108,7 +109,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
             <?= app\modules\search\widgets\Search::widget() ?>
 
             <?php if ($isHome): ?>
-                <div class="co                ntainer-fluid">
+                <div class="container-fluid">
                     <div class="row">
                         <?= $content ?>
                     </div>
@@ -125,10 +126,11 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                             <?= $content ?>
                         </div>
                     </div>
+                </div>
 
-                    <div class="thanks-contact-form">
-                        <!--<div class="row">-->
-
+                <div class="thanks-contact-form">
+                    <!--<div class="row">-->
+                    <div class="container">
                         <div class="viewed-goods">
                             <?= \app\modules\catalog\widgets\ViewedGoods::widget(); ?>
                         </div>

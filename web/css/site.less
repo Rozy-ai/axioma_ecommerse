@@ -119,36 +119,38 @@ nav {
     }
 }
 
-.popover {
-    min-width: 40rem;
-    position: relative;
+.wrap {
+    .popover {
+        min-width: 40rem;
+        position: relative;
 
-    .popover-title {
-        background: transparent;
-        text-align: center;
-        color: @color-black;
-        padding: 2rem 0 2rem;
-        border-bottom: 1px solid @gray-border;
-        font-size: 2rem;
-        font-weight: 300;
-    }
-
-    .top-cart-item {
-        padding: 1rem 0;
-        border-bottom: 1px solid @gray-border;
-
-        .image-wrap {}
-
-        .header-wrap {
-            text-transform: uppercase;
+        .popover-title {
+            background: transparent;
+            text-align: center;
+            color: @color-black;
+            padding: 2rem 0 2rem;
+            border-bottom: 1px solid @gray-border;
+            font-size: 2rem;
+            font-weight: 300;
         }
-    }
 
-    .close-btn {
-        position: absolute;
-        top: .5rem;
-        right: .5rem;
-        font-size: 2rem;
+        .top-cart-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid @gray-border;
+
+            .image-wrap {}
+
+            .header-wrap {
+                text-transform: uppercase;
+            }
+        }
+
+        .close-btn {
+            position: absolute;
+            top: .5rem;
+            right: .5rem;
+            font-size: 2rem;
+        }
     }
 }
 
@@ -245,7 +247,7 @@ nav {
         padding: 0;
         float: right;
         display: inline !important;
-        
+
         /*float: right;*/
         /*text-align: right;*/
     }
@@ -848,18 +850,20 @@ a.desc:after {
         /*background: rgba(67, 146, 128, .6);*/
         /*background: rgba(67, 146, 128, 1);*/
         /*background: #6EA89A;*/
-        background: #B6D7DC;
+        /*background: #B6D7DC;*/
+        background: @color-black;
         border-radius: 0px;
 
         .cat-price {
             /*color: @color-black;*/
-            color: white;
+            /*color: white;*/
+            color: @brand-primary;
             font-weight: 600;
             line-height: 4rem;
-            font-size: 2.4rem;
-            background: url('/image/cat-header-bg.png') top center no-repeat;
-            background-size: cover;
-            min-width: 200px;
+            font-size: 2rem;
+            /*background: url('/image/cat-header-bg.png') top center no-repeat;*/
+            /*background-size: cover;*/
+            /*min-width: 200px;*/
             min-height: 4rem;
             text-align: right;
             padding-right: 1rem;
@@ -1031,6 +1035,7 @@ a.desc:after {
             font-weight: 400;
             margin: 0;
             font-size: 1.6rem;
+            text-decoration: underline;
 
             a {
                 text-decoration: none;
@@ -1225,4 +1230,3 @@ a.desc:after {
     }
 
 }
-

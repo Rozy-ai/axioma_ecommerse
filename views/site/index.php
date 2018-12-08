@@ -138,7 +138,7 @@ use yii\bootstrap\Html;
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                 <div class="panel panel-default">
                     <div class="panel-heading" role="tab" id="headingThree">
-                        <h4 class="panel-title">
+                        <h4 class="panel-title text-center">
                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                 Возможности антикражного обордуования
                             </a>

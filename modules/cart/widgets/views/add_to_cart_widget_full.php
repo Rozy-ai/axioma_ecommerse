@@ -25,7 +25,11 @@ use yii\bootstrap\ActiveForm;
                         'type' => 'number',
                     ])
                     ?>
-                    <button class="btn btn-grey " type="button">
+                    <button class="btn btn-grey btn-count-wrap" type="button"
+                            data-container="body" data-toggle="popover" data-placement="top"
+                            data-html="true"
+                            data-content='<?= Html::input('number', 'count-helper', 0, ['class' => 'count-helper', 'attr-id' => $model->id]); ?>
+                            <?= Html::button('ОК', ['class' => 'count-helper-ok']) ?>'>
                         <strong class="btn-count-<?= $model->id ?>">1</strong>
                     </button>
                     <button class="btn btn-grey" type="button"  onclick="Cart.Plus(<?= $model->id ?>)">

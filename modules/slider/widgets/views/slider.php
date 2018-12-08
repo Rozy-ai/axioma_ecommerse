@@ -9,9 +9,11 @@ $elements = [];
 
 foreach ($model as $item):
 
-    $elements[] = Html::img(null, ['class' => 'owl-lazy', 'data' => ['src' => $item->image]]);
+    $elements[] = Html::img($item->image, ['class' => 'owl-lazy', 'data' => ['src' => $item->image]]);
 
 endforeach;
+
+Yii::error($elements);
 
 echo \Gevman\OwlCarousel\OwlCarousel::widget([
     'elements' => $elements,

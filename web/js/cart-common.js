@@ -123,4 +123,19 @@ $(function () {
     if ("cart" in window)
         Cart.LoadCart();
 
+    $('body').on('click', '.count-helper-ok', function () {
+
+        var count = $('.count-helper').val();
+        var id = $('.count-helper').attr('attr-id');
+
+        console.log(count);
+        console.log(id);
+
+        $('[name=count]').val(count);
+        $('.btn-count-' + id).html(count);
+
+        $('.btn-count-wrap').tooltip('hide');
+
+    })
+
 });

@@ -18,7 +18,7 @@ use Yii;
  * @property string $create_time
  * @property string $update_time
  */
-class Slider extends UploadFile {
+class Slider extends CustomAR {
 
     static $_act = ['Нет', 'Да'];
 
