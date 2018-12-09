@@ -190,6 +190,14 @@ nav {
     .office {
         @media(max-width:@screen-sm) {
             text-align: center;
+
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+
+            .mos, .ekb {
+                margin-top: 1rem;
+                margin-bottom: 2rem;
+            }
         }
     }
 
@@ -1098,6 +1106,17 @@ a.desc:after {
             }
 
         }
+
+        .ps-list {
+            > li {
+                width: 20% !important;
+                height: 60px !important;
+
+                img {
+                    margin-top: 0 !important;
+                }
+            }
+        }
     }
 
     .btn-grey {
@@ -1163,7 +1182,7 @@ a.desc:after {
 
     .navbar-inverse {
         /*background: rgba(0,0,0, 0.7);*/
-        background: fade(@brand-secondary, 75%);
+        background: @brand-secondary;
     }
 
 }
@@ -1207,6 +1226,15 @@ a.desc:after {
         position: absolute;
         top: 16rem;
         width: 100%;
+
+        @media(max-width:@screen-sm) {
+
+            /*top: 6rem !important;*/
+
+            .owl-prev, .owl-next {
+                display: none !important;
+            }
+        }
 
         .owl-prev {
             left: -10rem;

@@ -72,25 +72,26 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                                                         <!--<img src="/image/logo.png" class="img img-responsive">-->
                             <p class="slogan">СИСТЕМЫ ПРЕДОТВРАЩЕНИЯ КРАЖ</p>
                         </div>
-                        <div class="col-xs-12 col-sm-2 work-time">
+                        <div class="col-xs-12 col-sm-2 work-time hidden-xs">
                             <p class=""><strong>График работы</strong></p>
-                            <?php if ($work_time = Yii::$app->info::get('work_time')): ?>
-                                <?= $work_time ?>
-                            <?php endif; ?>
+                            <?= Yii::$app->info::get('work_time') ?>
                         </div>
                         <div class="col-xs-12 col-sm-7 office">
                             <div class="row">
                                 <div class="col-xs-12">
                                     <p class=""><strong>Офис-склад</strong></p>
                                 </div>
-                                <div class="col-xs-12 col-sm-4">
-
+                                <div class="col-xs-6 col-sm-4 mos">
                                     <?= Yii::$app->info::get('mos_address') ?>
                                 </div>
-                                <div class="col-xs-12 col-sm-4">
+                                <div class="col-xs-6 col-sm-4 ekb">
                                     <?= Yii::$app->info::get('ekb_address') ?>
                                 </div>
-                                <div class="col-xs-12 col-sm-4 phone-wrap" >
+                                <div class="col-xs-6 hidden-md">
+                                    <p class=""><strong>График работы</strong></p>
+                                    <?= Yii::$app->info::get('work_time') ?>
+                                </div>
+                                <div class="col-xs-6 col-sm-4 phone-wrap" >
                                     <p class="phone">
                                         <a href="tel:<?= Yii::$app->info::get('headTelephone') ?>">
                                             <?= Yii::$app->info::get('headTelephone') ?>

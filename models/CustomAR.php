@@ -51,7 +51,7 @@ class CustomAR extends \yii\db\ActiveRecord {
         return self::find()->all();
     }
 
-    public function setWaterMark($_image, $size = 1200) {
+    public function setWaterMark($_image, $size = 1400) {
 
         $_image_tmp = $_image;
 

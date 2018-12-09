@@ -115,7 +115,7 @@ class Product extends \app\models\Product {
         return parent::afterFind();
     }
 
-    public function getImage($size = 1200) {
+    public function getImage($size = 1400) {
 
         $_image = false;
 

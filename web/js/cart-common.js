@@ -125,16 +125,19 @@ $(function () {
 
     $('body').on('click', '.count-helper-ok', function () {
 
-        var count = $('.count-helper').val();
+        var count = Number($('.count-helper').val());
+        $('.count-helper').val(count);
+
         var id = $('.count-helper').attr('attr-id');
 
-        console.log(count);
-        console.log(id);
+//        console.log(count);
+//        console.log(id);
+//        console.log($('[name=count]'));
 
         $('[name=count]').val(count);
         $('.btn-count-' + id).html(count);
 
-        $('.btn-count-wrap').tooltip('hide');
+        $('.popover').popover('hide');
 
     })
 

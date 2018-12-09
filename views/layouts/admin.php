@@ -91,13 +91,15 @@ AdminAsset::register($this);
             NavBar::end();
             ?>
 
-            <div class="container">
-                <?=
-                Breadcrumbs::widget([
-                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-                ])
-                ?>
-                <?= $content ?>
+            <div class="container-fluid">
+                <div class="col-xs-12">
+                    <?=
+                    Breadcrumbs::widget([
+                        'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                    ])
+                    ?>
+                    <?= $content ?>
+                </div>
             </div>
         </div>
 
