@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Дек 11 2018 г., 11:18
+-- Время создания: Дек 11 2018 г., 11:54
 -- Версия сервера: 5.7.24-0ubuntu0.16.04.1
 -- Версия PHP: 7.1.25-1+ubuntu16.04.1+deb.sury.org+1
 
@@ -2687,7 +2687,8 @@ CREATE TABLE `thanks` (
 
 INSERT INTO `thanks` (`id`, `name`, `image`) VALUES
 (1, 'Е-Текс', '5bb5c98db5807.jpg'),
-(3, 'Сима Лэнд', '5bb5c9b0e6076.jpg');
+(3, 'Сима Лэнд', '5bb5c9b0e6076.jpg'),
+(4, 'нью маркет', '5c0f5efd7d130.jpg');
 
 -- --------------------------------------------------------
 
@@ -2982,7 +2983,7 @@ ALTER TABLE `tbl_slider`
 -- AUTO_INCREMENT для таблицы `thanks`
 --
 ALTER TABLE `thanks`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT для таблицы `user`
 --
