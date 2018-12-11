@@ -87,7 +87,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                 <div class="col-xs-6 col-sm-4 ekb">
                                     <?= Yii::$app->info::get('ekb_address') ?>
                                 </div>
-                                <div class="col-xs-6 hidden-md">
+                                <div class="col-xs-6 hidden-md hidden-sm hidden-lg">
                                     <p class=""><strong>График работы</strong></p>
                                     <?= Yii::$app->info::get('work_time') ?>
                                 </div>
