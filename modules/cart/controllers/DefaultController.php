@@ -90,7 +90,7 @@ class DefaultController extends Controller {
 
             $post = Yii::$app->request->post();
 
-            Yii::error($post);
+//            Yii::error($post);
 
             $session = Yii::$app->session;
 
@@ -98,8 +98,8 @@ class DefaultController extends Controller {
 
                 $result = $this->setCart($post);
 
-                Yii::error($post);
-                Yii::error($result);
+//                Yii::error($post);
+//                Yii::error($result);
 
             endif;
         }

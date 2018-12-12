@@ -472,6 +472,14 @@ nav {
 
     .thanks {}
 
+    .home-thanks-list {
+        .row {
+            .col-xs-4 {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
     .contact-form {
 
         .home-contact-form {
@@ -637,6 +645,14 @@ nav {
     background-color:@color-black ;
     color: #fff;
     padding: 6rem 0 1rem;
+
+    a, a:hover {
+        color: @brand-primary;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
 
     .title {
         font-weight: 600;
@@ -1133,7 +1149,7 @@ a.desc:after {
     .product-tabs {
 
         .active, li:hover {
-            a {
+            > a {
                 background: transparent;
                 border-top: 0px solid white !important;
                 border-left: 0px solid white !important;

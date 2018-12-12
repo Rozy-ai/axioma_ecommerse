@@ -14,7 +14,7 @@ use yii\bootstrap\ActiveForm;
             <p class="price"><strong>Цена:</strong> <span class="cart__summ_one"><?= $model->showPrice ?></span></p>
 
             <div class="row">
-                <div class="col-xs-6">
+                <div class="col-xs-12">
                     <button class="btn btn-grey" type="button" onclick="Cart.Minus(<?= $model->id ?>)">
                         <i class="fas fa-minus"></i>
                     </button>

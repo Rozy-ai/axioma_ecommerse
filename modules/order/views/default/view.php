@@ -5,10 +5,11 @@ use yii\bootstrap\ActiveForm;
 
 $this->title = 'Оформить заказ';
 $this->params['breadcrumbs'][] = $this->title;
+//print_r($model);
 ?>
 
 <div class="order-view col-xs-12">
-    <h1>Оформить заказ</h1>
+    <h1><?= $this->title ?></h1>
 
     <div class="row">
         <div class="col-xs-12 col-sm-8">

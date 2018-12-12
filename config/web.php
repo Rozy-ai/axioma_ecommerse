@@ -24,8 +24,8 @@ $config = [
             'locale' => 'ru-RU',
             'numberFormatterOptions' => [
                 NumberFormatter::DECIMAL_SEPARATOR_SYMBOL => '.',
-                NumberFormatter::MAX_FRACTION_DIGITS => 0,
-                NumberFormatter::FRACTION_DIGITS => 0,
+                NumberFormatter::MAX_FRACTION_DIGITS => 2,
+                NumberFormatter::MIN_FRACTION_DIGITS => 0,
             ],
             'numberFormatterSymbols' => [
                 NumberFormatter::CURRENCY_SYMBOL => '₽',

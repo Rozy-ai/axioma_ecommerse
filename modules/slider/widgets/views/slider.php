@@ -13,7 +13,7 @@ foreach ($model as $item):
 
 endforeach;
 
-Yii::error($elements);
+//Yii::error($elements);
 
 echo \Gevman\OwlCarousel\OwlCarousel::widget([
     'elements' => $elements,
@@ -26,16 +26,14 @@ echo \Gevman\OwlCarousel\OwlCarousel::widget([
         'autoplay' => true,
     ]
 ]);
-
-
 ?>
 
 <section class="lazy slider" data-sizes="50vw">
 
-    <?php foreach ($model as $item): ?>
+<?php foreach ($model as $item): ?>
         <div>
             <img class="img img-responsive img-rounded" data-lazy="<?= $item->image ?>" data-srcset="" data-sizes="100vw">
         </div>
-    <?php endforeach; ?>
+<?php endforeach; ?>
 
 </section>

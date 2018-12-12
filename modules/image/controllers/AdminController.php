@@ -65,6 +65,7 @@ class AdminController extends \app\controllers\AdminController {
     public function actionSetMain($id) {
 
         $model = Image::findOne(['id' => $id]);
+        $model->is_main = 1;
         return (
                 $model->save() ) ? true : false;
     }

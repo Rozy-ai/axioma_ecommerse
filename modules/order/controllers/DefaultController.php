@@ -42,11 +42,11 @@ class DefaultController extends Controller {
 
             $data = $session['cart'];
 
-            foreach ($data as $item):
-                if (isset($item['product_id'])) {
-                    $model[] = Catalog::findOne($item['product_id']);
-                    $counts[] = $item['count'];
-                }
+//            print_r($data);
+
+            foreach ($data as $k => $item):
+                $model[] = Catalog::findOne($k);
+                $counts[] = $item;
             endforeach;
 
             if ($client->load(Yii::$app->request->post()) && $client->validate()) {
@@ -55,7 +55,7 @@ class DefaultController extends Controller {
                 $order->client_name = $client->name;
                 $order->email = $client->email;
                 $order->phone = $client->phone;
-                $order->city_id = Yii::$app->city->getId();
+//                $order->city_id = Yii::$app->city->getId();
                 $order->created_at = time();
 
 
@@ -133,7 +133,7 @@ class DefaultController extends Controller {
 
 
         Yii::$app->mailer->compose()
-                ->setTo(\app\modules\options\models\Options::getVal('email'))
+                ->setTo(\app\modules\info\models\Info::get('email'))
                 ->setFrom([Yii::$app->params['senderEmail'] => 'Axioma email Robot'])
                 ->setSubject('Новый заказ')
                 ->setHtmlBody($this->admin_mail_body)

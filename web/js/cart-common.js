@@ -141,4 +141,12 @@ $(function () {
 
     })
 
+    $('body').on('shown.bs.modal', '#oneclick-form-modal', function () {
+
+        var count = $('[name=count]').val();
+        $('#oneclickorder-count').val(count);
+        console.log(count);
+
+    })
+
 });
