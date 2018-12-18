@@ -14,24 +14,21 @@ class DefaultController extends Controller {
 
     public function actionIndex() {
 
-        $parent = \app\modules\category\models\Category::findOne(187);
+        $parent = \app\modules\category\models\Category::findOne(1);
 
         $model = \app\modules\category\models\Category::find()
-                        ->with('childs')->orderBy(['ord' => SORT_DESC])
-                        ->where(['show' => 1, 'parent_id' => 187])->all();
+                        ->orderBy(['ord' => SORT_DESC])
+                        ->where(['is_enable' => 1, 'parent_id' => 1])->all();
 
-        $parent->replaceCodes();
+//        $parent->replaceCodes();
 
-        foreach ($model as $_model)
-            $_model->replaceCodes();
+        Yii::$app->view->title = $parent->title ? $parent->title : $parent->header;
 
-        Yii::$app->view->title = $parent->seo_title ? $parent->seo_title : $parent->title;
+        if ($parent->description)
+            \Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => $parent->description]);
 
-        if ($parent->seo_description)
-            \Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => $parent->seo_description]);
-
-        if ($parent->seo_keywords)
-            \Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => $parent->seo_keywords]);
+        if ($parent->keywords)
+            \Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => $parent->keywords]);
 
         return $this->render('index', ['model' => $model,
         ]);
@@ -55,7 +52,7 @@ class DefaultController extends Controller {
             \Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => $page->keywords]);
 
         $parent = false;
-        
+
         if (isset($page->parent_id))
             $parent = Catalog::findOne($page->parent_id);
 

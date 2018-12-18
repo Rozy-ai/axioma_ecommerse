@@ -101,6 +101,36 @@ class Category extends \app\models\Category {
                         ->all();
     }
 
+    public function getBreadCrumbs() {
+
+        $url = explode('/', $this->url);
+//        print_r($url);
+//        exit();
+//
+        if (count($url) > 0) {
+
+            $result[] = ['url' => '/catalog', 'label' => 'Каталог'];
+            $_url = '';
+
+            for ($i = 1; $i < count($url); $i++) {
+
+                $_url .= '/' . $url[$i - 1];
+                $_url[0] = $_url[0] == '/' ? ' ' : $_url[0];
+//                $_url = substr_replace($url, '', strlen($url)-1, 1);
+                $result[] = ['url' => '/category/' . trim($_url), 'label' => $this->getByUriName(trim($_url))];
+//                echo $_url . PHP_EOL;
+//                print_r(Category::find()->where(['uri' => trim($_url)])->one());
+            }
+        }
+
+        return isset($result) ? $result : false;
+    }
+
+    public static function getByUriName($uri) {
+
+        return ($model = self::find()->where(['url' => $uri])->one()) ? $model->header : '';
+    }
+
 //    public function getIco() {
 //
 //        $image = Image::getImagine();

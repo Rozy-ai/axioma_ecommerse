@@ -1,0 +1,3 @@
+    if ( $request_filename ~ generalnyj-plan/ ) {
+        rewrite ^ /generalnyj-plan permanent;
+    }

@@ -69,4 +69,32 @@ class HelloController extends Controller {
 //        \app\modules\products\models\Product::updateAll(['is_enable' => 1]);
     }
 
+    public function actionRemoveCity() {
+
+        $model = \app\modules\products\models\Product::find()->all();
+
+//        foreach ($model as $item):
+//
+////            $item->title = str_replace('{city}', 'Екатеринбург', $item->title);
+//            $item->description = str_replace('{city}', 'Екатеринбург', $item->description);
+//            $item->save();
+//
+////            foreach ($item)
+//
+//        endforeach;
+        $model = \app\models\Category::find()->all();
+
+        foreach ($model as $item):
+
+            $item->title = str_replace('{city}', 'Екатеринбург', $item->title);
+            $item->description = str_replace('{city}', 'Екатеринбург', $item->description);
+            $item->save();
+
+//            foreach ($item)
+
+        endforeach;
+
+//        \app\modules\products\models\Product::updateAll(['is_enable' => 1]);
+    }
+
 }

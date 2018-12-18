@@ -3,13 +3,13 @@
 use yii\helpers\Html;
 use yii\widgets\LinkPager;
 
-$title = 'Статьи';
+$this->title = 'Статьи, Аксиома';
 
 $this->params['breadcrumbs'][] = $title;
 ?>
 
 <div class="news">
-    <h1><?= $title ?></h1>
+    <h1>Статьи</h1>
 
 
 

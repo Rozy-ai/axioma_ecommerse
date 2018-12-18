@@ -11,7 +11,7 @@ use yii\bootstrap\ActiveForm;
 
             <p><strong>ИНФОРМАЦИЯ О ПРОДУКТЕ</strong></p>
             <p><?= $model->content_info ?></p>
-            <p class="price"><strong>Цена:</strong> <span class="cart__summ_one"><?= $model->showPrice ?></span></p>
+            <p class="price">Цена: <strong><span class="cart__summ_one"><?= $model->showPrice ?></span></strong></p>
 
             <div class="row">
                 <div class="col-xs-12">

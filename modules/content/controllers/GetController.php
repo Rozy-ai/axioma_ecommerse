@@ -18,6 +18,8 @@ class GetController extends Controller {
 
         // Грузим все новости кто включён и ниже сегодняшней даты
 
+        $request = Yii::$app->request->get();
+
         $query = \app\modules\content\models\Content::find()
                 ->where(['type_id' => Content::TYPE['Новости'], 'is_enable' => 1]);
         // делаем копию выборки
@@ -35,6 +37,7 @@ class GetController extends Controller {
         return $this->render('news_index', [
                     'models' => $models,
                     'pages' => $pages,
+                    'request' => $request,
         ]);
     }
 

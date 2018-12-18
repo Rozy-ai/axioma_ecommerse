@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\LinkPager;
 
-$this->title = 'Услуги';
+$this->title = 'Услуги - Екатеринбург, Аксиома';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 

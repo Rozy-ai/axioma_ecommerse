@@ -64,7 +64,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
             <div class="header">
                 <div class="container">
                     <div class="row">
-                        <div class="col-xs-12 col-sm-3 logo-wrap">
+                        <div class="col-xs-12 col-sm-12 col-md-3 logo-wrap">
                             <?php
                             $img = Html::img('/image/logo.png', ['class' => 'img img-responsive', 'alt' => 'Логотип']);
                             echo!$isHome ? Html::a($img, ['/']) : $img;
@@ -72,26 +72,26 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                                                         <!--<img src="/image/logo.png" class="img img-responsive">-->
                             <p class="slogan">СИСТЕМЫ ПРЕДОТВРАЩЕНИЯ КРАЖ</p>
                         </div>
-                        <div class="col-xs-12 col-sm-2 work-time hidden-xs">
+                        <div class="col-xs-12 col-sm-2 work-time hidden-xs col-md-2 col-lg-2">
                             <p class=""><strong>График работы</strong></p>
                             <?= Yii::$app->info::get('work_time') ?>
                         </div>
-                        <div class="col-xs-12 col-sm-7 office">
+                        <div class="col-xs-12 col-sm-10 col-md-7 office">
                             <div class="row">
                                 <div class="col-xs-12">
                                     <p class=""><strong>Офис-склад</strong></p>
                                 </div>
-                                <div class="col-xs-6 col-sm-4 mos">
+                                <div class="col-xs-12 col-sm-4 mos">
                                     <?= Yii::$app->info::get('mos_address') ?>
                                 </div>
-                                <div class="col-xs-6 col-sm-4 ekb">
+                                <div class="col-xs-12 col-sm-4 ekb">
                                     <?= Yii::$app->info::get('ekb_address') ?>
                                 </div>
-                                <div class="col-xs-6 hidden-md hidden-sm hidden-lg">
+<!--                                <div class="col-xs-12 hidden-md hidden-sm hidden-lg">
                                     <p class=""><strong>График работы</strong></p>
                                     <?= Yii::$app->info::get('work_time') ?>
-                                </div>
-                                <div class="col-xs-6 col-sm-4 phone-wrap" >
+                                </div>-->
+                                <div class="col-xs-12 col-sm-4 phone-wrap" >
                                     <p class="phone">
                                         <a href="tel:<?= Yii::$app->info::get('headTelephone') ?>">
                                             <?= Yii::$app->info::get('headTelephone') ?>
@@ -111,9 +111,9 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
 
             <?php if ($isHome): ?>
                 <div class="container-fluid">
-                    <div class="row">
-                        <?= $content ?>
-                    </div>
+                    <!--<div class="row">-->
+                    <?= $content ?>
+                    <!--</div>-->
                 </div>
             <?php else: ?>
                 <div class="container">
@@ -161,12 +161,12 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
             <div class="footer-top">
                 <div class="container">
                     <div class="row">
-                        <div class="col-xs-12 col-sm-3">
+                        <div class="hidden-xs hidden-sm col-md-3">
                             <p class="title">АДРЕС</p>
                             <?= Yii::$app->info::get('ekb_address') ?>
                             <?= Yii::$app->info::get('mos_address') ?>
                         </div>
-                        <div class="col-xs-12 col-sm-6">
+                        <div class="col-xs-12 col-sm-12 col-md-6">
 
                             <div class="row">
                                 <div class="col-xs-12">
@@ -193,7 +193,12 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                             </div>
 
                         </div>
-                        <div class="col-xs-12 col-sm-3 right-side">
+                        <div class="col-xs-12 col-sm-6 hidden-md hidden-lg">
+                            <p class="title">АДРЕС</p>
+                            <?= Yii::$app->info::get('ekb_address') ?>
+                            <?= Yii::$app->info::get('mos_address') ?>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-3 right-side">
                             <p class="email">
                                 email: <a href="mailto:<?= Yii::$app->info::get('email') ?>">
                                     <?= Yii::$app->info::get('email') ?>

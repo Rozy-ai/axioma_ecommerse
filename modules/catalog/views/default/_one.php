@@ -7,34 +7,24 @@ use yii\helpers\Html;
 
     <div class="col-sm-2 hidden-xs">
         <?=
-        Html::a(Html::img($model->image, ['class' => 'img pull-right img-rounded img-responsive center-block',
+        Html::a(Html::img($model->Img, ['class' => 'img pull-right img-rounded img-responsive center-block',
                     'width' => 160
-                ]), ['/category/' . $model->uri], ['class' => 'link'])
+                ]), ['/category/' . $model->url], ['class' => 'link'])
         ?>
 
     </div>
     <div class="col-xs-12 col-sm-8">
         <p class="h3">
-            <?= Html::a($model->title, ['/category/' . $model->uri], ['class' => 'link']) ?>
+            <?= Html::a($model->header, ['/category/' . $model->url], ['class' => 'link']) ?>
         </p>
         <?=
-        Html::a(Html::img($model->image, ['class' => 'img img-rounded img-responsive  center-block'
-                ]), ['/category/' . $model->uri], ['class' => 'link hidden-sm hidden-md hidden-lg'])
+        Html::a(Html::img($model->Img, ['class' => 'img img-rounded img-responsive  center-block'
+                ]), ['/category/' . $model->url], ['class' => 'link hidden-sm hidden-md hidden-lg'])
         ?>
 
         <p>
             <?= $model->preview ?>
         </p>
-        <?php
-        if ($model->childs)
-            foreach ($model->childs as $item):
-                ?>
-                <?=
-                Html::a($item->title, [
-                    '/category/' . $item->uri,
-                        ], ['class' => 'link h5'])
-                ?>
-            <?php endforeach; ?>
 
     </div>
 </div>
