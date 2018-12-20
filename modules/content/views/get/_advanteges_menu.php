@@ -6,51 +6,52 @@ use yii\bootstrap\Html;
     <div class="advantages-wrap">
         <div class="row">
             <div class="col-md-2 col-sm-4 col-xs-6">
-                <a href="/pryamye-postavki-iz-kitaya">
+                <a href="/o_kompanii">
+                    <?= Html::img('/image/advantages/about.png', ['class' => 'img img-responsive center-block']) ?>
+                    <p class="text-center">
+                        О компании
+                    </p>
+                </a>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <a href="/kontrol-kachestva-v-kitae">
                     <?= Html::img('/image/advantages/world.png', ['class' => 'img img-responsive center-block']) ?>
                     <p class="text-center">
-                        Прямые поставки<br/> из Китая
+                        Контроль качества
+                        <br/> в Китае
                     </p>
                 </a>
             </div>
             <div class="col-md-2 col-sm-4 col-xs-6">
-                <a href="/dostavim-tovar-besplatno-ot-10-000">
+                <a href="/besplatnaya-dostavka">
                     <?= Html::img('/image/advantages/delivery.png', ['class' => 'img img-responsive center-block']) ?>
                     <p class="text-center">
-                        Доставим бесплатно <br/>товар от 10 000 ₽
+                        Бесплатная<br/>  доставка
                     </p>
                 </a>
             </div>
             <div class="col-md-2 col-sm-4 col-xs-6">
-                <a href="/otsrochka-platezha">
+                <a href="/oborudovanie-v-rassrochku">
                     <?= Html::img('/image/advantages/pay.png', ['class' => 'img img-responsive center-block']) ?>
                     <p class="text-center">
-                        Отсрочка<br/> платежа
+                        Оборудование в<br/>  рассрочку
 
                     </p>
                 </a>
             </div>
             <div class="col-md-2 col-sm-4 col-xs-6">
-                <a href="/podderzhka-klienta">
+                <a href="/ves-spekt-montazhnyh-uslug">
                     <?= Html::img('/image/advantages/support.png', ['class' => 'img img-responsive center-block']) ?>
                     <p class="text-center">
-                        Поддержка<br/> клиента
+                        Весь спект<br/>  монтажных услуг
                     </p>
                 </a>
             </div>
             <div class="col-md-2 col-sm-4 col-xs-6">
-                <a href="/kvalificirovannye-inzhinery">
-                    <?= Html::img('/image/advantages/ingeener.png', ['class' => 'img img-responsive center-block']) ?>
-                    <p class="text-center">
-                        Квалифицированые<br/> инженеры
-                    </p>
-                </a>
-            </div>
-            <div class="col-md-2 col-sm-4 col-xs-6">
-                <a href="/udobnoe-raspolozhenie">
+                <a href="/ofis-i-sklad-v-odnom-meste">
                     <?= Html::img('/image/advantages/place.png', ['class' => 'img img-responsive center-block']) ?>
                     <p class="text-center">
-                        Удобное<br/> расположение
+                        Офис и склад<br/>  в одном месте
                     </p>
                 </a>
             </div>
