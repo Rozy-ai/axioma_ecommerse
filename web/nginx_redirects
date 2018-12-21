@@ -1,0 +1,3 @@
+    if ( $request_filename ~ /catalog/etiketka_mini-ultra-strip_2/ ) {
+        rewrite ^ /catalog/;
+    }
