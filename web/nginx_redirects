@@ -1,3 +1,33 @@
-    if ( $request_filename ~ /catalog/etiketka_mini-ultra-strip_2/ ) {
-        rewrite ^ /catalog/;
+    if ( $request_filename ~ /catalog/etiketka_mini-ultra-strip_2 ) {
+        rewrite ^ /catalog permanent;
+    }
+
+    if ( $request_filename ~ /catalog/etiketki_40x40_mm_lucatron ) {
+        rewrite ^ /catalog permanent;
+    }
+
+    if ( $request_filename ~ /catalog/kovrik ) {
+        rewrite ^ /catalog permanent;
+    }
+
+    if ( $request_filename ~ /catalog/protivokrajnaya_sistema__ams_1140 ) {
+        rewrite ^ /catalog permanent;
+    }
+
+    if ( $request_filename ~ /catalog/spectra ) {
+        rewrite ^ /catalog permanent;
+    }
+
+    if ( $request_filename ~ /catalog/deaktivator_radiochastotny ) {
+        rewrite ^ /catalog permanent;
+    }
+    if ( $request_filename ~ /catalog/gvozdik ) {
+        rewrite ^ /catalog permanent;
+    }
+    if ( $request_filename ~ /catalog/syemniki_standart ) {
+        rewrite ^ /catalog permanent;
+    }
+
+    if ( $request_filename ~ /kontakti ) {
+        rewrite ^ /kontaktyi permanent;
     }
