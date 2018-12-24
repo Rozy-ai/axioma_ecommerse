@@ -5,7 +5,7 @@ use yii\widgets\LinkPager;
 
 $this->title = 'Новости' . ((isset($request['page'])) ? ' Страница - ' . $request['page'] . ' ,' : '') . ' ' . Yii::$app->name;
 
-$this->params['breadcrumbs'][] = $title;
+$this->params['breadcrumbs'][] = 'Новости';
 ?>
 
 <div class="news">

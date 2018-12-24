@@ -5,7 +5,7 @@ use yii\widgets\LinkPager;
 
 $this->title = 'Статьи, Аксиома';
 
-$this->params['breadcrumbs'][] = $title;
+$this->params['breadcrumbs'][] = 'Статьи';
 ?>
 
 <div class="news">
