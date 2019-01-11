@@ -168,7 +168,7 @@ class AdminController extends \app\controllers\AdminController {
             'marginHeader' => 0,
             'marginFooter' => 0,
 //            'marginBottom' => 0,
-            'cssFile' => '/css/print.css',
+//            'cssFile' => Yii::getAlias('@webroot') . '/css/print.css',
 //            'cssFile' => '/css/bootstrap/bootstrap.css',
 //            'cssInline' => '@page {margin: 0;}',
             'options' => [

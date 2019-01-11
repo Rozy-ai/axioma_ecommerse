@@ -56,11 +56,13 @@ PrintAsset::register($this);
                 </div>
             </div>
 
-            <div class="slider" style="background: url('/image/slider/slide_3.jpg') top center no-repeat; height: 300px;">
-                <!--<div class="container-fluid">-->
+            <?php echo Html::img('/image/slider/slide_3.jpg', ['class' => 'img img-responsive']) ?>
+<!--
+            <div class="slider" style="background: url('/image/slider/slide_3.jpg') top center no-repeat; height: 250px; width: 100%">
+                <div class="container-fluid">
                 <?php Html::img('/image/slider/slide_3.jpg', ['class' => 'img img-responsive']) ?>
-                <!--</div>-->
-            </div>
+                </div>
+            </div>-->
 
             <div class="advantages">
                 <div class="container-fluid">
