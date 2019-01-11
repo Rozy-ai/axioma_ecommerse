@@ -27,6 +27,9 @@ class FlyerGoods extends \app\models\FlyerGoods {
 
     public function getImg() {
 
+        if (!$this->image)
+            return '';
+
         $new_image = Image::resize('@webroot/' . self::PATH . $this->image, '800', '800');
         $save_path = Yii::getAlias('@app') . '/web/image/flyer/thumb/' . $this->image;
         $new_image->save($save_path);
