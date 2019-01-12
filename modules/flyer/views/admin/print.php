@@ -39,7 +39,11 @@ use yii\bootstrap\Html;
 
                                 <?php if ($model->price_new): ?>
                                     <strong><?= Yii::$app->formatter->asCurrency($model->price_new) ?></strong>
-                                    <p class="old-price"><?= Yii::$app->formatter->asCurrency($model->price) ?></p>
+                                    <p class="old-price">
+                                    <strike>
+                                        <?= Yii::$app->formatter->asCurrency($model->price) ?>
+                                    </strike>
+                                    </p>
                                 <?php else: ?>
                                     <strong><?= Yii::$app->formatter->asCurrency($model->price) ?></strong>
                                 <?php endif; ?>

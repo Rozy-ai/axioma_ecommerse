@@ -12,7 +12,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <?php $form = ActiveForm::begin(['id' => 'form-' . $model->id, 'enableClientValidation' => true,]); ?>
 <div class="text-left">
-    <?= $form->field($model, 'flyer_id')->hiddenInput(['value' => $flyer->id])->label(false) ?>
+    <?= $form->field($model, 'flyer_id')->hiddenInput(['value' => $model->id])->label(false) ?>
     <?=
     $form->field($model, 'name')->textInput()
 //    $form->field($model, 'product_id')->widget(\kartik\select2\Select2::classname(), [
