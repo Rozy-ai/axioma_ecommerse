@@ -5,14 +5,12 @@
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
-//use yii\widgets\Breadcrumbs;
 use app\components\Breadcrumbs;
 use app\assets\AppAsset;
 use yii\bootstrap\ActiveForm;
 use app\modules\region_templates\models\RegionTemplates;
 use app\modules\menu\models\Menu;
-
-//print_r(Menu::getTopItems());
+use app\widgets\Alert;
 
 AppAsset::register($this);
 
@@ -87,10 +85,10 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                 <div class="col-xs-12 col-sm-4 ekb">
                                     <?= Yii::$app->info::get('ekb_address') ?>
                                 </div>
-<!--                                <div class="col-xs-12 hidden-md hidden-sm hidden-lg">
-                                    <p class=""><strong>График работы</strong></p>
-                                    <?= Yii::$app->info::get('work_time') ?>
-                                </div>-->
+                                <!--                                <div class="col-xs-12 hidden-md hidden-sm hidden-lg">
+                                                                    <p class=""><strong>График работы</strong></p>
+                                <?= Yii::$app->info::get('work_time') ?>
+                                                                </div>-->
                                 <div class="col-xs-12 col-sm-4 phone-wrap" >
                                     <p class="phone">
                                         <a href="tel:<?= Yii::$app->info::get('headTelephone') ?>">
@@ -123,6 +121,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
                         ])
                         ?>
+                        <?= Alert::widget() ?>
                         <div id="content">
                             <?= $content ?>
                         </div>
@@ -137,14 +136,14 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                         </div>
 
                         <!--<div class="col-xs-12 col-sm-8 thanks">-->
-                        <?php // app\modules\thanks\widgets\ThanksList::widget(); ?>
+                        <?php // app\modules\thanks\widgets\ThanksList::widget();  ?>
                         <!--</div>-->
                         <!--<div class="col-xs-12 col-sm-4 contact-form">-->
-                        <?php // app\modules\forms\widgets\Contact::widget(); ?>
+                        <?php // app\modules\forms\widgets\Contact::widget();  ?>
                         <!--</div>-->
 
                         <!--<div class="slider">-->
-                        <?php //\app\modules\slider\widgets\MainSlider::widget(); ?>
+                        <?php //\app\modules\slider\widgets\MainSlider::widget();  ?>
                         <!--</                                            div>-->
                         <!--</div>-->
                     </div>

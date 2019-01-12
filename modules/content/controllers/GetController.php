@@ -84,6 +84,8 @@ class GetController extends Controller {
 
     public function actionOne($url) {
 
+        Yii::$app->session->setFlash('success', 'Заявка отправлена.');
+
         $model = Content::find()->where(
                         ['url' => $url]
                 )->

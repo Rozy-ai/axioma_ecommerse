@@ -100,4 +100,26 @@ class DefaultController extends Controller {
         }
     }
 
+    public function actionRassrochka() {
+
+        $model = new \app\modules\forms\models\RassrochkaForm();
+
+        if ($model->load(Yii::$app->request->post())) {
+
+
+            if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+
+                if ($model->contact()) {
+
+                    Yii::$app->session->setFlash('success', 'Заявка отправлена.');
+                }
+            } else {
+                Yii::$app->session->setFlash('error', 'Ошибка отправки.');
+            }
+
+
+            return $this->redirect(Yii::$app->request->referrer);
+        }
+    }
+
 }

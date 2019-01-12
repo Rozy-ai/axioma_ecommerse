@@ -1,6 +1,6 @@
-if ($http_host != 'new.axioma.pro') {
-    return 301 http://new.axioma.pro$request_uri;
-}    
+#if ($http_host != 'new.axioma.pro') {
+#    return 301 http://new.axioma.pro$request_uri;
+#}    
 
     if ( $request_filename ~ /catalog/etiketka_mini-ultra-strip_2 ) {
         rewrite ^ /catalog permanent;

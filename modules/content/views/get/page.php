@@ -31,5 +31,10 @@ $pages_id = [94, 96, 97, 98, 99, 100];
             <?= Html::img('/' . $model->image, ['class' => 'img img-responsive img-rounded']) ?>
             <?= $model->content ?>
         </div>
+
+        <?php
+        if ($model->url == 'oborudovanie-v-rassrochku')
+            echo app\modules\forms\widgets\RassrochkaWidget::widget();
+        ?>
     </div>
 </div>
