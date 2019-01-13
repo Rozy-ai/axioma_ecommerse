@@ -169,4 +169,17 @@ class Product extends \app\models\Product {
                 '/catalog/' . $this->url;
     }
 
+    public static function getNameByLabel($label) {
+
+        $model = new Product;
+
+        $labels = $model->attributeLabels();
+
+        foreach ($labels as $k => $_label)
+            if ($label == $_label)
+                return $k;
+
+        return false;
+    }
+
 }

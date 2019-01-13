@@ -14,11 +14,32 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="product-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <p>
-        <?= Html::a(Yii::t('app', 'Create Product'), ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+    <div class="row">
+        <div class="col-xs-8">
+            <?= Html::a(Yii::t('app', 'Create Product'), ['create'], ['class' => 'btn btn-success']) ?>
+        </div>
+        <div class="col-xs-2">
+            Экспорт
+            <?php
+            echo ExportMenu::widget([
+                'dataProvider' => $dataProvider,
+//        'columns' => $gridColumns,
+                'exportConfig' => [
+                    ExportMenu::FORMAT_TEXT => false,
+                    ExportMenu::FORMAT_PDF => false,
+                    ExportMenu::FORMAT_CSV => false,
+                    ExportMenu::FORMAT_EXCEL => false,
+                    ExportMenu::FORMAT_HTML => false,
+                ],
+            ]);
+            ?>
+        </div>
+        <div class="col-xs-2">
+            <?= Html::a(Yii::t('app', 'Import'), ['import'], ['class' => 'btn btn-success']) ?>
+        </div>
+    </div>
+
 
     <?php
     $gridColumns = [
@@ -51,21 +72,6 @@ $this->params['breadcrumbs'][] = $this->title;
         ['class' => 'yii\grid\ActionColumn'],
     ];
     ?>
-
-    <?php
-    echo ExportMenu::widget([
-        'dataProvider' => $dataProvider,
-        'columns' => $gridColumns,
-        'exportConfig' => [
-            ExportMenu::FORMAT_TEXT => false,
-            ExportMenu::FORMAT_PDF => false,
-            ExportMenu::FORMAT_CSV => false,
-            ExportMenu::FORMAT_EXCEL => false,
-            ExportMenu::FORMAT_HTML => false,
-        ],
-    ]);
-    ?>
-
 
     <?=
     GridView::widget([

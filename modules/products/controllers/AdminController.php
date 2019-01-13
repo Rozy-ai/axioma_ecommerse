@@ -8,6 +8,8 @@ use app\modules\products\models\ProductSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\modules\products\models\ImportCSV;
+use yii\web\UploadedFile;
 
 /**
  * AdminController implements the CRUD actions for Product model.
@@ -37,6 +39,8 @@ class AdminController extends \app\controllers\AdminController {
     public function actionIndex() {
         $searchModel = new ProductSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        $dataProvider->pagination->pageSize = 100;
 
         return $this->render('index', [
                     'searchModel' => $searchModel,
@@ -118,6 +122,81 @@ class AdminController extends \app\controllers\AdminController {
         }
 
         throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
+    }
+
+    public function actionImport() {
+
+        $model = new ImportCSV();
+
+        if (Yii::$app->request->isPost) {
+            $model->file = UploadedFile::getInstance($model, 'file');
+
+            if ($model->file && $model->validate()) {
+
+                $file = Yii::getAlias('@webroot')
+                        . '/import/' . $model->file->baseName . '.' . $model->file->extension;
+                $model->file->saveAs($file);
+
+                $row = 1;
+
+                $data = \moonland\phpexcel\Excel::widget([
+                            'mode' => 'import',
+                            'fileName' => $file,
+                            'setFirstRecordAsKeys' => true, // if you want to set the keys of record column with first record, if it not set, the header with use the alphabet column on excel.
+                            'setIndexSheetByName' => true, // set this if your excel data with multiple worksheet, the index of array will be set with the sheet name. If this not set, the index will use numeric.
+                            'getOnlySheet' => 'sheet1', // you can set this property if you want to get the specified sheet from the excel data with multiple worksheet.
+                ]);
+
+                $newData = [];
+
+
+                //prepare data
+                foreach ($data as $n => $item)
+                    foreach ($item as $k => &$element):
+                        if (Product::getNameByLabel($k))
+                            $newData[$n][Product::getNameByLabel($k)] = $element;
+                    endforeach;
+
+                //save data
+
+                foreach ($newData as $dataitem):
+
+//                    print_r($dataitem);
+//                    continue;
+
+                    if (isset($dataitem['id'])) {
+                        $_model = Product::findOne($dataitem['id']);
+
+                        if ($_model) {
+
+                            foreach ($dataitem as $k => $_ditem):
+
+//                                print_r($dataitem);
+                                if ($_model->hasAttribute($k))
+                                    $_model->$k = $_ditem;
+
+                                if (isset($dataitem['price']))
+                                    $_model->price = (float) $dataitem['price'];
+
+
+
+                            endforeach;
+                            if ($_model->save())
+                                ;
+                            else
+                                print_r($_model->errors);
+//                        var_dump($_model);
+                        } else
+                            \Yii::$app->session->setFlash('error', "Не найдено");
+                    }
+
+                endforeach;
+
+                \Yii::$app->session->setFlash('success', "Импорт завершён!");
+            }
+        }
+
+        return $this->render('import', ['model' => $model]);
     }
 
 }

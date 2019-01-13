@@ -10,6 +10,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\helpers\Url;
 
+
 /**
  * AdminController implements the CRUD actions for Catalog model.
  */
@@ -128,5 +129,7 @@ class AdminController extends \app\controllers\AdminController {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+
+
 
 }
