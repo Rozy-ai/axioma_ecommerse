@@ -41,7 +41,7 @@ use yii\bootstrap\Html;
             </div>
             <div class="col-md-2 col-sm-4 col-xs-6">
                 <a href="/ves-spekt-montazhnyh-uslug">
-                    <?= Html::img('/image/advantages/support.png', ['class' => 'img img-responsive center-block']) ?>
+                    <?= Html::img('/image/advantages/ingeener.png', ['class' => 'img img-responsive center-block']) ?>
                     <p class="text-center">
                         Весь спектр<br/>  монтажных услуг
                     </p>
