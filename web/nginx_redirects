@@ -2,9 +2,9 @@
 #    return 301 http://new.axioma.pro$request_uri;
 #}    
 
-    if ( $request_uri ~ /catalog/etiketka_mini-ultra-strip_2$ ) {
-        rewrite ^ /catalog permanent;
-    }
+#    if ( $request_uri ~ /catalog/etiketka_mini-ultra-strip_2$ ) {
+#        rewrite ^ /catalog permanent;
+#    }
 
     if ( $request_uri ~ /category/schyotchiki-megacount$ ) {
         rewrite ^ /catalog permanent;
@@ -18,24 +18,24 @@
         rewrite ^ /catalog permanent;
     }
 
-    if ( $request_uri ~ /catalog/kovrik$ ) {
-        rewrite ^ /catalog permanent;
-    }
+#    if ( $request_uri ~ /catalog/kovrik$ ) {
+#        rewrite ^ /catalog permanent;
+#    }
 
     if ( $request_uri ~ /catalog/protivokrajnaya_sistema__ams_1140$ ) {
         rewrite ^ /catalog permanent;
     }
 
-    if ( $request_uri ~ /catalog/spectra$ ) {
-        rewrite ^ /catalog permanent;
-    }
+#    if ( $request_uri ~ /catalog/spectra$ ) {
+#        rewrite ^ /catalog permanent;
+#    }
 
     if ( $request_uri ~ /catalog/deaktivator_radiochastotny$ ) {
         rewrite ^ /catalog permanent;
     }
-    if ( $request_filename ~ /catalog/gvozdik$/ ) {
-        rewrite ^ /catalog permanent;
-    }
+#    if ( $request_filename ~ /catalog/gvozdik$/ ) {
+#        rewrite ^ /catalog permanent;
+#    }
     if ( $request_uri ~ /catalog/syemniki_standart$ ) {
         rewrite ^ /catalog permanent;
     }
