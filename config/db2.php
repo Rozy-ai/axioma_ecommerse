@@ -2,8 +2,8 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=axioma_old',
-    'username' => 'admin',
+    'dsn' => 'mysql:host=localhost;dbname=axioma_new',
+    'username' => 'root',
     'password' => 'admin',
-    'charset' => 'utf8',
+    'charset' => 'oAumdTRt7ejvz7t',
 ];
