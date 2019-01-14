@@ -237,4 +237,33 @@ class AdminController extends \app\controllers\AdminController {
         throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
     }
 
+    public function actionCopy($id) {
+        $model = $this->findModel($id);
+
+        unset($model->id);
+        Yii::error($model);
+        $model_new = new Flyer;
+        $model_new->setAttributes($model->attributes, false);
+        $model_new->name = 'Копия ' . $model_new->name;
+        if ($model_new->save()) {
+
+            $goods = FlyerGoods::findAll(['flyer_id' => $id]);
+
+            foreach ($goods as $item):
+
+                unset($item->id);
+
+                $new_good = new FlyerGoods;
+                $new_good->setAttributes($item->attributes, false);
+                $new_good->flyer_id = $model_new->id;
+                $new_good->save();
+//                Yii::error($new_good);
+//                Yii::error($new_good->errors);
+
+            endforeach;
+        }
+
+        return $this->redirect(['index']);
+    }
+
 }
