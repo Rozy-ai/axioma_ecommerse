@@ -10,7 +10,7 @@
         rewrite ^ /catalog permanent;
     }
 
-    if ( $request_uri ~ /category/schyotchiki-smcounter $) {
+    if ( $request_uri ~ /category/schyotchiki-smcounter$) {
         rewrite ^ /catalog permanent;
     }
 
