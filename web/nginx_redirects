@@ -2,44 +2,44 @@
 #    return 301 http://new.axioma.pro$request_uri;
 #}    
 
-    if ( $request_filename ~ /catalog/etiketka_mini-ultra-strip_2$ ) {
+    if ( $request_url ~ /catalog/etiketka_mini-ultra-strip_2$ ) {
         rewrite ^ /catalog permanent;
     }
 
-    if ( $request_filename ~ /category/schyotchiki-megacount$ ) {
+    if ( $request_url ~ /category/schyotchiki-megacount$ ) {
         rewrite ^ /catalog permanent;
     }
 
-    if ( $request_filename ~ /category/schyotchiki-smcounter $) {
+    if ( $request_url ~ /category/schyotchiki-smcounter $) {
         rewrite ^ /catalog permanent;
     }
 
-    if ( $request_filename ~ /catalog/etiketki_40x40_mm_lucatron$ ) {
+    if ( $request_url ~ /catalog/etiketki_40x40_mm_lucatron$ ) {
         rewrite ^ /catalog permanent;
     }
 
-    if ( $request_filename ~ /catalog/kovrik$ ) {
+    if ( $request_url ~ /catalog/kovrik$ ) {
         rewrite ^ /catalog permanent;
     }
 
-    if ( $request_filename ~ /catalog/protivokrajnaya_sistema__ams_1140$ ) {
+    if ( $request_url ~ /catalog/protivokrajnaya_sistema__ams_1140$ ) {
         rewrite ^ /catalog permanent;
     }
 
-    if ( $request_filename ~ /catalog/spectra$ ) {
+    if ( $request_url ~ /catalog/spectra$ ) {
         rewrite ^ /catalog permanent;
     }
 
-    if ( $request_filename ~ /catalog/deaktivator_radiochastotny$ ) {
+    if ( $request_url ~ /catalog/deaktivator_radiochastotny$ ) {
         rewrite ^ /catalog permanent;
     }
-    if ( $request_filename ~ /catalog/gvozdik$ ) {
+    if ( $request_url ~ /catalog/gvozdik$ ) {
         rewrite ^ /catalog permanent;
     }
-    if ( $request_filename ~ /catalog/syemniki_standart$ ) {
+    if ( $request_url ~ /catalog/syemniki_standart$ ) {
         rewrite ^ /catalog permanent;
     }
 
-    if ( $request_filename ~ /kontakti$ ) {
+    if ( $request_url ~ /kontakti$ ) {
         rewrite ^ /kontaktyi permanent;
     }
