@@ -7,12 +7,13 @@ use vova07\imperavi\Widget;
 use vova07\fileapi\Widget as FileAPI;
 
 $this->title = Yii::t('app', 'Flyers');
-$this->params['breadcrumbs'][] = ['label' => 'Листовка', 'url' => ['view', 'id' => $model->flyer_id]];
+$this->params['breadcrumbs'][] = ['label' => 'Рекламные буклеты', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Буклет', 'url' => ['view', 'id' => $model->flyer_id]];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <?php $form = ActiveForm::begin(['id' => 'form-' . $model->id, 'enableClientValidation' => true,]); ?>
 <div class="text-left">
-    <?= $form->field($model, 'flyer_id')->hiddenInput(['value' => $model->id])->label(false) ?>
+    <?= $form->field($model, 'flyer_id')->hiddenInput(['value' => $model->flyer_id])->label(false) ?>
     <?=
     $form->field($model, 'name')->textInput()
 //    $form->field($model, 'product_id')->widget(\kartik\select2\Select2::classname(), [
@@ -49,10 +50,10 @@ $this->params['breadcrumbs'][] = $this->title;
     ?>
     <?= $form->field($model, 'price')->textInput() ?>
     <?= $form->field($model, 'price_new')->textInput() ?>
-<?= $form->field($model, 'order')->textInput(['type' => 'number']) ?>
+    <?= $form->field($model, 'order')->textInput(['type' => 'number']) ?>
 </div>
 <div class="form-group">
-<?= Html::submitButton('Добавить', ['class' => 'btn btn-primary']) ?>
+    <?= Html::submitButton('Добавить', ['class' => 'btn btn-primary']) ?>
 </div>
 
 <?php
