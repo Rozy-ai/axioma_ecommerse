@@ -230,8 +230,22 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
         endif;
         ?>
         <?php $this->endBody() ?>
-
-        <!--<script type="text/javascript" src="//cdn.callbackhunter.com/cbh.js?hunter_code=51124a1b34a5d693228b07c3c7665145" charset="UTF-8"></script>-->
+                <!-- Код тега ремаркетинга Google -->
+        <script type="text/javascript">
+            /* <![CDATA[ */
+            var google_conversion_id = 925543648;
+            var google_custom_params = window.google_tag_params;
+            var google_remarketing_only = true;
+            /* ]]> */
+        </script>
+        <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+        </script>
+        <noscript>
+            <div style="display:inline;">
+                <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/925543648/?guid=ON&amp;script=0"/>
+            </div>
+        </noscript>
+        <script type="text/javascript" src="//cdn.callbackhunter.com/cbh.js?hunter_code=51124a1b34a5d693228b07c3c7665145" charset="UTF-8"></script>
     </body>
 </html>
 <?php $this->endPage() ?>
