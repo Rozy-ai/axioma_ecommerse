@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'url' => ['/flyer/admin/upload-image']
         ]
             ]
-    )->label('Изображение в шапке');
+    )->label('Изображение');
     ?>
     <?=
     $form->field($model, 'custom_text')->widget(Widget::className(), [
