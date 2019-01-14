@@ -31,7 +31,7 @@ use yii\bootstrap\Html;
                             </div>
                             <div class="col-xs-7">
                                 <p>
-                                    <?= $model->custom_text ? $model->custom_text : $model->product->content_description ?>
+                                    <?= $model->custom_text ?>
                                 </p>
                             </div>
 
