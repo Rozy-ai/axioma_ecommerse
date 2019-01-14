@@ -14,9 +14,9 @@
         rewrite ^ /catalog permanent;
     }
 
-    if ( $request_uri ~ /catalog/etiketki_40x40_mm_lucatron$ ) {
-        rewrite ^ /catalog permanent;
-    }
+#    if ( $request_uri ~ /catalog/etiketki_40x40_mm_lucatron$ ) {
+#        rewrite ^ /catalog permanent;
+#    }
 
     if ( $request_uri ~ /catalog/kovrik$ ) {
         rewrite ^ /catalog permanent;
