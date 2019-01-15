@@ -44,8 +44,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 'fontcolor',
             ],
             'replaceDivs' => false,
+            'linebreaks' => true,
             'deniedTags' => ['style']
-        ]
+        ],
     ]);
     ?>
     <?= $form->field($model, 'price')->textInput() ?>

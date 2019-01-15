@@ -57,6 +57,7 @@ Modal::begin([
                 'fontcolor',
             ],
             'replaceDivs' => false,
+            'linebreaks' => true,
             'deniedTags' => ['style']
         ]
     ]);
