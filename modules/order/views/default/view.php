@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
+use yii\widgets\MaskedInput;
 
 $this->title = 'Оформить заказ';
 $this->params['breadcrumbs'][] = $this->title;
@@ -51,7 +52,13 @@ $this->params['breadcrumbs'][] = $this->title;
 
             <?= $form->field($client, 'email') ?>
 
-            <?= $form->field($client, 'phone') ?>
+            <?=
+            $form->field($client, 'phone')->widget(MaskedInput::className(), [
+                'mask' => '+7 (999) 999-9999',
+                'options' => ['class' => 'form-control'],
+            ])
+            ?>
+
 
             <?=
             $form->field($client, 'personal_accept')->checkbox()->label('Я даю согласие на обработку персональных данных. '
