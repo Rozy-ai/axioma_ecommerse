@@ -37,9 +37,9 @@ return [
     'Create Menu' => 'Добавить пункт',
     'Update Portfolio: {nameAttribute}' => 'Обновить Портфолио  {nameAttribute}',
 //
-    'Thanks' => 'Благодарности',
-    'Create Thanks' => 'Добавить благодарность',
-    'Update Portfolio: {nameAttribute}' => 'Обновить Портфолио  {nameAttribute}',
+    'Thanks' => 'Рекомендации',
+    'Create Thanks' => 'Добавить Рекомендацию',
+    'Update Thanks: {nameAttribute}' => 'Обновить Рекомендацию  {nameAttribute}',
 //
     'Flyers' => 'Рекламные буклеты',
     'Create Flyer' => 'Добавить Буклет',

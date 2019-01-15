@@ -30,8 +30,6 @@ use yii\bootstrap\Html;
                             </a>
                         </div>
                         <div class="row">
-
-
                             <div class="col-xs-7">
                                 <p>
                                     <?= $model->custom_text ?>

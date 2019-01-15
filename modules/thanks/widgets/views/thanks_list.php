@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 ?>
 <div class="home-thanks-list">
-    <p class="h2">Благодарности</p>
+    <p class="h2">Рекомендации</p>
     <div class="row">
         <?php foreach ($model as $item): ?>
 
