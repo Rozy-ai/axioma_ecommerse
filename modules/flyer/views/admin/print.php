@@ -10,25 +10,28 @@ use yii\bootstrap\Html;
         <?php foreach ($models as $k => $model): ?>
             <div class="product <?= (($k % 2) == 0) ? 'odd' : 'even' ?>">
                 <div class="row">
-                    <div class="col-xs-2 col-xs-offset-1">
-                        <a href="https://axioma.pro/">
-                            <!--<div class="image" style="background: url('<?= $model->name ?>') top center no-repeat"></div>-->
-                            <?= Html::img($model->img, ['class' => 'img img-responsive']) ?>
-                        </a>
+                    <div class="col-xs-12">
+                        <div class="col-xs-2 col-xs-offset-1">
+                            <p></p>
+                        </div>
+                        <div class="col-xs-7">
+                            <br/>
+                            <a href="https://axioma.pro/">
+                                <strong><?= $model->name ?></strong>
+                            </a>
+                        </div>
                     </div>
-                    <div class="col-xs-8">
+
+                    <div class="col-xs-12">
+                        <div class="col-xs-2 col-xs-offset-1">
+                            <a href="https://axioma.pro/">
+                                <!--<div class="image" style="background: url('<?= $model->name ?>') top center no-repeat"></div>-->
+                                <?= Html::img($model->img, ['class' => 'img img-responsive']) ?>
+                            </a>
+                        </div>
                         <div class="row">
 
-                            <div class="col-xs-10">
 
-                                <p class="h4 uppercase">
-                                    <a href="https://axioma.pro/">
-                                        <?= $model->name ?>
-                                    </a>
-                                </p>
-
-                                <br/>
-                            </div>
                             <div class="col-xs-7">
                                 <p>
                                     <?= $model->custom_text ?>
