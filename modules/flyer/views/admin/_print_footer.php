@@ -1,5 +1,5 @@
+<!--<footer class="page_footer" style="background: #3D3D3D; color: white; padding: 1rem 0; font-style: normal;">-->
 <footer class="page_footer">
-
     <div class="footer-top">
         <div class="container-fluid">
             <div class="row">
