@@ -21,7 +21,7 @@ use yii\bootstrap\Html;
             </div>
 
             <div class="col-xs-3 col-xs-offset-1 text-center ">
-                <?= Html::img('/image/advantages/place.png', ['class' => 'img img-responsive center-block']) ?>
+                <?= Html::img('/image/advantages/place.png', ['class' => 'img  center-block', 'height' => '70px']) ?>
                 <br/>
                 <p>
                     <br/>
@@ -31,7 +31,7 @@ use yii\bootstrap\Html;
                 </p>
             </div>
             <div class="col-xs-3 text-center">
-                <?= Html::img('/image/advantages/delivery.png', ['class' => 'img img-responsive center-block']) ?>
+                <?= Html::img('/image/advantages/delivery.png', ['class' => 'img center-block', 'height' => '70px']) ?>
                 <br/>
                 <p>
                     <br/>
@@ -41,7 +41,7 @@ use yii\bootstrap\Html;
                 </p>
             </div>
             <div class="col-xs-3 text-center">
-                <?= Html::img('/image/advantages/pay.png', ['class' => 'img img-responsive center-block']) ?>
+                <?= Html::img('/image/advantages/pay.png', ['class' => 'img center-block', 'height' => '70px']) ?>
                 <br/>
                 <p>
                     <br/>
