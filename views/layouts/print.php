@@ -32,7 +32,7 @@ PrintAsset::register($this);
                         <div class="col-xs-4">
                             <a href="https://axioma.pro/">
                                 <?=
-                                $img = Html::img('/print/image/logo.png', ['class' => 'img img-responsive', 'alt' => 'Логотип']);
+                                $img = Html::img('/print/image/logo_print.png', ['class' => 'img img-responsive', 'alt' => 'Логотип']);
                                 ?>
                             </a>
                         </div>
@@ -48,7 +48,6 @@ PrintAsset::register($this);
                                 </div>
                                 <div class="col-xs-5 text-right">
                                     <?= Yii::$app->info::get('ekb_address') ?>
-
                                 </div>
                             </div>
                         </div>
@@ -56,76 +55,11 @@ PrintAsset::register($this);
                 </div>
             </div>
 
-            <?php echo Html::img('/image/slider/slide_3.jpg', ['class' => 'img img-responsive']) ?>
-<!--
-            <div class="slider" style="background: url('/image/slider/slide_3.jpg') top center no-repeat; height: 250px; width: 100%">
-                <div class="container-fluid">
-                <?php Html::img('/image/slider/slide_3.jpg', ['class' => 'img img-responsive']) ?>
-                </div>
-            </div>-->
-
-            <div class="advantages">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-xs-12">
-
-                            <p class="h3 text-center uppercase bold">
-                                <strong>специальные цены предоставляются в случаях:</strong>
-                            </p>
-                            <br/>
-                        </div>
-
-                        <div class="col-xs-3 col-xs-offset-1 text-center ">
-                            <?= Html::img('/print/image/cart.png', ['class' => 'img img-responsive center-block']) ?>
-                            <br/>
-                            <p>
-                                <br/>
-                                <strong class="uppercase">
-                                    Открытие нового магазина
-                                </strong>
-                            </p>
-                        </div>
-                        <div class="col-xs-3 text-center">
-                            <?= Html::img('/print/image/cart.png', ['class' => 'img img-responsive center-block']) ?>
-                            <br/>
-                            <p>
-                                <br/>
-                                <strong class="uppercase">
-                                    Сумма заказа более 200 тыс. рублей
-                                </strong>
-                            </p>
-                        </div>
-                        <div class="col-xs-3 text-center">
-                            <?= Html::img('/print/image/cart.png', ['class' => 'img img-responsive center-block']) ?>
-                            <br/>
-                            <p>
-                                <br/>
-                                <strong class="uppercase">
-                                    100% предоплата
-                                </strong>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
             <div class="container-fluid">
                 <div class="row">
                     <?= $content ?>
                 </div>
             </div>
-
-
-
-
-            <!--            <div class="phrase">
-                            <div class="container-fluid ">
-                                <p class="h2 uppercase bold text-center">предложение ограничено</p>
-                            </div>
-
-                        </div>-->
 
         </div>
 

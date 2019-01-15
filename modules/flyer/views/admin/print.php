@@ -2,7 +2,58 @@
 
 use yii\bootstrap\Html;
 ?>
-<!--<h2>Test</h2>-->
+
+<!--<div class="slider" style="background: url('') top center no-repeat; height: 250px; width: 100%">
+    <div class="container-fluid">-->
+<?php echo Html::img($flyer->image, ['class' => 'img img-responsive']) ?>
+<!--</div>-->
+<!--</div>-->
+
+<div class="advantages">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+
+                <p class="h3 text-center uppercase bold">
+                    <strong>специальные цены предоставляются в случаях:</strong>
+                </p>
+                <br/>
+            </div>
+
+            <div class="col-xs-3 col-xs-offset-1 text-center ">
+                <?= Html::img('/image/advantages/place.png', ['class' => 'img img-responsive center-block']) ?>
+                <br/>
+                <p>
+                    <br/>
+                    <strong class="uppercase">
+                        Открытие нового магазина
+                    </strong>
+                </p>
+            </div>
+            <div class="col-xs-3 text-center">
+                <?= Html::img('/image/advantages/delivery.png', ['class' => 'img img-responsive center-block']) ?>
+                <br/>
+                <p>
+                    <br/>
+                    <strong class="uppercase">
+                        Сумма заказа более 200 тыс. рублей
+                    </strong>
+                </p>
+            </div>
+            <div class="col-xs-3 text-center">
+                <?= Html::img('/image/advantages/pay.png', ['class' => 'img img-responsive center-block']) ?>
+                <br/>
+                <p>
+                    <br/>
+                    <strong class="uppercase">
+                        100% предоплата
+                    </strong>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <div class="products">
     <div class="row">

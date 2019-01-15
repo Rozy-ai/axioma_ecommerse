@@ -6,6 +6,11 @@ use Yii;
 
 class Flyer extends \app\models\Flyer {
 
+    public static $BANNER = [
+        '/image/slider/slide_3.jpg' => 'Акустика',
+        '/image/slider/slide_6.jpg' => 'Радио',
+    ];
+
     public function getFlyerGoods() {
         return $this->hasMany(FlyerGoods::className(), ['flyer_id' => 'id']);
     }

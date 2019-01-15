@@ -160,7 +160,7 @@ class AdminController extends \app\controllers\AdminController {
         Yii::$app->response->format = \yii\web\Response::FORMAT_RAW;
         $pdf = new Pdf([
             'mode' => Pdf::MODE_UTF8, // leaner size using standard fonts
-            'content' => $this->render('print', ['models' => $models]),
+            'content' => $this->render('print', ['flyer' => $flyer, 'models' => $models]),
             'marginTop' => '10px',
             'marginLeft' => 0,
             'marginRight' => 0,
@@ -168,7 +168,7 @@ class AdminController extends \app\controllers\AdminController {
             'marginHeader' => 0,
             'marginFooter' => 0,
 //            'marginBottom' => 0,
-//            'cssFile' => Yii::getAlias('@webroot') . '/css/print.css',
+            'cssFile' => Yii::getAlias('@webroot') . '/css/print.css',
 //            'cssFile' => '/css/bootstrap/bootstrap.css',
 //            'cssInline' => '@page {margin: 0;}',
             'options' => [
@@ -181,46 +181,46 @@ class AdminController extends \app\controllers\AdminController {
                 'SetFooter' => $this->renderPartial('_print_footer'),
             ]
         ]);
-//        return $pdf->render();
+        return $pdf->render();
 
-        return $this->render('print', ['models' => $models]);
+        return $this->render('print', ['flyer' => $flyer,'models' => $models]);
     }
 
-    public function actionPrintTest() {
-
-        $this->layout = '@layouts/print';
-
-        Yii::$app->response->format = \yii\web\Response::FORMAT_RAW;
-        $pdf = new Pdf([
-            'mode' => Pdf::MODE_UTF8, // leaner size using standard fonts
-            'content' => $this->render('test'),
-//            'marginTop' => '10px',
-            'marginTop' => 0,
-            'marginLeft' => 0,
-            'marginRight' => 0,
-            'marginBottom' => 0,
-            'marginHeader' => 0,
-            'marginFooter' => 0,
-//            'paddingBottom' => '30px',
+//    public function actionPrintTest() {
+//
+//        $this->layout = '@layouts/print';
+//
+//        Yii::$app->response->format = \yii\web\Response::FORMAT_RAW;
+//        $pdf = new Pdf([
+//            'mode' => Pdf::MODE_UTF8, // leaner size using standard fonts
+//            'content' => $this->render('test'),
+////            'marginTop' => '10px',
+//            'marginTop' => 0,
+//            'marginLeft' => 0,
+//            'marginRight' => 0,
 //            'marginBottom' => 0,
-            'cssFile' => '/css/test.css',
-//            'cssFile' => '/css/bootstrap/bootstrap.css',
-//            'cssInline' => '@page {margin: 0;}',
-            'options' => [
-//                'title' => 'Privacy Policy - Krajee.com',
-//                'subject' => 'Generating PDF files via yii2-mpdf extension has never been easy'
-            ],
-            'methods' => [
-//                'SetFooter' => ['|Page {PAGENO}|'],
-                'SetFooter' => '<footer style="'
-                . 'background: #000; margin:0; padding:0;'
-                . 'height: 50px;">Test</footer>',
-            ]
-        ]);
+//            'marginHeader' => 0,
+//            'marginFooter' => 0,
+////            'paddingBottom' => '30px',
+////            'marginBottom' => 0,
+//            'cssFile' => '/css/test.css',
+////            'cssFile' => '/css/bootstrap/bootstrap.css',
+////            'cssInline' => '@page {margin: 0;}',
+//            'options' => [
+////                'title' => 'Privacy Policy - Krajee.com',
+////                'subject' => 'Generating PDF files via yii2-mpdf extension has never been easy'
+//            ],
+//            'methods' => [
+////                'SetFooter' => ['|Page {PAGENO}|'],
+//                'SetFooter' => '<footer style="'
+//                . 'background: #000; margin:0; padding:0;'
+//                . 'height: 50px;">Test</footer>',
+//            ]
+//        ]);
 //        return $pdf->render();
-
-        return $this->render('print', ['models' => $models]);
-    }
+//
+////        return $this->render('print', ['models' => $models]);
+//    }
 
     /**
      * Finds the Flyer model based on its primary key value.

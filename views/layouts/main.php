@@ -64,7 +64,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-3 logo-wrap">
                             <?php
-                            $img = Html::img('/image/logo.svg', ['class' => 'img img-responsive', 'alt' => 'Логотип', 'onerror'=>"this.src='your.png'"]);
+                            $img = Html::img('/image/logo.svg', ['class' => 'img img-responsive', 'alt' => 'Логотип', 'onerror'=>"this.src='logo.png'"]);
                             echo!$isHome ? Html::a($img, ['/']) : $img;
                             ?>
                                                                         <!--<img src="/image/logo.png" class="img img-responsive">-->
