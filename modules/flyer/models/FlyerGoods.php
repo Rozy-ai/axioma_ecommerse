@@ -29,13 +29,14 @@ class FlyerGoods extends \app\models\FlyerGoods {
 
         if (!$this->image)
             return '';
-
-        $new_image = Image::resize('@webroot/' . self::PATH . $this->image, '800', '800');
-        $save_path = Yii::getAlias('@app') . '/web/image/flyer/thumb/' . $this->image;
-        $new_image->save($save_path);
+        if (!file_exists(Yii::getAlias('@app') . '/web/image/flyer/thumb/' . $this->image)) {
+            $new_image = Image::resize('@webroot/' . self::PATH . $this->image, '800', '800');
+            $save_path = Yii::getAlias('@app') . '/web/image/flyer/thumb/' . $this->image;
+            $new_image->save($save_path);
 //        $imageData = base64_encode($new_image->get('jpg'));
 //        $imageHTML = "data:89504E470D0A1A0A;base64,{$imageData}";
 //        return $imageHTML;
+        }
         return self::PATH . 'thumb/' . $this->image;
     }
 
