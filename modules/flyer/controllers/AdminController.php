@@ -181,7 +181,7 @@ class AdminController extends \app\controllers\AdminController {
                 'SetFooter' => $this->renderPartial('_print_footer'),
             ]
         ]);
-        return $pdf->render();
+//        return $pdf->render();
 
         return $this->render('print', ['models' => $models]);
     }
