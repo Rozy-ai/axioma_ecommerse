@@ -7,8 +7,8 @@ use Yii;
 class Flyer extends \app\models\Flyer {
 
     public static $BANNER = [
-        '/image/slider/slide_3.jpg' => 'Акустика',
-        '/image/slider/slide_6.jpg' => 'Радио',
+        '/image/slider/slide_3.jpg' => 'Радио',
+        '/image/slider/slide_6.jpg' => 'Акустика',
     ];
 
     public function getFlyerGoods() {
