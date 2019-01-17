@@ -1,2 +1,8 @@
 User-agent: *
-Disallow: /
+Disallow: /*videonabludenie/
+Disallow: /enter
+Disallow: /cart
+Disallow: /order/default/view
+Disallow: /*?*
+
+Sitemap: https://www.axioma.pro/sitemap.xml
