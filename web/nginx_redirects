@@ -44,7 +44,7 @@
         rewrite ^ /kontaktyi permanent;
     }
 
-    if ( $request_uri ~ ^/deaktivatoryi_etiketok$ ) {
+    if ( $request_uri ~ ^deaktivatoryi_etiketok$ ) {
         rewrite ^ /catalog/deaktivatoryi_etiketok permanent;
     }
 
