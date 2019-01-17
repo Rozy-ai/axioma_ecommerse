@@ -1,44 +1,32 @@
 <?php
 
 use yii\helpers\Html;
-use yii\bootstrap\Carousel;
+//use yii\bootstrap\Carousel;
+use kv4nt\owlcarousel\OwlCarouselWidget;
 ?>
 
 <?php
-$elements = [];
-
-foreach ($model as $item):
-
-    $elements[] = Html::img($item->image, ['class' => 'owl-lazy', 'data' => ['src' => $item->image]]);
-
-endforeach;
-
-//Yii::error($elements);
-
-echo \Gevman\OwlCarousel\OwlCarousel::widget([
-    'elements' => $elements,
-    'config' => [
+OwlCarouselWidget::begin([
+    'container' => 'div',
+    'containerOptions' => [
+//        'id' => 'container-id',
+        'class' => 'lazy slider owl-theme'
+    ],
+    'pluginOptions' => [
+        'autoplay' => true,
+        'autoplayTimeout' => 3000,
         'items' => 1,
-        'itemsDesktop' => false,
-        'itemsDesktopSmall' => false,
-        'itemsTablet' => false,
-        'itemsTabletSmall' => false,
-        'itemsMobile' => false,
-        'lazyLoad' => true,
         'loop' => true,
         'dots' => true,
         'nav' => true,
-        'autoplay' => true,
     ]
 ]);
 ?>
+<?php foreach ($model as $item): ?>
+    <div class="item-class">
+        <img class="" src="<?= $item->image ?>" data-srcset="" data-sizes="" alt="slider_img">
+    </div>
+<?php endforeach; ?>
 
-<section class="lazy slider" data-sizes="50vw">
 
-    <?php foreach ($model as $item): ?>
-        <div>
-            <img class="img img-responsive img-rounded" data-lazy="<?= $item->image ?>" data-srcset="" data-sizes="100vw">
-        </div>
-    <?php endforeach; ?>
-
-</section>
+<?php OwlCarouselWidget::end(); ?>
