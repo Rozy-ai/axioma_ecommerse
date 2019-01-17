@@ -19,7 +19,7 @@ class MainSlider extends Widget {
 
         $model = Slider::find()->where(['act' => 1])->all();
 
-        return $this->render('slider', ['model' => $model]);
+        return $this->render('slider_2', ['model' => $model]);
     }
 
 }
