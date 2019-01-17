@@ -90,7 +90,7 @@ use yii\bootstrap\Html;
                     <div class="panel-heading" role="tab" id="headingThree">
                         <h4 class="panel-title text-center">
                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Возможности антикражного обордуования
+                                Возможности антикражного оборудования
                             </a>
                         </h4>
                     </div>

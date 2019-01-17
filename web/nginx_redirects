@@ -43,3 +43,11 @@
     if ( $request_uri ~ /kontakti$ ) {
         rewrite ^ /kontaktyi permanent;
     }
+
+    if ( $request_uri ~ /deaktivatoryi_etiketok$ ) {
+        rewrite ^ /catalog/deaktivatoryi_etiketok permanent;
+    }
+
+    if ( $request_uri ~ /politic$ ) {
+        rewrite ^ /soglasie permanent;
+    }
