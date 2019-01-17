@@ -55,7 +55,7 @@ class EmailForm extends Model {
         if ($this->validate()) {
 
             Yii::$app->mailer->compose()
-                    ->setTo($this->recipient)
+                    ->setTo([$this->recipient, Yii::$app->params['copyEmail']])
                     ->setFrom([$this->sender_email => $this->sender_name])
                     ->setSubject($this->subject)
                     ->setTextBody($this->body)

@@ -266,6 +266,9 @@ nav {
                     margin: 0 auto;
                 }
             }
+            @media (max-width:@screen-lg) and (min-width:@screen-sm) {
+                font-size: 1.8rem;
+            }
 
             a {
                 color: #333;
@@ -974,6 +977,10 @@ a.desc:after {
         text-align: center;
         font-weight: 600;
         text-transform: uppercase;
+
+        @media (max-width:@screen-lg) and (min-width:@screen-sm) {
+            font-size: 1.3rem;
+        }
     }
 
 }
@@ -1231,7 +1238,7 @@ a.desc:after {
 
 /*MEDIA*/
 
-@media(max-width:@screen-sm) {
+@media(max-width:@screen-md) {
 
     .navbar-inverse {
         /*background: rgba(0,0,0, 0.7);*/

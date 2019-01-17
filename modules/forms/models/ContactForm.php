@@ -46,11 +46,14 @@ class ContactForm extends Model {
      */
     public function contact($email) {
         if ($this->validate()) {
-            Yii::$app->mailer->compose()
+
+            Yii::$app->mailer->compose('message', [
+                        'content' => $this->message,
+                        'imageFileName' => Yii::getAlias('@app') . '/web/image/logo_email.png'
+                    ])
                     ->setTo($email)
                     ->setFrom([$this->email => $this->name])
                     ->setSubject(self::SUBJECT)
-                    ->setTextBody($this->message)
                     ->send();
 
             return true;

@@ -46,10 +46,11 @@ class Menu extends \app\models\Menu {
         foreach ($model as $item)
             $result['top'][] = ['label' => $item->name, 'url' => ['/' . $item->url]];
 
-        $result['bottom'][] = ['label' => \app\modules\cart\widgets\TopCartWidget::widget(), 'url' => ['/cart'], 'options' => ['class' => 'cart']];
+        $result['bottom'][] = ['label' => \app\modules\cart\widgets\TopCartWidget::widget(), 'url' => ['/cart'], 'options' => ['class' => 'cart-top-btn cart hidden-xs hidden-sm']];
+        $result['bottom'][] = ['label' => \app\modules\cart\widgets\TopCartWidget::widget(), 'url' => ['/cart'], 'options' => ['class' => 'cart-mobile hidden-md hidden-lg']];
 //        $result['bottom'][] = ['label' => '<i class="far fa-heart"></i>', 'url' => ['/favorite']];
 //        $result['bottom'][] = ['label' => '<i class="fas fa-chart-bar"></i>', 'url' => ['/compare']];
-        $result['bottom'][] = ['label' => '<i class="fas fa-lock"></i>', 'url' => [ (Yii::$app->user->isGuest) ? '/enter' : '/products/admin/index']];
+        $result['bottom'][] = ['label' => '<i class="fas fa-lock"></i>', 'url' => [(Yii::$app->user->isGuest) ? '/enter' : '/products/admin/index']];
 
         return $result;
     }
