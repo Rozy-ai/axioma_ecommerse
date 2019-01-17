@@ -70,7 +70,7 @@ $(document).ready(function () {
 
     //cart
 
-    $('.navbar-right [href="/cart"]').click(function (e) {
+    $('.navbar-right .cart-top-btn').click(function (e) {
 
         e.preventDefault();
         $(this).find('.cart-top').popover('show');

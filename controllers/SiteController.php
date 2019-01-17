@@ -88,4 +88,18 @@ class SiteController extends Controller {
         return $this->render('index');
     }
 
+    public function actionTest() {
+
+        echo Yii::$app->mailer->compose('message', [
+                    'content' => 'test',
+                    'imageFileName' => Yii::getAlias('@app').'/web/image/logo_email.png'
+                ])
+//                ->setTo('info@kognitiv.ru')
+                ->setTo(['kpsmol@gmail.com', 'info@kognitiv.ru'])
+                ->setFrom(['noreply@axioma.pro' => 'email-robot'])
+                ->setSubject('test')
+//                    ->setTextBody($this->message)
+                ->send();
+    }
+
 }

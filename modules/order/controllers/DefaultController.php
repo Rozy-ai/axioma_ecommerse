@@ -121,19 +121,31 @@ class DefaultController extends Controller {
 
     private function sendClientMail($email) {
 
-        Yii::$app->mailer->compose()
+
+        Yii::$app->mailer->compose('message', [
+                    'content' => 'Спасибо за ваш заказ. В ближайшее время с вами свяжется специалист.',
+                    'imageFileName' => Yii::getAlias('@app') . '/web/image/logo_email.png'
+                ])
+//                ->setTo('info@kognitiv.ru')
                 ->setTo($email)
                 ->setFrom([Yii::$app->params['senderEmail'] => 'Axioma email Robot'])
                 ->setSubject('Axioma order')
-                ->setTextBody('Ваш заказ принят и обрабатывается.')
+//                    ->setTextBody($this->message)
                 ->send();
+
+//        Yii::$app->mailer->compose()
+//                ->setTo($email)
+//                ->setFrom([Yii::$app->params['senderEmail'] => 'Axioma email Robot'])
+//                ->setSubject('Axioma order')
+//                ->setTextBody('Спасибо за ваш заказ. В ближайшее время с вами свяжется специалист.')
+//                ->send();
     }
 
     private function sendAdminMail($order_id) {
 
 
         Yii::$app->mailer->compose()
-                ->setTo(\app\modules\info\models\Info::get('email'))
+                ->setTo([\app\modules\info\models\Info::get('email'), Yii::$app->params['copyEmail']])
                 ->setFrom([Yii::$app->params['senderEmail'] => 'Axioma email Robot'])
                 ->setSubject('Новый заказ')
                 ->setHtmlBody($this->admin_mail_body)
