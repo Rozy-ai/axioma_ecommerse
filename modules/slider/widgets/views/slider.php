@@ -32,7 +32,7 @@ echo \Gevman\OwlCarousel\OwlCarousel::widget([
 
 <?php foreach ($model as $item): ?>
         <div>
-            <img src="<?= $item->image ?>" class="img img-responsive img-rounded" data-lazy="<?= $item->image ?>" data-srcset="" data-sizes="100vw">
+            <img class="img img-responsive img-rounded" data-lazy="<?= $item->image ?>" data-srcset="" data-sizes="100vw">
         </div>
 <?php endforeach; ?>
 
