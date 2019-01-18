@@ -19,6 +19,7 @@ OwlCarouselWidget::begin([
         'loop' => true,
         'dots' => true,
         'nav' => true,
+        'navText' => [Html::img('/image/_left.png'), Html::img('/image/_right.png')],
     ]
 ]);
 ?>
