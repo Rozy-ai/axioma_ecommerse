@@ -245,7 +245,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                 <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/925543648/?guid=ON&amp;script=0"/>
             </div>
         </noscript>
-        <!--<script type="text/javascript" src="//cdn.callbackhunter.com/cbh.js?hunter_code=51124a1b34a5d693228b07c3c7665145" charset="UTF-8"></script>-->
+        <script type="text/javascript" src="//cdn.callbackhunter.com/cbh.js?hunter_code=51124a1b34a5d693228b07c3c7665145" charset="UTF-8"></script>
     </body>
 </html>
 <?php $this->endPage() ?>

@@ -122,4 +122,25 @@ class DefaultController extends Controller {
         }
     }
 
+    public function actionSubscribe() {
+
+        $model = new \app\modules\forms\models\SubscribeForm();
+
+        if ($model->load(Yii::$app->request->post())) {
+
+
+            if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+
+                if ($model->contact()) {
+
+                    Yii::$app->session->setFlash('success', 'Заявка отправлена.');
+                }
+            } else {
+                Yii::$app->session->setFlash('error', 'Ошибка отправки.');
+            }
+        }
+
+        return $this->render('subscribe', ['model' => $model]);
+    }
+
 }

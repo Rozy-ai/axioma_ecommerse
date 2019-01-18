@@ -98,6 +98,7 @@ $config = [
                 '/sitemap.xml' => '/sitemap/default/index',
                 '/robots.txt' => '/robots/default/index',
                 '/catalog' => '/catalog/default/index',
+                '/subscribe' => '/forms/default/subscribe',
                 '/catalog/admin/index' => '/catalog/admin/index',
                 '/category/admin/<action:[-\w]+>' => '/category/admin/<action>',
 //                '/category/admin/index' => '/category/admin/index',
