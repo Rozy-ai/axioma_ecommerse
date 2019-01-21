@@ -15,7 +15,7 @@ class HomeCategory extends Widget {
 
     public function run() {
 
-        $model = Category::getRoot();
+        $model = Category::getRootHome();
 
 //        print_r(count($model));
 

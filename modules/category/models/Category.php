@@ -65,7 +65,17 @@ class Category extends \app\models\Category {
 
         $model = self::find()->orderBy([
                     'in_home_order' => SORT_DESC,
-                ])->where(['show_in_home' => 1])
+                ])->where(['is_enable' => 1, 'parent_id' => 1])
+                ->all();
+
+        return $model ? $model : false;
+    }
+
+    public static function getRootHome() {
+
+        $model = self::find()->orderBy([
+                    'in_home_order' => SORT_DESC,
+                ])->where(['is_enable' => 1, 'show_in_home' => 1])
                 ->all();
 
         return $model ? $model : false;
