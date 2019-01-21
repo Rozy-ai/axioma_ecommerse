@@ -95,7 +95,7 @@ class Category extends \app\models\Category {
     public function getProducts() {
 
         return \app\modules\catalog\models\Catalog::find()
-                        ->where(['category_id' => $this->id])
+                        ->where(['category_id' => $this->id, 'is_enable' => 1])
                         ->orWhere(['like', 'cats', "%{$this->id}%", false])
                         ->orderBy(['ord' => SORT_DESC])
                         ->all();
