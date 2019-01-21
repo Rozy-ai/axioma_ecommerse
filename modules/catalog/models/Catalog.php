@@ -84,4 +84,11 @@ class Catalog extends \app\modules\products\models\Product {
         return ['url' => '/category/' . $category->url, 'label' => $category->header];
     }
 
+//    public function doReplace() {
+//
+//        $this->content_description = strreplace
+//
+//
+//    }
+
 }

@@ -56,6 +56,7 @@ class DefaultController extends Controller {
         if (isset($page->parent_id))
             $parent = Catalog::findOne($page->parent_id);
 
+//        $page->doReplace(); // обновим контент
 //        $childs = Catalog::find()->where(['parent_id' => $page->id, 'act' => 1])->all();
 
 
