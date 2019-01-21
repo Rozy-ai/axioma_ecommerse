@@ -21,32 +21,32 @@ use yii\bootstrap\Html;
             </div>
 
             <div class="col-xs-3 col-xs-offset-1 text-center ">
-                <?= Html::img('/image/advantages/place.png', ['class' => 'img  center-block', 'height' => '70px']) ?>
+                <?= Html::img('/image/advantages/world.png', ['class' => 'img  center-block', 'height' => '70px']) ?>
                 <br/>
                 <p>
                     <br/>
                     <strong class="uppercase">
-                        Открытие нового магазина
+                        Контроль качества <br/> в Китае
                     </strong>
                 </p>
             </div>
             <div class="col-xs-3 text-center">
-                <?= Html::img('/image/advantages/delivery.png', ['class' => 'img center-block', 'height' => '70px']) ?>
+                <?= Html::img('/image/advantages/ingeener.png', ['class' => 'img center-block', 'height' => '70px']) ?>
                 <br/>
                 <p>
                     <br/>
                     <strong class="uppercase">
-                        Сумма заказа более 200 тыс. рублей
+                        Весь спектр <br/> монтажных услуг
                     </strong>
                 </p>
             </div>
             <div class="col-xs-3 text-center">
-                <?= Html::img('/image/advantages/pay.png', ['class' => 'img center-block', 'height' => '70px']) ?>
+                <?= Html::img('/image/advantages/place.png', ['class' => 'img center-block', 'height' => '70px']) ?>
                 <br/>
                 <p>
                     <br/>
                     <strong class="uppercase">
-                        100% предоплата
+                        Офис и склад <br/> в одном месте
                     </strong>
                 </p>
             </div>
