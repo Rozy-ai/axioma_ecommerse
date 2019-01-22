@@ -64,7 +64,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-3 logo-wrap">
                             <?php
-                            $img = Html::img('/image/logo.svg', ['class' => 'img img-responsive', 'alt' => 'Логотип', 'onerror'=>"this.src='logo.png'"]);
+                            $img = Html::img('/image/logo.svg', ['class' => 'img img-responsive', 'alt' => 'Логотип', 'onerror' => "this.src='logo.png'"]);
                             echo!$isHome ? Html::a($img, ['/']) : $img;
                             ?>
                                                                         <!--<img src="/image/logo.png" class="img img-responsive">-->
@@ -225,12 +225,12 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
 
         </footer>
         <?php
-        if (!isset($_SERVER['HTTP_USER_AGENT']) || stripos($_SERVER['HTTP_USER_AGENT'], 'Speed Insights') === false):
-            Yii::$app->info::get('counters');
-        endif;
+//        if (!isset($_SERVER['HTTP_USER_AGENT']) || stripos($_SERVER['HTTP_USER_AGENT'], 'Speed Insights') === false):
+        Yii::$app->info::get('counters');
+//        endif;
         ?>
         <?php $this->endBody() ?>
-                <!-- Код тега ремаркетинга Google -->
+        <!-- Код тега ремаркетинга Google -->
         <script type="text/javascript">
             /* <![CDATA[ */
             var google_conversion_id = 925543648;
@@ -241,9 +241,9 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
         <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
         </script>
         <noscript>
-            <div style="display:inline;">
-                <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/925543648/?guid=ON&amp;script=0"/>
-            </div>
+        <div style="display:inline;">
+            <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/925543648/?guid=ON&amp;script=0"/>
+        </div>
         </noscript>
         <script type="text/javascript" src="//cdn.callbackhunter.com/cbh.js?hunter_code=51124a1b34a5d693228b07c3c7665145" charset="UTF-8"></script>
         <script src="//static-login.sendpulse.com/apps/fc3/build/loader.js" sp-form-id="1ad15482e8b7662c1bfc899e478cab87074ce6a97fbdb78b5c8185ae61c53066"></script>
