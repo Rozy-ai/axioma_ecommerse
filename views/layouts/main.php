@@ -225,9 +225,9 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
 
         </footer>
         <?php
-//        if (!isset($_SERVER['HTTP_USER_AGENT']) || stripos($_SERVER['HTTP_USER_AGENT'], 'Speed Insights') === false):
-        Yii::$app->info::get('counters');
-//        endif;
+        if (!isset($_SERVER['HTTP_USER_AGENT']) || stripos($_SERVER['HTTP_USER_AGENT'], 'Speed Insights') === false):
+            echo Yii::$app->info::get('counters');
+        endif;
         ?>
         <?php $this->endBody() ?>
         <!-- Код тега ремаркетинга Google -->
