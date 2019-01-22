@@ -218,17 +218,20 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
             <div class="footer-bottom">
                 <div class="container">
                     <p><?= Yii::$app->info::get('copy') ?></p>
+                    <p class="pull-right">
+                        <?php
+                        if (!isset($_SERVER['HTTP_USER_AGENT']) || stripos($_SERVER['HTTP_USER_AGENT'], 'Speed Insights') === false):
+                            echo Yii::$app->info::get('counters');
+                        endif;
+                        ?>
+                    </p>
                 </div>
             </div>
 
             <a href="#" class="footer-up" onclick="$('html, body').stop().animate({scrollTop: 0}, 800, 'swing'); return false;">Наверх &nbsp; <i class="fa fa-angle-up" aria-hidden="true"></i></a>
 
         </footer>
-        <?php
-        if (!isset($_SERVER['HTTP_USER_AGENT']) || stripos($_SERVER['HTTP_USER_AGENT'], 'Speed Insights') === false):
-            echo Yii::$app->info::get('counters');
-        endif;
-        ?>
+
         <?php $this->endBody() ?>
         <!-- Код тега ремаркетинга Google -->
         <script type="text/javascript">
