@@ -217,14 +217,16 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
 
             <div class="footer-bottom">
                 <div class="container">
-                    <p><?= Yii::$app->info::get('copy') ?></p>
-                    <p class="pull-right">
+                    <div class="pull-left">
+                        <?= Yii::$app->info::get('copy') ?>
+                    </div>
+                    <div class="pull-right">
                         <?php
                         if (!isset($_SERVER['HTTP_USER_AGENT']) || stripos($_SERVER['HTTP_USER_AGENT'], 'Speed Insights') === false):
                             echo Yii::$app->info::get('counters');
                         endif;
                         ?>
-                    </p>
+                    </div>
                 </div>
             </div>
 
