@@ -31,7 +31,12 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'ord',
             'url',
-            'show_in_home',
+            [
+                'attribute' => 'show_in_home',
+                'value' => function($model) {
+                    return $model->show_in_home ? 'Да' : 'Нет';
+                }
+            ],
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]);
