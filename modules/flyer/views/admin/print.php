@@ -12,13 +12,13 @@ use yii\bootstrap\Html;
 <div class="advantages">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-xs-12">
+<!--            <div class="col-xs-12">
 
                 <p class="h3 text-center uppercase bold">
                     <strong>специальные цены предоставляются в случаях:</strong>
                 </p>
                 <br/>
-            </div>
+            </div>-->
 
             <div class="col-xs-3 col-xs-offset-1 text-center ">
                 <?= Html::img('/image/advantages/world.png', ['class' => 'img  center-block', 'height' => '70px']) ?>
