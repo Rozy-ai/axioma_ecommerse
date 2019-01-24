@@ -57,6 +57,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 return count($row->productImages);
             }
         ],
+        [
+            'attribute' => 'show_in_recomended',
+            'value' => function($model) {
+                return $model->show_in_recomended ? 'Да' : 'Нет';
+            }
+        ],
         //'content_info:ntext',
         //'content_description:ntext',
         //'content_characteristics:ntext',
