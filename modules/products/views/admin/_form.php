@@ -146,6 +146,10 @@ use kartik\widgets\Select2;
 
             <?= $form->field($model, 'keywords')->textInput(['maxlength' => true]) ?>
 
+            <?= $form->field($model, 'show_in_recomended')->checkbox() ?>
+
+            <?= $form->field($model, 'recomended_sort')->textInput(['maxlength' => true]) ?>
+
             <?php ActiveForm::end(); ?>
 
 

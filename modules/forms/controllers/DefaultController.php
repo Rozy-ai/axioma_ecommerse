@@ -30,7 +30,7 @@ class DefaultController extends Controller {
 
             if ($model->load(Yii::$app->request->post())) {
 
-                $model->body = $model->name . ' (' . $model->phone . ')' . ' заказал звонок';
+                $model->body = $model->name . ' (' . str_replace(['(', ')', '-', ''], '', $model->phone) . ')' . ' заказал звонок';
 
                 if ($model->contact())
                     return 1;
@@ -50,7 +50,7 @@ class DefaultController extends Controller {
 
             if ($model->load(Yii::$app->request->post())) {
 
-                $model->body = $model->name . ' (' . $model->phone . ')' . ' спрашивает: ' . $model->question;
+                $model->body = $model->name . ' (' . str_replace(['(', ')', '-', ''], '', $model->phone) . ')' . ' спрашивает: ' . $model->question;
 
                 if ($model->contact())
                     return 1;
@@ -70,7 +70,7 @@ class DefaultController extends Controller {
 
             if ($model->load(Yii::$app->request->post())) {
 
-                $model->body = $model->name . ' (' . $model->phone . ')' . ' заказал: ' . $model->good . ' (' . $model->count . ' шт) ';
+                $model->body = $model->name . ' (' . str_replace(['(', ')', '-', ''], '', $model->phone) . ')' . ' заказал: ' . $model->good . ' (' . $model->count . ' шт) ';
 
                 if ($model->contact())
                     return 1;

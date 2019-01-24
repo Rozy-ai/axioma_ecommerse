@@ -27,6 +27,8 @@ use Yii;
  * @property int $created_at
  * @property int $updated_at
  * @property int $product_type Расходник
+ * @property int $show_in_recomended Показывать в рекомендуемых
+ * @property int $recomended_sort Сортировка рекомендуемых(обратная)
  *
  * @property Category $category
  * @property ProductImage[] $productImages
@@ -50,7 +52,7 @@ class Product extends \app\models\CustomAR
     {
         return [
             [['category_id', 'article', 'url'], 'required'],
-            [['category_id', 'ord', 'is_enable', 'created_at', 'updated_at', 'product_type'], 'integer'],
+            [['category_id', 'ord', 'is_enable', 'created_at', 'updated_at', 'product_type', 'show_in_recomended', 'recomended_sort'], 'integer'],
             [['price'], 'number'],
             [['content_info', 'content_description', 'content_characteristics', 'content_install'], 'string'],
             [['cats', 'article', 'url'], 'string', 'max' => 255],
@@ -87,6 +89,8 @@ class Product extends \app\models\CustomAR
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
             'product_type' => 'Расходник',
+            'show_in_recomended' => 'Показывать в рекомендуемых',
+            'recomended_sort' => 'Сортировка рекомендуемых(обратная)',
         ];
     }
 
