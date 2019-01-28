@@ -1,11 +1,13 @@
 <?php
 
 use yii\bootstrap\Html;
+use yii\helpers\Url;
 ?>
 
 <div class="row product-cart">
     <div class="col-xs-4 image-wrap">
-        <div class="image"
+        <div class="image" data-url="<?= Url::to('/catalog/' . $model->url) ?>"
+             onclick="window.location = $(this).attr('data-url')"
              style="background: url('<?= $model->image ?>') top center no-repeat;">
 
             <div class="gallery-popup-link-one" product-id="<?= $model->id ?>">

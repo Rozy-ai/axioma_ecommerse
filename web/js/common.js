@@ -39,7 +39,10 @@ $(document).ready(function () {
 
 
     //gallery-one
-    $('.gallery-popup-link-one').click(function () {
+    $('.gallery-popup-link-one').click(function (e) {
+        
+        e.preventDefault();
+        
         var id = $(this).attr('product-id');
 
         $(this).magnificPopup({
@@ -48,6 +51,8 @@ $(document).ready(function () {
             },
             type: 'image',
         }).magnificPopup('open');
+        
+        return false;
 
 //        console.log(eval('image_' + id));
     })
