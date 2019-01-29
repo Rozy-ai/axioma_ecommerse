@@ -14,11 +14,11 @@ use \app\modules\forms\models\SendReviewForm;
  */
 class DefaultController extends Controller {
 
-    public function actionIndex() {
-
-        return $this->render('index', [
-        ]);
-    }
+//    public function actionIndex() {
+//
+//        return $this->render('index', [
+//        ]);
+//    }
 
     public function actionCallBack() {
 
