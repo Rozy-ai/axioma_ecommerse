@@ -33,6 +33,9 @@ class GetController extends Controller {
                 ->limit($pages->limit)
                 ->all();
 
+        if ($model->description)
+            \Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => 'Новости компании Аксиома: новые точки обслуживания, офисы, личные достижения сотрудников компании']);
+
 
         return $this->render('news_index', [
                     'models' => $models,
@@ -57,6 +60,9 @@ class GetController extends Controller {
         $models = $query->offset($pages->offset)
                 ->limit($pages->limit)
                 ->all();
+
+        if ($model->description)
+            \Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => 'Статьи компании Аксиома: актуальные новости и статьи про антикражное оборудование']);
 
 
         return $this->render('articles_index', [
