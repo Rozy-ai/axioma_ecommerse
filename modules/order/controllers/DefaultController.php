@@ -43,6 +43,7 @@ class DefaultController extends Controller {
             $data = $session['cart'];
 
 //            print_r($data);
+//            exit();
 
             foreach ($data as $k => $item):
                 $model[] = Catalog::findOne($k);
@@ -70,25 +71,23 @@ class DefaultController extends Controller {
                             '';
 
                     foreach ($data as $k => $item):
-                        if (isset($item['product_id'])) {
-                            $order_item = new OrderItem();
-                            $order_item->order_id = $order->id;
-                            $order_item->good_id = $item['product_id'];
-                            $order_item->name = Catalog::getName($item['product_id']);
-                            $order_item->count = $counts[$k];
-                            $order_item->price = Catalog::getPrice($item['product_id']);
+                        $order_item = new OrderItem();
+                        $order_item->order_id = $order->id;
+                        $order_item->good_id = $k;
+                        $order_item->name = Catalog::getName($k);
+                        $order_item->count = $item;
+                        $order_item->price = Catalog::getPrice($k);
 
-                            if ($order_item->save()) {
+                        if ($order_item->save()) {
 
-                                $this->admin_mail_body .= ''
-                                        . $k . ' | ' . $order_item->name . ' | '
-                                        . $order_item->count . ' | '
-                                        . $order_item->price . PHP_EOL;
+                            $this->admin_mail_body .= ''
+                                    . $k . ' | ' . $order_item->name . ' | '
+                                    . $order_item->count . ' | '
+                                    . $order_item->price . PHP_EOL;
 //                                $session['cart'] = [];
 //                                $this->redirect('thankyou');
-                            } else
-                                print_r($order->errors);
-                        }
+                        } else
+                            print_r($order->errors);
                     endforeach;
 
 
