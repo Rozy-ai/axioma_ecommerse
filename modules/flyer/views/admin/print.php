@@ -97,7 +97,7 @@ use yii\bootstrap\Html;
                                     </strike>
                                     </p>
                                 <?php else: ?>
-                                    <strong><?= Yii::$app->formatter->asCurrency($model->price) ?></strong>
+                                    <strong><?= $model->price ? Yii::$app->formatter->asCurrency($model->price) : 'по запросу' ?></strong>
                                 <?php endif; ?>
                             </div>
                         </div>
