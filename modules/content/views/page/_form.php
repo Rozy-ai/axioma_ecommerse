@@ -16,8 +16,10 @@ use yii\helpers\Url;
             $form->field($model, 'content')->widget(Widget::className(), [
                 'settings' => [
                     'lang' => 'ru',
-                    'imageUpload' => Url::to(['/content/page/upload-image']),
-                    'imageManagerJson' => Url::to(['/content/page/images-get']),
+                    'imageUpload' => Url::to(['/content/content/upload-image']),
+                    'imageManagerJson' => Url::to(['/content/content/images-get']),
+//                    'imageUpload' => Url::to(['/site/image-upload']),
+//                    'imageManagerJson' => Url::to(['/site/images-get']),
                     'minHeight' => 500,
                     'plugins' => [
                         'clips',

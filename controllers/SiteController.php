@@ -55,7 +55,8 @@ class SiteController extends Controller {
             'image-upload' => [
                 'class' => 'vova07\imperavi\actions\UploadFileAction',
                 'url' => '/uploads/', // Directory URL address, where files are stored.
-                'path' => '@webroot/uploads/' // Or absolute path to directory where files are stored.
+                'path' => '@webroot/uploads/', // Or absolute path to directory where files are stored.
+                'uploadOnlyImage' => false,
             ],
             'images-get' => [
                 'class' => 'vova07\imperavi\actions\GetImagesAction',
@@ -92,7 +93,7 @@ class SiteController extends Controller {
 
         echo Yii::$app->mailer->compose('message', [
                     'content' => 'test',
-                    'imageFileName' => Yii::getAlias('@app').'/web/image/logo_email.png'
+                    'imageFileName' => Yii::getAlias('@app') . '/web/image/logo_email.png'
                 ])
 //                ->setTo('info@kognitiv.ru')
                 ->setTo(['kpsmol@gmail.com', 'info@kognitiv.ru'])
