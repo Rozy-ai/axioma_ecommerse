@@ -2,7 +2,7 @@
 <!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 
 <svg
-   xmlns:i="&amp;#38;ns_ai;"
+   xmlns:ns0="&amp;ns_ai;"
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -18,30 +18,14 @@
    viewBox="0 0 60 60"
    xml:space="preserve"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="_555.svg"
+   sodipodi:docname="_6.svg"
    width="60"
    height="60"><circle
      style="fill:#b9ce76;fill-opacity:1;stroke:none;stroke-width:0.59317088;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="path3349"
      cx="29.96315"
      cy="30.033033"
-     r="29.147188" /><switch
-     id="switch4154"
-     transform="matrix(1.0837905,0,0,1.0837905,13.583335,13.173779)"
-     style="fill:#ffffff"><foreignObject
-       height="1"
-       width="1"
-       y="0"
-       x="0"
-       requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/"><i:pgfRef
-         xlink:href="#adobe_illustrator_pgf" /></foreignObject><g
-       id="g4156"
-       i:extraneous="self"
-       style="fill:#ffffff"><polygon
-         id="polygon4158"
-         points="2.7,31.8 7.2,29.3 9.6,25.4 8.8,24.6 13.1,20.3 15.4,22.6 18.8,19.3 18,18.5 19.2,17.3 20.2,18.4 31.7,6.9 24.9,0.1 13.4,11.6 14.6,12.8 13.4,13.9 12.6,13.1 9.3,16.5 11.5,18.7 7.2,23 6.4,22.2 2.6,24.7 0.3,29.4 "
-         class="st0"
-         style="fill:#ffffff" /></g></switch><defs
+     r="29.147188" /><defs
      id="defs19" /><sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -58,8 +42,8 @@
      showguides="true"
      inkscape:guide-bbox="true"
      inkscape:zoom="7.375"
-     inkscape:cx="18.914422"
-     inkscape:cy="42.940259"
+     inkscape:cx="56.497993"
+     inkscape:cy="30.412314"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -77,4 +61,51 @@
        orientation="0,1"
        id="guide4187" /></sodipodi:namedview><metadata
      id="metadata3368"><rdf:RDF><cc:Work
-         rdf:about=""><dc:title></dc:title></cc:Work></rdf:RDF></metadata></svg>
+         rdf:about=""><dc:title></dc:title></cc:Work></rdf:RDF></metadata><style
+     id="style3422"
+     type="text/css">
+	.st0{fill:#F4F4F4;}
+</style><style
+     id="style3460"
+     type="text/css">
+	.st0{fill:#F4F4F4;}
+</style><style
+     id="style3498"
+     type="text/css">
+	.st0{fill:#F4F4F4;}
+</style><style
+     id="style3555"
+     type="text/css">
+	.st0{fill:#F4F4F4;}
+</style><style
+     id="style3602"
+     type="text/css">
+	.st0{fill:#F4F4F4;}
+</style><switch
+     id="switch3604"
+     transform="matrix(1.1024332,0,0,1.1024332,12.098782,12.306523)"
+     style="fill:#ffffff"><foreignObject
+       height="1"
+       width="1"
+       y="0"
+       x="0"
+       requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/"><ns0:pgfRef
+         xlink:href="#adobe_illustrator_pgf" /></foreignObject><g
+       id="g3606"
+       ns0:extraneous="self"
+       style="fill:#ffffff"><g
+         id="g3608"
+         style="fill:#ffffff"><ellipse
+           id="ellipse3610"
+           ry="16.1"
+           rx="6.4000001"
+           cy="16.200001"
+           cx="11.6"
+           class="st0"
+           transform="matrix(0.9841,-0.1775,0.1775,0.9841,-2.6847,2.3198)"
+           style="fill:#ffffff" /><path
+           id="path3612"
+           d="M 29.5,11.7 C 29,9.1 28,7.1 27.3,7.2 26.6,7.3 26.5,9.3 26.9,11.8 23.8,11.8 22,12.9 20.9,14 19.7,7.9 15.8,3.3 12.4,1.3 c 2.6,2.4 4.9,7.4 6,13.6 1.1,6 0.7,11.3 -0.7,14.6 2.3,-3 4.1,-8.4 3.4,-14.1 0.7,-1 2.4,-2.6 6,-2.5 0.5,2.3 1.4,4 2.1,3.9 0.7,-0.2 0.8,-2.4 0.3,-5.1 z"
+           class="st0"
+           inkscape:connector-curvature="0"
+           style="fill:#ffffff" /></g></g></switch></svg>
