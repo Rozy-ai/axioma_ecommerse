@@ -39,7 +39,7 @@ class GoodQuestionForm extends EmailForm {
             'phone' => 'Телефон',
             'email' => 'E-mail',
             'question' => 'Какой у вас вопрос',
-            'personal_accept' => 'Я даю согласие на обратобку персональных данных',
+            'personal_accept' => 'Я даю согласие на обработку персональных данных',
         ];
     }
 

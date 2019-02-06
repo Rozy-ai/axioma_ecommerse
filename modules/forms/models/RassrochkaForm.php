@@ -70,7 +70,7 @@ class RassrochkaForm extends Model {
             $this->body = ''
                     . 'Организация: ' . $this->name_organization . PHP_EOL
                     . 'ИНН: ' . $this->inn . PHP_EOL
-                    . 'email: ' . $this->email . PHP_EOL
+                    . 'E-mail: ' . $this->email . PHP_EOL
                     . 'Сумма: ' . $this->summ . PHP_EOL
                     . 'Срок: ' . $this->time . ' дней' . PHP_EOL
                     . 'Телефон: ' . $this->phone . PHP_EOL

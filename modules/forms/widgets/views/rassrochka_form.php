@@ -49,7 +49,7 @@ use yii\widgets\MaskedInput;
 
     <!--<p class="star-text">*Поля обязательны для сохранения</p>-->
     <p class="politic-text">Нажимая кнопку «Отправить» Вы соглашаетесь с
-        <a href="/politic">политикой конфеденциальности</a> сайта.</p>
+        <a href="/politic">политикой конфиденциальности</a> сайта.</p>
 
     <div class="form-group button-wrap">
         <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary']) ?>

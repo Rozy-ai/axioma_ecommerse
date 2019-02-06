@@ -39,7 +39,7 @@ class OneClickOrder extends EmailForm {
             'phone' => 'Телефон',
             'count' => 'Количество',
             'good' => 'Товар',
-            'personal_accept' => 'Я даю согласие на обратобку персональных данных',
+            'personal_accept' => 'Я даю согласие на обработку персональных данных',
         ];
     }
 
