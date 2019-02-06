@@ -50,7 +50,7 @@ use yii\widgets\MaskedInput;
             <?=
             $form->field($model, 'phone')->widget(MaskedInput::className(), [
                 'mask' => '+7 (999) 999-9999',
-                'options' => ['placeholder' => 'ТЕЛЕФОН' . '... *', 'class' => 'form-control'],
+                'options' => ['placeholder' => 'Телефон' . '... *', 'class' => 'form-control'],
             ])->label(false)
             ?>
             <div class="form-group button-wrap">
