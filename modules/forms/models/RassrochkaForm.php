@@ -52,10 +52,11 @@ class RassrochkaForm extends Model {
      */
     public function attributeLabels() {
         return [
-            'name_organization' => 'ИМЯ ОРГАНИЗАЦИИ',
-            'inn' => 'ИНН',
-            'summ' => 'СУММА',
-            'phone' => 'ТЕЛЕФОН',
+            'name_organization' => 'Имя организации',
+            'inn' => 'ИНН организации',
+            'summ' => 'Сумма',
+            'phone' => 'Телефон',
+            'email' => 'E-mail адрес',
         ];
     }
 

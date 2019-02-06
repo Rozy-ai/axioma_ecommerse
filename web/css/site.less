@@ -30,6 +30,10 @@ body {
     /*padding: 70px 15px 20px;*/ 
 }
 
+#content {
+    padding-bottom: 4rem;
+}
+
 
 /* --- TYPOGRAPHY --- */
 
@@ -554,7 +558,7 @@ nav {
     }
 
     .h2 {
-        color: @gray-dark;
+        /*color: @gray-dark;*/
         margin: 1rem 0 2rem;
         display: block;
     }
@@ -1324,5 +1328,33 @@ a.desc:after {
         width: 100wh;
         overflow: hidden;
         overflow-x: hidden;
+    }
+}
+
+.rassrochka-form {
+    border-top: 1px solid @gray-border; 
+    margin-top: 2rem;
+    padding-top: 2rem;
+    margin-bottom: 3rem;
+    
+    .h2 {
+        font-weight: 400;
+    }
+
+    input {
+        padding: 2rem;
+        font-size: 1.6rem;
+        line-height: 3rem;
+    }
+    select {
+        height: 4.2rem;
+        font-size: 1.6rem;
+        line-height: 3rem;
+    }
+    button {
+        height: 4.2rem;
+        width: 100%;
+        text-transform: uppercase;
+        font-weight: 600;
     }
 }
