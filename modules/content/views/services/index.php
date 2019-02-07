@@ -34,7 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
             //'title',
             //'description',
             //'keywords',
-            //'is_enable',
+            'is_enable',
             //'created_at',
             'created_at:datetime',
             'is_main',
