@@ -21,20 +21,20 @@ class Content extends \app\models\Content {
         'Статьи' => 4,
     ];
 
-    public function behaviors() {
-        return [
-            'uploadBehavior' => [
-                'class' => UploadBehavior::className(),
-                'attributes' => [
-                    'image' => [
-                        'path' => '@webroot/image/content',
-                        'tempPath' => '@webroot/',
-                        'url' => '/image/content/'
-                    ],
-                ]
-            ]
-        ];
-    }
+//    public function behaviors() {
+//        return [
+//            'uploadBehavior' => [
+//                'class' => UploadBehavior::className(),
+//                'attributes' => [
+//                    'image' => [
+//                        'path' => '@webroot/image/content',
+//                        'tempPath' => '@webroot/',
+//                        'url' => '/image/content/'
+//                    ],
+//                ]
+//            ]
+//        ];
+//    }
 
     public function beforeSave($insert) {
 
