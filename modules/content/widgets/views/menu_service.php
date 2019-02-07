@@ -31,8 +31,8 @@ use yii\helpers\Url;
         </a>
 
         <?php
-        echo Html::a($item->header, ['/' . $item->url]
-                , ['class' => 'list-group-item' . $active]);
+//        echo Html::a($item->header, ['/' . $item->url]
+//                , ['class' => 'list-group-item' . $active]);
     endforeach;
     ?>
 
