@@ -59,10 +59,10 @@ class Content extends \app\models\Content {
 
     public static function getArticles() {
 
-        return self::findAll([
+        return self::find()->where([
                     'type_id' => self::TYPE['Статьи'],
                     'is_enable' => 1,
-        ]);
+        ])->orderBy(['ord' => SORT_DESC])->all();
     }
 
     public function getImageService() {
