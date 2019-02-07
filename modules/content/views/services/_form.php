@@ -12,16 +12,18 @@ use vova07\fileapi\Widget as FileAPI;
     <div class="row">
         <div class="col-xs-8">
             <?= $form->field($model, 'header')->textInput(['maxlength' => true]) ?>
-            <?= $form->field($model, 'image')->textInput(['maxlength' => true]) ?>
 
             <?php
-//            echo $form->field($model, 'image')->widget(
-//                    FileAPI::className(), [
-//                'settings' => [
-//                    'url' => ['/content/content/upload-image']
-//                ]
-//                    ]
-//            )->label('Иконкa');
+            echo $form->field($model, 'image')->widget(
+                    FileAPI::className(), [
+                'settings' => [
+//                    'url' => ['/content/content/upload-image'],
+//                    'url' => ['/site/image-upload'],
+//                    'multiple' => true,
+                ],
+//                'preview' => false
+                    ]
+            )->label('Иконкa');
             ?>
             <?=
             $form->field($model, 'content')->widget(Widget::className(), [

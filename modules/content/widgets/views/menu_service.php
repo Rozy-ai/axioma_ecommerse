@@ -19,7 +19,7 @@ use yii\helpers\Url;
 
                 <div class="col-xs-2 image-wrap">
                     <?=
-                    $item->image ? Html::img($item->image, ['class' => 'img img-responsive']) :
+                    $item->image ? Html::img($item->imageService, ['class' => 'img img-responsive']) :
                             Html::img('/image/advantages/about.svg', ['class' => 'img img-responsive'])
                     ?>
                 </div>

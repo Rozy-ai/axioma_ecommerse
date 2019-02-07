@@ -56,7 +56,7 @@ class SiteController extends Controller {
                 'class' => 'vova07\imperavi\actions\UploadFileAction',
                 'url' => '/uploads/', // Directory URL address, where files are stored.
                 'path' => '@webroot/uploads/', // Or absolute path to directory where files are stored.
-//                'uploadOnlyImage' => false,
+                'uploadOnlyImage' => false,
             ],
             'images-get' => [
                 'class' => 'vova07\imperavi\actions\GetImagesAction',
