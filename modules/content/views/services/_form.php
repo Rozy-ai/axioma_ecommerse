@@ -17,7 +17,7 @@ use vova07\fileapi\Widget as FileAPI;
             echo $form->field($model, 'image')->widget(
                     FileAPI::className(), [
                 'settings' => [
-                    'url' => ['/content/services/upload-image']
+                    'url' => ['/content/content/upload-image']
                 ]
                     ]
             )->label('Иконкa');
@@ -26,12 +26,14 @@ use vova07\fileapi\Widget as FileAPI;
             $form->field($model, 'content')->widget(Widget::className(), [
                 'settings' => [
                     'lang' => 'ru',
-                    'imageUpload' => Url::to(['/site/image-upload']),
+                    'imageUpload' => Url::to(['/content/content/upload-image']),
+                    'imageManagerJson' => Url::to(['/content/content/images-get']),
                     'minHeight' => 500,
                     'plugins' => [
                         'clips',
                         'fullscreen',
-                        'fontcolor'
+                        'fontcolor',
+                        'imagemanager',
                     ],
                     'replaceDivs' => false,
                     'deniedTags' => ['style']

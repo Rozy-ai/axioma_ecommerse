@@ -16,6 +16,7 @@ class ContentController extends \app\controllers\AdminController {
             'upload-image' => [
                 'class' => FileAPIUpload::className(),
                 'path' => '@webroot/image/content',
+                'url' => '/image/content/',
                 'uploadOnlyImage' => false,
             ],
             'images-get' => [

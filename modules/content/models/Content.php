@@ -28,7 +28,7 @@ class Content extends \app\models\Content {
                 'attributes' => [
                     'image' => [
                         'path' => '@webroot/image/content',
-                        'tempPath' => '@webroot/image/content',
+                        'tempPath' => '@webroot/',
                         'url' => '/image/content/'
                     ],
                 ]

@@ -20,7 +20,8 @@ class AdminController extends \app\controllers\AdminController {
         return [
             'upload-image' => [
                 'class' => FileAPIUpload::className(),
-                'path' => '@webroot/image/category'
+                'path' => '@webroot/image/category',
+//                'uploadOnlyImage' => false,
             ],
         ];
     }

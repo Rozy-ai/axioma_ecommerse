@@ -56,7 +56,7 @@ class SiteController extends Controller {
                 'class' => 'vova07\imperavi\actions\UploadFileAction',
                 'url' => '/uploads/', // Directory URL address, where files are stored.
                 'path' => '@webroot/uploads/', // Or absolute path to directory where files are stored.
-                'uploadOnlyImage' => false,
+//                'uploadOnlyImage' => false,
             ],
             'images-get' => [
                 'class' => 'vova07\imperavi\actions\GetImagesAction',
@@ -89,18 +89,18 @@ class SiteController extends Controller {
         return $this->render('index');
     }
 
-    public function actionTest() {
-
-        echo Yii::$app->mailer->compose('message', [
-                    'content' => 'test',
-                    'imageFileName' => Yii::getAlias('@app') . '/web/image/logo_email.png'
-                ])
-//                ->setTo('info@kognitiv.ru')
-                ->setTo(['kpsmol@gmail.com', 'info@kognitiv.ru'])
-                ->setFrom(['noreply@axioma.pro' => 'email-robot'])
-                ->setSubject('test')
-//                    ->setTextBody($this->message)
-                ->send();
-    }
+//    public function actionTest() {
+//
+//        echo Yii::$app->mailer->compose('message', [
+//                    'content' => 'test',
+//                    'imageFileName' => Yii::getAlias('@app') . '/web/image/logo_email.png'
+//                ])
+////                ->setTo('info@kognitiv.ru')
+//                ->setTo(['kpsmol@gmail.com', 'info@kognitiv.ru'])
+//                ->setFrom(['noreply@axioma.pro' => 'email-robot'])
+//                ->setSubject('test')
+////                    ->setTextBody($this->message)
+//                ->send();
+//    }
 
 }
