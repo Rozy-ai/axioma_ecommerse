@@ -17,7 +17,7 @@ class DefaultController extends Controller {
         // Грузим все новости кто включён и ниже сегодняшней даты
 
         $query = Stati::find()->where(['parent_id' => Stati::PARENT_ID])
-                ->orderBy(['create_time' => SORT_DESC]);
+                ->orderBy(['create_time' => SORT_ASC]);
         // делаем копию выборки
         $countQuery = clone $query;
         // подключаем класс Pagination, выводим по 10 пунктов на страницу
