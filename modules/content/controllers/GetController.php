@@ -48,7 +48,7 @@ class GetController extends Controller {
         // Грузим все новости кто включён и ниже сегодняшней даты
 
         $query = \app\modules\content\models\Content::find()
-                ->orderBy(['created_at' =>SORT_ASC])
+                ->orderBy(['created_at' =>SORT_DESC])
                 ->where(['type_id' => Content::TYPE['Статьи'], 'is_enable' => 1]);
         // делаем копию выборки
         $countQuery = clone $query;
