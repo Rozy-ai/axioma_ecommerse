@@ -101,6 +101,13 @@ class Product extends \app\models\Product {
         return parent::afterSave($insert, $changedAttributes);
     }
 
+    public function beforeDelete() {
+
+        ProductImage::deleteAll(['product_id' => $this->id]);
+
+        return parent::beforeDelete();
+    }
+
     public function afterFind() {
 
         // связанные товары
