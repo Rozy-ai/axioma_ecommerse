@@ -51,3 +51,15 @@
     if ( $request_uri ~ ^/politic$ ) {
         rewrite ^ /soglasie permanent;
     }
+
+    if ( $request_uri ~ ^/catalog/gvozdik$ ) {
+        rewrite ^ /catalog/gvozdik-igla-super-tag;
+    }
+
+    if ( $request_uri ~ ^/videonabludenie$ ) {
+        rewrite ^ /category/videonabludenie;
+    }
+
+    if ( $request_uri ~ ^/catalog/gvozdik_AM%2019$ ) {
+        rewrite ^ /catalog/gvozdik_pencil_tag_19;
+    }
