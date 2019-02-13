@@ -104,6 +104,9 @@ class Product extends \app\models\Product {
     public function beforeDelete() {
 
         ProductImage::deleteAll(['product_id' => $this->id]);
+        \app\models\SupportedGoods::deleteAll(['parent_product_id' => $this->id]);
+        \app\models\SupportedGoods::deleteAll(['child_product_id' => $this->id]);
+
 
         return parent::beforeDelete();
     }
