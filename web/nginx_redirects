@@ -56,7 +56,7 @@
         rewrite ^ /catalog/gvozdik-igla-super-tag;
     }
 
-    if ( $request_uri ~ ^/videonabludenie$ ) {
+    if ( $request_uri ~ /^videonabludenie$ ) {
         rewrite ^ /category/videonabludenie;
     }
 
