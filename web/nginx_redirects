@@ -53,13 +53,13 @@
     }
 
     if ( $request_uri ~ ^/catalog/gvozdik$ ) {
-        rewrite ^ /catalog/gvozdik-igla-super-tag;
+        rewrite ^ /catalog/gvozdik-igla-super-tag permanent;
     }
 
     if ( $request_uri ~ ^/videonabludenie$ ) {
-        rewrite ^ /category/videonabludenie;
+        rewrite ^ /category/videonabludenie permanent;
     }
 
     if ( $request_uri ~ ^/catalog/gvozdik_AM%2019$ ) {
-        rewrite ^ /catalog/gvozdik_pencil_tag_19;
+        rewrite ^ /catalog/gvozdik_pencil_tag_19 permanent;
     }
