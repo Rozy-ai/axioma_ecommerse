@@ -138,6 +138,8 @@ use kartik\widgets\Select2;
 
             <?= $form->field($model, 'is_enable')->checkbox() ?>
 
+            <?= $form->field($model, 'in_stock')->checkbox() ?>
+
             <?= $form->field($model, 'product_type')->checkbox() ?>
 
             <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>

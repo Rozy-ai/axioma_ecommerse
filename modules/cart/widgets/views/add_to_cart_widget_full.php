@@ -11,7 +11,11 @@ use yii\bootstrap\ActiveForm;
 
             <p><strong>ИНФОРМАЦИЯ О ПРОДУКТЕ</strong></p>
             <p><?= $model->content_info ?></p>
-            <p class="price">Цена: <strong><span class="cart__summ_one"><?= $model->showPrice ?></span></strong></p>
+            <p class="price">Цена: <strong><span class="cart__summ_one"><?= $model->showPrice ?></span></strong>
+                <?php if ($model->in_stock): ?>
+                    <span class="pull-right in_stock">в наличии <i class="fa fa-check-square" aria-hidden="true"></i></span>
+                <?php endif; ?>
+            </p>
 
             <div class="row">
                 <div class="col-xs-12">

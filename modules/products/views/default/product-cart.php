@@ -28,6 +28,9 @@ use yii\helpers\Url;
             </div>
             <div class="product-price">
                 <span>Цена:</span> <?= $model->showPrice ?>
+                <?php if ($model->in_stock): ?>
+                    <span class="pull-right in_stock">в наличии <i class="fa fa-check-square" aria-hidden="true"></i></span>
+                <?php endif; ?>
             </div>
         </div>
     </div>

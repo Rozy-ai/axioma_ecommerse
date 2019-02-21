@@ -417,11 +417,11 @@ nav {
 }
 
 .site-index {
-    
+
     .home-advantages {
         padding: 4rem 0;
     }
-    
+
 }
 
 .home-portfolio {
@@ -1163,6 +1163,15 @@ a.desc:after {
             font-size: 1.6rem;
             font-weight: 600;
 
+            .in_stock {
+                font-size: 1.4rem;
+                color: @gray-dark;
+
+                i {
+                    color: @brand-primary;
+                }
+            }
+
             span {
                 font-weight: 400;
             }
@@ -1189,6 +1198,15 @@ a.desc:after {
 
     .price {
         font-size: 1.6rem;
+
+        .in_stock {
+            font-size: 1.4rem;
+            color: @gray-dark;
+
+            i {
+                color: @brand-primary;
+            }
+        }
     }
 
     .gallery-wrap {
@@ -1251,6 +1269,11 @@ a.desc:after {
         }
 
         li {
+
+            @media(max-width:@screen-sm) {
+                width: 100%;
+            }
+
             a {
                 text-transform: uppercase;
                 border-radius: 0;
