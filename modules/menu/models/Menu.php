@@ -33,7 +33,7 @@ class Menu extends \app\models\Menu {
 
         $result['top'][] = ['label' => 'Главная', 'url' => ['/site/index']];
 
-        $cat = Category::getRoot();
+        $cat = Category::getTopMenu();
 
         foreach ($cat as $_item)
             $items[] = ['label' => $_item->header, 'url' => ['/category/' . $_item->url]];
