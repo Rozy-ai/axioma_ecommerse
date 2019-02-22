@@ -24,6 +24,8 @@ use Yii;
  * @property int $show_in_home Показывать на главной
  * @property int $in_home_order Порядок на главной
  * @property double $price Цена на главной
+ * @property int $in_menu Показывать в верхнем меню
+ * @property int $in_menu_order Порядок в меню
  *
  * @property Product[] $products
  */
@@ -44,8 +46,9 @@ class Category extends \app\models\CustomAR
     {
         return [
             [['preview', 'content'], 'string'],
-            [['ord', 'created_at', 'is_enable', 'parent_id', 'show_in_home', 'in_home_order'], 'integer'],
+            [['ord', 'created_at', 'is_enable', 'parent_id', 'show_in_home', 'in_home_order', 'in_menu', 'in_menu_order'], 'integer'],
             [['price'], 'number'],
+            [['in_menu_order'], 'required'],
             [['header', 'url', 'image', 'ico'], 'string', 'max' => 255],
             [['title', 'description', 'keywords'], 'string', 'max' => 500],
         ];
@@ -74,6 +77,8 @@ class Category extends \app\models\CustomAR
             'show_in_home' => 'Показывать на главной',
             'in_home_order' => 'Порядок на главной',
             'price' => 'Цена на главной',
+            'in_menu' => 'Показывать в верхнем меню',
+            'in_menu_order' => 'Порядок в меню',
         ];
     }
 

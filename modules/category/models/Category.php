@@ -71,6 +71,16 @@ class Category extends \app\models\Category {
         return $model ? $model : false;
     }
 
+    public static function getTopMenu() {
+
+        $model = self::find()->orderBy([
+                    'in_menu_order' => SORT_DESC,
+                ])->where(['is_enable' => 1, 'in_menu' => 1])
+                ->all();
+
+        return $model ? $model : false;
+    }
+
     public static function getRootHome() {
 
         $model = self::find()->orderBy([

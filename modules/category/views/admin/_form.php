@@ -108,6 +108,8 @@ use kartik\widgets\Select2;
             <?= $form->field($model, 'is_enable')->checkbox() ?>
             <?= $form->field($model, 'show_in_home')->checkbox() ?>
             <?= $form->field($model, 'in_home_order')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'in_menu')->checkbox() ?>
+            <?= $form->field($model, 'in_menu_order')->textInput(['maxlength' => true]) ?>
         </div>
     </div>
 
