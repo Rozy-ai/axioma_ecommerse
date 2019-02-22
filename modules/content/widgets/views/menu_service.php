@@ -6,7 +6,7 @@ use yii\helpers\Url;
 
 <section class="menu-articles menu-services">
 
-    <li class="list-group-item header">Статьи</li>
+    <li class="list-group-item header">Услуги</li>
 
     <?php
     foreach ($model as $item):
