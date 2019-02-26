@@ -61,3 +61,191 @@
     if ( $request_uri ~ ^/catalog/gvozdik_AM%2019$ ) {
         rewrite ^ /catalog/gvozdik_pencil_tag_19 permanent;
     }
+
+if ( $request_uri ~ ^/megacount_stereo_stereocount3d$) {
+        rewrite ^ /3d-schetchik-posetitelej-stereocount3d permanent;
+	}    if ( $request_uri ~ ^/ds-i102$) {
+        rewrite ^ /ip-videokamera-hiwatch-kupolnaya-ds-i102 permanent;
+	}    if ( $request_uri ~ ^/ds-i1202$) {
+        rewrite ^ /ip-videokamera-hiwatch-kupolnaya-ds-i202 permanent;
+	}    if ( $request_uri ~ ^/ds-i402$) {
+        rewrite ^ /ip-videokamera-hiwatch-kupolnaya-ds-i402 permanent;
+	}    if ( $request_uri ~ ^/ds-i100$) {
+        rewrite ^ /ip-videokamera-hiwatch-ds-i100 permanent;
+	}    if ( $request_uri ~ ^/ds-i200-b-$) {
+        rewrite ^ /ip-videokamera-hiwatch-ds-i200b permanent;
+	}    if ( $request_uri ~ ^/ds-i400$) {
+        rewrite ^ /ip-videokamera-hiwatch-ds-i400 permanent;
+	}    if ( $request_uri ~ ^/ds-n316-b-$) {
+        rewrite ^ /ip-registrator-ds-n316b permanent;
+	}    if ( $request_uri ~ ^/ds-n204-b-$) {
+        rewrite ^ /ip-registrator-ds-n204b permanent;
+	}    if ( $request_uri ~ ^/ds-n204p-b-$) {
+        rewrite ^ /ip-registrator-ds-n204pb permanent;
+	}    if ( $request_uri ~ ^/ds-n308-b-$) {
+        rewrite ^ /ip-registrator-ds-n308b permanent;
+	}    if ( $request_uri ~ ^/mk-395$) {
+        rewrite ^ /avtomaticheskij-semnik-power-detacher-mk-395 permanent;
+	}    if ( $request_uri ~ ^/akustomagnitny_can_tag$) {
+        rewrite ^ /akustomagnitnaya-birka-can-tag permanent;
+	}    if ( $request_uri ~ ^/akustomagnitny_coffee_tag$) {
+        rewrite ^ /akustomagnitnaya-birka-milk-tag permanent;
+	}    if ( $request_uri ~ ^/zhestkij_datchik_pensil_tag$) {
+        rewrite ^ /akustomagnitnaya-birka-pencil-tag-mini permanent;
+	}    if ( $request_uri ~ ^/akustomagnitny_optical_tag$) {
+        rewrite ^ /akustomagnitnaya-birka-optical-tag permanent;
+	}    if ( $request_uri ~ ^/synergy_1170$) {
+        rewrite ^ /akustomagnitnaya-sistema-sensormatic-synergy-1170 permanent;
+	}    if ( $request_uri ~ ^/synergy_1175$) {
+        rewrite ^ /akustomagnitnaya-sistema-sensormatic-synergy-1175 permanent;
+	}    if ( $request_uri ~ ^/synergy_1180$) {
+        rewrite ^ /akustomagnitnaya-sistema-sensormatic-synergy-1180 permanent;
+	}    if ( $request_uri ~ ^/protivokrajnaya_sistema_ultraexit$) {
+        rewrite ^ /akustomagnitnaya-sistema-sensormatic-ultra-exit permanent;
+	}    if ( $request_uri ~ ^/akustomagnitnaya-sistema-sensormatic-ultra-post-vi-$) {
+        rewrite ^ /akustomagnitnaya-sistema-sensormatic-ultra-post-vi permanent;
+	}    if ( $request_uri ~ ^/protivokrajnaya_sistema_ultrashield$) {
+        rewrite ^ /akustomagnitnaya-sistema-sensormatic-ultra-shield permanent;
+	}    if ( $request_uri ~ ^/akustomagnitnaya-sistema-synergy-1175-2-5-m-$) {
+        rewrite ^ /akustomagnitnaya-sistema-synergy-1175 permanent;
+	}    if ( $request_uri ~ ^/akustomagnitnaya-sistema-synergy-2-5-acrylic$) {
+        rewrite ^ /akustomagnitnaya-sistema-synergy-acrylic permanent;
+	}    if ( $request_uri ~ ^/akustomagnitnaya-sistema-sensormatic-ultra-1-8-m-$) {
+        rewrite ^ /akustomagnitnaya-sistema-ultra-exit permanent;
+	}    if ( $request_uri ~ ^/komlekt_iz_2_antenn_ultra_shield$) {
+        rewrite ^ /akustomagnitnaya-sistema-ultra-shield permanent;
+	}    if ( $request_uri ~ ^/mus-2-le$) {
+        rewrite ^ /akustomagnitnaya-ehtiketka-sensormatic-mus-ii permanent;
+	}    if ( $request_uri ~ ^/etiketka_mus_3_dr$) {
+        rewrite ^ /akustomagnitnaya-ehtiketka-sensormatic-mus-iii permanent;
+	}    if ( $request_uri ~ ^/etiketka_mini-ultra-strip_3$) {
+        rewrite ^ /akustomagnitnaya-ehtiketka-dvuhkonturnaya permanent;
+	}    if ( $request_uri ~ ^/schetchik_posetiteley_megacount_wireless_rc_eth$) {
+        rewrite ^ /komplekt-schetchikov-rc-eth-s-ethernet permanent;
+	}    if ( $request_uri ~ ^/schetchik_posetiteley_megacount_wireless_rc-wifi$) {
+        rewrite ^ /komplekt-schetchikov-rc-wifi-s-ethernet-wifi permanent;
+	}    if ( $request_uri ~ ^/datchik-akustomagnitnyj-pencil-tag-midi-$) {
+        rewrite ^ /birka-akustomagnitnaya-pencil-tag-midi-ferrit-33-mm permanent;
+	}    if ( $request_uri ~ ^/datchik-butylochnyj-am-bottle-tag-$) {
+        rewrite ^ /birka-akustomagnitnaya-bottle-tag permanent;
+	}    if ( $request_uri ~ ^/blok-elektroniki-ams-9050-kitaj-$) {
+        rewrite ^ /blok-ehlektroniki-ultra-exit-ams-9050 permanent;
+	}    if ( $request_uri ~ ^/videokamera-ds-t101$) {
+        rewrite ^ /videokamera-hiwatch-ds-t101 permanent;
+	}    if ( $request_uri ~ ^/ds-t201$) {
+        rewrite ^ /videokamera-hiwatch-ds-t201 permanent;
+	}    if ( $request_uri ~ ^/ds-t303$) {
+        rewrite ^ /videokamera-hiwatch-ds-t303 permanent;
+	}    if ( $request_uri ~ ^/ds-t100$) {
+        rewrite ^ /videokamera-hiwatch-ds-t100 permanent;
+	}    if ( $request_uri ~ ^/ds-t200$) {
+        rewrite ^ /videokamera-hiwatch-ds-t200 permanent;
+	}    if ( $request_uri ~ ^/ds-t300$) {
+        rewrite ^ /videokamera-hiwatch-ds-t300 permanent;
+	}    if ( $request_uri ~ ^/dahua-dhi-xvr4232an-s2$) {
+        rewrite ^ /videoregistrator-dahua permanent;
+	}    if ( $request_uri ~ ^/gvozdik_AM$) {
+        rewrite ^ /gvozdik-igla-pencil-tag-16-mm permanent;
+	}    if ( $request_uri ~ ^/gvozdik_pencil_tag_19$) {
+        rewrite ^ /gvozdik-igla-pencil-tag-19-mm permanent;
+	}    if ( $request_uri ~ ^/gvozdik-igla-super-tag$) {
+        rewrite ^ /gvozdik-igla-dlya-datchikov-supertag permanent;
+	}    if ( $request_uri ~ ^/gvozdik-igla-dlina-16-mm-$) {
+        rewrite ^ /gvozdik-igla-16-mm permanent;
+	}    if ( $request_uri ~ ^/gvozdik-igla-dlina-19-mm-$) {
+        rewrite ^ /gvozdik-igla-19-mm permanent;
+	}    if ( $request_uri ~ ^/jestkiy_datchik_gripper$) {
+        rewrite ^ /datchik-spider-pauk permanent;
+	}    if ( $request_uri ~ ^/jestkiy_datchik_supertagmini$) {
+        rewrite ^ /datchik-akustomagnitnyj-mini-super-tag permanent;
+	}    if ( $request_uri ~ ^/jestkiy_datchik_supertag_ii$) {
+        rewrite ^ /datchik-akustomagnitnyj-super-tag-iii permanent;
+	}    if ( $request_uri ~ ^/pad_pro$) {
+        rewrite ^ /deaktivator-akustomagnitnyj-low-profile-pad-pro permanent;
+	}    if ( $request_uri ~ ^/amb-2011$) {
+        rewrite ^ /deaktivator-akustomagnitnyj-sensormatic-amb-2011 permanent;
+	}    if ( $request_uri ~ ^/deaktivator_am_stertec$) {
+        rewrite ^ /deaktivator-akustomagnitnyj-beskontaktnyj-amv-2011 permanent;
+	}    if ( $request_uri ~ ^/deaktivator_so_zvukom$) {
+        rewrite ^ /deaktivator-radiochastotnyj permanent;
+	}    if ( $request_uri ~ ^/sajfer-universal-nyj-vnutrennij-204x155x85-mm-standartnyj-zamok-58-kgc-i-8-2-mgc$) {
+        rewrite ^ /zashchitnyj-boks-sajfer-universalnyj-204-155-85 permanent;
+	}    if ( $request_uri ~ ^/sajfer-universal-nyj-vnutrennij-205x110x85-mm-standartnyj-zamok-58-kgc-i-8-2-mgc$) {
+        rewrite ^ /zashchitnyj-boks-sajfer-universalnyj-205-110-85 permanent;
+	}    if ( $request_uri ~ ^/obzornoe-zerkalo$) {
+        rewrite ^ /zerkalo-obzornoe-krugloe-410-mm permanent;
+	}    if ( $request_uri ~ ^/obzornyie_zerkala$) {
+        rewrite ^ /zerkalo-obzornoe-krugloe-610-mm permanent;
+	}    if ( $request_uri ~ ^/super-lock$) {
+        rewrite ^ /magnitnyj-syomnik-universalnyj-super-lock permanent;
+	}    if ( $request_uri ~ ^/schetchik_posetiteley_megacount_wi-fi-counter$) {
+        rewrite ^ /provodnoj-komplekt-schetchikov-mc permanent;
+	}    if ( $request_uri ~ ^/rf550$) {
+        rewrite ^ /radiochastotnaya-antikrazhnaya-sistema-rf-550 permanent;
+	}    if ( $request_uri ~ ^/rf600$) {
+        rewrite ^ /radiochastotnaya-antikrazhnaya-sistema-rf-600 permanent;
+	}    if ( $request_uri ~ ^/mono-rf-700$) {
+        rewrite ^ /radiochastotnaya-mono-sistema-rf-700 permanent;
+	}    if ( $request_uri ~ ^/evolve_p10$) {
+        rewrite ^ /radiochastotnaya-sistema-checkpoint-evolve-p10 permanent;
+	}    if ( $request_uri ~ ^/trend_checkpoint$) {
+        rewrite ^ /radiochastotnaya-sistema-checkpoint-trend permanent;
+	}    if ( $request_uri ~ ^/can_tag$) {
+        rewrite ^ /radiochastotnyj-banochnyj-datchik-can-tag permanent;
+	}    if ( $request_uri ~ ^/jestkiy_datchik_butyilochnyiy$) {
+        rewrite ^ /radiochastotnyj-butylochnyj-datchik-bottle-tag permanent;
+	}    if ( $request_uri ~ ^/datchik-flat-tag-s-gvozdem$) {
+        rewrite ^ /radiochastotnyj-datchik-flat-tag-s-gvozdem permanent;
+	}    if ( $request_uri ~ ^/coffee_tag$) {
+        rewrite ^ /radiochastotnyj-datchik-milk-tag permanent;
+	}    if ( $request_uri ~ ^/jestkiy_datchik_mini_square$) {
+        rewrite ^ /radiochastotnyj-datchik-mini-squaer permanent;
+	}    if ( $request_uri ~ ^/pencil_tag$) {
+        rewrite ^ /radiochastotnyj-datchik-pencil-tag-midi permanent;
+	}    if ( $request_uri ~ ^/datchik-yurta-25-mm-$) {
+        rewrite ^ /radiochastotnyj-datchik-yurta-30-mm permanent;
+	}    if ( $request_uri ~ ^/datchik-radiochastotnyj-pencil-tag-midi-chernyj-$) {
+        rewrite ^ /radiochastotnyj-datchik-birka-pencil-tag-midi permanent;
+	}    if ( $request_uri ~ ^/rch-optikal-taq$) {
+        rewrite ^ /radiochastotnyj-datchik-dlya-ochkov-optical-tag permanent;
+	}    if ( $request_uri ~ ^/datchik_belltag$) {
+        rewrite ^ /radiochastotnyj-datchik-midi-golf-gladkij-54-mm permanent;
+	}    if ( $request_uri ~ ^/jestkiy_datchik_golftag$) {
+        rewrite ^ /radiochastotnyj-datchik-mini-golf-gladkij-45-mm permanent;
+	}    if ( $request_uri ~ ^/datchik-radiochastotnyj-midi-golf-kanavki-53-mm-$) {
+        rewrite ^ /radiochastotnyj-datchik-rakushka-midi-golf-53-mm permanent;
+	}    if ( $request_uri ~ ^/ds-h116g$) {
+        rewrite ^ /registrator-ds-h116g permanent;
+	}    if ( $request_uri ~ ^/ds-h216q$) {
+        rewrite ^ /registrator-ds-h116q permanent;
+	}    if ( $request_uri ~ ^/ds-h104g$) {
+        rewrite ^ /registrator-ds-h104g permanent;
+	}    if ( $request_uri ~ ^/ds-h204q$) {
+        rewrite ^ /registrator-ds-h104q permanent;
+	}    if ( $request_uri ~ ^/ds-h108g$) {
+        rewrite ^ /registrator-ds-h108g permanent;
+	}    if ( $request_uri ~ ^/ds-h208q$) {
+        rewrite ^ /registrator-ds-h108q permanent;
+	}    if ( $request_uri ~ ^/sistema-radiochastotnaya-rf-550-blak-$) {
+        rewrite ^ /sistema-radiochastotnaya-rf-550 permanent;
+	}    if ( $request_uri ~ ^/schetchik_posetiteley_smcounter$) {
+        rewrite ^ /schetchik-posetitelej-sm-counter permanent;
+	}    if ( $request_uri ~ ^/syemniki_golf$) {
+        rewrite ^ /syomnik-magnitnyj-usilennyj-golf permanent;
+	}    if ( $request_uri ~ ^/syemnik_mk_225$) {
+        rewrite ^ /semnik-mekhanicheskij-mk-225 permanent;
+	}    if ( $request_uri ~ ^/syemnik_Sensormatic_mk_225$) {
+        rewrite ^ /semnik-mekhanicheskij-sensormatic-mk-225 permanent;
+	}    if ( $request_uri ~ ^/deactivator_optical_tag$) {
+        rewrite ^ /syomnik-mekhanicheskij-optical-tag permanent;
+	}    if ( $request_uri ~ ^/trosik_petlja-igla$) {
+        rewrite ^ /trosik-petlya-igla-170-mm permanent;
+	}    if ( $request_uri ~ ^/etiketka_radiochastotnaya_kruglaya$) {
+        rewrite ^ /ehtiketka-radiochastotnaya-kruglaya-belaya permanent;
+	}    if ( $request_uri ~ ^/etiketka-belaya-rch-deakt$) {
+        rewrite ^ /ehtiketka-radiochastotnaya-kvadratnaya-belaya permanent;
+	}    if ( $request_uri ~ ^/etiketki_40x40_mm_lucatron$) {
+        rewrite ^ /ehtiketka-radiochastotnaya-kvadratnaya-shtrih-kod permanent;
+	}    if ( $request_uri ~ ^/etiketka-kruglaya-rch-deakt$) {
+        rewrite ^ /ehtiketka-radiochastotnaya-kruglaya-shtrih-kod permanent;
+	}
