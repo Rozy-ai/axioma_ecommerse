@@ -341,4 +341,7 @@ if ( $request_uri ~ ^/catalog/megacount_stereo_stereocount3d$) {
     if ( $request_uri ~ ^/catalog/etiketka-kruglaya-rch-deakt$) {
         rewrite ^ /catalog/ehtiketka-radiochastotnaya-kruglaya-shtrih-kod permanent;
 	}
+    if ( $request_uri ~ ^/sjemnik-zhestkih-datchikov$) {
+        rewrite ^ /category/sjemnik-zhestkih-datchikov permanent;
+	}
 
