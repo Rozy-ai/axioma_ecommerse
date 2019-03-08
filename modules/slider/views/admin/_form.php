@@ -18,7 +18,8 @@ use vova07\imperavi\Widget;
     <label>Изображение</label><br/>
     <?= !$model->image ?: Html::img($model->image, ['width' => '300']); ?>
 
-    <?= $form->field($model, 'img')->fileInput(['accept' => 'image/*']) ?>
+    <?= $form->field($model, 'img')->textInput() ?>
+    <?php //  $form->field($model, 'img')->fileInput(['accept' => 'image/*']) ?>
 
     <?=
     $form->field($model, 'content')->widget(Widget::className(), [
