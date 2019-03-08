@@ -93,9 +93,9 @@ class AdminController extends \app\controllers\AdminController {
 
         if ($model->load(Yii::$app->request->post())) {
 
-            if ($url = $model->upload())
-                $model->image = $url;
-            
+//            if ($url = $model->upload())
+//                $model->image = $url;
+
             return $model->save() ? $this->redirect(['index']) : '';
         }
         return $this->render('update', [
