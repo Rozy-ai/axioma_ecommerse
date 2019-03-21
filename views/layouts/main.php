@@ -251,7 +251,6 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
         </div>
         </noscript>
         <script type="text/javascript" src="//cdn.callbackhunter.com/cbh.js?hunter_code=51124a1b34a5d693228b07c3c7665145" charset="UTF-8"></script>
-        <script src="//static-login.sendpulse.com/apps/fc3/build/loader.js" sp-form-id="300755de352cf72f4aff36f22360ac06e5579f8a607769c15f467d4b6215edc8"></script>
     </body>
 </html>
 <?php $this->endPage() ?>
