@@ -34,6 +34,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
         <?php $this->head() ?>
     </head>
     <body>
+        <?= Yii::$app->info::get('after_body') ?>
         <?php $this->beginBody() ?>
 
         <script type="text/javascript">
