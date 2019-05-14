@@ -34,7 +34,7 @@ class Slider extends CustomAR {
      */
     public function rules() {
         return [
-            [['name', 'image', 'content', 'link', 'act', 'ord', 'create_time', 'update_time'], 'required'],
+            [['name', 'image', 'act', 'ord'], 'required'],
             [['content'], 'string'],
             [['act', 'ord'], 'integer'],
             [['create_time', 'update_time'], 'safe'],
