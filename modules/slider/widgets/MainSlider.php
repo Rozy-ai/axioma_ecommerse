@@ -17,7 +17,9 @@ class MainSlider extends Widget {
 
     public function run() {
 
-        $model = Slider::find()->where(['act' => 1])->all();
+        $model = Slider::find()->where(['act' => 1])
+                ->orderBy(['ord' =>SORT_DESC])
+                ->all();
 
         return $this->render('slider', ['model' => $model]);
     }
