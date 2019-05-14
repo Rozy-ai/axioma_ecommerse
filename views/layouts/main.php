@@ -71,33 +71,44 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                                                         <!--<img src="/image/logo.png" class="img img-responsive">-->
                             <p class="slogan">СИСТЕМЫ ПРЕДОТВРАЩЕНИЯ КРАЖ</p>
                         </div>
-                        <div class="col-xs-12 col-sm-2 work-time hidden-xs col-md-2 col-lg-2">
-                            <p class=""><strong>График работы</strong></p>
-                            <?= Yii::$app->info::get('work_time') ?>
-                        </div>
-                        <div class="col-xs-12 col-sm-10 col-md-7 office">
+                        <!--                        <div class="col-xs-12 col-sm-2 work-time hidden-xs col-md-2 col-lg-2">
+                                                    <p class=""><strong>График работы</strong></p>
+                        <?= Yii::$app->info::get('work_time') ?>
+                                                </div>-->
+                        <div class="col-xs-12 col-sm-10 col-md-9 office">
                             <div class="row">
-                                <div class="col-xs-12">
-                                    <p class=""><strong>Офис-склад</strong></p>
+                                <div class="col-xs-9 address-line">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <p class="pull-right"><strong>Офис-склад</strong></p>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-4 mos text-right">
+                                            <?= Yii::$app->info::get('mos_address') ?>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-4 ekb text-right">
+                                            <?= Yii::$app->info::get('ekb_address') ?>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-4 kras text-right">
+                                            <?= Yii::$app->info::get('kras_address') ?>
+                                        </div>
+                                        <!--                                <div class="col-xs-12 hidden-md hidden-sm hidden-lg">
+                                                                            <p class=""><strong>График работы</strong></p>
+                                        <?= Yii::$app->info::get('work_time') ?>
+                                                                        </div>-->
+
+                                    </div>
                                 </div>
-                                <div class="col-xs-12 col-sm-4 mos">
-                                    <?= Yii::$app->info::get('mos_address') ?>
-                                </div>
-                                <div class="col-xs-12 col-sm-4 ekb">
-                                    <?= Yii::$app->info::get('ekb_address') ?>
-                                </div>
-                                <!--                                <div class="col-xs-12 hidden-md hidden-sm hidden-lg">
-                                                                    <p class=""><strong>График работы</strong></p>
-                                <?= Yii::$app->info::get('work_time') ?>
-                                                                </div>-->
-                                <div class="col-xs-12 col-sm-4 phone-wrap" >
-                                    <p class="phone">
+                                <div class="col-xs-12 col-sm-3 phone-wrap" >
+                                    <div class="phone">
                                         <a href="tel:<?= Yii::$app->info::get('headTelephone') ?>">
                                             <?= Yii::$app->info::get('headTelephone') ?>
                                         </a>
-                                        <!--<br/>-->
-                                    </p>
-                                    <?= \app\modules\forms\widgets\CallBack::widget(); ?>
+                                        <?= \app\modules\forms\widgets\CallBack::widget(); ?>
+                                        <div class="work-time">
+                                            <?= Yii::$app->info::get('work_time') ?>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -163,8 +174,9 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                     <div class="row">
                         <div class="hidden-xs hidden-sm col-md-3">
                             <p class="title">АДРЕС</p>
-                            <?= Yii::$app->info::get('ekb_address') ?>
                             <?= Yii::$app->info::get('mos_address') ?>
+                            <?= Yii::$app->info::get('ekb_address') ?>
+                            <?= Yii::$app->info::get('kras_address') ?>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-6">
 
