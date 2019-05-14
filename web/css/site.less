@@ -255,7 +255,16 @@ nav {
 
     .address-line {
         border-right: 1px solid @brand-primary;
-        
+
+        @media(max-width:@screen-xs) {
+            border-right:inherit;
+
+
+            .col-xs-12 {
+                text-align: center;
+            }
+        }
+
         .ekb {
             padding-right: 0;
         }
