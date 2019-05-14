@@ -77,7 +77,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                                 </div>-->
                         <div class="col-xs-12 col-sm-10 col-md-9 office">
                             <div class="row">
-                                <div class="col-xs-9 address-line">
+                                <div class="col-xs-12 col-sm-9 address-line">
                                     <div class="row">
                                         <div class="col-xs-12">
                                             <p class="pull-right"><strong>Офис-склад</strong></p>
