@@ -207,8 +207,9 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                         </div>
                         <div class="col-xs-12 col-sm-6 hidden-md hidden-lg">
                             <p class="title">АДРЕС</p>
-                            <?= Yii::$app->info::get('ekb_address') ?>
                             <?= Yii::$app->info::get('mos_address') ?>
+                            <?= Yii::$app->info::get('ekb_address') ?>
+                            <?= Yii::$app->info::get('kras_address') ?>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-3 right-side">
                             <p class="email">
