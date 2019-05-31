@@ -37,7 +37,7 @@ $form->field($model, 'personal_accept')->checkbox()->label('Я даю согла
 <div class="form-group">
     <?=
     Html::submitButton('Отправить', ['class' => 'btn btn-primary',
-        'onClick' => "ym(53040199, 'reachGoal', 'one-click'); return true;"])
+        'onClick' => "ym(53040199, 'reachGoal', 'one-click');"])
     ?>
 </div>
 
