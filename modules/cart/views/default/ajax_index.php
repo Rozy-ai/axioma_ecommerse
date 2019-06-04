@@ -41,5 +41,8 @@ else
 </div>
 
 <div class="row">
-    <?= Html::a('Оформить заказ', ['/order/default/view'], ['class' => 'btn btn-lg btn-primary pull-right ']) ?>
+    <?= Html::a('Оформить заказ', ['/order/default/view'], [
+        'class' => 'btn btn-lg btn-primary pull-right',
+        'onclick' => "ym(53040199, 'reachGoal', 'send-order')",
+        ]) ?>
 </div>
