@@ -42,9 +42,7 @@ class NewsSearch extends Content
      */
     public function search($params)
     {
-        $query = Content::find()
-                ->orderBy(['created_at' => SORT_DESC])
-                ->where(['type_id' => self::TYPE]);
+        $query = Content::find()->where(['type_id' => self::TYPE]);
 
         // add conditions that should always apply here
 
