@@ -21,6 +21,7 @@ class GetController extends Controller {
         $request = Yii::$app->request->get();
 
         $query = \app\modules\content\models\Content::find()
+                ->orderBy(['created_at' => SORT_DESC])
                 ->where(['type_id' => Content::TYPE['Новости'], 'is_enable' => 1]);
         // делаем копию выборки
         $countQuery = clone $query;
