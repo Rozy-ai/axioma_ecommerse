@@ -62,12 +62,16 @@ class Content extends \app\models\Content {
         return self::find()->where([
                     'type_id' => self::TYPE['Статьи'],
                     'is_enable' => 1,
-        ])->orderBy(['ord' => SORT_DESC])->all();
+                ])->orderBy(['ord' => SORT_DESC])->all();
     }
 
     public function getImageService() {
 
         return '/image/content/' . $this->image;
+    }
+
+    public function getImage() {
+        return $this->image ? '/' . $this->image : '/image/logo.png';
     }
 
 }
