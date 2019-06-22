@@ -5,6 +5,7 @@ use yii\widgets\ActiveForm;
 use vova07\imperavi\Widget;
 use yii\helpers\Url;
 use kartik\datecontrol\DateControl;
+use vova07\fileapi\Widget as FileAPI;
 ?>
 
 <div class="page-form">
@@ -53,6 +54,16 @@ use kartik\datecontrol\DateControl;
             $form->field($model, 'created_at')->widget(DateControl::classname(), [
                 'value' => $model->isNewRecord ? time() : $model->created_at,
             ]);
+            ?>
+
+            <?php
+            echo $form->field($model, 'image')->widget(
+                    FileAPI::className(), [
+                'settings' => [
+                    'url' => ['/content/news/upload-image']
+                ]
+                    ]
+            )->label('Изображение');
             ?>
 
 

@@ -21,20 +21,28 @@ class Content extends \app\models\Content {
         'Статьи' => 4,
     ];
 
-//    public function behaviors() {
-//        return [
-//            'uploadBehavior' => [
-//                'class' => UploadBehavior::className(),
-//                'attributes' => [
-//                    'image' => [
-//                        'path' => '@webroot/image/content',
-//                        'tempPath' => '@webroot/',
-//                        'url' => '/image/content/'
-//                    ],
-//                ]
-//            ]
-//        ];
+//    public function rules() {
+//        $rules = parent::rules();
+//
+//        $rules[] = ['image', 'safe'];
+//
+//        return $rules;
 //    }
+
+    public function behaviors() {
+        return [
+            'uploadBehavior' => [
+                'class' => UploadBehavior::className(),
+                'attributes' => [
+                    'image' => [
+                        'path' => '@webroot/image/content',
+                        'tempPath' => '@webroot/image/content',
+                        'url' => '/image/content/'
+                    ],
+                ]
+            ]
+        ];
+    }
 
     public function beforeSave($insert) {
 
@@ -70,8 +78,7 @@ class Content extends \app\models\Content {
         return '/image/content/' . $this->image;
     }
 
-    public function getImage() {
-        return $this->image ? '/' . $this->image : '/image/logo.png';
-    }
-
+//    public function getImage() {
+//        return $this->image ? '/' . $this->image : '/image/logo.png';
+//    }
 }

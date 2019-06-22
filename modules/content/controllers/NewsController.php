@@ -8,6 +8,8 @@ use app\modules\content\models\NewsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use vova07\fileapi\actions\UploadAction as FileAPIUpload;
+
 
 /**
  * NewsController implements the CRUD actions for Content model.
@@ -15,6 +17,16 @@ use yii\filters\VerbFilter;
 class NewsController extends ContentController {
 
     const TYPE = 3;
+
+    public function actions() {
+        return [
+            'upload-image' => [
+                'class' => FileAPIUpload::className(),
+                'path' => '@webroot/image/content',
+//                'uploadOnlyImage' => false,
+            ],
+        ];
+    }
 
     /**
      * Lists all Content models.
@@ -70,9 +82,27 @@ class NewsController extends ContentController {
     public function actionUpdate($id) {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['index']);
+        if ($model->load(Yii::$app->request->post())) {
+
+//            Yii::error(Yii::$app->request->post()['Content']['image']);
+            Yii::error($model->errors);
+//            print_r($model);
+//            return $this->redirect(['index']);
+//            $model->image = Yii::$app->request->post()['Content']['image'];
+//            $model->image = 'test';
+            $model->save();
         }
+//        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+//
+////            Yii::error(Yii::$app->request->post()['Content']['image']);
+////            Yii::error($model->errors);
+////            print_r($model);
+////            return $this->redirect(['index']);
+//
+//            $model->image = Yii::$app->request->post()['Content']['image'];
+//            $model->image = 'test';
+//            $model->save();
+//        }
 
         return $this->render('update', [
                     'model' => $model,
