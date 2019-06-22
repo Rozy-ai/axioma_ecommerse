@@ -80,7 +80,7 @@ class Content extends \app\models\Content {
 
     public function getImage() {
 
-        if (file_exists(Yii::getAlias('@webroot') . $this->image))
+        if (file_exists(Yii::getAlias('@webroot') . '/' . $this->image))
             return $this->image;
         else
             return '/image/content/' . $this->image;
