@@ -78,7 +78,12 @@ class Content extends \app\models\Content {
         return '/image/content/' . $this->image;
     }
 
-//    public function getImage() {
-//        return $this->image ? '/' . $this->image : '/image/logo.png';
-//    }
+    public function getImage() {
+
+        if (file_exists($this->image))
+            return $this->image;
+        else
+            return '/image/content/' . $this->image;
+    }
+
 }

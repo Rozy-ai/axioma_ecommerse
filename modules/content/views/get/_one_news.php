@@ -5,7 +5,7 @@ use yii\helpers\Html;
 <div class="one row">
 
     <div class="img col-xs-12 col-sm-3">
-        <?= Html::img($model->image, ['class' => 'img img-responsive img-thumbnail', 'alt' => $model->header]) ?>
+        <?= Html::img($model->Image, ['class' => 'img img-responsive img-thumbnail', 'alt' => $model->header]) ?>
     </div>
     <div class="img col-xs-12 col-sm-9">
         <i class="far fa-calendar-alt"></i>
