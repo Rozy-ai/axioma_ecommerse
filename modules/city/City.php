@@ -8,34 +8,21 @@
 
 namespace app\modules\city;
 
-class City {
+use Yii;
 
-    private $current_city = '';
-    private $default_city = 'ekaterinburg';
+class City extends \yii\base\BaseObject {
 
-    private function init() {
-        $host = $_SERVER['HTTP_HOST'];
-
-        $this->current_city = $this->default_city;
-
-        if (count($arr = explode('.', $_SERVER['HTTP_HOST'])) == 4)
-            $this->current_city == $arr[1];
-
-//        $this->current_city = ((count($arr = explode('.', $_SERVER['HTTP_HOST'])) == 3 && $arr[0] != 'www')) ? $arr[0] : $this->default_city;
-//        $this->current_city = $this->default_city;
-    }
-
-    public function get() {
-
-        $this->init();
-
-        return $this->current_city;
-    }
+    public $current_city = 'ekaterinburg';
 
     public function getId() {
 
-        $this->init();
+        $arr = explode('.', $_SERVER['HTTP_HOST']);
 
+        if (count($arr) == 4) {
+            $this->current_city = $arr[1];
+        }
+
+        Yii::error($this->current_city);
         $id = \app\modules\city\models\City::getCityIdByName($this->current_city);
 
         return $id ? $id : 0;

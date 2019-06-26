@@ -20,7 +20,7 @@ class RegionTemplates extends \app\models\RegionTemplates {
 
         $value = \app\modules\region_templates\models\RegionTemplates::findOne([
                     'name' => self::LABEL,
-                    'city_id' => \Yii::$app->city->getId(),
+                    'city_id' => \Yii::$app->city->id,
         ]);
 
         return (isset($value->value) && $value->value) ? $value->value : false;

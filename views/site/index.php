@@ -1,6 +1,8 @@
 <?php
 
 use yii\bootstrap\Html;
+
+//echo app\modules\robots\models\Robots::findOne(['city_id' => Yii::$app->city->getId()])->content;
 ?>
 <div class="site-index">
 
