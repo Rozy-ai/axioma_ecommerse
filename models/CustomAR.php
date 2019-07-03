@@ -9,6 +9,8 @@ use yii\imagine\Image;
 
 class CustomAR extends \yii\db\ActiveRecord {
 
+    const MASK = "/\{[a-z0-9-]+}/";
+
     public function beforeSave($insert) {
 
         /*
@@ -32,6 +34,42 @@ class CustomAR extends \yii\db\ActiveRecord {
 
 
         return parent::beforeSave($insert);
+    }
+
+    public function afterFind() {
+
+//        echo Yii::$app->controller->module->module->layout;
+//        var_dump(Yii::$app->controller);
+//        exit();
+
+        if (Yii::$app->controller->layout != '@layouts/admin' && !is_a(Yii::$app, 'yii\console\Application')) {
+
+
+            if ($this->hasAttribute('content')) {
+
+
+                $this->content = preg_replace('/<img src="([^"]+)" alt="([^"]+)"  style="([^"]+)"[^>]+>/i'
+                        , Html::a(Html::img('$1', ['alt' => '$2', 'style' => '$3']), '$1'
+                                , ['class' => 'popup-link']), $this->content);
+
+//                $this->content = '';
+            }
+
+            /*
+             * перебираем шорткоды
+             */
+
+            $attrS = ['header', 'content', 'title', 'description', 'keyword'];
+
+            foreach ($attrS as $attr)
+                if (($this->hasAttribute($attr)))
+                    $this->$attr = $this->replaceShortCodes($this->$attr);
+        }
+
+//        echo $this->layout;
+//        if($this->la)
+
+        return parent::afterFind();
     }
 
     // для списков
@@ -82,6 +120,32 @@ class CustomAR extends \yii\db\ActiveRecord {
         }
 
         return '/image/ready/' . basename($_image);
+    }
+
+    private function replaceShortCodes($text) {
+
+        if (preg_match_all(self::MASK, $text, $short_vars)) {
+
+            $short_vars = $short_vars[0];
+
+            foreach ($short_vars as $var):
+
+                $value = \app\modules\region_templates\models\RegionTemplates::findOne([
+                            'name' => str_replace(['{', '}'], '', $var),
+                            'city_id' => \Yii::$app->city->getId(),
+                ]);
+
+                if ($value)
+                    $text = str_replace($var, $value->value, $text);
+
+            endforeach;
+
+//            print_r($short_vars);
+        }
+
+//        exit();
+
+        return $text;
     }
 
 }
