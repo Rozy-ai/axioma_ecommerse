@@ -79,17 +79,28 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                             <div class="row">
                                 <div class="col-xs-12 col-sm-9 address-line">
                                     <div class="row">
-                                        <div class="hidden-xs col-xs-12">
+                                        <div class="hidden-xs col-xs-4">
+                                            <p class="pull-right"><strong>Время работы:</strong></p>
+                                        </div>
+                                        <div class="hidden-xs col-xs-4">
+                                            <p class=""><strong>Ваш город:</strong></p>
+                                        </div>
+                                        <div class="hidden-xs col-xs-4">
                                             <p class="pull-right"><strong>Офис-склад</strong></p>
                                         </div>
-                                        <div class="col-xs-12 col-sm-4 mos text-right">
-                                            <?= Yii::$app->info::get('mos_address') ?>
+                                        <div class="col-xs-12 col-sm-4 text-right">
+                                            <div class="work-time">
+                                                <?= Yii::$app->info::get('work_time') ?>
+                                            </div>
                                         </div>
-                                        <div class="col-xs-12 col-sm-4 ekb text-right">
-                                            <?= Yii::$app->info::get('ekb_address') ?>
+                                        <div class="col-xs-12 col-sm-4">
+                                            <?= \app\modules\city\widgets\CityChoice::widget() ?>
+
                                         </div>
                                         <div class="col-xs-12 col-sm-4 kras text-right">
-                                            <?= Yii::$app->info::get('kras_address') ?>
+
+                                            <?= RegionTemplates::getVal('address') ?><br/>
+                                            Тел: <?= RegionTemplates::getVal('phone-2') ?>
                                         </div>
                                         <!--                                <div class="col-xs-12 hidden-md hidden-sm hidden-lg">
                                                                             <p class=""><strong>График работы</strong></p>
@@ -104,9 +115,6 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                             <?= Yii::$app->info::get('headTelephone') ?>
                                         </a>
                                         <?= \app\modules\forms\widgets\CallBack::widget(); ?>
-                                        <div class="work-time">
-                                            <?= Yii::$app->info::get('work_time') ?>
-                                        </div>
                                     </div>
 
                                 </div>
