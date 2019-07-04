@@ -130,6 +130,13 @@ class CustomAR extends \yii\db\ActiveRecord {
 
             foreach ($short_vars as $var):
 
+                if ($var == '{price}') {
+
+                    if ($this->hasAttribute('price'))
+                        $text = str_replace($var, $this->price.' руб.', $text);
+                }
+
+
                 $value = \app\modules\region_templates\models\RegionTemplates::findOne([
                             'name' => str_replace(['{', '}'], '', $var),
                             'city_id' => \Yii::$app->city->getId(),

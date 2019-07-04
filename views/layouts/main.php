@@ -174,9 +174,9 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                     <div class="row">
                         <div class="hidden-xs hidden-sm col-md-3">
                             <p class="title">АДРЕС</p>
-                            <?= Yii::$app->info::get('mos_address') ?>
-                            <?= Yii::$app->info::get('ekb_address') ?>
-                            <?= Yii::$app->info::get('kras_address') ?>
+                            <p>г. <?= RegionTemplates::getVal('city') ?></p>
+                            <p><?= RegionTemplates::getVal('address') ?></p>
+                            <p>Тел: <?= RegionTemplates::getVal('phone-2') ?></p>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-6">
 
@@ -207,9 +207,9 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                         </div>
                         <div class="col-xs-12 col-sm-6 hidden-md hidden-lg">
                             <p class="title">АДРЕС</p>
-                            <?= Yii::$app->info::get('mos_address') ?>
-                            <?= Yii::$app->info::get('ekb_address') ?>
-                            <?= Yii::$app->info::get('kras_address') ?>
+                            <p>г. <?= RegionTemplates::getVal('city') ?></p>
+                            <p><?= RegionTemplates::getVal('address') ?></p>
+                            <p>Тел: <?= RegionTemplates::getVal('phone-2') ?></p>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-3 right-side">
                             <p class="email">
