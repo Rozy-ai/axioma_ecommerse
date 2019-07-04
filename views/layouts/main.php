@@ -83,7 +83,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                             <p class="pull-right"><strong>Время работы:</strong></p>
                                         </div>
                                         <div class="hidden-xs col-xs-4">
-                                            <p class=""><strong>Ваш город:</strong></p>
+                                            <p class=""><strong>Выбрать город:</strong></p>
                                         </div>
                                         <div class="hidden-xs col-xs-4">
                                             <p class="pull-right"><strong>Офис-склад</strong></p>
