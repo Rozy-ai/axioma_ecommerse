@@ -18,8 +18,8 @@ class City extends \yii\base\BaseObject {
 
         $arr = explode('.', $_SERVER['HTTP_HOST']);
 
-        if (count($arr) == 4) {
-            $this->current_city = $arr[1];
+        if (isset($arr[0]) && ($arr[0] != 'www')) {
+            $this->current_city = $arr[0];
         }
 
         Yii::error($this->current_city);
