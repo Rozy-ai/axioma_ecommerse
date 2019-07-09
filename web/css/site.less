@@ -332,6 +332,35 @@ nav {
             }
         }
 
+        .free-call {
+            text-align: right;
+            color: @color-red;
+
+            @media(max-width:@screen-sm) {
+                margin: 0 auto;
+                float: none;
+                text-align: center;
+            }
+
+        }
+
+        .call-back {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 0;
+            margin-left: 1rem;
+            text-align: right;
+            display: inline !important;
+
+            float: right;
+
+            @media(max-width:@screen-sm) {
+                margin: 0 auto;
+                float: none;
+            }
+            /*text-align: right;*/
+        }
+
         @media(max-width:@screen-sm) {
             text-align: center; 
 
@@ -341,19 +370,6 @@ nav {
                 float: none;
             }
         }
-    }
-
-    .call-back {
-        color: @color-red;
-        font-size: 1.3rem;
-        font-weight: 600;
-        margin: 0;
-        padding: 0;
-        float: right;
-        display: inline !important;
-
-        /*float: right;*/
-        /*text-align: right;*/
     }
 
 }

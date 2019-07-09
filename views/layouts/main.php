@@ -77,7 +77,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                                 </div>-->
                         <div class="col-xs-12 col-sm-12 col-md-9 office">
                             <div class="row">
-                                <div class="col-xs-12 col-sm-9 address-line">
+                                <div class="col-xs-12 col-sm-8 address-line">
                                     <div class="row">
                                         <div class="hidden-xs col-xs-4">
                                             <p class="pull-right"><strong>Время работы:</strong></p>
@@ -109,13 +109,14 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
 
                                     </div>
                                 </div>
-                                <div class="col-xs-12 col-sm-3 phone-wrap" >
+                                <div class="col-xs-12 col-sm-4 phone-wrap" >
                                     <div class="phone">
                                         <a href="tel:<?= Yii::$app->info::get('headTelephone') ?>">
                                             <?= Yii::$app->info::get('headTelephone') ?>
                                         </a>
-                                        <?= \app\modules\forms\widgets\CallBack::widget(); ?>
                                     </div>
+                                    <p class="free-call">Звонок бесплатный</p>
+                                    <?= \app\modules\forms\widgets\CallBack::widget(); ?>
 
                                 </div>
                             </div>
