@@ -13,7 +13,7 @@ Modal::begin([
     'id' => 'callback-form-modal',
     'header' => '<p class="h2 text-center">Заказать звонок</p>',
     'toggleButton' => [
-        'label' => 'Заказать обратный звонок', 'class' => 'btn btn-primary call-back'
+        'label' => 'Перезвонить мне', 'class' => 'btn btn-primary call-back'
     ],
     'class' => 'text-left'
 ]);

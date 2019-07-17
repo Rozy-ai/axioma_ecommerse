@@ -77,31 +77,50 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                                 </div>-->
                         <div class="col-xs-12 col-sm-12 col-md-9 office">
                             <div class="row">
-                                <div class="col-xs-12 col-sm-8 address-line">
+                                <div class="col-xs-12 col-sm-8">
                                     <div class="row">
-                                        <div class="hidden-xs col-xs-4">
-                                            <p class="pull-right"><strong>Время работы:</strong></p>
-                                        </div>
-                                        <div class="hidden-xs col-xs-4">
-                                            <p class=""><strong>Выбрать город:</strong></p>
-                                        </div>
-                                        <div class="hidden-xs col-xs-4">
-                                            <p class="pull-right"><strong>Офис-склад</strong></p>
+                                        <div class="col-xs-12 col-sm-8">
+                                            <div class="city-choise">
+                                                <?= \app\modules\city\widgets\CityChoice::widget() ?>
+                                            </div>
+                                            <div class="address">
+                                                <?= RegionTemplates::getVal('address') ?>
+                                            </div>
+                                            <div class="phone">
+                                                Тел: <?= RegionTemplates::getVal('phone-2') ?>
+                                            </div>
                                         </div>
                                         <div class="col-xs-12 col-sm-4 text-right">
                                             <div class="work-time">
-                                                <?= Yii::$app->info::get('work_time') ?>
+                                                <div class="wt-header">
+                                                    <i class="far fa-clock"></i>
+                                                    ЧАСЫ РАБОТЫ
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-5">
+                                                        Пн-пт:
+                                                    </div>
+                                                    <div class="col-xs-7">
+                                                        09.00 — 18.00
+                                                    </div>
+                                                    <div class="col-xs-5">
+                                                        сб:
+                                                    </div>
+                                                    <div class="col-xs-7">
+                                                        09.00 — 14.00
+                                                    </div>
+                                                    <div class="col-xs-5">
+                                                        вс:
+                                                    </div>
+                                                    <div class="col-xs-7">
+                                                        <strong>Выходной</strong>
+                                                    </div>
+                                                </div>
+
+                                                <?php Yii::$app->info::get('work_time') ?>
                                             </div>
                                         </div>
-                                        <div class="col-xs-12 col-sm-4">
-                                            <?= \app\modules\city\widgets\CityChoice::widget() ?>
 
-                                        </div>
-                                        <div class="col-xs-12 col-sm-4 kras text-right">
-
-                                            <?= RegionTemplates::getVal('address') ?><br/>
-                                            Тел: <?= RegionTemplates::getVal('phone-2') ?>
-                                        </div>
                                         <!--                                <div class="col-xs-12 hidden-md hidden-sm hidden-lg">
                                                                             <p class=""><strong>График работы</strong></p>
                                         <?= Yii::$app->info::get('work_time') ?>
@@ -109,7 +128,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
 
                                     </div>
                                 </div>
-                                <div class="col-xs-12 col-sm-4 phone-wrap" >
+                                <div class="col-xs-12 col-sm-3 col-sm-offset-1 phone-wrap" >
                                     <div class="phone">
                                         <a href="tel:<?= Yii::$app->info::get('headTelephone') ?>">
                                             <?= Yii::$app->info::get('headTelephone') ?>

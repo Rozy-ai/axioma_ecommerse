@@ -317,7 +317,7 @@ nav {
             }
 
             a {
-                color: #333;
+                color: @gray;
             }
 
             .work_time, .glyphicon-time {
@@ -334,7 +334,8 @@ nav {
 
         .free-call {
             text-align: right;
-            color: @color-red;
+            color: @gray-light;
+            padding-right: 2rem;
 
             @media(max-width:@screen-sm) {
                 margin: 0 auto;
@@ -345,12 +346,13 @@ nav {
         }
 
         .call-back {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: 600;
             margin: 0;
-            margin-left: 1rem;
             text-align: right;
             display: inline !important;
+            width: 17rem;
+            text-transform: uppercase;
 
             float: right;
 
@@ -369,6 +371,66 @@ nav {
                 display: block !important;
                 float: none;
             }
+        }
+
+
+    }
+
+    .work-time {
+
+        @media(max-width:@screen-xs) {
+            margin: 1rem 0;
+        }
+
+        .wt-header {
+            color: @brand-primary;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.8rem;
+        }
+
+        .col-xs-5 {
+            padding-right: 0;
+            text-align: left;
+
+            @media(max-width:@screen-xs) {
+                text-align: right;
+            }
+        }
+        .col-xs-7 {
+            padding-left: 0;
+
+            @media(max-width:@screen-xs) {
+                text-align: left;
+                padding-left: 1rem;
+            }
+        }
+
+        .col-xs-5, .col-xs-7 {
+            padding-top: .3rem;
+        }
+    }
+
+    .city-choise {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+
+        a {
+            border-bottom: 1px dashed #333;
+
+            &:hover {
+                text-decoration: none;
+                border-bottom: inherit;
+            }
+        }
+
+        .active-city {
+            color: @brand-primary;
+            text-transform: uppercase;
         }
     }
 

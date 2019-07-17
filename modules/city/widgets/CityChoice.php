@@ -29,17 +29,15 @@ class CityChoice extends Widget {
 
         $cityes = City::find()->where(['is_enable' => 1])->orderBy(['name' => SORT_DESC])->all();
 
-        $links = '';
+        $links = [];
         foreach ($cityes as $city):
             if ($city->name_eng == $this->current_city)
-                $links .= Html::tag('strong', $city->name) . '<br/>';
+                $links[] = Html::tag('strong', '<i class="fas fa-map-marker-alt"></i> ' . $city->name, ['class' => 'active-city']);
             else
-                $links .= ($city->name_eng == $this->default_city) ?
-                        Html::a($city->name, 'https://www.' . Yii::$app->params['defaultDomain'] . '/' . Yii::$app->request->pathInfo) . '<br/>' :
-                        Html::a($city->name, 'https://' . $city->name_eng . '.' . Yii::$app->params['baseDomain'] . '/' . Yii::$app->request->pathInfo) . '<br/>';
+                $links [] = ($city->name_eng == $this->default_city) ?
+                        Html::a($city->name, 'https://www.' . Yii::$app->params['defaultDomain'] . '/' . Yii::$app->request->pathInfo) :
+                        Html::a($city->name, 'https://' . $city->name_eng . '.' . Yii::$app->params['baseDomain'] . '/' . Yii::$app->request->pathInfo);
         endforeach;
-
-        $links = Html::tag('div', $links, ['class' => 'city-links']);
 
         return $this->render('city_choice', [
                     'links' => $links,
