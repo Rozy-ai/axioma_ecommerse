@@ -158,8 +158,14 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                     <div class="content">
                         <?=
                         Breadcrumbs::widget([
-                            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-                        ])
+                            'links' => $this->params['breadcrumbs'] ?? [],
+                            'options' => ['class' => 'breadcrumb', 'itemscope' => true, 'itemtype' => 'http://schema.org/BreadcrumbList'],
+                            'itemTemplate' => '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">{link}</li>' . PHP_EOL,
+                            'activeItemTemplate' => '<li class="active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">{link}</li>' . PHP_EOL,
+                        ]);
+//                        Breadcrumbs::widget([
+//                            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+//                        ])
                         ?>
                         <?= Alert::widget() ?>
                         <div id="content">
