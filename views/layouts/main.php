@@ -63,7 +63,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
             <div class="header">
                 <div class="container">
                     <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-3 logo-wrap">
+                        <div class="col-xs-12 col-sm-12 col-md-2 col-lg-3 logo-wrap">
                             <?php
                             $img = Html::img('/image/logo.svg', ['class' => 'img img-responsive', 'alt' => 'Логотип', 'onerror' => "this.src='logo.png'"]);
                             echo!$isHome ? Html::a($img, ['/']) : $img;
@@ -75,7 +75,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                                     <p class=""><strong>График работы</strong></p>
                         <?= Yii::$app->info::get('work_time') ?>
                                                 </div>-->
-                        <div class="col-xs-12 col-sm-12 col-md-9 office">
+                        <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9  office">
                             <div class="row">
                                 <div class="col-xs-12 col-sm-8">
                                     <div class="row">

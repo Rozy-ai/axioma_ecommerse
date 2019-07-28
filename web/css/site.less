@@ -377,9 +377,15 @@ nav {
     }
 
     .work-time {
+        
+        max-width: 400px;
 
-        @media(max-width:@screen-xs) {
+        @media(max-width:@screen-sm) {
             margin: 1rem 0;
+        }
+
+        @media(min-width:@screen-md) and (max-width:@screen-lg) {
+            font-size: 1rem;
         }
 
         .wt-header {
@@ -387,11 +393,20 @@ nav {
             text-align: center;
             font-weight: 600;
             font-size: 1.8rem;
+
+            @media(min-width:@screen-sm) and (max-width:@screen-lg) {
+                font-size: 1.4rem;
+            }
+
+            @media(max-width:@screen-sm) and (min-width:@screen-lg) {
+                font-size: 1.4rem;
+            }
         }
 
         .col-xs-5 {
             padding-right: 0;
             text-align: left;
+            padding-left: 21px;
 
             @media(max-width:@screen-xs) {
                 text-align: right;
@@ -415,9 +430,9 @@ nav {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-
         font-size: 1.6rem;
         margin-bottom: 2rem;
+        max-width: 400px;
 
         a {
             border-bottom: 1px dashed #333;
@@ -431,6 +446,28 @@ nav {
         .active-city {
             color: @brand-primary;
             text-transform: uppercase;
+        }
+
+        .line {
+            width: 1px;
+            height: 2.6rem;
+            background: #ccc;
+
+        }
+
+        @media(max-width:@screen-xs) {
+
+            flex-direction: column;
+            text-align: center;
+
+            a {
+                margin-bottom: 2rem;
+            }
+
+            .line {
+                display: none;
+            }
+
         }
     }
 
