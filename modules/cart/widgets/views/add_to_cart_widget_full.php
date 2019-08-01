@@ -14,6 +14,8 @@ use yii\bootstrap\ActiveForm;
             <p class="price">Цена: <strong><span class="cart__summ_one"><?= $model->showPrice ?></span></strong>
                 <?php if ($model->in_stock): ?>
                     <span class="pull-right in_stock">в наличии <i class="fa fa-check-square" aria-hidden="true"></i></span>
+                <?php else: ?>
+                    <span class="pull-right in_stock">под заказ <i class="fa fa-square" aria-hidden="true"></i></span>
                 <?php endif; ?>
             </p>
 
@@ -53,12 +55,14 @@ use yii\bootstrap\ActiveForm;
             <br/>
 
             <div class="" role="group">
-                <?= Html::button('Добавить в корзину', ['class' => 'btn btn-default',
+                <?=
+                Html::button('Добавить в корзину', ['class' => 'btn btn-default',
                     'onclick' => "ym(53040199, 'reachGoal', 'add-cart'); Cart.AddCart()",
 //                    'onclick' => "Cart.AddCart()",
-                    ]) ?>
-                <?php ActiveForm::end(); ?>
-                <?= \app\modules\forms\widgets\OneClickOrder::widget(['product_id' => $model->id]) ?>
+                ])
+                ?>
+<?php ActiveForm::end(); ?>
+<?= \app\modules\forms\widgets\OneClickOrder::widget(['product_id' => $model->id]) ?>
             </div>
 
         </div>
