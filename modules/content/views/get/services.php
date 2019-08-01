@@ -9,22 +9,17 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <div class="uslugi">
 
-    <div class="col-xs-12 col-sm-3">
+    <h1><?= $model->header ?></h1>
 
-        <?=
-        app\modules\content\widgets\MenuService::widget([
-            'current_id' => $model->id
-        ])
-        ?>
-
-    </div>
-    <div class="col-xs-12 col-sm-9">
-
-        <h1><?= $model->header ?></h1>
-
-        <div class="content">
-            <?= $model->content; ?>
+    <?php foreach (array_chunk($pages, 2) as $_pages): ?>
+        <div class="row">
+            <?php
+            foreach ($_pages as $page)
+                echo $this->render('_one_service', ['model' => $page])
+                ?>
         </div>
+    <?php endforeach; ?>
 
-    </div>
+
+
 </div>

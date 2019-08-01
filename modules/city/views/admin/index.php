@@ -40,6 +40,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     return Yii::$app->yon->get($row->is_default);
                 }
             ],
+            'order',
 //            'is_enable',
             // 'name_code',
             // 'name_code_2',

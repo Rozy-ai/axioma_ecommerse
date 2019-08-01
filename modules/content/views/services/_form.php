@@ -27,6 +27,7 @@ use vova07\fileapi\Widget as FileAPI;
 //                    ]
 //            )->label('Иконкa');
             ?>
+            <?= $form->field($model, 'anons')->textArea(['rows' => 6]) ?>
             <?=
             $form->field($model, 'content')->widget(Widget::className(), [
                 'settings' => [

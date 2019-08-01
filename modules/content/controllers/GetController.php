@@ -49,7 +49,7 @@ class GetController extends Controller {
         // Грузим все новости кто включён и ниже сегодняшней даты
 
         $query = \app\modules\content\models\Content::find()
-                ->orderBy(['created_at' =>SORT_DESC])
+                ->orderBy(['created_at' => SORT_DESC])
                 ->where(['type_id' => Content::TYPE['Статьи'], 'is_enable' => 1]);
         // делаем копию выборки
         $countQuery = clone $query;
@@ -74,10 +74,11 @@ class GetController extends Controller {
     public function actionServices() {
 
 
-        $model = Content::findOne([
+        $model = Content::findOne(['url' => 'uslugi']);
+
+        $pages = Content::findAll([
                     'is_enable' => 1,
                     'type_id' => Content::TYPE['Услуги'],
-                    'is_main' => 1,
         ]);
 
         if (!$model)
@@ -94,6 +95,7 @@ class GetController extends Controller {
 
         return $this->render('services', [
                     'model' => $model,
+                    'pages' => $pages,
         ]);
     }
 

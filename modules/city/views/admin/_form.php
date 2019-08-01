@@ -25,6 +25,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'longitude')->textInput(['maxlength' => true]) ?>
 
+    <?= $form->field($model, 'order')->textInput(['maxlength' => true]) ?>
+
     <?= $form->field($model, 'is_enable')->checkbox() ?>
 
     <?= $form->field($model, 'is_default')->checkbox() ?>

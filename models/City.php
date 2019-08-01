@@ -16,6 +16,7 @@ use Yii;
  * @property string $longitude Долгота
  * @property int $is_enable Включен
  * @property int $is_default
+ * @property int $order
  *
  * @property RegionOptions[] $regionOptions
  * @property RegionTemplates[] $regionTemplates
@@ -37,7 +38,7 @@ class City extends \app\models\CustomAR
     public function rules()
     {
         return [
-            [['cid', 'rid', 'is_enable', 'is_default'], 'integer'],
+            [['cid', 'rid', 'is_enable', 'is_default', 'order'], 'integer'],
             [['name', 'name_eng', 'latitude', 'longitude'], 'string', 'max' => 255],
         ];
     }
@@ -57,6 +58,7 @@ class City extends \app\models\CustomAR
             'longitude' => 'Долгота',
             'is_enable' => 'Включен',
             'is_default' => 'Is Default',
+            'order' => 'Order',
         ];
     }
 

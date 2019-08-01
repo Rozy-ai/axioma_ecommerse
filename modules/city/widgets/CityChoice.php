@@ -27,7 +27,7 @@ class CityChoice extends Widget {
 
     public function run() {
 
-        $cityes = City::find()->where(['is_enable' => 1])->orderBy(['name' => SORT_DESC])->all();
+        $cityes = City::find()->where(['is_enable' => 1])->orderBy(['order' => SORT_DESC])->all();
 
         $links = [];
         foreach ($cityes as $city):
