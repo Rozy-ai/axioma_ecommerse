@@ -7,7 +7,10 @@ use yii\bootstrap\Html;
 
     <div class="row">
         <div class="col-xs-12 col-sm-2 image-wrap">
-            <?= Html::img($model->imageService, ['class' => 'img img-responsive', 'alt' => '']) ?>
+            <?=
+            $item->image ? Html::img($model->image, ['class' => 'img img-responsive', 'alt' => '']) :
+                    Html::img('/image/advantages/about.svg', ['class' => 'img img-responsive', 'alt' => ''])
+            ?>
         </div>
         <div class="col-xs-12 col-sm-10 content">
 
