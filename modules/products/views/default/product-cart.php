@@ -31,7 +31,7 @@ use yii\helpers\Url;
                 <?php if ($model->in_stock): ?>
                     <span class="pull-right in_stock">в наличии <i class="fa fa-check-square" aria-hidden="true"></i></span>
                 <?php else: ?>
-                    <span class="pull-right in_stock">под заказ <i class="fa fa-square" aria-hidden="true"></i></span>
+                    <span class="pull-right in_stock">под заказ <i style="color: black" class="fas fa-mobile-alt"></i></span>
                 <?php endif; ?>
             </div>
         </div>

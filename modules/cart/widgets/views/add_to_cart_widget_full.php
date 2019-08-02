@@ -15,7 +15,7 @@ use yii\bootstrap\ActiveForm;
                 <?php if ($model->in_stock): ?>
                     <span class="pull-right in_stock">в наличии <i class="fa fa-check-square" aria-hidden="true"></i></span>
                 <?php else: ?>
-                    <span class="pull-right in_stock">под заказ <i class="fa fa-square" aria-hidden="true"></i></span>
+                    <span class="pull-right in_stock">под заказ <i style="color: black" class="fas fa-mobile-alt"></i></span>
                 <?php endif; ?>
             </p>
 
@@ -61,8 +61,8 @@ use yii\bootstrap\ActiveForm;
 //                    'onclick' => "Cart.AddCart()",
                 ])
                 ?>
-<?php ActiveForm::end(); ?>
-<?= \app\modules\forms\widgets\OneClickOrder::widget(['product_id' => $model->id]) ?>
+                <?php ActiveForm::end(); ?>
+                <?= \app\modules\forms\widgets\OneClickOrder::widget(['product_id' => $model->id]) ?>
             </div>
 
         </div>
