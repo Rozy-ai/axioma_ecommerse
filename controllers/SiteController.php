@@ -12,6 +12,7 @@ use app\models\ContactForm;
 use app\models\Core;
 use app\models\Category;
 use app\modules\options\models\Options;
+use app\modules\content\models\Content;
 
 class SiteController extends Controller {
 
