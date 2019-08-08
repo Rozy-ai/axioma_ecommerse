@@ -13,6 +13,7 @@ use app\models\Core;
 use app\models\Category;
 use app\modules\options\models\Options;
 use app\modules\content\models\Content;
+use yii\web\HttpException;
 
 class SiteController extends Controller {
 

@@ -18,7 +18,7 @@ $pages_id = [94, 96, 97, 98, 99, 100];
 
 <?php if (in_array($model->id, $pages_id)): ?>
 
-    <?= $this->renderAjax('_advanteges_menu'); ?>
+    <?= $this->render('_advanteges_menu'); ?>
 
 <?php endif; ?>
 

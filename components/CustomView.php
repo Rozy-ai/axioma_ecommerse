@@ -27,8 +27,6 @@ class CustomView extends \yii\web\View {
             $lines[] = implode("\n", $this->linkTags);
         }
 
-
-
         return empty($lines) ? '' : implode("\n", $lines);
     }
 

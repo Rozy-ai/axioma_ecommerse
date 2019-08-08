@@ -13,7 +13,7 @@ use yii\bootstrap\Html;
                 <div class="container">
                     <div class="advantages-wrap">
 
-                        <?= $this->renderAjax('@app/modules/content/views/get/_advanteges_menu'); ?>
+                        <?php echo $this->render('@app/modules/content/views/get/_advanteges_menu'); ?>
                     </div>
                 </div>
             </div>
