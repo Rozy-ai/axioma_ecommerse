@@ -781,16 +781,24 @@ nav {
         .title {
             font-size: 1.5rem;
             display: inline-block;
-            margin-bottom: .6rem;
+            margin-bottom: 2rem;
             text-decoration: none;
+            min-height: 3rem;
 
             &:hover {
                 text-decoration: underline;
             }
         }
 
+        .content {
+            min-height: 15rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
         .anons {
-            font-weight: 600;
+            font-weight: 500;
             margin-bottom: 2rem;
             font-size: 1.4rem;
         }
@@ -799,6 +807,7 @@ nav {
             font-size: 1.8rem;
             padding: 1rem 3rem;
             text-decoration: none;
+            max-width: 16rem;
 
             &:hover {
                 text-decoration: underline;

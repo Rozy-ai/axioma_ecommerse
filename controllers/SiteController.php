@@ -74,17 +74,22 @@ class SiteController extends Controller {
      */
     public function actionIndex() {
 
-        Yii::$app->view->title = Yii::$app->info::get('main_seo_title');
+        $model = Content::find()->where(
+                        ['url' => '/']
+                )->
+                andWhere(['is_enable' => 1])
+                ->one();
 
-        Yii::$app->view->registerMetaTag([
-            'name' => 'description',
-            'content' => Yii::$app->info::get('main_seo_description')
-        ]);
+        if (!$model)
+            throw new HttpException(404, 'Page not Found');
 
-        Yii::$app->view->registerMetaTag([
-            'name' => 'keywords',
-            'content' => Yii::$app->info::get('main_seo_keywords')
-        ]);
+        Yii::$app->view->title = $model->title ? $model->title : $model->header;
+
+        if ($model->description)
+            \Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => $model->description]);
+
+        if ($model->keywords)
+            \Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => $model->keywords]);
 
         return $this->render('index');
     }
@@ -102,5 +107,4 @@ class SiteController extends Controller {
 ////                    ->setTextBody($this->message)
 //                ->send();
 //    }
-
 }

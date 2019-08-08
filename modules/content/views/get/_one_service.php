@@ -12,13 +12,16 @@ use yii\bootstrap\Html;
                     Html::img('/image/advantages/about.svg', ['class' => 'img img-responsive', 'alt' => ''])
             ?>
         </div>
-        <div class="col-xs-12 col-sm-10 content">
+        <div class="col-xs-12 col-sm-10 ">
 
-            <?= Html::a($model->header, $model->url, ['class' => 'title']) ?>
-            <?= Html::tag('p', $model->anons, ['class' => 'anons']) ?>
+            <?= Html::a($model->header, $model->url, ['class' => 'title h2']) ?>
 
-            <?= Html::a('Подробнее', $model->url, ['class' => 'btn btn-primary btn-next']) ?>
+            <div class="content">
+                <?= Html::tag('p', $model->anons, ['class' => 'anons']) ?>
 
+                <?= Html::a('Подробнее', $model->url, ['class' => 'btn btn-primary btn-next']) ?>
+
+            </div>
         </div>
     </div>
 </div>
