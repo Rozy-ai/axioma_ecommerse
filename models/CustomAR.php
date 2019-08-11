@@ -116,7 +116,7 @@ class CustomAR extends \yii\db\ActiveRecord {
             }
 //        $new_image = $new_image->resize($new_image->get('png'), $size);
             $new_image = Image::thumbnail($new_image, $size, $size);
-            $new_image->save($image_ready);
+            $new_image->save($image_ready, ['quality' => 80]);
         }
 
         return '/image/ready/' . basename($_image);
