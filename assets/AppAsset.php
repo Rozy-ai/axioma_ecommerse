@@ -27,7 +27,7 @@ class AppAsset extends AssetBundle {
         'css/owl/owl.theme.default.min.css',
         'css/jBox/jBox.css',
         'css/jBox/jBox.Notice.css',
-        'css/fa/css/all.min.css',
+        'css/fa/css/all.css',
         'css/pgwslider.min.css',
     ];
     public $js = [
