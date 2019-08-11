@@ -25,34 +25,39 @@ PrintAsset::register($this);
     <body>
         <?php $this->beginBody() ?>
 
+        <table class="table" style="width: 100%">
+            <tr>
+                <td style="width: 20%; padding-left: 3rem;">
+                    <a href="https://axioma.pro/">
+                        <?=
+                        $img = Html::img('/print/image/logo_print.png', ['class' => 'img', 'alt' => 'Логотип', 'width' => 240]);
+                        ?>
+                    </a>
+                </td>
+                <td>    </td>
+                <td class="text-right" style="padding-right: 3rem; ">
+                    <p style="font-size: 2rem; font-weight: 300;"><?= Yii::$app->info::get('headTelephone') ?></p>
+                    <?= Yii::$app->info::get('email') ?>
+                </td>
+            </tr>
+            <tr>
+                <td  style="height: 2rem"></td>
+            </tr>
+            <tr>
+                <td style="padding-left: 3rem;">
+                    <?= Yii::$app->info::get('mos_address') ?>
+                </td>
+                <td class="text-center">
+                    <?= Yii::$app->info::get('ekb_address') ?>
+                </td>
+                <td class="text-right" style="padding-right: 3rem;">
+                    <?= Yii::$app->info::get('kras_address') ?>
+                </td>
+            </tr>
+        </table>
+
         <div class="wrap">
             <div class="header">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-xs-4">
-                            <a href="https://axioma.pro/">
-                                <?=
-                                $img = Html::img('/print/image/logo_print.png', ['class' => 'img img-responsive', 'alt' => 'Логотип']);
-                                ?>
-                            </a>
-                        </div>
-                        <div class="col-xs-7">
-                            <div class="row">
-                                <div class="col-xs-11">
-                                    <p class="phone text-right">
-                                        <?= Yii::$app->info::get('headTelephone') ?>
-                                    </p>
-                                </div>
-                                <div class="col-xs-5 ">
-                                    <?= Yii::$app->info::get('mos_address') ?>
-                                </div>
-                                <div class="col-xs-5 text-right">
-                                    <?= Yii::$app->info::get('ekb_address') ?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <div class="container-fluid">

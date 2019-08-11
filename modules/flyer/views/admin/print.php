@@ -67,7 +67,8 @@ use yii\bootstrap\Html;
                         </div>
                         <div class="col-xs-7">
                             <br/>
-                            <a href="https://axioma.pro/">
+                            <!--<a href="https://axioma.pro/">-->
+                            <a href="<?= $model->url ?>">
                                 <strong><?= $model->name ?></strong>
                             </a>
                         </div>

@@ -12,6 +12,8 @@ use yii\filters\VerbFilter;
 use kartik\mpdf\Pdf;
 use yii\helpers\ArrayHelper;
 use vova07\fileapi\actions\UploadAction as FileAPIUpload;
+use yii\data\ActiveDataProvider;
+use kartik\grid\EditableColumnAction;
 
 /**
  * AdminController implements the CRUD actions for Flyer model.
@@ -24,6 +26,22 @@ class AdminController extends \app\controllers\AdminController {
                 'class' => FileAPIUpload::className(),
                 'path' => '@webroot/image/flyer'
             ],
+            'edit_active' => [// identifier for your editable column action
+                'class' => EditableColumnAction::className(), // action class name
+                'modelClass' => FlyerGoods::className(), // the model for the record being edited
+                'outputValue' => function ($model, $attribute, $key, $index) {
+                    return (int) $model->$attribute;      // return any custom output value if desired
+                },
+                'outputMessage' => function($model, $attribute, $key, $index) {
+                    return '';                                  // any custom error to return after model save
+                },
+                'showModelErrors' => true, // show model validation errors after save
+                'errorOptions' => ['header' => '']                // error summary HTML options
+            // 'postOnly' => true,
+            // 'ajaxOnly' => true,
+            // 'findModel' => function($id, $action) {},
+            // 'checkAccess' => function($action, $model) {}
+            ]
         ];
     }
 
@@ -58,9 +76,13 @@ class AdminController extends \app\controllers\AdminController {
         $model = $this->findModel($id);
         $goods = $model->flyerGoods;
 
-        $goods = FlyerGoods::find()
-                        ->where(['id' => ArrayHelper::map($goods, 'id', 'id')])
-                        ->orderBy(['order' => SORT_DESC])->all();
+        $query = FlyerGoods::find()
+                ->where(['id' => ArrayHelper::map($goods, 'id', 'id')])
+                ->orderBy(['order' => SORT_DESC]);
+
+        $goods = new ActiveDataProvider([
+            'query' => $query,
+        ]);
 
         return $this->render('view', [
                     'model' => $model,
@@ -183,7 +205,7 @@ class AdminController extends \app\controllers\AdminController {
         ]);
         return $pdf->render();
 
-        return $this->render('print', ['flyer' => $flyer,'models' => $models]);
+        return $this->render('print', ['flyer' => $flyer, 'models' => $models]);
     }
 
 //    public function actionPrintTest() {

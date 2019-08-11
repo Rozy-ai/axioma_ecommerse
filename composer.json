@@ -35,7 +35,8 @@
         "kartik-v/yii2-grid": "@dev",
         "kartik-v/yii2-export": "@dev",
         "corpsepk/yii2-yandex-market-yml": "~0.4",
-        "kv4nt/yii2-owl-carousel2": "*"
+        "kv4nt/yii2-owl-carousel2": "*",
+        "kartik-v/yii2-editable": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

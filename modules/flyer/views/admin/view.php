@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use kartik\grid\GridView;
 
 /* @var $this yii\web\View */
 /* @var $model app\modules\flyer\models\Flyer */
@@ -39,34 +40,68 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ])
     ?>
-    <div class="row well">
-        <div class="col-xs-1">
-            порядок
-        </div>
-        <div class="col-xs-1">
-            изображение
-        </div>
-        <div class="col-xs-3">
-            наименование
-        </div>
-        <div class="col-xs-1">
-            старая цена
-        </div>
-        <div class="col-xs-1">
-            новая цена
-        </div>
-        <div class="col-xs-1">
-            редактировать
-        </div>
-        <div class="col-xs-1">
-            удалить
-        </div>
-    </div>
-    <?php
-    foreach ($goods as $good)
-        echo $this->render('_good', ['model' => $good]);
-    ?>
 
     <?= $this->render('_add_modal', ['flyer' => $model]) ?>
+    <?=
+    GridView::widget([
+        'dataProvider' => $goods,
+        'columns' => [
+            ['class' => 'yii\grid\SerialColumn'],
+            [
+                'class' => 'kartik\grid\EditableColumn',
+                'refreshGrid' => true,
+                'attribute' => 'order',
+                'editableOptions' => [
+                    'inputType' => \kartik\editable\Editable::INPUT_TEXT,
+                    'formOptions' => ['action' => ['/flyer/admin/edit_active']],
+//                    'data' => \app\modules\category\models\Category::__getHeaders(),
+//                    'data' => [1, 2, 3],
+                ],
+            ],
+            [
+                'attribute' => 'image',
+                'format' => ['image', ['height' => 100]],
+                'value' => 'img',
+            ],
+            'name',
+            [
+                'class' => 'kartik\grid\EditableColumn',
+                'refreshGrid' => true,
+                'attribute' => 'price',
+                'editableOptions' => [
+                    'inputType' => \kartik\editable\Editable::INPUT_TEXT,
+                    'formOptions' => ['action' => ['/flyer/admin/edit_active']],
+//                    'data' => \app\modules\category\models\Category::__getHeaders(),
+//                    'data' => [1, 2, 3],
+                ],
+            ],
+            [
+                'class' => 'kartik\grid\EditableColumn',
+                'refreshGrid' => true,
+                'attribute' => 'price_new',
+                'editableOptions' => [
+                    'inputType' => \kartik\editable\Editable::INPUT_TEXT,
+                    'formOptions' => ['action' => ['/flyer/admin/edit_active']],
+//                    'data' => \app\modules\category\models\Category::__getHeaders(),
+//                    'data' => [1, 2, 3],
+                ],
+            ],
+            [
+                'label' => 'Редактировать',
+                'format' => 'raw',
+                'value' => function($row) {
+                    return Html::a('<span class="glyphicon glyphicon-pencil text-info"></span>', ['edit-flyer-good', 'id' => $row->id]);
+                }
+            ],
+            [
+                'label' => 'Удалить',
+                'format' => 'raw',
+                'value' => function($row) {
+                    return Html::a('<span class="glyphicon glyphicon-trash text-danger"></span>', ['delete-flyer-good', 'id' => $row->id]);
+                }
+            ],
+        ],
+    ]);
+    ?>
 
 </div>

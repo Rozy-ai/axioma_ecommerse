@@ -10,13 +10,7 @@
                     <?= Yii::$app->info::get('ekb_address') ?>
                 </div>
                 <div class="col-xs-3">
-                    <p class="email">
-                        email:
-                        <?= Yii::$app->info::get('email') ?>
-                    </p>
-                    <p class="phone">
-                        <?= Yii::$app->info::get('headTelephone') ?>
-                    </p>
+                    <?= Yii::$app->info::get('kras_address') ?>
                 </div>
             </div>
         </div>
