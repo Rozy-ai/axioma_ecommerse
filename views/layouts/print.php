@@ -44,13 +44,13 @@ PrintAsset::register($this);
                 <td  style="height: 2rem"></td>
             </tr>
             <tr>
-                <td style="padding-left: 3rem;">
+                <td style="padding-left: 3rem; width:33%;">
                     <?= Yii::$app->info::get('mos_address') ?>
                 </td>
-                <td class="text-center">
+                <td class="text-center" style=" width:33%;">
                     <?= Yii::$app->info::get('ekb_address') ?>
                 </td>
-                <td class="text-right" style="padding-right: 3rem;">
+                <td class="text-right" style="padding-right: 3rem; width:33%;"">
                     <?= Yii::$app->info::get('kras_address') ?>
                 </td>
             </tr>
