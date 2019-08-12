@@ -50,7 +50,7 @@ PrintAsset::register($this);
                 <td class="text-center" style=" width:33%;">
                     <?= Yii::$app->info::get('ekb_address') ?>
                 </td>
-                <td class="text-right" style="padding-right: 3rem; width:33%;"">
+                <td class="text-right" style="padding-right: 3rem; width:33%;">
                     <?= Yii::$app->info::get('kras_address') ?>
                 </td>
             </tr>
