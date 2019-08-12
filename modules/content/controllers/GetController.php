@@ -16,6 +16,19 @@ class GetController extends Controller {
 
     public function actionNews() {
 
+        $model = Content::findOne(['url' => 'novosti']);
+
+        if (!$model)
+            throw new HttpException(404, 'Page not Found');
+
+        Yii::$app->view->title = $model->title ? $model->title : $model->header;
+
+        if ($model->description)
+            \Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => $model->description]);
+
+        if ($model->keywords)
+            \Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => $model->keywords]);
+
         // Грузим все новости кто включён и ниже сегодняшней даты
 
         $request = Yii::$app->request->get();
@@ -47,6 +60,20 @@ class GetController extends Controller {
     public function actionArticles() {
 
         // Грузим все новости кто включён и ниже сегодняшней даты
+
+
+        $model = Content::findOne(['url' => 'stati']);
+
+        if (!$model)
+            throw new HttpException(404, 'Page not Found');
+
+        Yii::$app->view->title = $model->title ? $model->title : $model->header;
+
+        if ($model->description)
+            \Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => $model->description]);
+
+        if ($model->keywords)
+            \Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => $model->keywords]);
 
         $query = \app\modules\content\models\Content::find()
                 ->orderBy(['created_at' => SORT_DESC])

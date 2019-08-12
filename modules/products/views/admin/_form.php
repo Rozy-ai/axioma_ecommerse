@@ -22,6 +22,12 @@ use kartik\widgets\Select2;
         <div class="col-xs-8">
             <?= $form->field($model, 'header')->textInput(['maxlength' => true]) ?>
 
+            <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
+
+            <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
+
+            <?= $form->field($model, 'keywords')->textInput(['maxlength' => true]) ?>
+
             <?= $form->field($model, 'price')->textInput() ?>
 
             <?=
@@ -141,12 +147,6 @@ use kartik\widgets\Select2;
             <?= $form->field($model, 'in_stock')->checkbox() ?>
 
             <?= $form->field($model, 'product_type')->checkbox() ?>
-
-            <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
-
-            <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
-
-            <?= $form->field($model, 'keywords')->textInput(['maxlength' => true]) ?>
 
             <?= $form->field($model, 'show_in_recomended')->checkbox() ?>
 
