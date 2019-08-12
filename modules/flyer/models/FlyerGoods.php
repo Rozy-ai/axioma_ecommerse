@@ -49,7 +49,7 @@ class FlyerGoods extends \app\models\FlyerGoods {
 
     public function getUrl() {
 
-        $model = \app\modules\catalog\models\Catalog::findOne(['header' => $name]);
+        $model = \app\modules\catalog\models\Catalog::findOne(['header' => $this->name]);
 
         if ($model)
             return $model->url;
