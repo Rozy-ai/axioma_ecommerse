@@ -47,4 +47,15 @@ class FlyerGoods extends \app\models\FlyerGoods {
         return $this->hasOne(\app\modules\products\models\Product::className(), ['id' => 'product_id']);
     }
 
+    public function getUrl() {
+
+        $model = \app\modules\catalog\models\Catalog::findOne(['header' => $name]);
+
+        if ($model)
+            return $model->url;
+
+
+        return 'https://www.axioma.pro';
+    }
+
 }
