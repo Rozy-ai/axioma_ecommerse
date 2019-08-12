@@ -19,7 +19,7 @@ class SupportedGoodsWidget extends Widget {
 
         $model = Product::findOne($this->product_id);
 
-        $models = Product::findAll($model['supported_products']);
+        $models = Product::findAll(['id' => $model['supported_products'], 'is_enable' => 1]);
 //        print_r($models);
 
         return $this->render('supported_goods', ['models' => $models]);

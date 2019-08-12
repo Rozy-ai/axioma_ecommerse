@@ -49,28 +49,28 @@ $this->params['breadcrumbs'][] = $this->title;
         'category_id',
         'header',
         'price',
-        'url:url',
-        'ord',
-        [
-            'label' => 'Количество изображений',
-            'value' => function ($row) {
-                return count($row->productImages);
-            }
-        ],
-        [
-            'attribute' => 'show_in_recomended',
-            'value' => function($model) {
-                return $model->show_in_recomended ? 'Да' : 'Нет';
-            }
-        ],
+//        'url:url',
+//        'ord',
+//        [
+//            'label' => 'Количество изображений',
+//            'value' => function ($row) {
+//                return count($row->productImages);
+//            }
+//        ],
+//        [
+//            'attribute' => 'show_in_recomended',
+//            'value' => function($model) {
+//                return $model->show_in_recomended ? 'Да' : 'Нет';
+//            }
+//        ],
         //'content_info:ntext',
         //'content_description:ntext',
         //'content_characteristics:ntext',
         //'content_install:ntext',
         //'ord',
-        //'title',
-        //'description',
-        //'keywords',
+        'title',
+        'description',
+//        'keywords',
         //'is_enable',
         //'created_at',
         //'updated_at',
