@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\LinkPager;
 
-$this->title = 'Статьи, Аксиома';
+$this->title = $this->title . ((isset($request['page'])) ? ' Страница - ' . $request['page'] . ' ,' : '');
 
 $this->params['breadcrumbs'][] = 'Статьи';
 ?>
