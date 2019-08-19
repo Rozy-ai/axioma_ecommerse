@@ -66,7 +66,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'name',
             [
                 'class' => 'kartik\grid\EditableColumn',
-                'refreshGrid' => true,
+//                'refreshGrid' => true,
                 'attribute' => 'price',
                 'editableOptions' => [
                     'inputType' => \kartik\editable\Editable::INPUT_TEXT,
@@ -77,7 +77,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             [
                 'class' => 'kartik\grid\EditableColumn',
-                'refreshGrid' => true,
+//                'refreshGrid' => true,
                 'attribute' => 'price_new',
                 'editableOptions' => [
                     'inputType' => \kartik\editable\Editable::INPUT_TEXT,
