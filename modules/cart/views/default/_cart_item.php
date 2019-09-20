@@ -33,20 +33,34 @@ use yii\helpers\Html;
             Html::textInput('count', $count, [
                 'class' => 'hidden form-control text-right count-' . $model->id,
                 'type' => 'number',
+                "data-krat" => $model->krat,
             ])
             ?>
-            <button class="btn btn-grey " type="button">
+            <button class="btn btn-grey btn-count-wrap" type="button"
+                    data-container="body" data-toggle="popover" data-placement="top"
+                    data-html="true"
+                    data-content='<?= Html::input('number', 'count-helper', $count, ['class' => 'count-helper count-helper-' . $model->id, 'attr-id' => $model->id]); ?>
+                    <?=
+                    Html::button('ОК', ['class' => 'count-helper-ok',
+//                        'onClick' => 'Cart.SetCount($("count-helper-'.$model->id.'").val())'
+                    ])
+                    ?>'>
                 <strong class="btn-count-<?= $model->id ?>"><?= $count ?></strong>
             </button>
             <button class="btn btn-grey" type="button"  onclick="Cart.Plus(<?= $model->id ?>)">
                 <i class="fas fa-plus"></i>
             </button>
         </div>
+
+        <?php if ($model->krat > 1): ?>
+            <p class="text-muted text-left" style="font-size: 10px;">* кратность заказа - <?= $model->krat ?> </p>
+<?php endif;
+?>
     </div>
 
     <div class="col-xs-12 col-sm-2 summ-wrap">
         <strong class="hidden-sm hidden-md hidden-lg">Итого: </strong>
-        <?= Yii::$app->formatter->asCurrency($model->price * $count) ?>
+<?= Yii::$app->formatter->asCurrency($model->price * $count) ?>
     </div>
     <div class="col-xs-12 col-sm-1 delete-wrap">
         <button class="cart-delete btn btn-default"
@@ -55,3 +69,4 @@ use yii\helpers\Html;
         </button>
     </div>
 </div>
+

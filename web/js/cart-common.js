@@ -57,7 +57,6 @@ var Cart = {
                     $('.cart-widget').html(data);
                 });
         Cart.UpdateCart();
-
     },
     Delete: function (id) {
 
@@ -74,8 +73,9 @@ var Cart = {
     Plus: function (id) {
         var count = $('.count-' + id);
 
-        var _count = Number(count.val()) + 1
 
+        var krat = Number(count.attr('data-krat'));
+        var _count = Number(count.val()) + krat;
         count.val(_count);
 
         Cart.SetCount(id, _count);
@@ -85,10 +85,11 @@ var Cart = {
     Minus: function (id) {
         var count = $('.count-' + id);
 
-        var _count = count.val() - 1;
+        var krat = Number(count.attr('data-krat'));
+        var _count = Number(count.val()) - krat;
 
-        if (_count <= 1)
-            count.val(1);
+        if (_count <= krat)
+            count.val(krat);
         else
             count.val(_count);
 
@@ -98,14 +99,14 @@ var Cart = {
     },
     UpdateSumm: function (id) {
 
-        var count = $('[name="count"]').val();
+        var count = $('.count-' + id).val();
         var one = $('.cart__summ_one').html();
 
         //btn  update
 
         $('.btn-count-' + id).html(count);
 //        console.log(id);
-//        console.log(count);
+        console.log(count);
 //        console.log(one);
         var all = $('.cart__summ_all');
 
@@ -130,12 +131,17 @@ $(function () {
 
         var id = $('.count-helper').attr('attr-id');
 
-//        console.log(count);
-//        console.log(id);
-//        console.log($('[name=count]'));
+        console.log(count);
+        console.log(id);
+        console.log($('[name=count]'));
 
-        $('[name=count]').val(count);
+//        $('[name=count]').val(count);
         $('.btn-count-' + id).html(count);
+
+        Cart.SetCount(id, count);
+        Cart.UpdateSumm(id);
+        Cart.LoadCart();
+
 
         $('.popover').popover('hide');
 

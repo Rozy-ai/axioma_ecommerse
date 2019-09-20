@@ -46,3 +46,10 @@ else
         'onclick' => "ym(53040199, 'reachGoal', 'send-order')",
         ]) ?>
 </div>
+
+<script>
+    $(function () {
+        $('[data-toggle="popover"]').popover()
+    })
+
+</script>

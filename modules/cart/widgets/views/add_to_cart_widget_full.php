@@ -26,17 +26,18 @@ use yii\bootstrap\ActiveForm;
                     </button>
                     <?= Html::textInput('product_id', $model->id, ['class' => 'hidden']) ?>
                     <?=
-                    Html::textInput('count', 1, [
+                    Html::textInput('count', $model->krat, [
                         'class' => 'hidden form-control text-right count-' . $model->id,
                         'type' => 'number',
+                        "data-krat" => $model->krat,
                     ])
                     ?>
                     <button class="btn btn-grey btn-count-wrap" type="button"
                             data-container="body" data-toggle="popover" data-placement="top"
                             data-html="true"
-                            data-content='<?= Html::input('number', 'count-helper', 0, ['class' => 'count-helper', 'attr-id' => $model->id]); ?>
+                            data-content='<?= Html::input('number', 'count-helper', $model->krat, ['class' => 'count-helper', 'attr-id' => $model->id]); ?>
                             <?= Html::button('ОК', ['class' => 'count-helper-ok']) ?>'>
-                        <strong class="btn-count-<?= $model->id ?>">1</strong>
+                        <strong class="btn-count-<?= $model->id ?>"><?= $model->krat ?></strong>
                     </button>
                     <button class="btn btn-grey" type="button"  onclick="Cart.Plus(<?= $model->id ?>)">
                         <i class="fas fa-plus"></i>

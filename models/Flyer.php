@@ -9,7 +9,7 @@ use Yii;
  *
  * @property int $id
  * @property string $name Имя
- * @property string $image Банер
+ * @property string $image
  * @property int $created_at Создано
  *
  * @property FlyerGoods[] $flyerGoods
@@ -44,7 +44,7 @@ class Flyer extends \app\models\CustomAR
         return [
             'id' => 'ID',
             'name' => 'Имя',
-            'image' => 'Банер',
+            'image' => 'Image',
             'created_at' => 'Создано',
         ];
     }

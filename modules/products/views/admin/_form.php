@@ -140,6 +140,8 @@ use kartik\widgets\Select2;
 
             <?= $form->field($model, 'url')->textInput(['maxlength' => true]) ?>
 
+            <?= $form->field($model, 'krat')->textInput() ?>
+
             <?= $form->field($model, 'ord')->textInput() ?>
 
             <?= $form->field($model, 'is_enable')->checkbox() ?>

@@ -155,7 +155,7 @@ class DefaultController extends Controller {
 
         if (isset($session['cart'])) {
 
-            $data = [];
+            $data = $session['cart'];
             $new = true;
 
             foreach ($session['cart'] as $k => $item):
