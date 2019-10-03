@@ -60,6 +60,7 @@ AdminAsset::register($this);
                             ['label' => 'Портфолио', 'url' => ['/portfolio/admin/index']],
                             ['label' => 'Рекомендации', 'url' => ['/thanks/admin/index']],
                         ]],
+                    ['label' => 'Пароль админстратора', 'url' => ['/user/admin/update/1']],
                     Yii::$app->user->isGuest ? (
                             ['label' => 'Login', 'url' => ['/auth/default/login']]
                             ) : (
