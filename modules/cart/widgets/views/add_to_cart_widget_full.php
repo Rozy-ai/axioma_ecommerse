@@ -32,11 +32,17 @@ use yii\bootstrap\ActiveForm;
                         "data-krat" => $model->krat,
                     ])
                     ?>
+
+                    <?php
+                    $content = Html::input('number', 'count-helper', $model->krat, ['class' => 'count-helper', 'attr-id' => $model->id]) .
+                            Html::button('ОК', ['class' => 'count-helper-ok']);
+
+                    $content = str_replace('"', "'", $content);
+                    ?>
                     <button class="btn btn-grey btn-count-wrap" type="button"
                             data-container="body" data-toggle="popover" data-placement="top"
                             data-html="true"
-                            data-content='<?= Html::input('number', 'count-helper', $model->krat, ['class' => 'count-helper', 'attr-id' => $model->id]); ?>
-                            <?= Html::button('ОК', ['class' => 'count-helper-ok']) ?>'>
+                            data-content="<?= $content ?>">
                         <strong class="btn-count-<?= $model->id ?>"><?= $model->krat ?></strong>
                     </button>
                     <button class="btn btn-grey" type="button"  onclick="Cart.Plus(<?= $model->id ?>)">
