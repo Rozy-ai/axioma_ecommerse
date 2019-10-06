@@ -72,6 +72,10 @@ $(document).ready(function () {
         $('[data-toggle="popover"]').popover()
     })
 
+    $(function () {
+        $('[data-toggle="popover-price"]').popover()
+    })
+
 
     //cart
 

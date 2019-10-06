@@ -40,7 +40,7 @@ use yii\bootstrap\ActiveForm;
                     $content = str_replace('"', "'", $content);
                     ?>
                     <button class="btn btn-grey btn-count-wrap" type="button"
-                            data-container="body" data-toggle="popover" data-placement="top"
+                            data-container="body" data-toggle="popover-price" data-placement="top"
                             data-html="true"
                             data-content="<?= $content ?>">
                         <strong class="btn-count-<?= $model->id ?>"><?= $model->krat ?></strong>
