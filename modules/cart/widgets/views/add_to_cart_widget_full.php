@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
+use kartik\editable\Editable;
+use kartik\popover\PopoverX;
 ?>
 
 <div class="cart-add">
@@ -34,17 +36,24 @@ use yii\bootstrap\ActiveForm;
                     ?>
 
                     <?php
-                    $content = Html::input('number', 'count-helper', $model->krat, ['class' => 'count-helper', 'attr-id' => $model->id]) .
+                    $content = Html::input('number', 'count-helper', $model->krat, ['class' => 'count-helper', 'attr-id' => $model->id]).
                             Html::button('ОК', ['class' => 'count-helper-ok']);
-
-                    $content = str_replace('"', "'", $content);
                     ?>
-                    <button class="btn btn-grey btn-count-wrap" type="button"
-                            data-container="body" data-toggle="popover-price" data-placement="top"
-                            data-html="true"
-                            data-content="<?= $content ?>">
-                        <strong class="btn-count-<?= $model->id ?>"><?= $model->krat ?></strong>
-                    </button>
+                    <?php
+                    echo PopoverX::widget([
+                        'header' => 'Укажите количество',
+                        'placement' => PopoverX::ALIGN_BOTTOM,
+                        'content' => $content,
+                        'footer' => Html::button('OK', ['class' => 'btn btn-sm btn-primary count-helper-ok']),
+                        'toggleButton' => ['label' => ' <strong class="btn-count-' . $model->id . '">' . $model->krat . '</strong>', 'class' => 'btn btn-default btn-count-wrap'],
+                    ]);
+                    ?>
+                    <!--                    <button class="btn btn-grey btn-count-wrap" type="button"
+                                                data-container="body" data-toggle="popover-price" data-placement="top"
+                                                data-html="true"
+                                                data-content="<?= $content ?>">
+                                            <strong lass="btn-count-<?= $model->id ?>"><?= $model->krat ?></strong>
+                                        </button>-->
                     <button class="btn btn-grey" type="button"  onclick="Cart.Plus(<?= $model->id ?>)">
                         <i class="fas fa-plus"></i>
                     </button>
