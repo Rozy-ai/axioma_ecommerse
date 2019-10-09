@@ -29,18 +29,18 @@ use kartik\popover\PopoverX;
                     <?= Html::textInput('product_id', $model->id, ['class' => 'hidden']) ?>
                     <?=
                     Html::textInput('count', $model->krat, [
-                        'class' => 'hidden form-control text-right count-' . $model->id,
+                        'class' => 'text-center count-' . $model->id,
                         'type' => 'number',
                         "data-krat" => $model->krat,
                     ])
                     ?>
 
                     <?php
-                    $content = Html::input('number', 'count-helper', $model->krat, ['class' => 'count-helper', 'attr-id' => $model->id]).
+                    $content = Html::input('number', 'count-helper', $model->krat, ['class' => 'count-helper', 'attr-id' => $model->id]) .
                             Html::button('ОК', ['class' => 'count-helper-ok']);
                     ?>
                     <?php
-                    echo PopoverX::widget([
+                    PopoverX::widget([
                         'header' => 'Укажите количество',
                         'placement' => PopoverX::ALIGN_BOTTOM,
                         'content' => $content,

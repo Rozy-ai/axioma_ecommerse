@@ -70,6 +70,16 @@ var Cart = {
                 });
 
     },
+    Set: function (id) {
+        var count = $('.count-' + id);
+
+        var _count = Number(count.val());
+
+
+        Cart.SetCount(id, _count);
+        this.UpdateSumm();
+        Cart.LoadCart();
+    },
     Plus: function (id) {
         var count = $('.count-' + id);
 
@@ -143,7 +153,7 @@ $(function () {
         Cart.LoadCart();
 
 
-        $('.popover').popover('hide');
+        $('.popover-x').popoverX('hide');
 
     })
 

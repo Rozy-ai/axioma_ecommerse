@@ -68,6 +68,7 @@ $(document).ready(function () {
         }).magnificPopup('open');
     })
 
+
     $(function () {
         $('[data-toggle="popover"]').popover()
     })
