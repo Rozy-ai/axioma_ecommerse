@@ -33,7 +33,7 @@ class AdminController extends Controller {
 
         $this->layout = '@layouts/admin';
 
-        if (Yii::$app->user->id != 1)
+        if (Yii::$app->user->identity->role != 1)
             $this->redirect('/');
 
         return parent::beforeAction($action);
