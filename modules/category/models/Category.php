@@ -10,6 +10,7 @@ use corpsepk\yml\behaviors\YmlCategoryBehavior;
 class Category extends \app\models\Category {
 
     public $products = [];
+    public $childsId = [];
 
     public function behaviors() {
         return [
@@ -44,6 +45,14 @@ class Category extends \app\models\Category {
                 }
             ],
         ];
+    }
+
+    public function afterFind() {
+        parent::afterFind();
+
+//        $this->collectChild($this->id);
+
+        return true;
     }
 
     public static function getList() {
@@ -114,10 +123,13 @@ class Category extends \app\models\Category {
 
     public function getProducts() {
 
+        $this->collectChild($this->id);
+
         return \app\modules\catalog\models\Catalog::find()
                         ->where(['category_id' => $this->id, 'is_enable' => 1])
                         ->orWhere(['like', 'cats', "%{$this->id}%", false])
-                        ->orderBy(['ord' => SORT_DESC])
+//                        ->orWhere(['category_id' => $this->childsId, 'is_enable' => 1])
+                        ->orderBy(['price' => SORT_DESC])
                         ->all();
     }
 
@@ -149,6 +161,21 @@ class Category extends \app\models\Category {
     public static function getByUriName($uri) {
 
         return ($model = self::find()->where(['url' => $uri])->one()) ? $model->header : '';
+    }
+
+    public function collectChild($id) {
+
+        $model = self::findOne($id);
+
+        if ($model) {
+            $this->childsId[] = $model->id;
+
+            $models = self::findAll(['parent_id' => $model->id, 'is_enable' => 1]);
+
+            foreach ($models as $item)
+                $this->collectChild($item->id);
+        } else
+            return true;
     }
 
 //    public function getIco() {

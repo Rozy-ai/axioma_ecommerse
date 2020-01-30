@@ -24,7 +24,8 @@ $this->registerJsFile('@web/js/search.js'
                     <span class="input-group-btn">
                         <button class="btn btn-primary"
                                 type="submit">
-                            <i class="glyphicon glyphicon-search"></i>
+                            <!--<i class="glyphicon glyphicon-search"></i>-->
+                            Найти
                         </button>
                     </span>
                 </div>

@@ -1,4 +1,9 @@
 <?php
+
+use yii\widgets\Pjax;
+use yii\widgets\ListView;
+use kop\y2sp\ScrollPager;
+
 //print_r($parent);
 //echo $category->uri;
 //echo $category->id;
@@ -9,6 +14,8 @@ if ($parent)
 //exit();
 foreach ($category->getBreadCrumbs() as $item)
     $this->params['breadcrumbs'][] = $item;
+
+Pjax::begin();
 
 $this->params['breadcrumbs'][] = $category->header;
 ?>
@@ -27,7 +34,17 @@ $this->params['breadcrumbs'][] = $category->header;
 
             <div class="row">
 
-                <?php if ($products) : ?>
+                <div class="">
+                    <p class="pull-left">
+                        <!--                        -->
+                    </p>
+                    <p class="pull-right">
+                        Сортировка : <?php echo $sort->link('price') . ' | ' . $sort->link('hit') . ' | ' . $sort->link('new') ?>
+                    </p>
+                </div>
+
+                <?php // if ($products) : ?>
+                <?php if (false) : ?>
                     <div class="product-list col-xs-12">
                         <?php
                         foreach ($products as $product):
@@ -38,8 +55,28 @@ $this->params['breadcrumbs'][] = $category->header;
                 <?php endif; ?>
 
             </div>
+
+            <?php
+            echo ListView::widget([
+                'dataProvider' => $dataProvider,
+                'itemOptions' => ['class' => 'item'],
+                'itemView' => '@app/modules/products/views/default/product-cart',
+                'pager' => [
+                    'class' => ScrollPager::className(),
+                    'triggerText' => '',
+                    'noneLeftTemplate' => '<div class="ias-noneleft article-preview__direction">{text}</div>',
+                    'noneLeftText' => 'Нет больше новостей для отображения',
+                    'enabledExtensions' => [ScrollPager::EXTENSION_SPINNER, ScrollPager::EXTENSION_NONE_LEFT, ScrollPager::EXTENSION_PAGING],
+                    'eventOnScroll' => 'function() {$(\'.ias-trigger a\').trigger(\'click\')}',
+                ],
+            ]);
+            ?>
+
             <?= $category->content ?>
         </div>
     </div>
 </div>
+
+<?php
+Pjax::end();
 

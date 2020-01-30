@@ -16,13 +16,31 @@ class DefaultController extends Controller {
      * Renders the index view for the module
      * @return string
      */
-    public function actionIndex($q) {
+    public function actionIndex($q, $type = 'product') {
 
-        $model = $this->getProducts($q);
+        if ($q) {
 
-        \Yii::$app->view->title = 'Поиск: ' . $q;
+            if ($type == 'product')
+                $model = $this->getProducts($q);
 
-        return $this->render('index', ['model' => $model]);
+            if ($type == 'news')
+                $model = $this->getPages($q);
+
+            if ($type == 'category')
+                $model = $this->getCategory($q);
+
+            \Yii::$app->view->title = 'Поиск: ' . $q;
+        } else {
+            $model = [];
+        }
+
+        Yii::error($model);
+
+        return $this->render('index', [
+                    'model' => $model,
+                    'type' => $type,
+                    'q' => $q,
+        ]);
     }
 
     public function actionAjaxSearch() {
@@ -41,6 +59,16 @@ class DefaultController extends Controller {
 
         return \app\modules\products\models\Product::find()
                         ->where(['like', 'header', $search])
+                        ->andWhere(['is_enable' => 1])
+                        ->orderBy(['header' => SORT_ASC])
+                        ->all();
+    }
+
+    private function getCategory($search) {
+
+        return \app\modules\category\models\Category::find()
+                        ->where(['like', 'header', $search])
+                        ->andWhere(['is_enable' => 1])
                         ->orderBy(['header' => SORT_ASC])
                         ->all();
     }
@@ -92,6 +120,33 @@ class DefaultController extends Controller {
         }
 
         return false;
+    }
+
+    private function getPages($search) {
+
+//        Yii::error($search);
+//
+//        $model = \app\modules\content\models\Content::find()
+//                ->where(['is_enable' => 1, 'type_id' => [1, 3]])
+//                ->andWhere(['like', 'header', $search])
+////                ->orWhere(['like', 'content', '%' . $search . '%'])
+////                ->andWhere(['is_enable' => 1, 'type_id' => [1, 3]]) // Новости, страницы
+//                ->all();
+//
+//        $query = \app\modules\content\models\Content::find()
+//                ->where(['is_enable' => 1, 'type_id' => [1, 3]])
+//                ->andWhere(['like', 'header', $search]);
+//
+//        Yii::error($query->createCommand()->getRawSql());
+//        Yii::error($model);
+
+
+        return \app\modules\content\models\Content::find()
+                        ->where(['like', 'header', $search])
+                        ->orWhere(['like', 'content', $search])
+                        ->andWhere(['is_enable' => 1, 'type_id' => [1, 3]]) // Новости, страницы
+                        ->all();
+        ;
     }
 
 }

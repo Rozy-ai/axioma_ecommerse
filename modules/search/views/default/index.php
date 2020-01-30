@@ -19,15 +19,40 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <div class="row">
 
-            <?php
-            foreach ($model as $item):
-
-                echo $this->render('_section', ['model' => $item]);
-
-            endforeach;
-            ?>
+            <div class="col-xs-12 col-sm-3">
 
 
+                <ul class="list-unstyled">
+                    <li>
+                        <?= Html::a('В товарах', '?q=' . $q . '', ['class' => $type == 'product' ? 'btn disabled' : 'btn']) ?>
+                    </li>
+                    <li>
+                        <?= Html::a('В категориях', '?q=' . $q . '&type=category', ['class' => $type == 'category' ? 'btn disabled' : 'btn']) ?>
+                    </li>
+                    <li>
+                        <?= Html::a('В новостях и статьях', '?q=' . $q . '&type=news', ['class' => $type == 'news' ? 'btn disabled' : 'btn']) ?>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="col-xs-12 col-sm-9">
+
+                <?php
+                foreach ($model as $item):
+
+                    if ($type == 'product')
+                        echo $this->render('_section_product', ['model' => $item]);
+
+                    if ($type == 'category')
+                        echo $this->render('_section_category', ['model' => $item]);
+
+                    if ($type == 'news')
+                        echo $this->render('_section_news', ['model' => $item]);
+
+                endforeach;
+                ?>
+
+            </div>
         </div>
     </div>
 </div>

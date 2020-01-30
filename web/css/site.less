@@ -15,7 +15,7 @@ body {
 .wrap {
     /*min-height: 100vh;*/
     height: auto;
-    padding: 50px 0 0 ;
+    padding: 50px 0 0 ; 
     /*background: url('../img/body.png');*/
     /*background-color: #F5F3F3;*/
     /*background-attachment: fixed;*/
@@ -1659,7 +1659,7 @@ a.desc:after {
 
 
         }
-        #spin {
+        #spin { 
             display: none !important;
         }
     }
@@ -1668,9 +1668,13 @@ a.desc:after {
 /*Убираем стралки из text:number*/
 
 input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+input::-webkit-inner-spin-button {  
     -webkit-appearance: none;
 }
 input[type='number'] {
     -moz-appearance: textfield;
-}
+} 
+
+.btn:hover, .btn:focus, .btn.focus {
+    color: @brand-primary;
+}    
