@@ -69,6 +69,7 @@ $this->params['breadcrumbs'][] = $category->header;
                     'enabledExtensions' => [ScrollPager::EXTENSION_SPINNER, ScrollPager::EXTENSION_NONE_LEFT, ScrollPager::EXTENSION_PAGING],
                     'eventOnScroll' => 'function() {$(\'.ias-trigger a\').trigger(\'click\')}',
                 ],
+                'summary' => ''
             ]);
             ?>
 

@@ -25,8 +25,8 @@ $(function () {
 
         var parent = $(this).closest('.li-dropdown');
 
-        console.log(1);
-        console.log(parent);
+//        console.log(1);
+//        console.log(parent);
 
         if (parent.hasClass("active")) {
             parent.removeClass('active');
@@ -52,4 +52,20 @@ $(function () {
     }
 
 
+    function ReloadMenu() {
+        var active = $('.active');
+
+        if (active != 'undefined') {
+
+            active.parents('.li-dropdown').addClass('active');
+//        alert(1);
+        }
+    }
+
+    $(document).on('pjax:complete', function (event) {
+        ReloadMenu();
+    });
+
 })
+
+
