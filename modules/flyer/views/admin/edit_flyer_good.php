@@ -51,6 +51,8 @@ $this->params['breadcrumbs'][] = $this->title;
     ?>
     <?= $form->field($model, 'price')->textInput() ?>
     <?= $form->field($model, 'price_new')->textInput() ?>
+    <?= $form->field($model, 'price_nds')->textInput() ?>
+    <?= $form->field($model, 'price_nds_new')->textInput() ?>
     <?= $form->field($model, 'order')->textInput(['type' => 'number']) ?>
 </div>
 <div class="form-group">

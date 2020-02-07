@@ -1,1 +1,13 @@
-footer{background:#000;width:100%}@page{margin-left:3cm;margin:0;background:#000;margin-header:5mm;margin-footer:5mm}
+footer {
+  background: #000;
+  width: 100%;
+}
+@page {
+  margin-left: 3cm;
+  margin: 0cm;
+  background: #000;
+  margin-header: 5mm;
+  margin-footer: 5mm;
+  
+  /* <any of the usual CSS values for margins> */
+}

@@ -16,6 +16,8 @@ use Yii;
  * @property string $custom_text Новое описание
  * @property string $name Наименование
  * @property string $image Изображение
+ * @property double $price_nds Цена с НДС
+ * @property double $price_nds_new Цена с НДС новая
  *
  * @property Flyer $flyer
  */
@@ -36,7 +38,7 @@ class FlyerGoods extends \app\models\CustomAR
     {
         return [
             [['flyer_id', 'product_id', 'order'], 'integer'],
-            [['price', 'price_new'], 'number'],
+            [['price', 'price_new', 'price_nds', 'price_nds_new'], 'number'],
             [['custom_text'], 'string'],
             [['name', 'image'], 'string', 'max' => 255],
             [['flyer_id'], 'exist', 'skipOnError' => true, 'targetClass' => Flyer::className(), 'targetAttribute' => ['flyer_id' => 'id']],
@@ -58,6 +60,8 @@ class FlyerGoods extends \app\models\CustomAR
             'custom_text' => 'Новое описание',
             'name' => 'Наименование',
             'image' => 'Изображение',
+            'price_nds' => 'Цена с НДС',
+            'price_nds_new' => 'Цена с НДС новая',
         ];
     }
 

@@ -12,13 +12,13 @@ use yii\bootstrap\Html;
 <div class="advantages">
     <div class="container-fluid">
         <div class="row">
-<!--            <div class="col-xs-12">
-
-                <p class="h3 text-center uppercase bold">
-                    <strong>специальные цены предоставляются в случаях:</strong>
-                </p>
-                <br/>
-            </div>-->
+            <!--            <div class="col-xs-12">
+            
+                            <p class="h3 text-center uppercase bold">
+                                <strong>специальные цены предоставляются в случаях:</strong>
+                            </p>
+                            <br/>
+                        </div>-->
 
             <div class="col-xs-3 col-xs-offset-1 text-center ">
                 <?= Html::img('/image/advantages/world.png', ['class' => 'img  center-block', 'height' => '70px']) ?>
@@ -58,58 +58,35 @@ use yii\bootstrap\Html;
 <div class="products">
     <div class="row">
 
-        <?php foreach ($models as $k => $model): ?>
-            <div class="product <?= (($k % 2) == 0) ? 'odd' : 'even' ?>">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="col-xs-2 col-xs-offset-1">
-                            <p></p>
-                        </div>
-                        <div class="col-xs-7">
-                            <br/>
-                            <!--<a href="https://axioma.pro/">-->
-                            <a href="<?= $model->url ?>">
-                                <strong><?= $model->name ?></strong>
-                            </a>
-                        </div>
-                    </div>
+        <table class="table table-striped" style="margin-left: 90px; margin-right: 90px">
 
-                    <div class="col-xs-12">
-                        <div class="col-xs-2 col-xs-offset-1">
-                            <a href="https://axioma.pro/">
-                                <!--<div class="image" style="background: url('<?= $model->name ?>') top center no-repeat"></div>-->
-                                <?= Html::img($model->img, ['class' => 'img img-responsive']) ?>
-                            </a>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-7">
-                                <p>
-                                    <?= $model->custom_text ?>
-                                </p>
-                            </div>
+            <?php
+            $is_nds = false;
 
-                            <div class="col-xs-3 pull-right">
+            foreach ($models as $item)
+                if ($item->price_nds)
+                    $is_nds = true;
+            ?>
 
-                                <?php if ($model->price_new): ?>
-                                    <strong><?= Yii::$app->formatter->asCurrency($model->price_new) ?></strong>
-                                    <p class="old-price">
-                                    <strike>
-                                        <?= Yii::$app->formatter->asCurrency($model->price) ?>
-                                    </strike>
-                                    </p>
-                                <?php else: ?>
-                                    <strong><?= $model->price ? Yii::$app->formatter->asCurrency($model->price) : 'по запросу' ?></strong>
-                                <?php endif; ?>
-                            </div>
-                        </div>
-                    </div>
+            <?php
+            echo $this->render('_print_item_first', ['model' => $models[0], 'is_nds' => $is_nds]);
 
+            unset($models[0]);
+            ?>
 
-                </div>
-            </div>
+            <?php foreach (array_chunk($models, 4) as $_model): ?>
 
-        <?php endforeach;
-        ?>
+                <?php echo $this->render('_print_item_table_header', ['is_nds' => $is_nds]) ?>
+
+                <?php foreach ($_model as $k => $model): ?>
+
+                    <?php echo $this->render('_print_item', ['model' => $model, 'is_first' => false]); ?>
+
+                <?php endforeach; ?>
+
+            <?php endforeach; ?>
+
+        </table>
 
     </div>
 </div>

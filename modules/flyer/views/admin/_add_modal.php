@@ -64,6 +64,7 @@ Modal::begin([
     ?>
     <?= $form->field($model, 'price')->textInput() ?>
     <?= $form->field($model, 'price_new')->textInput() ?>
+
     <?= $form->field($model, 'order')->textInput(['type' => 'number']) ?>
 </div>
 <div class="form-group">
