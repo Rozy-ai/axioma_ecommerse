@@ -87,6 +87,28 @@ $this->params['breadcrumbs'][] = $this->title;
                 ],
             ],
             [
+                'class' => 'kartik\grid\EditableColumn',
+//                'refreshGrid' => true,
+                'attribute' => 'price_nds',
+                'editableOptions' => [
+                    'inputType' => \kartik\editable\Editable::INPUT_TEXT,
+                    'formOptions' => ['action' => ['/flyer/admin/edit_active']],
+//                    'data' => \app\modules\category\models\Category::__getHeaders(),
+//                    'data' => [1, 2, 3],
+                ],
+            ],
+            [
+                'class' => 'kartik\grid\EditableColumn',
+//                'refreshGrid' => true,
+                'attribute' => 'price_nds_new',
+                'editableOptions' => [
+                    'inputType' => \kartik\editable\Editable::INPUT_TEXT,
+                    'formOptions' => ['action' => ['/flyer/admin/edit_active']],
+//                    'data' => \app\modules\category\models\Category::__getHeaders(),
+//                    'data' => [1, 2, 3],
+                ],
+            ],
+            [
                 'label' => 'Редактировать',
                 'format' => 'raw',
                 'value' => function($row) {
