@@ -7,8 +7,9 @@ use yii\bootstrap\Html;
 <div class="site-index">
 
     <div class="home-slide-show">
+        <?= app\modules\slider\widgets\MainSlider::widget(); ?>
         <div class="container">
-            <?= app\modules\slider\widgets\MainSlider::widget(); ?>
+
             <div class="home-advantages">
                 <div class="container">
                     <div class="advantages-wrap">

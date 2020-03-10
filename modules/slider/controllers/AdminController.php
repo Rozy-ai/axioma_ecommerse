@@ -8,6 +8,7 @@ use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use vova07\fileapi\actions\UploadAction as FileAPIUpload;
 
 /**
  * AdminController implements the CRUD actions for Slider model.
@@ -16,10 +17,10 @@ class AdminController extends \app\controllers\AdminController {
 
     public function actions() {
         return [
-            'image-upload' => [
-                'class' => 'vova07\imperavi\actions\UploadAction',
-                'url' => '/uploads/', // Directory URL address, where files are stored.
-                'path' => '@webroot/uploads' // Or absolute path to directory where files are stored.
+            'upload-image' => [
+                'class' => FileAPIUpload::className(),
+                'path' => '@webroot/image/slider',
+//                'uploadOnlyImage' => false,
             ],
         ];
     }

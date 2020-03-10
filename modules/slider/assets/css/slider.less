@@ -1,0 +1,138 @@
+@import "../../../../web/css/bootstrap/variables.less";
+
+.owl-theme {
+
+
+    .btn-wrap {
+        position: absolute;
+        bottom: 4rem;
+        left: 7.4rem;
+        width: 100%;
+
+        @media(max-width:@screen-sm) {
+            bottom: 1rem;
+            left: 11rem;
+        }
+
+        @media(max-width:@screen-md) {
+            bottom: 1rem;
+            left: 11rem;
+        }
+
+        .btn {
+            font-weight: 600;
+            padding: 1rem 3rem;
+        }
+    }
+
+    .nav-arr {
+        display: block;
+        width: 74px;
+        height: 74px;
+
+        &.nav-left {
+            background: url('/image/arr_left.png') top center no-repeat;
+
+            &:hover {
+                background: url('/image/arr_left_hover.png') top center no-repeat;
+            }
+        }
+
+        &.nav-right {
+            background: url('/image/arr_right.png') top center no-repeat;
+
+            &:hover {
+                background: url('/image/arr_right_hover.png') top center no-repeat;
+            }
+        }
+    }
+
+
+    .owl-nav  {
+
+        position: absolute;
+        /*top: 16rem;*/
+        width: 100%;
+
+        -webkit-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+        top: 30%;
+        left: 50%;
+/*
+        @media(max-width:@screen-lg) {
+            top: 10rem;
+        }
+        @media(max-width:@screen-md) {
+            top: 3rem;
+        }*/
+
+        @media(max-width:@screen-sm) {
+
+            /*top: 6rem !important;*/
+            top: 3rem;
+            .owl-prev, .owl-next {
+                display: none !important;
+            }
+        }
+
+        .owl-prev {
+            left: 4rem;
+        }
+        .owl-next {
+            right: 4rem; 
+        }
+
+        [class*=owl-] {
+            background: inherit !important;
+            position: absolute;
+
+        }
+
+    }
+
+    .owl-dots {
+        position: absolute;
+        bottom: 4rem;
+        width: 100%;
+
+        @media(max-width:@screen-sm) {
+            bottom: 1rem;
+        }
+        @media(max-width:@screen-md) {
+            bottom: 1rem;
+        }
+
+        .owl-dot {
+
+            span {
+                width: 10rem !important;
+
+                @media(max-width:@screen-sm) {
+                    width: 3rem !important;
+                }
+                @media(max-width:@screen-md) {
+                    width: 4rem !important;
+                }
+            }
+
+            &.active, &:hover {
+
+                span {
+                    background-color: white !important;
+                    border-radius: inherit;
+                    width: 10rem;
+                }
+            }
+        }
+
+    }
+}
+
+
+@media(max-width:@screen-xs) {
+    .owl-carousel .owl-stage-outer {
+        width: 100wh;
+        overflow: hidden;
+        overflow-x: hidden;
+    }
+}
