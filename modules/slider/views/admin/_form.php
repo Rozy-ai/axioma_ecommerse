@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\ActiveForm;
 use vova07\imperavi\Widget;
+use vova07\fileapi\Widget as FileAPI;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Slider */
@@ -15,11 +16,16 @@ use vova07\imperavi\Widget;
     <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
-    <label>Изображение</label><br/>
-    <?= !$model->image ?: Html::img($model->image, ['width' => '300']); ?>
 
-    <?= $form->field($model, 'image')->textInput() ?>
-    <?php //  $form->field($model, 'img')->fileInput(['accept' => 'image/*']) ?>
+    <?php
+    echo $form->field($model, 'image')->widget(
+            FileAPI::className(), [
+        'settings' => [
+            'url' => ['/slider/admin/upload-image']
+        ]
+            ]
+    )->label('Изображение');
+    ?>
 
     <?=
     $form->field($model, 'content')->widget(Widget::className(), [

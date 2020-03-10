@@ -34,3 +34,4 @@ config/params.php
 
 web/index.php
 web/image/ready
+web/image/flyer
