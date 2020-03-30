@@ -17,6 +17,7 @@ use yii\helpers\Html;
             <?= Html::a($model->header, ['/' . $model->url], ['class' => 'h4']) ?>
             <p><?= $model->anons ?></p>
         </div>
+        <?= Html::a('Подробнее...', ['/' . $model->url], ['class' => 'more-link text-muted']) ?>
 
 
     </div>

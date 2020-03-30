@@ -95,7 +95,8 @@ class CustomAR extends \yii\db\ActiveRecord {
 
         $_image = str_replace('//', '/', Yii::getAlias('@webroot') . $_image);
 
-        $watermarkImage = Yii::getAlias('@webroot') . '/image/watermark.png';
+        $watermarkImage = Yii::getAlias('@webroot') . '/image/watermark_15.png';
+//        $watermarkImage = Yii::getAlias('@webroot') . '/image/watermark_30.png';
 
         $image_ready = Yii::getAlias('@webroot') . '/image/ready/' . basename($_image);
 

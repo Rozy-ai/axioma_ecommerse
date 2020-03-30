@@ -13,6 +13,11 @@ use yii\helpers\Url;
 class Product extends \app\models\Product {
 
     const IMAGE_PATH = '/image/catalog/';
+    const TYPE = [
+        'нет',
+        'Акустомагнитные системы',
+        'Радиочастотные системы',
+    ];
 
     public $supported_products;
 

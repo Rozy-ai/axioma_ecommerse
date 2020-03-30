@@ -29,18 +29,18 @@ class Menu extends \app\models\Menu {
                         ])
                         ->orderBy(['order' => SORT_DESC])->all();
 
-        $result = [];
+//        $result = [];
 
-//        $result['top'][] = ['label' => 'Главная', 'url' => ['/site/index']];
+        $result['top'][] = ['label' => 'Главная', 'url' => ['/site/index']];
 
-        $cat = Category::getTopMenu();
+//        $cat = Category::getTopMenu();
+//
+//        foreach ($cat as $_item)
+//            $items[] = ['label' => $_item->header, 'url' => ['/category/' . $_item->url]];
 
-        foreach ($cat as $_item)
-            $items[] = ['label' => $_item->header, 'url' => ['/category/' . $_item->url]];
-
-        $result['top'][] = ['label' => '<i class="fa fa-bars" aria-hidden="true"></i> Каталог',
-            'url' => ['/' . $_item->url],
-            'items' => $items,
+        $result['top'][] = ['label' => 'Каталог',
+            'url' => ['/catalog'],
+//            'items' => $items,
         ];
 
         foreach ($model as $item)
@@ -50,7 +50,17 @@ class Menu extends \app\models\Menu {
         $result['bottom'][] = ['label' => \app\modules\cart\widgets\TopCartWidget::widget(), 'url' => ['/cart'], 'options' => ['class' => 'cart-mobile hidden-md hidden-lg']];
 //        $result['bottom'][] = ['label' => '<i class="far fa-heart"></i>', 'url' => ['/favorite']];
 //        $result['bottom'][] = ['label' => '<i class="fas fa-chart-bar"></i>', 'url' => ['/compare']];
-        $result['bottom'][] = ['label' => '<i class="fas fa-lock"></i>', 'url' => [(Yii::$app->user->isGuest) ? '/enter' : '/products/admin/index']];
+        $result['bottom'][] = ['label' => 'Вход', 'url' => [(Yii::$app->user->isGuest) ? '/enter' : '/products/admin/index'], 'options' => ['class' => 'enter-link']];
+
+        return $result;
+    }
+
+    public static function getBottomMenu() {
+
+        $cat = Category::getTopMenu();
+
+        foreach ($cat as $item)
+            $result[] = ['label' => $item->header, 'url' => ['/category/' . $item->url]];
 
         return $result;
     }

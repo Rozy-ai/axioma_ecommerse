@@ -27,10 +27,27 @@ $this->params['breadcrumbs'][] = $this->title;
             'header',
             [
                 'label' => 'Родительская категория',
+                'filter' => \app\modules\category\models\Category::__getHeaders(),
+                'attribute' => 'parent_id',
                 'value' => 'parent.header',
+            ],
+            [
+                'label' => 'Родительская категория 2',
+                'filter' => \app\modules\category\models\Category::__getHeaders(),
+                'attribute' => 'parent_id2',
+                'value' => 'parent2.header',
             ],
             'ord',
             'url',
+            'is_enable',
+//            'count',
+            [
+                'attribute' => 'in_menu',
+                'filter' => [1 => 'Да', 0 => 'Нет'],
+                'value' => function($model) {
+                    return $model->in_menu ? 'Да' : 'Нет';
+                }
+            ],
             [
                 'attribute' => 'show_in_home',
                 'value' => function($model) {

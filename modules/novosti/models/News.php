@@ -17,7 +17,7 @@ class News extends \app\modules\content\models\Content {
 
         $model = News::find()->where(['is_enable' => 1, 'type_id' => 3])
                 ->orderBy(['created_at' => SORT_DESC])
-                ->limit(3)
+                ->limit(4)
                 ->all();
 
         return $model;

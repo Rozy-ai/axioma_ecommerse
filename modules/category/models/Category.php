@@ -118,7 +118,17 @@ class Category extends \app\models\Category {
     }
 
     public function getParent() {
+
         return $this->hasOne(self::className(), ['id' => 'parent_id']);
+
+//        return ( $result = $this->hasOne(self::className(), ['id' => 'parent_id'])) ? $result :
+//                $this->hasOne(self::className(), ['id' => 'parent_id2'])
+//        ;
+    }
+
+    public function getParent2() {
+
+        return $this->hasOne(self::className(), ['id' => 'parent_id2']);
     }
 
     public function getProducts() {
@@ -176,6 +186,11 @@ class Category extends \app\models\Category {
                 $this->collectChild($item->id);
         } else
             return true;
+    }
+
+    public function getCount() {
+
+        return count(\app\modules\products\models\Product::findAll(['category_id' => $this->id]));
     }
 
 //    public function getIco() {

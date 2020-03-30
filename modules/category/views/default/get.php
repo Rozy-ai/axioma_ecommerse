@@ -24,36 +24,15 @@ $this->params['breadcrumbs'][] = $category->header;
     <div class="row">
 
         <div class="col-xs-12 col-sm-4 category-left-menu">
-            <?= \app\modules\category\widgets\MenuCategory::widget(['active_id' => $category->id]); ?>
+            <?php // \app\modules\category\widgets\MenuCategory::widget(['active_id' => $category->id]); ?>
         </div>
-        <div class="col-xs-12 col-sm-8">
+        <div class="col-xs-12">
+            <?php echo $this->render('_search', ['model' => $search]) ?>
+        </div>
+        <div class="col-xs-12">
 
             <div class="row">
                 <h1><?= $category->header ?> </h1>
-            </div>
-
-            <div class="row">
-
-                <div class="">
-                    <p class="pull-left">
-                        <!--                        -->
-                    </p>
-                    <p class="pull-right">
-                        Сортировка : <?php echo $sort->link('price') . ' | ' . $sort->link('hit') . ' | ' . $sort->link('new') ?>
-                    </p>
-                </div>
-
-                <?php // if ($products) : ?>
-                <?php if (false) : ?>
-                    <div class="product-list col-xs-12">
-                        <?php
-                        foreach ($products as $product):
-                            echo $this->render('@app/modules/products/views/default/product-cart', ['model' => $product]);
-                        endforeach;
-                        ?>
-                    </div>
-                <?php endif; ?>
-
             </div>
 
             <?php
@@ -61,14 +40,14 @@ $this->params['breadcrumbs'][] = $category->header;
                 'dataProvider' => $dataProvider,
                 'itemOptions' => ['class' => 'item'],
                 'itemView' => '@app/modules/products/views/default/product-cart',
-                'pager' => [
-                    'class' => ScrollPager::className(),
-                    'triggerText' => '',
-                    'noneLeftTemplate' => '<div class="ias-noneleft article-preview__direction">{text}</div>',
-                    'noneLeftText' => 'Нет больше новостей для отображения',
-                    'enabledExtensions' => [ScrollPager::EXTENSION_SPINNER, ScrollPager::EXTENSION_NONE_LEFT, ScrollPager::EXTENSION_PAGING],
-                    'eventOnScroll' => 'function() {$(\'.ias-trigger a\').trigger(\'click\')}',
-                ],
+//                'pager' => [
+//                    'class' => ScrollPager::className(),
+//                    'triggerText' => '',
+//                    'noneLeftTemplate' => '<div class="ias-noneleft article-preview__direction">{text}</div>',
+//                    'noneLeftText' => 'Нет больше новостей для отображения',
+//                    'enabledExtensions' => [ScrollPager::EXTENSION_SPINNER, ScrollPager::EXTENSION_NONE_LEFT, ScrollPager::EXTENSION_PAGING],
+//                    'eventOnScroll' => 'function() {$(\'.ias-trigger a\').trigger(\'click\')}',
+//                ],
                 'summary' => ''
             ]);
             ?>

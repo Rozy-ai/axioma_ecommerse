@@ -28,6 +28,13 @@ use kartik\widgets\Select2;
                 'options' => ['placeholder' => 'Категория', 'multiple' => false],
             ]);
             ?>
+            
+            <?=
+            $form->field($model, 'parent_id2')->widget(\kartik\select2\Select2::classname(), [
+                'data' => app\modules\category\models\Category::getList(),
+                'options' => ['placeholder' => 'Категория', 'multiple' => false],
+            ]);
+            ?>
 
             <?= $form->field($model, 'header')->textInput(['maxlength' => true]) ?>
 

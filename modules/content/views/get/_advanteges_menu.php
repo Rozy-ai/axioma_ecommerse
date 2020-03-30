@@ -1,74 +1,42 @@
 <?php
 
 use yii\bootstrap\Html;
+
+$this->registerCssFile('/css/modules/advantages.css');
+
+$list = [
+    ['name' => 'О компании', 'url' => '/o_kompanii', 'image' => '/image/advantages/Аксиома.png'],
+    ['name' => 'Контроль качества <br/>в Китае ', 'url' => '/kontrol-kachestva-v-kitae', 'image' => '/image/advantages/Контроль качества.png'],
+    ['name' => 'Бесплатная доставка', 'url' => '/besplatnaya-dostavka', 'image' => '/image/advantages/Доставка.png'],
+    ['name' => 'Сервис и гарантия', 'url' => '', 'image' => '/image/advantages/гарантия.png'],
+    ['name' => 'Оборудование <br/>в рассрочку', 'url' => '/oborudovanie-v-rassrochku', 'image' => '/image/advantages/Рассрочка.png'],
+    ['name' => 'Весь спектр <br/>монтажных услуг', 'url' => '/ves-spekt-montazhnyh-uslug', 'image' => '/image/advantages/Спектр услуг.png'],
+    ['name' => 'Офис и склад <br/>в одном месте', 'url' => '/ofis-i-sklad-v-odnom-meste', 'image' => '/image/advantages/Офис и склад.png'],
+    ['name' => 'Больше <br/>10 лет на рынке', 'url' => '', 'image' => '/image/advantages/10.png'],
+];
 ?>
-<div class="home-advantages">
+<div class="advantages-menu">
     <div class="advantages-wrap">
         <div class="row">
-            <div class="col-md-2 col-sm-4 col-xs-6">
-                <a href="/o_kompanii">
-                    <?= Html::img('/image/advantages/about.svg', [
-                        'class' => 'img center-block', 'height' => '120px',
-                        'onerror' => "this.src='about.png'"]) ?>
-                    <p class="text-center">
-                        О компании
-                    </p>
-                </a>
-            </div>
-            <div class="col-md-2 col-sm-4 col-xs-6">
-                <a href="/kontrol-kachestva-v-kitae">
-                    <?= Html::img('/image/advantages/world.svg', [
-                        'class' => 'img center-block', 'height' => '120px',
-                        'onerror' => "this.src='world.png'"]) ?>
-                    <p class="text-center">
-                        Контроль качества
-                        <br/> в Китае
-                    </p>
-                </a>
-            </div>
-            <div class="col-md-2 col-sm-4 col-xs-6">
-                <a href="/besplatnaya-dostavka">
-                    <?= Html::img('/image/advantages/delivery.svg', [
-                        'class' => 'img center-block', 'height' => '120px',
-                        'onerror' => "this.src='delivery.png'"
-                        ]) ?>
-                    <p class="text-center">
-                        Бесплатная<br/>  доставка
-                    </p>
-                </a>
-            </div>
-            <div class="col-md-2 col-sm-4 col-xs-6">
-                <a href="/oborudovanie-v-rassrochku">
-                    <?= Html::img('/image/advantages/pay.svg', [
-                        'class' => 'img center-block', 'height' => '120px',
-                        'onerror' => "this.src='pay.png'"
-                        ]) ?>
-                    <p class="text-center">
-                        Оборудование в<br/>  рассрочку
+            <?php foreach ($list as $item): ?>
+                <div class="col-xs-12 col-sm-6 col-md-3 item">
+                    <a href=<?= $item['url'] != Yii::$app->request->url ? $item['url'] : 'javascript:void(0)' ?>>
 
-                    </p>
-                </a>
-            </div>
-            <div class="col-md-2 col-sm-4 col-xs-6">
-                <a href="/ves-spekt-montazhnyh-uslug">
-                    <?= Html::img('/image/advantages/ingeener.svg', [
-                        'class' => 'img center-block', 'height' => '120px',
-                        'onerror' => "this.src='ingeener.png'"]) ?>
-                    <p class="text-center">
-                        Весь спектр<br/>  монтажных услуг
-                    </p>
-                </a>
-            </div>
-            <div class="col-md-2 col-sm-4 col-xs-6">
-                <a href="/ofis-i-sklad-v-odnom-meste">
-                    <?= Html::img('/image/advantages/place.svg', [
-                        'class' => 'img center-block', 'height' => '120px',
-                        'onerror' => "this.src='place.png'"]) ?>
-                    <p class="text-center">
-                        Офис и склад<br/>  в одном месте
-                    </p>
-                </a>
-            </div>
+                        <?=
+                        Html::tag('div', '', [
+                            'class' => 'item-image center-block',
+                            'style' => "background: url('" . $item['image'] . "') center center no-repeat",
+                        ])
+                        ?>
+                        <p class="text-center title">
+                            <?= $item['name'] ?>
+                        </p>
+                    </a>
+                </div>
+                <?php
+            endforeach;
+            ?>
+
         </div>
     </div>
 </div>

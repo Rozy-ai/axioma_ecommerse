@@ -27,7 +27,8 @@ endforeach;
 echo \Gevman\OwlCarousel\OwlCarousel::widget([
     'elements' => $elements,
     'config' => [
-        'items' => 2,
+        'items' => 3,
+        'center' => true,
         'lazyLoad' => true,
         'loop' => true,
         'dots' => true,

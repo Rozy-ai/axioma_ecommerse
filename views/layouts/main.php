@@ -47,21 +47,41 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                     'class' => 'navbar-inverse navbar-fixed-top main-navbar',
                 ],
             ]);
-            echo Nav::widget([
-                'options' => ['class' => 'navbar-nav navbar-left'],
-                'encodeLabels' => false,
-                'items' => Menu::getTopItems()['top'],
-            ]);
-            echo Nav::widget([
-                'options' => ['class' => 'navbar-nav navbar-right'],
-                'encodeLabels' => false,
-                'items' => Menu::getTopItems()['bottom'],
-            ]);
+            ?>
+
+            <div class="row">
+
+                <div class="col-xs-12 col-md-7">
+
+                    <?php
+                    echo Nav::widget([
+                        'options' => ['class' => 'navbar-nav navbar-left'],
+                        'encodeLabels' => false,
+                        'items' => Menu::getTopItems()['top'],
+                    ]);
+                    ?>
+
+                </div>
+                <div class="col-xs-12 col-md-3 popup-search text-right">
+                    <?php echo app\modules\search\widgets\Search::widget(); ?>
+                </div>
+                <div class="col-xs-12 col-md-2">
+                    <?php
+                    echo Nav::widget([
+                        'options' => ['class' => 'navbar-nav navbar-right'],
+                        'encodeLabels' => false,
+                        'items' => Menu::getTopItems()['bottom'],
+                    ]);
+                    ?>
+                </div>
+            </div>
+
+            <?php
             NavBar::end();
             ?>
 
             <div class="header">
-                <div class="container">
+                <div class="container middle-line">
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-2 col-lg-3 logo-wrap">
                             <?php
@@ -143,9 +163,21 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
 
                     </div>
                 </div>
+
+                <div class="bottom-menu">
+                    <div class="container">
+                        <?php
+                        echo Nav::widget([
+                            'options' => ['class' => 'navbar-nav navbar-left'],
+                            'encodeLabels' => false,
+                            'items' => Menu::getBottomMenu(),
+                        ]);
+                        ?>
+                    </div>
+                </div>
             </div>
 
-            <?= app\modules\search\widgets\Search::widget() ?>
+
 
             <?php if ($isHome): ?>
                 <div class="container-fluid">
@@ -182,14 +214,14 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                         </div>
 
                         <!--<div class="col-xs-12 col-sm-8 thanks">-->
-                        <?php // app\modules\thanks\widgets\ThanksList::widget();  ?>
+                        <?php // app\modules\thanks\widgets\ThanksList::widget();     ?>
                         <!--</div>-->
                         <!--<div class="col-xs-12 col-sm-4 contact-form">-->
-                        <?php // app\modules\forms\widgets\Contact::widget();  ?>
+                        <?php // app\modules\forms\widgets\Contact::widget();    ?>
                         <!--</div>-->
 
                         <!--<div class="slider">-->
-                        <?php //\app\modules\slider\widgets\MainSlider::widget();  ?>
+                        <?php //\app\modules\slider\widgets\MainSlider::widget();     ?>
                         <!--</                                            div>-->
                         <!--</div>-->
                     </div>

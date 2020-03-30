@@ -1,0 +1,47 @@
+@import "../bootstrap/variables.less";
+
+.advantages-menu {
+
+    padding: 4rem 0;
+
+    .advantages-wrap {
+        .item{
+
+            a {
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+
+                &[href="javascript:void(0)"] {
+                    color: @brand-primary;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+
+                }
+            }
+
+
+
+            min-height: 18rem;
+            margin-bottom: 3rem;
+
+            .item-image {
+                width: 11rem;
+                height: 11rem;
+                background-size: contain !important;
+            }
+
+            .title {
+                margin-top: 1rem;
+                font-weight: 600;
+                font-size: 1.6rem;
+
+
+            }
+        }
+    }   
+}

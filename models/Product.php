@@ -31,6 +31,9 @@ use Yii;
  * @property int $recomended_sort Сортировка рекомендуемых(обратная)
  * @property int $in_stock На складе
  * @property int $krat Кратность для заказа
+ * @property int $type Тип
+ * @property int $is_new Новинка
+ * @property int $is_popular Популярное
  *
  * @property Category $category
  * @property ProductImage[] $productImages
@@ -54,7 +57,7 @@ class Product extends \app\models\CustomAR
     {
         return [
             [['category_id', 'article', 'url'], 'required'],
-            [['category_id', 'ord', 'is_enable', 'created_at', 'updated_at', 'product_type', 'show_in_recomended', 'recomended_sort', 'in_stock', 'krat'], 'integer'],
+            [['category_id', 'ord', 'is_enable', 'created_at', 'updated_at', 'product_type', 'show_in_recomended', 'recomended_sort', 'in_stock', 'krat', 'type', 'is_new', 'is_popular'], 'integer'],
             [['price'], 'number'],
             [['content_info', 'content_description', 'content_characteristics', 'content_install'], 'string'],
             [['cats', 'article', 'url'], 'string', 'max' => 255],
@@ -95,6 +98,9 @@ class Product extends \app\models\CustomAR
             'recomended_sort' => 'Сортировка рекомендуемых(обратная)',
             'in_stock' => 'На складе',
             'krat' => 'Кратность для заказа',
+            'type' => 'Тип',
+            'is_new' => 'Новинка',
+            'is_popular' => 'Популярное',
         ];
     }
 
