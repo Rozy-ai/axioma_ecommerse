@@ -12,6 +12,8 @@ use app\modules\category\models\Category;
  */
 class DefaultController extends Controller {
 
+    const PAGE_SIZE = 6;
+
     public function actionIndex() {
 
         return $this->render('index', [
@@ -31,6 +33,9 @@ class DefaultController extends Controller {
             throw new HttpException(404, ' Страница не найдена! ');
 
         $search = new \app\modules\category\models\ProductSearch();
+        $search->view = 'list';
+        $search->page_size = self::PAGE_SIZE;
+
         $search->load(Yii::$app->request->get());
 
         Yii::$app->view->title = $category->title ? $category->title : $category->header;
@@ -44,7 +49,12 @@ class DefaultController extends Controller {
         if ($parent)
             $parent = Category::getByUri($parent);
 
-        $childs = Category::find()->where(['parent_id' => $category->id])->all();
+
+        $childs = Category::find()
+                ->where(['parent_id' => $category->id])
+//                ->where($where)
+//                ->andWhere($andwhere)
+                ->all();
 
 //        $products = $category->getProducts();
 //        print_r($products);
@@ -71,10 +81,24 @@ class DefaultController extends Controller {
 //            ],
 //        ]);
 
+        $where = ['category_id' => $category->id, 'is_enable' => 1];
+
+        $andwhere = [];
+
+        if ($search->is_akust && !$search->is_radio)
+            $andwhere['type'] = 1;
+
+        if (!$search->is_akust && $search->is_radio)
+            $andwhere['type'] = 2;
+
+        if ($search->is_akust && $search->is_radio)
+            $andwhere['type'] = [1, 2];
+
 
         $query = \app\modules\catalog\models\Catalog::find()
-                ->where(['category_id' => $category->id, 'is_enable' => 1])
+                ->where($where)
                 ->orWhere(['like', 'cats', "%{$category->id}%", false])
+                ->andWhere($andwhere)
 //                        ->orWhere(['category_id' => $this->childsId, 'is_enable' => 1])
 //                ->orderBy($sort->orders)
         ;
@@ -85,7 +109,7 @@ class DefaultController extends Controller {
             'query' => $query,
         ]);
 
-//        $dataProvider->pagination->pageSize = 5;
+        $dataProvider->pagination->pageSize = $search->page_size;
 
 
         return $this->render('get', [

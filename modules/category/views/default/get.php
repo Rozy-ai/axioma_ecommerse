@@ -15,31 +15,22 @@ if ($parent)
 foreach ($category->getBreadCrumbs() as $item)
     $this->params['breadcrumbs'][] = $item;
 
-Pjax::begin();
+//Pjax::begin();
 
 $this->params['breadcrumbs'][] = $category->header;
 ?>
 <div class="product_item">
 
-    <div class="row">
+    <h1><?= $category->header ?> </h1>
 
-        <div class="col-xs-12 col-sm-4 category-left-menu">
-            <?php // \app\modules\category\widgets\MenuCategory::widget(['active_id' => $category->id]); ?>
-        </div>
-        <div class="col-xs-12">
-            <?php echo $this->render('_search', ['model' => $search]) ?>
-        </div>
-        <div class="col-xs-12">
+    <?php echo $this->render('_search', ['model' => $search]) ?>
 
-            <div class="row">
-                <h1><?= $category->header ?> </h1>
-            </div>
 
-            <?php
-            echo ListView::widget([
-                'dataProvider' => $dataProvider,
-                'itemOptions' => ['class' => 'item'],
-                'itemView' => '@app/modules/products/views/default/product-cart',
+    <?php
+    echo ListView::widget([
+        'dataProvider' => $dataProvider,
+        'itemOptions' => ['class' => 'item'],
+        'itemView' => $search->view == 'list' ? '@app/modules/products/views/default/product-cart' : '@app/modules/products/views/default/product-cart-grid',
 //                'pager' => [
 //                    'class' => ScrollPager::className(),
 //                    'triggerText' => '',
@@ -48,15 +39,14 @@ $this->params['breadcrumbs'][] = $category->header;
 //                    'enabledExtensions' => [ScrollPager::EXTENSION_SPINNER, ScrollPager::EXTENSION_NONE_LEFT, ScrollPager::EXTENSION_PAGING],
 //                    'eventOnScroll' => 'function() {$(\'.ias-trigger a\').trigger(\'click\')}',
 //                ],
-                'summary' => ''
-            ]);
-            ?>
+        'summary' => ''
+    ]);
+    ?>
 
-            <?= $category->content ?>
-        </div>
-    </div>
+    <?= $category->content ?>
+
 </div>
 
 <?php
-Pjax::end();
+//Pjax::end();
 
