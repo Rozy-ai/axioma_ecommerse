@@ -72,7 +72,7 @@ use kartik\popover\PopoverX;
 
             <div class="" role="group">
                 <?=
-                Html::button('Добавить в корзину', ['class' => 'btn btn-default',
+                Html::button('Добавить в корзину', ['class' => 'btn btn-primary',
                     'onclick' => "ym(53040199, 'reachGoal', 'add-cart'); Cart.AddCart()",
 //                    'onclick' => "Cart.AddCart()",
                 ])

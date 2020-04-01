@@ -12,7 +12,7 @@ $this->registerJsFile('@web/js/form/one_click.js', ['depends' => ['app\assets\Ap
 Modal::begin([
     'id' => 'oneclick-form-modal',
     'header' => '<p class="h2">Купить в 1 клик</p>',
-    'toggleButton' => ['label' => !$type_small ? 'Купить в один клик' : 'В 1 клик', 'class' => 'btn btn-default'],
+    'toggleButton' => ['label' => 'Купить в один клик', 'class' => 'btn btn-default'],
 ]);
 ?>
 
@@ -38,7 +38,7 @@ $form->field($model, 'personal_accept')->checkbox()->label('Я даю согла
     <?=
     Html::submitButton('Отправить', ['class' => 'btn btn-primary',
         'onClick' => "ym(53040199, 'reachGoal', 'one-click');"
-    ])
+        ])
     ?>
 </div>
 

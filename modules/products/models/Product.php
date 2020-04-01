@@ -148,7 +148,7 @@ class Product extends \app\models\Product {
 
         return $this->price ?
                 Yii::$app->formatter->asCurrency($this->price) :
-                ' по запросу';
+                'По запросу';
     }
 
     public function getCategoryLink() {

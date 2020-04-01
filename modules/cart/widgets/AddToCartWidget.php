@@ -10,6 +10,7 @@ class AddToCartWidget extends Widget {
 
     public $product_id;
     public $type;
+    public $small = false;
 
     public function init() {
 
@@ -23,7 +24,10 @@ class AddToCartWidget extends Widget {
         if ($this->type == 'full')
             return $this->render('add_to_cart_widget_full', ['model' => $model]);
         else
-            return $this->render('add_to_cart_widget_small', ['model' => $model]);
+            return $this->render('add_to_cart_widget_small', [
+                        'model' => $model,
+                        'small' => $this->small,
+            ]);
     }
 
 }

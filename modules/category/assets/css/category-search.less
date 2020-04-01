@@ -2,6 +2,8 @@
 
 .category-search {
 
+    margin-bottom: 2rem;
+
     #radio_button_productsearch-view {
 
         .btn-success, .btn-default  {
@@ -21,8 +23,111 @@
         }
 
     }
-    
+
     input, label, select {
         cursor: pointer;
+    }
+
+    label {
+        font-weight: 300;
+        margin-top: .8rem;
+    }
+
+    #radio_button_productsearch-view {
+
+        .btn:hover {
+            background-color: #3D3D3D;
+            color: white;
+        }
+
+        .btn-success {
+            background-color: #3D3D3D;
+
+        }
+    }
+
+}
+
+.product-cart-grid {
+
+    .panel {
+        border: 0px solid #ccc;
+
+        .image-wrap, .product-description-wrap {
+            border: inherit;
+            border: 0px solid #ccc;
+
+            .image {
+                min-height: 22rem;
+            }
+
+            .h4 {
+                a {
+                    text-decoration: underline;
+                    text-decoration-color: @brand-primary;
+                    line-height: 2.4rem;
+                }
+            }
+        }
+
+        .product-description-wrap {
+            min-height: 14rem;
+
+            .stock {
+                color: @gray;
+            }
+
+            .product-price {
+
+                font-weight: 400;
+
+                span {
+                    font-size: 2rem;
+                    font-weight: 700;
+                }
+            }
+
+
+        }
+
+        .panel-heading {
+            border: 1px solid #ccc;
+
+            .fa-check-circle {
+                color:  @brand-primary;
+            }
+        }
+        .panel-footer {
+            background: inherit;
+            padding: 0 15px;
+            border: 0px solid white;
+
+            .cart-add {
+
+                .col-xs-12 {
+
+                    padding-left: 0;
+                    padding-right: 0;
+                    margin-left: -1.5rem;
+                    margin-right: -1.5rem;
+
+                    .btn-group {
+
+                        width: 100%;
+
+                        .btn-primary {
+                            width: 70%;
+                        }
+                        .btn-default {
+                            width: 30%;
+                        }
+                    }
+                }
+            }
+        }
+
+        .fa-clock {
+            color: @yellow;
+        }
     }
 }

@@ -4,9 +4,9 @@ use yii\bootstrap\Html;
 use yii\helpers\Url;
 ?>
 
-<div class="col-xs-12 col-sm-4 product-cart">
+<div class="col-xs-12 col-sm-4 product-cart product-cart-grid">
 
-    <div class="panel panel-default">
+    <div class="panel">
         <div class="panel-heading">
             <div class=" image-wrap">
                 <div class="image" data-url="<?= Url::to('/catalog/' . $model->url) ?>"
@@ -22,19 +22,18 @@ use yii\helpers\Url;
 
             <div class="product-description-wrap">
                 <div class="h4">
-                    <?= Html::a($model->header, ['/catalog/' . $model->url]) ?>
+                    <?= Html::a($model->header, ['/catalog/' . $model->url], ['class' => '']) ?>
                     <?php //  $model->ord?>
                 </div>
-                <div class="description">
-                    <?= Html::tag('p', $model->content_info) ?>
+                <div class="stock">
+                    <?php if ($model->in_stock): ?>
+                        <span class="in_stock"><i class="fa fa-check-circle" aria-hidden="true"></i> Товар в наличии </span>
+                    <?php else: ?>
+                        <span class="in_stock"><i class="fa fa-clock" aria-hidden="true"></i> Доступно под заказ</span>
+                    <?php endif; ?>
                 </div>
                 <div class="product-price">
-                    <span>Цена:</span> <?= $model->showPrice ?>
-                    <?php if ($model->in_stock): ?>
-                        <span class="pull-right in_stock">в наличии <i class="fa fa-check-square" aria-hidden="true"></i></span>
-                    <?php else: ?>
-                        <span class="pull-right in_stock">под заказ <i style="color: black" class="fas fa-mobile-alt"></i></span>
-                    <?php endif; ?>
+                    <span>ЦЕНА:</span> <?= $model->showPrice ?>
                 </div>
             </div>
 
@@ -44,6 +43,7 @@ use yii\helpers\Url;
             \app\modules\cart\widgets\AddToCartWidget::widget([
                 'product_id' => $model->id,
                 'type' => 'small',
+                'small' => true,
             ])
             ?>
         </div>

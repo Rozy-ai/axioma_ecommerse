@@ -24,4 +24,14 @@ $('#productsearch-view').change(function () {
         $("#category-search").submit();
 })
 
+$('#productsearch-is_radio').change(function () {
+//    console.log('change');
+        $("#category-search").submit();
+})
+
+$('#productsearch-is_akust').change(function () {
+//    console.log('change');
+        $("#category-search").submit();
+})
+
 

@@ -604,7 +604,7 @@ h1 {
     a {
         text-decoration: underline;
     }
-    
+
     .breadcrumb {
         margin-top: 2rem;
     }
@@ -1786,3 +1786,27 @@ input[type='number'] {
 .btn:hover, .btn:focus, .btn.focus {
     color: @brand-primary;
 }    
+
+.pagination {
+    li {
+
+
+
+        a,span { 
+            margin-left: .4rem;
+            background-color: #EBEBEB !important;
+            font-size: 1.8rem;
+            border-radius: 0;
+            border-bottom-right-radius: 0 !important;
+            border-top-right-radius: 0 !important;
+            border-bottom-left-radius: 0 !important;
+            border-top-left-radius: 0 !important;
+        }
+
+        &.active {
+            a {
+                background-color:@brand-primary !important;
+            }
+        }
+    }
+}

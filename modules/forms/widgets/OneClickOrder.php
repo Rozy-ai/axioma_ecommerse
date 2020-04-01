@@ -10,6 +10,7 @@ use yii\helpers\Html;
 class OneClickOrder extends Widget {
 
     public $product_id;
+    public $type_small = false;
 
     public function init() {
 
@@ -25,6 +26,7 @@ class OneClickOrder extends Widget {
         return $this->render('one_click_order', [
                     'model' => $model,
                     'product' => $product,
+                    'type_small' => $this->type_small,
         ]);
     }
 

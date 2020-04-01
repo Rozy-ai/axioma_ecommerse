@@ -1,8 +1,10 @@
 <?php
 
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
+//use yii\widgets\ActiveForm;
 use webtoolsnz\widgets\RadioButtonGroup;
+use kartik\checkbox\CheckboxX;
+use kartik\form\ActiveForm;
 
 //'@app/modules/category/assets/css/category-search.css'
 
@@ -14,7 +16,7 @@ $this->registerCss($this->render('./../../assets/css/category-search.css'));
     <?php
     $form = ActiveForm::begin([
                 'action' => Yii::$app->request->url,
-                'method' => 'get',
+                'method' => 'post',
                 'id' => 'category-search',
     ]);
     ?>
@@ -24,16 +26,39 @@ $this->registerCss($this->render('./../../assets/css/category-search.css'));
             <div class="row">
                 <div class="col-xs-6">
                     <?=
-                    $form->field($model, 'is_akust')->checkbox([
-                        'onClick' => '$("#category-search").submit()',
-                    ])
+                    $form->field($model, 'is_akust')->widget(CheckboxX::classname(), [
+                        'initInputType' => CheckboxX::INPUT_CHECKBOX,
+                        'pluginOptions' => [
+                            'threeState' => false,
+//                            'size' => 'sm',
+                        ],
+                        'labelSettings' => [
+                            'position' => CheckboxX::LABEL_LEFT
+                        ],
+                        'pluginEvents' => [
+//                            'click' => '$("#category-search").submit()',
+//                            "change" => "function() { GruzchikiCalc()}",
+                        ],
+                    ])->label(false)
                     ?>
+
                 </div>
                 <div class="col-xs-6">
                     <?=
-                    $form->field($model, 'is_radio')->checkbox([
-                        'onClick' => '$("#category-search").submit()',
-                    ])
+                    $form->field($model, 'is_radio')->widget(CheckboxX::classname(), [
+                        'initInputType' => CheckboxX::INPUT_CHECKBOX,
+                        'pluginOptions' => [
+                            'threeState' => false,
+//                            'size' => 'sm',
+                        ],
+                        'labelSettings' => [
+                            'position' => CheckboxX::LABEL_LEFT
+                        ],
+                        'pluginEvents' => [
+//                            'click' => '$("#category-search").submit()',
+//                            "change" => "function() { GruzchikiCalc()}",
+                        ],
+                    ])->label(false)
                     ?>
                 </div>
             </div>
@@ -68,10 +93,6 @@ $this->registerCss($this->render('./../../assets/css/category-search.css'));
                 'items' => [
                     'list' => '<i class="fa fa-th-list" aria-hidden="true"></i>',
                     'grid' => '<i class="fa fa-th-large" aria-hidden="true"></i>',
-                ],
-                'itemOptions' => [
-                    'onClick' => '$("#category-search").submit()',
-                    'class' => 'test',
                 ],
             ])->label(false);
             ?>

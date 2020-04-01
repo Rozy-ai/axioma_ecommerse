@@ -15,7 +15,7 @@ if ($parent)
 foreach ($category->getBreadCrumbs() as $item)
     $this->params['breadcrumbs'][] = $item;
 
-//Pjax::begin();
+//Pjax::begin(['id' => 'some-id', 'clientOptions' => ['method' => 'POST']]);
 
 $this->params['breadcrumbs'][] = $category->header;
 ?>
@@ -39,11 +39,15 @@ $this->params['breadcrumbs'][] = $category->header;
 //                    'enabledExtensions' => [ScrollPager::EXTENSION_SPINNER, ScrollPager::EXTENSION_NONE_LEFT, ScrollPager::EXTENSION_PAGING],
 //                    'eventOnScroll' => 'function() {$(\'.ias-trigger a\').trigger(\'click\')}',
 //                ],
-        'summary' => ''
+        'summary' => '',
+        'layout' => '{summary}{items}<div class="text-center">{pager}</div>'
     ]);
     ?>
 
     <?= $category->content ?>
+
+    <?= $this->render('@app/views/site/_about') ?>
+    <?= $this->render('@app/views/site/_contact_form') ?>
 
 </div>
 

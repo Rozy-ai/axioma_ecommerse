@@ -36,7 +36,7 @@ class DefaultController extends Controller {
         $search->view = 'list';
         $search->page_size = self::PAGE_SIZE;
 
-        $search->load(Yii::$app->request->get());
+        $search->load(Yii::$app->request->post());
 
         Yii::$app->view->title = $category->title ? $category->title : $category->header;
 
