@@ -37,7 +37,6 @@
         "kv4nt/yii2-owl-carousel2": "*",
         "kartik-v/yii2-editable": "dev-master",
         "kop/yii2-scroll-pager": "dev-master",
-        "webtoolsnz/yii2-widgets": "^0.3.5",
         "phpnt/yii2-icheck": "*",
         "kartik-v/yii2-checkbox-x": "dev-master"
     },
