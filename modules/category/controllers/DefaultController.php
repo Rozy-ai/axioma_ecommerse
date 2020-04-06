@@ -12,7 +12,7 @@ use app\modules\category\models\Category;
  */
 class DefaultController extends Controller {
 
-    const PAGE_SIZE = 6;
+    const PAGE_SIZE = 12;
 
     public function actionIndex() {
 
@@ -33,7 +33,7 @@ class DefaultController extends Controller {
             throw new HttpException(404, ' Страница не найдена! ');
 
         $search = new \app\modules\category\models\ProductSearch();
-        $search->view = 'list';
+        $search->view = 'grid';
         $search->page_size = self::PAGE_SIZE;
 
         $search->load(Yii::$app->request->post());

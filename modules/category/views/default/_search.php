@@ -64,9 +64,12 @@ $this->registerCss($this->render('./../../assets/css/category-search.css'));
             </div>
 
         </div>
-        <div class="col-xs-12 col-sm-5">
+        <div class="col-xs-12 col-sm-6">
 
             <div class="row">
+                <div class="col-xs-6">
+
+                </div>
                 <div class="col-xs-6">
                     <?=
                             $form->field($model, 'search')
@@ -75,10 +78,8 @@ $this->registerCss($this->render('./../../assets/css/category-search.css'));
                                         'onChange' => '$("#category-search").submit()',
                             ])->label(false)
                     ?>
-                </div>
-                <div class="col-xs-6">
-                    <?=
-                            $form->field($model, 'page_size')
+                    <?php
+                    $form->field($model, 'page_size')
                             ->dropDownList($model::_SHOW, [
                                 'onChange' => '$("#category-search").submit()',
                             ])->label(false)
@@ -87,12 +88,12 @@ $this->registerCss($this->render('./../../assets/css/category-search.css'));
             </div>
 
         </div>
-        <div class="col-xs-12 col-sm-1">
+        <div class="col-xs-12 col-sm-1 hidden">
             <?=
             $form->field($model, 'view')->widget(RadioButtonGroup::class, [
                 'items' => [
-                    'list' => '<i class="fa fa-th-list" aria-hidden="true"></i>',
                     'grid' => '<i class="fa fa-th-large" aria-hidden="true"></i>',
+                    'list' => '<i class="fa fa-th-list" aria-hidden="true"></i>',
                 ],
             ])->label(false);
             ?>

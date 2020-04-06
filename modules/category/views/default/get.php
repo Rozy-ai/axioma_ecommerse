@@ -25,12 +25,13 @@ $this->params['breadcrumbs'][] = $category->header;
 
     <?php echo $this->render('_search', ['model' => $search]) ?>
 
-
-    <?php
-    echo ListView::widget([
-        'dataProvider' => $dataProvider,
-        'itemOptions' => ['class' => 'item'],
-        'itemView' => $search->view == 'list' ? '@app/modules/products/views/default/product-cart' : '@app/modules/products/views/default/product-cart-grid',
+    <div class="product-list">
+        <?php
+        echo ListView::widget([
+            'dataProvider' => $dataProvider,
+            'options' => ['class' => "row"],
+            'itemOptions' => ['class' => 'item'],
+            'itemView' => $search->view == 'list' ? '@app/modules/products/views/default/product-cart' : '@app/modules/products/views/default/product-cart-grid',
 //                'pager' => [
 //                    'class' => ScrollPager::className(),
 //                    'triggerText' => '',
@@ -39,11 +40,11 @@ $this->params['breadcrumbs'][] = $category->header;
 //                    'enabledExtensions' => [ScrollPager::EXTENSION_SPINNER, ScrollPager::EXTENSION_NONE_LEFT, ScrollPager::EXTENSION_PAGING],
 //                    'eventOnScroll' => 'function() {$(\'.ias-trigger a\').trigger(\'click\')}',
 //                ],
-        'summary' => '',
-        'layout' => '{summary}{items}<div class="text-center">{pager}</div>'
-    ]);
-    ?>
-
+            'summary' => '',
+            'layout' => '{summary}{items}<div class="text-center col-xs-12">{pager}</div>'
+        ]);
+        ?>
+    </div>
     <?= $category->content ?>
 
     <?= $this->render('@app/views/site/_about') ?>
