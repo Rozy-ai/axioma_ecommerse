@@ -74,30 +74,35 @@
             }
         }
 
-        .product-description-wrap {
-            min-height: 14rem;
+        /*.product-description-wrap {*/
+        /*min-height: 14rem;*/
 
-            .stock {
-                color: @gray;
-            }
-
-            .product-price {
-
-                font-weight: 400;
-
-                span {
-                    font-size: 2rem;
-                    font-weight: 700;
-                }
-            }
-
-
+        .stock {
+            color: @gray;
         }
+
+        .product-price {
+
+            font-weight: 400;
+
+            span {
+                font-size: 2rem;
+                font-weight: 700;
+            }
+        }
+
+
+        /*}*/
 
         .panel-heading {
             border: 1px solid #ccc;
 
-            min-height: 35rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+
+            min-height: 40rem;
 
             .fa-check-circle {
                 color:  @brand-primary;
@@ -126,6 +131,9 @@
                     }
                     .btn-default {
                         width: 30%;
+                        margin-top: -1px;
+                        height: 39px;
+                        margin-left: 0;
                     }
                 }
             }

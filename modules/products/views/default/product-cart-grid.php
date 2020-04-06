@@ -20,22 +20,22 @@ use yii\helpers\Url;
 
             </div>
 
-            <div class="product-description-wrap">
-                <div class="h4">
-                    <?= Html::a($model->header, ['/catalog/' . $model->url], ['class' => '']) ?>
-                    <?php //  $model->ord?>
-                </div>
-                <div class="stock">
-                    <?php if ($model->in_stock): ?>
-                        <span class="in_stock"><i class="fa fa-check-circle" aria-hidden="true"></i> Товар в наличии </span>
-                    <?php else: ?>
-                        <span class="in_stock"><i class="fa fa-clock" aria-hidden="true"></i> Доступно под заказ</span>
-                    <?php endif; ?>
-                </div>
-                <div class="product-price">
-                    <span>ЦЕНА:</span> <?= $model->showPrice ?>
-                </div>
+            <!--<div class="product-description-wrap">-->
+            <div class="h4">
+                <?= Html::a($model->header, ['/catalog/' . $model->url], ['class' => '']) ?>
+                <?php //  $model->ord?>
             </div>
+            <div class="stock">
+                <?php if ($model->in_stock): ?>
+                    <span class="in_stock"><i class="fa fa-check-circle" aria-hidden="true"></i> Товар в наличии </span>
+                <?php else: ?>
+                    <span class="in_stock"><i class="fa fa-clock" aria-hidden="true"></i> Доступно под заказ</span>
+                <?php endif; ?>
+            </div>
+            <div class="product-price">
+                <span>ЦЕНА:</span> <?= $model->showPrice ?>
+            </div>
+            <!--</div>-->
 
         </div>
         <div class="panel-footer">
