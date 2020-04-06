@@ -65,13 +65,7 @@
                 min-height: 16rem;
             }
 
-            .h4 {
-                a {
-                    text-decoration: underline;
-                    text-decoration-color: @brand-primary;
-                    line-height: 2.4rem;
-                }
-            }
+
         }
 
         /*.product-description-wrap {*/
@@ -95,23 +89,45 @@
         /*}*/
 
         .panel-heading {
-            border: 1px solid #ccc;
+            border-top: 1px solid #ccc;
+            border-left: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+
+            .h4 {
+                a {
+                    /*text-decoration: underline;*/
+                    text-decoration-color:darken( @brand-primary, 20%);
+                    font-size: 1.7rem;
+                    font-weight: 600;
+                    letter-spacing: 1px;
+                }
+            }
 
             display: flex;
             flex-direction: column;
             justify-content: space-between;
 
 
-            min-height: 40rem;
+            min-height: 29rem;
+
+
+        }
+
+        .panel-body {
+            border-left: 1px solid #ccc;
+            border-right: 1px solid #ccc;
 
             .fa-check-circle {
                 color:  @brand-primary;
             }
         }
+
         .panel-footer {
             background: inherit;
             padding: 0 15px;
             border: 0px solid white;
+
+
 
             .cart-add {
 
@@ -127,7 +143,7 @@
                     width: 100%;
 
                     .btn-primary {
-                        width: 65%;
+                        width: 60%;
                         font-weight: 600;
                         /*text-indent: 3px;*/
                         letter-spacing: 1px;
@@ -136,11 +152,13 @@
                         background-color: darken(@brand-primary, 5%);
                     }
                     .btn-default {
-                        width: 35%;
+                        width: 38.5%;
                         margin-top: -1px;
                         height: 49px;
-                        margin-left: 0;
-                        font-weight: 300;
+                        margin-left: 1.5%;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        /*font-weight: 300;*/
                     }
                 }
             }
