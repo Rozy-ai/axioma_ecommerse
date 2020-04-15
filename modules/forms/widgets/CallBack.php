@@ -9,10 +9,7 @@ use yii\helpers\Html;
 
 class CallBack extends Widget {
 
-    public function init() {
-
-        parent::init();
-    }
+    public $in_footer = false;
 
     public function run() {
 
@@ -20,6 +17,7 @@ class CallBack extends Widget {
 
         return $this->render('call_back', [
                     'model' => $model,
+                    'in_footer' => $this->in_footer,
         ]);
     }
 

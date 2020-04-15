@@ -17,7 +17,7 @@ class SearchCategory extends Category {
      */
     public function rules() {
         return [
-            [['id', 'parent_id', 'parent_id2', 'ord', 'created_at', 'in_menu'], 'integer'],
+            [['id', 'parent_id', 'ord', 'created_at'], 'integer'],
             [['header', 'url', 'preview', 'content', 'image', 'seo_title', 'seo_description', 'seo_keywords'], 'safe'],
         ];
     }
@@ -60,9 +60,6 @@ class SearchCategory extends Category {
 //            'parent_id' => $this->parent_id,
 //            'ord' => $this->ord,
             'created_at' => $this->created_at,
-            'parent_id' => $this->parent_id,
-            'parent_id2' => $this->parent_id2,
-            'in_menu' => $this->in_menu,
         ]);
 
         $query->andFilterWhere(['like', 'header', $this->header])

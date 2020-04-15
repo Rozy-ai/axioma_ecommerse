@@ -14,6 +14,14 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'menu_type')->dropDownList($model->type) ?>
 
+    <?=
+    $form->field($model, 'parent_id')->widget(\kartik\select2\Select2::classname(), [
+        'data' => $model::__parentList(),
+        'options' => ['placeholder' => 'Родитель', 'multiple' => false],
+    ]);
+    ?>
+
+
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>

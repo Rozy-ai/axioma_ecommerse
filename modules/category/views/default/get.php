@@ -15,43 +15,69 @@ if ($parent)
 foreach ($category->getBreadCrumbs() as $item)
     $this->params['breadcrumbs'][] = $item;
 
-//Pjax::begin(['id' => 'some-id', 'clientOptions' => ['method' => 'POST']]);
+Pjax::begin();
 
 $this->params['breadcrumbs'][] = $category->header;
 ?>
 <div class="product_item">
 
-    <h1><?= $category->header ?> </h1>
+    <div class="row">
 
-    <?php echo $this->render('_search', ['model' => $search]) ?>
+        <div class="col-xs-12 col-sm-4 category-left-menu">
+            <?= \app\modules\category\widgets\MenuCategory::widget(['active_id' => $category->id]); ?>
+        </div>
+        <div class="col-xs-12 col-sm-8">
 
-    <div class="product-list">
-        <?php
-        echo ListView::widget([
-            'dataProvider' => $dataProvider,
-            'options' => ['class' => "row"],
-            'itemOptions' => ['class' => 'item'],
-            'itemView' => $search->view == 'list' ? '@app/modules/products/views/default/product-cart' : '@app/modules/products/views/default/product-cart-grid',
-//                'pager' => [
-//                    'class' => ScrollPager::className(),
-//                    'triggerText' => '',
-//                    'noneLeftTemplate' => '<div class="ias-noneleft article-preview__direction">{text}</div>',
-//                    'noneLeftText' => 'Нет больше новостей для отображения',
-//                    'enabledExtensions' => [ScrollPager::EXTENSION_SPINNER, ScrollPager::EXTENSION_NONE_LEFT, ScrollPager::EXTENSION_PAGING],
-//                    'eventOnScroll' => 'function() {$(\'.ias-trigger a\').trigger(\'click\')}',
-//                ],
-            'summary' => '',
-            'layout' => '{summary}{items}<div class="text-center col-xs-12">{pager}</div>'
-        ]);
-        ?>
+            <div class="row">
+                <h1><?= $category->header ?> </h1>
+            </div>
+
+            <div class="row">
+
+                <div class="">
+                    <p class="pull-left">
+                        <!--                        -->
+                    </p>
+                    <p class="pull-right">
+                        Сортировка : <?php echo $sort->link('price') . ' | ' . $sort->link('hit') . ' | ' . $sort->link('new') ?>
+                    </p>
+                </div>
+
+                <?php // if ($products) : ?>
+                <?php if (false) : ?>
+                    <div class="product-list col-xs-12">
+                        <?php
+                        foreach ($products as $product):
+                            echo $this->render('@app/modules/products/views/default/product-cart', ['model' => $product]);
+                        endforeach;
+                        ?>
+                    </div>
+                <?php endif; ?>
+
+            </div>
+
+            <?php
+            echo ListView::widget([
+                'dataProvider' => $dataProvider,
+                'itemOptions' => ['class' => 'item'],
+                'itemView' => '@app/modules/products/views/default/product-cart',
+                'pager' => [
+                    'class' => ScrollPager::className(),
+                    'triggerText' => '',
+                    'noneLeftTemplate' => '<div class="ias-noneleft article-preview__direction">{text}</div>',
+                    'noneLeftText' => 'Нет больше новостей для отображения',
+                    'enabledExtensions' => [ScrollPager::EXTENSION_SPINNER, ScrollPager::EXTENSION_NONE_LEFT, ScrollPager::EXTENSION_PAGING],
+                    'eventOnScroll' => 'function() {$(\'.ias-trigger a\').trigger(\'click\')}',
+                ],
+                'summary' => ''
+            ]);
+            ?>
+
+            <?= $category->content ?>
+        </div>
     </div>
-    <?= $category->content ?>
-
-    <?= $this->render('@app/views/site/_about') ?>
-    <?= $this->render('@app/views/site/_contact_form') ?>
-
 </div>
 
 <?php
-//Pjax::end();
+Pjax::end();
 

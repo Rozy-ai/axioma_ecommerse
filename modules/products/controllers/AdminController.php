@@ -10,6 +10,8 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use app\modules\products\models\ImportCSV;
 use yii\web\UploadedFile;
+use kartik\grid\EditableColumnAction;
+use yii\helpers\ArrayHelper;
 
 /**
  * AdminController implements the CRUD actions for Product model.
@@ -17,6 +19,7 @@ use yii\web\UploadedFile;
 class AdminController extends \app\controllers\AdminController {
 
     public function actions() {
+
         return [
             'image-upload' => [
                 'class' => 'vova07\imperavi\actions\UploadFileAction',
@@ -29,6 +32,22 @@ class AdminController extends \app\controllers\AdminController {
                 'path' => '@webroot/uploads/', // Или абсолютный путь к папке с изображениями.
 //                'type' => \vova07\imperavi\actions\GetAction::TYPE_IMAGES,
             ],
+            'edit-column' => [// identifier for your editable column action
+                'class' => EditableColumnAction::className(), // action class name
+                'modelClass' => Product::className(), // the model for the record being edited
+                'outputValue' => function ($model, $attribute, $key, $index) {
+                    return (int) $model->$attribute;      // return any custom output value if desired
+                },
+                'outputMessage' => function($model, $attribute, $key, $index) {
+                    return '';                                  // any custom error to return after model save
+                },
+                'showModelErrors' => true, // show model validation errors after save
+                'errorOptions' => ['header' => ''], // error summary HTML options
+//                'postOnly' => true,
+//                'ajaxOnly' => true,
+            // 'findModel' => function($id, $action) {},
+            // 'checkAccess' => function($action, $model) {}
+            ]
         ];
     }
 

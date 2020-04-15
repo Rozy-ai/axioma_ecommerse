@@ -15,7 +15,9 @@ class ThanksList extends Widget {
 
     public function run() {
 
-        $model = Thanks::find()->all();
+        $model = Thanks::find()
+                ->where(['is_enable' => 1])
+                ->all();
 
         return $this->render('thanks_list', ['model' => $model]);
     }

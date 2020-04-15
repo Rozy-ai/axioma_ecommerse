@@ -39,6 +39,7 @@ class AppAsset extends AssetBundle {
 //        '//use.fontawesome.com/2feef9962c.js',
         'css/jBox/jBox.min.js',
         'css/jBox/jBox.Notice.min.js',
+        'js/top_menu.js',
         'js/common.js',
     ];
     public $depends = [

@@ -46,9 +46,58 @@ $this->params['breadcrumbs'][] = $this->title;
         ['class' => 'yii\grid\SerialColumn'],
         'id',
         'article',
-        'category_id',
+//        'category',
         'header',
-        'price',
+        [
+            'class' => 'kartik\grid\EditableColumn',
+            'attribute' => 'category_id',
+            'format' => 'raw',
+            'editableOptions' => [
+//                'inputType' => \kartik\editable\Editable::INPUT_SELECT2,
+                'inputType' => \kartik\editable\Editable::INPUT_DROPDOWN_LIST,
+                'formOptions' => ['action' => ['/products/admin/edit-column']],
+                'data' => app\modules\category\models\Category::__getHeaders(),
+            ],
+            'value' => function($row) {
+                return $row->category->header;
+            },
+        ],
+        [
+            'class' => 'kartik\grid\EditableColumn',
+            'attribute' => 'fastcat_id',
+            'format' => 'raw',
+            'editableOptions' => [
+//                'inputType' => \kartik\editable\Editable::INPUT_SELECT2,
+                'inputType' => \kartik\editable\Editable::INPUT_DROPDOWN_LIST,
+                'formOptions' => ['action' => ['/products/admin/edit-column']],
+                'data' => app\modules\fast_category\models\FastCategory::__getHeaders(),
+            ],
+            'value' => function($row) {
+                return ($row->fastCat) ? $row->fastCat->header : '';
+            },
+        ],
+        [
+            'class' => 'kartik\grid\EditableColumn',
+            'attribute' => 'is_ip',
+            'format' => 'raw',
+            'editableOptions' => [
+//                'inputType' => \kartik\editable\Editable::INPUT_SELECT2,
+                'inputType' => \kartik\editable\Editable::INPUT_CHECKBOX,
+                'formOptions' => ['action' => ['/products/admin/edit-column']],
+            ],
+        ],
+        [
+            'class' => 'kartik\grid\EditableColumn',
+            'attribute' => 'is_tvi',
+            'format' => 'raw',
+            'editableOptions' => [
+//                'inputType' => \kartik\editable\Editable::INPUT_SELECT2,
+                'inputType' => \kartik\editable\Editable::INPUT_CHECKBOX,
+                'formOptions' => ['action' => ['/products/admin/edit-column']],
+                'data' => app\modules\fast_category\models\FastCategory::__getHeaders(),
+            ],
+        ],
+//        'price',
 //        'url:url',
 //        'ord',
 //        [
@@ -68,8 +117,8 @@ $this->params['breadcrumbs'][] = $this->title;
         //'content_characteristics:ntext',
         //'content_install:ntext',
         //'ord',
-        'title',
-        'description',
+//        'title',
+//        'description',
 //        'keywords',
         //'is_enable',
         //'created_at',

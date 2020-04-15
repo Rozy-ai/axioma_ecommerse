@@ -9,6 +9,7 @@ use Yii;
  *
  * @property int $id
  * @property int $category_id Категория
+ * @property int $fastcat_id Быстрая категория
  * @property string $cats Дополнительные категории
  * @property string $article Артикул
  * @property string $header Заголовок
@@ -31,9 +32,10 @@ use Yii;
  * @property int $recomended_sort Сортировка рекомендуемых(обратная)
  * @property int $in_stock На складе
  * @property int $krat Кратность для заказа
- * @property int $type Тип
- * @property int $is_new Новинка
- * @property int $is_popular Популярное
+ * @property int $is_akustika Акустомагнитные
+ * @property int $is_radio Радио
+ * @property int $is_ip IP
+ * @property int $is_tvi HD-TVI
  *
  * @property Category $category
  * @property ProductImage[] $productImages
@@ -56,8 +58,8 @@ class Product extends \app\models\CustomAR
     public function rules()
     {
         return [
-            [['category_id', 'article', 'url'], 'required'],
-            [['category_id', 'ord', 'is_enable', 'created_at', 'updated_at', 'product_type', 'show_in_recomended', 'recomended_sort', 'in_stock', 'krat', 'type', 'is_new', 'is_popular'], 'integer'],
+            [['category_id', 'fastcat_id', 'article', 'url'], 'required'],
+            [['category_id', 'fastcat_id', 'ord', 'is_enable', 'created_at', 'updated_at', 'product_type', 'show_in_recomended', 'recomended_sort', 'in_stock', 'krat', 'is_akustika', 'is_radio', 'is_ip', 'is_tvi'], 'integer'],
             [['price'], 'number'],
             [['content_info', 'content_description', 'content_characteristics', 'content_install'], 'string'],
             [['cats', 'article', 'url'], 'string', 'max' => 255],
@@ -76,6 +78,7 @@ class Product extends \app\models\CustomAR
         return [
             'id' => 'ID',
             'category_id' => 'Категория',
+            'fastcat_id' => 'Быстрая категория',
             'cats' => 'Дополнительные категории',
             'article' => 'Артикул',
             'header' => 'Заголовок',
@@ -98,9 +101,10 @@ class Product extends \app\models\CustomAR
             'recomended_sort' => 'Сортировка рекомендуемых(обратная)',
             'in_stock' => 'На складе',
             'krat' => 'Кратность для заказа',
-            'type' => 'Тип',
-            'is_new' => 'Новинка',
-            'is_popular' => 'Популярное',
+            'is_akustika' => 'Акустомагнитные',
+            'is_radio' => 'Радио',
+            'is_ip' => 'IP',
+            'is_tvi' => 'HD-TVI',
         ];
     }
 

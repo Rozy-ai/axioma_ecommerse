@@ -14,6 +14,7 @@ use Yii;
  * @property string $url
  * @property int $is_enable Включено
  * @property int $order Порядок
+ * @property int $parent_id Родитель
  */
 class Menu extends \app\models\CustomAR
 {
@@ -32,7 +33,7 @@ class Menu extends \app\models\CustomAR
     {
         return [
             [['menu_type', 'name'], 'required'],
-            [['menu_type', 'is_enable', 'order'], 'integer'],
+            [['menu_type', 'is_enable', 'order', 'parent_id'], 'integer'],
             [['name', 'title', 'url'], 'string', 'max' => 255],
         ];
     }
@@ -50,6 +51,7 @@ class Menu extends \app\models\CustomAR
             'url' => 'Url',
             'is_enable' => 'Включено',
             'order' => 'Порядок',
+            'parent_id' => 'Родитель',
         ];
     }
 }

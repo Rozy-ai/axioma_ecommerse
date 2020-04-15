@@ -6,15 +6,18 @@ use yii\bootstrap\Modal;
 use yii\widgets\MaskedInput;
 
 $this->registerJsFile('@web/js/form/callback.js', ['depends' => ['app\assets\AppAsset']]);
+
+if ($in_footer)
+    $label = ['label' => 'Заказать обратный звонок', 'class' => 'btn-link call-back'];
+else
+    $label = ['label' => 'Перезвоните мне', 'class' => 'btn btn-primary call-back'];
 ?>
 
 <?php
 Modal::begin([
     'id' => 'callback-form-modal',
     'header' => '<p class="h2 text-center">Заказать звонок</p>',
-    'toggleButton' => [
-        'label' => 'Перезвонить мне', 'class' => 'btn btn-primary call-back'
-    ],
+    'toggleButton' => $label,
     'class' => 'text-left'
 ]);
 ?>

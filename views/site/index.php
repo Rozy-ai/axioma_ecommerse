@@ -10,14 +10,7 @@ use yii\bootstrap\Html;
         <?= app\modules\slider\widgets\MainSlider::widget(); ?>
         <div class="container">
 
-            <div class="home-advantages">
-                <div class="container">
-                    <div class="advantages-wrap">
 
-                        <?php echo $this->render('@app/modules/content/views/get/_advanteges_menu'); ?>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -26,6 +19,17 @@ use yii\bootstrap\Html;
             <?= \app\modules\category\widgets\HomeCategory::widget() ?>
         </div>
     </div>
+
+    <div class="home-advantages">
+        <div class="container">
+            <div class="advantages-wrap">
+
+                <?php echo $this->render('@app/modules/content/views/get/_advanteges_menu'); ?>
+            </div>
+        </div>
+    </div>
+
+
 
     <div class="home-portfolio">
 

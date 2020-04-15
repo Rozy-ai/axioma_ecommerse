@@ -44,7 +44,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
             <?php
             NavBar::begin([
                 'options' => [
-                    'class' => 'navbar-inverse navbar-fixed-top main-navbar',
+                    'class' => 'navbar-inverse main-navbar',
                 ],
             ]);
             ?>
@@ -164,16 +164,24 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                     </div>
                 </div>
 
-                <div class="bottom-menu">
-                    <div class="container">
-                        <?php
-                        echo Nav::widget([
-                            'options' => ['class' => 'navbar-nav navbar-left'],
-                            'encodeLabels' => false,
-                            'items' => Menu::getBottomMenu(),
-                        ]);
-                        ?>
-                    </div>
+                <div id="top-line" class="bottom-menu">
+                    <?php
+                    NavBar::begin([
+                        'options' => [
+                            'class' => 'navbar',
+                        ],
+                    ]);
+                    ?>
+                    <?php
+                    echo Nav::widget([
+                        'options' => ['class' => 'navbar-nav navbar-left'],
+                        'encodeLabels' => false,
+                        'items' => Menu::getBottomMenu(),
+                    ]);
+                    ?>
+                    <?php
+                    NavBar::end();
+                    ?>
                 </div>
             </div>
 
@@ -206,7 +214,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                     </div>
                 </div>
 
-                <div class="thanks-contact-form">
+                <div class="viewed-goods-wrap">
                     <!--<div class="row">-->
                     <div class="container">
                         <div class="viewed-goods">
@@ -289,7 +297,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                 </a>
                                 <br/>
                             </p>
-                            <?= \app\modules\forms\widgets\CallBack::widget(); ?>
+                            <?= \app\modules\forms\widgets\CallBack::widget(['in_footer' => true]); ?>
                         </div>
                     </div>
                 </div>
@@ -310,7 +318,9 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                 </div>
             </div>
 
-            <a href="#" class="footer-up" onclick="$('html, body').stop().animate({scrollTop: 0}, 800, 'swing'); return false;">Наверх &nbsp; <i class="fa fa-angle-up" aria-hidden="true"></i></a>
+            <a href="#" class="footer-up" onclick="$('html, body').stop().animate({scrollTop: 0}, 800, 'swing'); return false;">
+                <?= Html::img('/image/arr_top.png', ['height' => 60]) ?>
+            </a>
 
         </footer>
 

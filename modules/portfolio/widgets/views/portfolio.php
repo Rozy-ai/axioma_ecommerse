@@ -35,8 +35,8 @@ echo \Gevman\OwlCarousel\OwlCarousel::widget([
         'nav' => true,
         'autoplay' => true,
         'navText' => [
-            "<img src='/image/_left.png'>",
-            "<img src='/image/_right.png'>"
+            Html::tag('div', '', ['class' => 'nav-arr nav-left']),
+            Html::tag('div', '', ['class' => 'nav-arr nav-right'])
         ]
     ,
     ]

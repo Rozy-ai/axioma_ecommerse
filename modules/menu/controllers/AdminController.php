@@ -47,6 +47,7 @@ class AdminController extends \app\controllers\AdminController {
      */
     public function actionCreate() {
         $model = new Menu();
+        $model->is_enable = 1;
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['index']);

@@ -55,6 +55,7 @@ use vova07\imperavi\Widget;
             <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
 
             <?= $form->field($model, 'keywords')->textInput(['maxlength' => true]) ?>
+            
 
             <div class="form-group">
                 <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>

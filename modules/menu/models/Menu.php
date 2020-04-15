@@ -5,6 +5,7 @@ namespace app\modules\menu\models;
 use Yii;
 use yii\bootstrap\Html;
 use app\modules\category\models\Category;
+use yii\helpers\ArrayHelper;
 
 class Menu extends \app\models\Menu {
 
@@ -13,6 +14,7 @@ class Menu extends \app\models\Menu {
         'Меню в футере 1',
         'Меню в футере 2',
         'Меню в футере 3',
+        'Быcтрые категории',
     ];
 
     public static function getType() {
@@ -57,10 +59,28 @@ class Menu extends \app\models\Menu {
 
     public static function getBottomMenu() {
 
-        $cat = Category::getTopMenu();
+        $model = self::find()->where([
+                            'is_enable' => 1,
+                            'menu_type' => 4,
+                            'parent_id' => NULL,
+                        ])
+//                        ->andWhere(['NOT', ['parent_id' => 1,]])
+                        ->orderBy(['order' => SORT_DESC])->all();
 
-        foreach ($cat as $item)
-            $result[] = ['label' => $item->header, 'url' => ['/category/' . $item->url]];
+        ;
+
+        foreach ($model as $item)
+            if (($childs = self::find()->where(['parent_id' => $item->id, 'is_enable' => 1])->all())) {
+
+                $_items = [];
+
+                foreach ($childs as $_child)
+                    $_items[] = ['label' => $_child->name, 'url' => ['/' . $_child->url]];
+
+                $result[] = ['label' => $item->name, 'url' => ['/' . $item->url], 'items' => $_items];
+            } else
+                $result[] = ['label' => $item->name, 'url' => ['/' . $item->url]];
+
 
         return $result;
     }
@@ -77,6 +97,11 @@ class Menu extends \app\models\Menu {
         endforeach;
 
         return $result;
+    }
+
+    public static function __parentList() {
+
+        return ArrayHelper::map(self::find()->all(), 'id', 'name');
     }
 
 }

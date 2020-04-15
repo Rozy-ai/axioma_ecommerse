@@ -12,8 +12,6 @@ use app\modules\category\models\Category;
  */
 class DefaultController extends Controller {
 
-    const PAGE_SIZE = 12;
-
     public function actionIndex() {
 
         return $this->render('index', [
@@ -32,12 +30,6 @@ class DefaultController extends Controller {
         if (!$category)
             throw new HttpException(404, ' Страница не найдена! ');
 
-        $search = new \app\modules\category\models\ProductSearch();
-        $search->view = 'grid';
-        $search->page_size = self::PAGE_SIZE;
-
-        $search->load(Yii::$app->request->post());
-
         Yii::$app->view->title = $category->title ? $category->title : $category->header;
 
         if ($category->description)
@@ -49,59 +41,40 @@ class DefaultController extends Controller {
         if ($parent)
             $parent = Category::getByUri($parent);
 
-
-        $childs = Category::find()
-                ->where(['parent_id' => $category->id])
-//                ->where($where)
-//                ->andWhere($andwhere)
-                ->all();
+        $childs = Category::find()->where(['parent_id' => $category->id])->all();
 
 //        $products = $category->getProducts();
 //        print_r($products);
-//        $sort = new \yii\data\Sort([
-//            'attributes' => [
-//                'price' => [
-//                    'asc' => ['price' => SORT_ASC],
-//                    'desc' => ['price' => SORT_DESC],
-//                    'default' => SORT_DESC,
-//                    'label' => 'Цена',
-//                ],
-//                'new' => [
-//                    'asc' => ['created_at' => SORT_ASC],
-//                    'desc' => ['created_at' => SORT_DESC],
-//                    'default' => SORT_DESC,
-//                    'label' => 'Новинки',
-//                ],
-//                'hit' => [
-//                    'asc' => ['created_at' => SORT_ASC],
-//                    'desc' => ['created_at' => SORT_DESC],
-//                    'default' => SORT_DESC,
-//                    'label' => 'Хиты',
-//                ],
-//            ],
-//        ]);
 
-        $where = ['category_id' => $category->id, 'is_enable' => 1];
-
-        $andwhere = [];
-
-        if ($search->is_akust && !$search->is_radio)
-            $andwhere['type'] = 1;
-
-        if (!$search->is_akust && $search->is_radio)
-            $andwhere['type'] = 2;
-
-        if ($search->is_akust && $search->is_radio)
-            $andwhere['type'] = [1, 2];
+        $sort = new \yii\data\Sort([
+            'attributes' => [
+                'price' => [
+                    'asc' => ['price' => SORT_ASC],
+                    'desc' => ['price' => SORT_DESC],
+                    'default' => SORT_DESC,
+                    'label' => 'Цена',
+                ],
+                'new' => [
+                    'asc' => ['created_at' => SORT_ASC],
+                    'desc' => ['created_at' => SORT_DESC],
+                    'default' => SORT_DESC,
+                    'label' => 'Новинки',
+                ],
+                'hit' => [
+                    'asc' => ['created_at' => SORT_ASC],
+                    'desc' => ['created_at' => SORT_DESC],
+                    'default' => SORT_DESC,
+                    'label' => 'Хиты',
+                ],
+            ],
+        ]);
 
 
         $query = \app\modules\catalog\models\Catalog::find()
-                ->where($where)
+                ->where(['category_id' => $category->id, 'is_enable' => 1])
                 ->orWhere(['like', 'cats', "%{$category->id}%", false])
-                ->andWhere($andwhere)
 //                        ->orWhere(['category_id' => $this->childsId, 'is_enable' => 1])
-//                ->orderBy($sort->orders)
-        ;
+                ->orderBy($sort->orders);
 
         // add conditions that should always apply here
 
@@ -109,17 +82,16 @@ class DefaultController extends Controller {
             'query' => $query,
         ]);
 
-        $dataProvider->pagination->pageSize = $search->page_size;
+        $dataProvider->pagination->pageSize = 5;
 
 
         return $this->render('get', [
                     'parent' => $parent,
                     'category' => $category,
                     'childs' => $childs,
-//                    'sort' => $sort,
+                    'sort' => $sort,
 //                    'products' => $products,
                     'dataProvider' => $dataProvider,
-                    'search' => $search,
         ]);
     }
 

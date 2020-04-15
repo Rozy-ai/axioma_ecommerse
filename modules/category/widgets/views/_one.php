@@ -5,7 +5,7 @@ use yii\helpers\Html;
 
 <div class="col-xs-12 col-sm-6 col-md-3 item-wrap">
 
-    <div class="panel panel-click" attr-link="/category/<?= $model->url ?>">
+    <div class="panel panel-click" attr-link="/fast-cat/<?= $model->url ?>">
         <div class="panel-heading grid-item"
              style="background: url(<?= $model->getImg(1200) ?>) top center no-repeat">
         </div>
@@ -17,7 +17,7 @@ use yii\helpers\Html;
 
 
             <?=
-            Html::a('В каталог', ['/category/' . $model->url]
+            Html::a('В каталог', ['/fast-cat/' . $model->url]
                     , ['class' => 'btn btn-primary btn-hover center-block'])
             ?>
         </div>

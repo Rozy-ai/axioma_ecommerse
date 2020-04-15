@@ -43,6 +43,7 @@ AdminAsset::register($this);
 //                            ['label' => 'Категории', 'url' => ['/category/admin/index']],
 //                            ['label' => 'Продукция', 'url' => ['/products/admin/index']],
 //                        ],],
+                    ['label' => 'Быстрые категории', 'url' => ['/fast_category/admin/index']],
                     ['label' => 'Категории', 'url' => ['/category/admin/index']],
                     ['label' => 'Продукция', 'url' => ['/products/admin/index']],
                     ['label' => 'Рекламные листовки', 'url' => ['/flyer/admin/index']],

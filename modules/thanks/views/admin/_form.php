@@ -25,6 +25,8 @@ use vova07\fileapi\Widget as FileAPI;
     )->label('Изображение в шапке');
     ?>
 
+    <?= $form->field($model, 'is_enable')->checkbox() ?>
+
 
     <div class="form-group">
         <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>

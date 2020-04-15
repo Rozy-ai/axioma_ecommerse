@@ -197,4 +197,8 @@ class Product extends \app\models\Product {
         return false;
     }
 
+    public function getFastCat() {
+        return $this->hasOne(\app\modules\fast_category\models\FastCategory::className(), ['id' => 'fastcat_id']);
+    }
+
 }
