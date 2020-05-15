@@ -18,7 +18,7 @@ use kop\y2sp\ScrollPager;
 
 $this->params['breadcrumbs'][] = $category->header;
 ?>
-<div class="product_item">
+<div class="">
 
     <h1><?= $category->header ?> </h1>
 

@@ -59,7 +59,7 @@ AdminAsset::register($this);
                             ['label' => 'Слайдер', 'url' => ['/slider/admin/index']],
                             ['label' => 'Страницы', 'url' => ['/content/page/index']],
                             ['label' => 'Новости', 'url' => ['/content/news/index']],
-                            ['label' => 'Стати', 'url' => ['/content/articles/index']],
+                            ['label' => 'Статьи', 'url' => ['/content/articles/index']],
                             ['label' => 'Услуги', 'url' => ['/content/services/index']],
                             ['label' => 'ИнфоБлоки', 'url' => ['/info/admin/index']],
                             ['label' => 'Портфолио', 'url' => ['/portfolio/admin/index']],

@@ -4,8 +4,11 @@ namespace app\modules\fast_category\models;
 
 use Yii;
 use vova07\fileapi\behaviors\UploadBehavior;
+use yii\helpers\Url;
 
 class FastCategory extends \app\models\FastCategory {
+
+    const URL_PATH = '/fast-cat/';
 
     public function behaviors() {
         return [
@@ -38,6 +41,11 @@ class FastCategory extends \app\models\FastCategory {
 
         if ($this->image)
             return $this->setWaterMark('/image/category/' . $this->image, $size);
+    }
+
+    public function get_url() {
+
+        return Url::to(self::URL_PATH . $this->url);
     }
 
 }

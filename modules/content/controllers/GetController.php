@@ -99,6 +99,8 @@ class GetController extends Controller {
     }
 
     public function actionServices() {
+        
+        Yii::$app->params['isFluid'] = true;
 
 
         $model = Content::findOne(['url' => 'uslugi']);

@@ -36,6 +36,7 @@ use Yii;
  * @property int $is_radio Радио
  * @property int $is_ip IP
  * @property int $is_tvi HD-TVI
+ * @property int $enter_width Ширина прохода
  *
  * @property Category $category
  * @property ProductImage[] $productImages
@@ -59,7 +60,7 @@ class Product extends \app\models\CustomAR
     {
         return [
             [['category_id', 'fastcat_id', 'article', 'url'], 'required'],
-            [['category_id', 'fastcat_id', 'ord', 'is_enable', 'created_at', 'updated_at', 'product_type', 'show_in_recomended', 'recomended_sort', 'in_stock', 'krat', 'is_akustika', 'is_radio', 'is_ip', 'is_tvi'], 'integer'],
+            [['category_id', 'fastcat_id', 'ord', 'is_enable', 'created_at', 'updated_at', 'product_type', 'show_in_recomended', 'recomended_sort', 'in_stock', 'krat', 'is_akustika', 'is_radio', 'is_ip', 'is_tvi', 'enter_width'], 'integer'],
             [['price'], 'number'],
             [['content_info', 'content_description', 'content_characteristics', 'content_install'], 'string'],
             [['cats', 'article', 'url'], 'string', 'max' => 255],
@@ -105,6 +106,7 @@ class Product extends \app\models\CustomAR
             'is_radio' => 'Радио',
             'is_ip' => 'IP',
             'is_tvi' => 'HD-TVI',
+            'enter_width' => 'Ширина прохода',
         ];
     }
 

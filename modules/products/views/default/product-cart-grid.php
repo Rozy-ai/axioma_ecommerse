@@ -8,6 +8,19 @@ use yii\helpers\Url;
 
     <div class="panel">
         <div class="panel-heading">
+
+            <?php if ($model->is_akustika): ?>
+
+                <?= Html::img('/image/t-am.jpg', ['class' => 'type-img']) ?>
+
+            <?php endif; ?>
+
+            <?php if ($model->is_radio): ?>
+
+                <?= Html::img('/image/t-rc.jpg', ['class' => 'type-img']) ?>
+
+            <?php endif; ?>
+
             <div class=" image-wrap">
                 <div class="image" data-url="<?= Url::to('/catalog/' . $model->url) ?>"
                      onclick="window.location = $(this).attr('data-url')"

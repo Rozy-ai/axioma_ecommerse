@@ -115,6 +115,7 @@ use kartik\widgets\Select2;
             <?= $form->field($model, 'act')->checkbox() ?>
 
             <?= $form->field($model, 'ord')->textInput() ?>
+           
 
         </div>
     </div>

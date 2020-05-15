@@ -28,7 +28,7 @@ class DefaultController extends Controller {
 
         $search = new \app\modules\fast_category\models\ProductSearch();
 
-        $search->load(Yii::$app->request->post());
+        $search->load(Yii::$app->request->get());
 
         Yii::$app->view->title = $category->title ? $category->title : $category->header;
 
@@ -41,19 +41,30 @@ class DefaultController extends Controller {
 
         $where = ['fastcat_id' => $category->id, 'is_enable' => 1];
 
-        $andwhere = [];
+        $andFilterWhere = $andwhere = [];
 
-        if ($search->is_akust)
-            $andwhere['is_akustika'] = 1;
+        if ($search->is_akust && $search->is_akust)
+            ;
+        else {
+            if ($search->is_akust)
+                $andwhere['is_akustika'] = 1;
 
-        if ($search->is_radio)
-            $andwhere['is_radio'] = 1;
+            if ($search->is_radio)
+                $andwhere['is_radio'] = 1;
+        }
+
+        if ($search->enter_width)
+            $andFilterWhere = ['>=', 'enter_width', $search->enter_width];
+
+//        print_r($andwhere);
+//        exit();
 
 
 
         $query = \app\modules\catalog\models\Catalog::find()
                 ->where($where)
                 ->andWhere($andwhere)
+                ->andFilterWhere($andFilterWhere)
 //                        ->orWhere(['category_id' => $this->childsId, 'is_enable' => 1])
 //                ->orderBy($sort->orders)
                 ->orderBy('ord DESC')

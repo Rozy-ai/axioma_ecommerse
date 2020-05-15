@@ -154,6 +154,8 @@ use kartik\widgets\Select2;
 
             <?= $form->field($model, 'recomended_sort')->textInput(['maxlength' => true]) ?>
 
+            <?= $form->field($model, 'enter_width')->textInput() ?>
+
             <?php ActiveForm::end(); ?>
 
 

@@ -71,18 +71,14 @@ endforeach;
                 </div>
 
 
-                <div class="product-tabs col-xs-12 ">
+                <div class="product-tabs col-xs-12">
 
                     <?php
                     $items = [];
                     $items[] = [
-                        'label' => 'Описание',
-                        'content' => $page->content_description,
-                        'active' => true
-                    ];
-                    $items[] = [
                         'label' => 'Характеристики',
                         'content' => $page->content_characteristics,
+                        'active' => true
                     ];
                     if ($page->content_install)
                         $items[] = [
@@ -96,6 +92,10 @@ endforeach;
                         'content' => \app\modules\products\widgets\SupportedGoodsWidget::widget([
                             'product_id' => $page->id
                         ]),
+                    ];
+                    $items[] = [
+                        'label' => 'Описание',
+                        'content' => $page->content_description,
                     ];
 
 

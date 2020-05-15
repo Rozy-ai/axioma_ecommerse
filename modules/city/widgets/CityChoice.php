@@ -10,6 +10,7 @@ use app\modules\city\models\City;
 
 class CityChoice extends Widget {
 
+    public $mobile = false;
     private $current_city = '';
     private $default_city = 'ekaterinburg';
 
@@ -32,18 +33,25 @@ class CityChoice extends Widget {
         $links = [];
         foreach ($cityes as $city):
             if ($city->name_eng == $this->current_city)
-                $links[] = Html::tag('strong', '<i class="fas fa-map-marker-alt"></i> ' . $city->name, ['class' => 'active-city']);
+                $links[] = ['link' => Html::tag('strong', '<i class="fas fa-map-marker-alt"></i> ' . $city->name, ['class' => 'active-city']), 'is_active' => true];
             else
-                $links [] = ($city->name_eng == $this->default_city) ?
-                        Html::a($city->name, 'https://www.' . Yii::$app->params['defaultDomain'] . '/' . Yii::$app->request->pathInfo) :
-                        Html::a($city->name, 'https://' . $city->name_eng . '.' . Yii::$app->params['baseDomain'] . '/' . Yii::$app->request->pathInfo);
+                $links [] = ['link' => ($city->name_eng == $this->default_city) ?
+                    Html::a($city->name, 'https://www.' . Yii::$app->params['defaultDomain'] . '/' . Yii::$app->request->pathInfo) :
+                    Html::a($city->name, 'https://' . $city->name_eng . '.' . Yii::$app->params['baseDomain'] . '/' . Yii::$app->request->pathInfo)];
         endforeach;
 
-        return $this->render('city_choice', [
-                    'links' => $links,
-                    'current_city' => City::getCityNameByCode($this->current_city),
-                        ]
-        );
+        if ($this->mobile)
+            return $this->render('city_choice_mobile', [
+                        'links' => $links,
+                        'current_city' => City::getCityNameByCode($this->current_city),
+                            ]
+            );
+        else
+            return $this->render('city_choice', [
+                        'links' => $links,
+                        'current_city' => City::getCityNameByCode($this->current_city),
+                            ]
+            );
     }
 
 }

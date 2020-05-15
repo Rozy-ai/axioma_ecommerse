@@ -20,8 +20,12 @@ class AppAsset extends AssetBundle {
     public $baseUrl = '@web';
     public $css = [
         'css/magnific-popup.css',
+        'css/animate.min.css',
         'css/site.css',
         'css/slick.css',
+        'menu/mmenu.css',
+        'menu/mmenu.themes.css',
+        'css/mobile-menu.css',
         'css/slick-theme.css',
         'css/owl/owl.carousel.min.css',
         'css/owl/owl.theme.default.min.css',
@@ -40,6 +44,9 @@ class AppAsset extends AssetBundle {
         'css/jBox/jBox.min.js',
         'css/jBox/jBox.Notice.min.js',
         'js/top_menu.js',
+        'menu/mmenu.js',
+        'menu/mmenu.polyfills.js',
+        'menu/init.js',
         'js/common.js',
     ];
     public $depends = [

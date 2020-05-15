@@ -18,20 +18,26 @@ $list = [
 <div class="advantages-menu">
     <div class="advantages-wrap">
         <div class="row">
-            <?php foreach ($list as $item): ?>
-                <div class="col-xs-12 col-sm-6 col-md-3 item">
-                    <a href=<?= $item['url'] != Yii::$app->request->url ? $item['url'] : 'javascript:void(0)' ?>>
+            <?php foreach (array_chunk($list, 4) as $k => $_item): ?>
+                <div class="row row-<?= $k ?>">
+                    <?php foreach ($_item as $item): ?>
+                        <div class="col-xs-6 col-sm-6 col-md-3 item">
+                            <a href=<?= $item['url'] != Yii::$app->request->url ? $item['url'] : 'javascript:void(0)' ?>>
 
-                        <?=
-                        Html::tag('div', '', [
-                            'class' => 'item-image center-block',
-                            'style' => "background: url('" . $item['image'] . "') center center no-repeat",
-                        ])
-                        ?>
-                        <p class="text-center title">
-                            <?= $item['name'] ?>
-                        </p>
-                    </a>
+                                <?=
+                                Html::tag('div', '', [
+                                    'class' => 'item-image center-block',
+                                    'style' => "background: url('" . $item['image'] . "') center center no-repeat",
+                                ])
+                                ?>
+                                <p class="text-center title">
+                                    <?= $item['name'] ?>
+                                </p>
+                            </a>
+                        </div>
+                        <?php
+                    endforeach;
+                    ?>
                 </div>
                 <?php
             endforeach;

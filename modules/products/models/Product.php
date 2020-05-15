@@ -201,4 +201,6 @@ class Product extends \app\models\Product {
         return $this->hasOne(\app\modules\fast_category\models\FastCategory::className(), ['id' => 'fastcat_id']);
     }
 
+
+
 }

@@ -5,6 +5,16 @@
     padding: 4rem 0;
 
     .advantages-wrap {
+
+        .row-0 {
+
+            border-bottom: 1px solid #ccc;
+        }
+
+        .row {
+
+        }
+
         .item{
 
             a {
@@ -26,8 +36,29 @@
 
 
 
-            min-height: 18rem;
-            margin-bottom: 3rem;
+            min-height: 22rem;
+            padding-bottom: 2rem;
+            padding-top: 3rem;
+            border-right: 1px solid #ddd;
+
+            &:last-child {
+                border: 0px solid white;
+            }
+
+
+            @media(max-width:@screen-md) {
+
+                &:first-child {
+                    border-bottom: 1px solid #ddd;
+                }
+                &:nth-child(2) {
+                    border-bottom: 1px solid #ddd;
+                }
+
+
+            }
+
+
 
             .item-image {
                 width: 11rem;
@@ -39,6 +70,7 @@
                 margin-top: 1rem;
                 font-weight: 600;
                 font-size: 1.6rem;
+                margin-bottom: 0;
 
 
             }

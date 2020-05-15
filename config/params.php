@@ -7,4 +7,5 @@ return [
 //    'baseDomain' => $_SERVER['SERVER_NAME'],
     'defaultDomain' => 'axioma.pro',
     'baseDomain' => 'axioma.pro',
+    'isFluid' => false,
 ];

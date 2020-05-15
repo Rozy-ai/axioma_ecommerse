@@ -44,14 +44,15 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
             <?php
             NavBar::begin([
                 'options' => [
-                    'class' => 'navbar-inverse main-navbar',
+                    'class' => 'navbar-inverse main-navbar hidden-xs hidden-sm',
                 ],
             ]);
             ?>
 
+
             <div class="row">
 
-                <div class="col-xs-12 col-md-7">
+                <div class="col-xs-12 col-md-8">
 
                     <?php
                     echo Nav::widget([
@@ -65,7 +66,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                 <div class="col-xs-12 col-md-3 popup-search text-right">
                     <?php echo app\modules\search\widgets\Search::widget(); ?>
                 </div>
-                <div class="col-xs-12 col-md-2">
+                <div class="col-xs-12 col-md-1">
                     <?php
                     echo Nav::widget([
                         'options' => ['class' => 'navbar-nav navbar-right'],
@@ -80,7 +81,43 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
             NavBar::end();
             ?>
 
-            <div class="header">
+
+            <div class="header-mobile hidden-md hidden-lg">
+                <div class="line-one">
+                    <div class="row">
+                        <div class="col-xs-7 logo-wrap">
+                            <?php
+                            $img = Html::img('/image/logo-mobile.png', ['class' => 'img img-responsive', 'alt' => 'Логотип', 'onerror' => "this.src='/image/logo-mobile.png'"]);
+                            echo!$isHome ? Html::a($img, ['/']) : $img;
+                            ?>
+                        </div>
+                        <div class="col-xs-5">
+                            <div class="row">
+                                <div class="col-xs-6 text-center">
+                                    <a href="/cart">
+                                        <div class="cart-top" data-container=".wrap" data-html="true" data-title="ТОВАРЫ ДОБАВЛЕННЫЕ В КОРЗИНУ" data-toggle="popover" data-placement="bottom" data-content="Корзина пуста" data-original-title="" title="">
+                                        <!--    <span class="glyphicon glyphicon-shopping-cart">
+                                        </span>-->
+                                            <img class="img" src="/image/shopping_cart.png" height="24px" alt="">    <span class="count badge">0</span>
+                                        </div></a>
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                    <?php echo Html::a(Html::img('/image/menu.png'), '#menu', ['alt' => 'image', 'classs' => 'mobile-menu-btn']) ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line-two">
+                        <div class="row">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <?= $this->render('_mobile_menu') ?>
+
+
+            <div class="header hidden-xs hidden-sm">
                 <div class="container middle-line">
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-2 col-lg-3 logo-wrap">
@@ -194,52 +231,57 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                     <!--</div>-->
                 </div>
             <?php else: ?>
-                <div class="container">
+                <div class="<?= Yii::$app->params['isFluid'] ? 'container-fluid' : 'container' ?>">
                     <div class="content">
-                        <?=
-                        Breadcrumbs::widget([
-                            'links' => $this->params['breadcrumbs'] ?? [],
-                            'options' => ['class' => 'breadcrumb', 'itemscope' => true, 'itemtype' => 'http://schema.org/BreadcrumbList'],
-                            'itemTemplate' => '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">{link}</li>' . PHP_EOL,
-                            'activeItemTemplate' => '<li class="active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">{link}</li>' . PHP_EOL,
-                        ]);
+                        <div class="<?= Yii::$app->params['isFluid'] ? 'container' : '' ?>">
+                            <?=
+                            Breadcrumbs::widget([
+                                'links' => $this->params['breadcrumbs'] ?? [],
+                                'options' => ['class' => 'breadcrumb', 'itemscope' => true, 'itemtype' => 'http://schema.org/BreadcrumbList'],
+                                'itemTemplate' => '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">{link}</li>' . PHP_EOL,
+                                'activeItemTemplate' => '<li class="active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">{link}</li>' . PHP_EOL,
+                            ]);
 //                        Breadcrumbs::widget([
 //                            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
 //                        ])
-                        ?>
-                        <?= Alert::widget() ?>
+                            ?>
+                            <?= Alert::widget() ?>
+                        </div>
                         <div id="content">
                             <?= $content ?>
                         </div>
-                    </div>
-                </div>
 
-                <div class="viewed-goods-wrap">
-                    <!--<div class="row">-->
-                    <div class="container">
-                        <div class="viewed-goods">
-                            <?= \app\modules\catalog\widgets\ViewedGoods::widget(); ?>
+                    </div>
+
+                    <div class="viewed-goods-wrap">
+                        <!--<div class="row">-->
+                        <div class="container">
+                            <div class="viewed-goods">
+                                <?= \app\modules\catalog\widgets\ViewedGoods::widget(); ?>
+                            </div>
+
+                            <!--<div class="col-xs-12 col-sm-8 thanks">-->
+                            <?php // app\modules\thanks\widgets\ThanksList::widget();     ?>
+                            <!--</div>-->
+                            <!--<div class="col-xs-12 col-sm-4 contact-form">-->
+                            <?php // app\modules\forms\widgets\Contact::widget();    ?>
+                            <!--</div>-->
+
+                            <!--<div class="slider">-->
+                            <?php //\app\modules\slider\widgets\MainSlider::widget();     ?>
+                            <!--</                                            div>-->
+                            <!--</div>-->
                         </div>
-
-                        <!--<div class="col-xs-12 col-sm-8 thanks">-->
-                        <?php // app\modules\thanks\widgets\ThanksList::widget();     ?>
-                        <!--</div>-->
-                        <!--<div class="col-xs-12 col-sm-4 contact-form">-->
-                        <?php // app\modules\forms\widgets\Contact::widget();    ?>
-                        <!--</div>-->
-
-                        <!--<div class="slider">-->
-                        <?php //\app\modules\slider\widgets\MainSlider::widget();     ?>
-                        <!--</                                            div>-->
-                        <!--</div>-->
                     </div>
-                </div>
 
-            <?php endif; ?>
-
+                <?php endif; ?>
 
 
+
+            </div>
         </div>
+
+
 
         <footer class="footer">
 

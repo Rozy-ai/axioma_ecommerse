@@ -19,6 +19,17 @@ use vova07\fileapi\Widget as FileAPI;
 //            echo $form->field($model, 'image')->widget(
 //                    FileAPI::className(), [
 //                'settings' => [
+//                    'url' => ['/content/content/upload-image']
+//                ]
+//                    ]
+//            )->label('Изображение');
+            ?>
+
+
+            <?php
+//            echo $form->field($model, 'image')->widget(
+//                    FileAPI::className(), [
+//                'settings' => [
 ////                    'url' => ['/content/content/upload-image'],
 ////                    'url' => ['/site/image-upload'],
 ////                    'multiple' => true,

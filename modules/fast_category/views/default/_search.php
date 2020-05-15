@@ -1,10 +1,11 @@
 <?php
 
 use yii\helpers\Html;
-//use yii\widgets\ActiveForm;
+use yii\bootstrap\ActiveForm;
 use webtoolsnz\widgets\RadioButtonGroup;
 use kartik\checkbox\CheckboxX;
-use kartik\form\ActiveForm;
+//use kartik\form\ActiveForm;
+use kartik\select2\Select2;
 
 //'@app/modules/category/assets/css/category-search.css'
 
@@ -16,7 +17,7 @@ $this->registerCss($this->render('./../../assets/css/category-search.css'));
     <?php
     $form = ActiveForm::begin([
                 'action' => Yii::$app->request->url,
-                'method' => 'post',
+                'method' => 'get',
                 'id' => 'category-search',
     ]);
     ?>
@@ -29,20 +30,11 @@ $this->registerCss($this->render('./../../assets/css/category-search.css'));
                     <?php if ($category->is_ar): ?>
 
                         <?=
-                        $form->field($model, 'is_akust')->widget(CheckboxX::classname(), [
-                            'initInputType' => CheckboxX::INPUT_CHECKBOX,
-                            'pluginOptions' => [
-                                'threeState' => false,
-//                            'size' => 'sm',
-                            ],
-                            'labelSettings' => [
-                                'position' => CheckboxX::LABEL_LEFT
-                            ],
-                            'pluginEvents' => [
-//                            'click' => '$("#category-search").submit()',
-//                            "change" => "function() { GruzchikiCalc()}",
-                            ],
-                        ])->label(false)
+                        $form->field($model, 'is_akust', [
+                            'checkboxTemplate' => "<div class=\"checkbox checkbox-ext\">\n{beginLabel}\n{input}\n<span>{labelTitle}</span>\n{endLabel}\n{error}\n{hint}\n</div>",
+                        ])->checkbox([
+                            'onChange' => "",
+                        ])->label('Акустомагнитные системы', ['class' => 'custom-checkbox'])
                         ?>
 
                     <?php endif; ?>
@@ -50,20 +42,11 @@ $this->registerCss($this->render('./../../assets/css/category-search.css'));
                     <?php if ($category->is_video): ?>
 
                         <?=
-                        $form->field($model, 'is_ip')->widget(CheckboxX::classname(), [
-                            'initInputType' => CheckboxX::INPUT_CHECKBOX,
-                            'pluginOptions' => [
-                                'threeState' => false,
-//                            'size' => 'sm',
-                            ],
-                            'labelSettings' => [
-                                'position' => CheckboxX::LABEL_LEFT
-                            ],
-                            'pluginEvents' => [
-//                            'click' => '$("#category-search").submit()',
-//                            "change" => "function() { GruzchikiCalc()}",
-                            ],
-                        ])->label(false)
+                        $form->field($model, 'is_ip', [
+                            'checkboxTemplate' => "<div class=\"checkbox checkbox-ext\">\n{beginLabel}\n{input}\n<span>{labelTitle}</span>\n{endLabel}\n{error}\n{hint}\n</div>",
+                        ])->checkbox([
+                            'onChange' => "",
+                        ])->label('IP', ['class' => 'custom-checkbox'])
                         ?>
 
                     <?php endif; ?>
@@ -76,20 +59,11 @@ $this->registerCss($this->render('./../../assets/css/category-search.css'));
                     <?php if ($category->is_ar): ?>
 
                         <?=
-                        $form->field($model, 'is_radio')->widget(CheckboxX::classname(), [
-                            'initInputType' => CheckboxX::INPUT_CHECKBOX,
-                            'pluginOptions' => [
-                                'threeState' => false,
-//                            'size' => 'sm',
-                            ],
-                            'labelSettings' => [
-                                'position' => CheckboxX::LABEL_LEFT
-                            ],
-                            'pluginEvents' => [
-//                            'click' => '$("#category-search").submit()',
-//                            "change" => "function() { GruzchikiCalc()}",
-                            ],
-                        ])->label(false)
+                        $form->field($model, 'is_radio', [
+                            'checkboxTemplate' => "<div class=\"checkbox checkbox-ext\">\n{beginLabel}\n{input}\n<span>{labelTitle}</span>\n{endLabel}\n{error}\n{hint}\n</div>",
+                        ])->checkbox([
+                            'onChange' => "",
+                        ])->label('Радоичастотные системы', ['class' => 'custom-checkbox'])
                         ?>
 
                     <?php endif; ?>
@@ -97,21 +71,13 @@ $this->registerCss($this->render('./../../assets/css/category-search.css'));
                     <?php if ($category->is_video): ?>
 
                         <?=
-                        $form->field($model, 'is_tvi')->widget(CheckboxX::classname(), [
-                            'initInputType' => CheckboxX::INPUT_CHECKBOX,
-                            'pluginOptions' => [
-                                'threeState' => false,
-//                            'size' => 'sm',
-                            ],
-                            'labelSettings' => [
-                                'position' => CheckboxX::LABEL_LEFT
-                            ],
-                            'pluginEvents' => [
-//                            'click' => '$("#category-search").submit()',
-//                            "change" => "function() { GruzchikiCalc()}",
-                            ],
-                        ])->label(false)
+                        $form->field($model, 'is_tvi', [
+                            'checkboxTemplate' => "<div class=\"checkbox checkbox-ext\">\n{beginLabel}\n{input}\n<span>{labelTitle}</span>\n{endLabel}\n{error}\n{hint}\n</div>",
+                        ])->checkbox([
+                            'onChange' => "",
+                        ])->label('HD-TVI', ['class' => 'custom-checkbox'])
                         ?>
+
 
                     <?php endif; ?>
 
@@ -124,7 +90,20 @@ $this->registerCss($this->render('./../../assets/css/category-search.css'));
 
             <div class="row">
                 <div class="col-xs-6">
+                    <?php if ($category->id == 1): ?>
+                        <?=
+                        $form->field($model, 'enter_width')->widget(Select2::classname(), [
+                            'data' => $model->collectEnterWidth($model->is_akust, $model->is_radio),
+                            'options' => [
+                                'onChange' => '$("#category-search").submit()',
+                                'placeholder' => 'Ширина прохода', 'multiple' => false],
+                            'pluginOptions' => [
+                                'allowClear' => true,
+                            ],
+                        ])->label(false);
+                        ?>
 
+                    <?php endif; ?>
                 </div>
                 <div class="col-xs-6">
                     <?=

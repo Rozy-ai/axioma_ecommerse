@@ -13,7 +13,7 @@ if ($model->type_id == 2) {
 
 $this->params['breadcrumbs'][] = $model->header;
 ?>
-<div class="uslugi">
+<div class="uslugi row">
 
     <div class="col-xs-12 col-sm-3">
 

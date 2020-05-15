@@ -28,6 +28,7 @@ class Menu extends \app\models\Menu {
         $model = self::find()->where([
                             'is_enable' => 1,
                             'menu_type' => 0,
+                            'parent_id' => [0, NULL],
                         ])
                         ->orderBy(['order' => SORT_DESC])->all();
 
@@ -46,13 +47,25 @@ class Menu extends \app\models\Menu {
         ];
 
         foreach ($model as $item)
-            $result['top'][] = ['label' => $item->name, 'url' => ['/' . $item->url]];
+            if ($item->childs) {
+                
+                Yii::error($item->childs);
+
+                $items = [];
+
+                foreach ($item->childs as $child)
+                    if (isset($child->name))
+                        $items[] = ['label' => $child->name, 'url' => ['/' . $child->url]];
+
+                $result['top'][] = ['label' => $item->name, 'items' => $items];
+            } else
+                $result['top'][] = ['label' => $item->name, 'url' => ['/' . $item->url]];
 
         $result['bottom'][] = ['label' => \app\modules\cart\widgets\TopCartWidget::widget(), 'url' => ['/cart'], 'options' => ['class' => 'cart-top-btn cart hidden-xs hidden-sm']];
         $result['bottom'][] = ['label' => \app\modules\cart\widgets\TopCartWidget::widget(), 'url' => ['/cart'], 'options' => ['class' => 'cart-mobile hidden-md hidden-lg']];
 //        $result['bottom'][] = ['label' => '<i class="far fa-heart"></i>', 'url' => ['/favorite']];
 //        $result['bottom'][] = ['label' => '<i class="fas fa-chart-bar"></i>', 'url' => ['/compare']];
-        $result['bottom'][] = ['label' => 'Вход', 'url' => [(Yii::$app->user->isGuest) ? '/enter' : '/products/admin/index'], 'options' => ['class' => 'enter-link']];
+        $result['bottom'][] = ['label' => '⎆', 'url' => [(Yii::$app->user->isGuest) ? '/enter' : '/products/admin/index'], 'options' => ['class' => 'enter-link']];
 
         return $result;
     }
@@ -102,6 +115,10 @@ class Menu extends \app\models\Menu {
     public static function __parentList() {
 
         return ArrayHelper::map(self::find()->all(), 'id', 'name');
+    }
+
+    public function getChilds() {
+        return $this->hasMany(self::className(), ['parent_id' => 'id']);
     }
 
 }
