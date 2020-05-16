@@ -35,18 +35,20 @@ use yii\bootstrap\Html;
 
         <hr/>
 
-        <li><span> <?=
-                Html::img('/image/ico/Catalog.svg', ['height' => '30'
-                    . ''])
-                ?>  КАТАЛОГ</span>
+<!--        <li><span> <?=
+        Html::img('/image/ico/Catalog.svg', ['height' => '30'
+            . ''])
+        ?>  КАТАЛОГ</span>
             <ul>
 
-                <?php foreach (\app\modules\fast_category\models\FastCategory::find()->all() as $item): ?>
-                    <li><a href="<?= $item->_url ?>"><?= $item->header ?></a></li>
-                <?php endforeach; ?>
+
 
             </ul>
-        </li>
+        </li>-->
+        <?php foreach (\app\modules\fast_category\models\FastCategory::find()->all() as $item): ?>
+            <li><a href="<?= $item->_url ?>"><?= $item->header ?></a></li>
+        <?php endforeach; ?>
+
         <li>
 
             <a href="/uslugi">
