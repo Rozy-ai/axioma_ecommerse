@@ -1,4 +1,43 @@
+
+.header-mobile {
+
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background: white;
+    z-index: 1000;
+
+    .container {
+        padding-right: 0;   
+    }
+
+    .logo-wrap {
+        padding: .5rem 1rem 1rem 3rem;;
+    }
+
+    border-bottom: 1px solid #ccc;
+
+    .hamburger {
+        background: #3E3E3E;
+        border-radius: 0 0 0 1rem;
+
+        .hamburger-inner {
+            background-color: white;
+
+            &:before, &:after {
+                background-color: white;
+            }
+        }
+    }
+    .hamburger.is-active:hover, .hamburger:hover {
+        opacity: 1;
+    }
+}
+
 #menu {
+
+    top: 6rem;
+
     .city-wrap {
         display: flex;
 

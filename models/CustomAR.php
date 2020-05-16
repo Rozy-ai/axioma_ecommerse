@@ -45,15 +45,15 @@ class CustomAR extends \yii\db\ActiveRecord {
         if (Yii::$app->controller->layout != '@layouts/admin' && !is_a(Yii::$app, 'yii\console\Application')) {
 
 
-            if ($this->hasAttribute('content')) {
-
-
-                $this->content = preg_replace('/<img src="([^"]+)" alt="([^"]+)"  style="([^"]+)"[^>]+>/i'
-                        , Html::a(Html::img('$1', ['alt' => '$2', 'style' => '$3']), '$1'
-                                , ['class' => 'popup-link']), $this->content);
-
-//                $this->content = '';
-            }
+//            if ($this->hasAttribute('content')) {
+//
+//
+//                $this->content = preg_replace('/<img src="([^"]+)" alt="([^"]+)"  style="([^"]+)"[^>]+>/i'
+//                        , Html::a(Html::img('$1', ['alt' => '$2', 'style' => '$3']), '$1'
+//                                , ['class' => 'popup-link']), $this->content);
+//
+////                $this->content = '';
+//            }
 
             /*
              * перебираем шорткоды

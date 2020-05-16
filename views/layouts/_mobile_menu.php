@@ -32,12 +32,6 @@ use yii\bootstrap\Html;
                 </span>
             </span>
         </li>
-        <li class="top-line">
-            <span class="s-wrap">
-                <?= Html::img('/image/ico/Search.svg', ['height' => '60']) ?>
-                <?= Html::input('text', 's', '', []) ?>
-            </span>
-        </li>
 
         <hr/>
 

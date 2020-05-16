@@ -49,7 +49,7 @@ class Menu extends \app\models\Menu {
         foreach ($model as $item)
             if ($item->childs) {
                 
-                Yii::error($item->childs);
+//                Yii::error($item->childs);
 
                 $items = [];
 

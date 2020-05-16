@@ -83,7 +83,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
 
 
             <div class="header-mobile hidden-md hidden-lg">
-                <div class="line-one">
+                <div class="container">
                     <div class="row">
                         <div class="col-xs-7 logo-wrap">
                             <?php
@@ -102,19 +102,26 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                         </div></a>
                                 </div>
                                 <div class="col-xs-6 text-right">
-                                    <?php echo Html::a(Html::img('/image/menu.png'), '#menu', ['alt' => 'image', 'classs' => 'mobile-menu-btn']) ?>
+
+                                    <div class="Fixed">
+                                        <button id="mmenu-icon" class="hamburger hamburger--spin" type="button">
+                                            <span class="hamburger-box">
+                                                <span class="hamburger-inner"></span>
+                                            </span>
+                                        </button>
+                                    </div>
+                                    <!--                                    <button id="mmenu-icon" class="hamburger hamburger--collapse" type="button">
+                                                                            <span class="hamburger-box">
+                                                                                <span class="hamburger-inner"></span>
+                                                                            </span>
+                                                                        </button>-->
+                                    <?php Html::a(Html::img('/image/menu.png'), '#menu', ['alt' => 'image', 'classs' => 'mobile-menu-btn']) ?>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="line-two">
-                        <div class="row">
-                        </div>
-                    </div>
                 </div>
             </div>
-
-            <?= $this->render('_mobile_menu') ?>
 
 
             <div class="header hidden-xs hidden-sm">
@@ -279,92 +286,94 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
 
 
             </div>
-        </div>
 
 
 
-        <footer class="footer">
 
-            <div class="footer-top">
-                <div class="container">
-                    <div class="row">
-                        <div class="hidden-xs hidden-sm col-md-3">
-                            <p class="title">АДРЕС</p>
-                            <p>г. <?= RegionTemplates::getVal('city') ?></p>
-                            <p><?= RegionTemplates::getVal('address') ?></p>
-                            <p>Тел: <?= RegionTemplates::getVal('phone-2') ?></p>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-6">
+            <footer class="footer">
 
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <p class="title">КАРТА САЙТА</p>
-
-                                </div>
-                                <div class="col-xs-12 col-sm-4">
-                                    <ul class="list-unstyled list-inline">
-                                        <?= Menu::getFooterItems(1) ?>
-                                    </ul>
-
-                                </div>
-                                <div class="col-xs-12 col-sm-5">
-                                    <ul class="list-unstyled list-inline">
-                                        <?= Menu::getFooterItems(2) ?>
-                                    </ul>
-
-                                </div>
-                                <div class="col-xs-12 col-sm-3">
-                                    <ul class="list-unstyled list-inline">
-                                        <?= Menu::getFooterItems(3) ?>
-                                    </ul>
-                                </div>
+                <div class="footer-top">
+                    <div class="container">
+                        <div class="row">
+                            <div class="hidden-xs hidden-sm col-md-3">
+                                <p class="title">АДРЕС</p>
+                                <p>г. <?= RegionTemplates::getVal('city') ?></p>
+                                <p><?= RegionTemplates::getVal('address') ?></p>
+                                <p>Тел: <?= RegionTemplates::getVal('phone-2') ?></p>
                             </div>
+                            <div class="col-xs-12 col-sm-12 col-md-6">
 
-                        </div>
-                        <div class="col-xs-12 col-sm-6 hidden-md hidden-lg">
-                            <p class="title">АДРЕС</p>
-                            <p>г. <?= RegionTemplates::getVal('city') ?></p>
-                            <p><?= RegionTemplates::getVal('address') ?></p>
-                            <p>Тел: <?= RegionTemplates::getVal('phone-2') ?></p>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-3 right-side">
-                            <p class="email">
-                                email: <a href="mailto:<?= Yii::$app->info::get('email') ?>">
-                                    <?= Yii::$app->info::get('email') ?>
-                                </a>
-                            </p>
-                            <p class="phone">
-                                <a href="tel:<?= Yii::$app->info::get('headTelephone') ?>">
-                                    <?= Yii::$app->info::get('headTelephone') ?>
-                                </a>
-                                <br/>
-                            </p>
-                            <?= \app\modules\forms\widgets\CallBack::widget(['in_footer' => true]); ?>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <p class="title">КАРТА САЙТА</p>
+
+                                    </div>
+                                    <div class="col-xs-12 col-sm-4">
+                                        <ul class="list-unstyled list-inline">
+                                            <?= Menu::getFooterItems(1) ?>
+                                        </ul>
+
+                                    </div>
+                                    <div class="col-xs-12 col-sm-5">
+                                        <ul class="list-unstyled list-inline">
+                                            <?= Menu::getFooterItems(2) ?>
+                                        </ul>
+
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3">
+                                        <ul class="list-unstyled list-inline">
+                                            <?= Menu::getFooterItems(3) ?>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-xs-12 col-sm-6 hidden-md hidden-lg">
+                                <p class="title">АДРЕС</p>
+                                <p>г. <?= RegionTemplates::getVal('city') ?></p>
+                                <p><?= RegionTemplates::getVal('address') ?></p>
+                                <p>Тел: <?= RegionTemplates::getVal('phone-2') ?></p>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-3 right-side">
+                                <p class="email">
+                                    email: <a href="mailto:<?= Yii::$app->info::get('email') ?>">
+                                        <?= Yii::$app->info::get('email') ?>
+                                    </a>
+                                </p>
+                                <p class="phone">
+                                    <a href="tel:<?= Yii::$app->info::get('headTelephone') ?>">
+                                        <?= Yii::$app->info::get('headTelephone') ?>
+                                    </a>
+                                    <br/>
+                                </p>
+                                <?= \app\modules\forms\widgets\CallBack::widget(['in_footer' => true]); ?>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="footer-bottom">
-                <div class="container">
-                    <div class="pull-left">
-                        <?= Yii::$app->info::get('copy') ?>
-                    </div>
-                    <div class="pull-right">
-                        <?php
-                        if (!isset($_SERVER['HTTP_USER_AGENT']) || stripos($_SERVER['HTTP_USER_AGENT'], 'Speed Insights') === false):
+                <div class="footer-bottom">
+                    <div class="container">
+                        <div class="pull-left">
+                            <?= Yii::$app->info::get('copy') ?>
+                        </div>
+                        <div class="pull-right">
+                            <?php
                             echo Yii::$app->info::get('counters');
-                        endif;
-                        ?>
+                            ?>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <a href="#" class="footer-up" onclick="$('html, body').stop().animate({scrollTop: 0}, 800, 'swing'); return false;">
-                <?= Html::img('/image/arr_top.png', ['height' => 60]) ?>
-            </a>
+                <a href="#" class="footer-up" onclick="$('html, body').stop().animate({scrollTop: 0}, 800, 'swing'); return false;">
+                    <?= Html::img('/image/arr_top.png', ['height' => 60]) ?>
+                </a>
 
-        </footer>
+            </footer>
+
+            <?= $this->render('_mobile_menu') ?>
+
+        </div>
 
         <?php $this->endBody() ?>
         <!-- Код тега ремаркетинга Google -->

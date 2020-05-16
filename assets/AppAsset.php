@@ -23,6 +23,7 @@ class AppAsset extends AssetBundle {
         'css/animate.min.css',
         'css/site.css',
         'css/slick.css',
+        'css/hamburgers.min.css',
         'menu/mmenu.css',
         'menu/mmenu.themes.css',
         'css/mobile-menu.css',
