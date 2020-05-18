@@ -1,4 +1,5 @@
 User-agent: *
+Disallow: /
 Disallow: /*videonabludenie/
 Disallow: /enter
 Disallow: /cart
