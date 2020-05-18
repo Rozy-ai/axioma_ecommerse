@@ -28,7 +28,7 @@ class DefaultController extends Controller {
 
         $search = new \app\modules\fast_category\models\ProductSearch();
 
-        $search->load(Yii::$app->request->get());
+        $search->load(Yii::$app->request->post());
 
         Yii::$app->view->title = $category->title ? $category->title : $category->header;
 
@@ -43,15 +43,13 @@ class DefaultController extends Controller {
 
         $andFilterWhere = $andwhere = [];
 
-        if ($search->is_akust && $search->is_akust)
-            ;
-        else {
-            if ($search->is_akust)
-                $andwhere['is_akustika'] = 1;
 
-            if ($search->is_radio)
-                $andwhere['is_radio'] = 1;
-        }
+        if ($search->detection_type == 1)
+            $andwhere['is_akustika'] = 1;
+
+        if ($search->detection_type == 2)
+            $andwhere['is_radio'] = 1;
+
 
         if ($search->enter_width)
             $andFilterWhere = ['>=', 'enter_width', $search->enter_width];

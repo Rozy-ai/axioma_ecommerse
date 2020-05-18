@@ -13,8 +13,9 @@ use app\modules\products\models\Product;
 class ProductSearch extends Model {
 
     public $category;
-    public $is_akust;
-    public $is_radio;
+//    public $is_akust;
+//    public $is_radio;
+    public $detection_type;
     public $is_ip;
     public $is_tvi;
     public $search;
@@ -31,37 +32,38 @@ class ProductSearch extends Model {
      */
     public function rules() {
         return [
-            [['category', 'is_akust', 'is_radio', 'search', 'is_ip', 'is_tvi', 'enter_width'], 'safe'],
+            [['category',
+//                'is_akust', 'is_radio', 
+            'search', 'is_ip', 'is_tvi', 'enter_width', 'detection_type'], 'safe'],
         ];
     }
 
     public function attributeLabels() {
         return [
-            'is_akust' => 'Акустомагнитные системы',
+//            'is_akust' => 'Акустомагнитные системы',
             'is_radio' => 'Радиочастотные системы',
             'is_ip' => 'IP',
             'is_tvi' => 'HD-TVI',
             'enter_width' => 'Шиирина прохода',
+            'detection_type' => 'Тип детекции',
         ];
     }
 
-    public function collectEnterWidth($is_akust, $is_radio) {
+    public function collectEnterWidth($detection_type) {
 
         $result = [];
 
-        if ($is_akust || $is_radio) {
-
-            if ($is_akust)
-                $result = ArrayHelper::map(Product::find()->select('enter_width')
-                                        ->orderBy('enter_width asc')
-                                        ->where(['is_enable' => 1, 'is_akustika' => $is_akust])
-                                        ->asArray()->distinct()->all(), 'enter_width', 'enter_width');
-            else
-                $result = ArrayHelper::map(Product::find()->select('enter_width')
-                                        ->orderBy('enter_width asc')
-                                        ->where(['is_enable' => 1, 'is_radio' => $is_radio])
-                                        ->asArray()->distinct()->all(), 'enter_width', 'enter_width');
-        } else {
+        if ($detection_type == 1)
+            $result = ArrayHelper::map(Product::find()->select('enter_width')
+                                    ->orderBy('enter_width asc')
+                                    ->where(['is_enable' => 1, 'is_akustika' => 1])
+                                    ->asArray()->distinct()->all(), 'enter_width', 'enter_width');
+        elseif ($detection_type == 2)
+            $result = ArrayHelper::map(Product::find()->select('enter_width')
+                                    ->orderBy('enter_width asc')
+                                    ->where(['is_enable' => 1, 'is_radio' => 1])
+                                    ->asArray()->distinct()->all(), 'enter_width', 'enter_width');
+        else {
 
             $result = ArrayHelper::map(Product::find()->select('enter_width')
                                     ->orderBy('enter_width asc')
@@ -72,6 +74,12 @@ class ProductSearch extends Model {
 //        $result = ArrayHelper::merge(['' => ' '], $result);
 //        unset($result['']);
         $result[''] = 'Все';
+
+        foreach ($result as $k => &$item):
+
+            $item = $item . ' см';
+
+        endforeach;
 //        sort($result);
 
         return $result;

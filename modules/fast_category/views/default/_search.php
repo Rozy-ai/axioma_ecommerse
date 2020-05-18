@@ -6,6 +6,7 @@ use webtoolsnz\widgets\RadioButtonGroup;
 use kartik\checkbox\CheckboxX;
 //use kartik\form\ActiveForm;
 use kartik\select2\Select2;
+use yii\web\JsExpression;
 
 //'@app/modules/category/assets/css/category-search.css'
 
@@ -16,8 +17,8 @@ $this->registerCss($this->render('./../../assets/css/category-search.css'));
 
     <?php
     $form = ActiveForm::begin([
-                'action' => Yii::$app->request->url,
-                'method' => 'get',
+//                'action' => Yii::$app->request->url,
+                'method' => 'post',
                 'id' => 'category-search',
     ]);
     ?>
@@ -25,17 +26,34 @@ $this->registerCss($this->render('./../../assets/css/category-search.css'));
     <div class="row">
         <div class="col-xs-12 col-sm-6">
             <div class="row">
-                <div class="col-xs-6">
+                <div class="col-xs-12">
 
                     <?php if ($category->is_ar): ?>
 
-                        <?=
-                        $form->field($model, 'is_akust', [
-                            'checkboxTemplate' => "<div class=\"checkbox checkbox-ext\">\n{beginLabel}\n{input}\n<span>{labelTitle}</span>\n{endLabel}\n{error}\n{hint}\n</div>",
-                        ])->checkbox([
-                            'onChange' => "",
-                        ])->label('Акустомагнитные системы', ['class' => 'custom-checkbox'])
+                        <?php
+                        echo $form->field($model, 'detection_type')->widget(RadioButtonGroup::className(),
+                                [
+                                    'items' => [0 => 'Любая', 1 => 'Акустомагнитные системы', 2 => 'Радиочастотные системы'],
+                                    'itemOptions' => [
+                                        'buttons' => [
+                                            0 => [
+                                                'activeState' => 'btn active btn-all',
+                                                'onSelect' => new JsExpression('function (e) {$("#category-search").submit()}'),
+                                            ],
+                                            1 => [
+                                                'activeState' => 'btn btn-akust',
+                                                'onSelect' => new JsExpression('function (e) {$("#category-search").submit()}'),
+                                            ],
+                                            2 => [
+                                                'activeState' => 'btn btn-radio',
+                                                'onSelect' => new JsExpression('function (e) {$("#category-search").submit()}'),
+                                            ],
+                                        ],
+                                    ],
+//                                    'options' => ['onClick' => '$("#category-search").submit()',]
+                        ]);
                         ?>
+
 
                     <?php endif; ?>
 
@@ -58,13 +76,6 @@ $this->registerCss($this->render('./../../assets/css/category-search.css'));
 
                     <?php if ($category->is_ar): ?>
 
-                        <?=
-                        $form->field($model, 'is_radio', [
-                            'checkboxTemplate' => "<div class=\"checkbox checkbox-ext\">\n{beginLabel}\n{input}\n<span>{labelTitle}</span>\n{endLabel}\n{error}\n{hint}\n</div>",
-                        ])->checkbox([
-                            'onChange' => "",
-                        ])->label('Радоичастотные системы', ['class' => 'custom-checkbox'])
-                        ?>
 
                     <?php endif; ?>
 
@@ -93,14 +104,14 @@ $this->registerCss($this->render('./../../assets/css/category-search.css'));
                     <?php if ($category->id == 1): ?>
                         <?=
                         $form->field($model, 'enter_width')->widget(Select2::classname(), [
-                            'data' => $model->collectEnterWidth($model->is_akust, $model->is_radio),
+                            'data' => $model->collectEnterWidth($model->detection_type),
                             'options' => [
                                 'onChange' => '$("#category-search").submit()',
                                 'placeholder' => 'Ширина прохода', 'multiple' => false],
                             'pluginOptions' => [
                                 'allowClear' => true,
                             ],
-                        ])->label(false);
+                        ])->label('Ширина входной группы');
                         ?>
 
                     <?php endif; ?>
@@ -111,7 +122,7 @@ $this->registerCss($this->render('./../../assets/css/category-search.css'));
                             ->dropDownList($model::_SEARCH,
                                     [
                                         'onChange' => '$("#category-search").submit()',
-                            ])->label(false)
+                            ])->label('Сортировка')
                     ?>
                 </div>
             </div>
