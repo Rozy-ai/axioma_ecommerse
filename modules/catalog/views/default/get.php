@@ -13,10 +13,7 @@ $this->params['breadcrumbs'][] = $page->header;
 
     <div class="row">
 
-        <div class="col-xs-12 col-sm-4  category-left-menu">
-            <?= app\modules\category\widgets\MenuCategory::widget(['active_id' => $page->category_id]); ?>
-        </div>
-        <div class="col-xs-12 col-sm-8 content-block">
+        <div class="col-xs-12  col-sm-8 col-sm-push-4 content-block">
 
             <?php
             if ($page->product_type)
@@ -105,6 +102,10 @@ endforeach;
                     ?>
                 </div>
             </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-4  col-sm-pull-8 category-left-menu">
+            <?= app\modules\category\widgets\MenuCategory::widget(['active_id' => $page->category_id]); ?>
         </div>
     </div>
 </div>
