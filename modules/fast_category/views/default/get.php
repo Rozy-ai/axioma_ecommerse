@@ -28,8 +28,8 @@ $this->params['breadcrumbs'][] = $category->header;
         <?php
         echo ListView::widget([
             'dataProvider' => $dataProvider,
-            'options' => ['class' => "row"],
-            'itemOptions' => ['class' => 'item'],
+//            'options' => ['class' => "row"],
+//            'itemOptions' => ['class' => 'item'],
             'itemView' => '@app/modules/products/views/default/product-cart-grid',
 //                'pager' => [
 //                    'class' => ScrollPager::className(),

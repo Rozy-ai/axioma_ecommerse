@@ -24,34 +24,71 @@ $this->registerCss($this->render('./../../assets/css/category-search.css'));
     ?>
 
     <div class="row">
-        <div class="col-xs-12 col-sm-6">
+        <div class="col-xs-12 col-lg-6">
             <div class="row">
                 <div class="col-xs-12">
 
                     <?php if ($category->is_ar): ?>
 
+
+
                         <?php
-                        echo $form->field($model, 'detection_type')->widget(RadioButtonGroup::className(),
-                                [
-                                    'items' => [0 => 'Любая', 1 => 'Акустомагнитные системы', 2 => 'Радиочастотные системы'],
-                                    'itemOptions' => [
-                                        'buttons' => [
-                                            0 => [
-                                                'activeState' => 'btn active btn-all',
-                                                'onSelect' => new JsExpression('function (e) {$("#category-search").submit()}'),
-                                            ],
-                                            1 => [
-                                                'activeState' => 'btn btn-akust',
-                                                'onSelect' => new JsExpression('function (e) {$("#category-search").submit()}'),
-                                            ],
-                                            2 => [
-                                                'activeState' => 'btn btn-radio',
-                                                'onSelect' => new JsExpression('function (e) {$("#category-search").submit()}'),
-                                            ],
-                                        ],
-                                    ],
-//                                    'options' => ['onClick' => '$("#category-search").submit()',]
-                        ]);
+                        echo $form->field($model, 'detection_type', [
+                                    'inline' => true,
+//                            'inlineRadioListTemplate' => "<div class=\"checkbox checkbox-ext\">\n{beginLabel}\n{input}\n<span>{labelTitle}</span>\n{endLabel}\n{error}\n{hint}\n</div>",
+//                                    'inlineRadioListTemplate' => '{beginWrapper} {input}  <span class="label-text"> {label} </span> {endWrapper} {hint}',
+//                                    'inlineRadioListTemplate' => '{beginWrapper} {input}  <span class="label-text"> {label} </span> {endWrapper} {hint}',
+//                                    'radioTemplate' => '<div class=\"radio\">{beginLabel}{input} <span class="label-text"> {labelTitle} </span> {endLabel}{hint}</div>',
+                                ])->radioList(
+                                        [0 => 'Любая', 1 => 'Акустомагнитные системы', 2 => 'Радиочастотные системы'],
+                                        [
+                                            'item' => function($index, $label, $name, $checked, $value) {
+
+
+                                                $return = '<label>';
+                                                $return .= '<input id="radio-' . $index . '" type="radio" name="' . $name . '" ' . ($checked ? 'checked' : '') . ' value="' . $value . '"/>'
+                                                        . '<span class = "label-text">' . ucwords($label) . '</span>';
+                                                $return .= '</label >';
+//                                $return = '<input id="radio-' . $index . '" type="radio" name="' . $name . '" value="' . $value . '"/>';
+//                        $return .= '<label for="radio-' . $index . '" class="modal-radio">' . ucwords($label) . '</label>';
+
+                                                return $return;
+                                            },
+                                            'onChange' => '$("#category-search").submit()']
+                                )
+                        ?>
+
+                        <?php
+//                            echo $form->field($model, 'detection_type')
+//                                    ->radioButtonGroup(
+//                                            [0 => 'Любая', 1 => 'Акустомагнитные системы', 2 => 'Радиочастотные системы'],
+//                                            ['class' => 'btn-group-sm btn-outline-secondary',]
+//                            );
+//                        echo $form->field($model, 'detection_type')->radioList(
+//                                [0 => 'Любая', 1 => 'Акустомагнитные системы', 2 => 'Радиочастотные системы'],
+//                                ['custom' => true,]
+//                        );
+//                        echo $form->field($model, 'detection_type')->widget(RadioButtonGroup::className(),
+//                                [
+//                                    'items' => [0 => 'Любая', 1 => 'Акустомагнитные системы', 2 => 'Радиочастотные системы'],
+//                                    'itemOptions' => [
+//                                        'buttons' => [
+//                                            0 => [
+//                                                'activeState' => 'btn active btn-all',
+//                                                'onSelect' => new JsExpression('function (e) {$("#category-search").submit()}'),
+//                                            ],
+//                                            1 => [
+//                                                'activeState' => 'btn btn-akust',
+//                                                'onSelect' => new JsExpression('function (e) {$("#category-search").submit()}'),
+//                                            ],
+//                                            2 => [
+//                                                'activeState' => 'btn btn-radio',
+//                                                'onSelect' => new JsExpression('function (e) {$("#category-search").submit()}'),
+//                                            ],
+//                                        ],
+//                                    ],
+////                                    'options' => ['onClick' => '$("#category-search").submit()',]
+//                        ]);
                         ?>
 
 
@@ -97,7 +134,7 @@ $this->registerCss($this->render('./../../assets/css/category-search.css'));
             </div>
 
         </div>
-        <div class="col-xs-12 col-sm-6">
+        <div class="col-xs-12 col-lg-6">
 
             <div class="row">
                 <div class="col-xs-6">
@@ -119,9 +156,11 @@ $this->registerCss($this->render('./../../assets/css/category-search.css'));
                 <div class="col-xs-6">
                     <?=
                             $form->field($model, 'search')
-                            ->dropDownList($model::_SEARCH,
-                                    [
-                                        'onChange' => '$("#category-search").submit()',
+                            ->widget(Select2::classname(), [
+                                'data' => $model::_SEARCH,
+                                'options' => [
+                                    'onChange' => '$("#category-search").submit()',
+                                    'multiple' => false],
                             ])->label('Сортировка')
                     ?>
                 </div>

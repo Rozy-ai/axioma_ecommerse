@@ -38,7 +38,8 @@
         "kartik-v/yii2-editable": "dev-master",
         "kop/yii2-scroll-pager": "dev-master",
         "phpnt/yii2-icheck": "*",
-        "kartik-v/yii2-checkbox-x": "dev-master"
+        "kartik-v/yii2-checkbox-x": "dev-master",
+        "evgeniyrru/yii2-slick": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

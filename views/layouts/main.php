@@ -82,41 +82,39 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
             ?>
 
 
-            <div class="header-mobile hidden-md hidden-lg">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-7 logo-wrap">
-                            <?php
-                            $img = Html::img('/image/logo-mobile.png', ['class' => 'img img-responsive', 'alt' => 'Логотип', 'onerror' => "this.src='/image/logo-mobile.png'"]);
-                            echo!$isHome ? Html::a($img, ['/']) : $img;
-                            ?>
-                        </div>
-                        <div class="col-xs-5">
-                            <div class="row">
-                                <div class="col-xs-6 text-center">
-                                    <a href="/cart">
-                                        <div class="cart-top" data-container=".wrap" data-html="true" data-title="ТОВАРЫ ДОБАВЛЕННЫЕ В КОРЗИНУ" data-toggle="popover" data-placement="bottom" data-content="Корзина пуста" data-original-title="" title="">
-                                        <!--    <span class="glyphicon glyphicon-shopping-cart">
-                                        </span>-->
-                                            <img class="img" src="/image/shopping_cart.png" height="24px" alt="">    <span class="count badge">0</span>
-                                        </div></a>
-                                </div>
-                                <div class="col-xs-6 text-right">
+            <div class="header-mobile container hidden-md hidden-lg">
+                <div class="row">
+                    <div class="col-xs-7 logo-wrap">
+                        <?php
+                        $img = Html::img('/image/logo-mobile.png', ['class' => 'img img-responsive', 'alt' => 'Логотип', 'onerror' => "this.src='/image/logo-mobile.png'"]);
+                        echo!$isHome ? Html::a($img, ['/']) : $img;
+                        ?>
+                    </div>
+                    <div class="col-xs-5">
+                        <div class="row">
+                            <div class="col-xs-5 text-center cart-wrap">
+                                <a href="/cart">
+                                    <div class="cart-top" data-container=".wrap" data-html="true" data-title="ТОВАРЫ ДОБАВЛЕННЫЕ В КОРЗИНУ" data-toggle="popover" data-placement="bottom" data-content="Корзина пуста" data-original-title="" title="">
+                                    <!--    <span class="glyphicon glyphicon-shopping-cart">
+                                    </span>-->
+                                        <img class="img" src="/image/shopping_cart.png" height="30px" alt="">    <span class="count badge">0</span>
+                                    </div></a>
+                            </div>
+                            <div class="col-xs-7 text-right">
 
-                                    <div class="Fixed">
-                                        <button id="mmenu-icon" class="hamburger hamburger--spin" type="button">
-                                            <span class="hamburger-box">
-                                                <span class="hamburger-inner"></span>
-                                            </span>
-                                        </button>
-                                    </div>
-                                    <!--                                    <button id="mmenu-icon" class="hamburger hamburger--collapse" type="button">
-                                                                            <span class="hamburger-box">
-                                                                                <span class="hamburger-inner"></span>
-                                                                            </span>
-                                                                        </button>-->
-                                    <?php Html::a(Html::img('/image/menu.png'), '#menu', ['alt' => 'image', 'classs' => 'mobile-menu-btn']) ?>
+                                <div class="Fixed">
+                                    <button id="mmenu-icon" class="hamburger hamburger--spin" type="button">
+                                        <span class="hamburger-box">
+                                            <span class="hamburger-inner"></span>
+                                        </span>
+                                    </button>
                                 </div>
+                                <!--                                    <button id="mmenu-icon" class="hamburger hamburger--collapse" type="button">
+                                                                        <span class="hamburger-box">
+                                                                            <span class="hamburger-inner"></span>
+                                                                        </span>
+                                                                    </button>-->
+                                <?php Html::a(Html::img('/image/menu.png'), '#menu', ['alt' => 'image', 'classs' => 'mobile-menu-btn']) ?>
                             </div>
                         </div>
                     </div>
@@ -283,12 +281,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
 
                 <?php endif; ?>
 
-
-
             </div>
-
-
-
 
             <footer class="footer">
 
@@ -371,7 +364,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
 
             </footer>
 
-            <?= $this->render('_mobile_menu') ?>
+            <?php echo $this->render('_mobile_menu') ?>
 
         </div>
 
