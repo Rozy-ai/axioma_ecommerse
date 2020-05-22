@@ -3,8 +3,12 @@
     <h1><?= $this->title ?></h1>
 
     <?php
-    foreach ($model as $item)
-        echo $this->render('_one', ['model' => $item]);
+//    foreach ($model as $item)
+//        echo $this->render('_one', ['model' => $item]);
     ?>
+    <div class="home-list-category">
+        
+        <?= \app\modules\category\widgets\HomeCategory::widget() ?>
 
+    </div>
 </div>

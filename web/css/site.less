@@ -25,7 +25,7 @@ body {
     @media(max-width:@screen-sm) {
         background: transparent; 
     }
-    
+
     @media(max-width:@screen-md) {
         padding-top: 6rem; 
     }
@@ -35,12 +35,25 @@ body {
     /*padding: 70px 15px 20px;*/ 
 }
 
-h1 {
+h1, .h1 {
     /*color: @brand-primary;*/
-    font-weight: 500;
+    /*font-weight: 500;*/
     text-transform: uppercase;
     font-size: 2.6rem;
+
+    .h1mobile;
 }
+
+h2, .h2 {
+    .h2mobile;
+}
+
+
+h3, .h3 {
+    .h3mobile;
+}
+
+
 
 #content {
     padding-bottom: 4rem;
@@ -72,6 +85,14 @@ h1 {
     text-transform: upppercase;
     font-weight: 700;
     letter-spacing: .1rem;
+
+    @media(max-width:@screen-md) {
+        font-size: 1.8rem;
+    }
+
+    @media(max-width:@screen-sm) {
+        font-size: 1.4rem;
+    }
 }
 
 .main-navbar {
@@ -693,6 +714,9 @@ h1 {
 
         .h3 {
             padding-bottom: 2rem;
+
+            .h3mobile;
+
         }
         .row {
             > div {
@@ -719,6 +743,8 @@ h1 {
         font-size: 3rem;
         margin-top: 5rem;
         margin-bottom: 3rem;
+
+        .h2mobile;
     }
 
     .gallery-wrap {
@@ -763,13 +789,16 @@ h1 {
 
     .h2 {
         margin-bottom: 3rem;
-        font-size: 4.1rem;
+
+        .h2mobile;
     }
 
     .new {
 
         .h2 {
             margin-top: 0;
+
+            .h2mobile;
 
         }
 
@@ -783,6 +812,8 @@ h1 {
             font-size: 2.4rem;
             font-weight: 700;
             margin-top: .4rem;
+            
+            .h3mobile;
         }
 
         .date {
@@ -858,6 +889,14 @@ h1 {
     .h2 {
         margin-bottom: 3rem;
         font-size: 3rem;
+
+        @media(max-width:@screen-md) {
+            font-size: 1.8rem;
+        }
+
+        @media(max-width:@screen-sm) {
+            font-size: 1.4rem;
+        }
     }
 
     .thanks {}
@@ -921,14 +960,17 @@ h1 {
     h1 {
         /*color: @gray-dark;*/
         margin-top: 0;
-        font-size: 2.2rem;
         margin-bottom: 2rem;
+
+        .h1mobile;
     }
 
     .h2 {
         /*color: @gray-dark;*/
         margin: 1rem 0 2rem;
         display: block;
+
+        .h2mobile;
     }
 }
 
@@ -1319,8 +1361,8 @@ h1 {
 
     .footer-up {
         position: fixed;
-        left: 2rem;
-        bottom: 2rem;
+        right: 1rem;
+        bottom: 1rem;
         z-index: 10000;
     }
 
@@ -1431,6 +1473,14 @@ a.desc:after {
     .h2 {
         font-size: 3rem;
         margin-bottom: 3rem;
+
+        @media(max-width:@screen-md) {
+            font-size: 2rem;
+        }
+
+        @media(max-width:@screen-sm) {
+            font-size: 1.8rem;
+        }
     }
 
     line-height: 2.2rem;
@@ -1599,6 +1649,8 @@ a.desc:after {
         margin-top: 4rem;
         margin-bottom: 6rem;
         /*color: @brand-primary;*/
+
+        .h1mobile;
     }
 
     .panel-heading {
@@ -2165,4 +2217,34 @@ input[type='number'] {
 /* стили для чекбокса, находящегося в состоянии disabled */
 .custom-checkbox>input:disabled+span::before {
     background-color: #e9ecef;
+}
+
+.h1mobile {
+    @media(max-width:@screen-md) {
+        font-size: 3rem;
+    }
+
+    @media(max-width:@screen-sm) {
+        font-size: 2.4rem;
+    }
+}
+
+.h2mobile {
+    @media(max-width:@screen-md) {
+        font-size: 2.4rem;
+    }
+
+    @media(max-width:@screen-sm) {
+        font-size: 2rem;
+    }
+}
+
+.h3mobile {
+    @media(max-width:@screen-md) {
+        font-size: 2.2rem;
+    }
+
+    @media(max-width:@screen-sm) {
+        font-size: 1.8rem;
+    }
 }

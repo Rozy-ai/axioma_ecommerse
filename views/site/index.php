@@ -16,6 +16,9 @@ use yii\bootstrap\Html;
 
     <div class="home-list-category">
         <div class="container">
+
+            <h1>Антикражные системы для магазинов</h1>
+
             <?= \app\modules\category\widgets\HomeCategory::widget() ?>
         </div>
     </div>
@@ -24,7 +27,7 @@ use yii\bootstrap\Html;
         <div class="uslugi-grid-wrap">
             <div class="container">
 
-                <div class="h3">Услуги и сервисы</div>
+                <div class="h2">Услуги и сервисы</div>
 
                 <div class="row">
                     <?php
