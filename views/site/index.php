@@ -20,6 +20,25 @@ use yii\bootstrap\Html;
         </div>
     </div>
 
+    <div class="uslugi">
+        <div class="uslugi-grid-wrap">
+            <div class="container">
+
+                <div class="h3">Услуги и сервисы</div>
+
+                <div class="row">
+                    <?php
+                    foreach (\app\modules\content\models\Content::findAll([
+                        'is_enable' => 1,
+                        'type_id' => \app\modules\content\models\Content::TYPE['Услуги'],
+                    ]) as $page)
+                        echo $this->render('@app/modules/content/views/get/_one_service', ['model' => $page])
+                        ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="home-advantages">
         <div class="container">
             <div class="advantages-wrap">
