@@ -10,6 +10,7 @@ use Yii;
  * @property int $id
  * @property string $header Заголовок
  * @property string $image Изображение
+ * @property string $icon Иконка
  * @property string $url Url
  * @property string $content Содержание
  * @property int $ord Порядок (обратный)
@@ -39,7 +40,7 @@ class FastCategory extends \app\models\CustomAR
         return [
             [['content'], 'string'],
             [['ord', 'created_at', 'is_enable', 'is_ar', 'is_video'], 'integer'],
-            [['header', 'image', 'url'], 'string', 'max' => 255],
+            [['header', 'image', 'icon', 'url'], 'string', 'max' => 255],
             [['title', 'description', 'keywords'], 'string', 'max' => 500],
         ];
     }
@@ -53,6 +54,7 @@ class FastCategory extends \app\models\CustomAR
             'id' => 'ID',
             'header' => 'Заголовок',
             'image' => 'Изображение',
+            'icon' => 'Иконка',
             'url' => 'Url',
             'content' => 'Содержание',
             'ord' => 'Порядок (обратный)',

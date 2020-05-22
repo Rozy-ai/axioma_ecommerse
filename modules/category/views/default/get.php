@@ -23,10 +23,8 @@ $this->params['breadcrumbs'][] = $category->header;
 
     <div class="row">
 
-        <div class="col-xs-12 col-sm-4 category-left-menu">
-            <?= \app\modules\category\widgets\MenuCategory::widget(['active_id' => $category->id]); ?>
-        </div>
-        <div class="col-xs-12 col-sm-8">
+
+        <div class="col-xs-12 col-sm-8 col-sm-push-4">
 
             <div class="row">
                 <h1><?= $category->header ?> </h1>
@@ -34,7 +32,7 @@ $this->params['breadcrumbs'][] = $category->header;
 
             <div class="row">
 
-                <div class="">
+                <div class="hidden">
                     <p class="pull-left">
                         <!--                        -->
                     </p>
@@ -74,6 +72,10 @@ $this->params['breadcrumbs'][] = $category->header;
             ?>
 
             <?= $category->content ?>
+        </div>
+
+        <div class="col-xs-12 col-sm-4  col-sm-pull-8 category-left-menu">
+            <?= \app\modules\category\widgets\MenuCategory::widget(['active_id' => $category->id]); ?>
         </div>
     </div>
 </div>

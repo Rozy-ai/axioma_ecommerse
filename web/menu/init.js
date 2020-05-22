@@ -55,7 +55,7 @@ var $menu = $("#menu").mmenu({
         "border-offset",
         "fx-panels-slide-60",
         "theme-white",
-        "border-none",
+//        "border-none",
 //        "shadow-panels", "fx-panels-slide-100",
 //        "border-none", "theme-white",
 //        "pagedim-black",
@@ -63,7 +63,7 @@ var $menu = $("#menu").mmenu({
 //        "position-right"
     ],
     "iconbar": {
-        "use": true,
+        "use": false,
         "top": [
             "<a href='/'><i class='fa fa-home'></i></a>",
             "<a href='/enter'><i class='fa fa-user'></i></a>"

@@ -33,7 +33,7 @@ use yii\bootstrap\Html;
             </span>
         </li>
 
-        <hr/>
+        <li class="devider"></li>
 
 <!--        <li><span> <?=
         Html::img('/image/ico/Catalog.svg', ['height' => '30'
@@ -46,25 +46,35 @@ use yii\bootstrap\Html;
             </ul>
         </li>-->
         <?php foreach (\app\modules\fast_category\models\FastCategory::find()->all() as $item): ?>
-            <li><a href="<?= $item->_url ?>"><?= $item->header ?></a></li>
+            <li class="catalog">
+                <a href="<?= $item->_url ?>">
+                    <?= Html::img($item->_icon, ['height' => '30']) ?>
+                    <?= $item->header ?>
+                </a>
+            </li>
         <?php endforeach; ?>
 
+        <li class="devider"></li>
         <li>
 
             <a href="/uslugi">
 
-                <?= Html::img('/image/ico/Service.svg', ['height' => '30']) ?>  УСЛУГИ</a></li>
+                <?= Html::img('/image/ico/Service.svg', ['height' => '30']) ?>  УСЛУГИ</a>
+        </li>
         <li>
 
             <a href="/dostavka-vozvrat">
                 <?= Html::img('/image/ico/Delivery.svg', ['height' => '30']) ?>
-                ДОСТАВКА И ОПЛАТА</a></li>
+                ДОСТАВКА И ОПЛАТА</a>
+        </li>
         <li>
 
             <a href="/kontaktyi">
 
                 <?= Html::img('/image/ico/Locate.svg', ['height' => '30']) ?>
-                КОНТАКТЫ</a></li>
+                КОНТАКТЫ</a>
+        </li>
+
         <!--<li><a href="/calc">Калькулятор</a></li>-->
 
     </ul>

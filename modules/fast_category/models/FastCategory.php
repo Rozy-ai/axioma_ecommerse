@@ -9,6 +9,7 @@ use yii\helpers\Url;
 class FastCategory extends \app\models\FastCategory {
 
     const URL_PATH = '/fast-cat/';
+    const ICON_PATH = '/image/fast-cat/';
 
     public function behaviors() {
         return [
@@ -46,6 +47,11 @@ class FastCategory extends \app\models\FastCategory {
     public function get_url() {
 
         return Url::to(self::URL_PATH . $this->url);
+    }
+
+    public function get_icon() {
+
+        return Url::to(self::ICON_PATH . $this->id . '.svg');
     }
 
 }
