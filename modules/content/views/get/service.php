@@ -15,7 +15,16 @@ $this->params['breadcrumbs'][] = $model->header;
 ?>
 <div class="uslugi row">
 
-    <div class="col-xs-12 col-sm-3">
+    <div class="col-xs-12 col-sm-8 col-sm-push-4 col-lg-9 col-lg-push-3">
+
+        <h1><?= $model->header ?></h1>
+
+        <div class="content">
+            <?= $model->content; ?>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-4 col-sm-pull-8 col-lg-3 col-lg-pull-9">
 
         <?=
         app\modules\content\widgets\MenuService::widget([
@@ -24,13 +33,5 @@ $this->params['breadcrumbs'][] = $model->header;
         ?>
 
     </div>
-    <div class="col-xs-12 col-sm-9">
 
-        <h1><?= $model->header ?></h1>
-
-        <div class="content">
-            <?= $model->content; ?>
-        </div>
-
-    </div>
 </div>
