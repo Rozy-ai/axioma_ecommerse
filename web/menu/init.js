@@ -35,6 +35,7 @@ var $menu = $("#menu").mmenu({
 
 //    drag: true,
     language: 'ru',
+    title: false,
     pageScroll: {
         scroll: true,
         update: true
