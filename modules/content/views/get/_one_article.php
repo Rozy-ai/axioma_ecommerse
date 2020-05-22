@@ -9,7 +9,7 @@ use yii\helpers\Html;
     </div>
     <div class="img col-xs-12 col-sm-12">
         <div class="title">
-            <?= Html::a($model->header, ['/' . $model->url], ['class' => 'h2']) ?>
+            <?= Html::a($model->header, ['/' . $model->url], ['class' => 'h3']) ?>
         </div>
         <i class="far fa-calendar-alt"></i> <?= Yii::$app->formatter->asDate($model->created_at, 'long') ?>
         <div class="content"><?= $model->anons ?></div>
