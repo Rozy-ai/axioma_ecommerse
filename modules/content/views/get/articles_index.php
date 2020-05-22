@@ -8,7 +8,7 @@ $this->title = $this->title . ((isset($request['page'])) ? ' Страница - 
 $this->params['breadcrumbs'][] = 'Статьи';
 ?>
 
-<div class="news">
+<div class="article-index">
     <h1>Статьи</h1>
 
 

@@ -19,7 +19,7 @@ class MenuArticle extends Widget {
 
         $model = Content::getArticles();
 
-        return $this->render('menu_service', [
+        return $this->render('menu_article', [
                     'model' => $model,
                     'current_id' => $this->current_id,
         ]);
