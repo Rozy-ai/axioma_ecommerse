@@ -8,6 +8,9 @@ use yii\bootstrap\Html;
     <div class="service-wrap wrap-<?= $model->id ?>" 
          onClick="window.location = '<?= $model->url ?>'">
 
+        <div class="icon center-block hidden-sm hidden-md hidden-lg">
+        </div>
+
         <?= Html::a($model->header, $model->url, ['class' => 'title']) ?>
 
         <div class="content">
