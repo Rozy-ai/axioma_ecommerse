@@ -2,9 +2,11 @@
 
 use yii\bootstrap\Html;
 use yii\helpers\Url;
+
+$this->registerJsFile('/js/product-cart-height.js', ['depends' => ['app\assets\AppAsset']]);
 ?>
 
-<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 product-cart product-cart-grid">
+<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 product-cart product-cart-grid">
 
     <div class="panel">
         <div class="panel-heading">
