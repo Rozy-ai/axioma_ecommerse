@@ -50,6 +50,12 @@ class DefaultController extends Controller {
         if ($search->detection_type == 2)
             $andwhere['is_radio'] = 1;
 
+        if ($search->video_type == 1)
+            $andwhere['is_ip'] = 1;
+        
+        if ($search->video_type == 2)
+            $andwhere['is_tvi'] = 1;
+
 
         if ($search->enter_width)
             $andFilterWhere = ['>=', 'enter_width', $search->enter_width];

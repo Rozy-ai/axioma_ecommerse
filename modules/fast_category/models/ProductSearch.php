@@ -16,8 +16,9 @@ class ProductSearch extends Model {
 //    public $is_akust;
 //    public $is_radio;
     public $detection_type;
-    public $is_ip;
-    public $is_tvi;
+    public $video_type;
+//    public $is_ip;
+//    public $is_tvi;
     public $search;
     public $enter_width;
 
@@ -34,18 +35,22 @@ class ProductSearch extends Model {
         return [
             [['category',
 //                'is_akust', 'is_radio', 
-            'search', 'is_ip', 'is_tvi', 'enter_width', 'detection_type'], 'safe'],
+            'search',
+            'video_type',
+//                'is_ip', 'is_tvi', 
+            'enter_width', 'detection_type'], 'safe'],
         ];
     }
 
     public function attributeLabels() {
         return [
 //            'is_akust' => 'Акустомагнитные системы',
-            'is_radio' => 'Радиочастотные системы',
-            'is_ip' => 'IP',
-            'is_tvi' => 'HD-TVI',
+//            'is_radio' => 'Радиочастотные системы',
+//            'is_ip' => 'IP',
+//            'is_tvi' => 'HD-TVI',
             'enter_width' => 'Шиирина прохода',
             'detection_type' => 'Тип детекции',
+            'video_type' => 'Тип передачи данных',
         ];
     }
 
