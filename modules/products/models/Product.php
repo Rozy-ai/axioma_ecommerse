@@ -176,7 +176,7 @@ class Product extends \app\models\Product {
 //        return ['url' => '/category/' . $category->url, 'label' => $category->header];
 
         $fc = \app\modules\fast_category\models\FastCategory::findOne($this->fastcat_id);
-        return ['url' => '/fast-cat/' . $fc->url, 'label' => $fc->header];
+        return $fc ? ['url' => '/fast-cat/' . $fc->url, 'label' => $fc->header] : false;
     }
 
     public function getUrl($is_full = false) {
