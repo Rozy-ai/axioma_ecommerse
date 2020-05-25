@@ -86,7 +86,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                 <div class="row">
                     <div class="col-xs-7 logo-wrap">
                         <?php
-                        $img = Html::img('/image/logo-mobile.png', ['class' => 'img img-responsive', 'alt' => 'Логотип', 'onerror' => "this.src='/image/logo-mobile.png'"]);
+                        $img = Html::img('/image/logo-mobile.svg', ['class' => 'img', 'alt' => 'Логотип', 'height' => '46', 'onerror' => "this.src='/image/logo-mobile.png'"]);
                         echo!$isHome ? Html::a($img, ['/']) : $img;
                         ?>
                     </div>
@@ -192,7 +192,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                 </div>
                                 <div class="col-xs-12 col-sm-3 col-sm-offset-1 phone-wrap" >
                                     <div class="phone">
-                                        <a href="tel:<?= Yii::$app->info::get('headTelephone') ?>">
+                                        <a href="tel:<?= str_replace(['-', '(', ')', ' '], '', Yii::$app->info::get('headTelephone')) ?>">
                                             <?= Yii::$app->info::get('headTelephone') ?>
                                         </a>
                                     </div>
@@ -301,18 +301,21 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                         <p class="title">КАРТА САЙТА</p>
 
                                     </div>
-                                    <div class="col-xs-12 col-sm-4">
+
+
+                                    <div class="col-xs-12 col-sm-5 col-sm-push-4">
+                                        <ul class="list-unstyled list-inline">
+                                            <?= Menu::getFooterItems(2) ?>
+                                        </ul>
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-4 col-sm-pull-5">
                                         <ul class="list-unstyled list-inline">
                                             <?= Menu::getFooterItems(1) ?>
                                         </ul>
 
                                     </div>
-                                    <div class="col-xs-12 col-sm-5">
-                                        <ul class="list-unstyled list-inline">
-                                            <?= Menu::getFooterItems(2) ?>
-                                        </ul>
 
-                                    </div>
                                     <div class="col-xs-12 col-sm-3">
                                         <ul class="list-unstyled list-inline">
                                             <?= Menu::getFooterItems(3) ?>
@@ -334,7 +337,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                     </a>
                                 </p>
                                 <p class="phone">
-                                    <a href="tel:<?= Yii::$app->info::get('headTelephone') ?>">
+                                    <a href="tel:<?= str_replace(['-', '(', ')', ' '], '', Yii::$app->info::get('headTelephone')) ?>">
                                         <?= Yii::$app->info::get('headTelephone') ?>
                                     </a>
                                     <br/>

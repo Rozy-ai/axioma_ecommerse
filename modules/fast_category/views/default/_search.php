@@ -137,7 +137,7 @@ $this->registerCss($this->render('./../../assets/css/category-search.css'));
         <div class="col-xs-12 col-lg-6">
 
             <div class="row">
-                <div class="col-xs-6">
+                <div class="col-xs-12 col-sm-6">
                     <?php if ($category->id == 1): ?>
                         <?=
                         $form->field($model, 'enter_width')->widget(Select2::classname(), [
@@ -153,7 +153,7 @@ $this->registerCss($this->render('./../../assets/css/category-search.css'));
 
                     <?php endif; ?>
                 </div>
-                <div class="col-xs-6">
+                <div class="col-xs-12 col-sm-6">
                     <?=
                             $form->field($model, 'search')
                             ->widget(Select2::classname(), [

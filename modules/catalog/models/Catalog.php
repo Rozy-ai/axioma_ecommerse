@@ -79,9 +79,18 @@ class Catalog extends \app\modules\products\models\Product {
 
     public function getBreadCatLink() {
 
-        $category = Category::findOne($this->category_id);
+        /*        ------------      */
+        /*              Fast Cat */
+        /*        ------------      */
 
-        return ['url' => '/category/' . $category->url, 'label' => $category->header];
+//        $category = Category::findOne($this->category_id);
+//        return ['url' => '/category/' . $category->url, 'label' => $category->header];
+
+        $fc = \app\modules\fast_category\models\FastCategory::findOne($this->fastcat_id);
+
+        Yii::error($fc->header);
+
+        return ['url' => '/fast-cat/' . $fc->url, 'label' => $fc->header];
     }
 
 //    public function doReplace() {
@@ -90,5 +99,4 @@ class Catalog extends \app\modules\products\models\Product {
 //
 //
 //    }
-
 }

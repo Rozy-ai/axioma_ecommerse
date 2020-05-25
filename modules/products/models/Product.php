@@ -172,9 +172,11 @@ class Product extends \app\models\Product {
 
     public function getBreadCatLink() {
 
-        $category = Category::findOne($this->category_id);
+//        $category = Category::findOne($this->category_id);
+//        return ['url' => '/category/' . $category->url, 'label' => $category->header];
 
-        return ['url' => '/category/' . $category->url, 'label' => $category->header];
+        $fc = \app\modules\fast_category\models\FastCategory::findOne($this->fastcat_id);
+        return ['url' => '/fast-cat/' . $fc->url, 'label' => $fc->header];
     }
 
     public function getUrl($is_full = false) {
@@ -200,7 +202,5 @@ class Product extends \app\models\Product {
     public function getFastCat() {
         return $this->hasOne(\app\modules\fast_category\models\FastCategory::className(), ['id' => 'fastcat_id']);
     }
-
-
 
 }
