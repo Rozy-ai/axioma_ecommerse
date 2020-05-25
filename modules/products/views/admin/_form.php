@@ -151,6 +151,14 @@ use kartik\widgets\Select2;
             <?= $form->field($model, 'product_type')->checkbox() ?>
 
             <?= $form->field($model, 'show_in_recomended')->checkbox() ?>
+            
+            <?= $form->field($model, 'is_akustika')->checkbox() ?>
+            
+            <?= $form->field($model, 'is_radio')->checkbox() ?>
+            
+            <?= $form->field($model, 'is_ip')->checkbox() ?>
+            
+            <?= $form->field($model, 'is_tvi')->checkbox() ?>
 
             <?= $form->field($model, 'recomended_sort')->textInput(['maxlength' => true]) ?>
 

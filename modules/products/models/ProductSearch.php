@@ -18,7 +18,7 @@ class ProductSearch extends Product
     public function rules()
     {
         return [
-            [['id', 'category_id', 'price', 'ord', 'is_enable', 'created_at', 'updated_at'], 'integer'],
+            [['id', 'category_id', 'price', 'ord', 'is_enable', 'created_at', 'updated_at', 'fastcat_id'], 'integer'],
             [['header', 'article', 'url', 'content_info', 'content_description', 'content_characteristics', 'content_install', 'title', 'description', 'keywords', 'supported_products'], 'safe'],
         ];
     }
@@ -66,6 +66,7 @@ class ProductSearch extends Product
             'is_enable' => $this->is_enable,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
+            'fastcat_id' => $this->fastcat_id,
         ]);
 
         $query->andFilterWhere(['like', 'header', $this->header])

@@ -66,6 +66,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'class' => 'kartik\grid\EditableColumn',
             'attribute' => 'fastcat_id',
             'format' => 'raw',
+            'filter' => app\modules\fast_category\models\FastCategory::__getHeaders(),
             'editableOptions' => [
 //                'inputType' => \kartik\editable\Editable::INPUT_SELECT2,
                 'inputType' => \kartik\editable\Editable::INPUT_DROPDOWN_LIST,
@@ -89,6 +90,27 @@ $this->params['breadcrumbs'][] = $this->title;
         [
             'class' => 'kartik\grid\EditableColumn',
             'attribute' => 'is_tvi',
+            'format' => 'raw',
+            'editableOptions' => [
+//                'inputType' => \kartik\editable\Editable::INPUT_SELECT2,
+                'inputType' => \kartik\editable\Editable::INPUT_CHECKBOX,
+                'formOptions' => ['action' => ['/products/admin/edit-column']],
+                'data' => app\modules\fast_category\models\FastCategory::__getHeaders(),
+            ],
+        ],
+        [
+            'class' => 'kartik\grid\EditableColumn',
+            'attribute' => 'is_akustika',
+            'format' => 'raw',
+            'editableOptions' => [
+//                'inputType' => \kartik\editable\Editable::INPUT_SELECT2,
+                'inputType' => \kartik\editable\Editable::INPUT_CHECKBOX,
+                'formOptions' => ['action' => ['/products/admin/edit-column']],
+            ],
+        ],
+        [
+            'class' => 'kartik\grid\EditableColumn',
+            'attribute' => 'is_radio',
             'format' => 'raw',
             'editableOptions' => [
 //                'inputType' => \kartik\editable\Editable::INPUT_SELECT2,

@@ -9,13 +9,13 @@ use yii\helpers\Url;
     <div class="panel">
         <div class="panel-heading">
 
-            <?php if ($model->is_akustika): ?>
+            <?php if ($model->is_akustika && !$model->is_radio): ?>
 
                 <?= Html::img('/image/t-am.jpg', ['class' => 'type-img']) ?>
 
             <?php endif; ?>
 
-            <?php if ($model->is_radio): ?>
+            <?php if ($model->is_radio && !$model->is_akustika): ?>
 
                 <?= Html::img('/image/t-rc.jpg', ['class' => 'type-img']) ?>
 
