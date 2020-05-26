@@ -131,7 +131,6 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                             echo!$isHome ? Html::a($img, ['/']) : $img;
                             ?>
                                                                         <!--<img src="/image/logo.png" class="img img-responsive">-->
-                            <p class="slogan">СИСТЕМЫ ПРЕДОТВРАЩЕНИЯ КРАЖ</p>
                         </div>
                         <!--                        <div class="col-xs-12 col-sm-2 work-time hidden-xs col-md-2 col-lg-2">
                                                     <p class=""><strong>График работы</strong></p>

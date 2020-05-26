@@ -30,7 +30,7 @@ $this->registerJsFile('@web/js/form/contact_form.js', ['depends' => ['app\assets
     ])->label(false)
     ?>
 
-    <p class="star-text">*Поля обязательны для сохранения</p>
+    <p class="star-text">*Поля обязательны для заполнения</p>
     <p class="politic-text">Нажимая кнопку «Отправить» Вы соглашаетесь с
         <a href="/politic">политикой конфиденциальности</a> сайта.</p>
 

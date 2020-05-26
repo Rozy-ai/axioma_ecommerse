@@ -1889,9 +1889,9 @@ a.desc:after {
 /* ---- PRODUCTS ---- */
 
 .product-cart {
-    
+
     @media(max-width:500px) {
-        
+
         width: 100% !important;
     }
 
@@ -1919,9 +1919,15 @@ a.desc:after {
 
             .type-img {
                 position: absolute;
-                left: 0;
                 height: 30px;
                 z-index: 1;
+
+                &.img-akustika {
+                    left: 0;
+                }
+                &.img-radio {
+                    right: 0;
+                }
             }
         }
     }
