@@ -32,11 +32,13 @@ class AppAsset extends AssetBundle {
         'css/owl/owl.theme.default.min.css',
         'css/jBox/jBox.css',
         'css/jBox/jBox.Notice.css',
-        'css/fa/css/all.min.css',
-        'css/fa/css/fontawesome.min.css',
+        'css/fa-5.13/css/all.min.css',
+//        'css/fa-5.13/css/regular.min.css',
+//        'css/fa/css/fontawesome.min.css',
         'css/pgwslider.min.css',
     ];
     public $js = [
+//        'css/fa/js/all.min.js',
         'js/jquery.magnific-popup.min.js',
         'js/pgwslider.min.js',
         'js/cart-common.js',
