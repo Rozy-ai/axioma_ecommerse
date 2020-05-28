@@ -56,7 +56,8 @@ use yii\bootstrap\Html;
     <div class="home-portfolio">
 
         <div class="container">
-            <p class="h2">Готовые проекты</p>
+            <!--<p class="h2">Готовые проекты</p>-->
+            <p class="h2">Наши клиенты</p>
         </div>
 
         <div class="gallery-wrap">
@@ -71,13 +72,13 @@ use yii\bootstrap\Html;
         </div>
     </div>
 
-    <div class="home-news">
+    <div class="home-news hidden">
         <div class="container">
-            <?= \app\modules\novosti\widgets\HomeWidget::widget(); ?>
+            <?php  \app\modules\novosti\widgets\HomeWidget::widget(); ?>
         </div>
     </div>
 
-    <?= $this->render('_about') ?>
+    <?php $this->render('_about') ?>
     <?= $this->render('_contact_form') ?>
 
 
