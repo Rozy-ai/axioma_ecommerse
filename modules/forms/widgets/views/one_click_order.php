@@ -12,7 +12,6 @@ $this->registerJsFile('@web/js/form/one_click.js', ['depends' => ['app\assets\Ap
 Modal::begin([
     'id' => 'oneclick-form-modal',
     'header' => '<p class="h2">Купить в 1 клик</p>',
-    'toggleButton' => ['label' => !$type_small ? 'Купить в один клик' : 'В 1 клик', 'class' => 'btn btn-default'],
 ]);
 ?>
 
@@ -25,8 +24,8 @@ $form->field($model, 'phone')->widget(MaskedInput::className(), [
     'options' => ['placeholder' => 'Телефон', 'class' => 'form-control'],
 ])
 ?>
-<?= $form->field($model, 'good')->textInput(['value' => $product->header, 'disabled' => 'disabled']) ?>
-<?= $form->field($model, 'good')->hiddenInput(['value' => $product->header])->label(false) ?>
+<?= $form->field($model, 'good')->textInput(['disabled' => 'disabled']) ?>
+<?= $form->field($model, 'good')->hiddenInput()->label(false) ?>
 <?= $form->field($model, 'count')->textInput(['value' => 1, 'type' => 'number']) ?>
 <?=
 $form->field($model, 'personal_accept')->checkbox()->label('Я даю согласие на обработку персональных данных. '

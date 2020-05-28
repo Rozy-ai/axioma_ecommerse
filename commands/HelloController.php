@@ -97,4 +97,15 @@ class HelloController extends Controller {
 //        \app\modules\products\models\Product::updateAll(['is_enable' => 1]);
     }
 
+    public function actionNewsRedirects() {
+
+        foreach (\app\models\Content::findAll(['type_id' => 3]) as $item):
+
+            echo '    if ( $request_uri ~ ^/c' . $item->url . '$ ) {
+        rewrite ^ / permanent;
+    }' . PHP_EOL;
+
+        endforeach;
+    }
+
 }

@@ -91,38 +91,23 @@ $this->registerCss($this->render('./../../assets/css/category-search.css'));
             <?php endif; ?>
 
         </div>
-        <div class="col-xs-12 col-lg-6">
+        <div class="col-xs-12 col-lg-3 col-lg-offset-3">
 
-            <div class="row">
-                <div class="col-xs-12 col-sm-6">
-                    <?php if ($category->id == 1): ?>
-                        <?=
-                        $form->field($model, 'enter_width')->widget(Select2::classname(), [
-                            'data' => $model->collectEnterWidth($model->detection_type),
-                            'options' => [
-                                'onChange' => '$("#category-search").submit()',
-                                'placeholder' => 'Ширина прохода', 'multiple' => false],
-                            'pluginOptions' => [
-                                'allowClear' => true,
-                            ],
-                        ])->label('Ширина входной группы');
-                        ?>
 
-                    <?php endif; ?>
-                </div>
-                <div class="col-xs-12 col-sm-6">
-                    <?=
-                            $form->field($model, 'search')
-                            ->widget(Select2::classname(), [
-                                'data' => $model::_SEARCH,
-                                'options' => [
-                                    'onChange' => '$("#category-search").submit()',
-                                    'multiple' => false],
-                            ])->label('Сортировка')
-                    ?>
-                </div>
-            </div>
+            <?php if ($category->id == 1): ?>
+                <?=
+                $form->field($model, 'enter_width')->widget(Select2::classname(), [
+                    'data' => $model->collectEnterWidth($model->detection_type),
+                    'options' => [
+                        'onChange' => '$("#category-search").submit()',
+                        'placeholder' => 'Ширина прохода', 'multiple' => false],
+                    'pluginOptions' => [
+                        'allowClear' => true,
+                    ],
+                ])->label('Ширина входной группы');
+                ?>
 
+            <?php endif; ?>
         </div>
         <div class="col-xs-12 col-sm-1 hidden">
         </div>

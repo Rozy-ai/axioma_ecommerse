@@ -342,6 +342,10 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                     <br/>
                                 </p>
                                 <?= \app\modules\forms\widgets\CallBack::widget(['in_footer' => true]); ?>
+                                <p class="insta">
+                                    <a href="http://instagram.com/axioma.pro.russia/" target="_blank">
+                                        <i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -365,6 +369,9 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                 </a>
 
             </footer>
+
+
+            <?php echo \app\modules\forms\widgets\OneClickOrder::widget() ?>
 
             <?php echo $this->render('_mobile_menu') ?>
 

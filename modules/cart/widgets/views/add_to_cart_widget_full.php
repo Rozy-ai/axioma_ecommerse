@@ -78,7 +78,12 @@ use kartik\popover\PopoverX;
                 ])
                 ?>
                 <?php ActiveForm::end(); ?>
-                <?= \app\modules\forms\widgets\OneClickOrder::widget(['product_id' => $model->id]) ?>
+                <button type="button" class="btn btn-default"
+                        onClick="$('#oneclickorder-good').val($(this).attr('data-header'))"
+                        data-id="<?= $model->id ?>" 
+                        data-header="<?= $model->header ?>" 
+                        data-toggle="modal" data-target="#oneclick-form-modal">Купить в 1 клик</button>
+                        <?= \app\modules\forms\widgets\OneClickOrder::widget() ?>
             </div>
 
         </div>

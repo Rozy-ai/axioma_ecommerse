@@ -9,8 +9,8 @@ use yii\helpers\Html;
 
 class OneClickOrder extends Widget {
 
-    public $product_id;
-    public $type_small = false;
+//    public $product_id;
+//    public $type_small = false;
 
     public function init() {
 
@@ -20,13 +20,12 @@ class OneClickOrder extends Widget {
     public function run() {
 
         $model = new \app\modules\forms\models\OneClickOrder();
-
-        $product = \app\modules\catalog\models\Catalog::findOne($this->product_id);
+//        $product = \app\modules\catalog\models\Catalog::findOne($this->product_id);
 
         return $this->render('one_click_order', [
                     'model' => $model,
-                    'product' => $product,
-                    'type_small' => $this->type_small,
+//                    'product' => $product,
+//                    'type_small' => $this->type_small,
         ]);
     }
 

@@ -345,3 +345,88 @@ if ( $request_uri ~ ^/catalog/megacount_stereo_stereocount3d$) {
         rewrite ^ /category/sjemnik-zhestkih-datchikov permanent;
 	}
 
+#news
+
+    if ( $request_uri ~ ^/novosti$ ) {
+        rewrite ^ / permanent;
+    }
+    if ( $request_uri ~ ^/cnoviy_ofis_kompanii_axioma$ ) {
+        rewrite ^ / permanent;
+    }
+    if ( $request_uri ~ ^/cfakty$ ) {
+        rewrite ^ / permanent;
+    }
+    if ( $request_uri ~ ^/csneaker$ ) {
+        rewrite ^ / permanent;
+    }
+    if ( $request_uri ~ ^/csimalend$ ) {
+        rewrite ^ / permanent;
+    }
+    if ( $request_uri ~ ^/cmagnit_kosmetic$ ) {
+        rewrite ^ / permanent;
+    }
+    if ( $request_uri ~ ^/ckameri_videonabludenija$ ) {
+        rewrite ^ / permanent;
+    }
+    if ( $request_uri ~ ^/csportdepo-ekb$ ) {
+        rewrite ^ / permanent;
+    }
+    if ( $request_uri ~ ^/cmagazin_elit_serov$ ) {
+        rewrite ^ / permanent;
+    }
+    if ( $request_uri ~ ^/cbegemotik$ ) {
+        rewrite ^ / permanent;
+    }
+    if ( $request_uri ~ ^/cprikaz_ot_01122014_372$ ) {
+        rewrite ^ / permanent;
+    }
+    if ( $request_uri ~ ^/cprikaz_ot_23052014_153$ ) {
+        rewrite ^ / permanent;
+    }
+    if ( $request_uri ~ ^/ckachkanarchkij_magazin_vostorg$ ) {
+        rewrite ^ / permanent;
+    }
+    if ( $request_uri ~ ^/cmostovoj$ ) {
+        rewrite ^ / permanent;
+    }
+    if ( $request_uri ~ ^/cnam_5_let$ ) {
+        rewrite ^ / permanent;
+    }
+    if ( $request_uri ~ ^/cmarche_da_roma$ ) {
+        rewrite ^ / permanent;
+    }
+    if ( $request_uri ~ ^/cts_elect$ ) {
+        rewrite ^ / permanent;
+    }
+    if ( $request_uri ~ ^/cvosmerka$ ) {
+        rewrite ^ / permanent;
+    }
+    if ( $request_uri ~ ^/csityi-dvor$ ) {
+        rewrite ^ / permanent;
+    }
+    if ( $request_uri ~ ^/ccto$ ) {
+        rewrite ^ / permanent;
+    }
+    if ( $request_uri ~ ^/caxioma_forever$ ) {
+        rewrite ^ / permanent;
+    }
+    if ( $request_uri ~ ^/cleroy_merlin$ ) {
+        rewrite ^ / permanent;
+    }
+    if ( $request_uri ~ ^/ctonel$ ) {
+        rewrite ^ / permanent;
+    }
+    if ( $request_uri ~ ^/cokey$ ) {
+        rewrite ^ / permanent;
+    }
+    if ( $request_uri ~ ^/cleo-ventoni-vybiraet-effektivnuyu-ohrannuyu-sistemu-ultra-shield$ ) {
+        rewrite ^ / permanent;
+    }
+    if ( $request_uri ~ ^/c-aksioma-sobrala-statistiku-po-vorovstvu-v-rossijskih-magazinah$ ) {
+        rewrite ^ / permanent;
+    }
+    if ( $request_uri ~ ^/c-aksioma-otkryla-tretij-filial-v-krasnodare$ ) {
+        rewrite ^ / permanent;
+    }
+
+

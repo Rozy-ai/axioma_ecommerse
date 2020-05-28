@@ -17,7 +17,12 @@ use yii\bootstrap\ActiveForm;
         ])
         ?>
         <?php ActiveForm::end(); ?>
-        <?= \app\modules\forms\widgets\OneClickOrder::widget(['product_id' => $model->id, 'type_small' => $small ? true : false]) ?>
+        <button type="button" class="btn btn-default" 
+                onClick="$('#oneclickorder-good').val($(this).attr('data-header'))"
+                data-id="<?= $model->id ?>" 
+                data-header="<?= $model->header ?>" 
+                data-toggle="modal" data-target="#oneclick-form-modal">В 1 клик</button>
+
     </div>
 </div>
 
