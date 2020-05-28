@@ -131,6 +131,12 @@ h3, .h3 {
     .breadcrumb {
         margin-top: 2rem;
         padding: 1rem 0;
+
+        > li {
+            @media(max-width:@screen-sm) {
+                width: 100%;
+            }
+        }
     }
 }
 
