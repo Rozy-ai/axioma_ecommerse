@@ -14,12 +14,21 @@ $items = [];
 
 foreach ($images as $item):
 
-    $items[] = Html::img('/image/portfolio/' . $item, ['class' => 'img img-responsive', 'alt' => 'portfolio']);
+//    $items[] = Html::img('/image/portfolio/' . $item, ['class' => 'img img-responsive', 'alt' => 'portfolio']);
+
+
+endforeach;
+
+foreach (array_chunk(glob(Yii::getAlias('@webroot') . '/image/logos/' . "*.{jpg,png,jpeg}", GLOB_BRACE), 4) as $k => $item):
+
+
+    $items[] = $this->render('_item', ['items' => $item]);
 
 
 endforeach;
 
 
+Yii::error($items);
 
 echo Slick::widget([
 // HTML tag for container. Div is default.
@@ -35,14 +44,14 @@ echo Slick::widget([
 //    'itemOptions' => ['class' => 'slider-item'],
     'clientOptions' => [
         'speed' => 1000,
-        'arrows' => true,
+        'arrows' => false,
         'autoplay' => false,
         'dots' => true,
 //        'focusOnSelect' => true,
 //        'prevArrow' => Html::img('/images/prev_arrow.png', ['class' => 'arr-left']),
 //        'nextArrow' => Html::img('/images/next_arrow.png', ['class' => 'arr-right']),
-        'prevArrow' => Html::tag('div', '', ['class' => 'nav-arr nav-left']),
-        'nextArrow' => Html::tag('div', '', ['class' => 'nav-arr nav-right']),
+//        'prevArrow' => Html::tag('div', '', ['class' => 'nav-arr nav-left']),
+//        'nextArrow' => Html::tag('div', '', ['class' => 'nav-arr nav-right']),
         'infinite' => false,
 //        'centerMode' => true,
         'slidesToShow' => 3,

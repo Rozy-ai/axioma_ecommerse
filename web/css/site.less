@@ -1,30 +1,6 @@
 @import "open-sans.less";
 @import "bootstrap/variables.less";
 
-@font-face {
-    font-family: 'Font Awesome 5 Brands';
-    font-display: swap;
-    font-style: normal;
-    font-weight: normal;
-    src: url("/webfonts/fa-brands-400.eot");
-    src: url("/webfonts/fa-brands-400.eot?#iefix") format("embedded-opentype"), url("/webfonts/fa-brands-400.woff2") format("woff2"), url("/webfonts/fa-brands-400.woff") format("woff"), url("/webfonts/fa-brands-400.ttf") format("truetype"), url("/webfonts/fa-brands-400.svg#fontawesome") format("svg"); }
-
-@font-face {
-    font-family: 'Font Awesome 5 Free';
-    font-display: swap;
-    font-style: normal;
-    font-weight: 400;
-    src: url("/webfonts/fa-regular-400.eot");
-    src: url("/webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("/webfonts/fa-regular-400.woff2") format("woff2"), url("/webfonts/fa-regular-400.woff") format("woff"), url("/webfonts/fa-regular-400.ttf") format("truetype"), url("/webfonts/fa-regular-400.svg#fontawesome") format("svg"); }
-
-@font-face { 
-    font-family: 'Font Awesome 5 Free';
-    font-display: swap;
-    font-style: normal;
-    font-weight: 900;
-    src: url("/webfonts/fa-solid-900.eot");
-    src: url("/webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("/webfonts/fa-solid-900.woff2") format("woff2"), url("/webfonts/fa-solid-900.woff") format("woff"), url("/webfonts/fa-solid-900.ttf") format("truetype"), url("/webfonts/fa-solid-900.svg#fontawesome") format("svg"); }
-
 
 html,
 body {
@@ -821,8 +797,19 @@ h3, .h3 {
     }
 
     .gallery-wrap {
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        padding: 3rem 0;
+        
+        
+        .grid-item {
+            min-height: 20rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
 
-        background: @color-black;
+        /*background: @color-black;*/
 
         .item-wrap {
             position: relative;
@@ -1960,12 +1947,14 @@ a.desc:after {
                 position: absolute;
                 height: 30px;
                 z-index: 1;
+                left: 0;
 
                 &.img-akustika {
-                    left: 0;
+
                 }
                 &.img-radio {
-                    right: 0;
+
+                    top: 5rem;
                 }
             }
         }

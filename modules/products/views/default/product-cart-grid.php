@@ -13,13 +13,13 @@ $this->registerJsFile('/js/product-cart-height.js', ['depends' => ['app\assets\A
 
             <?php if ($model->is_akustika): ?>
 
-                <?= Html::img('/image/t-am.jpg', ['class' => 'type-img img-akustika']) ?>
+                <?= Html::img('/image/t-am.svg', ['class' => 'type-img img-akustika']) ?>
 
             <?php endif; ?>
 
             <?php if ($model->is_radio): ?>
 
-                <?= Html::img('/image/t-rc.jpg', ['class' => 'type-img img-radio']) ?>
+                <?= Html::img('/image/t-rc.svg', ['class' => 'type-img img-radio']) ?>
 
             <?php endif; ?>
 
