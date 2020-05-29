@@ -13,6 +13,9 @@ use yii\web\AssetBundle;
 
 class CartAsset extends AssetBundle {
 
+    public $publishOptions = [
+        'forceCopy' => YII_DEBUG //DEV
+    ];
     public $sourcePath = '@app/modules/cart/assets';
     public $css = [
     ];

@@ -6,6 +6,12 @@ var Cart = {
         $.get("/cart/default/update-cart", function (data) {
             wrap.html(data);
         });
+
+        var wrap = $('.header-mobile [href="/cart"]');
+
+        $.get("/cart/default/update-cart", function (data) {
+            wrap.html(data);
+        });
     },
     AddCart: function () {
 
@@ -19,7 +25,15 @@ var Cart = {
                 .done(function (data) {
                     new jBox('Notice', {
                         content: 'Товар добавлен в корзину',
-                        color: 'green'
+                        color: 'green',
+                        attributes: {
+                            x: 'right',
+                            y: 'top'
+                        },
+                        position: {
+                            x: 20,
+                            y: 70
+                        },
                     });
                     Cart.UpdateCart();
                 });
@@ -33,7 +47,16 @@ var Cart = {
                 .done(function (data) {
                     new jBox('Notice', {
                         content: 'Товар добавлен в корзину',
-                        color: 'green'
+                        color: 'green',
+                        attributes: {
+                            x: 'right',
+                            y: 'top'
+                        },
+                        position: {
+                            x: 20,
+                            y: 70
+                        },
+                        responsivePositions: null
                     });
                     Cart.UpdateCart();
                 });
