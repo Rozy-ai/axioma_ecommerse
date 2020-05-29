@@ -14,7 +14,16 @@
     }
 
     .logo-wrap {
-        padding: .5rem 1rem 1rem 3rem;;
+        padding: .5rem 1rem 1rem 3rem;
+
+        img {
+            @media(max-width:370px) { 
+                height: 42px !important;
+            }
+            @media(max-width:320px) { 
+                height: 38px !important;
+            }
+        }
     }
 
     .cart-wrap {
@@ -25,6 +34,8 @@
 
         .cart-top {
             position: relative;
+            max-width: 6rem;
+
 
             .badge {
                 position: absolute;
@@ -58,7 +69,7 @@
 #menu {
 
     top: 6rem;
-    
+
     .mm-navbars_top {
         display: none;
     }
@@ -100,7 +111,7 @@
 
     .mm-listitem {
         font-size: 1.6rem;
-        
+
         >a {
             padding: 1rem 1rem 1rem 2rem;
         }
