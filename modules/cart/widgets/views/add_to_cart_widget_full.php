@@ -58,14 +58,14 @@ use kartik\popover\PopoverX;
                         <i class="fas fa-plus"></i>
                     </button>
                 </div>
-                <div class="col-xs-6 hidden">
+<!--                <div class="col-xs-6 hidden">
                     <button class="btn btn-grey" type="button" onclick="Cart.Minus(<?= $model->id ?>)">
                         <i class="far fa-heart"></i>
                     </button>
                     <button class="btn btn-grey" type="button"  onclick="Cart.Plus(<?= $model->id ?>)">
                         <i class="fas fa-chart-bar"></i>
                     </button>
-                </div>
+                </div>-->
             </div>
 
             <br/>

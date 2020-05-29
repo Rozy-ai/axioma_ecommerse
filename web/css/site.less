@@ -800,8 +800,8 @@ h3, .h3 {
         border-top: 1px solid #ccc;
         border-bottom: 1px solid #ccc;
         padding: 2rem 0;
-        
-        
+
+
         .grid-item {
             min-height: 14rem;
             display: flex;
@@ -1364,7 +1364,8 @@ h3, .h3 {
 
                 [name=count] {
                     height: 34px;
-                    background-color: @brand-primary;
+                    /*background-color: @brand-primary;*/
+                    background-color: #eee;
                     color: #3d3d3d;
                     border: 0px solid white;
                     line-height: 3rem;
@@ -2115,10 +2116,6 @@ a.desc:after {
         }
     }
 
-    .btn-grey {
-        padding: .8rem 1.6rem;
-    }
-
     .btn-default, .btn-primary {
         padding: .8rem 1.2rem;
         /*text-transform: uppercase;*/
@@ -2258,21 +2255,28 @@ a.desc:after {
         position: relative;
 
         [name=count] {
-            height: 39px;
-            background-color: @brand-primary;
+            height: 3.4rem;
+            background-color: #eee;
             color: #3d3d3d;
             border: 0px solid white;
             line-height: 4rem;
 
             font-weight: 600;
             font-size: 1.8rem;
-            max-width: 10rem;
+            max-width: 66%;
             position: relative;
             top: 3px;
             /*margin-top: 4px;*/
 
 
         }
+
+        .btn-grey {
+            height: 3.4rem;
+            font-size: 1.2rem;
+            width: 15%;
+        }
+
         #spin { 
             display: none !important;
         }

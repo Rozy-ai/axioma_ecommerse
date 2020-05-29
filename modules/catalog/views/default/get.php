@@ -107,7 +107,7 @@ endforeach;
             </div>
         </div>
 
-        <div class="col-xs-12 col-sm-4  col-sm-pull-8 category-left-menu">
+        <div class="hidden-xs col-xs-12 col-sm-4  col-sm-pull-8 category-left-menu">
             <?= app\modules\category\widgets\MenuCategory::widget(['active_id' => $page->category_id]); ?>
         </div>
     </div>
