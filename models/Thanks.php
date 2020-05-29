@@ -11,6 +11,7 @@ use Yii;
  * @property string $name Имя
  * @property string $image Изображение
  * @property int $is_enable Включено
+ * @property int $order Порядок
  */
 class Thanks extends \app\models\CustomAR
 {
@@ -29,7 +30,7 @@ class Thanks extends \app\models\CustomAR
     {
         return [
             [['is_enable'], 'required'],
-            [['is_enable'], 'integer'],
+            [['is_enable', 'order'], 'integer'],
             [['name', 'image'], 'string', 'max' => 255],
         ];
     }
@@ -44,6 +45,7 @@ class Thanks extends \app\models\CustomAR
             'name' => 'Имя',
             'image' => 'Изображение',
             'is_enable' => 'Включено',
+            'order' => 'Порядок',
         ];
     }
 }

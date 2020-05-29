@@ -27,6 +27,8 @@ use vova07\fileapi\Widget as FileAPI;
 
     <?= $form->field($model, 'is_enable')->checkbox() ?>
 
+    <?= $form->field($model, 'order')->textInput(['maxlength' => true]) ?>
+
 
     <div class="form-group">
         <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>

@@ -16,6 +16,7 @@ class ThanksList extends Widget {
     public function run() {
 
         $model = Thanks::find()
+                ->orderBy('order desc')
                 ->where(['is_enable' => 1])
                 ->all();
 
