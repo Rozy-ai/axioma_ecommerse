@@ -354,7 +354,9 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                 <div class="footer-bottom">
                     <div class="container">
                         <div class="pull-left">
-                            <?= Yii::$app->info::get('copy') ?>
+                            <p><strong>©  2009-<?= date('Y')?> ООО “Аксиома”</strong>
+                                <br>
+                                Копирование информации сайта разрешено только с письменного согласия администрации</p>
                         </div>
                         <div class="pull-right">
                             <?php
