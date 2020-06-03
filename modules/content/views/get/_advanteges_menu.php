@@ -8,7 +8,7 @@ $list = [
     ['name' => 'О компании', 'url' => '/o_kompanii', 'image' => '/image/advantages/Аксиома.svg'],
     ['name' => 'Контроль качества <br/>в Китае ', 'url' => '/kontrol-kachestva-v-kitae', 'image' => '/image/advantages/Контроль качества.svg'],
     ['name' => 'Бесплатная доставка', 'url' => '/besplatnaya-dostavka', 'image' => '/image/advantages/Доставка.svg'],
-    ['name' => 'Сервис и гарантия', 'url' => '', 'image' => '/image/advantages/гарантия.png'],
+    ['name' => 'Сервис и гарантия', 'url' => '/garantiya-12-mesyacev', 'image' => '/image/advantages/гарантия.png'],
     ['name' => 'Оборудование <br/>в рассрочку', 'url' => '/oborudovanie-v-rassrochku', 'image' => '/image/advantages/Рассрочка.svg'],
     ['name' => 'Весь спектр <br/>монтажных услуг', 'url' => '/ves-spekt-montazhnyh-uslug', 'image' => '/image/advantages/Спектр услуг.svg'],
     ['name' => 'Офис и склад <br/>в одном месте', 'url' => '/ofis-i-sklad-v-odnom-meste', 'image' => '/image/advantages/Офис и склад.svg'],
