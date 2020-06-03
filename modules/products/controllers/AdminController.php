@@ -89,6 +89,8 @@ class AdminController extends \app\controllers\AdminController {
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['index']);
+        } else {
+            Yii::error($model->errors);
         }
 
         return $this->render('create', [

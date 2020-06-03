@@ -136,6 +136,13 @@ use kartik\widgets\Select2;
             ]);
             ?>
 
+            <?=
+            $form->field($model, 'fastcat_id')->widget(\kartik\select2\Select2::classname(), [
+                'data' => app\modules\fast_category\models\FastCategory::__getHeaders(),
+                'options' => ['placeholder' => 'Быстрые категории', 'multiple' => false],
+            ]);
+            ?>
+
             <?= $form->field($model, 'article')->textInput(['maxlength' => true]) ?>
 
             <?= $form->field($model, 'url')->textInput(['maxlength' => true]) ?>
@@ -151,13 +158,13 @@ use kartik\widgets\Select2;
             <?= $form->field($model, 'product_type')->checkbox() ?>
 
             <?= $form->field($model, 'show_in_recomended')->checkbox() ?>
-            
+
             <?= $form->field($model, 'is_akustika')->checkbox() ?>
-            
+
             <?= $form->field($model, 'is_radio')->checkbox() ?>
-            
+
             <?= $form->field($model, 'is_ip')->checkbox() ?>
-            
+
             <?= $form->field($model, 'is_tvi')->checkbox() ?>
 
             <?= $form->field($model, 'recomended_sort')->textInput(['maxlength' => true]) ?>
