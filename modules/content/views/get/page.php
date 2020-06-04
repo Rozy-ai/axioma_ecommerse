@@ -36,5 +36,9 @@ $pages_id = [94, 96, 97, 98, 99, 100];
         if ($model->url == 'oborudovanie-v-rassrochku')
             echo app\modules\forms\widgets\RassrochkaWidget::widget();
         ?>
+        <?php
+        if ($model->url == 'trade-in')
+            echo app\modules\forms\widgets\TradeInWidget::widget();
+        ?>
     </div>
 </div>

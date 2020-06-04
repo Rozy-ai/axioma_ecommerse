@@ -122,6 +122,28 @@ class DefaultController extends Controller {
         }
     }
 
+    public function actionTradeIn() {
+
+        $model = new \app\modules\forms\models\TradeInForm;
+
+        if ($model->load(Yii::$app->request->post())) {
+
+
+            if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+
+                if ($model->contact()) {
+
+                    Yii::$app->session->setFlash('success', 'Собщение отправлена.');
+                }
+            } else {
+                Yii::$app->session->setFlash('error', 'Ошибка отправки.');
+            }
+
+
+            return $this->redirect(Yii::$app->request->referrer);
+        }
+    }
+
     public function actionSubscribe() {
 
         $model = new \app\modules\forms\models\SubscribeForm();

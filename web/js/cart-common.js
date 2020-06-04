@@ -1,17 +1,15 @@
 var Cart = {
     UpdateCart: function () {
 
-        var wrap = $('.navbar-right [href="/cart"]');
 
         $.get("/cart/default/update-cart", function (data) {
-            wrap.html(data);
+            
+            $('.navbar-right [href="/cart"]').html(data);
+            $('.header-mobile [href="/cart"]').html(data);
+            console.log(data);
+            
         });
 
-        var wrap = $('.header-mobile [href="/cart"]');
-
-        $.get("/cart/default/update-cart", function (data) {
-            wrap.html(data);
-        });
     },
     AddCart: function () {
 
