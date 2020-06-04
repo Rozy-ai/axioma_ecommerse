@@ -11,15 +11,21 @@ $this->registerJsFile('/js/product-cart-height.js', ['depends' => ['app\assets\A
     <div class="panel">
         <div class="panel-heading">
 
-            <?php if ($model->is_akustika): ?>
+            <?php if ($model->is_akustika && !$model->is_radio): ?>
 
-                <?= Html::img('/image/t-am.svg', ['class' => 'type-img img-akustika']) ?>
+                <?= Html::img('/image/t-am.svg', ['class' => 'type-img']) ?>
 
             <?php endif; ?>
 
-            <?php if ($model->is_radio): ?>
+            <?php if ($model->is_radio && !$model->is_akustika): ?>
 
-                <?= Html::img('/image/t-rc.svg', ['class' => 'type-img img-radio']) ?>
+                <?= Html::img('/image/t-rc.svg', ['class' => 'type-img']) ?>
+
+            <?php endif; ?>
+
+            <?php if ($model->is_radio && $model->is_akustika): ?>
+
+                <?= Html::img('/image/t-all.svg', ['class' => 'type-img']) ?>
 
             <?php endif; ?>
 
