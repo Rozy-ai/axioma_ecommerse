@@ -133,7 +133,7 @@ class DefaultController extends Controller {
 
                 if ($model->contact()) {
 
-                    Yii::$app->session->setFlash('success', 'Собщение отправлена.');
+                    Yii::$app->session->setFlash('success', 'Собщение отправлено.');
                 }
             } else {
                 Yii::$app->session->setFlash('error', 'Ошибка отправки.');
