@@ -12,7 +12,7 @@ use Yii;
 
 class City extends \yii\base\BaseObject {
 
-    public $current_city = 'ekaterinburg';
+    public $current_city = 'www';
 
     public function getId() {
 
