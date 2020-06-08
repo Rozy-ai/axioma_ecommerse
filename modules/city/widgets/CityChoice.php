@@ -12,7 +12,7 @@ class CityChoice extends Widget {
 
     public $mobile = false;
     private $current_city = '';
-    private $default_city = 'ekaterinburg';
+    private $default_city = 'www';
 
     public function init() {
 
