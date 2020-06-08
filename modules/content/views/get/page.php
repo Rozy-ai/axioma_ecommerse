@@ -28,7 +28,6 @@ $pages_id = [94, 96, 97, 98, 99, 100];
 <div class="uslugi row">
     <div class="new col-xs-12">
         <div class="content">
-            <?= Html::img('/' . $model->image, ['class' => 'img img-responsive img-rounded']) ?>
             <?= $model->content ?>
         </div>
 
