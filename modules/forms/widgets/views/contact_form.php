@@ -11,7 +11,12 @@ $this->registerJsFile('@web/js/form/contact_form.js', ['depends' => ['app\assets
 
     <p class="h2">Свяжитесь с нами</p>
 
-    <?php $form = ActiveForm::begin(['id' => 'contact-form', 'enableClientValidation' => true,]); ?>
+    <?php
+    $form = ActiveForm::begin([
+                'id' => 'contact-form',
+                'enableClientValidation' => true,
+    ]);
+    ?>
 
     <?=
     $form->field($model, 'name')->textInput([
@@ -35,7 +40,7 @@ $this->registerJsFile('@web/js/form/contact_form.js', ['depends' => ['app\assets
         <a href="/politic">политикой конфиденциальности</a> сайта.</p>
 
     <div class="form-group button-wrap">
-        <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary']) ?>
+<?= Html::submitButton('Отправить', ['class' => 'btn btn-primary']) ?>
     </div>
 </div>
 

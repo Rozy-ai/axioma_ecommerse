@@ -15,3 +15,6 @@
 <p>
     <?= Yii::$app->info::get('ekb_address') ?>
 </p>
+<p>
+    <?= Yii::$app->info::get('kras_address') ?>
+</p>

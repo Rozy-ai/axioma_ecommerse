@@ -60,6 +60,27 @@ class DefaultController extends Controller {
         }
     }
 
+    public function actionContactForm() {
+
+        if (Yii::$app->request->isAjax) {
+
+            \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+
+            $model = new \app\modules\forms\models\ContactForm();
+            ;
+
+            if ($model->load(Yii::$app->request->post())) {
+
+                $model->body = $model->name . '( ' . $model->email . ' )' . ' спрашивает: ' . $model->message;
+
+                if ($model->contact())
+                    return 1;
+                else
+                    return 0;
+            }
+        }
+    }
+
     public function actionOneClick() {
 
         if (Yii::$app->request->isAjax) {

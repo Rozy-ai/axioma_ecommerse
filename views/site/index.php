@@ -66,19 +66,7 @@ use yii\bootstrap\Html;
     </div>
 
 
-    <div class="home-clients hidden">
-        <div class="container">
-            <?= \app\modules\client\widgets\ClientList::widget(); ?>
-        </div>
-    </div>
 
-    <div class="home-news hidden">
-        <div class="container">
-            <?php  \app\modules\novosti\widgets\HomeWidget::widget(); ?>
-        </div>
-    </div>
-
-    <?php $this->render('_about') ?>
     <?= $this->render('_contact_form') ?>
 
 

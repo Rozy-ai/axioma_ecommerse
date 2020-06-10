@@ -28,7 +28,7 @@ foreach (array_chunk(glob(Yii::getAlias('@webroot') . '/image/logos/' . "*.{jpg,
 endforeach;
 
 
-Yii::error($items);
+//Yii::error($items);
 
 echo Slick::widget([
 // HTML tag for container. Div is default.
@@ -55,10 +55,10 @@ echo Slick::widget([
         'infinite' => false,
 //        'centerMode' => true,
         'slidesToShow' => 3,
-        'slidesToScroll' => 1,
+        'slidesToScroll' => 2,
 //        'slidesToScroll' => count($items),
         'centerPadding' => '0',
-        'swipe' => true,
+//        'swipe' => true,
         'responsive' => [
             ['breakpoint' => 1024,
                 'settings' => [
