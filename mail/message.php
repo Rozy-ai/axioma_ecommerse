@@ -1,20 +1,30 @@
 <p><?= $content; ?></p>
 <br/>
-<img src="<?= $message->embed($imageFileName); ?>">
+<img src="<?= $message->embed($imageFileName); ?>" height="60">
 
-<p class="phone">
+<br/>
+<br/>
+<hr/>
+
+<div>
+    <?= Yii::$app->info::get('mos_address') ?>
     <a href="tel:<?= Yii::$app->info::get('headTelephone') ?>">
         <?= Yii::$app->info::get('headTelephone') ?>
     </a>
-    <!--<br/>-->
-</p>
-
-<p>
-    <?= Yii::$app->info::get('mos_address') ?>
-</p>
-<p>
+</div>
+<br/>
+<br/>
+<div>
     <?= Yii::$app->info::get('ekb_address') ?>
-</p>
-<p>
+    <a href="tel:<?= Yii::$app->info::get('headTelephone') ?>">
+        <?= Yii::$app->info::get('headTelephone') ?>
+    </a>
+</div>
+<br/>
+<br/>
+<div>
     <?= Yii::$app->info::get('kras_address') ?>
-</p>
+    <a href="tel:<?= Yii::$app->info::get('headTelephone') ?>">
+        <?= Yii::$app->info::get('headTelephone') ?>
+    </a>
+</div>
