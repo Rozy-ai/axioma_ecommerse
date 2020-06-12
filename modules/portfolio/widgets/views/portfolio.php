@@ -38,7 +38,7 @@ echo Slick::widget([
         'arrows' => false,
         'autoplay' => false,
         'dots' => true,
-//        'focusOnSelect' => true,
+        'focusOnSelect' => false,
 //        'prevArrow' => Html::img('/images/prev_arrow.png', ['class' => 'arr-left']),
 //        'nextArrow' => Html::img('/images/next_arrow.png', ['class' => 'arr-right']),
 //        'prevArrow' => Html::tag('div', '', ['class' => 'nav-arr nav-left']),
