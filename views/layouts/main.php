@@ -366,9 +366,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                     </div>
                 </div>
 
-                <a href="#" class="footer-up" onclick="$('html, body').stop().animate({scrollTop: 0}, 800, 'swing'); return false;">
-                    <?= Html::img('/image/arr_top.png', ['height' => 60]) ?>
-                </a>
+
 
             </footer>
 
