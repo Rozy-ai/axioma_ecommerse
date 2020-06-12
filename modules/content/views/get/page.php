@@ -13,7 +13,7 @@ if ($model->type_id == 2) {
 
 $this->params['breadcrumbs'][] = $model->header;
 
-$pages_id = [94, 96, 97, 98, 99, 100, 118];
+$pages_id = [94, 96, 97, 98, 99, 100, 119];
 ?>
 
 <?php if (in_array($model->id, $pages_id)): ?>
