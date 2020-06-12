@@ -34,7 +34,7 @@ echo Slick::widget([
     // HTML attribute for every carousel item
 //    'itemOptions' => ['class' => 'slider-item'],
     'clientOptions' => [
-        'speed' => 1000,
+//        'speed' => 1000,
         'arrows' => false,
         'autoplay' => false,
         'dots' => true,
@@ -43,13 +43,13 @@ echo Slick::widget([
 //        'nextArrow' => Html::img('/images/next_arrow.png', ['class' => 'arr-right']),
 //        'prevArrow' => Html::tag('div', '', ['class' => 'nav-arr nav-left']),
 //        'nextArrow' => Html::tag('div', '', ['class' => 'nav-arr nav-right']),
-        'infinite' => false,
+//        'infinite' => false,
 //        'centerMode' => true,
         'slidesToShow' => 3,
-        'slidesToScroll' => 2,
+        'slidesToScroll' => 3,
 //        'slidesToScroll' => count($items),
-        'centerPadding' => '0',
-//        'swipe' => true,
+//        'centerPadding' => '0',
+        'swipe' => true,
         'responsive' => [
             ['breakpoint' => 1024,
                 'settings' => [
