@@ -4,6 +4,8 @@
 
         position: relative;
 
+
+
         .nav-arr {
 
             position: absolute;
@@ -39,5 +41,13 @@
 
     .slick-slide {
         outline: -webkit-focus-ring-color auto 0px !important;
+        &:focus { outline: none !important; }
+        .grid-item {
+            &:focus { outline: none !important; }
+
+            .img {
+                padding: 2.8rem;
+            }
+        }
     }
 }

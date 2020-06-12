@@ -9,7 +9,7 @@ use yii\helpers\Html;
         <div class="col-xs-6 grid-item">
 
             <?= Html::img('/image/logos/' . basename($item),
-                    ['class' => 'img center-block', 'height' => '120px', 'alt' => 'portfolio', 'style' => 'padding: 3.2rem;']);
+                    ['class' => 'img center-block', 'height' => '120px', 'alt' => 'portfolio']);
             ?>
         </div>
 

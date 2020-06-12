@@ -365,9 +365,6 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                         </div>
                     </div>
                 </div>
-
-
-
             </footer>
 
 
