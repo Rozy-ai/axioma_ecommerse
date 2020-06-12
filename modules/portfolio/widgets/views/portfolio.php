@@ -12,18 +12,9 @@ Asset::register($this);
 
 $items = [];
 
-foreach ($images as $item):
-
-//    $items[] = Html::img('/image/portfolio/' . $item, ['class' => 'img img-responsive', 'alt' => 'portfolio']);
-
-
-endforeach;
-
-foreach (array_chunk(glob(Yii::getAlias('@webroot') . '/image/logos/' . "*.{jpg,png,jpeg}", GLOB_BRACE), 4) as $k => $item):
-
+foreach (array_chunk(glob(Yii::getAlias('@webroot') . '/image/logos/' . "*.{jpg,png,jpeg,svg}", GLOB_BRACE), 4) as $k => $item):
 
     $items[] = $this->render('_item', ['items' => $item]);
-
 
 endforeach;
 

@@ -16,13 +16,12 @@ class PortfolioWidget extends Widget {
 
     public function run() {
 
-        foreach (glob(\Yii::getAlias('@webroot') . '/image/portfolio/*.jpg') as $file):
-            $images[] = basename($file);
-        endforeach;
-
+//        foreach (glob(\Yii::getAlias('@webroot') . '/image/portfolio/*.svg') as $file):
+//            $images[] = basename($file);
+//        endforeach;
 //        print_r($imgage);
         return $this->render('portfolio', [
-                    'images' => $images,
+//                    'images' => $images,
         ]);
     }
 
