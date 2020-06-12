@@ -30,7 +30,9 @@ class DefaultController extends Controller {
         if ($parent->keywords)
             \Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => $parent->keywords]);
 
-        return $this->render('index', ['model' => $model,
+        return $this->render('index', [
+                    'model' => $model,
+                    'parent' => $parent,
         ]);
     }
 
@@ -76,7 +78,7 @@ class DefaultController extends Controller {
                 $data[] = $id;
                 $session['viewed'] = $data;
             } else {
-
+                
             } else {
             $data[] = $id;
             $session['viewed'] = $data;
