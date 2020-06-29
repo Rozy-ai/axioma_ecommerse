@@ -343,7 +343,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                 </p>
                                 <?= \app\modules\forms\widgets\CallBack::widget(['in_footer' => true]); ?>
                                 <p class="insta">
-                                    <a href="http://instagram.com/axioma.pro.russia/" target="_blank">
+                                    <a href="https://instagram.com/axioma.pro.russia/" target="_blank">
                                         <i class="fab fa-instagram" aria-hidden="true"></i></a>
                                 </p>
                             </div>
