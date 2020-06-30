@@ -48,6 +48,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'article',
 //        'category',
         'header',
+        'short_name',
         [
             'class' => 'kartik\grid\EditableColumn',
             'attribute' => 'category_id',
@@ -142,7 +143,7 @@ $this->params['breadcrumbs'][] = $this->title;
 //        'title',
 //        'description',
 //        'keywords',
-        //'is_enable',
+//        'is_enable',
         //'created_at',
         //'updated_at',
         //'supported_products',

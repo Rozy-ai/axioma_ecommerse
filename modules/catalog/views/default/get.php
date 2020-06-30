@@ -10,7 +10,7 @@ if ($parent && $parent->id != 1)
 if ($page->breadCatLink)
     $this->params['breadcrumbs'][] = $page->breadCatLink;
 
-$this->params['breadcrumbs'][] = $page->header;
+$this->params['breadcrumbs'][] = $page->short_name ? $page->short_name : $page->header;
 ?>
 <div class="product_item">
 

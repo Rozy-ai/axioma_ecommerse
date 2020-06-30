@@ -43,8 +43,15 @@ $this->registerJsFile('/js/product-cart-height.js', ['depends' => ['app\assets\A
 
             <!--<div class="product-description-wrap">-->
             <div class="h4">
-                <?= Html::a($model->header, ['/catalog/' . $model->url], ['class' => '']) ?>
-                <?php //  $model->ord?>
+                <?=
+                Html::a($model->short_name ? $model->short_name : $model->header,
+                        ['/catalog/' . $model->url],
+                        [
+                            'class' => '',
+                            'title' => $model->header,
+                ])
+                ?>
+                <?php //  $model->ord ?>
             </div>
 
             <!--</div>-->

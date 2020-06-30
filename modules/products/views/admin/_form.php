@@ -21,6 +21,8 @@ use kartik\widgets\Select2;
         ?>
         <div class="col-xs-8">
             <?= $form->field($model, 'header')->textInput(['maxlength' => true]) ?>
+            
+            <?= $form->field($model, 'short_name')->textInput(['maxlength' => true]) ?>
 
             <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
