@@ -93,6 +93,7 @@ class Catalog extends \app\modules\products\models\Product {
         return ['url' => '/fast-cat/' . $fc->url, 'label' => $fc->header];
     }
 
+
 //    public function doReplace() {
 //
 //        $this->content_description = strreplace

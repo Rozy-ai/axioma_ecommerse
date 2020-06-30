@@ -203,4 +203,9 @@ class Product extends \app\models\Product {
         return $this->hasOne(\app\modules\fast_category\models\FastCategory::className(), ['id' => 'fastcat_id']);
     }
 
+    public function getTemplate() {
+
+        return \app\modules\seo_template\models\SeoTemplate::findOne(['for_id' => \app\modules\seo_template\models\SeoTemplate::PRODUCTS]);
+    }
+
 }

@@ -43,9 +43,17 @@ class DefaultController extends Controller {
         if (!$page)
             throw new HttpException(404, 'Страница не найдена');
 
+//        Yii::error($page->template->title);
+
         $this->setViewed($page->id);
 
-        Yii::$app->view->title = $page->title ? $page->title : $page->header;
+        Yii::$app->view->title = $page->title ? $page->title : $page->template->title;
+        Yii::$app->view->title = Yii::$app->view->title ? Yii::$app->view->title : $page->header;
+
+        Yii::$app->view->title = $page->replaceShortCodes(Yii::$app->view->title);
+
+        $page->description = $page->description ? $page->description : $page->template->description;
+        $page->description = $page->replaceShortCodes($page->description);
 
         if ($page->description)
             \Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => $page->description]);

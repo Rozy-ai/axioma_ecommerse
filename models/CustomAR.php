@@ -123,7 +123,7 @@ class CustomAR extends \yii\db\ActiveRecord {
         return '/image/ready/' . basename($_image);
     }
 
-    private function replaceShortCodes($text) {
+    public function replaceShortCodes($text) {
 
         if (preg_match_all(self::MASK, $text, $short_vars)) {
 
@@ -131,10 +131,17 @@ class CustomAR extends \yii\db\ActiveRecord {
 
             foreach ($short_vars as $var):
 
+                $_var = str_replace(['{', '}'], '', $var);
+
                 if ($var == '{price}') {
 
                     if ($this->hasAttribute('price'))
-                        $text = str_replace($var, $this->price.' руб.', $text);
+                        $text = str_replace($var, $this->price . ' руб.', $text);
+                } else {
+
+
+                    if ($this->hasAttribute($_var))
+                        $text = str_replace($var, $this->$_var, $text);
                 }
 
 

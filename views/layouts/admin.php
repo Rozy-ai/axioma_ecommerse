@@ -52,6 +52,7 @@ AdminAsset::register($this);
                             ['label' => 'Имена меток', 'url' => ['/shortcode/admin/index']],
                             ['label' => 'Метки', 'url' => ['/region_templates/admin/index']],
                             ['label' => 'Опции', 'url' => ['/options/admin/index']],
+                            ['label' => 'Шаблоны title|description', 'url' => ['/seo_template/admin/index']],
                             ['label' => 'Robots.txt', 'url' => ['/robots/admin/index']],
                         ]],
                     ['label' => 'Контент', 'url' => ['#'], 'items' => [
