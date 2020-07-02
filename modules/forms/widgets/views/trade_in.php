@@ -47,7 +47,7 @@ $form = ActiveForm::begin([
 
         <p class="star-text text-muted">* Поля обязательны для заполнения</p>
         <p class="politic-text text-danger">Нажимая кнопку «Отправить» Вы соглашаетесь с
-            <a href="/politic">политикой конфеденциальности</a> сайта.
+            <a href="/soglasie">политикой конфеденциальности</a> сайта.
         </p>
 
         <div class="form-group button-wrap">
