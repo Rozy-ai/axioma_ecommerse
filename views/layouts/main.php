@@ -25,6 +25,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
         <meta charset="<?= Yii::$app->charset ?>">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:image" content="/image/ready/5e9406ba1496c.jpg"/>
         <?php
         // Свои метатеги
         echo RegionTemplates::getInHeader();
@@ -354,7 +355,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                 <div class="footer-bottom">
                     <div class="container">
                         <div class="pull-left">
-                            <p><strong>©  2009-<?= date('Y')?> ООО “Аксиома”</strong>
+                            <p><strong>©  2009-<?= date('Y') ?> ООО “Аксиома”</strong>
                                 <br>
                                 Копирование информации сайта разрешено только с письменного согласия администрации</p>
                         </div>
