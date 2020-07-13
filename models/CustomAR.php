@@ -59,6 +59,7 @@ class CustomAR extends \yii\db\ActiveRecord {
              * перебираем шорткоды
              */
 
+
             $attrS = ['header', 'content', 'title', 'description', 'keyword'];
 
             foreach ($attrS as $attr)

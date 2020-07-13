@@ -25,7 +25,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
         <meta charset="<?= Yii::$app->charset ?>">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta property="og:image" content="/image/ready/5e9406ba1496c.jpg"/>
+        <meta property="og:image" content="/image/og_image.jpg"/>
         <?php
         // Свои метатеги
         echo RegionTemplates::getInHeader();

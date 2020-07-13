@@ -43,7 +43,7 @@ class DefaultController extends Controller {
         if (!$page)
             throw new HttpException(404, 'Страница не найдена');
 
-//        Yii::error($page->template->title);
+        Yii::error($page->header);
 
         $this->setViewed($page->id);
 
