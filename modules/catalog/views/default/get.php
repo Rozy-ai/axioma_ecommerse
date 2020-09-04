@@ -104,6 +104,20 @@ endforeach;
                     ]);
                     ?>
                 </div>
+
+                <?php if ($page->youtube_link): ?>
+
+                    <div class="col-xs-12">
+                        <div class="h3">ВИДЕО</div>
+
+                        <iframe width="100%" height="350" src="https://www.youtube.com/embed/<?= $page->youtube_link ?>" 
+                                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+
+                        </iframe>
+                    </div>
+                <?php endif; ?>
+
             </div>
         </div>
 

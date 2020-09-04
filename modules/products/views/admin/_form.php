@@ -148,6 +148,8 @@ use kartik\widgets\Select2;
             <?= $form->field($model, 'article')->textInput(['maxlength' => true]) ?>
 
             <?= $form->field($model, 'url')->textInput(['maxlength' => true]) ?>
+            
+            <?= $form->field($model, 'youtube_link')->textInput(['maxlength' => true]) ?>
 
             <?= $form->field($model, 'krat')->textInput() ?>
 

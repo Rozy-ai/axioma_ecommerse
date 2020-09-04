@@ -38,6 +38,7 @@ use Yii;
  * @property int $is_tvi HD-TVI
  * @property int $enter_width Ширина прохода
  * @property string $short_name Короткое название
+ * @property string $youtube_link Ссылка на ютуб
  *
  * @property Category $category
  * @property ProductImage[] $productImages
@@ -65,7 +66,7 @@ class Product extends \app\models\CustomAR
             [['price'], 'number'],
             [['content_info', 'content_description', 'content_characteristics', 'content_install'], 'string'],
             [['cats', 'article', 'url'], 'string', 'max' => 255],
-            [['header', 'video_link', 'title', 'description', 'keywords', 'short_name'], 'string', 'max' => 500],
+            [['header', 'video_link', 'title', 'description', 'keywords', 'short_name', 'youtube_link'], 'string', 'max' => 500],
             [['url'], 'unique'],
             [['article'], 'unique'],
             [['category_id'], 'exist', 'skipOnError' => true, 'targetClass' => Category::className(), 'targetAttribute' => ['category_id' => 'id']],
@@ -109,6 +110,7 @@ class Product extends \app\models\CustomAR
             'is_tvi' => 'HD-TVI',
             'enter_width' => 'Ширина прохода',
             'short_name' => 'Короткое название',
+            'youtube_link' => 'Ссылка на ютуб',
         ];
     }
 
