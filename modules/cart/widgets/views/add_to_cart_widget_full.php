@@ -23,9 +23,13 @@ use kartik\popover\PopoverX;
 
             <div class="row">
                 <div class="col-xs-12">
-                    <button class="btn btn-grey" type="button" onclick="Cart.Minus(<?= $model->id ?>)">
+
+                    <div class="btn btn-grey" onclick="Cart.Minus(<?= $model->id ?>)">
                         <i class="fas fa-minus"></i>
-                    </button>
+                    </div>
+<!--                    <button class="btn btn-grey" type="button" onclick="Cart.Minus(<?= $model->id ?>)">
+                        <i class="fas fa-minus"></i>
+                    </button>-->
                     <?= Html::textInput('product_id', $model->id, ['class' => 'hidden']) ?>
                     <?=
                     Html::textInput('count', $model->krat, [
@@ -54,18 +58,23 @@ use kartik\popover\PopoverX;
                                                 data-content="<?= $content ?>">
                                             <strong lass="btn-count-<?= $model->id ?>"><?= $model->krat ?></strong>
                                         </button>-->
-                    <button class="btn btn-grey" type="button"  onclick="Cart.Plus(<?= $model->id ?>)">
+<!--                    <button class="btn btn-grey" type="button"  onclick="Cart.Plus(<?= $model->id ?>)">
                         <i class="fas fa-plus"></i>
-                    </button>
+                    </button>-->
+
+                    <div class="btn btn-grey" onclick="Cart.Plus(<?= $model->id ?>)">
+                        <i class="fas fa-plus"></i>
+                    </div>
+
                 </div>
-<!--                <div class="col-xs-6 hidden">
-                    <button class="btn btn-grey" type="button" onclick="Cart.Minus(<?= $model->id ?>)">
-                        <i class="far fa-heart"></i>
-                    </button>
-                    <button class="btn btn-grey" type="button"  onclick="Cart.Plus(<?= $model->id ?>)">
-                        <i class="fas fa-chart-bar"></i>
-                    </button>
-                </div>-->
+                <!--                <div class="col-xs-6 hidden">
+                                    <button class="btn btn-grey" type="button" onclick="Cart.Minus(<?= $model->id ?>)">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                    <button class="btn btn-grey" type="button"  onclick="Cart.Plus(<?= $model->id ?>)">
+                                        <i class="fas fa-chart-bar"></i>
+                                    </button>
+                                </div>-->
             </div>
 
             <br/>
