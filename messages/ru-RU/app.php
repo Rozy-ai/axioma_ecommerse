@@ -48,4 +48,8 @@ return [
     'Products' => 'Каталог',
     'Create Product' => 'Добавить Позицию',
     'Update Product: {nameAttribute}' => 'Обновить Портфолио  {nameAttribute}',
+//
+    'Vacancies' => 'Вакансии',
+    'Create Vacancy' => 'Добавить вакансию',
+    'Update Vacancy: {nameAttribute}' => 'Обновить вакансию  {nameAttribute}',
 ];

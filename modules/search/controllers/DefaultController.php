@@ -57,8 +57,14 @@ class DefaultController extends Controller {
 
     private function getProducts($search) {
 
+
+        $search = explode(' ', $search);
+
         return \app\modules\products\models\Product::find()
-                        ->where(['like', 'header', $search])
+                        ->where(['OR',
+                            ['like', 'header', $search],
+                            ['like', 'content_info', $search],
+                        ])
                         ->andWhere(['is_enable' => 1])
                         ->orderBy(['header' => SORT_ASC])
                         ->all();

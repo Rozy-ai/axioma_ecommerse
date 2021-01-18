@@ -25,7 +25,7 @@ class CallBackForm extends EmailForm {
         return [
             [['name', 'phone', 'personal_accept'], 'required'],
 //            ['email', 'email'],
-            ['personal_accept', 'in', 'range' => [1]],
+            ['personal_accept', 'in', 'range' => [1], 'message' => 'Вы должны дать согласие на обработку персональных данных.'],
         ];
     }
 

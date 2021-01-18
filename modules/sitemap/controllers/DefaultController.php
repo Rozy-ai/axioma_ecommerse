@@ -12,6 +12,10 @@ use app\modules\content\models\Content;
  */
 class DefaultController extends Controller {
 
+    public function actionIndexWeb() {
+        
+    }
+
     public function actionIndex() {
 
         Yii::$app->response->format = \yii\web\Response::FORMAT_RAW;
@@ -24,6 +28,17 @@ class DefaultController extends Controller {
 //        foreach ($posts as $post) {
 //            $urls[] = Url::to($post->url);
 //        }
+        // Быстрые категории
+        $cats = \app\modules\fast_category\models\FastCategory::find()->where(['is_enable' => 1])->all();
+        foreach ($cats as $cat) {
+            $urls[] = Url::to('fast-cat/' . $cat->url);
+
+            $goods = \app\modules\catalog\models\Catalog::find()->where(['category_id' => $cat->id, 'is_enable' => 1])->all();
+
+            foreach ($goods as $good)
+                $urls[] = Url::to('catalog/' . $good->url);
+        }
+
         // Категории
         $cats = \app\modules\category\models\Category::find()->where(['is_enable' => 1])->all();
         foreach ($cats as $cat) {
