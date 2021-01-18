@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use vova07\imperavi\Widget;
 
 /* @var $this yii\web\View */
 /* @var $model app\modules\vacancy\models\Vacancy */
@@ -14,7 +15,26 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
+    <?=
+    $form->field($model, 'description')->widget(Widget::className(), [
+        'settings' => [
+            'lang' => 'ru',
+            'imageUpload' => Url::to(['/content/content/upload-image']),
+            'imageManagerJson' => Url::to(['/content/content/images-get']),
+//                    'imageUpload' => Url::to(['/site/image-upload']),
+//                    'imageManagerJson' => Url::to(['/site/images-get']),
+            'minHeight' => 500,
+            'plugins' => [
+                'clips',
+                'fullscreen',
+                'fontcolor',
+                'imagemanager',
+            ],
+            'replaceDivs' => false,
+            'deniedTags' => ['style']
+        ]
+    ]);
+    ?>
 
     <?= $form->field($model, 'pay')->textInput(['maxlength' => true]) ?>
 
