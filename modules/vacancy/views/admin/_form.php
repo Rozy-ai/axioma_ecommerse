@@ -19,8 +19,6 @@ use vova07\imperavi\Widget;
     $form->field($model, 'description')->widget(Widget::className(), [
         'settings' => [
             'lang' => 'ru',
-            'imageUpload' => Url::to(['/content/content/upload-image']),
-            'imageManagerJson' => Url::to(['/content/content/images-get']),
 //                    'imageUpload' => Url::to(['/site/image-upload']),
 //                    'imageManagerJson' => Url::to(['/site/images-get']),
             'minHeight' => 500,
