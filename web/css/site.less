@@ -161,6 +161,7 @@ h3, .h3 {
 
     /*background: @color-back-grey;*/
     background: white;
+    height: 57px;
 
 
     .navbar-left {
@@ -258,7 +259,7 @@ h3, .h3 {
 
                 &:hover {
                     background: inherit;
-                    border-bottom: 4px solid @brand-primary;
+                    border-bottom: 4px solid @gray;
                     color: @text-color;
                 }
             }
@@ -341,11 +342,11 @@ h3, .h3 {
 
 .header {
     /*background: rgba(255, 255, 255, 0.8);*/
-    padding: 3rem 0 0;
+    padding: 1rem 0 0;
     /*border-bottom: 1px solid #aaa;*/
 
     .middle-line {
-        padding-bottom: 2rem;
+        padding-bottom: 1rem;
     }
 
     .logo-wrap {
@@ -402,6 +403,13 @@ h3, .h3 {
 
             .kras {
                 margin-bottom: 2rem;
+            }
+        }
+
+        .phone-secondary {
+            a {
+                font-size: 1.2em;
+                font-weight: 600;
             }
         }
     }
@@ -2438,3 +2446,11 @@ input[type='number'] {
         font-size: 1.8rem;
     }
 }
+
+
+/*---------------------- ALL -------------------*/
+
+.text-gray {
+    color: @gray-light;
+}
+

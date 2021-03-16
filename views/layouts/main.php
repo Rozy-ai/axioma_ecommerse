@@ -159,14 +159,11 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                             <div class="city-choise">
                                                 <?= \app\modules\city\widgets\CityChoice::widget() ?>
                                             </div>
-                                            <div class="address">
+                                            <div class="address text-gray">
                                                 <?= RegionTemplates::getVal('address') ?>
                                             </div>
-                                            <div class="phone">
-                                                Тел: <?= RegionTemplates::getVal('phone-2') ?>
-                                            </div>
-                                            <div class="email">
-                                                <?= RegionTemplates::getVal('email') ?>
+                                            <div class="phone-secondary text-gray">
+                                                тел: <?= RegionTemplates::getVal('phone-2') ?>
                                             </div>
                                         </div>
                                         <div class="col-xs-12 col-sm-4 text-right">
