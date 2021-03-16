@@ -1,0 +1,39 @@
+{{ set (this, 'title', model.title) }}
+
+{{ void(this.registerCssFile('/css/part/in_progress.css')) }}
+
+{{ set(this, 'params', {'breadcrumbs' : [model.title]} ) }}
+
+<div class="in-progress">
+
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-4">
+            {{ Html.img("/image/in_progress.png", {"class" : "img img-responsive center-block"}) | raw  }}
+
+        </div>
+        <div class="col-sm-6 col-sm-offset-3">
+            <div class="text-block">
+
+                <div class="line1">
+                    <span>
+                        {{ "Раздел находится в разработке" | upper }}
+                    </span>
+                </div>
+
+                <div class="line2 ">
+                    Приносим свои извинения.
+                </div>
+
+                <div class="line3">
+                    С уважением, администрация сайта.
+                </div>
+
+                <div class="btn-wrap text-center">
+
+                    {{ Html.a("На главную" | upper, "/", {"class" : 'btn btn-primary text-center'}) | raw}}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

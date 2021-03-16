@@ -52,6 +52,23 @@ $config = [
         'info' => [
             'class' => 'app\modules\info\models\Info',
         ],
+        'view' => [
+            'class' => 'app\components\View',
+            'renderers' => [
+                'twig' => [
+                    'class' => 'yii\twig\ViewRenderer',
+                    'cachePath' => '@runtime/Twig/cache',
+                    'options' => [
+                        'auto_reload' => true,
+                    ],
+                    'globals' => [
+                        'Url' => ['class' => '\yii\helpers\Url'],
+                        'Html' => ['class' => '\yii\helpers\Html'],
+                    ],
+                    'uses' => ['yii\bootstrap'],
+                ],
+            ],
+        ],
         'user' => [
             'identityClass' => 'app\modules\auth\models\User',
             'loginUrl' => ['/auth/default/login'],

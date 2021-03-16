@@ -52,7 +52,7 @@ class DefaultController extends Controller {
 
         if ($search->video_type == 1)
             $andwhere['is_ip'] = 1;
-        
+
         if ($search->video_type == 2)
             $andwhere['is_tvi'] = 1;
 
@@ -73,6 +73,9 @@ class DefaultController extends Controller {
 //                ->orderBy($sort->orders)
                 ->orderBy('ord DESC')
         ;
+
+        if (!$query->all())
+            return $this->render('_on_constract.twig', ['model' => $category]);
 
         // add conditions that should always apply here
 
