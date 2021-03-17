@@ -28,8 +28,10 @@ class FastCategory extends \app\models\FastCategory {
 
     public static function getRoot() {
 
-        return ($model = self::find()->where(['is_enable' => 1]
-                )->all()) ? $model : false;
+        return ($model = self::find()
+                        ->orderBy('ord DESC')
+                        ->where(['is_enable' => 1]
+                        )->all()) ? $model : false;
     }
 
     public static function getByUrl($url) {
