@@ -27,9 +27,16 @@ $this->params['breadcrumbs'][] = $this->title;
             'header',
             'ord',
             'url',
-            'is_enable',
+            [
+                'attribute' => 'is_enable',
+                'value' => function($row) {
+                    return $row->is_enable ? '✔' : '❌';
+                }
+            ],
+//            'is_enable',
 //            'count',
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'yii\grid\ActionColumn', 'template' => '{update}'],
+            ['class' => 'yii\grid\ActionColumn', 'template' => '{delete}'],
         ],
     ]);
     ?>

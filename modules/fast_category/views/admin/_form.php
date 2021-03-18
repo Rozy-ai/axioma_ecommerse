@@ -26,6 +26,8 @@ use kartik\widgets\Select2;
             <?= $form->field($model, 'header')->textInput(['maxlength' => true]) ?>
 
             <?= $form->field($model, 'url')->textInput(['maxlength' => true]) ?>
+            
+            <?= $form->field($model, 'link')->textInput(['maxlength' => true]) ?>
 
             <?=
             $form->field($model, 'content')->widget(Widget::className(), [

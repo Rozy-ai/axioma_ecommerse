@@ -20,7 +20,7 @@ class HomeCategory extends Widget {
 
 //        print_r(count($model));
 
-        return $this->render('home_category', ['model' => $model]);
+        return $this->render('home_category.twig', ['model' => $model]);
     }
 
 }

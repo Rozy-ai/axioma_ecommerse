@@ -1,0 +1,12 @@
+<div class="category-widget">
+
+    <div class="row">
+
+        {% for item in model %}
+
+            {{ this.render('_one.twig', {'model' : item}) | raw}}
+            {#            {% include '_one.twig' with {'model': 'itemыф'} %}#}
+        {% endfor %}
+
+    </div>
+</div>

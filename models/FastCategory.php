@@ -21,6 +21,7 @@ use Yii;
  * @property int $is_enable Включено
  * @property int $is_ar Акустика/Радио
  * @property int $is_video Видео
+ * @property string $link Альтернативная ссылка
  */
 class FastCategory extends \app\models\CustomAR
 {
@@ -41,7 +42,7 @@ class FastCategory extends \app\models\CustomAR
             [['content'], 'string'],
             [['ord', 'created_at', 'is_enable', 'is_ar', 'is_video'], 'integer'],
             [['header', 'image', 'icon', 'url'], 'string', 'max' => 255],
-            [['title', 'description', 'keywords'], 'string', 'max' => 500],
+            [['title', 'description', 'keywords', 'link'], 'string', 'max' => 500],
         ];
     }
 
@@ -65,6 +66,7 @@ class FastCategory extends \app\models\CustomAR
             'is_enable' => 'Включено',
             'is_ar' => 'Акустика/Радио',
             'is_video' => 'Видео',
+            'link' => 'Альтернативная ссылка',
         ];
     }
 }
