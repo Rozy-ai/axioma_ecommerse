@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
 //            'type_id',
             'header',
-            'url:url',
+            '_url:url',
 //            'content:ntext',
             //'ord',
             'title',

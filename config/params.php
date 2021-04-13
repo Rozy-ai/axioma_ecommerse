@@ -8,4 +8,5 @@ return [
     'defaultDomain' => 'axioma.pro',
     'baseDomain' => 'axioma.pro',
     'isFluid' => false,
+    'show_viewed' => true,
 ];

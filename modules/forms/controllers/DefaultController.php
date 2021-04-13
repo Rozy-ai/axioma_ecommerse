@@ -20,6 +20,75 @@ class DefaultController extends Controller {
 //        ]);
 //    }
 
+    public function actionEcpOrder() {
+
+        if (Yii::$app->request->isAjax) {
+
+            \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+
+            $model = new \app\modules\forms\models\EcpOrder();
+
+            if ($model->load(Yii::$app->request->post())) {
+
+                $model->body = $model->name .
+                        ' (' . str_replace(['(', ')', '-', ''], '', $model->phone) . ')' . PHP_EOL
+                        . 'email - ' . $model->email . ' | ИНН - ' . $model->inn
+                        . ' заказал консультацию';
+
+                if ($model->contact())
+                    return 1;
+                else
+                    return 0;
+            }
+        }
+    }
+
+    public function actionCallEcp() {
+
+        if (Yii::$app->request->isAjax) {
+
+            \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+
+            $model = new \app\modules\forms\models\MarkirovkaOrder();
+
+            if ($model->load(Yii::$app->request->post())) {
+
+                $model->body = $model->name .
+                        ' (' . str_replace(['(', ')', '-', ''], '', $model->phone) . ')' . PHP_EOL
+                        . 'email - ' . $model->email . ' | ИНН - ' . $model->inn
+                        . ' заказал консультацию';
+
+                if ($model->contact())
+                    return 1;
+                else
+                    return 0;
+            }
+        }
+    }
+
+    public function actionMarkirovkaOrder() {
+
+        if (Yii::$app->request->isAjax) {
+
+            \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+
+            $model = new \app\modules\forms\models\MarkirovkaOrder();
+
+            if ($model->load(Yii::$app->request->post())) {
+
+                $model->body = $model->name .
+                        ' (' . str_replace(['(', ')', '-', ''], '', $model->phone) . ')' . PHP_EOL
+                        . 'email - ' . $model->email . ' | ИНН - ' . $model->inn
+                        . ' заказал консультацию';
+
+                if ($model->contact())
+                    return 1;
+                else
+                    return 0;
+            }
+        }
+    }
+
     public function actionCallBack() {
 
         if (Yii::$app->request->isAjax) {

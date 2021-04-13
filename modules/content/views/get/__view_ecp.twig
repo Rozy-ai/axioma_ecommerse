@@ -1,0 +1,174 @@
+{{ use('app/modules/forms/widgets') }}
+
+{{ set(this, 'params', { 'breadcrumbs' : { '' : model.header } }) }}
+
+{#{{ void(this.registerJsFile('/js/init_index.js', {'depends': 'app\\assets\\AppAsset'})) }}#}
+{{ void(this.registerCssFile('/css/page/ecp.css')) }}
+
+
+<div class="ecp-content">
+    <div class="screen1">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-sm-offset-4 col-sm-8 col-md-6 col-md-offset-6 text-wrap">
+
+                    <div class="title">Электронная цифровая подпись для любых целей</div>
+
+                    <div class="text">
+                        <p>Позволяет совершать сделки без личного присутствия, экономя ваше время.</p>
+                        <div class="devider"></div>
+                        <p>Минимизирует финансовые риски, имеет высокую степень защиты от подделок.</p>
+
+                    </div>
+
+                    <button class="btn btn-primary slide-to" data-id="#ecp-form-wrap" >ПОЛУЧИТЬ ЭЦП</button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="screen2" id="ecp-form-wrap">
+        <div class="container">
+
+            <div class="title">ПОЛУЧИТЬ ЦИФРОВУЮ ПОДПИСЬ</div>
+
+            {{ ecp_order_form_widget() }}
+
+        </div>
+    </div>
+    <div class="screen3">
+        <div class="container">
+
+            <div class="title">
+                Получите электронную подпись в 4 этапа:
+            </div>
+
+            <div class="row">
+
+                <div class="col-sm-6 col-md-3">
+
+                    <div class="row">
+                        <div class="col-sm-4 image-wrap">
+                            <img src="/image/ico/browser.svg" class="img img-responsive center-block">
+                        </div>
+                        <div class="col-sm-8 sub-title">
+                            1. <br/>
+                            Оставьте заявку
+                        </div>
+                    </div>
+
+                    <div class="text">
+                        Мы перезвоним и выставим счет на оплату. Узнаем, как хотите получить подпись — в офисе УЦ или с курьером. Выезд курьера возможен не везде. 
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3">
+
+                    <div class="row">
+                        <div class="col-sm-4 image-wrap">
+                            <img src="/image/ico/documents.svg" class="img img-responsive center-block">
+                        </div>
+                        <div class="col-sm-8 sub-title">
+                            2.<br/>
+                            Соберите документы
+                        </div>
+                    </div>
+
+                    <div class="text">
+                        Подготовьте документы для выпуска подписи. Передайте их в УЦ — принесите в офис или прикрепите сканы в личном кабинете на нашем сайте.
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3">
+
+                    <div class="row">
+                        <div class="col-sm-4 image-wrap ">
+                            <img src="/image/ico/time.svg" class="img img-responsive center-block">
+                        </div>
+                        <div class="col-sm-8 sub-title">
+                            3.<br/>
+                            Дождитесь ответа
+                        </div>
+                    </div>
+
+                    <div class="text">
+                        В течение 1-2 дней УЦ проверит вашу заявку на подпись. Когда ее одобрят, мы сообщим вам по телефону или почте.
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3">
+
+                    <div class="row">
+                        <div class="col-sm-4 image-wrap">
+                            <img src="/image/ico/flash.svg" class="img img-responsive center-block">
+                        </div>
+                        <div class="col-sm-8 sub-title">
+                            4.<br/>
+                            Получите подпись
+                        </div>
+                    </div>
+
+                    <div class="text">
+                        Посетите офис УЦ с оригиналами документов или закажите выезд курьера — мы удостоверим личность перед выпуском подписи.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="screen4">
+        <div class="container">
+
+            <div class="title">
+                Электронная цифровая подпись для работы с Системой маркировки товаров «Честный знак»
+            </div>
+
+
+            <div class="row">
+                <div class="col-sm-6 col-md-4">
+
+                    <p>
+                        Федеральный закон № 290-ФЗ обязывает применять онлайн кассы всем ИП и юридическим лицам. </p>
+
+                    <p>  Также в настоящее время в России активно внедряется национальная система цифровой маркировки товаров. </p>
+
+                    <p>    Для того, чтобы работать с маркированными товарами предприятиям необходима регистрация в системе «<b>Честный знак</b>».
+                    </p>
+
+                    <p>    Электронная подпись для «<b>Честного знака</b>» позволит вам зарегистрировать вашу компанию в системе «<b>Честный знак</b>» и работать с маркированными товарами.
+                    </p>
+
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <p>    
+                        Электронная подпись для кассы необходима для регистрации онлайн-кассы в налоговой инспекции. 
+
+                    </p>
+                    <p>    
+                        Владелец электронной подписи для регистрации кассы сможет работать в личном кабинете ФНС. 
+                    </p>
+                    <p>    
+                        Далее, электронная подпись для онлайн-касс потребуется для заключения договора с оператором фискальных данных (ОФД).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="screen5">
+        <div class="container">
+
+            <div class="title">
+                ОСТАЛИСЬ ВОПРОСЫ?
+                <span>Оставьте заявку и получите бесплатную консультацию</span>
+            </div>
+
+            {{ ecp_call_widget() }}
+
+        </div>
+    </div>
+</div>

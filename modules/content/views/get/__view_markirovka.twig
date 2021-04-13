@@ -1,0 +1,220 @@
+{{ use('app/modules/forms/widgets') }}
+
+{{ set(this, 'params', { 'breadcrumbs' : { '' : model.header } }) }}
+
+{#{{ void(this.registerJsFile('/js/init_index.js', {'depends': 'app\\assets\\AppAsset'})) }}#}
+{{ void(this.registerCssFile('/css/page/markirovka.css')) }}
+
+
+<div class="markirovka-content">
+    <div class="screen1">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-sm-8 col-md-6  text-wrap">
+
+                    <div class="title">Маркировка товаров
+                        <span> ”под ключ”</span> </div>
+
+                    <div class="text">
+                        <p>Введение системы маркировки товаров началось в 2019 году. 
+                            К 2024 году планируется введение учета для всех товарных групп.</p>
+
+                        <p>Цель системы – сделать российский рынок максимально прозрачным, обеспечить качество и подлинность товаров.</p>
+
+
+
+                    </div>
+
+                    <button class="btn btn-primary slide-to" data-id="#form_wrap">ЗАКАЗАТЬ</button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="screen2">
+        <div class="container">
+
+            <div class="title">Маркировка товаров “под ключ”</div>
+
+            <div class="row">
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="col-wrap">
+
+                        <div class="item">
+                            <div class="img-wrap">
+
+                                <img src="/image/ico/search.svg" class="center-block">
+                            </div>
+
+                            <div class="text">Проверим ваш бизнес на предмет необходимости применения 
+                                маркировки
+
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="img-wrap">
+                                <img src="/image/ico/book.svg" class="center-block">
+                            </div>
+
+                            <div class="text">Научим работать с маркировкой на кассе. Расскажем точные сроки перехода и возможные отсрочки
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="img-wrap">
+                                <img src="/image/ico/case.svg" class="center-block">
+                            </div>
+
+                            <div class="text">Продиагностируем оборудование на предмет готовности к соблюдению закона об обязательной маркировке
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-6 col-lg-4 scaner-image-wrap">
+                    <img src="/image/markirovka/scaner.jpg" class="img img-responsive" />
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="col-wrap">
+
+                        <div class="item">
+                            <div class="img-wrap">
+                                <img src="/image/ico/gear.svg" class="center-block">
+                            </div>
+
+                            <div class="text">Поможем выбрать и настроить оператора электронного документооборота для работы с поставщиками в соответствии с законодательством
+
+                            </div>
+                        </div>
+
+                        <div class="item">
+
+                            <div class="img-wrap">
+                                <img src="/image/ico/chat.svg" class="center-block">
+                            </div>
+
+                            <div class="text">Бесплатно проконсультируем
+                                по вопросам маркировки товаров
+
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="img-wrap">
+                                <img src="/image/ico/flash-drive.svg" class="center-block">
+                            </div>
+
+                            <div class="text">Проверим работоспособность электронной подписи (ЭЦП) для работы с системой “Честный знак”. При необходимости поможем выпустить новую 
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="screen3" id="form_wrap">
+        <div class="container">
+
+            <div class="title">
+                вы можете отправить заявку 
+                мы бесплатно проконсультируем вас по всем вопросам
+            </div>
+
+            {{ markirovka_order_form_widget() }}
+        </div>
+    </div>
+
+    <div class="screen4">
+        <div class="container">
+
+            <div class="title">
+                Электронная цифровая подпись для работы с Системой маркировки товаров «Честный знак»
+            </div>
+
+            <div class="row">
+
+                <div class=" col-sm-6 text-wrap">
+
+                    <p>Для того, чтобы работать с маркированными товарами предприятиям необходима регистрация в системе «Честный знак».</p>
+
+                    <p>Электронная подпись для «Честного знака» позволит вам зарегистрировать вашу компанию в системе «Честный знак» и работать с маркированными товарами.</p>
+
+                    <p>Вы можете заказать ЭЦП для работы с системой маркировки товаров.</p>
+
+
+
+                    <a href="/ecp">
+                        <button class="btn btn-primary">ПОЛУЧИТЬ ЭЦП</button>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="screen5">
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-sm-6  text-left-wrap">
+
+                    <div class="title">
+                        Обязательная маркировка
+                    </div>
+
+                    <div class="text">
+
+                        <p>В России постепенно вводится обязательная маркировка одежды и обуви. 
+                            Торговля немаркированными товарами запрещается с 1 января 2021 г.</p>
+
+                        <p>В список товаров подлежащих обязательной маркеровки входят:</p>
+
+                        <ul class="list-unstyled">
+                            <li><span class="dot"></span>Кожаные вещи, включая рабочую одежду</li>
+                            <li><span class="dot"></span>Трикотажные блузки для женщин и девочек</li>
+                            <li><span class="dot"></span>Верхнюю одежду: шубы, пальто, плащи, куртки</li>
+                            <li><span class="dot"></span>Все категории обуви</li>
+                        </ul>
+
+                        <p>Кроме одежды и обуви, следует маркировать товары легкой промышленности: постельное белье, кухонные принадлежности, домашний текстиль. Но к 2024 году в России планируется введение учета для всех товарных групп.                        </p>
+
+
+                    </div>
+                </div>
+
+                <div class="col-sm-6  text-right-wrap">
+
+                    <div class="title">
+                        Что дает маркировка товаров? 
+                    </div>
+
+                    <ul class="list-unstyled">
+                        <li><span class="dot-number">1.</span>Оптимизация процессов, снижение затрат.</li>
+                        <li><span class="dot-number">2.</span>Рост выручки за счет вытеснения нелегальной продукции с рынка.</li>
+                        <li><span class="dot-number">3.</span>Круглосуточный доступ к информации о том, где находится товар.</li>
+                        <li><span class="dot-number">4.</span>Здоровая конкуренция среди предпринимателей.</li>
+                    </ul>
+
+                    <button class="btn btn-primary center-block slide-to"  data-id="#form_wrap">ЗАКАЗАТЬ</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

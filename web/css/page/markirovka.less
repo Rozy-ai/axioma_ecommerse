@@ -1,0 +1,319 @@
+@main-color: #b8cc76;
+@grey-color: #9a9999;
+@import "../bootstrap/variables.less";
+
+.markirovka-content {
+
+    .screen1, .screen2, .screen3, .screen4, .screen5 {
+
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+
+    .screen1 {
+
+        background: #fff url('/image/markirovka/screen1.jpg') 20% center  no-repeat;
+        background-size: cover; 
+
+        @media(max-width:@screen-lg) {
+            background-position: 60% 50%;
+        }
+
+        @media(max-width:@screen-md) {
+            background-position: 40% 50%;
+        }
+
+        @media(max-width:@screen-sm) {
+            background-position: 10% 50%;
+        }
+
+        .text-wrap {
+
+            padding-top: 30px;
+
+            .title {
+                font-size: 32px;
+                font-weight: bold;
+                text-transform: uppercase;
+                margin-bottom: 20px;
+
+                span {
+                    display: block;
+                    clear: both;
+                    font-size: 45px;
+                    color: @main-color;
+                }
+            }
+
+            .text {
+                p {
+                    font-size: 18px;
+                    font-weight: 300;
+                    margin-bottom: 30px;
+                }
+            }
+
+            .btn {
+                min-width: 270px;
+                min-height: 60px;
+                font-size: 20px;
+                font-weight: bold;
+
+
+            }
+        }
+
+    }
+
+
+    .screen2 { 
+
+        .title {
+            font-size: 32px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+
+
+
+        }
+
+        .col-wrap {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .item {
+                min-height: 180px;
+                display: block;
+                padding-top: 30px;
+
+                .img-wrap {
+                    img {
+                        height: 46px;
+                        width: 46px;
+                        margin-bottom: 20px;
+                    }
+                }
+
+                .text {
+                    text-align: center;
+                    font-size: 16px;
+                    /*padding: 0 20px;*/
+                    font-size: 16px;
+                    font-weight: 300;
+                }
+            }
+        }
+
+        .scaner-image-wrap {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            margin-left: 0;
+            padding-left: 0;
+            margin-right: 0;
+            padding-right: 0;
+            padding-top: 80px;
+        }
+
+    }
+    .screen3 {
+
+        background: #f9f9f9;
+
+        .title {
+            font-size: 24px;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 40px;
+        }
+
+        .pile {
+            background: #fff;
+            padding: 40px;
+
+
+            .btn {
+                min-width: 270px;
+                min-height: 60px;
+                font-size: 20px;
+                font-weight: bold;
+
+                margin-top: 74px;
+            }
+
+            .row-1 {
+                .form-group {
+                    margin-bottom: 10px;
+                }
+            }
+
+            .form-group {
+                position: relative;
+
+                input {
+                    min-height: 60px;
+                }
+
+                label {
+                    position: relative;
+                    left: 10px;
+                    top: 16px;
+                    background: white;
+                    padding: 0 8px;
+                    font-weight: 300;
+                }
+            }
+
+            .disclamer {
+                font-size: 14px;
+                font-weight: 300;
+                margin-bottom: 20px;
+            }
+
+            .politic {
+                color: #e22b00;
+                font-size: 14px;
+                font-weight: 300;
+
+                a {
+                    color:  #e22b00;
+                    text-decoration: underline;
+                }
+            }
+        }
+
+
+
+    } 
+    .screen4 {
+        .container {
+
+            background: #fff url('/image/markirovka/screen4.jpg') right bottom no-repeat;
+
+
+            @media(max-width:@screen-md) {
+                background-position: 160% 50%;
+            }
+
+            @media(max-width:@screen-sm) {
+                /*background-position: 220% 50%;*/
+                background: #fff;
+
+            }
+
+            .title {
+                font-size: 24px;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+
+            .text-wrap {
+
+                margin-top: 30px;
+
+                p {
+                    font-size: 14px;
+                    font-weight: 300;
+                    margin-bottom: 30px;
+                }
+
+                .btn {
+                    min-width: 270px;
+                    min-height: 60px;
+                    font-size: 20px;
+                    font-weight: bold;
+
+
+                }
+            }
+
+        } 
+    } 
+    .screen5 {
+
+        background:  url('/image/markirovka/screen5.jpg') center center no-repeat;
+        background-size: cover; 
+
+
+        .text-left-wrap {
+            .title {
+                font-size: 24px;
+                text-transform: uppercase;
+                font-weight: bold;
+                margin-bottom: 40px;
+            }
+
+            p {
+                margin-bottom: 20px;
+            }
+
+            .dot {
+                width: 8px;
+                height: 8px;
+                border-radius: 4px;
+                background: @main-color;
+                display: block;
+                margin-right: 20px;
+                float: left;
+                margin-top: 9px;
+            }
+
+            ul  {
+                margin-bottom: 40px;
+                li {
+                    line-height: 26px;
+                    font-size: 16px;
+                    font-weight: 300;
+                }
+            }
+        }
+
+        .text-right-wrap {
+            .title {
+                font-size: 16px;
+                text-transform: uppercase;
+                font-weight: bold;
+                margin-bottom: 50px;
+            }
+
+            ul li {
+
+                min-height: 50px;
+                line-height: 30px;
+                font-weight: 300;
+
+                .dot-number {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 15px;
+                    background: @main-color;
+                    display: block;
+                    margin-right: 20px;
+                    color: white;
+                    font-weight: bold;
+                    line-height: 30px;
+                    text-align: center;
+                    float: left;
+                }
+            }
+
+
+            .btn {
+                min-width: 270px;
+                min-height: 60px;
+                font-size: 20px;
+                font-weight: bold;
+
+            }
+        }
+
+    } 
+} 
+
+
+#content {
+    padding-bottom: 0 !important;
+}

@@ -86,4 +86,9 @@ class Content extends \app\models\Content {
             return '/image/content/' . $this->image;
     }
 
+    public function get_url() {
+
+        return \yii\helpers\Url::to($this->url, true);
+    }
+
 }

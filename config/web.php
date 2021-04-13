@@ -65,6 +65,9 @@ $config = [
                         'Url' => ['class' => '\yii\helpers\Url'],
                         'Html' => ['class' => '\yii\helpers\Html'],
                     ],
+                    'filters' => [
+                        'dump' => 'var_dump'
+                    ],
                     'uses' => ['yii\bootstrap'],
                 ],
             ],

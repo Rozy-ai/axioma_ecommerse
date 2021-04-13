@@ -1,0 +1,279 @@
+@import "../bootstrap/variables.less";
+
+@main-color: #b8cc76;
+@grey-color: #9a9999;
+
+.ecp-content {
+
+    .screen1, .screen2, .screen3, .screen4, .screen5 {
+
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+
+    .screen1 {
+
+        background: #fff url('/image/ecp/screen1.jpg') 20% center  no-repeat;
+        background-size: cover; 
+
+        @media(max-width:@screen-md) {
+            background-position: 40% 50%;
+        }
+
+        @media(max-width:@screen-sm) {
+            background-position: 100% 50%;
+        }
+
+
+
+        .title {
+            font-size: 32px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+
+        .devider {
+            background: @main-color;
+            width: 80px;
+            height: 4px;
+            margin-bottom: 10px;
+        }
+
+        .text {
+            font-size: 18px;
+            font-weight: 300;
+            margin-bottom: 50px;
+
+        }
+
+        .btn {
+            font-weight: bold;
+            font-size: 20px;
+            min-width: 270px;
+            min-height: 60px;
+
+        }
+
+
+    }
+    .screen2 { 
+
+        background: #f9f9f9; 
+
+        .title {
+            font-size: 32px;
+            margin-bottom: 60px;
+            font-weight: bold;
+
+        }
+
+        .pile {
+            background: #fff;
+            border-left: 4px solid @main-color;
+            padding: 40px;
+
+            .title {
+                font-size: 22px;
+                font-weight: 500;
+                margin-bottom: 20px;
+
+                span {
+                    clear: both;
+                    display: block;
+                    font-weight: 400;
+                }
+
+            }
+
+            .text {
+                font-size: 16px;
+                font-weight: 300;
+                margin-bottom: 20px;
+            }
+
+            .price {
+                font-size: 28px;
+                font-weight: 600;
+                margin-bottom: 30px;
+
+                span {
+                    font-size: 14px;
+                    font-weight: 300;
+                    clear:both;
+                    display: block;
+                }
+            }
+
+            .btn {
+                font-weight: bold;
+                min-width: 170p;
+                min-height: 50px;
+            }
+
+            .row-1 {
+                .form-group {
+                    margin-bottom: 10px;
+                }
+            }
+
+            .form-group {
+                position: relative;
+
+                input {
+                    min-height: 60px;
+                }
+
+                label {
+                    position: relative;
+                    left: 10px;
+                    top: 16px;
+                    background: white;
+                    padding: 0 8px;
+                    font-weight: 300;
+                }
+            }
+
+            .disclamer {
+                font-size: 14px;
+                font-weight: 300;
+                margin-bottom: 20px;
+            }
+
+            .politic {
+                color: #e22b00;
+                font-size: 14px;
+                font-weight: 300;
+
+                a {
+                    color:  #e22b00;
+                    text-decoration: underline;
+                }
+            }
+        }
+
+    }
+    .screen3 {
+
+        .title {
+            font-size: 24px;
+            text-transform: uppercase;
+            font-weight: 600;
+            padding-bottom: 40px;
+        }
+
+        .sub-title {
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 40px;
+            text-transform: uppercase;
+            min-height: 70px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding-left: 0;
+            padding-right: 0;
+
+            @media(max-width:@screen-sm) {
+                text-align: center;
+            }
+
+
+        }
+
+        .image-wrap {
+            img {
+                max-width: 100px;
+                max-height: 100px;
+            }
+        }
+
+        .text {
+            /*color: @grey-color;*/
+            font-weight: 300;
+        }
+
+    } 
+    .screen4 {
+
+        background: #f9f9f9 url('/image/ecp/screen4.jpg') 50% center no-repeat;
+        background-size: cover; 
+
+        .container {
+
+
+            .title {
+                text-transform: uppercase;
+                font-size: 24px;
+                font-weight: 600;
+                margin-bottom: 40px;
+            }
+
+            p {
+                margin-bottom: 20px;
+            }
+
+        }
+
+    } 
+    .screen5 {
+
+        .form-wrap {
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            padding: 50px;
+
+            .btn {
+                min-width: 270px;
+                height: 60px;
+                font-size: 24px;
+                line-height: 50px;
+                font-weight: 600;
+                text-transform: uppercase;
+                margin-top: 25px;
+            }
+        }
+
+        .title {
+            text-transform: uppercase;
+            font-size: 24px;
+            font-weight: 600;
+
+            span {
+                display: block;
+                clear: both;
+                font-size: 21px;
+                margin-bottom: 30px;
+            }
+        }
+
+        .form-group {
+            position: relative;
+
+            input {
+                min-height: 60px;
+            }
+
+            label {
+                position: relative;
+                left: 10px;
+                top: 16px;
+                background: white;
+                padding: 0 8px;
+                font-weight: 300;
+            }
+        }
+
+        .politic {
+            color: #e22b00;
+            font-size: 14px;
+            font-weight: 300;
+
+            a {
+                color:  #e22b00;
+                text-decoration: underline;
+            }
+        }
+
+    }  
+
+} 

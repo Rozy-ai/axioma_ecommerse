@@ -49,7 +49,6 @@ class GetController extends Controller {
 
         \Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => 'Новости компании Аксиома: новые точки обслуживания, офисы, личные достижения сотрудников компании']);
 
-
         return $this->render('news_index', [
                     'models' => $models,
                     'pages' => $pages,
@@ -91,7 +90,6 @@ class GetController extends Controller {
 
         \Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => 'Статьи компании Аксиома: актуальные новости и статьи про антикражное оборудование']);
 
-
         return $this->render('articles_index', [
                     'models' => $models,
                     'pages' => $pages,
@@ -99,9 +97,8 @@ class GetController extends Controller {
     }
 
     public function actionServices() {
-        
-        Yii::$app->params['isFluid'] = true;
 
+        Yii::$app->params['isFluid'] = true;
 
         $model = Content::findOne(['url' => 'uslugi']);
 
@@ -149,6 +146,27 @@ class GetController extends Controller {
         if ($model->keywords)
             \Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => $model->keywords]);
 
+        /*        ------------      */
+        /*         Отдельные шаблоны на ЭЦП   */
+        /*        ------------      */
+
+        if ($url == 'ecp') {
+            Yii::$app->params['isFluid'] = true;
+            Yii::$app->params['show_viewed'] = false;
+
+            return $this->render('__view_ecp.twig', [
+                        'model' => $model,
+            ]);
+        }
+
+        if ($url == 'markirovka') {
+            Yii::$app->params['isFluid'] = true;
+            Yii::$app->params['show_viewed'] = false;
+
+            return $this->render('__view_markirovka.twig', [
+                        'model' => $model,
+            ]);
+        }
 
         $view = '';
 
