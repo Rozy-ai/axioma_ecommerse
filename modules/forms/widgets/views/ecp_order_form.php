@@ -34,7 +34,7 @@ $form = ActiveForm::begin(['id' => 'ecp-form', 'enableClientValidation' => true,
 
             <?=
             Html::submitButton('ПОЛУЧИТЬ ЭЦП', [
-                'class' => 'btn btn-primary center-block',
+                'class' => 'btn btn-primary center-block hidden-xs hidden-sm',
             ])
             ?>
 
@@ -63,6 +63,13 @@ $form = ActiveForm::begin(['id' => 'ecp-form', 'enableClientValidation' => true,
                     <?= $form->field($model, 'inn')->textInput() ?>
                 </div>
             </div>
+
+            <?=
+            Html::submitButton('ПОЛУЧИТЬ ЭЦП', [
+                'class' => 'btn btn-primary center-block hidden-md hidden-lg second-btn',
+            ])
+            ?>
+
 
             <div class="disclamer">
                 * Для оформления электронной подписи (ЭЦП) необходимы следующие документы в отсканированном виде: ИНН, ОГРН, СНИЛС, паспорт (разворот фото и прописка), для “ООО” приказ о назначении директора.
