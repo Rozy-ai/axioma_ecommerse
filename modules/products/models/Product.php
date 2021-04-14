@@ -18,6 +18,13 @@ class Product extends \app\models\Product {
         'Акустомагнитные системы',
         'Радиочастотные системы',
     ];
+    const ONLINE_KASS_TYPE = [
+        1 => 'Эвотор',
+        2 => 'Атол Sigma',
+        3 => 'Сенсорные моноблоки',
+        4 => 'Фискальные регистраторы',
+        5 => 'ФН',
+    ];
 
     public $supported_products;
 
@@ -32,23 +39,23 @@ class Product extends \app\models\Product {
                 'dataClosure' => function ($model) {
                     /** @var self $model */
                     return new Offer([
-                        'id' => $model->id,
-                        'url' => $model->getUrl(true), // absolute url e.g. http://example.com/item/1256
-                        'price' => $model->price,
-                        'currencyId' => 'RUR',
-                        'categoryId' => $model->category_id,
+                'id' => $model->id,
+                'url' => $model->getUrl(true), // absolute url e.g. http://example.com/item/1256
+                'price' => $model->price,
+                'currencyId' => 'RUR',
+                'categoryId' => $model->category_id,
 //                        'picture' => $model->cover ? $model->cover->getUrl() : null,
-                        /**
-                         * Or as array
-                         * don't forget that yandex-market accepts 10 pictures max
-                         * @see https://yandex.ru/support/partnermarket/picture.xml
-                         */
+                /**
+                 * Or as array
+                 * don't forget that yandex-market accepts 10 pictures max
+                 * @see https://yandex.ru/support/partnermarket/picture.xml
+                 */
 //                        'picture' => ArrayHelper::map($model->images, 'id', function ($image) {
 //                                    return $image->getUrl();
 //                                }),
-                        'name' => $model->header,
+                'name' => $model->header,
 //                        'vendor' => $model->brand ? $model->brand->name : null,
-                        'description' => $model->content_info,
+                'description' => $model->content_info,
                     ]);
                 }
             ],
@@ -112,7 +119,6 @@ class Product extends \app\models\Product {
         \app\models\SupportedGoods::deleteAll(['parent_product_id' => $this->id]);
         \app\models\SupportedGoods::deleteAll(['child_product_id' => $this->id]);
 
-
         return parent::beforeDelete();
     }
 
@@ -125,7 +131,6 @@ class Product extends \app\models\Product {
 
         $this->supported_products = ArrayHelper::getColumn($model, 'child_product_id');
         $this->cats = unserialize($this->cats);
-
 
         return parent::afterFind();
     }

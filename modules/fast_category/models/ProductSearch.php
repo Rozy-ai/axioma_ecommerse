@@ -21,11 +21,19 @@ class ProductSearch extends Model {
 //    public $is_tvi;
     public $search;
     public $enter_width;
+    public $online_kass_type;
 
     const _SEARCH = [
         'is_popular' => 'Сначала популярные',
         'is_new' => 'Сначала новинки',
 //        'is_popular' => 'Сначала популярные',
+    ];
+    const ONLINE_KASS_TYPE = [
+        1 => 'Эвотор',
+        2 => 'Атол Sigma',
+        3 => 'Сенсорные моноблоки',
+        4 => 'Фискальные регистраторы',
+        5 => 'ФН',
     ];
 
     /**
@@ -37,6 +45,7 @@ class ProductSearch extends Model {
 //                'is_akust', 'is_radio', 
             'search',
             'video_type',
+            'online_kass_type',
 //                'is_ip', 'is_tvi', 
             'enter_width', 'detection_type'], 'safe'],
         ];

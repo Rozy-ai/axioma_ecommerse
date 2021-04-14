@@ -59,7 +59,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'formOptions' => ['action' => ['/products/admin/edit-column']],
                 'data' => app\modules\category\models\Category::__getHeaders(),
             ],
-            'value' => function($row) {
+            'value' => function ($row) {
                 return $row->category->header;
             },
         ],
@@ -74,7 +74,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'formOptions' => ['action' => ['/products/admin/edit-column']],
                 'data' => app\modules\fast_category\models\FastCategory::__getHeaders(),
             ],
-            'value' => function($row) {
+            'value' => function ($row) {
                 return ($row->fastCat) ? $row->fastCat->header : '';
             },
         ],
@@ -120,6 +120,41 @@ $this->params['breadcrumbs'][] = $this->title;
                 'data' => app\modules\fast_category\models\FastCategory::__getHeaders(),
             ],
         ],
+        [
+            'class' => 'kartik\grid\EditableColumn',
+            'attribute' => 'is_enable',
+            'format' => 'raw',
+            'editableOptions' => [
+//                'inputType' => \kartik\editable\Editable::INPUT_SELECT2,
+                'inputType' => \kartik\editable\Editable::INPUT_CHECKBOX,
+                'formOptions' => ['action' => ['/products/admin/edit-column']],
+                'data' => app\modules\fast_category\models\FastCategory::__getHeaders(),
+            ],
+        ],
+        [
+            'class' => 'kartik\grid\EditableColumn',
+            'attribute' => 'online_kass_type',
+            'format' => 'raw',
+            'filter' => \app\modules\products\models\Product::ONLINE_KASS_TYPE,
+            'editableOptions' => [
+//                'inputType' => \kartik\editable\Editable::INPUT_SELECT2,
+                'inputType' => \kartik\editable\Editable::INPUT_DROPDOWN_LIST,
+                'formOptions' => ['action' => ['/products/admin/edit-column']],
+                'data' => \app\modules\products\models\Product::ONLINE_KASS_TYPE,
+            ],
+            'value' => function ($row) {
+                return ($row->online_kass_type) ? \app\modules\products\models\Product::ONLINE_KASS_TYPE[$row->online_kass_type] : '';
+            },
+        ],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
 //        'price',
 //        'url:url',
 //        'ord',

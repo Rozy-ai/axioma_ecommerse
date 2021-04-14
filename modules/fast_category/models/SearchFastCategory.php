@@ -11,6 +11,7 @@ use app\modules\fast_category\models\FastCategory;
  * SearchCategory represents the model behind the search form about `app\models\Category`.
  */
 class SearchFastCategory extends FastCategory {
+    
 
     /**
      * @inheritdoc

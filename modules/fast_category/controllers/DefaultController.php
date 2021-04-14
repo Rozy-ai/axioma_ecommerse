@@ -14,7 +14,7 @@ class DefaultController extends Controller {
 
     const PAGE_SIZE = 100;
 
-    public function actionGet($category, $subcategory = '') {
+    public function actionGet($category, $subcategory = '', $online_kass_type = false) {
 
         $parent = $subcategory ? $category : false;
 
@@ -43,7 +43,6 @@ class DefaultController extends Controller {
 
         $andFilterWhere = $andwhere = [];
 
-
         if ($search->detection_type == 1)
             $andwhere['is_akustika'] = 1;
 
@@ -55,6 +54,14 @@ class DefaultController extends Controller {
 
         if ($search->video_type == 2)
             $andwhere['is_tvi'] = 1;
+
+//        if ($online_kass_type) {
+//            $search->online_kass_type = $online_kass_type;
+//        }
+
+        if ($search->online_kass_type)
+            $andwhere['online_kass_type'] = $search->online_kass_type;
+
 
 
         if ($search->enter_width)
@@ -74,9 +81,8 @@ class DefaultController extends Controller {
                 ->orderBy('ord DESC')
         ;
 
-        if (!$query->all())
-            return $this->render('_on_constract.twig', ['model' => $category]);
-
+//        if (!$query->all())
+//            return $this->render('_on_constract.twig', ['model' => $category]);
         // add conditions that should always apply here
 
         $dataProvider = new \yii\data\ActiveDataProvider([
@@ -84,7 +90,6 @@ class DefaultController extends Controller {
         ]);
 
         $dataProvider->pagination->pageSize = self::PAGE_SIZE;
-
 
         return $this->render('get', [
                     'parent' => $parent,
