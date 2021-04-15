@@ -24,7 +24,7 @@ class Product extends \app\models\Product {
         2 => 'Атол Sigma',
         3 => 'Сенсорные моноблоки',
         4 => 'Фискальные регистраторы',
-        5 => 'ФН',
+        5 => 'Фискальные накопители',
     ];
 
     public $supported_products;
