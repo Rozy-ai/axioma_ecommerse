@@ -29,6 +29,7 @@ class ProductSearch extends Model {
 //        'is_popular' => 'Сначала популярные',
     ];
     const ONLINE_KASS_TYPE = [
+        0 => 'Нет',
         1 => 'Эвотор',
         2 => 'Атол Sigma',
         3 => 'Сенсорные моноблоки',

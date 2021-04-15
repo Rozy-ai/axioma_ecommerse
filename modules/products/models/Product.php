@@ -19,6 +19,7 @@ class Product extends \app\models\Product {
         'Радиочастотные системы',
     ];
     const ONLINE_KASS_TYPE = [
+        0 => 'Нет',
         1 => 'Эвотор',
         2 => 'Атол Sigma',
         3 => 'Сенсорные моноблоки',

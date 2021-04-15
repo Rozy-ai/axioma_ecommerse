@@ -55,9 +55,9 @@ class DefaultController extends Controller {
         if ($search->video_type == 2)
             $andwhere['is_tvi'] = 1;
 
-//        if ($online_kass_type) {
-//            $search->online_kass_type = $online_kass_type;
-//        }
+        if ($online_kass_type) {
+            $search->online_kass_type = $online_kass_type;
+        }
 
         if ($search->online_kass_type)
             $andwhere['online_kass_type'] = $search->online_kass_type;
@@ -90,6 +90,10 @@ class DefaultController extends Controller {
         ]);
 
         $dataProvider->pagination->pageSize = self::PAGE_SIZE;
+
+        if ($online_kass_type) {
+            $search->online_kass_type = $online_kass_type;
+        }
 
         return $this->render('get', [
                     'parent' => $parent,

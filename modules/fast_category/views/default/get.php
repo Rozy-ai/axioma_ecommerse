@@ -4,7 +4,6 @@ use yii\widgets\Pjax;
 use yii\widgets\ListView;
 use kop\y2sp\ScrollPager;
 
-
 //print_r($parent);
 //echo $category->uri;
 //echo $category->id;
@@ -41,7 +40,8 @@ $this->params['breadcrumbs'][] = $category->header;
 //                    'eventOnScroll' => 'function() {$(\'.ias-trigger a\').trigger(\'click\')}',
 //                ],
             'summary' => '',
-            'layout' => '{summary}{items}<div class="text-center col-xs-12">{pager}</div>'
+            'layout' => '{summary}{items}<div class="text-center col-xs-12">{pager}</div>',
+            'emptyText' => '<div class="col-xs-12">Ничего не найдено.</div>',
         ]);
         ?>
     </div>

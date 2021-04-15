@@ -7,6 +7,7 @@ use kartik\checkbox\CheckboxX;
 //use kartik\form\ActiveForm;
 use kartik\select2\Select2;
 use yii\web\JsExpression;
+use yii\helpers\Url;
 
 //'@app/modules/category/assets/css/category-search.css'
 
@@ -15,7 +16,8 @@ $this->registerCss($this->render('./../../assets/css/category-search.css'));
 
 <?php
 $form = ActiveForm::begin([
-//                'action' => Yii::$app->request->url,
+//            'action' => '/fast-cat/online-kass',
+            'action' => Url::to(Yii::$app->request->pathInfo, true),
             'method' => 'post',
             'id' => 'category-search',
         ]);
