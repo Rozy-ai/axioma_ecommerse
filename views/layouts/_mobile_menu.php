@@ -74,7 +74,7 @@ use yii\bootstrap\Html;
                 <?= Html::img('/image/ico/Locate.svg', ['height' => '26']) ?>
                 КОНТАКТЫ</a>
         </li>
-
+        <li class="devider"></li>
         <!--<li><a href="/calc">Калькулятор</a></li>-->
 
     </ul>
