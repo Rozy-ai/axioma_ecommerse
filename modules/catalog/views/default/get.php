@@ -24,7 +24,15 @@ $this->params['breadcrumbs'][] = $page->short_name ? $page->short_name : $page->
                 ?>
 
 
-            <h1 class="pull-left" good-id="<?= $page->id ?>"><?= $page->header ?></h1>
+            <h1 class="pull-left" good-id="<?= $page->id ?>"><?= $page->header ?>
+
+                <?php
+                if (!Yii::$app->user->isGuest):
+                    echo Html::a(' ✏', ['/products/admin/update', 'id' => $page->id]);
+                endif;
+                ?>
+
+            </h1>
 
             <div class="row cart-item">
                 <div class="col-xs-12 col-sm-5 gallery-wrap">
@@ -42,13 +50,13 @@ $this->params['breadcrumbs'][] = $page->short_name ? $page->short_name : $page->
                             ?>
 
                             <li href="#">
-                                <?= Html::img($image->Image) ?>
+    <?= Html::img($image->Image) ?>
 
                             </li>
 
-                        <?php endforeach; ?>
+                    <?php endforeach; ?>
                     </ul>
-                    <?php // Html::img($page->image, ['class' => 'img img-responsive center-block', 'alt' => $page->header]);   ?>
+<?php // Html::img($page->image, ['class' => 'img img-responsive center-block', 'alt' => $page->header]);    ?>
 
                     <script type="text/javascript">
                         main['img_list_<?= $page->id ?>'] = [
@@ -98,14 +106,13 @@ endforeach;
                         'content' => $page->content_description,
                     ];
 
-
                     echo Tabs::widget([
                         'items' => $items
                     ]);
                     ?>
                 </div>
 
-                <?php if ($page->youtube_link): ?>
+<?php if ($page->youtube_link): ?>
 
                     <div class="col-xs-12">
                         <div class="h3">ВИДЕО</div>
@@ -116,13 +123,13 @@ endforeach;
 
                         </iframe>
                     </div>
-                <?php endif; ?>
+<?php endif; ?>
 
             </div>
         </div>
 
         <div class="hidden-xs col-xs-12 col-sm-4  col-sm-pull-8 category-left-menu">
-            <?= app\modules\category\widgets\MenuCategory::widget(['active_id' => $page->category_id]); ?>
+<?= app\modules\category\widgets\MenuCategory::widget(['active_id' => $page->category_id]); ?>
         </div>
     </div>
 </div>
