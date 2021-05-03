@@ -19,7 +19,13 @@ use kartik\widgets\Select2;
                     'enableClientValidation' => false,
         ]);
         ?>
+
+        <div class="form-group">
+            <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>
+        </div>
+
         <div class="col-xs-8">
+
             <?= $form->field($model, 'header')->textInput(['maxlength' => true]) ?>
 
             <?= $form->field($model, 'short_name')->textInput(['maxlength' => true]) ?>
