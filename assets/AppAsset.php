@@ -36,6 +36,7 @@ class AppAsset extends AssetBundle {
 //        'css/fa-5.13/css/regular.min.css',
 //        'css/fa/css/fontawesome.min.css',
         'css/pgwslider.min.css',
+        'css/pretty-checkbox.css',
     ];
     public $js = [
 //        'css/fa/js/all.min.js',

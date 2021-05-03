@@ -1,6 +1,21 @@
 @import './../../../../web/css/bootstrap/variables.less';
 
 
+.category-search2 {
+    
+    .pretty {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .pretty .state label:before {
+        border-color: @brand-primary;
+    }
+
+    .pretty.p-default input:checked ~ .state label:after {
+        background-color: @brand-primary !important;
+    }
+}
 
 .category-search {
 
@@ -17,13 +32,13 @@
             flex-direction: column;
         }
     }
-    
+
     #productsearch-video_type {
-        
+
         label {
             padding-right: 3rem;
         }
-        
+
     }
 
 

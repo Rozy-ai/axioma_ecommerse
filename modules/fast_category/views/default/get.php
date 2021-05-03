@@ -47,7 +47,18 @@ $this->params['breadcrumbs'][] = $category->header;
     </div>
     <?= $category->content ?>
 
-    <?= $this->render('@app/views/site/_about') ?>
+    <?php
+    if ($category->id == 1 ||
+            $category->id == 4 ||
+            $category->id == 5 ||
+            $category->id == 3
+    ):
+        ?>
+
+        <?= $this->render('@app/views/site/_about') ?>
+
+    <?php endif; ?>
+
     <?= $this->render('@app/views/site/_contact_form') ?>
 
 </div>

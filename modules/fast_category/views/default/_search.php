@@ -25,10 +25,25 @@ $form = ActiveForm::begin([
 
 <?php if ($category->url == 'online-kass'): ?>
 
+
+
     <div class="category-search2">
 
         <div class="row">
             <div class="col-xs-12">
+
+                <?php // foreach ($model::ONLINE_KASS_TYPE as $item): ?>
+
+                <!--                    <div class="pretty p-default p-curve p-thick">
+                                        <input type="checkbox" name="online_kass_type" 
+                                               'onChange' = '$("#category-search").submit()'
+                                               />
+                                        <div class="state">
+                                            <label>Thick curve</label>
+                                        </div>
+                                    </div>-->
+
+                <?php //endforeach; ?>
 
                 <?php
                 echo $form->field($model, 'online_kass_type', [
@@ -42,19 +57,20 @@ $form = ActiveForm::begin([
                         ->checkboxList(
                                 $model::ONLINE_KASS_TYPE,
                                 [
-//                            'item' => function ($index, $label, $name, $checked, $value) {
-//
-//
-//                                $return = '<label>';
-//                                $return .= '<input id="radio-' . $index . '" type="checkbox" name="' . $name . '" ' . ($checked ? 'checked' : '') . ' value="' . $value . '"/>'
-//                                        . '<span class = "label-text">' . ucwords($label) . '</span>';
-//                                $return .= '</label >';
-////                                $return = '<input id="radio-' . $index . '" type="radio" name="' . $name . '" value="' . $value . '"/>';
-////                        $return .= '<label for="radio-' . $index . '" class="modal-radio">' . ucwords($label) . '</label>';
-//
-//                                return $return;
-//                            },
-                                    'onChange' => '$("#category-search").submit()']
+                                    'item' => function ($index, $label, $name, $checked, $value) {
+
+
+                                        $return = '<div class="pretty p-default p-curve p-thick">';
+                                        $return .= '<input type="checkbox" name="' . $name . '"  name="' . $name . '" ' . ($checked ? 'checked' : '') . ' value="' . $value . '" />';
+//                                        $return .= ' onChange = $("#category-search").submit()  ';
+                                        $return .= '<div class="state">';
+                                        $return .= '<label>' . $label . '</label>';
+                                        $return .= '</div>';
+                                        $return .= '</div>';
+                                        return $return;
+                                    },
+                                    'onChange' => '$("#category-search").submit()'
+                                ]
                         )->label(false)
                 ?>
 
