@@ -47,7 +47,7 @@ use yii\bootstrap\Html;
         </li>-->
         <?php foreach (\app\modules\fast_category\models\FastCategory::find()->all() as $item): ?>
             <li class="catalog">
-                <a href="<?= $item->_url ?>">
+                <a href="<?= $item->link ? $item->link : $item->_url ?>">
                     <?= Html::img($item->_icon, ['height' => '26']) ?>
                     <?= $item->header ?>
                 </a>
