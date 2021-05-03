@@ -53,8 +53,9 @@ $this->registerJsFile('/js/product-cart-height.js', ['depends' => ['app\assets\A
                 ?>
                 <?php //  $model->ord ?>
             </div>
-
-            <!--</div>-->
+            <div class="product-anons">
+                <?php echo $model->anons ?>
+            </div>
 
         </div>
         <div class="panel-body">

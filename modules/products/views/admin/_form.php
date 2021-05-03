@@ -21,7 +21,7 @@ use kartik\widgets\Select2;
         ?>
         <div class="col-xs-8">
             <?= $form->field($model, 'header')->textInput(['maxlength' => true]) ?>
-            
+
             <?= $form->field($model, 'short_name')->textInput(['maxlength' => true]) ?>
 
             <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
@@ -31,6 +31,8 @@ use kartik\widgets\Select2;
             <?= $form->field($model, 'keywords')->textInput(['maxlength' => true]) ?>
 
             <?= $form->field($model, 'price')->textInput() ?>
+
+            <?= $form->field($model, 'anons')->textInput() ?>
 
             <?=
             $form->field($model, 'content_info')->widget(Widget::className(), [
@@ -148,7 +150,7 @@ use kartik\widgets\Select2;
             <?= $form->field($model, 'article')->textInput(['maxlength' => true]) ?>
 
             <?= $form->field($model, 'url')->textInput(['maxlength' => true]) ?>
-            
+
             <?= $form->field($model, 'youtube_link')->textInput(['maxlength' => true]) ?>
 
             <?= $form->field($model, 'krat')->textInput() ?>

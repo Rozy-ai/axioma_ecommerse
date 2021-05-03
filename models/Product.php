@@ -40,6 +40,7 @@ use Yii;
  * @property string $short_name Короткое название
  * @property string $youtube_link Ссылка на ютуб
  * @property int $online_kass_type Тип для Онлайн-касс
+ * @property string $anons Анонс
  *
  * @property Category $category
  * @property ProductImage[] $productImages
@@ -66,7 +67,7 @@ class Product extends \app\models\CustomAR
             [['category_id', 'fastcat_id', 'ord', 'is_enable', 'created_at', 'updated_at', 'product_type', 'show_in_recomended', 'recomended_sort', 'in_stock', 'krat', 'is_akustika', 'is_radio', 'is_ip', 'is_tvi', 'enter_width', 'online_kass_type'], 'integer'],
             [['price'], 'number'],
             [['content_info', 'content_description', 'content_characteristics', 'content_install'], 'string'],
-            [['cats', 'article', 'url'], 'string', 'max' => 255],
+            [['cats', 'article', 'url', 'anons'], 'string', 'max' => 255],
             [['header', 'video_link', 'title', 'description', 'keywords', 'short_name', 'youtube_link'], 'string', 'max' => 500],
             [['url'], 'unique'],
             [['article'], 'unique'],
@@ -113,6 +114,7 @@ class Product extends \app\models\CustomAR
             'short_name' => 'Короткое название',
             'youtube_link' => 'Ссылка на ютуб',
             'online_kass_type' => 'Тип для Онлайн-касс',
+            'anons' => 'Анонс',
         ];
     }
 
