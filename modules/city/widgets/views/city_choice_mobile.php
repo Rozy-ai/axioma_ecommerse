@@ -1,22 +1,19 @@
 <?php
 
-use yii\helpers\Html;
+use yii\helpers\Html; ?>
 
-foreach ($links as $k => $link):
+<?php echo $current; ?>
 
-    if (isset($link['is_active']))
-        echo $link['link'] . '<br/>';
+<ul class="list-inline">
+    <?php foreach ($links as $k => $link): ?>
 
-endforeach;
+        <li class="list-inline-item"> <?= $link['link'] ?></li>
 
-foreach ($links as $k => $link):
+    <?php endforeach;
+    ?>
 
-    if (isset($link['is_active']))
-        ;
-    else
-        echo $link['link'];
+</ul>  
 
-endforeach;
-?>
+
 
 

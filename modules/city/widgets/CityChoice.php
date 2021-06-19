@@ -31,9 +31,10 @@ class CityChoice extends Widget {
         $cityes = City::find()->where(['is_enable' => 1])->orderBy(['order' => SORT_DESC])->all();
 
         $links = [];
+        $current = '';
         foreach ($cityes as $city):
             if ($city->name_eng == $this->current_city)
-                $links[] = ['link' => Html::tag('strong', '<i class="fas fa-map-marker-alt"></i> ' . $city->name, ['class' => 'active-city']), 'is_active' => true];
+                $current = Html::tag('strong', '<i class="fas fa-map-marker-alt"></i> ' . $city->name, ['class' => 'active-city']);
             else
                 $links [] = ['link' => ($city->name_eng == $this->default_city) ?
                     Html::a($city->name, 'https://www.' . Yii::$app->params['defaultDomain'] . '/' . Yii::$app->request->pathInfo) :
@@ -43,13 +44,13 @@ class CityChoice extends Widget {
         if ($this->mobile)
             return $this->render('city_choice_mobile', [
                         'links' => $links,
-                        'current_city' => City::getCityNameByCode($this->current_city),
+                        'current' => $current,
                             ]
             );
         else
             return $this->render('city_choice', [
                         'links' => $links,
-                        'current_city' => City::getCityNameByCode($this->current_city),
+                        'current' => $current,
                             ]
             );
     }

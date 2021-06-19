@@ -587,22 +587,7 @@ h3, .h3 {
         }
     }
 
-    .city-choise {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        font-size: 1.6rem;
-        margin-bottom: 2rem;
-        max-width: 400px;
-
-        a {
-            border-bottom: 1px dashed #333;
-
-            &:hover {
-                text-decoration: none;
-                border-bottom: inherit;
-            }
-        }
+    .city-choise-wrap {
 
         .active-city {
             color: @brand-primary;
@@ -611,27 +596,29 @@ h3, .h3 {
 
         }
 
-        .line {
-            width: 2px;
-            height: 2rem;
-            margin-top: .3rem;
-            background: @gray-light;
-
-        }
-
-        @media(max-width:@screen-xs) {
-
-            flex-direction: column;
-            text-align: center;
+        .city-choise {
+            font-size: 1.6rem;
+            max-width: 400px;
 
             a {
-                margin-bottom: 2rem;
+                text-decoration: underline;
+                
+                &:hover {
+                }
             }
 
-            .line {
-                display: none;
-            }
+            @media(max-width:@screen-xs) {
 
+
+                a {
+                    margin-bottom: 2rem;
+                }
+
+                .line {
+                    display: none;
+                }
+
+            }
         }
     }
 

@@ -2,10 +2,16 @@
 
 use yii\helpers\Html;
 
-foreach ($links as $k => $link):
-    echo $link['link'];
-    echo ((count($links) - 1) != $k) ? '<span class="line"></span>' : '';
-endforeach;
+echo $current;
 ?>
+
+<div class="city-choise">
+    <ul class="list-inline">
+        <?php foreach ($links as $k => $link): ?>
+            <li class="list-inline-item">
+                <?= $link['link']; ?>
+            </li>
+        <?php endforeach; ?>
+</div>
 
 

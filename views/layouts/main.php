@@ -156,10 +156,10 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                             <div class="row">
                                 <div class="col-xs-12 col-sm-8">
                                     <div class="row">
-                                        <div class="col-xs-12 col-sm-8">
-                                            <div class="city-choise">
-                                                <?= \app\modules\city\widgets\CityChoice::widget() ?>
-                                            </div>
+                                        <div class="col-xs-12 col-sm-8 city-choise-wrap">
+
+                                            <?= \app\modules\city\widgets\CityChoice::widget() ?>
+
                                             <div class="address text-gray">
                                                 <?= RegionTemplates::getVal('address') ?>
                                             </div>
