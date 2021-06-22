@@ -17,6 +17,7 @@ OwlCarouselWidget::begin([
         'autoplayTimeout' => 8000,
         'autoplayHoverPause' => true,
         'items' => 1,
+        'center' => true,
         'loop' => true,
         'dots' => true,
         'nav' => true,
