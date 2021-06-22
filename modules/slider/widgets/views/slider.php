@@ -17,7 +17,6 @@ OwlCarouselWidget::begin([
         'autoplayTimeout' => 8000,
         'autoplayHoverPause' => true,
         'items' => 1,
-        'center' => true,
         'loop' => true,
         'dots' => true,
         'nav' => true,
@@ -33,7 +32,7 @@ OwlCarouselWidget::begin([
 ?>
 <?php foreach ($model as $item): ?>
     <div class="item-class">
-        <img class="" src="<?= $item->Img ?>" data-srcset="" data-sizes="" alt="slider_img">
+        <img class="img img-fluid" src="<?= $item->Img ?>" data-srcset="" data-sizes="" alt="slider_img">
 
         <div class="btn-wrap">
             <div class="container">
