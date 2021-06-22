@@ -5,6 +5,8 @@ use yii\helpers\Html;
 use kv4nt\owlcarousel\OwlCarouselWidget;
 ?>
 
+<!--<img class="img img-fluid" src="/image/slider/60d1e6a4f3fb0.jpg">-->
+
 <?php
 OwlCarouselWidget::begin([
     'container' => 'div',
@@ -14,6 +16,7 @@ OwlCarouselWidget::begin([
     ],
     'pluginOptions' => [
         'autoplay' => true,
+//        'autoplay' => false,
         'autoplayTimeout' => 8000,
         'autoplayHoverPause' => true,
         'items' => 1,
