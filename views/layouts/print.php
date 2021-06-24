@@ -35,7 +35,7 @@ PrintAsset::register($this);
                     </a>
                 </td>
                 <td>    </td>
-                <td class="text-right" style="padding-right: 3rem; ">
+                <td class="text-right" colspan="2" style="padding-right: 3rem; ">
                     <p style="font-size: 2rem; font-weight: 300;"><?= Yii::$app->info::get('headTelephone') ?></p>
                     <?= Yii::$app->info::get('email') ?>
                 </td>
