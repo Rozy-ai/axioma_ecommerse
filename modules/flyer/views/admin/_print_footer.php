@@ -3,14 +3,17 @@
     <div class="footer-top">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-xs-3 col-xs-offset-1">
+                <div class="col-xs-3">
                     <?= Yii::$app->info::get('mos_address') ?>
                 </div>
                 <div class="col-xs-3">
                     <?= Yii::$app->info::get('ekb_address') ?>
                 </div>
-                <div class="col-xs-3">
+                <div class="col-xs-2">
                     <?= Yii::$app->info::get('kras_address') ?>
+                </div>
+                <div class="col-xs-2">
+                    <?= Yii::$app->info::get('nvs_address') ?>
                 </div>
             </div>
         </div>
