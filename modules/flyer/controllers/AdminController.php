@@ -32,7 +32,7 @@ class AdminController extends \app\controllers\AdminController {
                 'outputValue' => function ($model, $attribute, $key, $index) {
                     return (int) $model->$attribute;      // return any custom output value if desired
                 },
-                'outputMessage' => function($model, $attribute, $key, $index) {
+                'outputMessage' => function ($model, $attribute, $key, $index) {
                     return '';                                  // any custom error to return after model save
                 },
                 'showModelErrors' => true, // show model validation errors after save
@@ -70,7 +70,7 @@ class AdminController extends \app\controllers\AdminController {
         $good = new \app\modules\flyer\models\FlyerGoods();
 
         if ($good->load(Yii::$app->request->post()) && $good->save()) {
-
+            
         }
 
         $model = $this->findModel($id);

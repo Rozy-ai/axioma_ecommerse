@@ -25,16 +25,15 @@ PrintAsset::register($this);
     <body>
         <?php $this->beginBody() ?>
 
-        <table class="table" style="width: 100%">
+        <table class="table addresses" style="width: 100%">
             <tr>
-                <td style="width: 20%; padding-left: 3rem;">
+                <td style="width: 20%; padding-left: 3rem;" colspan="2">
                     <a href="https://axioma.pro/">
                         <?=
                         $img = Html::img('/print/image/logo_print.png', ['class' => 'img', 'alt' => 'Логотип', 'width' => 240]);
                         ?>
                     </a>
                 </td>
-                <td>    </td>
                 <td class="text-right" colspan="2" style="padding-right: 3rem; ">
                     <p style="font-size: 2rem; font-weight: 300;"><?= Yii::$app->info::get('headTelephone') ?></p>
                     <?= Yii::$app->info::get('email') ?>
@@ -44,16 +43,16 @@ PrintAsset::register($this);
                 <td  style="height: 2rem"></td>
             </tr>
             <tr>
-                <td style="padding-left: 3rem; width:24%;">
+                <td style="padding-left: 2rem; width:23%; padding-right: 2%;         font-size: 11px;">
                     <?= Yii::$app->info::get('mos_address') ?>
                 </td>
-                <td class="text-center" style=" width:24%;">
+                <td class="text-center" style=" width:23%; padding-right: 2%;         font-size: 11px;">
                     <?= Yii::$app->info::get('ekb_address') ?>
                 </td>
-                <td class="text-center" style="width:24%;">
+                <td class="text-center" style="width:23%; padding-right: 2%;         font-size: 11px;">
                     <?= Yii::$app->info::get('kras_address') ?>
                 </td>
-                <td class="text-right" style="padding-right: 3rem; width:28%;">
+                <td class="text-right" style="padding-right: 2rem; width:23%;         font-size: 11px;">
                     <?= Yii::$app->info::get('nvs_address') ?>
                 </td>
             </tr>
