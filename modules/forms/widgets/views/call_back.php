@@ -41,7 +41,7 @@ Modal::begin([
     <?=
     Html::submitButton('Отправить', [
         'class' => 'btn btn-primary',
-        'onClick' => "ym(53040199, 'reachGoal', 'call-back');",
+        'onClick' => "ym(53040199,'reachGoal','feed-back')",
     ])
     ?>
 </div>

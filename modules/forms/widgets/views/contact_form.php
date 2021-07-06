@@ -40,7 +40,10 @@ $this->registerJsFile('@web/js/form/contact_form.js', ['depends' => ['app\assets
         <a href="/soglasie">политикой конфиденциальности</a> сайта.</p>
 
     <div class="form-group button-wrap">
-<?= Html::submitButton('Отправить', ['class' => 'btn btn-primary']) ?>
+<?= Html::submitButton('Отправить', [
+    'class' => 'btn btn-primary',
+    'onClick' => "ym(53040199,'reachGoal','feed-back')"
+    ]) ?>
     </div>
 </div>
 

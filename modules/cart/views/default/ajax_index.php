@@ -47,7 +47,7 @@ else
         <?=
         Html::a('Оформить заказ', ['/order/default/view'], [
             'class' => 'btn btn-lg btn-primary center-block',
-            'onclick' => "ym(53040199, 'reachGoal', 'send-order')",
+//            'onclick' => "ym(53040199, 'reachGoal', 'send-order')",
         ])
         ?>
     </div>
