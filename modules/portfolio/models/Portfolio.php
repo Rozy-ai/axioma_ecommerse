@@ -14,4 +14,12 @@ class Portfolio extends \app\models\Portfolio {
         endforeach;
     }
 
+    public function beforeDelete() {
+
+        foreach ($this->portfolioImages as $image)
+            $image->delete();
+
+        return parent::beforeDelete();
+    }
+
 }
