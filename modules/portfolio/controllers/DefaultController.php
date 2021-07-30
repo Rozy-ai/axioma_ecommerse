@@ -12,6 +12,8 @@ class DefaultController extends Controller {
 
     public function actionIndex() {
 
+        $this->view->title = 'Портфолио выполненных объектов компании Аксиома';
+
         $model = \app\modules\portfolio\models\Portfolio::find()
                 ->orderBy('order desc')
                 ->all();
