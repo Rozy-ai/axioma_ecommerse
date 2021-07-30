@@ -27,6 +27,23 @@ $(document).ready(function () {
         // other options
     });
 
+    $(".portfolio-gallery").each(function (index) {
+
+        var id = $(this).attr('data-id');
+
+        $('.portfolio-gallery-' + id).magnificPopup({
+            type: 'image',
+            gallery: {
+                // options for gallery
+                enabled: true
+            },
+            // other options
+        });
+
+    });
+
+
+
     //category-link
 
     $('.panel-click').click(function () {

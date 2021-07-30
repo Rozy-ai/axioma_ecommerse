@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\slider\controllers;
+namespace app\modules\portfolio\controllers;
 
 use Yii;
 use yii\web\Controller;
@@ -12,7 +12,12 @@ class DefaultController extends Controller {
 
     public function actionIndex() {
 
-        return $this->render('index', [
+        $model = \app\modules\portfolio\models\Portfolio::find()
+                ->orderBy('order desc')
+                ->all();
+
+        return $this->render('index.twig', [
+                    'model' => $model,
         ]);
     }
 

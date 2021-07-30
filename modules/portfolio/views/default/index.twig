@@ -1,0 +1,38 @@
+<h1>Портфолио</h1>
+
+{% for item in model %}  
+
+    <div class="row portfolio-gallery" data-id="{{ item.id }}">
+
+        <div class="h2">{{ item.name }}</div>
+
+        <div class="col-sm-4">
+            <a href="/image/portfolio/{{ item.mainImage }}" class="portfolio-gallery-{{ item.id }}" >
+                <img src="/image/portfolio/{{ item.mainImage }}" class="img img-responsive">
+            </a>
+        </div>
+        <div class="col-sm-8">
+            <div class="row">
+
+                {% for image in item.portfolioImages %}  
+
+                    {% if( not image.is_main) %}
+
+                        <div class="col-sm-4">
+                            <a href="/image/portfolio/{{ image.image }}" class="portfolio-gallery-{{ item.id }}">
+                                <img src="/image/portfolio/{{ image.image }}" class="img img-responsive">
+                            </a>
+                            <br/>
+                        </div>
+                    {% endif %}  
+                {% endfor %}  
+            </div>
+        </div>
+    </div>
+
+    <br/>
+    <br/>
+
+    {#    {{ this.render('_item.twig', {'item': item}) }}#}
+
+{% endfor %}  

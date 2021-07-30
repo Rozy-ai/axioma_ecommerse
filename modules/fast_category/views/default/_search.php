@@ -101,6 +101,14 @@ $form = ActiveForm::begin([
 
 
                     <?php
+                    $labels = [0 => 'Любая', 1 => 'Акустомагнитные системы', 2 => 'Радиочастотные системы'];
+
+                    if ($category->url == 'datchiki')
+                        $labels = [0 => 'Любая', 1 => 'Акустомагнитные датчики', 2 => 'Радиочастотные датчики'];
+
+                    if ($category->url == 'etiketki')
+                        $labels = [0 => 'Любая', 1 => 'Акустомагнитные этикетки', 2 => 'Радиочастотные этикетки'];
+
                     echo $form->field($model, 'detection_type', [
                         'inline' => true,
 //                            'inlineRadioListTemplate' => "<div class=\"checkbox checkbox-ext\">\n{beginLabel}\n{input}\n<span>{labelTitle}</span>\n{endLabel}\n{error}\n{hint}\n</div>",
@@ -108,7 +116,7 @@ $form = ActiveForm::begin([
 //                                    'inlineRadioListTemplate' => '{beginWrapper} {input}  <span class="label-text"> {label} </span> {endWrapper} {hint}',
 //                                    'radioTemplate' => '<div class=\"radio\">{beginLabel}{input} <span class="label-text"> {labelTitle} </span> {endLabel}{hint}</div>',
                     ])->radioList(
-                            [0 => 'Любая', 1 => 'Акустомагнитные системы', 2 => 'Радиочастотные системы'],
+                            $labels,
                             [
                                 'item' => function ($index, $label, $name, $checked, $value) {
 

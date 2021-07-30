@@ -132,6 +132,7 @@ $config = [
 //                '/category/<category:[-\w]+>/<subcategory:[-\w]+>' => 'category/default/get',
                 '/vacancy' => '/vacancy/default/index',
                 '/novosti' => '/content/get/news',
+                '/portfolio' => '/portfolio/default/index',
                 '/stati' => '/content/get/articles',
                 '/uslugi' => '/content/get/services',
                 '/cart' => '/cart/default/index',
