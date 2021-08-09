@@ -9,12 +9,15 @@
 
         <div class="col-sm-12">
             <div class="h2">{{ item.name }}</div>
+
         </div>
-        
+
         <div class="col-sm-4">
             <a href="/image/portfolio/{{ item.mainImage }}" class="portfolio-gallery-{{ item.id }}" >
                 <img src="/image/portfolio/{{ item.mainImage }}" class="img img-responsive">
+
             </a>
+            <div class="text">{{ item.text  | raw}}</div>
         </div>
         <div class="col-sm-8">
             <div class="row">

@@ -12,6 +12,8 @@ class DefaultController extends Controller {
 
     public function actionIndex() {
 
+        \app\modules\portfolio\Asset::register($this->view);
+
         $this->view->title = 'Портфолио выполненных объектов компании Аксиома';
 
         $model = \app\modules\portfolio\models\Portfolio::find()
