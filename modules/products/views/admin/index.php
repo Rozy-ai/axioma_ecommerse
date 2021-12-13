@@ -48,7 +48,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'article',
 //        'category',
         'header',
-        
+        'short_name',
 //        'short_name',
         [
             'class' => 'kartik\grid\EditableColumn',
@@ -100,27 +100,27 @@ $this->params['breadcrumbs'][] = $this->title;
                 'data' => app\modules\fast_category\models\FastCategory::__getHeaders(),
             ],
         ],
-        [
-            'class' => 'kartik\grid\EditableColumn',
-            'attribute' => 'is_akustika',
-            'format' => 'raw',
-            'editableOptions' => [
-//                'inputType' => \kartik\editable\Editable::INPUT_SELECT2,
-                'inputType' => \kartik\editable\Editable::INPUT_CHECKBOX,
-                'formOptions' => ['action' => ['/products/admin/edit-column']],
-            ],
-        ],
-        [
-            'class' => 'kartik\grid\EditableColumn',
-            'attribute' => 'is_radio',
-            'format' => 'raw',
-            'editableOptions' => [
-//                'inputType' => \kartik\editable\Editable::INPUT_SELECT2,
-                'inputType' => \kartik\editable\Editable::INPUT_CHECKBOX,
-                'formOptions' => ['action' => ['/products/admin/edit-column']],
-                'data' => app\modules\fast_category\models\FastCategory::__getHeaders(),
-            ],
-        ],
+//        [
+//            'class' => 'kartik\grid\EditableColumn',
+//            'attribute' => 'is_akustika',
+//            'format' => 'raw',
+//            'editableOptions' => [
+////                'inputType' => \kartik\editable\Editable::INPUT_SELECT2,
+//                'inputType' => \kartik\editable\Editable::INPUT_CHECKBOX,
+//                'formOptions' => ['action' => ['/products/admin/edit-column']],
+//            ],
+//        ],
+//        [
+//            'class' => 'kartik\grid\EditableColumn',
+//            'attribute' => 'is_radio',
+//            'format' => 'raw',
+//            'editableOptions' => [
+////                'inputType' => \kartik\editable\Editable::INPUT_SELECT2,
+//                'inputType' => \kartik\editable\Editable::INPUT_CHECKBOX,
+//                'formOptions' => ['action' => ['/products/admin/edit-column']],
+//                'data' => app\modules\fast_category\models\FastCategory::__getHeaders(),
+//            ],
+//        ],
         [
             'class' => 'kartik\grid\EditableColumn',
             'attribute' => 'is_enable',
@@ -132,26 +132,21 @@ $this->params['breadcrumbs'][] = $this->title;
                 'data' => app\modules\fast_category\models\FastCategory::__getHeaders(),
             ],
         ],
-        [
-            'class' => 'kartik\grid\EditableColumn',
-            'attribute' => 'online_kass_type',
-            'format' => 'raw',
-            'filter' => \app\modules\products\models\Product::ONLINE_KASS_TYPE,
-            'editableOptions' => [
-//                'inputType' => \kartik\editable\Editable::INPUT_SELECT2,
-                'inputType' => \kartik\editable\Editable::INPUT_DROPDOWN_LIST,
-                'formOptions' => ['action' => ['/products/admin/edit-column']],
-                'data' => \app\modules\products\models\Product::ONLINE_KASS_TYPE,
-            ],
-            'value' => function ($row) {
-                return ($row->online_kass_type) ? \app\modules\products\models\Product::ONLINE_KASS_TYPE[$row->online_kass_type] : '';
-            },
-        ],
-        [],
-        [],
-        [],
-        [],
-        [],
+//        [
+//            'class' => 'kartik\grid\EditableColumn',
+//            'attribute' => 'online_kass_type',
+//            'format' => 'raw',
+//            'filter' => \app\modules\products\models\Product::ONLINE_KASS_TYPE,
+//            'editableOptions' => [
+////                'inputType' => \kartik\editable\Editable::INPUT_SELECT2,
+//                'inputType' => \kartik\editable\Editable::INPUT_DROPDOWN_LIST,
+//                'formOptions' => ['action' => ['/products/admin/edit-column']],
+//                'data' => \app\modules\products\models\Product::ONLINE_KASS_TYPE,
+//            ],
+//            'value' => function ($row) {
+//                return ($row->online_kass_type) ? \app\modules\products\models\Product::ONLINE_KASS_TYPE[$row->online_kass_type] : '';
+//            },
+//        ],
 //        'price',
 //        'url:url',
 //        'ord',
@@ -179,7 +174,18 @@ $this->params['breadcrumbs'][] = $this->title;
         //'created_at',
         //'updated_at',
         //'supported_products',
-        ['class' => 'yii\grid\ActionColumn'],
+        [
+            'label' => 'Радио/Аккустика',
+            'attribute' => 'detectType',
+            'filter' => app\modules\products\models\ProductSearch::DETECT_TYPE,
+            'value' => function ($row) {
+
+
+                return (($row->is_radio) ? 'Р' : ' ') . ' | ' . (($row->is_akustika) ? 'А' : ' ');
+            }
+        ],
+        ['class' => 'yii\grid\ActionColumn', 'template' => '{update}'],
+        ['class' => 'yii\grid\ActionColumn', 'template' => '{delete}'],
     ];
     ?>
 
