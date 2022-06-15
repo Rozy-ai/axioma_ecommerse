@@ -63,7 +63,7 @@ $this->params['breadcrumbs'][] = $category->header;
                     'class' => ScrollPager::className(),
                     'triggerText' => '',
                     'noneLeftTemplate' => '<div class="ias-noneleft article-preview__direction">{text}</div>',
-                    'noneLeftText' => 'Нет больше новостей для отображения',
+//                    'noneLeftText' => 'Нет больше новостей для отображения',
                     'enabledExtensions' => [ScrollPager::EXTENSION_SPINNER, ScrollPager::EXTENSION_NONE_LEFT, ScrollPager::EXTENSION_PAGING],
                     'eventOnScroll' => 'function() {$(\'.ias-trigger a\').trigger(\'click\')}',
                 ],
