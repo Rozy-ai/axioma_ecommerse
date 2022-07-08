@@ -79,10 +79,10 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                     ?>
 
                 </div>
-                <div class="col-xs-12 col-md-3 popup-search text-right">
+                <div class="col-xs-12 col-md-2 popup-search text-right">
                     <?php echo app\modules\search\widgets\Search::widget(); ?>
                 </div>
-                <div class="col-xs-12 col-md-1">
+                <div class="col-xs-12 col-md-2">
                     <?php
                     echo Nav::widget([
                         'options' => ['class' => 'navbar-nav navbar-right'],
@@ -205,13 +205,13 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
 
                                     </div>
                                 </div>
-                                <div class="col-xs-12 col-sm-3 col-sm-offset-1 phone-wrap" >
-                                    <div class="phone">
-                                        <a href="tel:<?= str_replace(['-', '(', ')', ' '], '', Yii::$app->info::get('headTelephone')) ?>">
+                                <div class="col-xs-12 col-sm-4 phone-wrap " >
+                                    <div class="phone text-center">
+                                        <a href="tel:<?= str_replace(['-', '(', ')', ' '], '', Yii::$app->info::get('headTelephone')) ?>" class="center-block text-center">
                                             <?= Yii::$app->info::get('headTelephone') ?>
                                         </a>
                                     </div>
-                                    <p class="free-call">Звонок бесплатный</p>
+                                    <div class="free-call center-block text-center">Звонок бесплатный</div>
                                     <?= \app\modules\forms\widgets\CallBack::widget(); ?>
 
                                 </div>
@@ -222,23 +222,28 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                 </div>
 
                 <div id="top-line" class="bottom-menu">
-                    <?php
-                    NavBar::begin([
-                        'options' => [
-                            'class' => 'navbar',
-                        ],
-                    ]);
-                    ?>
-                    <?php
-                    echo Nav::widget([
-                        'options' => ['class' => 'navbar-nav navbar-left'],
-                        'encodeLabels' => false,
-                        'items' => Menu::getBottomMenu(),
-                    ]);
-                    ?>
-                    <?php
-                    NavBar::end();
-                    ?>
+                    <div class="container">
+
+                        <?= $this->render('_top_line') ?>
+
+                        <?php
+//                    NavBar::begin([
+//                        'options' => [
+//                            'class' => 'navbar',
+//                        ],
+//                    ]);
+                        ?>
+                        <?php
+//                    echo Nav::widget([
+//                        'options' => ['class' => 'top-line-nav'],
+//                        'encodeLabels' => false,
+//                        'items' => Menu::getBottomMenu(),
+//                    ]);
+                        ?>
+                        <?php
+//                    NavBar::end();
+                        ?>
+                    </div>
                 </div>
             </div>
 
@@ -350,10 +355,12 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                 </p>
                                 <?= \app\modules\forms\widgets\CallBack::widget(['in_footer' => true]); ?>
                                 <p class="insta">
-<!--                                    <a href="https://www.instagram.com/axioma.pro.russia/" target="_blank">
-                                        <i class="fab fa-instagram" aria-hidden="true"></i></a>-->
+                                    <!--                                    <a href="https://www.instagram.com/axioma.pro.russia/" target="_blank">
+                                                                            <i class="fab fa-instagram" aria-hidden="true"></i></a>-->
                                     <a href="https://www.youtube.com/c/AxiomaPro/featured" target="_blank">
-                                        <i class="fab fa-youtube" aria-hidden="true"></i></a>
+                                        <img src="/image/ico/YT.svg" height="40">
+                                        <!--<i class="fab fa-youtube" aria-hidden="true"></i>-->
+                                    </a>
                                 </p>
                             </div>
                         </div>
