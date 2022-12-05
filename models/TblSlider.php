@@ -12,6 +12,7 @@ use Yii;
  * @property string $image
  * @property string $content
  * @property string $link
+ * @property string $btnName
  * @property int $act
  * @property int $ord
  * @property string $create_time
@@ -33,11 +34,12 @@ class TblSlider extends \app\models\CustomAR
     public function rules()
     {
         return [
-            [['name', 'image', 'act', 'ord'], 'required'],
+            [['name', 'image', 'btnName', 'act', 'ord'], 'required'],
             [['content'], 'string'],
             [['act', 'ord'], 'integer'],
             [['create_time', 'update_time'], 'safe'],
             [['name', 'image', 'link'], 'string', 'max' => 255],
+            [['btnName'], 'string', 'max' => 100],
         ];
     }
 
@@ -52,6 +54,7 @@ class TblSlider extends \app\models\CustomAR
             'image' => 'Image',
             'content' => 'Content',
             'link' => 'Link',
+            'btnName' => 'Btn Name',
             'act' => 'Act',
             'ord' => 'Ord',
             'create_time' => 'Create Time',

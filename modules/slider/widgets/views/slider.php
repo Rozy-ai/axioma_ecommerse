@@ -39,7 +39,7 @@ OwlCarouselWidget::begin([
 
         <div class="btn-wrap">
             <div class="container">
-                <?= !$item->link ?: Html::a('В каталог', $item->link, ['class' => 'btn btn-primary']) ?>
+                <?= !$item->link ?: Html::a($item->btnName, $item->link, ['class' => 'btn btn-primary']) ?>
             </div>
         </div>
     </div>
