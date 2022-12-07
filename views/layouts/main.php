@@ -173,26 +173,45 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                                     <i class="far fa-clock"></i>
                                                     ЧАСЫ РАБОТЫ
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col-xs-5">
-                                                        Пн-пт:
+
+                                                <?php if (Yii::$app->city->id == 1107): ?>
+                                                    <div class="row">
+                                                        <div class="col-xs-5">
+                                                            Пн-пт:
+                                                        </div>
+                                                        <div class="col-xs-7">
+                                                            09.00 — 18.00
+                                                        </div>
+                                                        <div class="col-xs-5">
+                                                            сб:
+                                                        </div>
+                                                        <div class="col-xs-7">
+                                                            09.00 — 14.00
+                                                        </div>
+                                                        <div class="col-xs-5">
+                                                            вс:
+                                                        </div>
+                                                        <div class="col-xs-7">
+                                                            <strong>Выходной</strong>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-xs-7">
-                                                        09.00 — 18.00
+                                                <?php else: ?>
+                                                    <div class="row">
+                                                        <div class="col-xs-5">
+                                                            Пн-пт:
+                                                        </div>
+                                                        <div class="col-xs-7">
+                                                            09.00 — 18.00
+                                                        </div>
+                                                        <div class="col-xs-5">
+                                                            сб-вс:
+                                                        </div>
+                                                        <div class="col-xs-7">
+                                                            <strong>Выходной</strong>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-xs-5">
-                                                        сб:
-                                                    </div>
-                                                    <div class="col-xs-7">
-                                                        09.00 — 14.00
-                                                    </div>
-                                                    <div class="col-xs-5">
-                                                        вс:
-                                                    </div>
-                                                    <div class="col-xs-7">
-                                                        <strong>Выходной</strong>
-                                                    </div>
-                                                </div>
+                                                <?php endif; ?>
+
 
                                                 <?php Yii::$app->info::get('work_time') ?>
                                             </div>
