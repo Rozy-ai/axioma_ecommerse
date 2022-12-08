@@ -59,14 +59,13 @@ class DefaultController extends Controller {
 //                $order->city_id = Yii::$app->city->getId();
                 $order->created_at = time();
 
-
-
                 if ($order->save()) {
 
                     $this->admin_mail_body = 'Заказ ' . $order->id . PHP_EOL .
                             'Покупатель ' . $order->client_name . PHP_EOL .
                             'Email ' . $order->email . PHP_EOL .
                             'Телефон ' . $order->phone . PHP_EOL .
+                            'Город ' . (\app\modules\city\models\City::findOne(Yii::$app->city->getId()))->name . PHP_EOL .
                             ' --------------- ' . PHP_EOL .
                             '';
 
@@ -89,8 +88,6 @@ class DefaultController extends Controller {
                         } else
                             print_r($order->errors);
                     endforeach;
-
-
 
                     $this->sendClientMail($order->email);
                     $this->sendAdminMail($order->id);
