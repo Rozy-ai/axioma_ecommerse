@@ -36,3 +36,11 @@
         <?= Yii::$app->info::get('headTelephone') ?>
     </a>
 </div>
+<br/>
+<br/>
+<div>
+    <?= Yii::$app->info::get('kazan_address') ?>
+    <a href="tel:<?= Yii::$app->info::get('headTelephone') ?>">
+        <?= Yii::$app->info::get('headTelephone') ?>
+    </a>
+</div>
