@@ -160,7 +160,8 @@ class DefaultController extends Controller {
 
             if ($model->load(Yii::$app->request->post())) {
 
-                $model->body = $model->name . ' (' . str_replace(['(', ')', '-', ''], '', $model->phone) . ')' . ' заказал: ' . $model->good . ' (' . $model->count . ' шт) ';
+                $model->body = $model->name . ' (' . str_replace(['(', ')', '-', ''], '', $model->phone) . ')' . ' заказал: ' . $model->good . ' (' . $model->count . ' шт) ' . PHP_EOL;
+                $model->body .= 'Город: ' . Yii::$app->city->name;
 
                 if ($model->contact())
                     return 1;

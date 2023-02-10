@@ -25,7 +25,7 @@ class OneClickOrder extends EmailForm {
      */
     public function rules() {
         return [
-            [['name', 'phone', 'personal_accept', 'count'], 'required'],
+            [['name', 'phone', 'personal_accept', 'count', 'good'], 'required'],
             ['personal_accept', 'in', 'range' => [1]],
         ];
     }

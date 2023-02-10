@@ -28,4 +28,10 @@ class City extends \yii\base\BaseObject {
         return $id ? $id : 0;
     }
 
+    public function getName() {
+        
+        return \app\modules\city\models\City::getCityNameById($this->getId());
+
+    }
+
 }
