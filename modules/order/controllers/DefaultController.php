@@ -79,10 +79,8 @@ class DefaultController extends Controller {
 
                         if ($order_item->save()) {
 
-                            $this->admin_mail_body .= ''
-                                    . $k . ' | ' . $order_item->name . ' | '
-                                    . $order_item->count . ' | '
-                                    . $order_item->price . PHP_EOL;
+                            $this->admin_mail_body .=  $order_item->name . ' | '
+                                    . $order_item->count . ' шт. '. PHP_EOL;
 //                                $session['cart'] = [];
 //                                $this->redirect('thankyou');
                         } else
