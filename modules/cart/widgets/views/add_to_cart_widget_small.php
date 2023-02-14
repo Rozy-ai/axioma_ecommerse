@@ -18,7 +18,7 @@ use yii\bootstrap\ActiveForm;
         ?>
         <?php ActiveForm::end(); ?>
         <button type="button" class="btn btn-default" 
-                style="font-size: 11.5px;"
+                style="font-size: 11px;"
                 onClick="ym(53040199,'reachGoal','one-click'); $('#oneclickorder-good').val($(this).attr('data-header'))"
                 data-id="<?= $model->id ?>" 
                 data-header="<?= $model->header ?>" 
