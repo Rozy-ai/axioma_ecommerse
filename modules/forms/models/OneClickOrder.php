@@ -16,7 +16,7 @@ class OneClickOrder extends EmailForm {
     public $count;
     public $email;
     public $personal_accept;
-    public $subject = 'Заказ в 1 клик';
+    public $subject = 'Узнать цену';
 
 //    public $verifyCode;
 

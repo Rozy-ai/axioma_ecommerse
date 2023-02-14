@@ -11,7 +11,7 @@ $this->registerJsFile('@web/js/form/one_click.js', ['depends' => ['app\assets\Ap
 <?php
 Modal::begin([
     'id' => 'oneclick-form-modal',
-    'header' => '<p class="h2">Купить в 1 клик</p>',
+    'header' => '<p class="h2">Узнать цену</p>',
 ]);
 ?>
 

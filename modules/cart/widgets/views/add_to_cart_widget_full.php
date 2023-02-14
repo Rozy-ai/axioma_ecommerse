@@ -88,10 +88,10 @@ use kartik\popover\PopoverX;
                 ?>
                 <?php ActiveForm::end(); ?>
                 <button type="button" class="btn btn-default"
-                        onClick="$('#oneclickorder-good').val($(this).attr('data-header'))"
+                        onClick="ym(53040199,'reachGoal','one-click'); $('#oneclickorder-good').val($(this).attr('data-header'))"
                         data-id="<?= $model->id ?>" 
                         data-header="<?= $model->header ?>" 
-                        data-toggle="modal" data-target="#oneclick-form-modal">Купить в 1 клик</button>
+                        data-toggle="modal" data-target="#oneclick-form-modal">Узнать цену</button>
                         <?= \app\modules\forms\widgets\OneClickOrder::widget() ?>
             </div>
 

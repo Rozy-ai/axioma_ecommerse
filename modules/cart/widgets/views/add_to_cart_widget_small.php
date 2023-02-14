@@ -18,10 +18,11 @@ use yii\bootstrap\ActiveForm;
         ?>
         <?php ActiveForm::end(); ?>
         <button type="button" class="btn btn-default" 
-                onClick="$('#oneclickorder-good').val($(this).attr('data-header'))"
+                style="font-size: 11.5px;"
+                onClick="ym(53040199,'reachGoal','one-click'); $('#oneclickorder-good').val($(this).attr('data-header'))"
                 data-id="<?= $model->id ?>" 
                 data-header="<?= $model->header ?>" 
-                data-toggle="modal" data-target="#oneclick-form-modal">В 1 клик</button>
+                data-toggle="modal" data-target="#oneclick-form-modal">Узнать цену</button>
 
     </div>
 </div>
