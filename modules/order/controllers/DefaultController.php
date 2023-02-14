@@ -143,7 +143,7 @@ class DefaultController extends Controller {
         Yii::$app->mailer->compose()
                 ->setTo([\app\modules\info\models\Info::get('email'), Yii::$app->params['copyEmail']])
                 ->setFrom([Yii::$app->params['senderEmail'] => 'Axioma email Robot'])
-                ->setSubject('Новый заказ')
+                ->setSubject('Новый заказ № '.$order_id)
                 ->setTextBody($this->admin_mail_body)
                 ->send();
     }
