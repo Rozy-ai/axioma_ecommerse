@@ -91,7 +91,7 @@ $config = [
                 'class' => 'Swift_SmtpTransport',
                 'host' => 'smtp.yandex.com', // e.g. smtp.mandrillapp.com or smtp.gmail.com
                 'username' => 'noreply@axioma.pro',
-                'password' => 'Ax2049510Ax',
+                'password' => '$Axi2049510Axi$',
                 'port' => '25', // Port 25 is a very common port too
                 'encryption' => 'tls', // It is often used, check your provider or mail server specs
             ],
