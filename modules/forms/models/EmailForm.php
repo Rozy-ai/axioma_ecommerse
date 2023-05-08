@@ -14,6 +14,7 @@ class EmailForm extends Model {
     public $recipient = '';
     public $sender_email = '';
     public $sender_name = 'Axioma email Robot';
+    public $captcha;
 
     public function init() {
 

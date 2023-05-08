@@ -25,6 +25,8 @@ class ContactForm extends EmailForm {
         return [
             [['name', 'email', 'message',], 'required'],
             ['email', 'email'],
+                        ['captcha', 'required'],
+            ['captcha', 'captcha'],
         ];
     }
 
@@ -36,6 +38,7 @@ class ContactForm extends EmailForm {
             'name' => 'Ваше имя... *',
             'email' => 'Ваш E-mail... *',
             'message' => 'Ваше Сообщение',
+                        'captcha' => 'Подтвердите, что вы не робот. Решите простой пример.',
         ];
     }
 

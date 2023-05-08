@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use yii\bootstrap\Modal;
 use yii\widgets\MaskedInput;
+use yii\captcha\Captcha;
 
 $this->registerJsFile('@web/js/form/one_click.js', ['depends' => ['app\assets\AppAsset']]);
 ?>
@@ -31,6 +32,10 @@ $form->field($model, 'personal_accept')->checkbox()->label('Я даю согла
         . Html::a('Ознакомиться с условиями', ['/soglasie'], ['target' => '_blank'])
 )
 ?>
+
+    <?= $form->field($model, 'captcha')
+        ->hint('Нажмите на картинку, чтобы обновить')
+        ->widget(Captcha::className()) ?>
 
 <div class="form-group">
     <?=

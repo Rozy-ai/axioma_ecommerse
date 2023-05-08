@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use yii\widgets\MaskedInput;
+use yii\captcha\Captcha;
 
 $this->registerJsFile('@web/js/form/contact_form.js', ['depends' => ['app\assets\AppAsset']]);
 ?>
@@ -34,10 +35,16 @@ $this->registerJsFile('@web/js/form/contact_form.js', ['depends' => ['app\assets
         'rows' => 8,
     ])->label(false)
     ?>
+    
+    
 
     <p class="star-text">*Поля обязательны для заполнения</p>
     <p class="politic-text">Нажимая кнопку «Отправить» Вы соглашаетесь с
         <a href="/soglasie">политикой конфиденциальности</a> сайта.</p>
+    
+        <?= $form->field($model, 'captcha')
+        ->hint('Нажмите на картинку, чтобы обновить')
+        ->widget(Captcha::className()) ?>
 
     <div class="form-group button-wrap">
 <?= Html::submitButton('Отправить', [

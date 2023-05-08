@@ -27,6 +27,8 @@ class OneClickOrder extends EmailForm {
         return [
             [['name', 'phone', 'personal_accept', 'count', 'good'], 'required'],
             ['personal_accept', 'in', 'range' => [1]],
+                        ['captcha', 'required'],
+            ['captcha', 'captcha'],
         ];
     }
 
@@ -40,6 +42,7 @@ class OneClickOrder extends EmailForm {
             'count' => 'Количество',
             'good' => 'Товар',
             'personal_accept' => 'Я даю согласие на обработку персональных данных',
+                        'captcha' => 'Подтвердите, что вы не робот. Решите простой пример.',
         ];
     }
 

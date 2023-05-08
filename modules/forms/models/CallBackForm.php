@@ -26,6 +26,8 @@ class CallBackForm extends EmailForm {
             [['name', 'phone', 'personal_accept'], 'required'],
 //            ['email', 'email'],
             ['personal_accept', 'in', 'range' => [1], 'message' => 'Вы должны дать согласие на обработку персональных данных.'],
+            ['captcha', 'required'],
+            ['captcha', 'captcha'],
         ];
     }
 
@@ -37,6 +39,7 @@ class CallBackForm extends EmailForm {
             'name' => 'Ваше имя',
             'phone' => 'Телефон',
             'personal_accept' => 'Я даю согласие на обработку персональных данных',
+            'captcha' => 'Подтвердите, что вы не робот. Решите простой пример.',
         ];
     }
 
