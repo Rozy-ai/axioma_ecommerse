@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use yii\widgets\MaskedInput;
+use yii\captcha\Captcha;
 
 $this->title = 'Оформить заказ';
 $this->params['breadcrumbs'][] = $this->title;
@@ -65,6 +66,10 @@ $this->params['breadcrumbs'][] = $this->title;
                     . Html::a('Ознакомиться с условиями', ['/soglasie'], ['target' => '_blank'])
             )
             ?>
+            
+                <?= $form->field($model, 'captcha')
+        ->hint('Нажмите на картинку, чтобы обновить')
+        ->widget(Captcha::className()) ?>
 
             <div class="form-group">
                 <?= Html::submitButton('Оформить', ['class' => 'btn btn-primary',

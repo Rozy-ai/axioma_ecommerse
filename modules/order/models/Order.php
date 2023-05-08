@@ -15,6 +15,8 @@ use Yii;
  */
 class Order extends \yii\db\ActiveRecord {
 
+    public $captcha;
+
     /**
      * @inheritdoc
      */
@@ -30,6 +32,8 @@ class Order extends \yii\db\ActiveRecord {
             [['created_at'], 'required'],
             [['created_at'], 'integer'],
             [['client_name', 'email', 'phone'], 'string', 'max' => 255],
+            ['captcha', 'required'],
+            ['captcha', 'captcha'],
         ];
     }
 
@@ -43,6 +47,7 @@ class Order extends \yii\db\ActiveRecord {
             'email' => 'Email',
             'phone' => 'Phone',
             'created_at' => 'Created At',
+            'captcha' => 'Подтвердите, что вы не робот. Решите простой пример.',
         ];
     }
 
