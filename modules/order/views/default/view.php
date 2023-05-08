@@ -69,7 +69,9 @@ $this->params['breadcrumbs'][] = $this->title;
             
                 <?= $form->field($client, 'captcha')
         ->hint('Нажмите на картинку, чтобы обновить')
-        ->widget(Captcha::className()) ?>
+        ->widget(Captcha::className(), [
+            'captchaAction'=> yii\helpers\Url::to('/captcha')
+        ]) ?>
 
             <div class="form-group">
                 <?= Html::submitButton('Оформить', ['class' => 'btn btn-primary',

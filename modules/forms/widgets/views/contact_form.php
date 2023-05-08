@@ -36,7 +36,6 @@ $this->registerJsFile('@web/js/form/contact_form.js', ['depends' => ['app\assets
     ])->label(false)
     ?>
     
-    
 
     <p class="star-text">*Поля обязательны для заполнения</p>
     <p class="politic-text">Нажимая кнопку «Отправить» Вы соглашаетесь с
@@ -44,7 +43,9 @@ $this->registerJsFile('@web/js/form/contact_form.js', ['depends' => ['app\assets
     
         <?= $form->field($model, 'captcha')
         ->hint('Нажмите на картинку, чтобы обновить')
-        ->widget(Captcha::className()) ?>
+        ->widget(Captcha::className(), [
+            'captchaAction'=> yii\helpers\Url::to('/captcha')
+        ]) ?>
 
     <div class="form-group button-wrap">
 <?= Html::submitButton('Отправить', [

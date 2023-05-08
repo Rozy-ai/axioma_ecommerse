@@ -35,7 +35,9 @@ $form->field($model, 'personal_accept')->checkbox()->label('Я даю согла
 
     <?= $form->field($model, 'captcha')
         ->hint('Нажмите на картинку, чтобы обновить')
-        ->widget(Captcha::className()) ?>
+        ->widget(Captcha::className(), [
+            'captchaAction'=> yii\helpers\Url::to('/captcha')
+        ]) ?>
 
 <div class="form-group">
     <?=

@@ -6,7 +6,7 @@ var Cart = {
             
             $('.navbar-right [href="/cart"]').html(data);
             $('.header-mobile [href="/cart"]').html(data);
-            console.log(data);
+//            console.log(data);
             
         });
 

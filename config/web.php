@@ -113,6 +113,7 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 '/' => 'site/index',
+                '/captcha' => 'site/captcha',
                 '/yml' => 'YandexMarketYml/default/index',
                 '/root' => '/auth/default/login',
                 '/sitemap.xml' => '/sitemap/default/index',

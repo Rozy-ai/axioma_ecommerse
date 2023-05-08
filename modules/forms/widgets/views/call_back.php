@@ -37,9 +37,12 @@ Modal::begin([
             . Html::a('Ознакомиться с условиями', ['/soglasie'], ['target' => '_blank'])
     )
     ?>
+    <?php echo yii\helpers\Url::to(['/captcha'], true); ?>    
     <?= $form->field($model, 'captcha')
         ->hint('Нажмите на картинку, чтобы обновить')
-        ->widget(Captcha::className()) ?>
+        ->widget(Captcha::className(), [
+            'captchaAction'=> yii\helpers\Url::to('/captcha')
+        ]) ?>
 </div>
 <div class="form-group">
     <?=
