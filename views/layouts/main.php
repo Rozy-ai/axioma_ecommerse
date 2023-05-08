@@ -48,6 +48,12 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
         <title><?= Html::encode($this->title) ?></title>
         <?php $this->head() ?>
         <script src="//code-ya.jivosite.com/widget/3nGNkWmwJP" async></script>
+        
+        <script>
+        function ym(i,u,u) {
+            
+        }
+        </script>
         <!--amocrm-->
 <!--        <script>(function (a, m, o, c, r, m) {
                 a[m] = {id: "380253", hash: "3d00941b66698edda5bf251b45512e780bb831dbcb928cc1f208e63d4b399206", locale: "ru", inline: false, setMeta: function (p) {

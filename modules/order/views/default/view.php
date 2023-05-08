@@ -67,7 +67,7 @@ $this->params['breadcrumbs'][] = $this->title;
             )
             ?>
             
-                <?= $form->field($model, 'captcha')
+                <?= $form->field($client, 'captcha')
         ->hint('Нажмите на картинку, чтобы обновить')
         ->widget(Captcha::className()) ?>
 

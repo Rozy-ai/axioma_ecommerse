@@ -14,6 +14,8 @@ class ClientForm extends Model {
     public $email;
     public $phone;
     public $personal_accept;
+    
+    public $captcha;
 
 //    public $verifyCode;
 
@@ -27,6 +29,8 @@ class ClientForm extends Model {
             // email has to be a valid email address
             ['personal_accept', 'in', 'range' => [1]],
             ['email', 'email'],
+                        ['captcha', 'required'],
+            ['captcha', 'captcha'],
         ];
     }
 
@@ -39,6 +43,7 @@ class ClientForm extends Model {
             'email' => 'E-mail',
             'phone' => 'Телефон',
             'personal_accept' => 'Я даю согласие на обратобку персональных данных',
+                        'captcha' => 'Подтвердите, что вы не робот. Решите простой пример.',
         ];
     }
 
