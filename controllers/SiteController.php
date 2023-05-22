@@ -14,7 +14,7 @@ use app\models\Category;
 use app\modules\options\models\Options;
 use app\modules\content\models\Content;
 use yii\web\HttpException;
-use app\components\MathCaptcha;
+use app\components\NumericCaptcha;
 
 class SiteController extends Controller {
 
@@ -52,7 +52,7 @@ class SiteController extends Controller {
                 'class' => 'yii\web\ErrorAction',
             ],
             'captcha' => [
-                'class' => MathCaptcha::class,
+                'class' => NumericCaptcha::class,
                 'fixedVerifyCode' => YII_ENV_TEST ? '42' : null,
             ],
             'image-upload' => [
