@@ -8,6 +8,7 @@ use yii\web\Controller;
 use app\modules\cart\models\Cart;
 use yii\helpers\ArrayHelper;
 use \app\modules\products\models\Product;
+use app\models\ClientForm;
 
 /**
  * AdminController implements the CRUD actions for Theme model.
@@ -16,7 +17,11 @@ class DefaultController extends Controller {
 
     public function actionIndex() {
 
-        return $this->render('index', []);
+        $client = new ClientForm();
+
+        return $this->render('index', [
+                    'client' => $client,
+        ]);
     }
 
     public function actionAjaxIndex() {
@@ -41,7 +46,7 @@ class DefaultController extends Controller {
 
             $data = $session['cart'];
 
-            Yii::error($data);
+//            Yii::error($data);
 
             foreach ($data as $k => $item):
                 $model[] = Product::findOne($k);
@@ -58,7 +63,6 @@ class DefaultController extends Controller {
     public function actionUpdateCart() {
 
         $data = Cart::_Products();
-
 
         $content = Html::a('<i class="fas fa-times"></i>', ['#']
                         , ['class' => 'close-btn']);

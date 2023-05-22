@@ -6,7 +6,10 @@ use kartik\popover\PopoverX;
 //echo $count;
 ?>
 <div class="row tb-col">
-    <div class="col-xs-6 col-xs-offset-3 col-sm-offset-0 col-sm-1 img-wrap">
+    <div class="col-xs-6 col-xs-offset-3 col-sm-offset-0 col-sm-1 img-wrap text-center">
+    <?php echo Html::checkbox('test', ['class' => '']) ?>
+    </div>
+    <div class="col-xs-6 col-xs-offset-3 col-sm-offset-0 col-sm-2 img-wrap">
         <?=
         Html::img($model->getImage()
                 , ['class' => 'img img-responsive img-thumbnail'
@@ -20,28 +23,28 @@ use kartik\popover\PopoverX;
                 , ['class' => 'cart-item-title'])
         ?>
     </div>
-<!--    <div class="col-xs-12 col-sm-2 summ-one-wrap">
-        <strong class="hidden-sm hidden-md hidden-lg">Сумма за еденицу: </strong>
-        <?= Yii::$app->formatter->asCurrency($model->price) ?>
-    </div>-->
+    <!--    <div class="col-xs-12 col-sm-2 summ-one-wrap">
+            <strong class="hidden-sm hidden-md hidden-lg">Сумма за еденицу: </strong>
+<?php // Yii::$app->formatter->asCurrency($model->price)   ?>
+        </div>-->
     <div class="col-xs-12 col-sm-3 count-wrap">
         <div class="input-group center-block">
-            <button class="btn btn-grey" type="button" onclick="Cart.Minus(<?= $model->id ?>)">
+<!--            <button class="btn btn-grey" type="button" onclick="Cart.Minus(<?= $model->id ?>)">
                 <i class="fas fa-minus"></i>
-            </button>
-            <?= Html::textInput('product_id', $model->id, ['class' => 'hidden']) ?>
-            <?=
-            Html::textInput('count', $count, [
-                'class' => 'text-center count-' . $model->id,
-                'type' => 'number',
-                "data-krat" => $model->krat,
-                'onChange' => 'Cart.Set(' . $model->id . ')'
-            ])
+            </button>-->
+            <?php //            echo Html::textInput('product_id', $model->id, ['class' => 'hidden'])  ?>
+            <?php
+//            echo Html::textInput('count', $count, [
+//                'class' => 'text-center count-' . $model->id,
+//                'type' => 'number',
+//                "data-krat" => $model->krat,
+//                'onChange' => 'Cart.Set(' . $model->id . ')'
+//            ])
             ?>
 
 
             <?php
-            $content = Html::input('number', 'count-helper', $count, ['class' => 'count-helper count-helper-' . $model->id, 'attr-id' => $model->id]);
+//            $content = Html::input('number', 'count-helper', $count, ['class' => 'count-helper count-helper-' . $model->id, 'attr-id' => $model->id]);
             ?>
 
             <?php
@@ -55,10 +58,6 @@ use kartik\popover\PopoverX;
 //            ]);
             ?>
 
-            </button>
-            <button class="btn btn-grey" type="button"  onclick="Cart.Plus(<?= $model->id ?>)">
-                <i class="fas fa-plus"></i>
-            </button>
         </div>
 
         <?php if ($model->krat > 1): ?>
@@ -67,14 +66,25 @@ use kartik\popover\PopoverX;
         ?>
     </div>
 
-<!--    <div class="col-xs-12 col-sm-2 summ-wrap">
-        <strong class="hidden-sm hidden-md hidden-lg">Итого: </strong>
-        <?= Yii::$app->formatter->asCurrency($model->price * $count) ?>
-    </div>-->
-    <div class="col-xs-12 col-sm-2 delete-wrap">
-        <button class="cart-delete btn btn-default"
-                onclick="Cart.Delete(<?= $model->id ?>)">
-            <i class="fas fa-times"></i>
-        </button>
+    <div class="col-xs-6 col-xs-offset-3 col-sm-offset-0 col-sm-2 img-wrap">
+        <?php
+        $val = [];
+
+        for ($i = 1; $i < 20; $i++)
+            $val[$i] = $i;
+        echo Html::dropdownList('count-helper', $count , $val, ['class' => 'count-helper count-helper-' . $model->id, 'attr-id' => $model->id] );
+        ?>
     </div>
+
+    <!--<div class = "col-xs-12 col-sm-2 summ-wrap">
+    <strong class = "hidden-sm hidden-md hidden-lg">Итого: </strong>
+    <?php // Yii::$app->formatter->asCurrency($model->price * $count)  
+    ?>
+</div>-->
+    <!--    <div class="col-xs-12 col-sm-2 delete-wrap">
+            <button class="cart-delete btn btn-default"
+                    onclick="Cart.Delete(<?= $model->id ?>)">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>-->
 </div>
