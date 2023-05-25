@@ -30,8 +30,6 @@ class OneClickOrder extends EmailForm {
         return ArrayHelper::merge($rules, [
                     [['name', 'phone', 'personal_accept', 'count', 'good'], 'required'],
                     ['personal_accept', 'in', 'range' => [1]],
-                    ['captcha', 'required'],
-                    ['captcha', 'captcha'],
         ]);
     }
 
