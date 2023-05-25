@@ -14,7 +14,7 @@ class EmailForm extends Model {
     public $recipient = '';
     public $sender_email = '';
     public $sender_name = 'Axioma email Robot';
-    public $captcha;
+    public $title;
 
     public function init() {
 
@@ -28,13 +28,12 @@ class EmailForm extends Model {
     /**
      * @return array the validation rules.
      */
-//    public function rules() {
-//        return [
-////            [['name', 'phone', 'personal_accept'], 'required'],
-////            ['email', 'email'],
-////            ['personal_accept', 'in', 'range' => [1]],
-//        ];
-//    }
+    public function rules() {
+        return [
+//            ['title', 'required'],
+            ['title', 'in', 'range' => ['']],
+        ];
+    }
 
     /**
      * @return array customized attribute labels

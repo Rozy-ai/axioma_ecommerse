@@ -25,6 +25,7 @@ Modal::begin([
 
 <?php $form = ActiveForm::begin(['id' => 'callback-form', 'enableClientValidation' => true,]); ?>
 <div class="text-left">
+    <?= $form->field($model, 'title')->hiddenInput()->label(false); ?>
     <?= $form->field($model, 'name')->textInput() ?>
     <?=
     $form->field($model, 'phone')->widget(MaskedInput::className(), [
@@ -37,21 +38,27 @@ Modal::begin([
             . Html::a('Ознакомиться с условиями', ['/soglasie'], ['target' => '_blank'])
     )
     ?>
-    <?php echo yii\helpers\Url::to(['/captcha'], true); ?>    
-    <?= $form->field($model, 'captcha')
-        ->hint('Нажмите на картинку, чтобы обновить')
-        ->widget(Captcha::className(), [
-            'captchaAction'=> yii\helpers\Url::to('/captcha')
-        ]) ?>
+
+
 </div>
 <div class="form-group">
     <?=
     Html::submitButton('Отправить', [
         'class' => 'btn btn-primary',
-        'onClick' => "ym(53040199,'reachGoal','feed-back')",
     ])
     ?>
 </div>
+
+<?php 
+
+$script = <<< JS
+    $('#callback-form').on('beforeSubmit', function (e) {
+        ym(53040199, 'reachGoal', 'feed-back');
+    });
+JS;
+$this->registerJs($script, \yii\web\View::POS_READY,);
+
+?>
 
 <?php
 ActiveForm::end();

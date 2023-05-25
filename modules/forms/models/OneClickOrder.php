@@ -4,6 +4,7 @@ namespace app\modules\forms\models;
 
 use Yii;
 use yii\base\Model;
+use yii\helpers\ArrayHelper;
 
 /**
  * ContactForm is the model behind the contact form.
@@ -24,12 +25,14 @@ class OneClickOrder extends EmailForm {
      * @return array the validation rules.
      */
     public function rules() {
-        return [
-            [['name', 'phone', 'personal_accept', 'count', 'good'], 'required'],
-            ['personal_accept', 'in', 'range' => [1]],
-                        ['captcha', 'required'],
-            ['captcha', 'captcha'],
-        ];
+        $rules = parent::rules();
+
+        return ArrayHelper::merge($rules, [
+                    [['name', 'phone', 'personal_accept', 'count', 'good'], 'required'],
+                    ['personal_accept', 'in', 'range' => [1]],
+                    ['captcha', 'required'],
+                    ['captcha', 'captcha'],
+        ]);
     }
 
     /**
@@ -42,7 +45,7 @@ class OneClickOrder extends EmailForm {
             'count' => 'Количество',
             'good' => 'Товар',
             'personal_accept' => 'Я даю согласие на обработку персональных данных',
-                        'captcha' => 'Подтвердите, что вы не робот. Введите цифры с картинки.',
+            'captcha' => 'Подтвердите, что вы не робот. Введите цифры с картинки.',
         ];
     }
 

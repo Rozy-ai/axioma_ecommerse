@@ -4,6 +4,7 @@ namespace app\modules\forms\models;
 
 use Yii;
 use yii\base\Model;
+use yii\helpers\ArrayHelper;
 
 /**
  * ContactForm is the model behind the contact form.
@@ -11,7 +12,6 @@ use yii\base\Model;
 class ContactForm extends EmailForm {
 
     public $subject = 'Вопрос с сайта';
-
     public $name;
     public $email;
     public $message;
@@ -22,12 +22,12 @@ class ContactForm extends EmailForm {
      * @return array the validation rules.
      */
     public function rules() {
-        return [
-            [['name', 'email', 'message',], 'required'],
-            ['email', 'email'],
-                        ['captcha', 'required'],
-            ['captcha', 'captcha'],
-        ];
+        $rules = parent::rules();
+
+        return ArrayHelper::merge($rules, [
+                    [['name', 'email', 'message',], 'required'],
+                    ['email', 'email'],
+        ]);
     }
 
     /**
@@ -38,7 +38,7 @@ class ContactForm extends EmailForm {
             'name' => 'Ваше имя... *',
             'email' => 'Ваш E-mail... *',
             'message' => 'Ваше Сообщение',
-                        'captcha' => 'Подтвердите, что вы не робот. Введите цифры с картинки.',
+            'captcha' => 'Подтвердите, что вы не робот. Введите цифры с картинки.',
         ];
     }
 

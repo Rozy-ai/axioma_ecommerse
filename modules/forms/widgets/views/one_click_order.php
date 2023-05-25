@@ -33,19 +33,23 @@ $form->field($model, 'personal_accept')->checkbox()->label('Я даю согла
 )
 ?>
 
-    <?= $form->field($model, 'captcha')
-        ->hint('Нажмите на картинку, чтобы обновить')
-        ->widget(Captcha::className(), [
-            'captchaAction'=> yii\helpers\Url::to('/captcha')
-        ]) ?>
-
 <div class="form-group">
     <?=
     Html::submitButton('Отправить', ['class' => 'btn btn-primary',
-        'onClick' => "ym(53040199, 'reachGoal', 'one-click');"
     ])
     ?>
 </div>
+
+<?php 
+
+$script = <<< JS
+    $('#callback-form').on('beforeSubmit', function (e) {
+        ym(53040199, 'reachGoal', 'one-click');
+    });
+JS;
+$this->registerJs($script, \yii\web\View::POS_READY,);
+
+?>
 
 <?php
 ActiveForm::end();

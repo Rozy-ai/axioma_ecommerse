@@ -19,6 +19,8 @@ $this->registerJsFile('@web/js/form/contact_form.js', ['depends' => ['app\assets
     ]);
     ?>
 
+    <?= $form->field($model, 'title')->hiddenInput()->label(false); ?>
+
     <?=
     $form->field($model, 'name')->textInput([
         'placeholder' => $model->getAttributeLabel('name')
@@ -35,25 +37,32 @@ $this->registerJsFile('@web/js/form/contact_form.js', ['depends' => ['app\assets
         'rows' => 8,
     ])->label(false)
     ?>
-    
+
 
     <p class="star-text">*Поля обязательны для заполнения</p>
     <p class="politic-text">Нажимая кнопку «Отправить» Вы соглашаетесь с
         <a href="/soglasie">политикой конфиденциальности</a> сайта.</p>
-    
-        <?= $form->field($model, 'captcha')
-        ->hint('Нажмите на картинку, чтобы обновить')
-        ->widget(Captcha::className(), [
-            'captchaAction'=> yii\helpers\Url::to('/captcha')
-        ]) ?>
+
 
     <div class="form-group button-wrap">
-<?= Html::submitButton('Отправить', [
-    'class' => 'btn btn-primary',
-    'onClick' => "ym(53040199,'reachGoal','feed-back')"
-    ]) ?>
+        <?=
+        Html::submitButton('Отправить', [
+            'class' => 'btn btn-primary',
+        ])
+        ?>
     </div>
 </div>
+
+<?php 
+
+$script = <<< JS
+    $('#callback-form').on('beforeSubmit', function (e) {
+        ym(53040199,'reachGoal','feed-back');
+    });
+JS;
+$this->registerJs($script, \yii\web\View::POS_READY,);
+
+?>
 
 
 <?php
