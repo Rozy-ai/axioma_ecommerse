@@ -21,6 +21,8 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="h3">ВАША КОРЗИНА</div>
 
             <?php $form = ActiveForm::begin(['id' => 'contact-form', 'action' => '/order/default/view']); ?>
+            
+            <?= $form->field($client, 'title')->hiddenInput()->label(false); ?>
 
             <?= $form->field($client, 'name')->textInput(['autofocus' => true]) ?>
 
@@ -37,14 +39,6 @@ $this->params['breadcrumbs'][] = $this->title;
             $form->field($client, 'personal_accept')->checkbox()->label('Я даю согласие на обработку персональных данных. '
                     . Html::a('Ознакомиться с условиями', ['/soglasie'], ['target' => '_blank'])
             )
-            ?>
-
-            <?=
-                    $form->field($client, 'captcha')
-                    ->hint('Нажмите на картинку, чтобы обновить')
-                    ->widget(Captcha::className(), [
-                        'captchaAction' => yii\helpers\Url::to('/captcha')
-                    ])
             ?>
 
             <div class="form-group">
