@@ -43,7 +43,7 @@ $form->field($model, 'personal_accept')->checkbox()->label('Я даю согла
 <?php 
 
 $script = <<< JS
-    $('#callback-form').on('beforeSubmit', function (e) {
+    $('#oneclick-form').on('beforeSubmit', function (e) {
         ym(53040199, 'reachGoal', 'one-click');
     });
 JS;

@@ -20,7 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
             
             <div class="h3">ВАША КОРЗИНА</div>
 
-            <?php $form = ActiveForm::begin(['id' => 'contact-form', 'action' => '/order/default/view']); ?>
+            <?php $form = ActiveForm::begin(['id' => 'cart-form', 'action' => '/order/default/view']); ?>
             
             <?= $form->field($client, 'title')->hiddenInput()->label(false); ?>
 
@@ -44,10 +44,20 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="form-group">
                 <?=
                 Html::submitButton('Оформить', ['class' => 'btn btn-primary',
-                    'onClick' => "ym(53040199, 'reachGoal', 'send-order'); return true;",
                     'name' => 'contact-button'])
                 ?>
             </div>
+            
+            <?php 
+
+$script = <<< JS
+    $('#cart-form').on('beforeSubmit', function (e) {
+        ym(53040199, 'reachGoal', 'send-order');
+    });
+JS;
+$this->registerJs($script, \yii\web\View::POS_READY,);
+
+?>
 
             <?php ActiveForm::end(); ?>
 

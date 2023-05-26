@@ -56,7 +56,7 @@ $this->registerJsFile('@web/js/form/contact_form.js', ['depends' => ['app\assets
 <?php 
 
 $script = <<< JS
-    $('#callback-form').on('beforeSubmit', function (e) {
+    $('#contact-form').on('beforeSubmit', function (e) {
         ym(53040199,'reachGoal','feed-back');
     });
 JS;
