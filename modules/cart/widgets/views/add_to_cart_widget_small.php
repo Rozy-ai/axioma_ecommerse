@@ -27,5 +27,11 @@ use yii\bootstrap\ActiveForm;
     </div>
 </div>
 
+<style>
+    #add_cart .btn {
+        min-height: 38px;
+    }
+    </style>
+
 
 
