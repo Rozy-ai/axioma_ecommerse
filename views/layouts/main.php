@@ -100,7 +100,7 @@ _tmr.push({id: "3340974", type: "pageView", start: (new Date()).getTime()});
 //            
 //        }
     </script>
-
+<script src="https://app2.gnzs.ru/site-integration/js/script.v3.js" data-platform="amo" data-account="29896285" data-token="bfac5b47-a495-4c8c-b417-1f8be495a64e"></script>
 </head>
 <body>
         <?= Yii::$app->info::get('after_body') ?>
