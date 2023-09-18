@@ -40,7 +40,8 @@
         "kop/yii2-scroll-pager": "dev-master",
         "phpnt/yii2-icheck": "*",
         "kartik-v/yii2-checkbox-x": "dev-master",
-        "evgeniyrru/yii2-slick": "*"
+        "evgeniyrru/yii2-slick": "*",
+        "yiisoft/yii2-httpclient": "^2.0"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

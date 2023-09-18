@@ -9,6 +9,8 @@ use app\models\ClientForm;
 use app\modules\catalog\models\Catalog;
 use app\modules\order\models\Order;
 use app\modules\order\models\OrderItem;
+use yii\httpclient\Client;
+use yii\helpers\Json;
 
 /**
  * AdminController implements the CRUD actions for Theme model.
@@ -30,7 +32,7 @@ class DefaultController extends Controller {
     }
 
     public function actionView() {
-
+       
         $client = new ClientForm();
 
         $session = Yii::$app->session;
@@ -89,6 +91,7 @@ class DefaultController extends Controller {
 
                     $this->sendClientMail($order->email);
                     $this->sendAdminMail($order->id);
+                    $this->sendAmo($order);
 
                     $session['cart'] = [];
                     $this->redirect('thankyou');
@@ -146,4 +149,71 @@ class DefaultController extends Controller {
                 ->send();
     }
 
+    private function sendAmo($order) {
+    $leadData = [
+        'form' => [
+            ['key' => 'Name', 'value' => $order->client_name], 
+            ['key' => 'Phone', 'value' => $order->phone], 
+            ['key' => 'Email', 'value' => $order->email], 
+            ['key' => 'Город', 'value' => (\app\modules\city\models\City::findOne(Yii::$app->city->getId()))->name], 
+            ['key' => 'Заказ', 'value' => $order->id], 
+            // ['key' => 'name', 'value' => 'Алексей'], // передаем имя
+            // // ... аналогично передаем любые данные, где key - название поле, а value - значение
+            // // пример объекта для создания заказа в МС
+            // [
+            //     'key' => 'order',
+            //     'value' => [
+            //         "products": [
+            //             [
+            //                 "name" => "Кроссовки Nike",
+            //                 "quantity" => "2",
+            //                 "amount" => "6400",
+            //                 "externalid" => "Hc4f6gOxnAmdIPSNgcvR", // ID товара в системе МойСклад
+            //                 "price" => "3200"
+            //             ],
+            //             [
+            //                 "name" => "Джоггеры Ninja",
+            //                 "quantity" => "1",
+            //                 "amount" => "2990",
+            //                 "externalid" => "kc4f6gOxnAmdd43NgcvR", // ID товара в системе МойСклад
+            //                 "price" => "2990"
+            //             ]
+            //         ],
+            //         "amount" => "6400",
+            //         "delivery" => "Самовывоз из шоурума",
+            //         "delivery_price" => "500",
+            //         "delivery_address" => "RU: Poasdint: м. Тульская, Духовской переулок, 17с1 (Самовывоз Phenomenal studio)101000, Москва",
+            //         "delivery_comment" => "Позвонить заранее",
+            //     ]
+            // ]
+        ],
+        'utm' => [ // передаем UTM-метки
+            "utm_source" =>  $_COOKIE['utm_source'],
+            "utm_medium" => $_COOKIE['utm_medium'],
+            "utm_content" => $_COOKIE['utm_content'],
+            "utm_term" =>  $_COOKIE['utm_term'],
+            "utm_campaign" => $_COOKIE['utm_campaign'],
+        ],
+        // 'clientID' => [ // передаем ID для аналитики
+        //     "gclientid" => "your_site_value", // Google analytics ClientID
+        //     "roistat" => "your_site_value", // Roistat"
+        //     "_ym_uid" => "your_site_value", // Yandex metric ClientID
+        // ],
+        'host' => "axioma.pro", // домен вашего сайта (ОБЯЗАТЕЛЬНО)
+        'token' => "bfac5b47-a495-4c8c-b417-1f8be495a64e", // сюда вводите токен из настроек сайта на стороне amoCRM (ОБЯЗАТЕЛЬНО)
+    ];
+    
+    // отправляем данные на интеграцию
+    $this->sendToGnzs($leadData);
+    
+    // функция отправки данных на интеграцию
+
+    
+    }
+
+    private function sendToGnzs($leadData) {
+        $leadData = json_encode($leadData);
+        
+        $output= shell_exec("curl -X POST https://webhook.gnzs.ru/ext/site-int/amo/29896285?gnzs_token=bfac5b47-a495-4c8c-b417-1f8be495a64e -H 'Content-Type: application/json' -d '{$leadData}'");
+    }
 }

@@ -16,12 +16,14 @@ use app\modules\content\models\Content;
 use yii\web\HttpException;
 use app\components\NumericCaptcha;
 
-class SiteController extends Controller {
+class SiteController extends Controller
+{
 
     /**
      * @inheritdoc
      */
-    public function behaviors() {
+    public function behaviors()
+    {
         return [
             'access' => [
                 'class' => AccessControl::className(),
@@ -46,7 +48,8 @@ class SiteController extends Controller {
     /**
      * @inheritdoc
      */
-    public function actions() {
+    public function actions()
+    {
         return [
             'error' => [
                 'class' => 'yii\web\ErrorAction',
@@ -65,7 +68,7 @@ class SiteController extends Controller {
                 'class' => 'vova07\imperavi\actions\GetImagesAction',
                 'url' => '/uploads/', // URL адрес папки где хранятся изображения.
                 'path' => '@webroot/uploads/', // Или абсолютный путь к папке с изображениями.
-//                'type' => \vova07\imperavi\actions\GetAction::TYPE_IMAGES,
+                //                'type' => \vova07\imperavi\actions\GetAction::TYPE_IMAGES,
             ],
         ];
     }
@@ -75,13 +78,23 @@ class SiteController extends Controller {
      *
      * @return string
      */
-    public function actionIndex() {
+    public function actionIndex()
+    {
+        $utm_source = isset($_GET['utm_source']) ? $_GET['utm_source'] : '';
+        $utm_medium = isset($_GET['utm_medium']) ? $_GET['utm_medium'] : '';
+        $utm_campaign = isset($_GET['utm_campaign']) ? $_GET['utm_campaign'] : '';
+        $utm_content = isset($_GET['utm_content']) ? $_GET['utm_content'] : '';
+        $utm_term = isset($_GET['utm_term']) ? $_GET['utm_term'] : '';
 
+        setcookie('utm_source', $utm_source, time() + 3600, '/');
+        setcookie('utm_medium', $utm_medium, time() + 3600, '/');
+        setcookie('utm_campaign', $utm_campaign, time() + 3600, '/');
+        setcookie('utm_content', $utm_content, time() + 3600, '/');
+        setcookie('utm_term', $utm_term, time() + 3600, '/');
         $model = Content::find()->where(
-                        ['url' => '/']
-                )->
-                andWhere(['is_enable' => 1])
-                ->one();
+            ['url' => '/']
+        )->andWhere(['is_enable' => 1])
+            ->one();
 
         if (!$model)
             throw new HttpException(404, 'Page not Found');
@@ -97,17 +110,17 @@ class SiteController extends Controller {
         return $this->render('index');
     }
 
-//    public function actionTest() {
-//
-//        echo Yii::$app->mailer->compose('message', [
-//                    'content' => 'test',
-//                    'imageFileName' => Yii::getAlias('@app') . '/web/image/logo_email.png'
-//                ])
-////                ->setTo('info@kognitiv.ru')
-//                ->setTo(['kpsmol@gmail.com', 'info@kognitiv.ru'])
-//                ->setFrom(['noreply@axioma.pro' => 'email-robot'])
-//                ->setSubject('test')
-////                    ->setTextBody($this->message)
-//                ->send();
-//    }
+    //    public function actionTest() {
+    //
+    //        echo Yii::$app->mailer->compose('message', [
+    //                    'content' => 'test',
+    //                    'imageFileName' => Yii::getAlias('@app') . '/web/image/logo_email.png'
+    //                ])
+    ////                ->setTo('info@kognitiv.ru')
+    //                ->setTo(['kpsmol@gmail.com', 'info@kognitiv.ru'])
+    //                ->setFrom(['noreply@axioma.pro' => 'email-robot'])
+    //                ->setSubject('test')
+    ////                    ->setTextBody($this->message)
+    //                ->send();
+    //    }
 }
