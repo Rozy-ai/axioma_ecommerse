@@ -15,24 +15,26 @@ use yii\helpers\Json;
 /**
  * AdminController implements the CRUD actions for Theme model.
  */
-class DefaultController extends Controller {
+class DefaultController extends Controller
+{
 
     public $admin_mail_body;
 
-    public function actionIndex() {
+    public function actionIndex()
+    {
 
-        return $this->render('index', [
-        ]);
+        return $this->render('index', []);
     }
 
-    public function actionAdd() {
+    public function actionAdd()
+    {
 
-        return $this->render('add', [
-        ]);
+        return $this->render('add', []);
     }
 
-    public function actionView() {
-       
+    public function actionView()
+    {
+
         $client = new ClientForm();
 
         $session = Yii::$app->session;
@@ -44,10 +46,10 @@ class DefaultController extends Controller {
 
             $data = $session['cart'];
 
-//            print_r($data);
-//            exit();
+            //            print_r($data);
+            //            exit();
 
-            foreach ($data as $k => $item):
+            foreach ($data as $k => $item) :
                 $model[] = Catalog::findOne($k);
                 $counts[] = $item;
             endforeach;
@@ -58,20 +60,20 @@ class DefaultController extends Controller {
                 $order->client_name = $client->name;
                 $order->email = $client->email;
                 $order->phone = $client->phone;
-//                $order->city_id = Yii::$app->city->getId();
+                //                $order->city_id = Yii::$app->city->getId();
                 $order->created_at = time();
 
                 if ($order->save()) {
 
                     $this->admin_mail_body = 'Заказ ' . $order->id . PHP_EOL .
-                            'Покупатель ' . $order->client_name . PHP_EOL .
-                            'Email ' . $order->email . PHP_EOL .
-                            'Телефон ' . $order->phone . PHP_EOL .
-                            'Город ' . (\app\modules\city\models\City::findOne(Yii::$app->city->getId()))->name . PHP_EOL .
-                            ' --------------- ' . PHP_EOL .
-                            '';
+                        'Покупатель ' . $order->client_name . PHP_EOL .
+                        'Email ' . $order->email . PHP_EOL .
+                        'Телефон ' . $order->phone . PHP_EOL .
+                        'Город ' . (\app\modules\city\models\City::findOne(Yii::$app->city->getId()))->name . PHP_EOL .
+                        ' --------------- ' . PHP_EOL .
+                        '';
 
-                    foreach ($data as $k => $item):
+                    foreach ($data as $k => $item) :
                         $order_item = new OrderItem();
                         $order_item->order_id = $order->id;
                         $order_item->good_id = $k;
@@ -82,9 +84,9 @@ class DefaultController extends Controller {
                         if ($order_item->save()) {
 
                             $this->admin_mail_body .=  $order_item->name . ' | '
-                                    . $order_item->count . ' шт. '. PHP_EOL;
-//                                $session['cart'] = [];
-//                                $this->redirect('thankyou');
+                                . $order_item->count . ' шт. ' . PHP_EOL;
+                            //                                $session['cart'] = [];
+                            //                                $this->redirect('thankyou');
                         } else
                             print_r($order->errors);
                     endforeach;
@@ -100,120 +102,104 @@ class DefaultController extends Controller {
                     print_r($order->errors);
                 }
 
-//                return $this->redirect(['view', 'id' => $model->id]);
+                //                return $this->redirect(['view', 'id' => $model->id]);
             }
         }
 
         return $this->render('view', [
-                    'client' => $client,
-                    'model' => $model,
-                    'counts' => $counts,
+            'client' => $client,
+            'model' => $model,
+            'counts' => $counts,
         ]);
     }
 
-    public function actionThankyou() {
+    public function actionThankyou()
+    {
 
         return $this->render('thank_you');
     }
 
-    private function sendClientMail($email) {
+    private function sendClientMail($email)
+    {
 
 
         Yii::$app->mailer->compose('message', [
-                    'content' => 'Спасибо за ваш заказ. В ближайшее время с вами свяжется специалист.',
-                    'imageFileName' => Yii::getAlias('@app') . '/web/image/logo_email.png'
-                ])
-//                ->setTo('info@kognitiv.ru')
-                ->setTo($email)
-                ->setFrom([Yii::$app->params['senderEmail'] => 'Axioma email Robot'])
-                ->setSubject('Axioma order')
-//                    ->setTextBody($this->message)
-                ->send();
+            'content' => 'Спасибо за ваш заказ. В ближайшее время с вами свяжется специалист.',
+            'imageFileName' => Yii::getAlias('@app') . '/web/image/logo_email.png'
+        ])
+            //                ->setTo('info@kognitiv.ru')
+            ->setTo($email)
+            ->setFrom([Yii::$app->params['senderEmail'] => 'Axioma email Robot'])
+            ->setSubject('Axioma order')
+            //                    ->setTextBody($this->message)
+            ->send();
 
-//        Yii::$app->mailer->compose()
-//                ->setTo($email)
-//                ->setFrom([Yii::$app->params['senderEmail'] => 'Axioma email Robot'])
-//                ->setSubject('Axioma order')
-//                ->setTextBody('Спасибо за ваш заказ. В ближайшее время с вами свяжется специалист.')
-//                ->send();
+        //        Yii::$app->mailer->compose()
+        //                ->setTo($email)
+        //                ->setFrom([Yii::$app->params['senderEmail'] => 'Axioma email Robot'])
+        //                ->setSubject('Axioma order')
+        //                ->setTextBody('Спасибо за ваш заказ. В ближайшее время с вами свяжется специалист.')
+        //                ->send();
     }
 
-    private function sendAdminMail($order_id) {
+    private function sendAdminMail($order_id)
+    {
 
 
         Yii::$app->mailer->compose()
-                ->setTo([\app\modules\info\models\Info::get('email'), Yii::$app->params['copyEmail']])
-                ->setFrom([Yii::$app->params['senderEmail'] => 'Axioma email Robot'])
-                ->setSubject('Новый заказ № '.$order_id)
-                ->setTextBody($this->admin_mail_body)
-                ->send();
+            ->setTo([\app\modules\info\models\Info::get('email'), Yii::$app->params['copyEmail']])
+            ->setFrom([Yii::$app->params['senderEmail'] => 'Axioma email Robot'])
+            ->setSubject('Новый заказ № ' . $order_id)
+            ->setTextBody($this->admin_mail_body)
+            ->send();
     }
 
-    private function sendAmo($order) {
-    $leadData = [
-        'form' => [
-            ['key' => 'Name', 'value' => $order->client_name], 
-            ['key' => 'Phone', 'value' => $order->phone], 
-            ['key' => 'Email', 'value' => $order->email], 
-            ['key' => 'Город', 'value' => (\app\modules\city\models\City::findOne(Yii::$app->city->getId()))->name], 
-            ['key' => 'Заказ', 'value' => $order->id], 
-            // ['key' => 'name', 'value' => 'Алексей'], // передаем имя
-            // // ... аналогично передаем любые данные, где key - название поле, а value - значение
-            // // пример объекта для создания заказа в МС
-            // [
-            //     'key' => 'order',
-            //     'value' => [
-            //         "products": [
-            //             [
-            //                 "name" => "Кроссовки Nike",
-            //                 "quantity" => "2",
-            //                 "amount" => "6400",
-            //                 "externalid" => "Hc4f6gOxnAmdIPSNgcvR", // ID товара в системе МойСклад
-            //                 "price" => "3200"
-            //             ],
-            //             [
-            //                 "name" => "Джоггеры Ninja",
-            //                 "quantity" => "1",
-            //                 "amount" => "2990",
-            //                 "externalid" => "kc4f6gOxnAmdd43NgcvR", // ID товара в системе МойСклад
-            //                 "price" => "2990"
-            //             ]
-            //         ],
-            //         "amount" => "6400",
-            //         "delivery" => "Самовывоз из шоурума",
-            //         "delivery_price" => "500",
-            //         "delivery_address" => "RU: Poasdint: м. Тульская, Духовской переулок, 17с1 (Самовывоз Phenomenal studio)101000, Москва",
-            //         "delivery_comment" => "Позвонить заранее",
-            //     ]
-            // ]
-        ],
-        'utm' => [ // передаем UTM-метки
-            "utm_source" =>  $_COOKIE['utm_source'],
-            "utm_medium" => $_COOKIE['utm_medium'],
-            "utm_content" => $_COOKIE['utm_content'],
-            "utm_term" =>  $_COOKIE['utm_term'],
-            "utm_campaign" => $_COOKIE['utm_campaign'],
-        ],
-        // 'clientID' => [ // передаем ID для аналитики
-        //     "gclientid" => "your_site_value", // Google analytics ClientID
-        //     "roistat" => "your_site_value", // Roistat"
-        //     "_ym_uid" => "your_site_value", // Yandex metric ClientID
-        // ],
-        'host' => "axioma.pro", // домен вашего сайта (ОБЯЗАТЕЛЬНО)
-        'token' => "bfac5b47-a495-4c8c-b417-1f8be495a64e", // сюда вводите токен из настроек сайта на стороне amoCRM (ОБЯЗАТЕЛЬНО)
-    ];
-    
-    // отправляем данные на интеграцию
-    $this->sendToGnzs($leadData);
-    
-    // функция отправки данных на интеграцию
+    private function sendAmo($order)
+    {
+        $leadData = [
+            'form' => [
+                ['key' => 'Name', 'value' => $order->client_name],
+                ['key' => 'Phone', 'value' => $order->phone],
+                ['key' => 'Email', 'value' => $order->email],
+                ['key' => 'Город', 'value' => (\app\modules\city\models\City::findOne(Yii::$app->city->getId()))->name],
+                ['key' => 'Заказ', 'value' => $order->id],
+            ],
+            'utm' => [ // передаем UTM-метки
+                "utm_source" =>  $_COOKIE['utm_source'],
+                "utm_medium" => $_COOKIE['utm_medium'],
+                "utm_content" => $_COOKIE['utm_content'],
+                "utm_term" =>  $_COOKIE['utm_term'],
+                "utm_campaign" => $_COOKIE['utm_campaign'],
+            ],
+            // 'clientID' => [ // передаем ID для аналитики
+            //     "gclientid" => "your_site_value", // Google analytics ClientID
+            //     "roistat" => "your_site_value", // Roistat"
+            //     "_ym_uid" => "your_site_value", // Yandex metric ClientID
+            // ],
+            'host' => "axioma.pro", // домен вашего сайта (ОБЯЗАТЕЛЬНО)
+            'token' => "bfac5b47-a495-4c8c-b417-1f8be495a64e", // сюда вводите токен из настроек сайта на стороне amoCRM (ОБЯЗАТЕЛЬНО)
+        ];
+        foreach ($order->items as $item) {
+            $leadData['form'][]  = ['key' => 'id', 'value' => $item->id];
+            $leadData['form'][]  = ['key' => 'order_id', 'value' => $item->order_id];
+            $leadData['form'][]  = ['key' => 'good_id', 'value' => $item->good_id];
+            $leadData['form'][]  = ['key' => 'name', 'value' => $item->name];
+            $leadData['form'][]  = ['key' => 'count', 'value' => $item->count];
+            $leadData['form'][]  = ['key' => 'price', 'value' => $item->price];
+        }
+        // отправляем данные на интеграцию
+        $this->sendToGnzs($leadData);
 
-    
+        // функция отправки данных на интеграцию
+
+
     }
 
-    private function sendToGnzs($leadData) {
+    private function sendToGnzs($leadData)
+    {
         $leadData = json_encode($leadData);
-        
-        $output= shell_exec("curl -X POST https://webhook.gnzs.ru/ext/site-int/amo/29896285?gnzs_token=bfac5b47-a495-4c8c-b417-1f8be495a64e -H 'Content-Type: application/json' -d '{$leadData}'");
+
+        $output = shell_exec("curl -X POST https://webhook.gnzs.ru/ext/site-int/amo/29896285?gnzs_token=bfac5b47-a495-4c8c-b417-1f8be495a64e -H 'Content-Type: application/json' -d '{$leadData}'");
+ 
     }
 }

@@ -151,7 +151,7 @@ class DefaultController extends Controller {
     }
 
     public function actionOneClick() {
-
+        
         if (Yii::$app->request->isAjax) {
 
             \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;

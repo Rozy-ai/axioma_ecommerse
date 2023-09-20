@@ -54,6 +54,25 @@ class EmailForm extends Model {
     public function contact() {
         if ($this->validate()) {
 
+            $leadData = [
+                'form' => [
+                    ['key' => 'Заголовок', 'value' => $this->subject], 
+                    ['key' => 'Name', 'value' => $this->name], 
+                    ['key' => 'Phone', 'value' => $this->phone], 
+                    ['key' => 'Сообщение', 'value' => $this->body], 
+                ],
+                'utm' => [ // передаем UTM-метки
+                    "utm_source" =>  $_COOKIE['utm_source'],
+                    "utm_medium" => $_COOKIE['utm_medium'],
+                    "utm_content" => $_COOKIE['utm_content'],
+                    "utm_term" =>  $_COOKIE['utm_term'],
+                    "utm_campaign" => $_COOKIE['utm_campaign'],
+                ],
+                'host' => "axioma.pro", // домен вашего сайта (ОБЯЗАТЕЛЬНО)
+                'token' => "bfac5b47-a495-4c8c-b417-1f8be495a64e", // сюда вводите токен из настроек сайта на стороне amoCRM (ОБЯЗАТЕЛЬНО)
+            ];
+            $leadData = json_encode($leadData);
+            $output= shell_exec("curl -X POST https://webhook.gnzs.ru/ext/site-int/amo/29896285?gnzs_token=bfac5b47-a495-4c8c-b417-1f8be495a64e -H 'Content-Type: application/json' -d '{$leadData}'");
             Yii::$app->mailer->compose()
                     ->setTo([$this->recipient, Yii::$app->params['copyEmail']])
                     ->setFrom([$this->sender_email => $this->sender_name])
