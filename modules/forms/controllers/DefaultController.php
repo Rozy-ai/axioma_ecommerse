@@ -136,7 +136,6 @@ class DefaultController extends Controller {
             \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
 
             $model = new \app\modules\forms\models\ContactForm();
-            ;
 
             if ($model->load(Yii::$app->request->post())) {
 

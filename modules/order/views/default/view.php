@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use yii\widgets\MaskedInput;
-use yii\captcha\Captcha;
+// use yii\captcha\Captcha;
 
 $this->title = 'Оформить заказ';
 $this->params['breadcrumbs'][] = $this->title;
@@ -67,11 +67,13 @@ $this->params['breadcrumbs'][] = $this->title;
             )
             ?>
             
-                <?= $form->field($client, 'captcha')
-        ->hint('Нажмите на картинку, чтобы обновить')
-        ->widget(Captcha::className(), [
-            'captchaAction'=> yii\helpers\Url::to('/captcha')
-        ]) ?>
+                <?php 
+        //         echo $form->field($client, 'captcha')
+        // ->hint('Нажмите на картинку, чтобы обновить')
+        // ->widget(Captcha::className(), [
+        //     'captchaAction'=> yii\helpers\Url::to('/captcha')
+        // ]) 
+        ?>
 
             <div class="form-group">
                 <?= Html::submitButton('Оформить', ['class' => 'btn btn-primary',

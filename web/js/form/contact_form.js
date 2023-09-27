@@ -40,7 +40,6 @@ $('#contact-form').on('beforeSubmit', function (evt) {
 //        enctype: 'multipart/form-data',
         processData: false,
         success: function (response) {
-//            alert(response);
             console.log(response);
             $('#good-question-form-modal').modal('hide');
             new jBox('Notice', {
