@@ -27,7 +27,7 @@ $this->registerJsFile('@web/js/form/contact_form.js', ['depends' => ['app\assets
     ])->label(false)
     ?>
     <?=
-    $form->field($model, 'email')->textInput([
+    $form->field($model, 'email')->textInput(['type' => 'email',
         'placeholder' => $model->getAttributeLabel('email')
     ])->label(false)
     ?>
