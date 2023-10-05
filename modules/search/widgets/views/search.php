@@ -20,7 +20,7 @@ ActiveForm::begin([
             <div class="col-xs-12 search">-->
 <div class="input-group">
     <input name="q" type="text"
-           class="form-control q" placeholder="Поиск по товарам..">
+           class="form-control q" placeholder="Поиск по товарам.."> <i class="fas fa-search"></i>
 
 </div>
 <ul class="ajax-result list-unstyled">

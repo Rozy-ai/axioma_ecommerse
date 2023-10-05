@@ -1,0 +1,62 @@
+.header .catalog-button {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: inline !important;
+    min-width: 100%;
+    padding: 1rem;
+    float: right;
+}
+
+.btn {
+    border-radius: 4px
+}
+
+#popup-search .input-group {
+    width: 100%;
+    position: relative;
+}
+
+#popup-search .input-group input {
+    border: none;
+    box-shadow: none;
+    border-bottom: 1px solid #d2d2d2;
+    height: 45px;
+    padding-left: 0;
+}
+
+#popup-search .input-group i {
+    position: absolute;
+    z-index: 22;
+    top: 10px;
+    right: 0;
+    font-size: 20px;
+    color: #d2d2d2;
+}
+.icons-right ul{
+    margin-right: 0;
+}
+.icons-right li{
+    text-align: center;
+    position: relative;
+}
+.icons-right li a{
+    font-size: 10px;
+    padding: 0;
+    margin-right: 15px;
+    margin-top: 15px;
+}
+.icons-right {
+    margin-right: 0;
+}
+.icons-right span.badge{
+    background-color: #b8cc76;
+    padding: 3px 10px;
+    margin-left: -15px;
+    position: absolute;
+}
+.m-text-top{
+    padding: 30px 10px 30px 20px!important;
+}

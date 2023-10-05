@@ -34,10 +34,10 @@ class Menu extends \app\models\Menu {
 
 //        $result = [];
 
-        $result['top'][] = ['label' => 'Главная', 'url' => ['/site/index']];
-        $result['top'][] = ['label' => 'Каталог', 'url' => ['/catalog'],
-//            'items' => $items,
-        ];
+        $result['top'][] = ['label' => 'О компании', 'url' => ['/site/index']];
+//         $result['top'][] = ['label' => 'Каталог', 'url' => ['/catalog'],
+// //            'items' => $items,
+//         ];
 
         foreach ($model as $item)
             if ($item->childs) {
@@ -54,12 +54,12 @@ class Menu extends \app\models\Menu {
             } else
                 $result['top'][] = ['label' => $item->name, 'url' => ['/' . $item->url]];
 
-        $result['bottom'][] = ['label' => '<img onClick="$(\'#popup-search\').submit()" class="search-image" src="/image/ico/Search.svg">', 'options' => ['class' => 'search-link']];
+        // $result['bottom'][] = ['label' => '<img onClick="$(\'#popup-search\').submit()" class="search-image" src="/image/ico/Search.svg">', 'options' => ['class' => 'search-link']];
+        $result['bottom'][] = ['label' => '<img class="img" style="height:34px" src="/image/ico/Избранное.svg"> <br>Избранное', 'url' => ['/favorite']];
+        $result['bottom'][] = ['label' => '<img class="img" style="height:34px" src="/image/ico/Сравнение.svg"> <br>Сравнение', 'url' => ['/compare']];
         $result['bottom'][] = ['label' => \app\modules\cart\widgets\TopCartWidget::widget(), 'url' => ['/cart'], 'options' => ['class' => 'cart-top-btn cart hidden-xs hidden-sm']];
         $result['bottom'][] = ['label' => \app\modules\cart\widgets\TopCartWidget::widget(), 'url' => ['/cart'], 'options' => ['class' => 'cart-mobile hidden-md hidden-lg']];
-//        $result['bottom'][] = ['label' => '<i class="far fa-heart"></i>', 'url' => ['/favorite']];
-//        $result['bottom'][] = ['label' => '<i class="fas fa-chart-bar"></i>', 'url' => ['/compare']];
-        $result['bottom'][] = ['label' => '<img class="user-image" src="/image/ico/User.svg">', 'url' => [(Yii::$app->user->isGuest) ? '/enter' : '/products/admin/index'], 'options' => ['class' => 'enter-link']];
+        $result['bottom'][] = ['label' => '<img class="img" style="height:34px" src="/image/ico/Войти.svg"> <br>Войти', 'url' => [(Yii::$app->user->isGuest) ? '/enter' : '/products/admin/index'], 'options' => ['class' => 'enter-link']];
 
         return $result;
     }

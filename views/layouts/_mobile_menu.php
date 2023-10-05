@@ -5,33 +5,36 @@ use yii\bootstrap\Html;
 
 <nav id="menu" class="">
     <ul>
-
+        <li class="top-line m-text-top">
+            <h2><strong>Каталог Товаров</strong></h2>
+            
+        </li>
         <!--<li><?= Html::img('/image/logo-mobile.png') ?></li>-->
-        <li class="top-line">
+        <!-- <li class="top-line">
             <span class="city-wrap">
                 <span class="image">
-                    <?= Html::img('/image/ico/Arrow.svg', ['height' => '40']) ?>
+                    <?php //echo Html::img('/image/ico/Arrow.svg', ['height' => '40']) ?>
                 </span>
                 <span class="content">
-                    <?= \app\modules\city\widgets\CityChoice::widget(['mobile' => true]) ?>
+                    <?php //echo \app\modules\city\widgets\CityChoice::widget(['mobile' => true]) ?>
                 </span>    
             </span>    
-        </li>
+        </li> -->
 
-        <li class="top-line">
+        <!-- <li class="top-line">
             <span class="phone-wrap">
                 <span class="image">
-                    <?= Html::img('/image/ico/Phone.svg', ['height' => '40']) ?>
+                    <?php //echo Html::img('/image/ico/Phone.svg', ['height' => '40']) ?>
                 </span>
                 <span class="phone">
-                    <a href="tel:<?= Yii::$app->info::get('headTelephone') ?>">
-                        <?= Yii::$app->info::get('headTelephone') ?>
+                    <a href="tel:<?php //echo Yii::$app->info::get('headTelephone') ?>">
+                        <?php //echo Yii::$app->info::get('headTelephone') ?>
                     </a>
                     <span class="free-call">Звонок бесплатный</span>
 
                 </span>
             </span>
-        </li>
+        </li> -->
 
         <!--<li class="devider"></li>-->
 

@@ -9,5 +9,8 @@ use yii\bootstrap\Html;
 <!--    <span class="glyphicon glyphicon-shopping-cart">
 </span>-->
     <?= Html::img('/image/ico/Cart.svg', ['class' => 'img', 'height' => '34px']) ?>
+    <?php if($count !== 0): ?>
     <span class="count badge"><?= $count ?></span>
+    <?php endif ?>
+    <br>Корзина
 </div>

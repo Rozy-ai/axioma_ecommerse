@@ -22,6 +22,7 @@ class AppAsset extends AssetBundle {
         'css/magnific-popup.css',
         'css/animate.min.css',
         'css/site.css',
+        'css/custom.css',
         'css/slick.css',
         'css/hamburgers.min.css',
         'menu/mmenu.css',
