@@ -13,10 +13,10 @@ if ($model->type_id == 2) {
 
 $this->params['breadcrumbs'][] = $model->header;
 
-$pages_id = [94, 96, 97, 98, 99, 100, 119,118]; // странички для менюшки преимуществ
+$pages_id = [94, 96, 97, 98, 99, 100, 119, 118]; // странички для менюшки преимуществ
 ?>
 
-<?php if (in_array($model->id, $pages_id)): ?>
+<?php if (in_array($model->id, $pages_id)) : ?>
 
     <?= $this->render('_advanteges_menu'); ?>
 
@@ -41,4 +41,8 @@ $pages_id = [94, 96, 97, 98, 99, 100, 119,118]; // странички для м�
         ?>
     </div>
 </div>
-
+<div class="row">
+    <div class="col-xs-12 contact-form">
+        <?= app\modules\forms\widgets\Contact::widget(); ?>
+    </div>
+</div>

@@ -60,3 +60,39 @@
 .m-text-top{
     padding: 30px 10px 30px 20px!important;
 }
+.home-contact-form .contact-fields{
+    box-shadow: rgba(149, 157, 165, 0.2) 2px 2px 20px;
+    padding: 15px;
+}
+.home-contact-form .contact-fields input{
+    padding: 20px 10px;
+    border-radius: 6px;
+}
+.home-contact-form .contact-fields textarea{
+    padding: 20px 10px;
+    border-radius: 6px;
+    margin-top: 15px;
+}
+.home-contact-form .contact-fields .politic-text{
+    color: red;
+}
+.home-contact-form .contact-fields .politic-text a{
+    text-decoration: underline;
+    color: red;
+}
+.home-contact-form .contact-fields p{
+    font-size: 12px;
+}
+.home-contact-form button{
+    font-size: 16px;
+    text-transform: uppercase;
+    width: 100%;
+    padding: 10px 0px;
+}
+.home-contact-form input[type="radio"]{
+    accent-color: #838f5c;
+}
+.home-contact-form .fileds-radio{
+    font-size: 12px;
+    width: 105%;
+}

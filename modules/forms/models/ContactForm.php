@@ -14,6 +14,7 @@ class ContactForm extends EmailForm {
     public $subject = 'Вопрос с сайта';
     public $name;
     public $email;
+    public $phone;
     public $message;
 
 //    public $verifyCode;
@@ -25,7 +26,7 @@ class ContactForm extends EmailForm {
         $rules = parent::rules();
 
         return ArrayHelper::merge($rules, [
-                    [['name', 'email', 'message',], 'required'],
+                    [['name', 'email', 'message','phone'], 'required'],
                     ['email', 'email'],
         ]);
     }
@@ -37,6 +38,7 @@ class ContactForm extends EmailForm {
         return [
             'name' => 'Ваше имя... *',
             'email' => 'Ваш E-mail... *',
+            'phone' => 'Телефон... *',
             'message' => 'Ваше Сообщение',
             'captcha' => 'Подтвердите, что вы не робот. Введите цифры с картинки.',
         ];
