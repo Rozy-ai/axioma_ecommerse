@@ -3,26 +3,6 @@
 use yii\helpers\Html;
 
 ?>
-<style>
-    .city-choise-wrap li.dropdown{
-        list-style: none;
-    }
-    .city-choise-wrap i{
-        color:#b8cc76;
-    }
-    .city-choise-wrap a.dropdown-toggle{
-        border-bottom: 1px solid #b8cc76;
-    }
-    .city-choise-wrap a.dropdown-toggle:hover{
-        text-decoration: none;
-    }
-    .city-choise-wrap a.dropdown-toggle:focus{
-        text-decoration: none;
-    }
-    .city-choise-wrap ul.dropdown-menu a{
-        color:#b8cc76;
-    }
-</style>
 <li class="dropdown">
     <i class="fas fa-map-marker-alt"></i> 
     <a class="dropdown-toggle" href="/category/<?= $item->uri ?>" data-toggle="dropdown"><?= $current; ?>

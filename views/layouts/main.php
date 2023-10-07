@@ -184,9 +184,9 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                         <!-- <div class="col-xs-5 text-center cart-wrap">
                             <a href="/cart">
                                 <div class="cart-top" data-container=".wrap" data-html="true" data-title="ТОВАРЫ ДОБАВЛЕННЫЕ В КОРЗИНУ" data-toggle="popover" data-placement="bottom" data-content="Корзина пуста" data-original-title="" title=""> -->
-                                    <!--    <span class="glyphicon glyphicon-shopping-cart">
+                        <!--    <span class="glyphicon glyphicon-shopping-cart">
                                 </span>-->
-                                    <!-- <img class="img" src="/image/shopping_cart.png" height="30px" alt=""> <span class="count badge">0</span>
+                        <!-- <img class="img" src="/image/shopping_cart.png" height="30px" alt=""> <span class="count badge">0</span>
                                 </div>
                             </a>
                         </div> -->
@@ -293,26 +293,26 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                             <ul class="nav-justified" style="padding: 0;">
                                 <li>
                                     <a href="#">
-                                        <img src="/image/ico/Вконтакте.svg" height="34px" alt="Вконтакте">
+                                        <img src="/image/ico/Вконтакте.svg" height="24px" alt="Вконтакте">
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <img src="/image/ico/Telegram.svg" height="34px" alt="Telegram">
+                                        <img src="/image/ico/Telegram.svg" height="24px" alt="Telegram">
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <img src="/image/ico/WhatsApp.svg" height="34px" alt="WhatsApp">
+                                        <img src="/image/ico/WhatsApp.svg" height="24px" alt="WhatsApp">
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <img src="/image/ico/Skype.svg" height="34px" alt="Skype">
+                                        <img src="/image/ico/Skype.svg" height="24px" alt="Skype">
                                     </a>
                                 </li>
                             </ul>
-                            <a href="mailto: manager@axioma.pro"><i class="fas fa-envelope-square" style="color: #b8cc76;"></i> manager@axioma.pro</a>
+                            <a href="mailto: <?= Yii::$app->info::get('email') ?>"><i class="fas fa-envelope-square" style="color: #b8cc76;"></i> <?= Yii::$app->info::get('email') ?></a>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-4 col-md-3 phone-wrap ">
@@ -335,13 +335,13 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                             <?php echo app\modules\search\widgets\Search::widget(); ?>
                         </div>
                         <div class="col-xs-12 col-md-3 icons-right">
-                        <?php
-        echo Nav::widget([
-            'options' => ['class' => 'navbar-nav'],
-            'encodeLabels' => false,
-            'items' => Menu::getTopItems()['bottom'],
-        ]);
-        ?>
+                            <?php
+                            echo Nav::widget([
+                                'options' => ['class' => 'navbar-nav'],
+                                'encodeLabels' => false,
+                                'items' => Menu::getTopItems()['bottom'],
+                            ]);
+                            ?>
                         </div>
                     </div>
 
@@ -352,26 +352,27 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
             <!-- <div id="top-line" class="bottom-menu">
                 <div class="container"> -->
 
-                    <?php //echo $this->render('_top_line') ?>
+            <?php //echo $this->render('_top_line') 
+            ?>
 
-                    <?php
-                    //                    NavBar::begin([
-                    //                        'options' => [
-                    //                            'class' => 'navbar',
-                    //                        ],
-                    //                    ]);
-                    ?>
-                    <?php
-                    //                    echo Nav::widget([
-                    //                        'options' => ['class' => 'top-line-nav'],
-                    //                        'encodeLabels' => false,
-                    //                        'items' => Menu::getBottomMenu(),
-                    //                    ]);
-                    ?>
-                    <?php
-                    //                    NavBar::end();
-                    ?>
-                <!-- </div>
+            <?php
+            //                    NavBar::begin([
+            //                        'options' => [
+            //                            'class' => 'navbar',
+            //                        ],
+            //                    ]);
+            ?>
+            <?php
+            //                    echo Nav::widget([
+            //                        'options' => ['class' => 'top-line-nav'],
+            //                        'encodeLabels' => false,
+            //                        'items' => Menu::getBottomMenu(),
+            //                    ]);
+            ?>
+            <?php
+            //                    NavBar::end();
+            ?>
+            <!-- </div>
             </div> -->
         </div>
 
@@ -427,13 +428,21 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                 <div class="footer-top">
                     <div class="container">
                         <div class="row">
-                            <div class="hidden-xs hidden-sm col-md-3">
+                            <div class="hidden-xs hidden-sm col-md-2">
                                 <p class="title">АДРЕС</p>
-                                <p>г. <?= RegionTemplates::getVal('city') ?></p>
-                                <p><?= RegionTemplates::getVal('address') ?></p>
-                                <p>Тел: <?= RegionTemplates::getVal('phone-2') ?></p>
+                                <div class="city-choise-wrap">
+
+                                    <?= \app\modules\city\widgets\CityChoice::widget() ?>
+
+                                    <div class="address">
+                                        <?= RegionTemplates::getVal('address') ?>
+                                    </div>
+                                    <div class="phone-secondary">
+                                        тел: <?= RegionTemplates::getVal('phone-2') ?>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-xs-12 col-sm-12 col-md-6">
+                            <div class="col-md-offset-1 col-xs-12 col-sm-12 col-md-6">
 
                                 <div class="row">
                                     <div class="col-xs-12">
@@ -470,11 +479,6 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                 <p>Тел: <?= RegionTemplates::getVal('phone-2') ?></p>
                             </div>
                             <div class="col-xs-12 col-sm-6 col-md-3 right-side">
-                                <p class="email">
-                                    email: <a href="mailto:<?= Yii::$app->info::get('email') ?>">
-                                        <?= Yii::$app->info::get('email') ?>
-                                    </a>
-                                </p>
                                 <p class="phone">
                                     <a href="tel:<?= str_replace(['-', '(', ')', ' '], '', Yii::$app->info::get('headTelephone')) ?>">
                                         <?= Yii::$app->info::get('headTelephone') ?>
@@ -482,13 +486,44 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                     <br />
                                 </p>
                                 <?= \app\modules\forms\widgets\CallBack::widget(['in_footer' => true]); ?>
+                                <div class="sosial-icons" style="padding-top: 3.6rem;">
+                                    <ul class="nav-justified" style="padding: 0;">
+                                        <li>
+                                            <a href="#">
+                                                <img src="/image/ico/Вконтакте.svg" height="24px" alt="Вконтакте">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img src="/image/ico/Telegram.svg" height="24px" alt="Telegram">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img src="/image/ico/WhatsApp.svg" height="24px" alt="WhatsApp">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img src="/image/ico/Skype.svg" height="24px" alt="Skype">
+                                            </a>
+                                        </li>
+                                        <li>
+                                        <a href="https://www.youtube.com/c/AxiomaPro/featured" target="_blank">
+                                            <img src="/image/ico/Youtube.svg" height="24px">
+                                        </a>
+                                        </li>
+                                        <li>
+                                        <a href="#" target="_blank">
+                                            <img src="/image/ico/Яндекс Дзен.svg" height="24px">
+                                        </a>
+                                        </li>
+                                    </ul>
+                                    <a href="mailto: <?= Yii::$app->info::get('email') ?>"><i class="fas fa-envelope-square" style="color: #b8cc76;"></i> <?= Yii::$app->info::get('email') ?></a>
+                                </div>
                                 <p class="insta">
                                     <!--                                    <a href="https://www.instagram.com/axioma.pro.russia/" target="_blank">
                                                                         <i class="fab fa-instagram" aria-hidden="true"></i></a>-->
-                                    <a href="https://www.youtube.com/c/AxiomaPro/featured" target="_blank">
-                                        <img src="/image/ico/YT.svg" height="40">
-                                        <!--<i class="fab fa-youtube" aria-hidden="true"></i>-->
-                                    </a>
                                 </p>
                             </div>
                         </div>
@@ -500,7 +535,9 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                         <div class="pull-left">
                             <p><strong>© 2009-<?= date('Y') ?> ООО “Аксиома”</strong>
                                 <br>
-                                Копирование информации сайта разрешено только с письменного согласия администрации
+                                Все правы защищены. 
+                                <br>
+                                Копирование информации разрешено только с письменного согласия администрации сайта.
                             </p>
                         </div>
                         <div class="pull-right">
