@@ -34,7 +34,7 @@ class Menu extends \app\models\Menu {
 
 //        $result = [];
 
-        $result['top'][] = ['label' => 'О компании', 'url' => ['/site/index']];
+    //    $result['top'][] = ['label' => 'О компании', 'url' => ['/site/index']];
 //         $result['top'][] = ['label' => 'Каталог', 'url' => ['/catalog'],
 // //            'items' => $items,
 //         ];
