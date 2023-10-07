@@ -53,8 +53,8 @@
 }
 .icons-right span.badge{
     background-color: #b8cc76;
-    padding: 3px 10px;
-    margin-left: -15px;
+    padding: 2px 6px;
+    margin-left: -10px;
     position: absolute;
 }
 .m-text-top{
@@ -120,4 +120,24 @@
 }
 .footer .sosial-icons li{
     padding-left: 5px;
+}
+.header .catalog-button{
+    background: white;
+    color: #b8cc76;
+    border: 1px solid #b8cc76;
+    margin-top: 15px;
+}
+.header .catalog-button:focus{
+background: #b8cc76;
+    color: #fff;
+    outline: none;
+}
+.header .phone-wrap .phone{
+    margin-top: -20px;
+}
+.header .phone-wrap .call-back{
+    margin-bottom: 15px;
+}
+.header #popup-search{
+    margin-top: 15px;
 }
