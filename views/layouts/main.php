@@ -327,7 +327,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                     </div>
 
 
-                    <div class="row">
+       
                         <div class="col-xs-12 col-md-2">
                             <button type="button" class="btn btn-primary catalog-button"><i class="fas fa-list"></i> Каталог товаров</button>
                         </div>
@@ -343,7 +343,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                             ]);
                             ?>
                         </div>
-                    </div>
+               
 
 
                 </div>

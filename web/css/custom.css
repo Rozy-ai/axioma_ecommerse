@@ -8,6 +8,8 @@
     min-width: 100%;
     padding: 1rem;
     float: right;
+    max-width: 100%;
+    font-size: 14px;
 }
 
 .btn {
@@ -139,5 +141,5 @@ background: #b8cc76;
     margin-bottom: 15px;
 }
 .header #popup-search{
-    margin-top: 15px;
+    margin-top: 10px;
 }
