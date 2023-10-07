@@ -122,6 +122,9 @@
 }
 .footer .sosial-icons li{
     padding-left: 5px;
+    width: auto!important;
+    list-style: none;
+    display: inline-block;
 }
 .header .catalog-button{
     background: white;
