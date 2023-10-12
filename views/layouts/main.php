@@ -325,25 +325,24 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                         <?= \app\modules\forms\widgets\CallBack::widget(); ?>
 
                     </div>
+                    <div class="col-xs-12 col-md-2">
+                        <button type="button" class="btn btn-primary catalog-button"><i class="fas fa-list"></i> Каталог товаров</button>
+                    </div>
+                 
+                    <div class="col-xs-12 col-md-7 popup-search text-right">
+                        <?php echo app\modules\search\widgets\Search::widget(); ?>
+                    </div>
+                    <div class="col-xs-12 col-md-3 icons-right">
+                        <?php
+                        echo Nav::widget([
+                            'options' => ['class' => 'navbar-nav'],
+                            'encodeLabels' => false,
+                            'items' => Menu::getTopItems()['bottom'],
+                        ]);
+                        ?>
+                    </div>
+                    <?php echo $this->render('_category_menu') ?>
 
-
-       
-                        <div class="col-xs-12 col-md-2">
-                            <button type="button" class="btn btn-primary catalog-button"><i class="fas fa-list"></i> Каталог товаров</button>
-                        </div>
-                        <div class="col-xs-12 col-md-7 popup-search text-right">
-                            <?php echo app\modules\search\widgets\Search::widget(); ?>
-                        </div>
-                        <div class="col-xs-12 col-md-3 icons-right">
-                            <?php
-                            echo Nav::widget([
-                                'options' => ['class' => 'navbar-nav'],
-                                'encodeLabels' => false,
-                                'items' => Menu::getTopItems()['bottom'],
-                            ]);
-                            ?>
-                        </div>
-               
 
 
                 </div>
@@ -509,14 +508,14 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                             </a>
                                         </li>
                                         <li>
-                                        <a href="https://www.youtube.com/c/AxiomaPro/featured" target="_blank">
-                                            <img src="/image/ico/Youtube.svg" height="24px">
-                                        </a>
+                                            <a href="https://www.youtube.com/c/AxiomaPro/featured" target="_blank">
+                                                <img src="/image/ico/Youtube.svg" height="24px">
+                                            </a>
                                         </li>
                                         <li>
-                                        <a href="#" target="_blank">
-                                            <img src="/image/ico/Яндекс Дзен.svg" height="24px">
-                                        </a>
+                                            <a href="#" target="_blank">
+                                                <img src="/image/ico/Яндекс Дзен.svg" height="24px">
+                                            </a>
                                         </li>
                                     </ul>
                                     <a href="mailto: <?= Yii::$app->info::get('email') ?>"><i class="fas fa-envelope-square" style="color: #b8cc76;"></i> <?= Yii::$app->info::get('email') ?></a>
@@ -535,7 +534,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                         <div class="pull-left">
                             <p><strong>© 2009-<?= date('Y') ?> ООО “Аксиома”</strong>
                                 <br>
-                                Все правы защищены. 
+                                Все правы защищены.
                                 <br>
                                 Копирование информации разрешено только с письменного согласия администрации сайта.
                             </p>

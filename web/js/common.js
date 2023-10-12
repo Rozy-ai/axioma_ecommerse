@@ -113,3 +113,27 @@ $(document).ready(function () {
 
 //    console.log(main);
 });
+    $(function() {
+    $("div.bhoechie-tab-menu>div.list-group>a").hover(function(e) {
+        e.preventDefault();
+        $(this).siblings('a.active').removeClass("active");
+        $(this).addClass("active");
+        var index = $(this).index();
+        $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
+        $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
+    });
+});
+
+
+var menu = document.getElementById("bhoechie");
+
+$('.header .catalog-button').click( function(e) {
+    e.preventDefault();
+    if (menu.style.display === "none") {
+      $(this).addClass("active-button");
+    menu.style.display = "block";
+  } else {
+    $(this).removeClass("active-button");
+    menu.style.display = "none";
+  }
+});

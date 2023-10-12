@@ -55,6 +55,11 @@ class Category extends \app\models\Category {
         return true;
     }
 
+    public function getChilds()
+{
+    return $this->hasMany(Category::className(), ['parent_id' => 'id']);
+}
+
     public static function getList() {
 
         $result[] = 'Не указан';
