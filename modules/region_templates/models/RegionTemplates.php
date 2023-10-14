@@ -22,7 +22,7 @@ class RegionTemplates extends \app\models\RegionTemplates {
                     'name' => self::LABEL,
                     'city_id' => \Yii::$app->city->id,
         ]);
-
+        
         return (isset($value->value) && $value->value) ? $value->value : false;
     }
 
@@ -32,6 +32,7 @@ class RegionTemplates extends \app\models\RegionTemplates {
                     'name' => $val,
                     'city_id' => \Yii::$app->city->id,
         ]);
+        $value->value = str_replace("дом", "<br>дом", $value->value);
 
         return (isset($value->value) && $value->value) ? $value->value : false;
     }

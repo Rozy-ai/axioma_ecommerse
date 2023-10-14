@@ -137,3 +137,35 @@ $('.header .catalog-button').click( function(e) {
     menu.style.display = "none";
   }
 });
+
+const header = document.querySelector('.fixed-header');
+
+window.addEventListener('scroll', () => {
+    var scrollY = window.scrollY;
+    var mt = 84 - scrollY;
+  if (window.scrollY > 64) {
+    header.classList.add('scrolled');
+    header.style.marginTop = '0px';
+  } else {
+    header.classList.remove('scrolled');
+    header.style.marginTop = mt+'px';
+  }
+});
+
+const scrollLinks = document.querySelectorAll('.scroll-link');
+
+scrollLinks.forEach(link => {
+  link.addEventListener('click', event => {
+    event.preventDefault();
+    const sectionId = link.getAttribute('href');
+    const section = document.querySelector(sectionId);
+    var rect = section.getBoundingClientRect();
+    const offsetTop = section.offsetTop;
+    const headerHeight = document.querySelector('.fixed-header').offsetHeight;
+    // section.style.marginTop = headerHeight+'px';
+    window.scrollTo({
+      top: rect.y  + window.scrollY - headerHeight - 100,
+      behavior: 'smooth'
+    });
+  });
+});

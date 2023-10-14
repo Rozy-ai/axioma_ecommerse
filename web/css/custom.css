@@ -51,8 +51,11 @@
 .icons-right li a {
     font-size: 10px;
     padding: 0;
-    margin-right: 15px;
+    margin-right: 27px;
     margin-top: 15px;
+}
+.icons-right li:last-child a{
+    margin-right: 0;
 }
 
 .icons-right {
@@ -150,7 +153,9 @@
     list-style: none;
     display: inline-block;
 }
-
+.footer .address{
+    margin-top: 10px;
+}
 .header .catalog-button {
     background: white;
     color: #b8cc76;
@@ -290,4 +295,34 @@ div.bhoechie-tab .list-group-item img{
 }
 .thanks-contact-form .contact-form .home-form .button-wrap{
     padding-top: 0;
+}
+.button-anchor button{
+    width: 100%;
+    border: 1px solid #b8cc76;
+    color: #b8cc76;
+    margin-top: 15px;
+    padding: 10px;
+    outline: none;
+}
+.button-anchor button:hover{
+    border: 1px solid #b8cc76;
+    color: #b8cc76;
+    background-color: inherit;
+    outline: none;
+}
+.fixed-header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background: #fff;
+    z-index: 1000;
+    border-bottom: 1px solid #ccc;
+    margin-top: 84px;
+}
+.scrolled{
+    padding-top: 20px!important;
+    margin-top: 0px;
+}
+.main-navbar{
+    margin-bottom: 209px;
 }

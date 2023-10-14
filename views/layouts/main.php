@@ -211,8 +211,8 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
             </div>
         </div>
 
-
-        <div class="header hidden-xs hidden-sm">
+                <!-- Fixed header -->
+        <div class="header fixed-header hidden-xs hidden-sm">
             <div class="container middle-line">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-2 col-lg-3 logo-wrap">
@@ -328,7 +328,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                     <div class="col-xs-12 col-md-2">
                         <button type="button" class="btn btn-primary catalog-button"><i class="fas fa-list"></i> Каталог товаров</button>
                     </div>
-                 
+
                     <div class="col-xs-12 col-md-7 popup-search text-right">
                         <?php echo app\modules\search\widgets\Search::widget(); ?>
                     </div>
@@ -374,6 +374,8 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
             <!-- </div>
             </div> -->
         </div>
+
+        <!-- Fixed header end -->
 
 
 
@@ -438,6 +440,17 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                     </div>
                                     <div class="phone-secondary">
                                         тел: <?= RegionTemplates::getVal('phone-2') ?>
+                                    </div>
+                                    <div class="button-anchor">
+                                        <div class="form-group button-wrap">
+                                            <a href="#contact-form" class="scroll-link">
+                                            <?=
+                                            Html::Button('Задать вопрос', [
+                                                'class' => 'btn btn-default',
+                                            ])
+                                            ?>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
