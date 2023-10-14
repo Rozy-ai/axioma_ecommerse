@@ -81,7 +81,7 @@
 }
 
 .home-contact-form .contact-fields textarea {
-    padding: 20px 10px;
+    padding: 12px 10px;
     border-radius: 6px;
     margin-top: 15px;
 }
@@ -161,6 +161,9 @@
 .header .active-button {
     background: #b8cc76;
     color: #fff;
+    outline: none;
+}
+.header .catalog-button:focus, .header .catalog-button:active:focus, .header .catalog-button.active:focus, .header .catalog-button.focus, .header .catalog-button:active.focus, .header .catalog-button.active.focus{
     outline: none;
 }
 
@@ -266,4 +269,25 @@ div.bhoechie-tab .list-group-item img{
 .bhoechie-tab-content ul li a:hover{
     font-weight: bold;
     text-decoration: none;
+}
+.thanks-contact-form .contact-form .home-contact-form input[type=email]{
+    height: 6rem;
+    line-height: 6rem;
+}
+.thanks-contact-form .contact-form .home-contact-form .h2-home{
+    color: #3d3d3d;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+}
+.thanks-contact-form .contact-form .home-form input[type=text]{
+    height: 4rem;
+}
+.thanks-contact-form .contact-form .home-form input[type=email]{
+    height: 4rem;
+}
+.home-form .contact-fields{
+    padding: 5px 10px;
+}
+.thanks-contact-form .contact-form .home-form .button-wrap{
+    padding-top: 0;
 }
