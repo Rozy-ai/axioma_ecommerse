@@ -28,8 +28,6 @@
 
 <?php if (!$model->is_close) : ?>
     <div class="row text-right">
-        <button class="btn btn-primary send-doc">
-            откликнуться
-        </button>
+        <?= \app\modules\forms\widgets\VacancyWidget::widget(); ?>
     </div>
 <?php endif; ?>

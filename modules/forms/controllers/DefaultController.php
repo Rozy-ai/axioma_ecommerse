@@ -2,9 +2,11 @@
 
 namespace app\modules\forms\controllers;
 
+use app\models\Vacancy;
 use Yii;
 use yii\web\Controller;
 use app\modules\forms\models\CallBackForm;
+use app\modules\forms\models\VacancyForm;
 use app\modules\forms\models\GoodQuestionForm;
 use app\modules\forms\models\OneClickOrder;
 use \app\modules\forms\models\SendReviewForm;
@@ -100,6 +102,26 @@ class DefaultController extends Controller {
             if ($model->load(Yii::$app->request->post())) {
 
                 $model->body = $model->name . ' (' . str_replace(['(', ')', '-', ''], '', $model->phone) . ')' . ' заказал звонок';
+
+                if ($model->contact())
+                    return 1;
+                else
+                    return 0;
+            }
+        }
+    }
+
+    public function actionVacancy() {
+
+        if (Yii::$app->request->isAjax) {
+
+            \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+
+            $model = new VacancyForm();
+
+            if ($model->load(Yii::$app->request->post())) {
+
+                $model->body = $model->name . ' (' . str_replace(['(', ')', '-', ''], '', $model->phone) . ')' . ' откликнулся';
 
                 if ($model->contact())
                     return 1;

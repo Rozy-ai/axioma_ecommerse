@@ -89,6 +89,22 @@
     margin-top: 15px;
 }
 
+.vacancy-form {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.vacancy-form .politic-text {
+    color: red;
+}
+.w-80{
+    width: 80%;
+}
+
+.vacancy-form .politic-text a {
+    text-decoration: underline;
+    color: red;
+}
+
 .home-contact-form .contact-fields .politic-text {
     color: red;
 }
@@ -344,3 +360,8 @@ div.bhoechie-tab .list-group-item img{
     margin-bottom: 2rem;;
 }
 /* ВАКАНСИИ */
+
+.attach-icon{
+    height: 14px;
+    display: inline-block;
+}
