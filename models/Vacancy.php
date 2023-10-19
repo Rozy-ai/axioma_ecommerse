@@ -12,6 +12,7 @@ use Yii;
  * @property string $description Требования
  * @property string $pay З/П
  * @property int $city_id Город
+ * @property int $created_at Выложено
  * @property int $is_close Вакансия закрыта
  */
 class Vacancy extends \app\models\CustomAR
@@ -31,7 +32,7 @@ class Vacancy extends \app\models\CustomAR
     {
         return [
             [['description'], 'string'],
-            [['city_id', 'is_close'], 'integer'],
+            [['city_id', 'is_close', 'created_at', ], 'integer'],
             [['name'], 'string', 'max' => 500],
             [['pay'], 'string', 'max' => 100],
         ];
@@ -48,6 +49,7 @@ class Vacancy extends \app\models\CustomAR
             'description' => 'Требования',
             'pay' => 'З/П',
             'city_id' => 'Город',
+            'created_at' => 'Выложено',
             'is_close' => 'Вакансия закрыта',
         ];
     }

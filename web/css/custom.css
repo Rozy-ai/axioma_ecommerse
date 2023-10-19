@@ -323,4 +323,24 @@ div.bhoechie-tab .list-group-item img{
     padding-top: 20px!important;
     margin-top: 0px;
 }
-
+/* ВАКАНСИИ */
+.vacancy-index .vacancy{
+    border-radius: 5px;
+}
+.content .vacancy-index .vacancy .address{
+    color: #000;
+    line-height: 1.4rem;
+    font-size: 14px;
+}
+.content .vacancy-index .vacancy .pay{
+    color: #000;
+}
+.posted-data{
+    color: #ccc;
+    font-size: 14px;
+    line-height: 2em;
+}
+.send-doc{
+    margin-bottom: 2rem;;
+}
+/* ВАКАНСИИ */

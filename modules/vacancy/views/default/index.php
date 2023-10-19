@@ -52,3 +52,8 @@ app\modules\vacancy\VacancyAssets::register($this);
         </div>
     </div>
 </div>
+<div class="row">
+    <div class="col-xs-12 contact-form">
+        <?= app\modules\forms\widgets\Contact::widget(); ?>
+    </div>
+</div>

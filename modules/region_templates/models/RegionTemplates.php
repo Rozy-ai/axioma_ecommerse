@@ -37,4 +37,14 @@ class RegionTemplates extends \app\models\RegionTemplates {
         return (isset($value->value) && $value->value) ? $value->value : false;
     }
 
+    public static function getValOld($val) {
+
+        $value = \app\modules\region_templates\models\RegionTemplates::findOne([
+                    'name' => $val,
+                    'city_id' => \Yii::$app->city->id,
+        ]);
+
+        return (isset($value->value) && $value->value) ? $value->value : false;
+    }
+
 }

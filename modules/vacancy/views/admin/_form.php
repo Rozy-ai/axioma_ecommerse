@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use vova07\imperavi\Widget;
+use kartik\datecontrol\DateControl;
 
 /* @var $this yii\web\View */
 /* @var $model app\modules\vacancy\models\Vacancy */
@@ -19,8 +20,8 @@ use vova07\imperavi\Widget;
     $form->field($model, 'description')->widget(Widget::className(), [
         'settings' => [
             'lang' => 'ru',
-//                    'imageUpload' => Url::to(['/site/image-upload']),
-//                    'imageManagerJson' => Url::to(['/site/images-get']),
+            //                    'imageUpload' => Url::to(['/site/image-upload']),
+            //                    'imageManagerJson' => Url::to(['/site/images-get']),
             'minHeight' => 500,
             'plugins' => [
                 'clips',
@@ -40,6 +41,12 @@ use vova07\imperavi\Widget;
     $form->field($model, 'city_id')->widget(\kartik\select2\Select2::classname(), [
         'data' => app\modules\city\models\City::getActiveCity(),
         'options' => ['placeholder' => 'Город', 'multiple' => false],
+    ]);
+    ?>
+
+    <?=
+    $form->field($model, 'created_at')->widget(DateControl::classname(), [
+        'value' => $model->isNewRecord ? time() : $model->created_at,
     ]);
     ?>
 

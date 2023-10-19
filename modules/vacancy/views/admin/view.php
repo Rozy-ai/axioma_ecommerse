@@ -34,6 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'description:ntext',
             'pay',
             'city_id',
+            'created_at',
             'is_close',
         ],
     ]) ?>
