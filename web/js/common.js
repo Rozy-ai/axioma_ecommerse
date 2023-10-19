@@ -139,16 +139,21 @@ $('.header .catalog-button').click( function(e) {
 });
 
 const header = document.querySelector('.fixed-header');
+const mainHeader = document.querySelector('.header');
 
 window.addEventListener('scroll', () => {
     var scrollY = window.scrollY;
-    var mt = 84 - scrollY;
-  if (window.scrollY > 64) {
+    //  var mt = 84 - scrollY;
+  if (window.scrollY > 164) {
     header.classList.add('scrolled');
-    header.style.marginTop = '0px';
+    // header.style.marginTop = '0px';
+    header.style.display = 'block';
+    header.append(menu);
   } else {
     header.classList.remove('scrolled');
-    header.style.marginTop = mt+'px';
+    // header.style.marginTop = mt+'px';
+    header.style.display = 'none';
+    mainHeader.append(menu);
   }
 });
 
