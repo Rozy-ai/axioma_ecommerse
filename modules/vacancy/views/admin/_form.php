@@ -46,7 +46,7 @@ use kartik\datecontrol\DateControl;
 
     <?=
     $form->field($model, 'created_at')->widget(DateControl::classname(), [
-        'value' => $model->isNewRecord ? time() : $model->created_at,
+        'value' => $model->created_at ? time() : $model->created_at,
     ]);
     ?>
 

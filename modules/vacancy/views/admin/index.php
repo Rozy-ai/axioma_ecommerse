@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     return $model->is_close ? 'Да' : 'Нет';
                 }
             ],
-            'created_at:datetime',
+            'created_at:date',
             //'is_close',
             ['class' => 'yii\grid\ActionColumn', 'template' => '{delete}'],
         ],
