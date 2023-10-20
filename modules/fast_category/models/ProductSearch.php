@@ -22,6 +22,7 @@ class ProductSearch extends Model {
     public $search;
     public $enter_width;
     public $online_kass_type;
+    public $in_stock;
 
     const _SEARCH = [
         'is_popular' => 'Сначала популярные',
@@ -46,6 +47,7 @@ class ProductSearch extends Model {
             'search',
             'video_type',
             'online_kass_type',
+            'in_stock',
 //                'is_ip', 'is_tvi', 
             'enter_width', 'detection_type'], 'safe'],
         ];
@@ -57,6 +59,7 @@ class ProductSearch extends Model {
 //            'is_radio' => 'Радиочастотные системы',
 //            'is_ip' => 'IP',
 //            'is_tvi' => 'HD-TVI',
+            'in_stock' => 'Наличие',
             'enter_width' => 'Шиирина прохода',
             'detection_type' => 'Тип детекции',
             'video_type' => 'Тип передачи данных',
@@ -66,7 +69,7 @@ class ProductSearch extends Model {
     public function collectEnterWidth($detection_type) {
 
         $result = [];
-
+        
         if ($detection_type == 1)
             $result = ArrayHelper::map(Product::find()->select('enter_width')
                                     ->orderBy('enter_width asc')

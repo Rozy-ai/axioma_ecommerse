@@ -15,49 +15,55 @@ class DefaultController extends Controller {
     const PAGE_SIZE = 100;
 
     public function actionGet($category, $subcategory = '', $online_kass_type = false) {
-
+        
         $parent = $subcategory ? $category : false;
 
         if (isset($parent) && $parent)
-            $category = $subcategory;
-
+        $category = $subcategory;
+        
         $category = FastCategory::getByUrl($category);
-
+        
         if (!$category)
-            throw new HttpException(404, ' Страница не найдена! ');
-
+        throw new HttpException(404, ' Страница не найдена! ');
+        
         $search = new \app\modules\fast_category\models\ProductSearch();
-
+        
         $search->load(Yii::$app->request->post());
-
+        
         Yii::$app->view->title = $category->title ? $category->title : $category->header;
-
+        
         if ($category->description)
-            \Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => $category->description]);
-
+        \Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => $category->description]);
+        
         if ($category->keywords)
-            \Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => $category->keywords]);
-
-
+        \Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => $category->keywords]);
+        
+        
         $where = ['fastcat_id' => $category->id, 'is_enable' => 1];
-
+        
         $andFilterWhere = $andwhere = [];
-
+        
         if ($search->detection_type == 1)
-            $andwhere['is_akustika'] = 1;
-
+        $andwhere['is_akustika'] = 1;
+        
         if ($search->detection_type == 2)
-            $andwhere['is_radio'] = 1;
-
+        $andwhere['is_radio'] = 1;
+        
         if ($search->video_type == 1)
-            $andwhere['is_ip'] = 1;
-
+        $andwhere['is_ip'] = 1;
+        
         if ($search->video_type == 2)
-            $andwhere['is_tvi'] = 1;
-
+        $andwhere['is_tvi'] = 1;
+        
         if ($online_kass_type) {
             $search->online_kass_type = $online_kass_type;
         }
+
+        if ($search->in_stock == 1)
+        $andwhere['in_stock'] = 0;
+
+        if ($search->in_stock == 2)
+        $andwhere['in_stock'] = 1;
 
         if ($search->online_kass_type)
             $andwhere['online_kass_type'] = $search->online_kass_type;
@@ -80,7 +86,6 @@ class DefaultController extends Controller {
 //                ->orderBy($sort->orders)
                 ->orderBy('ord DESC')
         ;
-
 //        if (!$query->all())
 //            return $this->render('_on_constract.twig', ['model' => $category]);
         // add conditions that should always apply here

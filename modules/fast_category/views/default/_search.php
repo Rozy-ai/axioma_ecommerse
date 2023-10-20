@@ -16,14 +16,14 @@ $this->registerCss($this->render('./../../assets/css/category-search.css'));
 
 <?php
 $form = ActiveForm::begin([
-//            'action' => '/fast-cat/online-kass',
-            'action' => Url::to(Yii::$app->request->pathInfo, true),
-            'method' => 'post',
-            'id' => 'category-search',
-        ]);
+    //            'action' => '/fast-cat/online-kass',
+    'action' => Url::to(Yii::$app->request->pathInfo, true),
+    'method' => 'post',
+    'id' => 'category-search',
+]);
 ?>
 
-<?php if ($category->url == 'online-kass'): ?>
+<?php if ($category->url == 'online-kass') : ?>
 
 
 
@@ -32,7 +32,8 @@ $form = ActiveForm::begin([
         <div class="row">
             <div class="col-xs-12">
 
-                <?php // foreach ($model::ONLINE_KASS_TYPE as $item): ?>
+                <?php // foreach ($model::ONLINE_KASS_TYPE as $item): 
+                ?>
 
                 <!--                    <div class="pretty p-default p-curve p-thick">
                                         <input type="checkbox" name="online_kass_type" 
@@ -43,35 +44,36 @@ $form = ActiveForm::begin([
                                         </div>
                                     </div>-->
 
-                <?php //endforeach; ?>
+                <?php //endforeach; 
+                ?>
 
                 <?php
                 echo $form->field($model, 'online_kass_type', [
-//                    'inline' => true,
-//                            'inlineRadioListTemplate' => "<div class=\"checkbox checkbox-ext\">\n{beginLabel}\n{input}\n<span>{labelTitle}</span>\n{endLabel}\n{error}\n{hint}\n</div>",
-//                                    'inlineRadioListTemplate' => '{beginWrapper} {input}  <span class="label-text"> {label} </span> {endWrapper} {hint}',
-//                                    'inlineRadioListTemplate' => '{beginWrapper} {input}  <span class="label-text"> {label} </span> {endWrapper} {hint}',
-//                                    'radioTemplate' => '<div class=\"radio\">{beginLabel}{input} <span class="label-text"> {labelTitle} </span> {endLabel}{hint}</div>',
-                        ])
-                        ->inline(true)
-                        ->checkboxList(
-                                $model::ONLINE_KASS_TYPE,
-                                [
-                                    'item' => function ($index, $label, $name, $checked, $value) {
+                    //                    'inline' => true,
+                    //                            'inlineRadioListTemplate' => "<div class=\"checkbox checkbox-ext\">\n{beginLabel}\n{input}\n<span>{labelTitle}</span>\n{endLabel}\n{error}\n{hint}\n</div>",
+                    //                                    'inlineRadioListTemplate' => '{beginWrapper} {input}  <span class="label-text"> {label} </span> {endWrapper} {hint}',
+                    //                                    'inlineRadioListTemplate' => '{beginWrapper} {input}  <span class="label-text"> {label} </span> {endWrapper} {hint}',
+                    //                                    'radioTemplate' => '<div class=\"radio\">{beginLabel}{input} <span class="label-text"> {labelTitle} </span> {endLabel}{hint}</div>',
+                ])
+                    ->inline(true)
+                    ->checkboxList(
+                        $model::ONLINE_KASS_TYPE,
+                        [
+                            'item' => function ($index, $label, $name, $checked, $value) {
 
 
-                                        $return = '<div class="pretty p-default p-curve p-thick">';
-                                        $return .= '<input type="checkbox" name="' . $name . '"  name="' . $name . '" ' . ($checked ? 'checked' : '') . ' value="' . $value . '" />';
-//                                        $return .= ' onChange = $("#category-search").submit()  ';
-                                        $return .= '<div class="state">';
-                                        $return .= '<label>' . $label . '</label>';
-                                        $return .= '</div>';
-                                        $return .= '</div>';
-                                        return $return;
-                                    },
-                                    'onChange' => '$("#category-search").submit()'
-                                ]
-                        )->label(false)
+                                $return = '<div class="pretty p-default p-curve p-thick">';
+                                $return .= '<input type="checkbox" name="' . $name . '"  name="' . $name . '" ' . ($checked ? 'checked' : '') . ' value="' . $value . '" />';
+                                //                                        $return .= ' onChange = $("#category-search").submit()  ';
+                                $return .= '<div class="state">';
+                                $return .= '<label>' . $label . '</label>';
+                                $return .= '</div>';
+                                $return .= '</div>';
+                                return $return;
+                            },
+                            'onChange' => '$("#category-search").submit()'
+                        ]
+                    )->label(false)
                 ?>
 
             </div>
@@ -79,7 +81,7 @@ $form = ActiveForm::begin([
 
     </div>
 
-<?php else: ?>
+<?php else : ?>
 
 
     <div class="category-search">
@@ -92,11 +94,11 @@ $form = ActiveForm::begin([
 
 
 
-            <div class="col-xs-12 col-lg-6">
+            <div class="col-xs-12 col-lg-3">
 
 
 
-                <?php if ($category->is_ar): ?>
+                <?php if ($category->is_ar) : ?>
 
 
 
@@ -109,84 +111,117 @@ $form = ActiveForm::begin([
                     if ($category->url == 'etiketki')
                         $labels = [0 => 'Любая', 1 => 'Акустомагнитные этикетки', 2 => 'Радиочастотные этикетки'];
 
-                    echo $form->field($model, 'detection_type', [
-                        'inline' => true,
-//                            'inlineRadioListTemplate' => "<div class=\"checkbox checkbox-ext\">\n{beginLabel}\n{input}\n<span>{labelTitle}</span>\n{endLabel}\n{error}\n{hint}\n</div>",
-//                                    'inlineRadioListTemplate' => '{beginWrapper} {input}  <span class="label-text"> {label} </span> {endWrapper} {hint}',
-//                                    'inlineRadioListTemplate' => '{beginWrapper} {input}  <span class="label-text"> {label} </span> {endWrapper} {hint}',
-//                                    'radioTemplate' => '<div class=\"radio\">{beginLabel}{input} <span class="label-text"> {labelTitle} </span> {endLabel}{hint}</div>',
-                    ])->radioList(
-                            $labels,
-                            [
-                                'item' => function ($index, $label, $name, $checked, $value) {
+                    //                     echo $form->field($model, 'detection_type', [
+                    //                         'inline' => true,
+                    // //                            'inlineRadioListTemplate' => "<div class=\"checkbox checkbox-ext\">\n{beginLabel}\n{input}\n<span>{labelTitle}</span>\n{endLabel}\n{error}\n{hint}\n</div>",
+                    // //                                    'inlineRadioListTemplate' => '{beginWrapper} {input}  <span class="label-text"> {label} </span> {endWrapper} {hint}',
+                    // //                                    'inlineRadioListTemplate' => '{beginWrapper} {input}  <span class="label-text"> {label} </span> {endWrapper} {hint}',
+                    // //                                    'radioTemplate' => '<div class=\"radio\">{beginLabel}{input} <span class="label-text"> {labelTitle} </span> {endLabel}{hint}</div>',
+                    //                     ])->radioList(
+                    //                             $labels,
+                    //                             [
+                    //                                 'item' => function ($index, $label, $name, $checked, $value) {
 
 
-                                    $return = '<label>';
-                                    $return .= '<input id="radio-' . $index . '" type="radio" name="' . $name . '" ' . ($checked ? 'checked' : '') . ' value="' . $value . '"/>'
-                                            . '<span class = "label-text">' . ucwords($label) . '</span>';
-                                    $return .= '</label >';
-//                                $return = '<input id="radio-' . $index . '" type="radio" name="' . $name . '" value="' . $value . '"/>';
-//                        $return .= '<label for="radio-' . $index . '" class="modal-radio">' . ucwords($label) . '</label>';
+                    //                                     $return = '<label>';
+                    //                                     $return .= '<input id="radio-' . $index . '" type="radio" name="' . $name . '" ' . ($checked ? 'checked' : '') . ' value="' . $value . '"/>'
+                    //                                             . '<span class = "label-text">' . ucwords($label) . '</span>';
+                    //                                     $return .= '</label >';
+                    // //                                $return = '<input id="radio-' . $index . '" type="radio" name="' . $name . '" value="' . $value . '"/>';
+                    // //                        $return .= '<label for="radio-' . $index . '" class="modal-radio">' . ucwords($label) . '</label>';
 
-                                    return $return;
-                                },
-                                'onChange' => '$("#category-search").submit()']
-                    )
+                    //                                     return $return;
+                    //                                 },
+                    //                                 'onChange' => '$("#category-search").submit()']
+                    //                     )
                     ?>
-
+                    <?php
+                    echo $form->field($model, 'detection_type')->widget(Select2::classname(), [
+                        'data' => $labels,
+                        'options' => [
+                            'onChange' => '$("#category-search").submit()',
+                            'placeholder' => 'Тип детекции', 'multiple' => false
+                        ],
+                        'pluginOptions' => [
+                            'allowClear' => true,
+                        ],
+                    ])->label(false);
+                    ?>
                 <?php endif; ?>
 
-                <?php if ($category->is_video): ?>
+                <?php if ($category->is_video) : ?>
 
                     <?php
                     echo $form->field($model, 'video_type', [
                         'inline' => true,
-//                            'inlineRadioListTemplate' => "<div class=\"checkbox checkbox-ext\">\n{beginLabel}\n{input}\n<span>{labelTitle}</span>\n{endLabel}\n{error}\n{hint}\n</div>",
-//                                    'inlineRadioListTemplate' => '{beginWrapper} {input}  <span class="label-text"> {label} </span> {endWrapper} {hint}',
-//                                    'inlineRadioListTemplate' => '{beginWrapper} {input}  <span class="label-text"> {label} </span> {endWrapper} {hint}',
-//                                    'radioTemplate' => '<div class=\"radio\">{beginLabel}{input} <span class="label-text"> {labelTitle} </span> {endLabel}{hint}</div>',
+                        //                            'inlineRadioListTemplate' => "<div class=\"checkbox checkbox-ext\">\n{beginLabel}\n{input}\n<span>{labelTitle}</span>\n{endLabel}\n{error}\n{hint}\n</div>",
+                        //                                    'inlineRadioListTemplate' => '{beginWrapper} {input}  <span class="label-text"> {label} </span> {endWrapper} {hint}',
+                        //                                    'inlineRadioListTemplate' => '{beginWrapper} {input}  <span class="label-text"> {label} </span> {endWrapper} {hint}',
+                        //                                    'radioTemplate' => '<div class=\"radio\">{beginLabel}{input} <span class="label-text"> {labelTitle} </span> {endLabel}{hint}</div>',
                     ])->radioList(
-                            [0 => 'Любая', 1 => 'IP', 2 => 'HD-TVI'],
-                            [
-                                'item' => function ($index, $label, $name, $checked, $value) {
+                        [0 => 'Любая', 1 => 'IP', 2 => 'HD-TVI'],
+                        [
+                            'item' => function ($index, $label, $name, $checked, $value) {
 
 
-                                    $return = '<label>';
-                                    $return .= '<input id="radio-' . $index . '" type="radio" name="' . $name . '" ' . ($checked ? 'checked' : '') . ' value="' . $value . '"/>'
-                                            . '<span class = "label-text">' . ucwords($label) . '</span>';
-                                    $return .= '</label >';
-//                                $return = '<input id="radio-' . $index . '" type="radio" name="' . $name . '" value="' . $value . '"/>';
-//                        $return .= '<label for="radio-' . $index . '" class="modal-radio">' . ucwords($label) . '</label>';
+                                $return = '<label>';
+                                $return .= '<input id="radio-' . $index . '" type="radio" name="' . $name . '" ' . ($checked ? 'checked' : '') . ' value="' . $value . '"/>'
+                                    . '<span class = "label-text">' . ucwords($label) . '</span>';
+                                $return .= '</label >';
+                                //                                $return = '<input id="radio-' . $index . '" type="radio" name="' . $name . '" value="' . $value . '"/>';
+                                //                        $return .= '<label for="radio-' . $index . '" class="modal-radio">' . ucwords($label) . '</label>';
 
-                                    return $return;
-                                },
-                                'onChange' => '$("#category-search").submit()']
+                                return $return;
+                            },
+                            'onChange' => '$("#category-search").submit()'
+                        ]
                     )
                     ?>
-
 
 
                 <?php endif; ?>
 
             </div>
-            <div class="col-xs-12 col-lg-3 col-lg-offset-3">
+            <div class="col-xs-12 col-lg-3">
 
 
-                <?php if ($category->id == 1): ?>
+                <?php if ($category->id == 1) : ?>
                     <?=
                     $form->field($model, 'enter_width')->widget(Select2::classname(), [
                         'data' => $model->collectEnterWidth($model->detection_type),
                         'options' => [
                             'onChange' => '$("#category-search").submit()',
-                            'placeholder' => 'Ширина прохода', 'multiple' => false],
+                            'placeholder' => 'Ширина входной группы', 'multiple' => false
+                        ],
                         'pluginOptions' => [
                             'allowClear' => true,
                         ],
-                    ])->label('Ширина входной группы');
+                    ])->label(false);
                     ?>
 
                 <?php endif; ?>
             </div>
+            <div class="col-xs-12 col-lg-3">
+
+
+<?php if ($category->id == 1) : ?>
+    <?php 
+         $labels = [0 => 'Любая', 1 => 'Доступно под заказ', 2 => 'Наличие'];
+        ?>
+    <?= $form->field($model, 'in_stock')->widget(Select2::classname(), [
+                        'data' => $labels,
+                        'options' => [
+                            'onChange' => '$("#category-search").submit()',
+                            'placeholder' => 'Наличие', 'multiple' => false
+                        ],
+                        'pluginOptions' => [
+                            'allowClear' => true,
+                        ],
+                    ])->label(false);
+    ?>
+
+<?php endif; ?>
+</div>
             <div class="col-xs-12 col-sm-1 hidden">
             </div>
         </div>
