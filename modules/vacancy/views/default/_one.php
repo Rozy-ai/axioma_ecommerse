@@ -11,7 +11,9 @@
     </div>
     <div class="col-sm-3">
         <div class="text-right">
+            <?php if(!empty($model->created_at)): ?>
             <span class="posted-data">Выложено</span> <?= Yii::$app->formatter->asDate($model->created_at, 'long') ?>
+            <?php endif; ?>
         </div>
     </div>
     <div class="col-sm-3">
