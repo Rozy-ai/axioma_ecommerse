@@ -365,3 +365,29 @@ div.bhoechie-tab .list-group-item img{
     height: 14px;
     display: inline-block;
 }
+
+.catalog-new ul li{
+    display: inline-block;
+    margin-right: 8px;
+}
+.catalog-new ul li a{
+    background-color: #f2f2f2;
+    border-radius: 50px;
+}
+.catalog-new h1{
+    margin-bottom: 30px;
+}
+.product-cart .panel .panel-heading .favorite-img{
+    position: absolute;
+    z-index: 1;
+    top: 54px;
+    left: 22px;
+    height: 24px;
+}
+.product-cart .panel .panel-heading .comparison-img{
+    position: absolute;
+    z-index: 1;
+    top: 94px;
+    left: 22px;
+    height: 24px;
+}
