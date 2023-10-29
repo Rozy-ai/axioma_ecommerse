@@ -82,7 +82,7 @@ class DefaultController extends Controller {
             'query' => $query,
         ]);
 
-        $dataProvider->pagination->pageSize = 5;
+        $dataProvider->pagination->pageSize = 8;
 
 
         return $this->render('get', [
