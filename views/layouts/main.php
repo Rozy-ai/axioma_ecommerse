@@ -211,7 +211,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
             </div>
         </div>
 
-                <!-- Fixed header -->
+        <!-- Fixed header -->
         <div class="header hidden-xs hidden-sm">
             <div class="container middle-line">
                 <div class="row">
@@ -350,36 +350,37 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
             </div>
             <div class="middle-line fixed-header" style="display: none;">
                 <div class="container">
-            <div class="row scroll-wrap">
-                <div class="col-xs-12 col-md-1">
-                    <?php 
-                        $img = Html::img('/image/ico/mini_logo.svg', ['class' => 'img img-responsive scrolled-logo', 'alt' => 'Логотип', 'onerror' => "this.src='logo.png'"]);
-                        echo !$isHome ? Html::a($img, ['/']) : $img;
-                    ?>
-                </div>
-                <div class="col-xs-12 col-md-2">
-                        <button type="button" class="btn btn-primary catalog-button"><i class="fas fa-list"></i> Каталог товаров</button>
-                    </div>
+                    <div class="row scroll-wrap">
+                        <div class="col-xs-12 col-md-1">
+                            <?php
+                            $img = Html::img('/image/ico/mini_logo.svg', ['class' => 'img img-responsive scrolled-logo', 'alt' => 'Логотип', 'onerror' => "this.src='logo.png'"]);
+                            echo !$isHome ? Html::a($img, ['/']) : $img;
+                            ?>
+                        </div>
+                        <div class="col-xs-12 col-md-2">
+                            <button type="button" class="btn btn-primary catalog-button"><i class="fas fa-list"></i> Каталог товаров</button>
+                        </div>
 
-                    <div class="col-xs-12 col-md-6 popup-search text-right">
-                        <?php echo app\modules\search\widgets\Search::widget(); ?>
-                    </div>
-                    <div class="col-xs-12 col-md-3 icons-right">
-                        <?php
-                        echo Nav::widget([
-                            'options' => ['class' => 'navbar-nav'],
-                            'encodeLabels' => false,
-                            'items' => Menu::getTopItems()['bottom'],
-                        ]);
+                        <div class="col-xs-12 col-md-6 popup-search text-right">
+                            <?php echo app\modules\search\widgets\Search::widget(); ?>
+                        </div>
+                        <div class="col-xs-12 col-md-3 icons-right">
+                            <?php
+                            echo Nav::widget([
+                                'options' => ['class' => 'navbar-nav'],
+                                'encodeLabels' => false,
+                                'items' => Menu::getTopItems()['bottom'],
+                            ]);
+                            ?>
+                        </div>
+                        <!-- <div class="menu_replace"></div> -->
+                        <?php //echo $this->render('_category_menu') 
                         ?>
-                    </div>
-                    <!-- <div class="menu_replace"></div> -->
-                    <?php //echo $this->render('_category_menu') ?>
 
-                </div>
+                    </div>
                 </div>
             </div>
-            
+
 
             <!-- <div id="top-line" class="bottom-menu">
                 <div class="container"> -->
@@ -451,6 +452,11 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                             </div>
                         </div>
                     </div>
+                    <!-- <div class="row">
+                        <div class="col-xs-12 contact-form">
+                            <?php // echo app\modules\forms\widgets\Contact::widget(); ?>
+                        </div>
+                    </div> -->
 
                 <?php endif; ?>
             <?php endif; ?>
@@ -477,11 +483,11 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                     <div class="button-anchor">
                                         <div class="form-group button-wrap">
                                             <a href="#contact-form" class="scroll-link">
-                                            <?=
-                                            Html::Button('Задать вопрос', [
-                                                'class' => 'btn btn-default',
-                                            ])
-                                            ?>
+                                                <?=
+                                                Html::Button('Задать вопрос', [
+                                                    'class' => 'btn btn-default',
+                                                ])
+                                                ?>
                                             </a>
                                         </div>
                                     </div>

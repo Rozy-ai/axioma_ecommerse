@@ -5,17 +5,17 @@ use yii\bootstrap\Html;
 use yii\caching\Cache;
 use app\modules\category\models\Category;
 
+$session = Yii::$app->session;
 // menu session add
-if (!Yii::$app->session->has('menuCategories')) {
+if (isset($session['menuCategories'])) {
+    $categories = Yii::$app->session->get('menuCategories');
+}else{
     $categories = Category::find()->with('childs')->orderBy([
-                'in_menu_order' => SORT_DESC,
-            ])->where(['is_enable' => 1, 'in_menu' => 1])
-                ->all();
-    Yii::$app->session->set('menuCategories', $categories);
+        'in_menu_order' => SORT_DESC,
+    ])->where(['is_enable' => 1, 'in_menu' => 1])
+        ->all();
+        $session->set('menuCategories', $categories);
 }
-
-$categories = Yii::$app->session->get('menuCategories');
-
 ?>
 
 <div class="container" id="bhoechie" style="display: none;">

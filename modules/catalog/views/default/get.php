@@ -2,6 +2,7 @@
 
 use yii\bootstrap\Html;
 use yii\bootstrap\Tabs;
+use app\modules\category\models\Category;
 
 //print_r($parent);
 if ($parent && $parent->id != 1)
@@ -16,14 +17,17 @@ $this->params['breadcrumbs'][] = $page->short_name ? $page->short_name : $page->
 
     <div class="row">
 
-        <div class="col-xs-12  col-sm-8 col-sm-push-4 content-block">
+        <div class="col-xs-12 content-block">
 
             <?php
             if ($page->product_type)
                 echo Html::img('/image/razh.png', ['class' => 'pull-right'])
                 ?>
-
-
+    <?php 
+            $category = Category::findOne($page->category_id);
+            // return Html::a($category->header, ['/category/' . $model->uri, 'title' => $category->header]);
+            ?>
+            <p><?php echo Html::a($category->header, ['/category/' . $category->url]); ?></p>
             <h1 class="pull-left" good-id="<?= $page->id ?>"><?= $page->header ?>
 
                 <?php
@@ -35,12 +39,13 @@ $this->params['breadcrumbs'][] = $page->short_name ? $page->short_name : $page->
             </h1>
 
             <div class="row cart-item">
-                <div class="col-xs-12 col-sm-5 gallery-wrap">
+                <div class="col-xs-12 col-sm-3 gallery-wrap">
 
-                    <div class="gallery-popup-link" product-id="<?= $page->id ?>">
+                    <!-- <div class="gallery-popup-link" product-id="<?= $page->id ?>">
                         <i class="fas fa-search-plus"></i>
-                    </div>
-
+                    </div> -->
+                    <?= Html::img('/image/ico/Избранное.svg', ['class' => 'favorite-img']) ?>
+                    <?= Html::img('/image/ico/Сравнение.svg', ['class' => 'comparison-img']) ?>
                     <ul class="pgwSlider">
                         <?php
                         foreach ($page->productImages as $k => $image):
@@ -69,7 +74,7 @@ endforeach;
                     </script>
 
                 </div>
-                <div class="content col-xs-12 col-sm-7 ">
+                <div class="content col-xs-12 col-sm-9">
                     <?=
                     \app\modules\cart\widgets\AddToCartWidget::widget([
                         'product_id' => $page->id,
@@ -84,9 +89,13 @@ endforeach;
                     <?php
                     $items = [];
                     $items[] = [
+                        'label' => 'Описание',
+                        'content' => $page->content_description,
+                        'active' => true
+                    ];
+                    $items[] = [
                         'label' => 'Характеристики',
                         'content' => $page->content_characteristics,
-                        'active' => true
                     ];
                     if ($page->content_install)
                         $items[] = [
@@ -101,10 +110,7 @@ endforeach;
                             'product_id' => $page->id
                         ]),
                     ];
-                    $items[] = [
-                        'label' => 'Описание',
-                        'content' => $page->content_description,
-                    ];
+
 
                     echo Tabs::widget([
                         'items' => $items
@@ -128,9 +134,9 @@ endforeach;
             </div>
         </div>
 
-        <div class="hidden-xs col-xs-12 col-sm-4  col-sm-pull-8 category-left-menu">
-<?= app\modules\category\widgets\MenuCategory::widget(['active_id' => $page->category_id]); ?>
-        </div>
+        <!-- <div class="hidden-xs col-xs-12 col-sm-4  col-sm-pull-8 category-left-menu"> -->
+<?php // echo app\modules\category\widgets\MenuCategory::widget(['active_id' => $page->category_id]); ?>
+        <!-- </div> -->
     </div>
 </div>
 

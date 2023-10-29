@@ -35,7 +35,7 @@ $this->params['breadcrumbs'][] = $category->header;
     </div>
     <?php echo $this->render('_search', ['model' => $search, 'category' => $category]) ?>
 
-    <div class="product-list">
+    <div class="product-list" id="product-list">
         <?php
         echo ListView::widget([
             'dataProvider' => $dataProvider,
@@ -56,6 +56,27 @@ $this->params['breadcrumbs'][] = $category->header;
         ]);
         ?>
     </div>
+    <div class="product_item" style="display: none;" id="product-item">
+
+            <?php
+            echo ListView::widget([
+                'dataProvider' => $dataProvider,
+                'itemOptions' => ['class' => 'item'],
+                'itemView' => '@app/modules/products/views/default/product-cart',
+                'pager' => [
+                    'class' => ScrollPager::className(),
+                    'triggerText' => '',
+                    'noneLeftTemplate' => '<div class="ias-noneleft article-preview__direction">{text}</div>',
+//                    'noneLeftText' => 'Нет больше новостей для отображения',
+                    'enabledExtensions' => [ScrollPager::EXTENSION_SPINNER, ScrollPager::EXTENSION_NONE_LEFT, ScrollPager::EXTENSION_PAGING],
+                    'eventOnScroll' => 'function() {$(\'.ias-trigger a\').trigger(\'click\')}',
+                ],
+                'summary' => ''
+            ]);
+            ?>
+
+</div>
+
     <?= $category->content ?>
 
     <?php
@@ -72,11 +93,12 @@ $this->params['breadcrumbs'][] = $category->header;
     <?php endif; ?>
     <div class="row">
     <div class="col-xs-12 contact-form">
-        <?= app\modules\forms\widgets\Contact::widget(); ?>
+        <?php echo app\modules\forms\widgets\Contact::widget(); ?>
     </div>
 </div>
 
 </div>
+
 
 <?php
 //Pjax::end();

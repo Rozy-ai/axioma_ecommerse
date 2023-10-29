@@ -8,19 +8,39 @@ use kartik\popover\PopoverX;
 
 <div class="cart-add">
     <div class="row">
-        <div class="col-xs-11 col-xs-offset-1">
+        <div class="col-xs-8">
             <?php ActiveForm::begin(['id' => 'add_cart']) ?>
 
-            <p><strong>ИНФОРМАЦИЯ О ПРОДУКТЕ</strong></p>
-            <p><?= $model->content_info ?></p>
-            <p class="price">Цена: <strong><span class="cart__summ_one"><?= $model->showPrice ?></span></strong>
+            <p class="dp-block"><strong>ИНФОРМАЦИЯ О ПРОДУКТЕ</strong></p>
+            <div class="stock pull-right">
                 <?php if ($model->in_stock): ?>
-                    <span class="pull-right in_stock">в наличии <i class="fa fa-check-square" aria-hidden="true"></i></span>
+                    <span class="in_stock"><i class="fa fa-check-circle" aria-hidden="true"></i> Товар в наличии </span>
                 <?php else: ?>
-                    <span class="pull-right in_stock">под заказ <i style="color: black" class="fas fa-mobile-alt"></i></span>
+                    <span class="in_stock"><i class="fa fa-clock" aria-hidden="true"></i> Доступно под заказ</span>
                 <?php endif; ?>
-            </p>
+            </div>
+            <p><?= $model->content_info ?></p><br>
+            <a class="color-main" href="#" data-toggle="tab"  onclick="openTab('w1-tab1')">Все xарактеристики <i class="fa fa-long-arrow-alt-right"></i></p></a>
+            </div>
+            <div class="col-xs-4">
+            <p class="price pull-right"><strong>Цена: </strong><span class="cart__summ_one"><?= $model->showPrice ?></span></p>
+            <br/>
 
+<div class="btn-group w100" role="group">
+    <?=
+    Html::button('В корзину', ['class' => 'btn btn-primary',
+        'onclick' => "ym(53040199, 'reachGoal', 'add-cart'); Cart.AddCart()",
+//                    'onclick' => "Cart.AddCart()",
+    ])
+    ?>
+    <?php ActiveForm::end(); ?>
+    <button type="button" class="btn btn-default"
+            onClick="ym(53040199,'reachGoal','one-click'); $('#oneclickorder-good').val($(this).attr('data-header'))"
+            data-id="<?= $model->id ?>" 
+            data-header="<?= $model->header ?>" 
+            data-toggle="modal" data-target="#oneclick-form-modal">Запрос цену</button>
+            <?= \app\modules\forms\widgets\OneClickOrder::widget() ?>
+</div>
             <div class="row">
                 <div class="col-xs-12">
 
@@ -77,23 +97,7 @@ use kartik\popover\PopoverX;
                                 </div>-->
             </div>
 
-            <br/>
 
-            <div class="" role="group">
-                <?=
-                Html::button('Добавить в корзину', ['class' => 'btn btn-primary',
-                    'onclick' => "ym(53040199, 'reachGoal', 'add-cart'); Cart.AddCart()",
-//                    'onclick' => "Cart.AddCart()",
-                ])
-                ?>
-                <?php ActiveForm::end(); ?>
-                <button type="button" class="btn btn-default"
-                        onClick="ym(53040199,'reachGoal','one-click'); $('#oneclickorder-good').val($(this).attr('data-header'))"
-                        data-id="<?= $model->id ?>" 
-                        data-header="<?= $model->header ?>" 
-                        data-toggle="modal" data-target="#oneclick-form-modal">Узнать цену</button>
-                        <?= \app\modules\forms\widgets\OneClickOrder::widget() ?>
-            </div>
 
         </div>
     </div>

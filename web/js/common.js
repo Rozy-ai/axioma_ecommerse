@@ -174,3 +174,20 @@ scrollLinks.forEach(link => {
     });
   });
 });
+
+function openTab(tabId) {
+    $("a[href='#w1-tab1']").trigger("click");
+  }
+
+  var grid = document.getElementById("product-list");
+  var list = document.getElementById("product-item");
+
+  function changeGrid() {   
+      grid.style.display = "none";
+      list.style.display = "block";
+};
+
+function changeList() {   
+    list.style.display = "none";
+    grid.style.display = "block";
+};

@@ -48,15 +48,15 @@ $this->registerJsFile('/js/product-cart-height.js', ['depends' => ['app\assets\A
                 Html::a($model->short_name ? $model->short_name : $model->header,
                         ['/catalog/' . $model->url],
                         [
-                            'class' => '',
+                            'class' => 'text-grid',
                             'title' => $model->header,
                 ])
                 ?>
                 <?php //  $model->ord ?>
             </div>
-            <div class="product-anons">
-                <?php echo $model->anons ?>
-            </div>
+            <!-- <div class="product-anons">
+                <?php // echo $model->anons ?>
+            </div> -->
 
         </div>
         <div class="panel-body">

@@ -222,7 +222,9 @@ $form = ActiveForm::begin([
 
 <?php endif; ?>
 </div>
-            <div class="col-xs-12 col-sm-1 hidden">
+            <div class="col-xs-12 col-lg-3 text-right">
+                <a href="#" onclick="changeGrid()"><?= Html::img('/image/ico/Подробный список.svg', ['class' => 'list-img']) ?></a>
+                <a href="#" onclick="changeList()"><?= Html::img('/image/ico/Краткий список.svg', ['class' => 'list-img']) ?></a>
             </div>
         </div>
 
