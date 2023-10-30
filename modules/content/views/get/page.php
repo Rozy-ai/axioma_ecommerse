@@ -41,8 +41,8 @@ $pages_id = [94, 96, 97, 98, 99, 100, 119, 118]; // странички для м
         ?>
     </div>
 </div>
-<div class="row">
+<!-- <div class="row">
     <div class="col-xs-12 contact-form">
-        <?= app\modules\forms\widgets\Contact::widget(); ?>
+        <?php //echo app\modules\forms\widgets\Contact::widget(); ?>
     </div>
-</div>
+</div> -->

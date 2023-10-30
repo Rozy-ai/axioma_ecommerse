@@ -91,11 +91,11 @@ $this->params['breadcrumbs'][] = $category->header;
         <?= $this->render('@app/views/site/_about') ?>
 
     <?php endif; ?>
-    <div class="row">
+    <!-- <div class="row">
     <div class="col-xs-12 contact-form">
-        <?php echo app\modules\forms\widgets\Contact::widget(); ?>
+        <?php // echo app\modules\forms\widgets\Contact::widget(); ?>
     </div>
-</div>
+</div> -->
 
 </div>
 

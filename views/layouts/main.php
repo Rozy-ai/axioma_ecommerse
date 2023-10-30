@@ -452,11 +452,11 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="row">
-                        <div class="col-xs-12 contact-form">
-                            <?php // echo app\modules\forms\widgets\Contact::widget(); ?>
+                    <div class="row">
+                        <div class="col-xs-12 contact-form show-contact">
+                            <?php echo app\modules\forms\widgets\Contact::widget(); ?>
                         </div>
-                    </div> -->
+                    </div> 
 
                 <?php endif; ?>
             <?php endif; ?>
