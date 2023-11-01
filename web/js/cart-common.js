@@ -1,12 +1,11 @@
 var Cart = {
     UpdateCart: function () {
 
-
         $.get("/cart/default/update-cart", function (data) {
             
-            $('.navbar-right [href="/cart"]').html(data);
+            $('.navbar-nav [href="/cart"]').html(data);
             $('.header-mobile [href="/cart"]').html(data);
-//            console.log(data);
+        //    console.log(data);
             
         });
 
@@ -41,6 +40,9 @@ var Cart = {
 
         data = {product_id: id, count: '1'};
         var myElement = $('span.badge');
+        for (const element of myElement) {
+            element.style.display = 'inline-block';
+          }
         var currentValue = parseInt(myElement.html());
         var newValue = currentValue + 1;
 
@@ -59,8 +61,8 @@ var Cart = {
                         },
                         responsivePositions: null
                     });
-                    Cart.UpdateCart();
                     myElement.html(newValue);
+                    Cart.UpdateCart();
                 });
 
     },
