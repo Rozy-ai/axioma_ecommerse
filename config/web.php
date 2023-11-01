@@ -137,6 +137,7 @@ $config = [
                 '/stati' => '/content/get/articles',
                 '/uslugi' => '/content/get/services',
                 '/cart' => '/cart/default/index',
+                '/<category:favorite>' => '/fast_category/default/get',
                 '/search' => '/search/default/index',
                 '/enter' => '/auth/default/login',
                 '/vacancy' => '/vacancy/default/index',

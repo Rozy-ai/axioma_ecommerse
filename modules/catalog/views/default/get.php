@@ -44,7 +44,7 @@ $this->params['breadcrumbs'][] = $page->short_name ? $page->short_name : $page->
                     <!-- <div class="gallery-popup-link" product-id="<?= $page->id ?>">
                         <i class="fas fa-search-plus"></i>
                     </div> -->
-                    <?= Html::img('/image/ico/Избранное.svg', ['class' => 'favorite-img']) ?>
+                    <a href="#" onclick="Cart.Favorite(<?= $model->id ?>)"><?= Html::img('/image/ico/Избранное.svg', ['class' => 'favorite-img']) ?></a>
                     <?= Html::img('/image/ico/Сравнение.svg', ['class' => 'comparison-img']) ?>
                     <ul class="pgwSlider">
                         <?php

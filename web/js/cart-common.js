@@ -40,6 +40,9 @@ var Cart = {
     OneAddCart: function (id) {
 
         data = {product_id: id, count: '1'};
+        var myElement = $('span.badge');
+        var currentValue = parseInt(myElement.html());
+        var newValue = currentValue + 1;
 
         $.post("/cart/default/add-to-cart", data)
                 .done(function (data) {
@@ -57,6 +60,29 @@ var Cart = {
                         responsivePositions: null
                     });
                     Cart.UpdateCart();
+                    myElement.html(newValue);
+                });
+
+    },
+    Favorite: function (id) {
+
+        data = {product_id: id};
+
+        $.post("/cart/default/add-to-favorite", data)
+                .done(function (data) {
+                    new jBox('Notice', {
+                        content: 'Товар добавлен в избранное',
+                        color: 'green',
+                        attributes: {
+                            x: 'right',
+                            y: 'top'
+                        },
+                        position: {
+                            x: 20,
+                            y: 70
+                        },
+                        responsivePositions: null
+                    });
                 });
 
     },

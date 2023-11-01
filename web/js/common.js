@@ -93,7 +93,7 @@ $(document).ready(function () {
 
     //cart
 
-    $('.navbar-right .cart-top-btn').click(function (e) {
+    $('.navbar-nav .cart-top-btn').click(function (e) {
 
         e.preventDefault();
         $(this).find('.cart-top').popover('show');

@@ -16,7 +16,7 @@ use app\models\ClientForm;
 class DefaultController extends Controller {
 
     public function actionIndex() {
-
+        
         $client = new ClientForm();
 
         return $this->render('index', [
@@ -111,6 +111,29 @@ class DefaultController extends Controller {
         echo 1;
     }
 
+    public function actionAddToFavorite() {
+
+        if (Yii::$app->request->isAjax) {
+
+            $post = Yii::$app->request->post();
+
+//            Yii::error($post);
+
+            $session = Yii::$app->session;
+
+            if (isset($post['product_id'])):
+
+                $result = $this->setFavorite($post);
+
+//                Yii::error($post);
+//                Yii::error($result);
+
+            endif;
+        }
+
+        echo 1;
+    }
+
     public function actionDelete($id) {
 
         $session = Yii::$app->session;
@@ -182,6 +205,36 @@ class DefaultController extends Controller {
         }
 
         return $session['cart'];
+    }
+
+    private function setFavorite($post) {
+
+        $session = Yii::$app->session;
+
+        if (isset($session['favorite'])) {
+
+            $data = $session['favorite'];
+            $new = true;
+
+            foreach ($session['favorite'] as $k => $item):
+
+                if ($k == $post['product_id']) {
+                    $new = false;
+                }
+
+                $data[$k] = $item;
+
+            endforeach;
+
+            if ($new)
+                // $data[$post['product_id']] = $post['count'];
+
+            $session['favorite'] = $data;
+        } else {
+            $session['favorite'] = [$post['product_id']];
+        }
+
+        return $session['favorite'];
     }
 
     private function getSumm() {

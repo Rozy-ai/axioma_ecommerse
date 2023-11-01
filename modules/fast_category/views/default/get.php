@@ -19,11 +19,16 @@ use app\modules\menu\models\Menu;
 //    $this->params['breadcrumbs'][] = $item;
 //Pjax::begin(['id' => 'some-id', 'clientOptions' => ['method' => 'POST']]);
 
-$this->params['breadcrumbs'][] = $category->header;
+if ($category == 'favorite'){
+    $this->params['breadcrumbs'][] = 'Избранные товары';
+} else{
+    $this->params['breadcrumbs'][] = $category->header;
+}
+
 ?>
 <div class="catalog-new">
 
-    <h1><?= $category->header ?> </h1>
+    <h1><?= ($category == 'favorite') ? 'Избранные товары' : $category->header ?> </h1>
     <div class="hidden-xs hidden-sm">
     <?php
     echo Nav::widget([

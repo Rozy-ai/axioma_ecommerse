@@ -28,7 +28,7 @@ $this->registerJsFile('/js/product-cart-height.js', ['depends' => ['app\assets\A
                 <?= Html::img('/image/t-all.svg', ['class' => 'type-img']) ?>
 
             <?php endif; ?>
-            <?= Html::img('/image/ico/Избранное.svg', ['class' => 'favorite-img']) ?>
+            <a href="#" onclick="Cart.Favorite(<?= $model->id ?>)"><?= Html::img('/image/ico/Избранное.svg', ['class' => 'favorite-img']) ?></a>
             <?= Html::img('/image/ico/Сравнение.svg', ['class' => 'comparison-img']) ?>
             <div class=" image-wrap">
                 <div class="image" data-url="<?= Url::to('/catalog/' . $model->url) ?>"
