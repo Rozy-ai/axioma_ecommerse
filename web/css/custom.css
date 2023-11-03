@@ -503,3 +503,15 @@ div.bhoechie-tab .list-group-item img {
 .show-contact{
     margin-bottom: 40px;
 }
+.characteristics-compare{
+    margin-top: 80px;
+}
+.characteristics-compare ul{
+    padding-left: 0;
+}
+.delete-img{
+    height: 13px;
+}
+.compare-click{
+    margin-top: -50px;
+}

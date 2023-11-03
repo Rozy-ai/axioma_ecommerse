@@ -88,6 +88,49 @@ var Cart = {
                 });
 
     },
+    Compare: function (id) {
+
+        data = {product_id: id};
+
+        $.post("/cart/default/add-to-compare", data)
+                .done(function (data) {
+                    new jBox('Notice', {
+                        content: 'Товар добавлен в сравнение',
+                        color: 'green',
+                        attributes: {
+                            x: 'right',
+                            y: 'top'
+                        },
+                        position: {
+                            x: 20,
+                            y: 70
+                        },
+                        responsivePositions: null
+                    });
+                });
+
+    },
+    CompareDelete: function () {
+
+        $.post("/cart/default/delete-to-compare")
+                .done(function () {
+                    new jBox('Notice', {
+                        content: 'Товары удалены в сравнение',
+                        color: 'green',
+                        attributes: {
+                            x: 'right',
+                            y: 'top'
+                        },
+                        position: {
+                            x: 20,
+                            y: 70
+                        },
+                        responsivePositions: null
+                    });
+                });
+                location.reload();
+
+    },
     LoadCart: function () {
 
         if ("cart" in window) {

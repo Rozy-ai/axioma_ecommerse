@@ -13,29 +13,33 @@ use app\models\ClientForm;
 /**
  * AdminController implements the CRUD actions for Theme model.
  */
-class DefaultController extends Controller {
+class DefaultController extends Controller
+{
 
-    public function actionIndex() {
-        
+    public function actionIndex()
+    {
+
         $client = new ClientForm();
 
         return $this->render('index', [
-                    'client' => $client,
+            'client' => $client,
         ]);
     }
 
-    public function actionAjaxIndex() {
+    public function actionAjaxIndex()
+    {
 
         // get Products and count
         $data = Cart::_Products();
 
         return $this->renderAjax('ajax_index', [
-                    'model' => $data['models'],
-                    'counts' => $data['counts'],
+            'model' => $data['models'],
+            'counts' => $data['counts'],
         ]);
     }
 
-    public function actionAjaxTopCart() {
+    public function actionAjaxTopCart()
+    {
 
         $session = Yii::$app->session;
 
@@ -46,28 +50,32 @@ class DefaultController extends Controller {
 
             $data = $session['cart'];
 
-//            Yii::error($data);
+            //            Yii::error($data);
 
-            foreach ($data as $k => $item):
+            foreach ($data as $k => $item) :
                 $model[] = Product::findOne($k);
                 $counts[] = $item;
             endforeach;
         }
 
         return $this->renderAjax('top_cart', [
-                    'model' => $model,
-                    'counts' => $counts,
+            'model' => $model,
+            'counts' => $counts,
         ]);
     }
 
-    public function actionUpdateCart() {
+    public function actionUpdateCart()
+    {
 
         $data = Cart::_Products();
 
-        $content = Html::a('<i class="fas fa-times"></i>', ['#']
-                        , ['class' => 'close-btn']);
+        $content = Html::a(
+            '<i class="fas fa-times"></i>',
+            ['#'],
+            ['class' => 'close-btn']
+        );
 
-//        print_r($data['models']);
+        //        print_r($data['models']);
 
         if (isset($data['models']) && $data['models']) {
             foreach ($data['models'] as $k => $model)
@@ -76,34 +84,38 @@ class DefaultController extends Controller {
                     'count' => $data['counts'][$k],
                 ]);
 
-            $content .= Html::a('К ЗАКАЗУ', ['/cart']
-                            , ['class' => 'btn btn-primary center-block']);
+            $content .= Html::a(
+                'К ЗАКАЗУ',
+                ['/cart'],
+                ['class' => 'btn btn-primary center-block']
+            );
         } else
             $content = 'Корзина пуста';
 
-//        return $this->render('top_cart_widget', ['count' => array_sum($data['counts'])]);
+        //        return $this->render('top_cart_widget', ['count' => array_sum($data['counts'])]);
         return $this->renderAjax('top_cart_widget', [
-                    'count' => count($data['counts']),
-                    'content' => $content,
+            'count' => count($data['counts']),
+            'content' => $content,
         ]);
     }
 
-    public function actionAddToCart() {
+    public function actionAddToCart()
+    {
 
         if (Yii::$app->request->isAjax) {
 
             $post = Yii::$app->request->post();
 
-//            Yii::error($post);
+            //            Yii::error($post);
 
             $session = Yii::$app->session;
 
-            if (isset($post['product_id']) && isset($post['count'])):
+            if (isset($post['product_id']) && isset($post['count'])) :
 
                 $result = $this->setCart($post);
 
-//                Yii::error($post);
-//                Yii::error($result);
+            //                Yii::error($post);
+            //                Yii::error($result);
 
             endif;
         }
@@ -111,30 +123,88 @@ class DefaultController extends Controller {
         echo 1;
     }
 
-    public function actionAddToFavorite() {
+    public function actionAddToFavorite()
+    {
 
         if (Yii::$app->request->isAjax) {
 
             $post = Yii::$app->request->post();
 
-//            Yii::error($post);
+            //            Yii::error($post);
 
             $session = Yii::$app->session;
 
-            if (isset($post['product_id'])):
+            if (isset($post['product_id'])) {
 
-                $result = $this->setFavorite($post);
+                $favorite = Yii::$app->session->get('favorite', []);
 
-//                Yii::error($post);
-//                Yii::error($result);
+                // Add new data to the array
+                $favorite[] = $post['product_id'];
 
-            endif;
+                // Save the updated array back to the session
+                Yii::$app->session->set('favorite', $favorite);
+
+                // $result = $this->setFavorite($post);
+
+                //                Yii::error($post);
+                //                Yii::error($result);
+
+            }
         }
 
         echo 1;
     }
 
-    public function actionDelete($id) {
+    public function actionAddToCompare()
+    {
+
+        if (Yii::$app->request->isAjax) {
+
+            $post = Yii::$app->request->post();
+
+            //            Yii::error($post);
+
+            $session = Yii::$app->session;
+
+            if (isset($post['product_id'])) {
+                // Get the current session array
+                $compare = Yii::$app->session->get('compare', []);
+
+                // Add new data to the array
+                $compare[] = $post['product_id'];
+
+                // Save the updated array back to the session
+                Yii::$app->session->set('compare', $compare);
+
+                // $session->set('compare', [$post['product_id']]);
+                // $result = $this->setCompare($post);
+                // $session['compare'] = [$post['product_id']];
+            }
+
+
+            //                Yii::error($post);
+            //                Yii::error($result);
+
+        }
+        echo 1;
+        // echo 'compare ok';
+    }
+
+    public function actionDeleteToCompare()
+    {
+
+        if (Yii::$app->request->isAjax) {
+
+            // Remove data from the array
+            unset($_SESSION['compare']);
+
+        }
+        echo 1;
+        // echo 'compare ok';
+    }
+
+    public function actionDelete($id)
+    {
 
         $session = Yii::$app->session;
 
@@ -142,10 +212,9 @@ class DefaultController extends Controller {
 
             $data = [];
 
-            foreach ($session['cart'] as $k => $item):
+            foreach ($session['cart'] as $k => $item) :
 
-                if ($k == $id)
-                    ;
+                if ($k == $id);
                 else
                     $data[$k] = $item;
 
@@ -155,7 +224,8 @@ class DefaultController extends Controller {
         }
     }
 
-    public function actionSetCount($id, $count) {
+    public function actionSetCount($id, $count)
+    {
 
         $session = Yii::$app->session;
 
@@ -163,7 +233,7 @@ class DefaultController extends Controller {
 
             $data = [];
 
-            foreach ($session['cart'] as $k => $item):
+            foreach ($session['cart'] as $k => $item) :
 
                 if ($k == $id && $count >= 1)
                     $data[$k] = $count;
@@ -176,7 +246,8 @@ class DefaultController extends Controller {
         }
     }
 
-    private function setCart($post) {
+    private function setCart($post)
+    {
 
         $session = Yii::$app->session;
 
@@ -185,7 +256,7 @@ class DefaultController extends Controller {
             $data = $session['cart'];
             $new = true;
 
-            foreach ($session['cart'] as $k => $item):
+            foreach ($session['cart'] as $k => $item) :
 
                 if ($k == $post['product_id']) {
                     $new = false;
@@ -207,7 +278,8 @@ class DefaultController extends Controller {
         return $session['cart'];
     }
 
-    private function setFavorite($post) {
+    private function setFavorite($post)
+    {
 
         $session = Yii::$app->session;
 
@@ -216,7 +288,7 @@ class DefaultController extends Controller {
             $data = $session['favorite'];
             $new = true;
 
-            foreach ($session['favorite'] as $k => $item):
+            foreach ($session['favorite'] as $k => $item) :
 
                 if ($k == $post['product_id']) {
                     $new = false;
@@ -229,7 +301,7 @@ class DefaultController extends Controller {
             if ($new)
                 // $data[$post['product_id']] = $post['count'];
 
-            $session['favorite'] = $data;
+                $session['favorite'] = $data;
         } else {
             $session['favorite'] = [$post['product_id']];
         }
@@ -237,7 +309,39 @@ class DefaultController extends Controller {
         return $session['favorite'];
     }
 
-    private function getSumm() {
+    private function setCompare($post)
+    {
+
+        $session = Yii::$app->session;
+
+        if (isset($session['compare'])) {
+
+            $data = $session['compare'];
+            $new = true;
+
+            foreach ($session['compare'] as $k => $item) :
+
+                if ($k == $post['product_id']) {
+                    $new = false;
+                }
+
+                $data[$k] = $item;
+
+            endforeach;
+
+            if ($new)
+                // $data[$post['product_id']] = $post['count'];
+
+                $session['compare'] = $data;
+        } else {
+            $session['compare'] = [$post['product_id']];
+        }
+
+        return $session['compare'];
+    }
+
+    private function getSumm()
+    {
 
         $session = Yii::$app->session;
 
@@ -247,7 +351,7 @@ class DefaultController extends Controller {
 
             $data = $session['cart'];
 
-            foreach ($data as $item):
+            foreach ($data as $item) :
 
                 if (isset($item['product_id'])) {
                     $product = Catalog::findOne($item['product_id']);
@@ -260,7 +364,8 @@ class DefaultController extends Controller {
         return $summ;
     }
 
-    private function getCount() {
+    private function getCount()
+    {
 
         $session = Yii::$app->session;
 
@@ -270,7 +375,7 @@ class DefaultController extends Controller {
 
             $data = $session['cart'];
 
-            foreach ($data as $item):
+            foreach ($data as $item) :
                 if (isset($item['product_id']))
                     $count += $item['count'];
 
@@ -279,5 +384,4 @@ class DefaultController extends Controller {
 
         return $count;
     }
-
 }

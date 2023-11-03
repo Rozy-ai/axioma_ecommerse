@@ -27,7 +27,7 @@ $form = ActiveForm::begin([
 
 
 
-    <div class="category-search2">
+    <div class="category-search">
 
         <div class="row">
             <div class="col-xs-12">

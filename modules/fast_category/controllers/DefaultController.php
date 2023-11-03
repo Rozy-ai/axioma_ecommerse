@@ -20,12 +20,11 @@ class DefaultController extends Controller
 
         if (isset($parent) && $parent)
         $category = $subcategory;
-
-        if ($category == 'favorite') {
-
-            $session = Yii::$app->session;
+        if ($category == 'favorite' || $category == 'compare') {
             
-            $products = \app\modules\catalog\models\Catalog::findAll($session['favorite']);
+            $session = Yii::$app->session;
+
+            $products = \app\modules\catalog\models\Catalog::findAll($session[$category]);
             
             // Create a data provider
             $dataProvider = new \yii\data\ArrayDataProvider([
