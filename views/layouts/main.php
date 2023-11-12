@@ -190,7 +190,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                 </div>
                             </a>
                         </div> -->
-                        <div class="col-xs-12 text-right">
+                        <div class="col-xs-12 text-right sm-hamburger">
 
                             <div class="Fixed">
                                 <button id="mmenu-icon" class="hamburger hamburger--spin" type="button">
@@ -207,6 +207,15 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                             <?php Html::a(Html::img('/image/menu.png'), '#menu', ['alt' => 'image', 'classs' => 'mobile-menu-btn']) ?>
                         </div>
                     </div>
+                </div>
+                <div class="col-xs-12 sm-menu">
+                    <?php
+                    echo Nav::widget([
+                        'options' => ['class' => 'navbar-nav'],
+                        'encodeLabels' => false,
+                        'items' => Menu::getTopItems()['bottom'],
+                    ]);
+                    ?>
                 </div>
             </div>
         </div>
@@ -456,7 +465,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                         <div class="col-xs-12 contact-form show-contact">
                             <?php echo app\modules\forms\widgets\Contact::widget(); ?>
                         </div>
-                    </div> 
+                    </div>
 
                 <?php endif; ?>
             <?php endif; ?>

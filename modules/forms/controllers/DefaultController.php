@@ -180,8 +180,8 @@ class DefaultController extends Controller {
             $model = new OneClickOrder();
 
             if ($model->load(Yii::$app->request->post())) {
-
-                $model->body = $model->name . ' (' . str_replace(['(', ')', '-', ''], '', $model->phone) . ')' . ' заказал: ' . $model->good . ' (' . $model->count . ' шт) ' . PHP_EOL;
+                
+                $model->body = $model->name .'<a href="tel:'. ' (' . str_replace(['(', ')', '-', ''], '', $model->phone) . ')' .'>' . ' (' . str_replace(['(', ')', '-', ''], '', $model->phone) . '</a>'. ' заказал: ' . $model->good . ' (' . $model->count . ' шт) ' . PHP_EOL;
                 $model->body .= 'Город: ' . Yii::$app->city->name;
 
                 if ($model->contact())

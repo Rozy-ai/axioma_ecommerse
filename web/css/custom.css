@@ -515,3 +515,24 @@ div.bhoechie-tab .list-group-item img {
 .compare-click{
     margin-top: -50px;
 }
+
+@media (max-width: 994px) {
+     /* .sm-menu {
+      padding: 0;
+    } */
+    .sm-menu ul{
+        /* padding: 0;
+        margin: 0; */
+        text-align: center; 
+      }
+      .sm-menu ul li{
+        display: inline-block;
+      }
+      /* .sm-menu ul li a{
+        padding: 5px;
+        font-size: 10px;
+      } */
+      /* .sm-hamburger{
+        padding: 0;
+      } */
+  }

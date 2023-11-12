@@ -8,7 +8,7 @@ use kartik\popover\PopoverX;
 
 <div class="cart-add">
     <div class="row">
-        <div class="col-xs-8">
+        <div class="col-xs-12 col-sm-8">
             <?php ActiveForm::begin(['id' => 'add_cart']) ?>
 
             <p class="dp-block"><strong>ИНФОРМАЦИЯ О ПРОДУКТЕ</strong></p>
@@ -22,7 +22,7 @@ use kartik\popover\PopoverX;
             <p><?= $model->content_info ?></p><br>
             <a class="color-main" href="#" data-toggle="tab"  onclick="openTab('w1-tab1')">Все xарактеристики <i class="fa fa-long-arrow-alt-right"></i></p></a>
             </div>
-            <div class="col-xs-4">
+            <div class="sol-xs-12 col-sm-4">
             <p class="price pull-right"><strong>Цена: </strong><span class="cart__summ_one"><?= $model->showPrice ?></span></p>
             <br/>
 
