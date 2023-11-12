@@ -97,7 +97,7 @@ class EmailForm extends Model {
                     ->setTo([$this->recipient, Yii::$app->params['copyEmail']])
                     ->setFrom([$this->sender_email => $this->sender_name])
                     ->setSubject($this->subject)
-                    ->setTextBody($this->body)
+                    ->setHtmlBody($this->body)
                     ->send();
 
             return true;
