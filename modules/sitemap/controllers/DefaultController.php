@@ -31,7 +31,7 @@ class DefaultController extends Controller {
         // Быстрые категории
         $cats = \app\modules\fast_category\models\FastCategory::find()->where(['is_enable' => 1])->all();
         foreach ($cats as $cat) {
-            $urls[] = Url::to('fast-cat/' . $cat->url);
+            $urls[] = Url::to('category/' . $cat->url);
 
             $goods = \app\modules\catalog\models\Catalog::find()->where(['category_id' => $cat->id, 'is_enable' => 1])->all();
 

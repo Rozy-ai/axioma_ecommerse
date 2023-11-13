@@ -517,6 +517,9 @@ div.bhoechie-tab .list-group-item img {
 }
 
 @media (max-width: 994px) {
+    .home-list-category{
+        margin-top: 50px;
+      }
      /* .sm-menu {
       padding: 0;
     } */
@@ -527,6 +530,9 @@ div.bhoechie-tab .list-group-item img {
       }
       .sm-menu ul li{
         display: inline-block;
+      }
+      .content .breadcrumb{
+        margin-top: 8rem;
       }
       /* .sm-menu ul li a{
         padding: 5px;

@@ -90,7 +90,7 @@ class Catalog extends \app\modules\products\models\Product {
 
         Yii::error($fc->header);
 
-        return ['url' => '/fast-cat/' . $fc->url, 'label' => $fc->header];
+        return ['url' => '/category/' . $fc->url, 'label' => $fc->header];
     }
 
 

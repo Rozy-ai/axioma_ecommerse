@@ -461,9 +461,11 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-xs-12 contact-form show-contact">
-                            <?php echo app\modules\forms\widgets\Contact::widget(); ?>
+                    <div class="<?= Yii::$app->params['isFluid'] ? 'container' : '' ?>">
+                        <div class="row">
+                            <div class="col-xs-12 contact-form show-contact">
+                                <?php echo app\modules\forms\widgets\Contact::widget(); ?>
+                            </div>
                         </div>
                     </div>
 

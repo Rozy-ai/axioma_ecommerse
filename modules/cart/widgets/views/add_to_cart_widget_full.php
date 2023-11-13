@@ -38,7 +38,7 @@ use kartik\popover\PopoverX;
             onClick="ym(53040199,'reachGoal','one-click'); $('#oneclickorder-good').val($(this).attr('data-header'))"
             data-id="<?= $model->id ?>" 
             data-header="<?= $model->header ?>" 
-            data-toggle="modal" data-target="#oneclick-form-modal">Запрос цену</button>
+            data-toggle="modal" data-target="#oneclick-form-modal">Узнать цену</button>
             <?= \app\modules\forms\widgets\OneClickOrder::widget() ?>
 </div>
             <div class="row">

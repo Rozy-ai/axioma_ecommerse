@@ -128,8 +128,10 @@ $config = [
                 '/category/admin/ajax-update/<id:\d+>' => '/category/admin/ajax-update',
                 '/category/admin/delete/<id:\d+>' => '/category/admin/delete',
                 '/catalog/<uri:[-\w]+>' => 'catalog/default/get',
-                '/fast-cat/<category:[-\w\/]+>' => 'fast_category/default/get',
-                '/category/<category:[-\w\/]+>' => 'category/default/get',
+
+                  '/category/<category:[-\w\/]+>' => 'fast_category/default/get',
+                //  '/category/<category:[-\w\/]+>' => 'category/default/get',
+
 //                '/category/<category:[-\w]+>/<subcategory:[-\w]+>' => 'category/default/get',
                 '/vacancy' => '/vacancy/default/index',
                 '/novosti' => '/content/get/news',
@@ -182,4 +184,7 @@ if (YII_ENV_DEV) {
     ];
 }
 
+
+
 return $config;
+

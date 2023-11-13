@@ -31,6 +31,9 @@ use Yii;
  */
 class Category extends \app\models\CustomAR
 {
+    public $is_ar;
+    public $is_video;
+
     /**
      * {@inheritdoc}
      */

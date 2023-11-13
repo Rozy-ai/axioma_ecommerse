@@ -98,7 +98,7 @@ $form = ActiveForm::begin([
 
 
 
-                <?php if ($category->is_ar) : ?>
+                <?php if (!$category->is_video) : ?>
 
 
 
@@ -183,7 +183,6 @@ $form = ActiveForm::begin([
 
             </div>
             <div class="col-xs-12 col-lg-3">
-
 
                 <?php if ($category->id == 1) : ?>
                     <?=
