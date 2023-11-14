@@ -20,13 +20,8 @@ class DefaultController extends Controller
     {
 
         $client = new ClientForm();
-<<<<<<< HEAD
-        Yii::$app->params['show_viewed'] = false;
-=======
-
         Yii::$app->params['show_viewed'] = false;
 
->>>>>>> 15418f7992da8240d406446e33a778976b3bd8d0
         return $this->render('index', [
             'client' => $client,
         ]);
@@ -203,6 +198,7 @@ class DefaultController extends Controller
 
             // Remove data from the array
             unset($_SESSION['compare']);
+
         }
         echo 1;
         // echo 'compare ok';
