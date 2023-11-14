@@ -47,7 +47,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
         </div>
         <div class="col-xs-12 col-sm-4 well">
-            <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
+            <?php $form = ActiveForm::begin(['id' => 'order-view-form']); ?>
 
             <?= $form->field($client, 'name')->textInput(['autofocus' => true]) ?>
 
