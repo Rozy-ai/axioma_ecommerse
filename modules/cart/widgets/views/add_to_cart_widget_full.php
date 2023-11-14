@@ -10,7 +10,7 @@ use kartik\popover\PopoverX;
     <div class="row">
         <div class="col-xs-12 col-sm-8">
             <?php ActiveForm::begin(['id' => 'add_cart']) ?>
-
+      
             <p class="dp-block"><strong>ИНФОРМАЦИЯ О ПРОДУКТЕ</strong></p>
             <div class="stock pull-right">
                 <?php if ($model->in_stock): ?>
@@ -26,21 +26,6 @@ use kartik\popover\PopoverX;
             <p class="price pull-right"><strong>Цена: </strong><span class="cart__summ_one"><?= $model->showPrice ?></span></p>
             <br/>
 
-<div class="btn-group w100" role="group">
-    <?=
-    Html::button('В корзину', ['class' => 'btn btn-primary',
-        'onclick' => "ym(53040199, 'reachGoal', 'add-cart'); Cart.AddCart()",
-//                    'onclick' => "Cart.AddCart()",
-    ])
-    ?>
-    <?php ActiveForm::end(); ?>
-    <button type="button" class="btn btn-default"
-            onClick="ym(53040199,'reachGoal','one-click'); $('#oneclickorder-good').val($(this).attr('data-header'))"
-            data-id="<?= $model->id ?>" 
-            data-header="<?= $model->header ?>" 
-            data-toggle="modal" data-target="#oneclick-form-modal">Узнать цену</button>
-            <?= \app\modules\forms\widgets\OneClickOrder::widget() ?>
-</div>
             <div class="row">
                 <div class="col-xs-12">
 
@@ -96,7 +81,22 @@ use kartik\popover\PopoverX;
                                     </button>
                                 </div>-->
             </div>
+            <div class="btn-group w100" role="group">
+    <?=
+    Html::button('В корзину', ['class' => 'btn btn-primary',
+        'onclick' => "ym(53040199, 'reachGoal', 'add-cart'); Cart.AddCart()",
+//                    'onclick' => "Cart.AddCart()",
+    ])
+    ?>
 
+    <button type="button" class="btn btn-default"
+            onClick="ym(53040199,'reachGoal','one-click'); $('#oneclickorder-good').val($(this).attr('data-header'))"
+            data-id="<?= $model->id ?>" 
+            data-header="<?= $model->header ?>" 
+            data-toggle="modal" data-target="#oneclick-form-modal">Узнать цену</button>
+            <?= \app\modules\forms\widgets\OneClickOrder::widget() ?>
+</div>
+            <?php ActiveForm::end(); ?>
 
 
         </div>
