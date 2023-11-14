@@ -41,7 +41,7 @@ class DefaultController extends Controller
 
         $model = [];
         $counts = [];
-
+        Yii::$app->params['show_viewed'] = false;
         if (isset($session['cart'])) {
 
             $data = $session['cart'];

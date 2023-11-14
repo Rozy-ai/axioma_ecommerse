@@ -20,7 +20,7 @@ class DefaultController extends Controller
     {
 
         $client = new ClientForm();
-
+        Yii::$app->params['show_viewed'] = false;
         return $this->render('index', [
             'client' => $client,
         ]);
