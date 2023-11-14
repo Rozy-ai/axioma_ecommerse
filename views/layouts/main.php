@@ -243,9 +243,10 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                             <div class="address text-gray">
                                 <?= RegionTemplates::getVal('address') ?>
                             </div>
-                            <div class="phone-secondary text-gray">
-                                тел: <?= RegionTemplates::getVal('phone-2') ?>
-                            </div>
+                            <!-- <div class="phone-secondary text-gray">
+                                тел: <?php // echo RegionTemplates::getVal('phone-2') 
+                                        ?>
+                            </div> -->
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-2 text-right">
@@ -302,24 +303,29 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                             <ul class="nav-justified" style="padding: 0;">
                                 <li>
                                     <a href="#">
-                                        <img src="/image/ico/Вконтакте.svg" height="24px" alt="Вконтакте">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="/image/ico/Telegram.svg" height="24px" alt="Telegram">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
                                         <img src="/image/ico/WhatsApp.svg" height="24px" alt="WhatsApp">
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <img src="/image/ico/Skype.svg" height="24px" alt="Skype">
+                                        <img src="/image/ico/Вконтакте.svg" height="24px" alt="Вконтакте">
                                     </a>
                                 </li>
+                                <li>
+                                    <a href="https://www.youtube.com/c/AxiomaPro/featured" target="_blank">
+                                        <img src="/image/ico/Youtube.svg" height="24px">
+                                    </a>
+                                </li>
+                                <!-- <li>
+                                    <a href="#">
+                                        <img src="/image/ico/Telegram.svg" height="24px" alt="Telegram">
+                                    </a>
+                                </li> -->
+                                <!-- <li>
+                                    <a href="#">
+                                        <img src="/image/ico/Skype.svg" height="24px" alt="Skype">
+                                    </a>
+                                </li> -->
                             </ul>
                             <a href="mailto: <?= Yii::$app->info::get('email') ?>"><i class="fas fa-envelope-square" style="color: #b8cc76;"></i> <?= Yii::$app->info::get('email') ?></a>
                         </div>
@@ -488,9 +494,10 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                     <div class="address">
                                         <?= RegionTemplates::getVal('address') ?>
                                     </div>
-                                    <div class="phone-secondary">
-                                        тел: <?= RegionTemplates::getVal('phone-2') ?>
-                                    </div>
+                                    <!-- <div class="phone-secondary">
+                                        тел: <?php // echo RegionTemplates::getVal('phone-2') 
+                                                ?>
+                                    </div> -->
                                     <div class="button-anchor">
                                         <div class="form-group button-wrap">
                                             <a href="#contact-form" class="scroll-link">
@@ -538,7 +545,8 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                 <p class="title">АДРЕС</p>
                                 <p>г. <?= RegionTemplates::getVal('city') ?></p>
                                 <p><?= RegionTemplates::getVal('address') ?></p>
-                                <p>Тел: <?= RegionTemplates::getVal('phone-2') ?></p>
+                                <!-- <p>Тел: <?php // echo RegionTemplates::getVal('phone-2') 
+                                                ?></p> -->
                             </div>
                             <div class="col-xs-12 col-sm-6 col-md-3 right-side">
                                 <p class="phone">
@@ -552,34 +560,34 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                     <ul class="nav-justified" style="padding: 0;">
                                         <li>
                                             <a href="#">
-                                                <img src="/image/ico/Вконтакте.svg" height="24px" alt="Вконтакте">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img src="/image/ico/Telegram.svg" height="24px" alt="Telegram">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
                                                 <img src="/image/ico/WhatsApp.svg" height="24px" alt="WhatsApp">
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#">
-                                                <img src="/image/ico/Skype.svg" height="24px" alt="Skype">
+                                                <img src="/image/ico/Вконтакте.svg" height="24px" alt="Вконтакте">
                                             </a>
                                         </li>
+                                        <!-- <li>
+                                            <a href="#">
+                                                <img src="/image/ico/Telegram.svg" height="24px" alt="Telegram">
+                                            </a>
+                                        </li> -->
+                                        <!-- <li>
+                                            <a href="#">
+                                                <img src="/image/ico/Skype.svg" height="24px" alt="Skype">
+                                            </a>
+                                        </li> -->
                                         <li>
                                             <a href="https://www.youtube.com/c/AxiomaPro/featured" target="_blank">
                                                 <img src="/image/ico/Youtube.svg" height="24px">
                                             </a>
                                         </li>
-                                        <li>
+                                        <!-- <li>
                                             <a href="#" target="_blank">
                                                 <img src="/image/ico/Яндекс Дзен.svg" height="24px">
                                             </a>
-                                        </li>
+                                        </li> -->
                                     </ul>
                                     <a href="mailto: <?= Yii::$app->info::get('email') ?>"><i class="fas fa-envelope-square" style="color: #b8cc76;"></i> <?= Yii::$app->info::get('email') ?></a>
                                 </div>
