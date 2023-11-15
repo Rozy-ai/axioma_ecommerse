@@ -94,7 +94,7 @@ $form = ActiveForm::begin([
 
 
 
-            <div class="col-xs-12 col-lg-3">
+            <div class="col-xs-12 col-lg-9">
 
 
 
@@ -103,13 +103,13 @@ $form = ActiveForm::begin([
 
 
                     <?php
-                    $labels = [0 => 'Любая', 1 => 'Акустомагнитные системы', 2 => 'Радиочастотные системы'];
+                    $labels = [1 => 'Акустомагнитная', 2 => 'Радиочастотная'];
 
                     if ($category->url == 'datchiki')
-                        $labels = [0 => 'Любая', 1 => 'Акустомагнитные датчики', 2 => 'Радиочастотные датчики'];
+                        $labels = [1 => 'Акустомагнитная', 2 => 'Радиочастотная'];
 
                     if ($category->url == 'etiketki')
-                        $labels = [0 => 'Любая', 1 => 'Акустомагнитные этикетки', 2 => 'Радиочастотные этикетки'];
+                        $labels = [1 => 'Акустомагнитная', 2 => 'Радиочастотная'];
 
                     //                     echo $form->field($model, 'detection_type', [
                     //                         'inline' => true,
@@ -208,30 +208,30 @@ $form = ActiveForm::begin([
                 <?php endif; ?>
 
             </div>
-            <div class="col-xs-12 col-lg-4">
+            <!-- <div class="col-xs-12 col-lg-4"> -->
 
                 <?php if ($category->id == 1) : ?>
                     <?php
-                    echo $form->field($model, 'enter_width', [
-                        'inline' => true,
-                    ])->radioList(
-                        $model->collectEnterWidth($model->detection_type),
-                        [
-                            'item' => function ($index, $label, $name, $checked, $value) {
+                    // echo $form->field($model, 'enter_width', [
+                    //     'inline' => true,
+                    // ])->radioList(
+                    //     $model->collectEnterWidth($model->detection_type),
+                    //     [
+                    //         'item' => function ($index, $label, $name, $checked, $value) {
 
 
-                                $return = '<label>';
-                                $return .= '<input id="radio-' . $index . '" type="radio" name="' . $name . '" ' . ($checked ? 'checked' : '') . ' value="' . $value . '"/>'
-                                    . '<span class = "label-text">' . ucwords($label) . '</span>';
-                                $return .= '</label >';
-                                //                                $return = '<input id="radio-' . $index . '" type="radio" name="' . $name . '" value="' . $value . '"/>';
-                                //                        $return .= '<label for="radio-' . $index . '" class="modal-radio">' . ucwords($label) . '</label>';
+                    //             $return = '<label>';
+                    //             $return .= '<input id="radio-' . $index . '" type="radio" name="' . $name . '" ' . ($checked ? 'checked' : '') . ' value="' . $value . '"/>'
+                    //                 . '<span class = "label-text">' . ucwords($label) . '</span>';
+                    //             $return .= '</label >';
+                    //             //                                $return = '<input id="radio-' . $index . '" type="radio" name="' . $name . '" value="' . $value . '"/>';
+                    //             //                        $return .= '<label for="radio-' . $index . '" class="modal-radio">' . ucwords($label) . '</label>';
 
-                                return $return;
-                            },
-                            'onChange' => '$("#category-search").submit()'
-                        ]
-                    )
+                    //             return $return;
+                    //         },
+                    //         'onChange' => '$("#category-search").submit()'
+                    //     ]
+                    // )
                     ?>
 
                     <?php 
@@ -248,35 +248,35 @@ $form = ActiveForm::begin([
                     ?>
 
                 <?php endif; ?>
-            </div>
-            <div class="col-xs-12 col-lg-2">
+            <!-- </div> -->
+            <!-- <div class="col-xs-12 col-lg-2"> -->
 
 
 <?php if ($category->id == 1) : ?>
     <?php 
-         $labels = [0 => 'Любая', 1 => 'Доступно под заказ', 2 => 'Наличие'];
+       //  $labels = [0 => 'Любая', 1 => 'Доступно под заказ', 2 => 'Наличие'];
         ?>
                             <?php
-                    echo $form->field($model, 'in_stock', [
-                        'inline' => true,
-                    ])->radioList(
-                        $labels,
-                        [
-                            'item' => function ($index, $label, $name, $checked, $value) {
+                    // echo $form->field($model, 'in_stock', [
+                    //     'inline' => true,
+                    // ])->radioList(
+                    //     $labels,
+                    //     [
+                    //         'item' => function ($index, $label, $name, $checked, $value) {
 
 
-                                $return = '<label>';
-                                $return .= '<input id="radio-' . $index . '" type="radio" name="' . $name . '" ' . ($checked ? 'checked' : '') . ' value="' . $value . '"/>'
-                                    . '<span class = "label-text">' . ucwords($label) . '</span>';
-                                $return .= '</label >';
-                                //                                $return = '<input id="radio-' . $index . '" type="radio" name="' . $name . '" value="' . $value . '"/>';
-                                //                        $return .= '<label for="radio-' . $index . '" class="modal-radio">' . ucwords($label) . '</label>';
+                    //             $return = '<label>';
+                    //             $return .= '<input id="radio-' . $index . '" type="radio" name="' . $name . '" ' . ($checked ? 'checked' : '') . ' value="' . $value . '"/>'
+                    //                 . '<span class = "label-text">' . ucwords($label) . '</span>';
+                    //             $return .= '</label >';
+                    //             //                                $return = '<input id="radio-' . $index . '" type="radio" name="' . $name . '" value="' . $value . '"/>';
+                    //             //                        $return .= '<label for="radio-' . $index . '" class="modal-radio">' . ucwords($label) . '</label>';
 
-                                return $return;
-                            },
-                            'onChange' => '$("#category-search").submit()'
-                        ]
-                    )
+                    //             return $return;
+                    //         },
+                    //         'onChange' => '$("#category-search").submit()'
+                    //     ]
+                    // )
                     ?>
     <?php 
     // echo $form->field($model, 'in_stock')->widget(Select2::classname(), [
@@ -292,7 +292,7 @@ $form = ActiveForm::begin([
     ?>
 
 <?php endif; ?>
-</div>
+<!-- </div> -->
             <div class="col-xs-12 col-lg-3 text-right">
                 <a href="#" onclick="changeGrid()"><?= Html::img('/image/ico/Подробный список.svg', ['class' => 'list-img']) ?></a>
                 <a href="#" onclick="changeList()"><?= Html::img('/image/ico/Краткий список.svg', ['class' => 'list-img']) ?></a>
