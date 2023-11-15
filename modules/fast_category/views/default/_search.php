@@ -46,35 +46,56 @@ $form = ActiveForm::begin([
 
                 <?php //endforeach; 
                 ?>
-
                 <?php
-                echo $form->field($model, 'online_kass_type', [
-                    //                    'inline' => true,
-                    //                            'inlineRadioListTemplate' => "<div class=\"checkbox checkbox-ext\">\n{beginLabel}\n{input}\n<span>{labelTitle}</span>\n{endLabel}\n{error}\n{hint}\n</div>",
-                    //                                    'inlineRadioListTemplate' => '{beginWrapper} {input}  <span class="label-text"> {label} </span> {endWrapper} {hint}',
-                    //                                    'inlineRadioListTemplate' => '{beginWrapper} {input}  <span class="label-text"> {label} </span> {endWrapper} {hint}',
-                    //                                    'radioTemplate' => '<div class=\"radio\">{beginLabel}{input} <span class="label-text"> {labelTitle} </span> {endLabel}{hint}</div>',
-                ])
-                    ->inline(true)
-                    ->checkboxList(
+                    echo $form->field($model, 'online_kass_type', [
+                        'inline' => true,
+                    ])->radioList(
                         $model::ONLINE_KASS_TYPE,
                         [
                             'item' => function ($index, $label, $name, $checked, $value) {
 
 
-                                $return = '<div class="pretty p-default p-curve p-thick">';
-                                $return .= '<input type="checkbox" name="' . $name . '"  name="' . $name . '" ' . ($checked ? 'checked' : '') . ' value="' . $value . '" />';
-                                //                                        $return .= ' onChange = $("#category-search").submit()  ';
-                                $return .= '<div class="state">';
-                                $return .= '<label>' . $label . '</label>';
-                                $return .= '</div>';
-                                $return .= '</div>';
+                                $return = '<label>';
+                                $return .= '<input id="radio-' . $index . '" type="radio" name="' . $name . '" ' . ($checked ? 'checked' : '') . ' value="' . $value . '"/>'
+                                    . '<span class = "label-text">' . ucwords($label) . '</span>';
+                                $return .= '</label >';
+                                //                                $return = '<input id="radio-' . $index . '" type="radio" name="' . $name . '" value="' . $value . '"/>';
+                                //                        $return .= '<label for="radio-' . $index . '" class="modal-radio">' . ucwords($label) . '</label>';
+
                                 return $return;
                             },
                             'onChange' => '$("#category-search").submit()'
                         ]
                     )->label(false)
-                ?>
+                    ?>
+                <?php
+                // echo $form->field($model, 'online_kass_type', [
+                //     //                    'inline' => true,
+                //     //                            'inlineRadioListTemplate' => "<div class=\"checkbox checkbox-ext\">\n{beginLabel}\n{input}\n<span>{labelTitle}</span>\n{endLabel}\n{error}\n{hint}\n</div>",
+                //     //                                    'inlineRadioListTemplate' => '{beginWrapper} {input}  <span class="label-text"> {label} </span> {endWrapper} {hint}',
+                //     //                                    'inlineRadioListTemplate' => '{beginWrapper} {input}  <span class="label-text"> {label} </span> {endWrapper} {hint}',
+                //     //                                    'radioTemplate' => '<div class=\"radio\">{beginLabel}{input} <span class="label-text"> {labelTitle} </span> {endLabel}{hint}</div>',
+                // ])
+                //     ->inline(true)
+                //     ->radioList(
+                //         $model::ONLINE_KASS_TYPE,
+                //         [
+                //             'item' => function ($index, $label, $name, $checked, $value) {
+
+
+                //                 $return = '<div class="pretty p-default p-curve p-thick">';
+                //                 $return .= '<input type="checkbox" name="' . $name . '"  name="' . $name . '" ' . ($checked ? 'checked' : '') . ' value="' . $value . '" />';
+                //                 //                                        $return .= ' onChange = $("#category-search").submit()  ';
+                //                 $return .= '<div class="state">';
+                //                 $return .= '<label>' . $label . '</label>';
+                //                 $return .= '</div>';
+                //                 $return .= '</div>';
+                //                 return $return;
+                //             },
+                //             'onChange' => '$("#category-search").submit()'
+                //         ]
+                //     )->label(false)
+                // ?>
 
             </div>
         </div>
@@ -97,8 +118,7 @@ $form = ActiveForm::begin([
             <div class="col-xs-12 col-lg-9">
 
 
-
-                <?php if (!$category->is_video) : ?>
+                <?php if (!$category->is_video && $category->url !== 'syemniki') : ?>
 
 
 

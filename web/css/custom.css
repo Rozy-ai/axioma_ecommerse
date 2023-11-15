@@ -424,6 +424,9 @@ div.bhoechie-tab .list-group-item img {
 .category-search #productsearch-detection_type label{
     padding-right: 3rem;
 }
+.category-search #productsearch-online_kass_type label{
+    padding-right: 3rem;
+}
 /* .category-search #productsearch-enter_width {
     display: flex;
     flex-direction: row;
