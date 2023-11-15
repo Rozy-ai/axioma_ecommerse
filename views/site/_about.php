@@ -5,7 +5,7 @@
  * and open the template in the editor.
  */
 ?>
-
+<!-- 
 <div class="home-about">
     <div class="container">
         <p class="h2">Возможности антикражного оборудования</p>
@@ -39,4 +39,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
