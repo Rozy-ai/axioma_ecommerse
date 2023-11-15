@@ -135,17 +135,43 @@ $form = ActiveForm::begin([
                     //                                 'onChange' => '$("#category-search").submit()']
                     //                     )
                     ?>
+
+                    <!-- kruglezki -->
                     <?php
-                    echo $form->field($model, 'detection_type')->widget(Select2::classname(), [
-                        'data' => $labels,
-                        'options' => [
-                            'onChange' => '$("#category-search").submit()',
-                            'placeholder' => 'Тип детекции', 'multiple' => false
-                        ],
-                        'pluginOptions' => [
-                            'allowClear' => true,
-                        ],
-                    ])->label(false);
+                    echo $form->field($model, 'detection_type', [
+                        'inline' => true,
+                    ])->radioList(
+                        $labels,
+                        [
+                            'item' => function ($index, $label, $name, $checked, $value) {
+
+
+                                $return = '<label>';
+                                $return .= '<input id="radio-' . $index . '" type="radio" name="' . $name . '" ' . ($checked ? 'checked' : '') . ' value="' . $value . '"/>'
+                                    . '<span class = "label-text">' . ucwords($label) . '</span>';
+                                $return .= '</label >';
+                                //                                $return = '<input id="radio-' . $index . '" type="radio" name="' . $name . '" value="' . $value . '"/>';
+                                //                        $return .= '<label for="radio-' . $index . '" class="modal-radio">' . ucwords($label) . '</label>';
+
+                                return $return;
+                            },
+                            'onChange' => '$("#category-search").submit()'
+                        ]
+                    )
+                    ?>
+
+                    <!-- kruglezki end -->
+                    <?php
+                    // echo $form->field($model, 'detection_type')->widget(Select2::classname(), [
+                    //     'data' => $labels,
+                    //     'options' => [
+                    //         'onChange' => '$("#category-search").submit()',
+                    //         'placeholder' => 'Тип детекции', 'multiple' => false
+                    //     ],
+                    //     'pluginOptions' => [
+                    //         'allowClear' => true,
+                    //     ],
+                    // ])->label(false);
                     ?>
                 <?php endif; ?>
 
@@ -182,41 +208,87 @@ $form = ActiveForm::begin([
                 <?php endif; ?>
 
             </div>
-            <div class="col-xs-12 col-lg-3">
+            <div class="col-xs-12 col-lg-4">
 
                 <?php if ($category->id == 1) : ?>
-                    <?=
-                    $form->field($model, 'enter_width')->widget(Select2::classname(), [
-                        'data' => $model->collectEnterWidth($model->detection_type),
-                        'options' => [
-                            'onChange' => '$("#category-search").submit()',
-                            'placeholder' => 'Ширина входной группы', 'multiple' => false
-                        ],
-                        'pluginOptions' => [
-                            'allowClear' => true,
-                        ],
-                    ])->label(false);
+                    <?php
+                    echo $form->field($model, 'enter_width', [
+                        'inline' => true,
+                    ])->radioList(
+                        $model->collectEnterWidth($model->detection_type),
+                        [
+                            'item' => function ($index, $label, $name, $checked, $value) {
+
+
+                                $return = '<label>';
+                                $return .= '<input id="radio-' . $index . '" type="radio" name="' . $name . '" ' . ($checked ? 'checked' : '') . ' value="' . $value . '"/>'
+                                    . '<span class = "label-text">' . ucwords($label) . '</span>';
+                                $return .= '</label >';
+                                //                                $return = '<input id="radio-' . $index . '" type="radio" name="' . $name . '" value="' . $value . '"/>';
+                                //                        $return .= '<label for="radio-' . $index . '" class="modal-radio">' . ucwords($label) . '</label>';
+
+                                return $return;
+                            },
+                            'onChange' => '$("#category-search").submit()'
+                        ]
+                    )
+                    ?>
+
+                    <?php 
+                    // echo $form->field($model, 'enter_width')->widget(Select2::classname(), [
+                    //     'data' => $model->collectEnterWidth($model->detection_type),
+                    //     'options' => [
+                    //         'onChange' => '$("#category-search").submit()',
+                    //         'placeholder' => 'Ширина входной группы', 'multiple' => false
+                    //     ],
+                    //     'pluginOptions' => [
+                    //         'allowClear' => true,
+                    //     ],
+                    // ])->label(false);
                     ?>
 
                 <?php endif; ?>
             </div>
-            <div class="col-xs-12 col-lg-3">
+            <div class="col-xs-12 col-lg-2">
 
 
 <?php if ($category->id == 1) : ?>
     <?php 
          $labels = [0 => 'Любая', 1 => 'Доступно под заказ', 2 => 'Наличие'];
         ?>
-    <?= $form->field($model, 'in_stock')->widget(Select2::classname(), [
-                        'data' => $labels,
-                        'options' => [
-                            'onChange' => '$("#category-search").submit()',
-                            'placeholder' => 'Наличие', 'multiple' => false
-                        ],
-                        'pluginOptions' => [
-                            'allowClear' => true,
-                        ],
-                    ])->label(false);
+                            <?php
+                    echo $form->field($model, 'in_stock', [
+                        'inline' => true,
+                    ])->radioList(
+                        $labels,
+                        [
+                            'item' => function ($index, $label, $name, $checked, $value) {
+
+
+                                $return = '<label>';
+                                $return .= '<input id="radio-' . $index . '" type="radio" name="' . $name . '" ' . ($checked ? 'checked' : '') . ' value="' . $value . '"/>'
+                                    . '<span class = "label-text">' . ucwords($label) . '</span>';
+                                $return .= '</label >';
+                                //                                $return = '<input id="radio-' . $index . '" type="radio" name="' . $name . '" value="' . $value . '"/>';
+                                //                        $return .= '<label for="radio-' . $index . '" class="modal-radio">' . ucwords($label) . '</label>';
+
+                                return $return;
+                            },
+                            'onChange' => '$("#category-search").submit()'
+                        ]
+                    )
+                    ?>
+    <?php 
+    // echo $form->field($model, 'in_stock')->widget(Select2::classname(), [
+    //                     'data' => $labels,
+    //                     'options' => [
+    //                         'onChange' => '$("#category-search").submit()',
+    //                         'placeholder' => 'Наличие', 'multiple' => false
+    //                     ],
+    //                     'pluginOptions' => [
+    //                         'allowClear' => true,
+    //                     ],
+    //                 ])->label(false);
     ?>
 
 <?php endif; ?>

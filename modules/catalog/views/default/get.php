@@ -45,7 +45,7 @@ $this->params['breadcrumbs'][] = $page->short_name ? $page->short_name : $page->
                         <i class="fas fa-search-plus"></i>
                     </div> -->
                     <a href="#" onclick="Cart.Favorite(<?= $model->id ?>)"><?= Html::img('/image/ico/Избранное.svg', ['class' => 'favorite-img']) ?></a>
-                    <a href="#" onclick="Cart.Compare(<?= $model->id ?>)"><?= Html::img('/image/ico/Сравнение.svg', ['class' => 'comparison-img']) ?></a>
+                    <!-- <a href="#" onclick="Cart.Compare(<?= $model->id ?>)"><?= Html::img('/image/ico/Сравнение.svg', ['class' => 'comparison-img']) ?></a> -->
                     <ul class="pgwSlider">
                         <?php
                         foreach ($page->productImages as $k => $image):

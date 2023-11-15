@@ -421,6 +421,20 @@ div.bhoechie-tab .list-group-item img {
     left: 22px;
     height: 24px;
 }
+/* .category-search #productsearch-enter_width {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.category-search #productsearch-in_stock {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+} */
+.category-search #productsearch-detection_type {
+    display: inline-block!important;
+}
 
 .product-cart .panel .panel-heading .comparison-img {
     position: absolute;
