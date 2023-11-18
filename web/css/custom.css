@@ -452,6 +452,17 @@ div.bhoechie-tab .list-group-item img {
 
 #add_cart .btn {
     border-radius: 5px;
+    width: 100%!important;
+    margin-left: 0px;
+}
+.product-cart-grid .panel .panel-footer .cart-add .btn-group .btn-default{
+    margin-left: 0!important;
+}
+.cart-item .cart-add .btn-grey{
+    border: 1px solid #ccc;
+}
+.cart-item .cart-add [name=count]{
+    border: 1px solid #ccc; 
 }
 
 .gallery-wrap .favorite-img {
@@ -517,9 +528,9 @@ div.bhoechie-tab .list-group-item img {
     text-decoration: underline;
     text-decoration-color: #89a03c;
 }
-.list-view .product-cart .btn-default{
+/* .list-view .product-cart .btn-default{
     margin-left: 5px!important;
-}
+} */
 .show-contact{
     margin-bottom: 40px;
 }
@@ -537,6 +548,16 @@ div.bhoechie-tab .list-group-item img {
 }
 
 @media (max-width: 994px) {
+    .w100 .btn-primary{
+        width: 100%;
+    }
+    .w100 .btn-default{
+        width: 100%;
+        margin-left: 0!important;
+    }
+    .pull-right{
+        float: none !important;
+    }
     .home-list-category{
         margin-top: 50px;
       }

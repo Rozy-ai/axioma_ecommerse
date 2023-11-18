@@ -28,12 +28,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="container">
         <div class="row">
-            <div class="col-xs-3 col-sm-1 bottom-image">
+            <div class="col-xs-12 col-md-3 col-sm-1 bottom-image">
                 <?= Html::img('/image/service/!.png', [
                     'class' => 'img img-responsive pull-right', 'alt' => '!'])
                 ?>
             </div>
-            <div class="col-xs-8 col-sm-11 bottom-text">
+            <div class="col-xs-12 col-md-8 col-sm-11 bottom-text">
                 С нами сотрудничают инженеры с 10-летним опытом работы в сфере безопасности. Сотрудники «Аксиомы» приедут на объект без опозданий, в аккуратной фирменной одежде, а также ответят на все ваши вопросы и уберут мусор после монтажа.
 
                 <p class="call-req">ЗВОНИТЕ: <a href="tel:+78003335483">8-800-333-54-83</a></p>

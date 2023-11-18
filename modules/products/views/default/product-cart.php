@@ -5,7 +5,7 @@ use yii\helpers\Url;
 ?>
 
 <div class="row product-cart">
-    <div class="col-xs-4 image-wrap">
+    <div class="col-xs-12 col-md-4 image-wrap">
         <?php if ($model->is_akustika && !$model->is_radio) : ?>
 
             <?= Html::img('/image/t-am.svg', ['class' => 'type-img']) ?>
@@ -32,7 +32,7 @@ use yii\helpers\Url;
 
     </div>
 
-    <div class="col-xs-8">
+    <div class="col-xs-12 col-md-8">
         <div class="product-description-wrap">
             <div class="h4">
                 <?= Html::a($model->header, ['/catalog/' . $model->url]) ?>

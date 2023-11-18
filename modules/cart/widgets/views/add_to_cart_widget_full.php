@@ -27,7 +27,7 @@ use kartik\popover\PopoverX;
             <br/>
 
             <div class="row">
-                <div class="col-xs-12">
+                <div class="col-xs-12 text-center">
 
                     <div class="btn btn-grey" onclick="Cart.Minus(<?= $model->id ?>)">
                         <i class="fas fa-minus"></i>

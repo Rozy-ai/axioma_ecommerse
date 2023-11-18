@@ -118,7 +118,7 @@ $form = ActiveForm::begin([
             <div class="col-xs-12 col-lg-9">
 
 
-                <?php if (!$category->is_video && $category->url !== 'syemniki') : ?>
+                <?php if ($category->url == 'anticrazh') : ?>
 
 
 
@@ -313,7 +313,7 @@ $form = ActiveForm::begin([
 
 <?php endif; ?>
 <!-- </div> -->
-            <div class="col-xs-12 col-lg-3 text-right">
+            <div class="col-xs-12 col-lg-3 text-right hidden-xs">
                 <a href="#" onclick="changeGrid()"><?= Html::img('/image/ico/Подробный список.svg', ['class' => 'list-img']) ?></a>
                 <a href="#" onclick="changeList()"><?= Html::img('/image/ico/Краткий список.svg', ['class' => 'list-img']) ?></a>
             </div>
