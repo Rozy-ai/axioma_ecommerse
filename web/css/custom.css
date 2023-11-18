@@ -247,10 +247,9 @@ div.bhoechie-tab-menu div.list-group>a:last-child {
 div.bhoechie-tab-menu div.list-group>a.active,
 div.bhoechie-tab-menu div.list-group>a.active .glyphicon,
 div.bhoechie-tab-menu div.list-group>a.active .fa {
-    background-color: #b8cc76;
-    background-image: #b8cc76;
-    color: #ffffff;
-    /* font-weight: bold; */
+    background-color: inherit;
+    background-image: none;
+    color: #000;
 }
 
 div.bhoechie-tab-menu div.list-group>a.active:after {
@@ -305,7 +304,6 @@ div.bhoechie-tab .list-group-item img {
 }
 
 .bhoechie-tab-content ul li a:hover {
-    font-weight: bold;
     text-decoration: none;
 }
 

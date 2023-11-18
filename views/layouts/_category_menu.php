@@ -10,11 +10,11 @@ use app\modules\category\models\Category;
 // if (isset($session['menuCategories'])) {
 //     $categories = Yii::$app->session->get('menuCategories');
 // }else{
-     $categories = Category::find()->with('childs')->orderBy([
-        'in_menu_order' => SORT_DESC,
-    ])->where(['is_enable' => 1, 'in_menu' => 1])
-        ->all();
-        // $session->set('menuCategories', $categories);
+$categories = Category::find()->with('childs')->orderBy([
+    'in_menu_order' => SORT_DESC,
+])->where(['is_enable' => 1, 'in_menu' => 1])
+    ->all();
+// $session->set('menuCategories', $categories);
 // }
 ?>
 
@@ -50,15 +50,34 @@ use app\modules\category\models\Category;
                                         <?php endforeach; ?>
                                     </ul>
                                 </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 menu-right">
-                                    <?= Html::img($item->Img, ['width' => '100%']) ?>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                    <?= Html::img('/image/category/banner1.png', ['width' => '100%']) ?> <br><br>
+                                    <?= Html::img('/image/category/banner2.png', ['width' => '100%']) ?>
                                 </div>
                             </div>
                         </div>
                     <?php else : ?>
                         <div class="bhoechie-tab-content <?= ($key == 0) ? 'active' : ''; ?>">
-                            Ничего не найдено
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                    <h4><?= $item->header ?></h4>
+                                    <ul>
+                                        <li class="catalog">
+                                            <a href="<?= '/category' . '/' . $item->url ?>">
+                                                <?= $item->header ?>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <?= Html::img('/image/category/banner1.png', ['width' => '100%']) ?> <br><br>
+                                    <?= Html::img('/image/category/banner2.png', ['width' => '100%']) ?>
+                                </div>
+                            </div>
                         </div>
+                        <!-- <div class="bhoechie-tab-content <?= ($key == 0) ? 'active' : ''; ?>">
+                            Ничего не найдено
+                        </div> -->
                     <?php endif; ?>
 
 
