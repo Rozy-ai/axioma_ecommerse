@@ -497,6 +497,7 @@ div.bhoechie-tab .list-group-item img {
     height: 48px;
     background-color: #aec563;
     border-radius: 5px!important;
+    margin-top: 5px;
 }
 
 .w100 .btn-default{
@@ -505,6 +506,7 @@ div.bhoechie-tab .list-group-item img {
     margin-left: 1.5%!important;
     font-size: 11px;
     border-radius: 5px!important;
+    margin-top: 5px;
 }
 .color-main{
     color: #b8cc76;
@@ -563,6 +565,10 @@ div.bhoechie-tab .list-group-item img {
 #add_cart .btn{
     margin-top: 5px;
 }
+.flex-center{
+    display: flex;
+    justify-content: space-between;
+}
 
 @media (max-width: 994px) {
     .w100 .btn-primary{
@@ -599,4 +605,10 @@ div.bhoechie-tab .list-group-item img {
       /* .sm-hamburger{
         padding: 0;
       } */
+      ul.pgwSlider.narrow > li, .pgwSlider.narrow > .ps-list > li{
+        max-height: none!important;
+      }
+      .product_item .gallery-wrap .ps-list>li{
+        height: auto!important;
+      }
   }
