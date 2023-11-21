@@ -307,12 +307,12 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="https://instagram.com/axioma.pro.russia?igshid=MTk0NTkyODZkYg%3D%3D&utm_source=qr" target="_blank">
                                         <img src="/image/ico/Instagram.svg" height="24px" alt="Instagram">
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="https://vk.com/axioma.pro.russia">
+                                    <a href="https://vk.com/axioma.pro.russia" target="_blank">
                                         <img src="/image/ico/Вконтакте.svg" height="24px" alt="Вконтакте">
                                     </a>
                                 </li>
