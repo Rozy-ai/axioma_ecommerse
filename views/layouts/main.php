@@ -301,21 +301,22 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                     <div class="col-xs-12 col-sm-12 col-md-2">
                         <div class="sosial-icons">
                             <ul class="nav-justified" style="padding: 0;">
-                                <li>
-                                    <a href="#">
-                                        <img src="/image/ico/WhatsApp.svg" height="24px" alt="WhatsApp">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="/image/ico/Вконтакте.svg" height="24px" alt="Вконтакте">
-                                    </a>
-                                </li>
-                                <li>
+                            <li>
                                     <a href="https://www.youtube.com/c/AxiomaPro/featured" target="_blank">
                                         <img src="/image/ico/Youtube.svg" height="24px">
                                     </a>
                                 </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="/image/ico/Instagram.svg" height="24px" alt="Instagram">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://vk.com/axioma.pro.russia">
+                                        <img src="/image/ico/Вконтакте.svg" height="24px" alt="Вконтакте">
+                                    </a>
+                                </li>
+
                                 <!-- <li>
                                     <a href="#">
                                         <img src="/image/ico/Telegram.svg" height="24px" alt="Telegram">
