@@ -118,7 +118,7 @@ $form = ActiveForm::begin([
             <div class="col-xs-12 col-lg-9">
 
 
-                <?php if ($category->url == 'anticrazh') : ?>
+                <?php if ($category->url == 'anticrazh' || $category->url == 'deaktivatory' || $category->url == 'etiketki' || $category->url == 'datchiki') : ?>
 
 
 
