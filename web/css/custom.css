@@ -557,6 +557,12 @@ div.bhoechie-tab .list-group-item img {
 .sosial-icons ul li{
     width: auto;
 }
+.product-cart-grid .panel .panel-body{
+    border-radius: 0 0 5px 5px;
+}
+#add_cart .btn{
+    margin-top: 5px;
+}
 
 @media (max-width: 994px) {
     .w100 .btn-primary{
