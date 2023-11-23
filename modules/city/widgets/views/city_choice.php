@@ -5,7 +5,7 @@ use yii\helpers\Html;
 ?>
 <li class="dropdown">
     <i class="fas fa-map-marker-alt"></i> 
-    <a class="dropdown-toggle" href="/category/<?= $item->uri ?>" data-toggle="dropdown"><?= $current; ?>
+    <a class="dropdown-toggle" href="/category/<?php echo (isset($item->uri)) ? $item->uri : ''; ?>" data-toggle="dropdown"><?= $current; ?>
         <!--<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span>-->
     </a> <i class="fas fa-angle-down"></i>
     <ul class="dropdown-menu forAnimate" role="menu">

@@ -26,6 +26,7 @@ $form->field($model, 'phone')->widget(MaskedInput::className(), [
 ])
 ?>
 <?= $form->field($model, 'good')->textInput(['readonly' => 'true']) ?>
+<?= $form->field($model, 'image')->hiddenInput()->label(false) ?>
 <?= $form->field($model, 'count')->textInput(['value' => 1, 'type' => 'number']) ?>
 <?=
 $form->field($model, 'personal_accept')->checkbox()->label('Я даю согласие на обработку персональных данных. '

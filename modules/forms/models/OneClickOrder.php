@@ -14,6 +14,7 @@ class OneClickOrder extends EmailForm {
     public $name;
     public $phone;
     public $good;
+    public $image;
     public $count;
     public $email;
     public $personal_accept;
@@ -28,7 +29,7 @@ class OneClickOrder extends EmailForm {
         $rules = parent::rules();
 
         return ArrayHelper::merge($rules, [
-                    [['name', 'phone', 'personal_accept', 'count', 'good'], 'required'],
+                    [['name', 'phone', 'personal_accept', 'count', 'good', 'image'], 'required'],
                     ['personal_accept', 'in', 'range' => [1]],
         ]);
     }
@@ -42,6 +43,7 @@ class OneClickOrder extends EmailForm {
             'phone' => 'Телефон',
             'count' => 'Количество',
             'good' => 'Товар',
+            'image' => 'Картинка товара',
             'personal_accept' => 'Я даю согласие на обработку персональных данных',
             'captcha' => 'Подтвердите, что вы не робот. Введите цифры с картинки.',
         ];
