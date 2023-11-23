@@ -553,6 +553,11 @@ div.bhoechie-tab .list-group-item img {
     display: flex;
     justify-content: center;
 }
+.footer .sosial-icons ul{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 38%!important;
+}
 .sosial-icons ul{
     display: flex;
     justify-content: space-around;
@@ -572,6 +577,10 @@ div.bhoechie-tab .list-group-item img {
 }
 
 @media (max-width: 994px) {
+    .footer .sosial-icons ul{
+        padding-left: 0!important;
+        display: block!important;
+    }
     .w100 .btn-primary{
         width: 100%;
     }

@@ -49,13 +49,15 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
 
 
     <?= Html::csrfMetaTags() ?>
-    <title><?= Html::encode($this->title) ?></title>
+    <title>
+        <?= Html::encode($this->title) ?>
+    </title>
     <?php $this->head() ?>
 
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
-        (function(m, e, t, r, i, k, a) {
-            m[i] = m[i] || function() {
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () {
                 (m[i].a = m[i].a || []).push(arguments)
             };
             m[i].l = 1 * new Date();
@@ -99,14 +101,14 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
             type: "pageView",
             start: (new Date()).getTime()
         });
-        (function(d, w, id) {
+        (function (d, w, id) {
             if (d.getElementById(id)) return;
             var ts = d.createElement("script");
             ts.type = "text/javascript";
             ts.async = true;
             ts.id = id;
             ts.src = "https://top-fwz1.mail.ru/js/code.js";
-            var f = function() {
+            var f = function () {
                 var s = d.getElementsByTagName("script")[0];
                 s.parentNode.insertBefore(ts, s);
             };
@@ -118,7 +120,8 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
         })(document, window, "tmr-code");
     </script>
     <noscript>
-        <div><img src="https://top-fwz1.mail.ru/counter?id=3340974;js=na" style="position:absolute;left:-9999px;" alt="Top.Mail.Ru" /></div>
+        <div><img src="https://top-fwz1.mail.ru/counter?id=3340974;js=na" style="position:absolute;left:-9999px;"
+                alt="Top.Mail.Ru" /></div>
     </noscript>
     <!-- /Top.Mail.Ru counter -->
 
@@ -126,10 +129,11 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
 
     <script>
         //        function ym(i,u,u) {
-        //            
+        //
         //        }
     </script>
-    <script src="https://app2.gnzs.ru/site-integration/js/script.v3.js" data-platform="amo" data-account="29896285" data-token="bfac5b47-a495-4c8c-b417-1f8be495a64e"></script>
+    <script src="https://app2.gnzs.ru/site-integration/js/script.v3.js" data-platform="amo" data-account="29896285"
+        data-token="bfac5b47-a495-4c8c-b417-1f8be495a64e"></script>
 </head>
 
 <body>
@@ -245,7 +249,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                             </div>
                             <!-- <div class="phone-secondary text-gray">
                                 тел: <?php // echo RegionTemplates::getVal('phone-2') 
-                                        ?>
+                                ?>
                             </div> -->
                         </div>
                     </div>
@@ -256,7 +260,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                 ЧАСЫ РАБОТЫ
                             </div>
 
-                            <?php if (Yii::$app->city->id == 1107) : ?>
+                            <?php if (Yii::$app->city->id == 1107): ?>
                                 <div class="row">
                                     <div class="col-xs-5">
                                         Пн-пт:
@@ -277,7 +281,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                                         <strong>Выходной</strong>
                                                     </div> -->
                                 </div>
-                            <?php else : ?>
+                            <?php else: ?>
                                 <div class="row">
                                     <div class="col-xs-5">
                                         Пн-пт:
@@ -301,13 +305,14 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                     <div class="col-xs-12 col-sm-12 col-md-2">
                         <div class="sosial-icons">
                             <ul class="nav-justified" style="padding: 0;">
-                            <li>
+                                <li>
                                     <a href="https://www.youtube.com/c/AxiomaPro/featured" target="_blank">
                                         <img src="/image/ico/Youtube.svg" height="24px">
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="https://instagram.com/axioma.pro.russia?igshid=MTk0NTkyODZkYg%3D%3D&utm_source=qr" target="_blank">
+                                    <a href="https://instagram.com/axioma.pro.russia?igshid=MTk0NTkyODZkYg%3D%3D&utm_source=qr"
+                                        target="_blank">
                                         <img src="/image/ico/Instagram.svg" height="24px" alt="Instagram">
                                     </a>
                                 </li>
@@ -328,12 +333,16 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                     </a>
                                 </li> -->
                             </ul>
-                            <a href="mailto: <?= Yii::$app->info::get('email') ?>"><i class="fas fa-envelope-square" style="color: #b8cc76;"></i> <?= Yii::$app->info::get('email') ?></a>
+                            <a href="mailto: <?= Yii::$app->info::get('email') ?>"><i class="fas fa-envelope-square"
+                                    style="color: #b8cc76;"></i>
+                                <?= Yii::$app->info::get('email') ?>
+                            </a>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-4 col-md-3 phone-wrap ">
                         <div class="phone text-center">
-                            <a href="tel:<?= str_replace(['-', '(', ')', ' '], '', Yii::$app->info::get('headTelephone')) ?>" class="center-block text-center">
+                            <a href="tel:<?= str_replace(['-', '(', ')', ' '], '', Yii::$app->info::get('headTelephone')) ?>"
+                                class="center-block text-center">
                                 <?= Yii::$app->info::get('headTelephone') ?>
                             </a>
                         </div>
@@ -342,7 +351,8 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
 
                     </div>
                     <div class="col-xs-12 col-md-2">
-                        <button type="button" class="btn btn-primary catalog-button"><i class="fas fa-list"></i> Каталог товаров</button>
+                        <button type="button" class="btn btn-primary catalog-button"><i class="fas fa-list"></i> Каталог
+                            товаров</button>
                     </div>
 
                     <div class="col-xs-12 col-md-7 popup-search text-right">
@@ -374,7 +384,8 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                             ?>
                         </div>
                         <div class="col-xs-12 col-md-2">
-                            <button type="button" class="btn btn-primary catalog-button"><i class="fas fa-list"></i> Каталог товаров</button>
+                            <button type="button" class="btn btn-primary catalog-button"><i class="fas fa-list"></i>
+                                Каталог товаров</button>
                         </div>
 
                         <div class="col-xs-12 col-md-6 popup-search text-right">
@@ -429,23 +440,23 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
 
 
 
-        <?php if ($isHome) : ?>
+        <?php if ($isHome): ?>
             <div class="container-fluid">
                 <!--<div class="row">-->
                 <?= $content ?>
                 <!--</div>-->
             </div>
-        <?php else : ?>
+        <?php else: ?>
             <div class="<?= Yii::$app->params['isFluid'] ? 'container-fluid' : 'container' ?>">
                 <div class="content">
                     <div class="<?= Yii::$app->params['isFluid'] ? 'container' : '' ?>">
                         <?=
-                        Breadcrumbs::widget([
-                            'links' => $this->params['breadcrumbs'] ?? [],
-                            'options' => ['class' => 'breadcrumb', 'itemscope' => true, 'itemtype' => 'http://schema.org/BreadcrumbList'],
-                            'itemTemplate' => '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">{link}</li>' . PHP_EOL,
-                            'activeItemTemplate' => '<li class="active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">{link}</li>' . PHP_EOL,
-                        ]);
+                            Breadcrumbs::widget([
+                                'links' => $this->params['breadcrumbs'] ?? [],
+                                'options' => ['class' => 'breadcrumb', 'itemscope' => true, 'itemtype' => 'http://schema.org/BreadcrumbList'],
+                                'itemTemplate' => '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">{link}</li>' . PHP_EOL,
+                                'activeItemTemplate' => '<li class="active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">{link}</li>' . PHP_EOL,
+                            ]);
                         //                        Breadcrumbs::widget([
                         //                            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
                         //                        ])
@@ -458,7 +469,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
 
                 </div>
 
-                <?php if (Yii::$app->params['show_viewed']) : ?>
+                <?php if (Yii::$app->params['show_viewed']): ?>
 
                     <div class="viewed-goods-wrap">
                         <!--<div class="row">-->
@@ -479,151 +490,167 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                 <?php endif; ?>
             <?php endif; ?>
 
-            </div>
+        </div>
 
-            <footer class="footer">
+        <footer class="footer">
 
-                <div class="footer-top">
-                    <div class="container">
-                        <div class="row">
-                            <div class="hidden-xs hidden-sm col-md-2">
-                                <p class="title">АДРЕС</p>
-                                <div class="city-choise-wrap">
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="hidden-xs hidden-sm col-md-2">
+                            <p class="title">АДРЕС</p>
+                            <div class="city-choise-wrap">
 
-                                    <?= \app\modules\city\widgets\CityChoice::widget() ?>
+                                <?= \app\modules\city\widgets\CityChoice::widget() ?>
 
-                                    <div class="address">
-                                        <?= RegionTemplates::getVal('address') ?>
-                                    </div>
-                                    <!-- <div class="phone-secondary">
+                                <div class="address">
+                                    <?= RegionTemplates::getVal('address') ?>
+                                </div>
+                                <!-- <div class="phone-secondary">
                                         тел: <?php // echo RegionTemplates::getVal('phone-2') 
-                                                ?>
+                                        ?>
                                     </div> -->
-                                    <div class="button-anchor">
-                                        <div class="form-group button-wrap">
-                                            <a href="#contact-form" class="scroll-link">
-                                                <?=
+                                <div class="button-anchor">
+                                    <div class="form-group button-wrap">
+                                        <a href="#contact-form" class="scroll-link">
+                                            <?=
                                                 Html::Button('Задать вопрос', [
                                                     'class' => 'btn btn-default',
                                                 ])
                                                 ?>
-                                            </a>
-                                        </div>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-offset-1 col-xs-12 col-sm-12 col-md-6">
+                        </div>
+                        <div class="col-md-offset-1 col-xs-12 col-sm-12 col-md-6">
 
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <p class="title">КАРТА САЙТА</p>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <p class="title">КАРТА САЙТА</p>
 
-                                    </div>
-
-
-                                    <div class="col-xs-12 col-sm-5 col-sm-push-4">
-                                        <ul class="list-unstyled list-inline">
-                                            <?= Menu::getFooterItems(2) ?>
-                                        </ul>
-                                    </div>
-
-                                    <div class="col-xs-12 col-sm-4 col-sm-pull-5">
-                                        <ul class="list-unstyled list-inline">
-                                            <?= Menu::getFooterItems(1) ?>
-                                        </ul>
-
-                                    </div>
-
-                                    <div class="col-xs-12 col-sm-3">
-                                        <ul class="list-unstyled list-inline">
-                                            <?= Menu::getFooterItems(3) ?>
-                                        </ul>
-                                    </div>
                                 </div>
 
+
+                                <div class="col-xs-12 col-sm-5 col-sm-push-4">
+                                    <ul class="list-unstyled list-inline">
+                                        <?= Menu::getFooterItems(2) ?>
+                                    </ul>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-4 col-sm-pull-5">
+                                    <ul class="list-unstyled list-inline">
+                                        <?= Menu::getFooterItems(1) ?>
+                                    </ul>
+
+                                </div>
+
+                                <div class="col-xs-12 col-sm-3">
+                                    <ul class="list-unstyled list-inline">
+                                        <?= Menu::getFooterItems(3) ?>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="col-xs-12 col-sm-6 hidden-md hidden-lg">
-                                <p class="title">АДРЕС</p>
-                                <p>г. <?= RegionTemplates::getVal('city') ?></p>
-                                <p><?= RegionTemplates::getVal('address') ?></p>
-                                <!-- <p>Тел: <?php // echo RegionTemplates::getVal('phone-2') 
-                                                ?></p> -->
-                            </div>
-                            <div class="col-xs-12 col-sm-6 col-md-3 right-side">
-                                <p class="phone">
-                                    <a href="tel:<?= str_replace(['-', '(', ')', ' '], '', Yii::$app->info::get('headTelephone')) ?>">
-                                        <?= Yii::$app->info::get('headTelephone') ?>
-                                    </a>
-                                    <br />
-                                </p>
-                                <?= \app\modules\forms\widgets\CallBack::widget(['in_footer' => true]); ?>
-                                <div class="sosial-icons" style="padding-top: 3.6rem;">
-                                    <ul class="nav-justified" style="padding: 0;">
-                                        <li>
+
+                        </div>
+                        <div class="col-xs-12 col-sm-6 hidden-md hidden-lg">
+                            <p class="title">АДРЕС</p>
+                            <p>г.
+                                <?= RegionTemplates::getVal('city') ?>
+                            </p>
+                            <p>
+                                <?= RegionTemplates::getVal('address') ?>
+                            </p>
+                            <!-- <p>Тел: <?php // echo RegionTemplates::getVal('phone-2') 
+                            ?></p> -->
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-3 right-side">
+                            <p class="phone">
+                                <a
+                                    href="tel:<?= str_replace(['-', '(', ')', ' '], '', Yii::$app->info::get('headTelephone')) ?>">
+                                    <?= Yii::$app->info::get('headTelephone') ?>
+                                </a>
+                                <br />
+                            </p>
+                            <?= \app\modules\forms\widgets\CallBack::widget(['in_footer' => true]); ?>
+                            <div class="sosial-icons" style="padding-top: 3.6rem;">
+                                <ul class="nav-justified" style="padding: 0;">
+                                    <li>
+                                        <a href="https://www.youtube.com/c/AxiomaPro/featured" target="_blank">
+                                            <img src="/image/ico/Youtube.svg" height="24px">
+                                        </a>
+                                    </li>
+                                    <!-- <li>
                                             <a href="#">
                                                 <img src="/image/ico/WhatsApp.svg" height="24px" alt="WhatsApp">
                                             </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img src="/image/ico/Вконтакте.svg" height="24px" alt="Вконтакте">
-                                            </a>
-                                        </li>
-                                        <!-- <li>
+                                        </li> -->
+                                    <li>
+                                        <a href="https://instagram.com/axioma.pro.russia?igshid=MTk0NTkyODZkYg%3D%3D&utm_source=qr"
+                                            target="_blank">
+                                            <img src="/image/ico/Instagram.svg" height="24px" alt="Instagram">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img src="/image/ico/Вконтакте.svg" height="24px" alt="Вконтакте">
+                                        </a>
+                                    </li>
+                                    <!-- <li>
                                             <a href="#">
                                                 <img src="/image/ico/Telegram.svg" height="24px" alt="Telegram">
                                             </a>
                                         </li> -->
-                                        <!-- <li>
+                                    <!-- <li>
                                             <a href="#">
                                                 <img src="/image/ico/Skype.svg" height="24px" alt="Skype">
                                             </a>
                                         </li> -->
-                                        <li>
-                                            <a href="https://www.youtube.com/c/AxiomaPro/featured" target="_blank">
-                                                <img src="/image/ico/Youtube.svg" height="24px">
-                                            </a>
-                                        </li>
-                                        <!-- <li>
+                                    <!-- <li>
                                             <a href="#" target="_blank">
                                                 <img src="/image/ico/Яндекс Дзен.svg" height="24px">
                                             </a>
                                         </li> -->
-                                    </ul>
-                                    <a href="mailto: <?= Yii::$app->info::get('email') ?>"><i class="fas fa-envelope-square" style="color: #b8cc76;"></i> <?= Yii::$app->info::get('email') ?></a>
-                                </div>
-                                <p class="insta">
-                                    <!--                                    <a href="https://www.instagram.com/axioma.pro.russia/" target="_blank">
-                                                                        <i class="fab fa-instagram" aria-hidden="true"></i></a>-->
-                                </p>
+                                </ul>
+                                <a href="mailto: <?= Yii::$app->info::get('email') ?>"><i class="fas fa-envelope-square"
+                                        style="color: #b8cc76;"></i>
+                                    <?= Yii::$app->info::get('email') ?>
+                                </a>
                             </div>
+                            <!-- <p class="insta"> -->
+                            <!--                                    <a href="https://www.instagram.com/axioma.pro.russia/" target="_blank">
+                                                                        <i class="fab fa-instagram" aria-hidden="true"></i></a>-->
+                            <!-- </p> -->
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="footer-bottom">
-                    <div class="container">
-                        <div class="pull-left">
-                            <p><strong>© 2009-<?= date('Y') ?> ООО “Аксиома”</strong>
-                                <br>
-                                Все правы защищены.
-                                <br>
-                                Копирование информации разрешено только с письменного согласия администрации сайта.
-                            </p>
-                        </div>
-                        <div class="pull-right">
-                            <?php
-                            echo Yii::$app->info::get('counters');
-                            ?>
-                        </div>
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="pull-left">
+                        <p><strong>© 2009-
+                                <?= date('Y') ?> ООО “Аксиома”
+                            </strong>
+                            <br>
+                            Все правы защищены.
+                            <br>
+                            Копирование информации разрешено только с письменного согласия администрации сайта.
+                        </p>
+                    </div>
+                    <div class="pull-right">
+                        <?php
+                        echo Yii::$app->info::get('counters');
+                        ?>
                     </div>
                 </div>
-            </footer>
+            </div>
+        </footer>
 
 
-            <?php echo \app\modules\forms\widgets\OneClickOrder::widget() ?>
+        <?php echo \app\modules\forms\widgets\OneClickOrder::widget() ?>
 
-            <?php echo $this->render('_mobile_menu') ?>
+        <?php echo $this->render('_mobile_menu') ?>
 
     </div>
 
