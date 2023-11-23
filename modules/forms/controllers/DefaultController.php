@@ -181,8 +181,8 @@ class DefaultController extends Controller {
 
             if ($model->load(Yii::$app->request->post())) {
                 $model->phone = str_replace(['(', ')', '-', ''], '', $model->phone);
-                $model->body = $model->name ."<a href= \"tel:$model->phone\">$model->phone</a>". ' заказал: ' . $model->good . ' (' . $model->count . ' шт) ' . PHP_EOL;
-                $model->body .= "<img src=\"$model->image\" alt=\"$model->good\">". PHP_EOL;
+                $model->body = $model->name ."<a href= \"tel:$model->phone\">$model->phone</a>". ' заказал:'  .PHP_EOL . $model->good . ' (' . $model->count . ' шт) ' . PHP_EOL;
+                $model->body .= "<img src=\"$model->image\" height=\"100px\" alt=\"$model->good\">". PHP_EOL;
                 $model->body .= 'Город: ' . Yii::$app->city->name;
 
                 if ($model->contact())
