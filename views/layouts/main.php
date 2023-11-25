@@ -592,9 +592,9 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
-                                            <img src="/image/ico/Вконтакте.svg" height="24px" alt="Вконтакте">
-                                        </a>
+                                    <a href="https://vk.com/axioma.pro.russia" target="_blank">
+                                        <img src="/image/ico/Вконтакте.svg" height="24px" alt="Вконтакте">
+                                    </a>
                                     </li>
                                     <!-- <li>
                                             <a href="#">

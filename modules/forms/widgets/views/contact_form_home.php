@@ -27,16 +27,8 @@ $this->registerJsFile('@web/js/form/contact_form.js', ['depends' => ['app\assets
                 'placeholder' => $model->getAttributeLabel('name')
             ])->label(false)
             ?>
-            <div class="form-group fileds-radio">
-            <input  type="radio" name="option" value="option1" checked id="option1">
-            Получить ответ на e-mail
-            &nbsp;
-            <input type="radio" name="option" value="option2" id="option2">
-            Перезвонить   
-            </div>
 
-
-            <div id="option1-data" style="">
+            <div>
 
                 <?=
                 $form->field($model, 'email')->textInput([
@@ -46,13 +38,21 @@ $this->registerJsFile('@web/js/form/contact_form.js', ['depends' => ['app\assets
                 ?>
             </div>
 
-            <div id="option2-data" style="display:none;">
+            <div>
                 <?=
                 $form->field($model, 'phone')->widget(MaskedInput::className(), [
                     'mask' => '+7 (999) 999-9999',
                     'options' => ['placeholder' => $model->getAttributeLabel('phone'), 'class' => 'form-control'],
                 ])->label(false)
                 ?>
+            </div>
+
+            <div class="form-group fileds-radio">
+            <input  type="radio" name="option" value="option1" checked id="option1">
+            Получить ответ на e-mail
+            &nbsp;
+            <input type="radio" name="option" value="option2" id="option2">
+            Перезвонить   
             </div>
 
         </div>
