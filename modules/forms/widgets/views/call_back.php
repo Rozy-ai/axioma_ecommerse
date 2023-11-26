@@ -42,10 +42,13 @@ Modal::begin([
 
 </div>
 <div class="form-group">
-    <?=
-    Html::submitButton('Отправить', [
-        'class' => 'btn btn-primary',
-    ])
+<input type="submit" class="btn btn-primary" onclick="ym(53040199, 'reachGoal', 'call-back'); return true;" value="Узнать цену" />
+
+    <?php 
+    // echo
+    // Html::submitButton('Отправить', [
+    //     'class' => 'btn btn-primary',
+    // ])
     ?>
 </div>
 
@@ -53,7 +56,7 @@ Modal::begin([
 
 $script = <<< JS
     $('#callback-form').on('beforeSubmit', function (e) {
-        ym(53040199, 'reachGoal', 'feed-back');
+        ym(53040199, 'reachGoal', 'call-back');
     });
 JS;
 $this->registerJs($script, \yii\web\View::POS_READY,);

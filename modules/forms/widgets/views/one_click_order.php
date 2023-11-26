@@ -35,9 +35,11 @@ $form->field($model, 'personal_accept')->checkbox()->label('Я даю согла
 ?>
 
 <div class="form-group">
-    <?=
-    Html::submitButton('Отправить', ['class' => 'btn btn-primary',
-    ])
+<input type="submit" class="btn btn-primary" onclick="ym(53040199, 'reachGoal', 'one-click'); return true;" value="Узнать цену" />
+    <?php 
+    // echo
+    // Html::submitButton('Отправить', ['class' => 'btn btn-primary',
+    // ])
     ?>
 </div>
 
