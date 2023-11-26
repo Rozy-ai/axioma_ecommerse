@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 //use yii\bootstrap\Carousel;
 use kv4nt\owlcarousel\OwlCarouselWidget;
+
 ?>
 
 <!--<img class="img img-fluid" src="/image/slider/60d1e6a4f3fb0.jpg">-->
@@ -11,12 +12,12 @@ use kv4nt\owlcarousel\OwlCarouselWidget;
 OwlCarouselWidget::begin([
     'container' => 'div',
     'containerOptions' => [
-//        'id' => 'container-id',
+        //        'id' => 'container-id',
         'class' => 'lazy slider owl-theme hidden-xs'
     ],
     'pluginOptions' => [
         'autoplay' => true,
-//        'autoplay' => false,
+        //        'autoplay' => false,
         'autoplayTimeout' => 8000,
         'autoplayHoverPause' => true,
         'items' => 1,
@@ -24,9 +25,9 @@ OwlCarouselWidget::begin([
         'dots' => true,
         'nav' => true,
         'navSpeed' => 1000,
-//        'navText' => [Html::img('/image/_left.png'), Html::img('/image/_right.png')],
+        //        'navText' => [Html::img('/image/_left.png'), Html::img('/image/_right.png')],
         'navText' => [Html::tag('div', '', ['class' => 'nav-arr nav-left']), Html::tag('div', '', ['class' => 'nav-arr nav-right'])],
-//        'animateOut' => 'fadeOut',
+        //        'animateOut' => 'fadeOut',
 //        'animateIn' => 'fadeIn',
 //        'animateOut' => 'slideOutLeft',
 //        'animateIn' => 'slideInRight',
@@ -34,7 +35,9 @@ OwlCarouselWidget::begin([
 ]);
 ?>
 <?php foreach ($model as $item): ?>
+
     <div class="item-class">
+    <a href="<?= $item->link ?>">
         <img class="img img-fluid" src="<?= $item->Img ?>" data-srcset="" data-sizes="" alt="slider_img">
 
         <div class="btn-wrap">
@@ -42,7 +45,9 @@ OwlCarouselWidget::begin([
                 <?= !$item->link ?: Html::a($item->btnName, $item->link, ['class' => 'btn btn-primary']) ?>
             </div>
         </div>
+        </a>
     </div>
+   
 <?php endforeach; ?>
 
 
