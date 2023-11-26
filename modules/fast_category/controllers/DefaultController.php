@@ -42,9 +42,9 @@ class DefaultController extends Controller
         }
 
         $parent = $subcategory ? $category : false;
-
-        $category = FastCategory::getByUrl($category);
-        if (!$category && $category != 'favorite') {
+        
+        $fast_category = FastCategory::getByUrl($category);
+        if (!$fast_category && $category != 'favorite') {
             $category = Category::getByUrl($category);
             Yii::$app->view->title = $category->title ? $category->title : $category->header;
 
@@ -141,7 +141,7 @@ class DefaultController extends Controller
 
             $dataProvider->pagination->pageSize = 8;
         } else {
-
+            $category = FastCategory::getByUrl($category);
             if (!$category && $category != 'favorite')
                 throw new HttpException(404, ' Страница не найдена! ');
 
