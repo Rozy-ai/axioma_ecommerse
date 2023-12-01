@@ -588,6 +588,10 @@ div.bhoechie-tab .list-group-item img {
         padding-left: 0!important;
         display: block!important;
     }
+    .header-mobile ul{
+        display: flex!important;
+        justify-content: space-between;
+    }
     .w100 .btn-primary{
         width: 100%;
     }
