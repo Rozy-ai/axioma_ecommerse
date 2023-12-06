@@ -76,6 +76,8 @@ if ($category == 'favorite') {
         </div>
         <?php if ($category != 'favorite') : ?>
         <?php echo $this->render('_search', ['model' => $search, 'category' => $category]) ?>
+        <?php else: ?>
+        <?php echo $this->render('_search_favorite') ?>
         <?php endif; ?>
 
         <div class="product-list" id="product-list">
