@@ -12,13 +12,13 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="cart-index">
     <!--<h1>Корзина</h1>-->
     <div class="row">
-        <div class="col-xs-12 col-sm-9">
+        <div class="col-xs-12 col-sm-8">
             <div class="cart-index-wrap"></div>
         </div>
 
-        <div class="col-xs-12 col-sm-3">
+        <div class="col-xs-12 col-sm-3 col-sm-offset-1 well">
             
-            <div class="h3">ВАША КОРЗИНА</div>
+            <div class="h3 text-center">ВАША КОРЗИНА</div>
 
             <?php $form = ActiveForm::begin(['id' => 'cart-form', 'action' => '/order/default/view']); ?>
             
@@ -43,7 +43,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             <div class="form-group">
                 <?=
-                Html::submitButton('Оформить', ['class' => 'btn btn-primary',
+                Html::submitButton('Оформить', ['class' => 'btn btn-lg btn-primary',
                     'name' => 'contact-button'])
                 ?>
             </div>

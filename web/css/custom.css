@@ -582,6 +582,25 @@ div.bhoechie-tab .list-group-item img {
     background-color: inherit;
     border-bottom: 1px solid #92ab40;
 }
+.cart-index input[type="checkbox"]{
+    accent-color: olivedrab;
+}
+.cart-index .cart-index-wrap .tb-header{
+    padding-left: 15px;
+}
+.cart-index .cart-index-wrap .tb-col{
+    padding: 2rem 0;
+}
+.well .h3{
+    color: #92ab40;
+}
+#cart-form button{
+    width: 100%;
+    border-radius: 30px;
+}
+.cart-index-wrap .count-helper{
+    width: 100%;
+}
 
 @media (max-width: 994px) {
     .footer .sosial-icons ul{

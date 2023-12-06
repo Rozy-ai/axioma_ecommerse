@@ -10,6 +10,17 @@ var Cart = {
         });
 
     },
+    UpdateFavorite: function () {
+        
+        $.get("/cart/default/update-favorite", function (data) {
+            
+            $('.navbar-nav [href="/favorite"]').html(data);
+            $('.header-mobile [href="/favorite"]').html(data);
+        //    console.log(data);
+            
+        });
+
+    },
     AddCart: function () {
 
         data = $("#add_cart").serialize();
@@ -37,7 +48,7 @@ var Cart = {
 
     },
     OneAddCart: function (id) {
-
+    
         data = {product_id: id, count: '1'};
         var myElement = $('span.badge');
         for (const element of myElement) {
@@ -85,6 +96,7 @@ var Cart = {
                         },
                         responsivePositions: null
                     });
+                    Cart.UpdateFavorite();
                 });
 
     },

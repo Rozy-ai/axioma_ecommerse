@@ -6,6 +6,7 @@ use Yii;
 use yii\bootstrap\Html;
 use yii\web\Controller;
 use app\modules\cart\models\Cart;
+use app\modules\cart\models\Favorite;
 use yii\helpers\ArrayHelper;
 use \app\modules\products\models\Product;
 use app\models\ClientForm;
@@ -96,6 +97,39 @@ class DefaultController extends Controller
         //        return $this->render('top_cart_widget', ['count' => array_sum($data['counts'])]);
         return $this->renderAjax('top_cart_widget', [
             'count' => count($data['counts']),
+            'content' => $content,
+        ]);
+    }
+
+    public function actionUpdateFavorite()
+    {
+
+        $data = Favorite::_Products();
+
+        $content = Html::a(
+            '<i class="fas fa-times"></i>',
+            ['#'],
+            ['class' => 'close-btn']
+        );
+
+        //        print_r($data['models']);
+
+        if (isset($data['models']) && $data['models']) {
+            foreach ($data['models'] as $k => $model)
+                $content .= $this->renderAjax('_one_favorite_top', [
+                    'model' => $model,
+                ]);
+
+            $content .= Html::a(
+                'К ИЗБРАННОЕ',
+                ['/favorite'],
+                ['class' => 'btn btn-primary center-block']
+            );
+        } else
+            $content = 'Избранное пуста';
+
+        //        return $this->render('top_cart_widget', ['count' => array_sum($data['counts'])]);
+        return $this->renderAjax('top_favorite_cart_widget', [
             'content' => $content,
         ]);
     }
