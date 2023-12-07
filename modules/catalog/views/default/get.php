@@ -50,7 +50,7 @@ $this->params['breadcrumbs'][] = $page->short_name ? $page->short_name : $page->
                     <?php
                     if (isset(Yii::$app->session['favorite'])) {
                         $data = array_unique(Yii::$app->session['favorite']);
-                        if (in_array($model->id, $data))
+                        if (in_array($page->id, $data))
                             $imgPath = '/image/ico/Избранное(зеленый).svg';
                         else {
                             $imgPath = '/image/ico/Избранное.svg';
@@ -59,10 +59,10 @@ $this->params['breadcrumbs'][] = $page->short_name ? $page->short_name : $page->
                         $imgPath = '/image/ico/Избранное.svg';
                     }
                     ?>
-                    <a href="#" onclick="Cart.Favorite(this, <?= $model->id ?>)">
+                    <a href="#" onclick="Cart.Favorite(this, <?= $page->id ?>)">
                         <?= Html::img($imgPath, ['class' => 'favorite-img']) ?>
                     </a>
-                    <!-- <a href="#" onclick="Cart.Compare(<?= $model->id ?>)"><?= Html::img('/image/ico/Сравнение.svg', ['class' => 'comparison-img']) ?></a> -->
+                    <!-- <a href="#" onclick="Cart.Compare(<?= $page->id ?>)"><?= Html::img('/image/ico/Сравнение.svg', ['class' => 'comparison-img']) ?></a> -->
                     <ul class="pgwSlider">
                         <?php
                         foreach ($page->productImages as $k => $image):
