@@ -444,7 +444,9 @@ div.bhoechie-tab .list-group-item img {
 .category-search #productsearch-detection_type {
     display: inline-block!important;
 }
-
+.category-search{
+    padding-bottom: 10px!important;
+}
 .product-cart .panel .panel-heading .comparison-img {
     position: absolute;
     z-index: 1;

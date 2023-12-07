@@ -77,7 +77,7 @@ var Cart = {
                 });
 
     },
-    Favorite: function (id) {
+    Favorite: function (clickedElement, id) {
 
         data = {product_id: id};
 
@@ -97,6 +97,7 @@ var Cart = {
                         responsivePositions: null
                     });
                     Cart.UpdateFavorite();
+                    $(clickedElement).html('<img class="favorite-img" src="/image/ico/Избранное(зеленый).svg" alt=""></img>');
                 });
 
     },

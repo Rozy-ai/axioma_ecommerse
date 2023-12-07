@@ -121,7 +121,7 @@ class DefaultController extends Controller
                 ]);
 
             $content .= Html::a(
-                'К ИЗБРАННОЕ',
+                'ИЗБРАННОЕ',
                 ['/favorite'],
                 ['class' => 'btn btn-primary center-block']
             );

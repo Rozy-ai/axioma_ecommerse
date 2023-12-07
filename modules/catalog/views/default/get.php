@@ -22,13 +22,16 @@ $this->params['breadcrumbs'][] = $page->short_name ? $page->short_name : $page->
             <?php
             if ($page->product_type)
                 echo Html::img('/image/razh.png', ['class' => 'pull-right'])
-                ?>
-    <?php 
+                    ?>
+            <?php
             $category = Category::findOne($page->category_id);
             // return Html::a($category->header, ['/category/' . $model->uri, 'title' => $category->header]);
             ?>
-            <p><?php echo Html::a($category->header, ['/category/' . $category->url]); ?></p>
-            <h1 class="pull-left" good-id="<?= $page->id ?>"><?= $page->header ?>
+            <p>
+                <?php echo Html::a($category->header, ['/category/' . $category->url]); ?>
+            </p>
+            <h1 class="pull-left" good-id="<?= $page->id ?>">
+                <?= $page->header ?>
 
                 <?php
                 if (!Yii::$app->user->isGuest):
@@ -44,43 +47,57 @@ $this->params['breadcrumbs'][] = $page->short_name ? $page->short_name : $page->
                     <!-- <div class="gallery-popup-link" product-id="<?= $page->id ?>">
                         <i class="fas fa-search-plus"></i>
                     </div> -->
-                    <a href="#" onclick="Cart.Favorite(<?= $model->id ?>)"><?= Html::img('/image/ico/Избранное.svg', ['class' => 'favorite-img']) ?></a>
+                    <?php
+                    if (isset(Yii::$app->session['favorite'])) {
+                        $data = array_unique(Yii::$app->session['favorite']);
+                        if (in_array($model->id, $data))
+                            $imgPath = '/image/ico/Избранное(зеленый).svg';
+                        else {
+                            $imgPath = '/image/ico/Избранное.svg';
+                        }
+                    } else {
+                        $imgPath = '/image/ico/Избранное.svg';
+                    }
+                    ?>
+                    <a href="#" onclick="Cart.Favorite(this, <?= $model->id ?>)">
+                        <?= Html::img($imgPath, ['class' => 'favorite-img']) ?>
+                    </a>
                     <!-- <a href="#" onclick="Cart.Compare(<?= $model->id ?>)"><?= Html::img('/image/ico/Сравнение.svg', ['class' => 'comparison-img']) ?></a> -->
                     <ul class="pgwSlider">
                         <?php
                         foreach ($page->productImages as $k => $image):
-//
+                            //
 //                            if ($k > 3)
 //                                continue;
                             ?>
 
                             <li href="#">
-    <?= Html::img($image->Image) ?>
+                                <?= Html::img($image->Image) ?>
 
                             </li>
 
-                    <?php endforeach; ?>
+                        <?php endforeach; ?>
                     </ul>
-<?php // Html::img($page->image, ['class' => 'img img-responsive center-block', 'alt' => $page->header]);    ?>
+                    <?php // Html::img($page->image, ['class' => 'img img-responsive center-block', 'alt' => $page->header]);    ?>
 
                     <script type="text/javascript">
                         main['img_list_<?= $page->id ?>'] = [
-<?php
-foreach ($page->productImages as $item):
-    echo "{ src: '" . $item->getImage() . "', type: 'image' },";
-endforeach;
-?>
+                            <?php
+                            foreach ($page->productImages as $item):
+                                echo "{ src: '" . $item->getImage() . "', type: 'image' },";
+                            endforeach;
+                            ?>
                         ];
                     </script>
 
                 </div>
                 <div class="content col-xs-12 col-sm-9">
                     <?=
-                    \app\modules\cart\widgets\AddToCartWidget::widget([
-                        'product_id' => $page->id,
-                        'type' => 'full',
-                    ])
-                    ?>
+                        \app\modules\cart\widgets\AddToCartWidget::widget([
+                            'product_id' => $page->id,
+                            'type' => 'full',
+                        ])
+                        ?>
                 </div>
 
 
@@ -100,9 +117,17 @@ endforeach;
                     if ($page->content_install)
                         $items[] = [
                             'label' => 'Варианты установок',
-                            'content' => preg_replace('/<img src="([^"]+)"+>/i'
-                                    , Html::a(Html::img('$1', ['class' => 'img img-responsive']), '$1'
-                                            , ['class' => 'popup-link']), $page->content_install),
+                            'content' => preg_replace(
+                                '/<img src="([^"]+)"+>/i'
+                                ,
+                                Html::a(
+                                    Html::img('$1', ['class' => 'img img-responsive']),
+                                    '$1'
+                                    ,
+                                    ['class' => 'popup-link']
+                                ),
+                                $page->content_install
+                            ),
                         ];
                     $items[] = [
                         'label' => 'Сопутствующие товары',
@@ -118,25 +143,24 @@ endforeach;
                     ?>
                 </div>
 
-<?php if ($page->youtube_link): ?>
+                <?php if ($page->youtube_link): ?>
 
                     <div class="col-xs-12">
                         <div class="h3">ВИДЕО</div>
 
-                        <iframe width="100%" height="350" src="https://www.youtube.com/embed/<?= $page->youtube_link ?>" 
-                                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen>
+                        <iframe width="100%" height="350" src="https://www.youtube.com/embed/<?= $page->youtube_link ?>"
+                            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
 
                         </iframe>
                     </div>
-<?php endif; ?>
+                <?php endif; ?>
 
             </div>
         </div>
 
         <!-- <div class="hidden-xs col-xs-12 col-sm-4  col-sm-pull-8 category-left-menu"> -->
-<?php // echo app\modules\category\widgets\MenuCategory::widget(['active_id' => $page->category_id]); ?>
+        <?php // echo app\modules\category\widgets\MenuCategory::widget(['active_id' => $page->category_id]); ?>
         <!-- </div> -->
     </div>
 </div>
-

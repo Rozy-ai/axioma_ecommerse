@@ -28,8 +28,13 @@ $this->registerJsFile('/js/product-cart-height.js', ['depends' => ['app\assets\A
                 <?= Html::img('/image/t-all.svg', ['class' => 'type-img']) ?>
 
             <?php endif; ?>
-            <a href="#" onclick="Cart.Favorite(<?= $model->id ?>)"><?= Html::img('/image/ico/Избранное.svg', ['class' => 'favorite-img']) ?></a>
-            <!-- <a href="#" onclick="Cart.Compare(<?= $model->id ?>)"><?= Html::img('/image/ico/Сравнение.svg', ['class' => 'comparison-img']) ?></a> -->
+            <?php 
+    if(isset(Yii::$app->session['favorite'])) {$data = array_unique(Yii::$app->session['favorite']);
+        if(in_array($model->id, $data)) $imgPath = '/image/ico/Избранное(зеленый).svg';
+         else {$imgPath = '/image/ico/Избранное.svg';}
+        } else {$imgPath = '/image/ico/Избранное.svg';}
+?>
+<a href="#" onclick="Cart.Favorite(this, <?= $model->id ?>)"><?= Html::img($imgPath, ['class' => 'favorite-img']) ?></a>            <!-- <a href="#" onclick="Cart.Compare(<?= $model->id ?>)"><?= Html::img('/image/ico/Сравнение.svg', ['class' => 'comparison-img']) ?></a> -->
             <div class=" image-wrap">
                 <div class="image" data-url="<?= Url::to('/catalog/' . $model->url) ?>" onclick="window.location = $(this).attr('data-url')" style="background: url('<?= $model->image ?>') top center no-repeat;">
 
