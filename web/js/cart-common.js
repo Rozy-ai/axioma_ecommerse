@@ -144,6 +144,27 @@ var Cart = {
                 location.reload();
 
     },
+    FavoriteDelete: function () {
+
+        $.post("/cart/default/delete-to-favorite")
+                .done(function () {
+                    new jBox('Notice', {
+                        content: 'Товары удалены в избранное',
+                        color: 'green',
+                        attributes: {
+                            x: 'right',
+                            y: 'top'
+                        },
+                        position: {
+                            x: 20,
+                            y: 70
+                        },
+                        responsivePositions: null
+                    });
+                });
+                location.reload();
+
+    },
     LoadCart: function () {
 
         if ("cart" in window) {

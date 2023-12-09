@@ -238,6 +238,19 @@ class DefaultController extends Controller
         // echo 'compare ok';
     }
 
+    public function actionDeleteToFavorite()
+    {
+
+        if (Yii::$app->request->isAjax) {
+
+            // Remove data from the array
+            unset($_SESSION['favorite']);
+
+        }
+        echo 1;
+        // echo 'compare ok';
+    }
+
     public function actionDelete($id)
     {
 

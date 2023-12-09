@@ -25,11 +25,11 @@ $this->registerCss($this->render('./../../assets/css/category-search.css'));
 
     <div class="row">
 
-        <div class="col-xs-12 col-lg-9">
-
-        </div>
-
-        <div class="col-xs-12 col-lg-3 text-right hidden-xs">
+        <!-- <div class="col-xs-12 col-lg-9">
+            </div> -->
+            
+            <div class="col-xs-12 text-right hidden-xs">
+            <a href="#" class="compare-click" onclick="Cart.FavoriteDelete()"><?= Html::img('/image/ico/Удалить.svg', ['class' => 'delete-img']) ?> Удалить все товары</a>
             <a href="#" onclick="changeGrid()">
                 <?= Html::img('/image/ico/Подробный список.svg', ['class' => 'list-img']) ?>
             </a>
