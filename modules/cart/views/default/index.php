@@ -26,14 +26,14 @@ $this->params['breadcrumbs'][] = $this->title;
 
             <?= $form->field($client, 'name')->textInput(['autofocus' => true]) ?>
 
-            <?= $form->field($client, 'email') ?>
-
             <?=
             $form->field($client, 'phone')->widget(MaskedInput::className(), [
                 'mask' => '+7 (999) 999-9999',
                 'options' => ['class' => 'form-control'],
             ])
             ?>
+
+            <?= $form->field($client, 'email') ?>
 
             <?=
             $form->field($client, 'personal_accept')->checkbox()->label('Я даю согласие на обработку персональных данных. '

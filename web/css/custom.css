@@ -590,6 +590,23 @@ div.bhoechie-tab .list-group-item img {
 .cart-index input[type="checkbox"]{
     accent-color: olivedrab;
 }
+
+.cart-index .well{
+    background-color: inherit;
+}
+.cart-index form div.form-group{
+    position: relative;
+}
+.cart-index form div.form-group label.control-label{
+position: absolute;
+top: -10px;
+left: 5px;
+background-color: #fff;
+color: #ccc;
+}
+.cart-index form div.form-group input{
+    height: 44px;
+}
 .cart-index .cart-index-wrap .tb-header{
     padding-left: 15px;
 }
