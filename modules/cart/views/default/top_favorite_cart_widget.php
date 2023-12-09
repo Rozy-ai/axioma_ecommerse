@@ -9,11 +9,11 @@ $session = Yii::$app->session;
      data-toggle="popover" data-placement="bottom" data-content='<?= $content ?>'>
 <!--    <span class="glyphicon glyphicon-shopping-cart">
 </span>-->
-    <?php  if(isset($session['favorite'])): ?>
-    <?= Html::img('/image/ico/Избранное(зеленый).svg', ['class' => 'img', 'height' => '24px']) ?>
-    <?php else: ?>
-    <?= Html::img('/image/ico/Избранное.svg', ['class' => 'img', 'height' => '24px']) ?>
-    <?php endif; ?>
 
+    <?= Html::img('/image/ico/Избранное.svg', ['class' => 'img', 'height' => '24px']) ?>
+
+    <?php  if(isset($session['favorite'])): ?>
+    <span class="count badge"><?= count(array_unique($session['favorite'])) ?></span>
+    <?php endif; ?>
     <br>Избранное
 </div>
