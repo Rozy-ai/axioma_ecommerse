@@ -13,8 +13,8 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="order-view col-xs-12">
     <h1><?= $this->title ?></h1>
 
-    <div class="row">
-        <div class="col-xs-12 col-sm-8">
+    <div class="row cart-index">
+        <div class="col-xs-12 col-sm-9">
 
             <table class="table table-hover">
                 <tr>
@@ -46,7 +46,8 @@ $this->params['breadcrumbs'][] = $this->title;
             </table>
 
         </div>
-        <div class="col-xs-12 col-sm-4 well">
+        <div class="col-xs-12 col-sm-3 well">
+            <div class="h3 text-center">ВАША КОРЗИНА</div>
             <?php $form = ActiveForm::begin(['id' => 'order-view-form']); ?>
 
             <?= $form->field($client, 'name')->textInput(['autofocus' => true]) ?>
@@ -76,7 +77,7 @@ $this->params['breadcrumbs'][] = $this->title;
         ?>
 
             <div class="form-group">
-                <?= Html::submitButton('Оформить', ['class' => 'btn btn-primary',
+                <?= Html::submitButton('Оформить', ['class' => 'btn btn-lg btn-primary',
                     'onClick' => "ym(53040199, 'reachGoal', 'send-order'); return true;",
                     'name' => 'contact-button']) ?>
             </div>

@@ -620,6 +620,10 @@ color: #ccc;
     width: 100%;
     border-radius: 30px;
 }
+.order-view button{
+width: 100%;
+border-radius: 30px;
+}
 .cart-index-wrap .count-helper{
     width: 100%;
 }
