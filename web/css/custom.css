@@ -677,4 +677,10 @@ border-radius: 30px;
       .product_item .gallery-wrap .ps-list>li{
         height: auto!important;
       }
+      .modal-dialog {
+        color: #000;
+      }
+      .footer .footer-top .right-side .modal-dialog a{
+        color: #000;
+      }
   }

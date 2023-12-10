@@ -572,7 +572,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                 </a>
                                 <br />
                             </p>
-                            <?= \app\modules\forms\widgets\CallBack::widget(['in_footer' => true]); ?>
+                            <?= \app\modules\forms\widgets\CallBackFooter::widget(['in_footer' => true]); ?>
                             <div class="sosial-icons" style="padding-top: 3.6rem;">
                                 <ul class="nav-justified" style="padding: 0;">
                                     <li>
