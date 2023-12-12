@@ -694,6 +694,33 @@ div.bhoechie-tab .list-group-item img {
 #callback-form-footer .form-control{
     height: 44px;
 }
+#oneclick-form-modal .form-group {
+    position: relative;
+}
+
+#oneclick-form-modal div.form-group label.control-label {
+    position: absolute;
+    top: -10px;
+    left: 5px;
+    background-color: #fff;
+}
+#oneclick-form-modal .form-control{
+    height: 44px;
+}
+#callback-form-modal .form-group {
+    position: relative;
+}
+
+#callback-form-modal div.form-group label.control-label {
+    position: absolute;
+    top: -10px;
+    left: 5px;
+    background-color: #fff;
+}
+#callback-form-modal .form-control{
+    height: 44px;
+}
+
 
 @media (max-width: 994px) {
     .footer .sosial-icons ul {
