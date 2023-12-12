@@ -720,6 +720,19 @@ div.bhoechie-tab .list-group-item img {
 #callback-form-modal .form-control{
     height: 44px;
 }
+#vacancy-form-modal .form-group {
+    position: relative;
+}
+
+#vacancy-form-modal div.form-group label.control-label {
+    position: absolute;
+    top: -10px;
+    left: 5px;
+    background-color: #fff;
+}
+#vacancy-form-modal .form-control{
+    height: 44px;
+}
 
 
 @media (max-width: 994px) {
