@@ -6,8 +6,8 @@ use yii\helpers\Url;
 $this->registerJsFile('/js/product-cart-height.js', ['depends' => ['app\assets\AppAsset']]);
 
 $words = explode(" ", $model->short_name);
-$firstWord = $words[0];
-$otherWords =  implode(" ", array_slice($words, 1));
+$firstWord = $words[0] . ' ' .$words[1];
+$otherWords =  implode(" ", array_slice($words, 2));
 
 ?>
 
