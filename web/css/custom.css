@@ -790,4 +790,14 @@ div.bhoechie-tab .list-group-item img {
     .footer .footer-top .right-side .modal-dialog a {
         color: #000;
     }
+    .cart-index .cart-index-wrap .tb-col{
+        border-bottom: none;
+    }
+    .well{
+        border: none;
+        box-shadow: none;
+    }
+    .cart-index-wrap .count-helper{
+        width: 50%;
+    }
 }

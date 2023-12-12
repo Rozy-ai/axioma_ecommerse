@@ -66,7 +66,7 @@ use kartik\popover\PopoverX;
         ?>
     </div>
 
-    <div class="col-xs-6 col-xs-offset-3 col-sm-offset-0 col-sm-2 img-wrap">
+    <div class="col-xs-6 col-xs-offset-3 col-sm-offset-0 col-sm-2 img-wrap text-center">
         <?php
         $val = [];
 

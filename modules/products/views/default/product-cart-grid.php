@@ -4,6 +4,11 @@ use yii\bootstrap\Html;
 use yii\helpers\Url;
 
 $this->registerJsFile('/js/product-cart-height.js', ['depends' => ['app\assets\AppAsset']]);
+
+$words = explode(" ", $model->short_name);
+$firstWord = $words[0];
+$otherWords =  implode(" ", array_slice($words, 1));
+
 ?>
 
 <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 product-cart product-cart-grid">
@@ -53,11 +58,11 @@ $this->registerJsFile('/js/product-cart-height.js', ['depends' => ['app\assets\A
             <!--<div class="product-description-wrap">-->
             <div class="h4">
                 <?=
-                Html::a($model->short_name ? $model->short_name : $model->header,
+                Html::a($model->short_name ?  "<span style='text-transform: capitalize;display: block;font-weight: 400;font-size: 1.6rem;'>$firstWord</span> " . $otherWords : $model->header,
                         ['/catalog/' . $model->url],
                         [
                             'class' => 'text-grid',
-                            'title' => $model->header,
+                            'title' => "<span style='font-weight: bold;'>$firstWord</span> " . $otherWords,
                 ])
                 ?>
                 <?php //  $model->ord ?>
