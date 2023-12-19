@@ -82,7 +82,7 @@ $this->registerJsFile('@web/js/form/contact_form.js', ['depends' => ['app\assets
         </div>
     </div>
 </div>
-
+</div>
 <?php
 
 $script = <<< JS
