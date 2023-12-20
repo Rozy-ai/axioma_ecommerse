@@ -15,6 +15,7 @@ class ContactForm extends EmailForm {
     public $name;
     public $email;
     public $phone;
+    public $file;
     public $message;
 
 //    public $verifyCode;
@@ -28,6 +29,7 @@ class ContactForm extends EmailForm {
         return ArrayHelper::merge($rules, [
                     [['name', 'email', 'message','phone'], 'required'],
                     ['email', 'email'],
+                    [['file'], 'file'],
         ]);
     }
 
@@ -36,10 +38,11 @@ class ContactForm extends EmailForm {
      */
     public function attributeLabels() {
         return [
-            'name' => 'Ваше имя... *',
-            'email' => 'Ваш E-mail... *',
-            'phone' => 'Телефон... *',
-            'message' => 'Ваше Сообщение',
+            'name' => 'Введите ваше имя',
+            'email' => 'Введите ваш е-mail',
+            'phone' => 'Введите ваш телефон',
+            'message' => 'Введите ваш вопрос',
+            'file' => 'Прикрепить файл',
             'captcha' => 'Подтвердите, что вы не робот. Введите цифры с картинки.',
         ];
     }

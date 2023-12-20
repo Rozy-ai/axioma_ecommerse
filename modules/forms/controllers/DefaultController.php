@@ -10,6 +10,7 @@ use app\modules\forms\models\VacancyForm;
 use app\modules\forms\models\GoodQuestionForm;
 use app\modules\forms\models\OneClickOrder;
 use \app\modules\forms\models\SendReviewForm;
+use yii\web\UploadedFile;
 
 /**
  * AdminController implements the CRUD actions for Theme model.
@@ -154,12 +155,14 @@ class DefaultController extends Controller {
     public function actionContactForm() {
 
         if (Yii::$app->request->isAjax) {
-
+            
             \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
 
             $model = new \app\modules\forms\models\ContactForm();
 
             if ($model->load(Yii::$app->request->post())) {
+
+                $model->file = UploadedFile::getInstance($model, 'file');
 
                 $model->body = $model->name . '( ' . $model->email . ' )' . ' спрашивает: ' . $model->message;
 

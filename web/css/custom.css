@@ -87,10 +87,49 @@
 }
 
 .home-contact-form .contact-fields textarea {
-    padding: 5px 10px;
+    padding: 10px;
     border-radius: 6px;
     margin-top: 15px;
+    height: auto;
 }
+
+.custom-file-input {
+    color: transparent;
+    cursor: pointer;
+    float: right;
+    padding: 0!important;
+  }
+  .custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+  .home-contact-form div.field-contactform-file label.control-label{
+    top: 30%!important;
+    right: 15%!important;
+    text-align: right;
+  }
+  .home-contact-form .contact-fields input.custom-file-input{
+    max-width: 100%;
+  } 
+  .custom-file-input::before {
+    content: "Прикрепить файл";
+    color: black;
+    display: inline-block;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    float: right;
+    font-size: 10pt;
+  }
+  .custom-file-input:hover::before {
+    border-color: black;
+  }
+  .custom-file-input:active {
+    outline: 0;
+  }
+  .custom-file-input:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); 
+  }
 
 .thanks-contact-form .contact-form .home-contact-form .button-wrap button {
     padding: 1rem 8rem;
@@ -733,12 +772,33 @@ div.bhoechie-tab .list-group-item img {
 #vacancy-form-modal .form-control{
     height: 44px;
 }
+.home-contact-form .form-group {
+    position: relative;
+}
+
+.home-contact-form div.form-group label.control-label {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    color: #ccc;
+    background-color: #fff;
+}
+.home-contact-form .form-control{
+    height: 44px;
+}
 
 
 @media (max-width: 994px) {
     .footer .sosial-icons ul {
         padding-left: 0 !important;
         display: block !important;
+    }
+    .custom-file-input{
+        float: none;
+    }
+    .home-contact-form div.field-contactform-file label.control-label{
+        top: 0!important;
+        right: 80%!important;
     }
 
     .header-mobile ul {
