@@ -35,6 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'preview:ntext',
             'content:ntext',
             'image',
+            'banner_url',
             'ord',
             'seo_title',
             'seo_description',

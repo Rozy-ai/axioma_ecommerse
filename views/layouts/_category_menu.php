@@ -51,8 +51,8 @@ $categories = Category::find()->with('childs')->orderBy([
                                     </ul>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                    <?= Html::img('/image/category/banner1.png', ['width' => '100%']) ?> <br><br>
-                                    <?= Html::img('/image/category/banner2.png', ['width' => '100%']) ?>
+                                    <a href="<?= $item->banner_url ?>"><?= Html::img($item->image, ['width' => '100%']) ?></a> <br><br>
+                                    <?php //echo Html::img('/image/category/banner2.png', ['width' => '100%']) ?>
                                 </div>
                             </div>
                         </div>
@@ -70,8 +70,8 @@ $categories = Category::find()->with('childs')->orderBy([
                                     </ul>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                <?= Html::img('/image/category/banner1.png', ['width' => '100%']) ?> <br><br>
-                                    <?= Html::img('/image/category/banner2.png', ['width' => '100%']) ?>
+                                <a href="<?= $item->banner_url ?>"><?= Html::img($item->image, ['width' => '100%']) ?></a> <br><br>
+                                    <?php //echo Html::img('/image/category/banner2.png', ['width' => '100%']) ?>
                                 </div>
                             </div>
                         </div>

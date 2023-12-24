@@ -52,7 +52,7 @@ class Category extends \app\models\CustomAR
             [['ord', 'created_at', 'is_enable', 'parent_id', 'show_in_home', 'in_home_order', 'in_menu', 'in_menu_order'], 'integer'],
             [['price'], 'number'],
             [['in_menu_order'], 'required'],
-            [['header', 'url', 'image', 'ico'], 'string', 'max' => 255],
+            [['header', 'url', 'image', 'ico',' banner_url'], 'string', 'max' => 255],
             [['title', 'description', 'keywords'], 'string', 'max' => 500],
         ];
     }
@@ -82,6 +82,7 @@ class Category extends \app\models\CustomAR
             'price' => 'Цена на главной',
             'in_menu' => 'Показывать в верхнем меню',
             'in_menu_order' => 'Порядок в меню',
+            'banner_url' => 'Ссылка баннера',
         ];
     }
 

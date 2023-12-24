@@ -89,6 +89,8 @@ use kartik\widgets\Select2;
                     ]
             )->label('Изображение');
             ?>
+            
+            <?= $form->field($model, 'url')->textInput(['maxlength' => true]) ?>
 
             <div class="form-group">
                 <?= Html::submitButton($model->isNewRecord ? 'Создать' : 'Обновить', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
