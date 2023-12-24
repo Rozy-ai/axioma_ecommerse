@@ -31,7 +31,8 @@ class Thanks extends \app\models\CustomAR
         return [
             [['is_enable'], 'required'],
             [['is_enable', 'order'], 'integer'],
-            [['name', 'image'], 'string', 'max' => 255],
+            [['name', 'image','employee_name', 'employee_job'], 'string', 'max' => 255],
+            [['content'], 'string'],
         ];
     }
 
@@ -46,6 +47,9 @@ class Thanks extends \app\models\CustomAR
             'image' => 'Изображение',
             'is_enable' => 'Включено',
             'order' => 'Порядок',
+            'employee_name' => 'Имя сотрудника',
+            'employee_job' => 'должность',
+            'content' => 'содержание',
         ];
     }
 }

@@ -25,6 +25,12 @@ use vova07\fileapi\Widget as FileAPI;
     )->label('Изображение в шапке');
     ?>
 
+    <?= $form->field($model, 'employee_name')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'employee_job')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
+
     <?= $form->field($model, 'is_enable')->checkbox() ?>
 
     <?= $form->field($model, 'order')->textInput(['maxlength' => true]) ?>

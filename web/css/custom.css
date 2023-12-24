@@ -786,7 +786,24 @@ div.bhoechie-tab .list-group-item img {
 .home-contact-form .form-control{
     height: 44px;
 }
-
+.home-portfolio .slick-slide .grid-item .img{
+    filter: grayscale(1);
+    transition: 1s;
+}
+.home-portfolio .slick-slide .grid-item .img:hover{
+    filter: grayscale(0);
+}
+.slick-dots li button{
+    border: 1px solid #ccc!important;
+    border-radius: 50%!important;
+}
+.slick-dots li.slick-active button:before{
+    color: #b8cc76!important;
+}
+.slick-dots li button:before{
+    font-size: 10px!important;
+    line-height: 21px!important;
+}
 
 @media (max-width: 994px) {
     .footer .sosial-icons ul {
