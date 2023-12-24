@@ -57,7 +57,7 @@ use yii\bootstrap\Html;
 
         <div class="container">
             <!--<p class="h2">Готовые проекты</p>-->
-            <p class="h2">Наши клиенты</p>
+            <p class="h2">Нам доверяют</p>
         </div>
 
         <div class="gallery-wrap">

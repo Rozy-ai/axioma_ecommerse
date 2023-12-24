@@ -804,7 +804,63 @@ div.bhoechie-tab .list-group-item img {
     font-size: 10px!important;
     line-height: 21px!important;
 }
-
+.thanks{
+    background: #ededed;
+    padding-bottom: 5rem;
+    margin-bottom: 5rem;
+}
+.thanks .service-wrap{
+    min-height: 36rem;
+    padding: 2rem;
+    cursor: pointer;
+    position: relative;
+    margin-top: 50px;
+    background-color: #fff;
+    margin-bottom: 50px;
+    position: relative;
+    transition: .4s;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+.thanks .service-wrap .img-wrap{
+    right: 10px;
+    position: absolute;
+    top: -20px;
+    padding: 10px;
+    background: #fff;
+    width: 30%;
+    border-radius: 10px;
+    box-shadow: rgb(0,0,0,0.4) 0px -6px 6px -6px;
+}
+.thanks .service-wrap img{
+    border: 1px solid #ededed;
+    border-radius: 10px;
+    height: auto;
+    width: 100%;
+}
+.thanks .one-service .service-wrap .anons{
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    color: #959595;
+}
+.thanks .h2{
+    font-size: 3rem;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+}
+.home-portfolio .gallery-wrap{
+    border-top: none;
+    border-bottom: none;
+    padding: 3rem 0 5rem;
+}
+.thanks-contact-form .contact-form .home-contact-form input[type=text]{
+    height: 0;
+}
+.thanks-contact-form .contact-form .home-contact-form input[type=email]{
+    height: 0;
+}
+.thanks-contact-form .contact-form .home-contact-form .h2{
+    margin-bottom: 0;
+}
 @media (max-width: 994px) {
     .footer .sosial-icons ul {
         padding-left: 0 !important;
