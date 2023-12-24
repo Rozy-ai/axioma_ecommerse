@@ -26,6 +26,7 @@ use Yii;
  * @property double $price Цена на главной
  * @property int $in_menu Показывать в верхнем меню
  * @property int $in_menu_order Порядок в меню
+ * @property string $banner_url Ссылка баннера
  *
  * @property Product[] $products
  */
@@ -52,7 +53,7 @@ class Category extends \app\models\CustomAR
             [['ord', 'created_at', 'is_enable', 'parent_id', 'show_in_home', 'in_home_order', 'in_menu', 'in_menu_order'], 'integer'],
             [['price'], 'number'],
             [['in_menu_order'], 'required'],
-            [['header', 'url', 'image', 'ico',' banner_url'], 'string', 'max' => 255],
+            [['header', 'url', 'image', 'ico', 'banner_url'], 'string', 'max' => 255],
             [['title', 'description', 'keywords'], 'string', 'max' => 500],
         ];
     }
