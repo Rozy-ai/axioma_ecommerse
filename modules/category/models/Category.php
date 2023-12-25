@@ -122,6 +122,11 @@ class Category extends \app\models\Category {
         return '/image/category/' . $this->ico;
     }
 
+    public function getImage() {
+
+        return '/image/category/' . $this->image;
+    }
+
     public function getParent() {
         return $this->hasOne(self::className(), ['id' => 'parent_id']);
     }
