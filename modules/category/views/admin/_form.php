@@ -87,7 +87,7 @@ use kartik\widgets\Select2;
                     'url' => ['/category/admin/upload-image']
                 ]
                     ]
-            )->label('Изображение');
+            )->label('Баннер');
             ?>
 
             <?= $form->field($model, 'banner_url')->textInput(['maxlength' => true]) ?>
