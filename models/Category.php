@@ -12,7 +12,7 @@ use Yii;
  * @property string $url Url
  * @property string $preview Превью
  * @property string $content Содержание
- * @property string $image Изображение
+ * @property string $image Баннер
  * @property string $ico Иконка
  * @property int $ord Порядок (обратный)
  * @property string $title SEO Title
@@ -69,7 +69,7 @@ class Category extends \app\models\CustomAR
             'url' => 'Url',
             'preview' => 'Превью',
             'content' => 'Содержание',
-            'image' => 'Изображение',
+            'image' => 'Баннер',
             'ico' => 'Иконка',
             'ord' => 'Порядок (обратный)',
             'title' => 'SEO Title',
