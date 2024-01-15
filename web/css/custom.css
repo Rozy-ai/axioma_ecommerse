@@ -31,7 +31,9 @@ select{
     width: 100%;
     position: relative;
 }
-
+.header .phone-wrap .phone a:hover{
+    text-decoration: unset;
+}
 #popup-search .input-group input {
     border: none;
     box-shadow: none;
