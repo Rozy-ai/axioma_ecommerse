@@ -10,7 +10,7 @@ $session = Yii::$app->session;
 <!--    <span class="glyphicon glyphicon-shopping-cart">
 </span>-->
 
-    <?= Html::img('/image/ico/Избранное.svg', ['class' => 'img', 'height' => '24px']) ?>
+    <?= Html::img('/image/ico/Избранное.svg', [ "onmouseover"=>"this.src='/image/ico/Избранное(зеленый).svg';", "onmouseout"=>"this.src='/image/ico/Избранное.svg';", 'class' => 'img', 'height' => '24px']) ?>
 
     <?php  if(isset($session['favorite'])): ?>
     <span class="count badge"><?= count(array_unique($session['favorite'])) ?></span>

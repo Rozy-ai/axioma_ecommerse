@@ -263,16 +263,16 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                             <?php if (Yii::$app->city->id == 1107): ?>
                                 <div class="row">
                                     <div class="col-xs-5">
-                                        Пн-пт:
+                                        <b>пн-пт:</b>
                                     </div>
                                     <div class="col-xs-7">
-                                        09.00 — 18.00
+                                        09.00-18.00
                                     </div>
                                     <div class="col-xs-5">
-                                        сб:
+                                        <b>сб-вс:</b>
                                     </div>
                                     <div class="col-xs-7">
-                                        09.00 — 14.00
+                                        Выходной
                                     </div>
                                     <!-- <div class="col-xs-5">
                                                         вс:
@@ -307,18 +307,18 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                             <ul class="nav-justified" style="padding: 0;">
                                 <li>
                                     <a href="https://www.youtube.com/c/AxiomaPro/featured" target="_blank">
-                                        <img src="/image/ico/Youtube.svg" height="24px">
+                                        <img src="/image/ico/Youtube.svg" onmouseover="this.src='/image/ico/Youtube(взаимодействие).svg';" onmouseout="this.src='/image/ico/Youtube.svg';" height="24px">
                                     </a>
                                 </li>
                                 <li>
                                     <a href="https://instagram.com/axioma.pro.russia?igshid=MTk0NTkyODZkYg%3D%3D&utm_source=qr"
                                         target="_blank">
-                                        <img src="/image/ico/Instagram-2.png" height="24px" alt="Instagram">
+                                        <img src="/image/ico/Instagram-2.svg" onmouseover="this.src='/image/ico/Instagram(взаимодействие).svg';" onmouseout="this.src='/image/ico/Instagram-2.svg';" height="24px" alt="Instagram">
                                     </a>
                                 </li>
                                 <li>
                                     <a href="https://vk.com/axioma.pro.russia" target="_blank">
-                                        <img src="/image/ico/Вконтакте.svg" height="24px" alt="Вконтакте">
+                                        <img src="/image/ico/Вконтакте.svg" onmouseover="this.src='/image/ico/VK(взаимодействие).svg';" onmouseout="this.src='/image/ico/Вконтакте.svg';" height="24px" alt="Вконтакте">
                                     </a>
                                 </li>
 
@@ -351,7 +351,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
 
                     </div>
                     <div class="col-xs-12 col-md-2">
-                        <button type="button" class="btn btn-primary catalog-button"><i class="fas fa-list"></i> Каталог
+                        <button type="button" id="catalog_button" class="btn btn-primary catalog-button"><i class="fas fa-list"></i> Каталог
                             товаров</button>
                     </div>
 
@@ -452,7 +452,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                     <div class="<?= Yii::$app->params['isFluid'] ? 'container' : '' ?>">
                         <?=
                             Breadcrumbs::widget([
-                                'links' => $this->params['breadcrumbs'] ?? [],
+                                // 'links' => $this->params['breadcrumbs'] ?? [],
                                 'options' => ['class' => 'breadcrumb', 'itemscope' => true, 'itemtype' => 'http://schema.org/BreadcrumbList'],
                                 'itemTemplate' => '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">{link}</li>' . PHP_EOL,
                                 'activeItemTemplate' => '<li class="active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">{link}</li>' . PHP_EOL,
@@ -510,17 +510,17 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                         тел: <?php // echo RegionTemplates::getVal('phone-2') 
                                         ?>
                                     </div> -->
-                                <div class="button-anchor">
+                                <!-- <div class="button-anchor">
                                     <div class="form-group button-wrap">
                                         <a href="#contact-form" class="scroll-link">
-                                            <?=
-                                                Html::Button('Задать вопрос', [
-                                                    'class' => 'btn btn-default',
-                                                ])
+                                            <?php 
+                                                // echo Html::Button('Задать вопрос', [
+                                                //     'class' => 'btn btn-default',
+                                                // ])
                                                 ?>
                                         </a>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         <div class="col-md-offset-1 col-xs-12 col-sm-12 col-md-6">

@@ -8,7 +8,7 @@ use yii\bootstrap\Html;
      data-toggle="popover" data-placement="bottom" data-content='<?= $content ?>'>
 <!--    <span class="glyphicon glyphicon-shopping-cart">
 </span>-->
-    <?= Html::img('/image/ico/Cart.svg', ['class' => 'img', 'height' => '24px']) ?>
+    <?= Html::img('/image/ico/Cart.svg', ["onmouseover"=>"this.src='/image/ico/Cart(зеленый).svg';", "onmouseout"=>"this.src='/image/ico/Cart.svg';",'class' => 'img', 'height' => '24px']) ?>
 
     <span style="<?php if($count == 0) echo 'display:none;'?>" class="count badge"><?= $count ?></span>
     <br>Корзина

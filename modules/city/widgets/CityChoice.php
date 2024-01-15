@@ -34,7 +34,7 @@ class CityChoice extends Widget {
         $current = '';
         foreach ($cityes as $city):
             if ($city->name_eng == $this->current_city)
-                $current = Html::tag('strong', $city->name, ['class' => 'active-city']);
+                $current = Html::tag('span', $city->name, ['class' => 'active-city']);
             else
                 $links [] = ['link' => ($city->name_eng == $this->default_city) ?
                     Html::a($city->name, 'https://www.' . Yii::$app->params['defaultDomain'] . '/' . Yii::$app->request->pathInfo) :

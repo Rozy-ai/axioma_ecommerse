@@ -1,5 +1,11 @@
 $(document).ready(function () {
 
+    $("#catalog_button").on("mouseover", function(){
+        $(this).find("i").removeClass("fa-list").addClass("fa-angle-down icon_up");
+    }).on("mouseout", function(){
+        $(this).find("i").removeClass("fa-angle-down icon_up").addClass("fa-list");
+    });
+
     //product 
     $('.pgwSlider').pgwSlider({
         listPosition: 'right',
@@ -191,3 +197,4 @@ function changeList() {
     list.style.display = "none";
     grid.style.display = "block";
 };
+
