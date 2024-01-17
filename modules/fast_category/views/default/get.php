@@ -67,12 +67,13 @@ if ($category == 'favorite') {
     <?php else : ?>
         <div class="hidden-xs hidden-sm">
             <?php
-            echo Nav::widget([
-                'options' => ['class' => 'top-line-nav'],
-                'encodeLabels' => false,
-                'items' => Menu::getBottomMenu(),
-            ]);
+            // echo Nav::widget([
+            //     'options' => ['class' => 'top-line-nav'],
+            //     'encodeLabels' => false,
+            //     'items' => Menu::getBottomMenu(),
+            // ]);
             ?>
+        <?php echo $this->render('_bottom_menu') ?>
         </div>
         <?php if ($category != 'favorite') : ?>
         <?php echo $this->render('_search', ['model' => $search, 'category' => $category]) ?>

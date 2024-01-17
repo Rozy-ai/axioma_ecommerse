@@ -42,7 +42,14 @@ select{
     border-radius: 0!important;
     /* padding-left: 0; */
 }
-
+.sosial-icons a:hover{
+    text-decoration: none;
+}
+.new_fast_cat img{
+    display: block;
+    height: 100px;
+    margin: 0 auto;
+}
 #popup-search .input-group i {
     position: absolute;
     z-index: 22;
@@ -482,10 +489,15 @@ div.bhoechie-tab .list-group-item img {
 .pagination>li>span {
     padding: 5px 10px;
 }
-
+.new_fast_cat{
+    display: flex;
+    justify-content: space-between;
+}
 .catalog-new ul li a {
-    background-color: #f2f2f2;
-    border-radius: 50px;
+    background-color: #f6f6f6;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    text-align: center;
 }
 
 .catalog-new h1 {

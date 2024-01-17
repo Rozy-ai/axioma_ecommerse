@@ -87,8 +87,8 @@ class Menu extends \app\models\Menu {
 
                 $result[] = ['label' => $item->name, 'url' => ['/' . $item->url], 'items' => $_items];
             } else
-                $result[] = ['label' => $item->name, 'url' => ['/' . $item->url]];
-
+                $result[] = ['label' => $item->name, 'url' => [ $item->url]];
+ 
 
         return $result;
     }
