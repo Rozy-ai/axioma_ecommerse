@@ -497,15 +497,21 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
             <div class="footer-top">
                 <div class="container">
                     <div class="row">
-                        <div class="hidden-xs hidden-sm col-md-2">
-                            <p class="title">АДРЕС</p>
-                            <div class="city-choise-wrap">
+                        <div class="col-md-2">
+                            <p class="title">КАРТА САЙТА</p>
 
-                                <?= \app\modules\city\widgets\CityChoice::widget() ?>
+                                    <ul class="list-unstyled list-inline">
+                                        <?= Menu::getFooterItems(1) ?>
+                                    </ul>
+             
+
+                            <!-- <div class="city-choise-wrap">
+                
+                                <?php // echo \app\modules\city\widgets\CityChoice::widget() ?>
 
                                 <div class="address">
-                                    <?= RegionTemplates::getVal('address') ?>
-                                </div>
+                                    <?php //echo RegionTemplates::getVal('address') ?>
+                                </div> -->
                                 <!-- <div class="phone-secondary">
                                         тел: <?php // echo RegionTemplates::getVal('phone-2') 
                                         ?>
@@ -521,50 +527,33 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                         </a>
                                     </div>
                                 </div> -->
-                            </div>
+                            <!-- </div> -->
                         </div>
-                        <div class="col-md-offset-1 col-xs-12 col-sm-12 col-md-6">
-
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <p class="title">КАРТА САЙТА</p>
-
-                                </div>
-
-
-                                <div class="col-xs-12 col-sm-5 col-sm-push-4">
-                                    <ul class="list-unstyled list-inline">
-                                        <?= Menu::getFooterItems(2) ?>
-                                    </ul>
-                                </div>
-
-                                <div class="col-xs-12 col-sm-4 col-sm-pull-5">
-                                    <ul class="list-unstyled list-inline">
-                                        <?= Menu::getFooterItems(1) ?>
-                                    </ul>
-
-                                </div>
-
-                                <div class="col-xs-12 col-sm-3">
-                                    <ul class="list-unstyled list-inline">
-                                        <?= Menu::getFooterItems(3) ?>
-                                    </ul>
-                                </div>
-                            </div>
-
+                        <div class="col-md-2">
+                        <p class="title">&nbsp;</p>
+           
+                        <ul class="list-unstyled list-inline">
+                                <?= Menu::getFooterItems(3) ?>
+                        </ul>
+               
                         </div>
-                        <div class="col-xs-12 col-sm-6 hidden-md hidden-lg">
-                            <p class="title">АДРЕС</p>
-                            <p>г.
-                                <?= RegionTemplates::getVal('city') ?>
-                            </p>
-                            <p>
-                                <?= RegionTemplates::getVal('address') ?>
-                            </p>
-                            <!-- <p>Тел: <?php // echo RegionTemplates::getVal('phone-2') 
-                            ?></p> -->
+                        <div class="col-md-2">
+                        <p class="title">КАТАЛОГ</p>
+           
+                        <ul class="list-unstyled list-inline">
+                                <?= Menu::getFooterItemsNew(2) ?>
+                        </ul>
+               
                         </div>
-                        <div class="col-xs-12 col-sm-6 col-md-3 right-side">
+                        <div class="col-md-2">
+                        <p class="title">&nbsp;</p>
+           
+                        <ul class="list-unstyled list-inline">
+                                <?= Menu::getFooterItemsNewSecond(2) ?>
+                        </ul>
+               
+                        </div>
+                        <div class="col-md-offset-2 col-md-2 right-side">
                             <p class="phone">
                                 <a
                                     href="tel:<?= str_replace(['-', '(', ')', ' '], '', Yii::$app->info::get('headTelephone')) ?>">
@@ -572,12 +561,13 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                 </a>
                                 <br />
                             </p>
-                            <?= \app\modules\forms\widgets\CallBackFooter::widget(['in_footer' => true]); ?>
-                            <div class="sosial-icons" style="padding-top: 3.6rem;">
+                            <?= \app\modules\forms\widgets\CallBack::widget(); ?>
+                            <?php //echo \app\modules\forms\widgets\CallBackFooter::widget(); ?>
+                            <div class="sosial-icons">
                                 <ul class="nav-justified" style="padding: 0;">
                                     <li>
                                         <a href="https://www.youtube.com/c/AxiomaPro/featured" target="_blank">
-                                            <img src="/image/ico/Youtube.svg" height="24px">
+                                            <img src="/image/ico/Youtube.svg" onmouseover="this.src='/image/ico/Youtube(взаимодействие).svg';" onmouseout="this.src='/image/ico/Youtube.svg';" height="24px">
                                         </a>
                                     </li>
                                     <!-- <li>
@@ -588,12 +578,12 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                     <li>
                                         <a href="https://instagram.com/axioma.pro.russia?igshid=MTk0NTkyODZkYg%3D%3D&utm_source=qr"
                                             target="_blank">
-                                            <img src="/image/ico/Instagram-2.png" height="24px" alt="Instagram">
+                                            <img src="/image/ico/Instagram-2.png" onmouseover="this.src='/image/ico/Instagram(взаимодействие).svg';" onmouseout="this.src='/image/ico/Instagram-2.svg';" height="24px" alt="Instagram">
                                         </a>
                                     </li>
                                     <li>
                                     <a href="https://vk.com/axioma.pro.russia" target="_blank">
-                                        <img src="/image/ico/Вконтакте.svg" height="24px" alt="Вконтакте">
+                                        <img src="/image/ico/Вконтакте.svg" onmouseover="this.src='/image/ico/VK(взаимодействие).svg';" onmouseout="this.src='/image/ico/Вконтакте.svg';" height="24px" alt="Вконтакте">
                                     </a>
                                     </li>
                                     <!-- <li>
@@ -612,16 +602,46 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                             </a>
                                         </li> -->
                                 </ul>
-                                <a href="mailto: <?= Yii::$app->info::get('email') ?>"><i class="fas fa-envelope-square"
-                                        style="color: #b8cc76;"></i>
-                                    <?= Yii::$app->info::get('email') ?>
-                                </a>
+<!--                                <a href="mailto: --><?php //= Yii::$app->info::get('email') ?><!--"><i class="fas fa-envelope-square"-->
+<!--                                        style="color: #b8cc76;"></i>-->
+<!--                                    --><?php //= Yii::$app->info::get('email') ?>
+<!--                                </a>-->
                             </div>
                             <!-- <p class="insta"> -->
                             <!--                                    <a href="https://www.instagram.com/axioma.pro.russia/" target="_blank">
                                                                         <i class="fab fa-instagram" aria-hidden="true"></i></a>-->
                             <!-- </p> -->
                         </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-2">
+                            <div class="city-choise-wrap">
+
+                                <?= \app\modules\city\widgets\CityChoice::widget() ?>
+
+                                <!-- <div class="phone-secondary text-gray">
+                                тел: <?php // echo RegionTemplates::getVal('phone-2')
+                                ?>
+                            </div> -->
+                            </div>
+                            <div class="footer_city_address">
+                                <p>
+                                    <?= RegionTemplates::getVal('address') ?>
+
+                                <br>тел: <?php  echo RegionTemplates::getVal('phone-2')
+                                    ?></br>
+                                </p>
+                            </div>
+
+<!--                                    <p>г.-->
+<!--                                        --><?php //= RegionTemplates::getVal('city') ?>
+<!--
+<!--                                    </p>-->
+                        </div>
+                        <?php echo $this->render('_footer_city') ?>
+
+
                     </div>
                 </div>
             </div>

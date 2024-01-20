@@ -107,6 +107,34 @@ class Menu extends \app\models\Menu {
         return $result;
     }
 
+    public static function getFooterItemsNew($id) {
+
+        $model = self::find()->where(['menu_type' => $id, 'is_enable' => 1])
+                        ->orderBy(['order' => SORT_DESC])->all();
+
+        $result = '';
+
+        foreach (array_slice($model, 0, 5) as $item):
+            $result .= Html::tag('li', Html::a($item->name, ['/' . $item->url]));
+        endforeach;
+
+        return $result;
+    }
+
+    public static function getFooterItemsNewSecond($id) {
+
+        $model = self::find()->where(['menu_type' => $id, 'is_enable' => 1])
+                        ->orderBy(['order' => SORT_DESC])->all();
+
+        $result = '';
+       
+        foreach ( array_slice($model, 5) as $item):
+            $result .= Html::tag('li', Html::a($item->name, ['/' . $item->url]));
+        endforeach;
+
+        return $result;
+    }
+
     public static function __parentList() {
 
         return ArrayHelper::map(self::find()->all(), 'id', 'name');
