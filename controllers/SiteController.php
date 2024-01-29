@@ -15,6 +15,7 @@ use app\modules\options\models\Options;
 use app\modules\content\models\Content;
 use yii\web\HttpException;
 use app\components\NumericCaptcha;
+use app\components\WatermarkHelper;
 
 class SiteController extends Controller
 {
@@ -108,6 +109,18 @@ class SiteController extends Controller
             \Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => $model->keywords]);
 
         return $this->render('index');
+    }
+
+    public function actionAddWatermarkAndSaveToNewFolder()
+    {
+
+        $sourceFolderPath = Yii::getAlias('@webroot') . '/image/catalog'; // Replace with your source folder path
+        $targetFolderPath = Yii::getAlias('@webroot') . '/image/ready'; // Replace with your target folder path
+        $watermarkPath = Yii::getAlias('@webroot') . '/image/new_watermark3.png'; // Replace with your watermark image path
+
+        WatermarkHelper::addWatermarkAndSaveToNewFolder($sourceFolderPath, $targetFolderPath, $watermarkPath);
+
+        return 'Watermark added to all images in the folder and saved to a new folder.';
     }
 
     //    public function actionTest() {
