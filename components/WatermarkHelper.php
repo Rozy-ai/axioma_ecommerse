@@ -21,13 +21,16 @@ class WatermarkHelper
         $watermark = $imagine->open($watermarkPath);
 
         $files = glob($sourceFolderPath . '/*.{jpg,jpeg,png,gif}', GLOB_BRACE);
-        // $files = array_slice($files, 14, 15);
+       // $files = array_slice($files, 100, 779); //779
+        // var_dump($files);die;
+
  
         foreach ($files as $file) {
             $image = $imagine->open($file);
             $size = $image->getSize();
            // var_dump($size);die;
             $originalWidth = Image::getImagine()->open($file)->getSize()->getWidth();
+            $originalHeight = Image::getImagine()->open($file)->getSize()->getHeight();
            // var_dump($originalWidth);die;
      
             // $watermark = $watermark->resize($size);
@@ -39,14 +42,42 @@ class WatermarkHelper
             //     $watermark = $watermark->resize($size);
             //     $watermarkSize = $watermark->getSize();
             // } else {
-                $watermark = Image::resize($watermark, $originalWidth, null, true, true);
+                // $watermark = Image::resize($watermark, $originalWidth, null, true, true);
             // }
          //   var_dump($watermark->getSize());die;
 
             // Calculate the position to center the watermark on the full-size image
             //$position = new Point($image->getSize()->getWidth(), 0);
-           // $position = new Point(($size->getWidth() - $watermarkSize->getWidth()) / 2, ( $watermarkSize->getHeight()) / 2);           
-            $position = new Point(0, 0);
+           // $position = new Point(($size->getWidth() - $watermarkSize->getWidth()) / 2, ( $watermarkSize->getHeight()) / 2);  
+        //    if ($watermarkSize->getWidth() > $size->getWidth()) {
+        //        $watermark = Image::resize($watermark, $originalWidth, null, true, true);
+        //        $position = new Point(0, 0);
+        //    } else {
+        //        $position = new Point(($size->getWidth() - $watermarkSize->getWidth()) / 2, 0);
+        //    }
+            if($size->getWidth() == 1400 && $size->getHeight() == 933){
+                $watermark = Image::resize($watermark, 1000, 1000, true, true);
+                $watermarkSize = $watermark->getSize();
+                $position = new Point(($size->getWidth() - $watermarkSize->getWidth()) / 2, 40);
+            } else {
+            if ($size->getWidth() > 1400) {
+                if ($size->getHeight() < 933) {
+                    $watermark = Image::resize($watermark, null, $originalHeight, true, true);
+                    $watermarkSize = $watermark->getSize();
+                }
+                $position = new Point(($size->getWidth() - $watermarkSize->getWidth()) / 2, ($size->getHeight() - $watermarkSize->getHeight()) / 2);
+               }  else {
+                $watermark = Image::resize($watermark, $originalWidth, null, true, true);
+                $watermarkSize = $watermark->getSize();
+                if ($watermarkSize->getHeight() < $size->getHeight()) {
+                    $position = new Point(0, ($size->getHeight() - $watermarkSize->getHeight()) / 2);
+                   }  else {
+                       $position = new Point(0, 0);
+                   }
+               }
+            }
+     
+
             //  $image->paste($watermark, $position);
             $image->paste($watermark, $position);
             $newFilePath = $targetFolderPath . '/' . basename($file);

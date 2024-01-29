@@ -116,7 +116,7 @@ class SiteController extends Controller
 
         $sourceFolderPath = Yii::getAlias('@webroot') . '/image/catalog'; // Replace with your source folder path
         $targetFolderPath = Yii::getAlias('@webroot') . '/image/ready'; // Replace with your target folder path
-        $watermarkPath = Yii::getAlias('@webroot') . '/image/new_watermark3.png'; // Replace with your watermark image path
+        $watermarkPath = Yii::getAlias('@webroot') . '/image/new_watermark4.png'; // Replace with your watermark image path
 
         WatermarkHelper::addWatermarkAndSaveToNewFolder($sourceFolderPath, $targetFolderPath, $watermarkPath);
 
