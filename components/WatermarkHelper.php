@@ -55,27 +55,48 @@ class WatermarkHelper
         //    } else {
         //        $position = new Point(($size->getWidth() - $watermarkSize->getWidth()) / 2, 0);
         //    }
-            if($size->getWidth() == 1400 && $size->getHeight() == 933){
-                $watermark = Image::resize($watermark, 1000, 1000, true, true);
-                $watermarkSize = $watermark->getSize();
-                $position = new Point(($size->getWidth() - $watermarkSize->getWidth()) / 2, 40);
-            } else {
-            if ($size->getWidth() > 1400) {
-                if ($size->getHeight() < 933) {
-                    $watermark = Image::resize($watermark, null, $originalHeight, true, true);
-                    $watermarkSize = $watermark->getSize();
-                }
-                $position = new Point(($size->getWidth() - $watermarkSize->getWidth()) / 2, ($size->getHeight() - $watermarkSize->getHeight()) / 2);
-               }  else {
-                $watermark = Image::resize($watermark, $originalWidth, null, true, true);
-                $watermarkSize = $watermark->getSize();
-                if ($watermarkSize->getHeight() < $size->getHeight()) {
-                    $position = new Point(0, ($size->getHeight() - $watermarkSize->getHeight()) / 2);
-                   }  else {
-                       $position = new Point(0, 0);
-                   }
-               }
-            }
+
+            
+        if($size->getWidth() == 1400 && $size->getHeight() == 1400){
+            $watermark = Image::resize($watermark, 1000, 700, true, true); 
+            $watermarkSize = $watermark->getSize();
+        } elseif ($size->getWidth() == 1200 && $size->getHeight() == 800){
+            $watermark = Image::resize($watermark, 900, 600, true, true);
+            $watermarkSize = $watermark->getSize();
+        } elseif ($size->getWidth() == 1050 && $size->getHeight() == 700){
+            $watermark = Image::resize($watermark, 800, 500, true, true);
+            $watermarkSize = $watermark->getSize();
+        }elseif ($size->getWidth() == 1066 && $size->getHeight() == 1400){
+            $watermark = Image::resize($watermark, 800, 500, true, true);
+            $watermarkSize = $watermark->getSize();
+        } else {
+            continue;
+        }
+        $position = new Point(($size->getWidth() - $watermarkSize->getWidth()) / 2, ($size->getHeight() - $watermarkSize->getHeight()) / 2);
+
+
+            // if($size->getWidth() == 1400 && $size->getHeight() == 933){
+            //     $watermark = Image::resize($watermark, 1000, 1000, true, false);
+            //     $watermarkSize = $watermark->getSize();
+            //     $position = new Point(($size->getWidth() - $watermarkSize->getWidth()) / 2, 40);
+            // } else {
+            // if ($size->getWidth() > 1400) {
+            //     if ($size->getHeight() < 933) {
+            //         $watermark = Image::resize($watermark, null, $originalHeight, true, true);
+            //         $watermarkSize = $watermark->getSize();
+            //     }
+            //     $position = new Point(($size->getWidth() - $watermarkSize->getWidth()) / 2, ($size->getHeight() - $watermarkSize->getHeight()) / 2);
+            //    }  else {
+            //     $watermark = Image::resize($watermark, $originalWidth, null, true, true);
+            //     $watermarkSize = $watermark->getSize();
+            //     if ($watermarkSize->getHeight() < $size->getHeight()) {
+            //         $position = new Point(0, ($size->getHeight() - $watermarkSize->getHeight()) / 2);
+            //        }  else {
+            //            $position = new Point(0, 0);
+            //        }
+            //    }
+            // }
+
      
 
             //  $image->paste($watermark, $position);
