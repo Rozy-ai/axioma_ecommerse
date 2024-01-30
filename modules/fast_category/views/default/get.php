@@ -97,7 +97,7 @@ if ($category == 'favorite') {
                 //                    'eventOnScroll' => 'function() {$(\'.ias-trigger a\').trigger(\'click\')}',
                 //                ],
                 'summary' => '',
-                'layout' => '{summary}{items}<div class="text-center col-xs-12">{pager}</div>',
+                'layout' => '{summary}{items}<div class="text-right col-xs-12">{pager}</div>',
                 'emptyText' => '<div class="col-xs-12">Ничего не найдено.</div>',
             ]);
             ?>
