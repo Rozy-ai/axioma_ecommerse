@@ -620,38 +620,38 @@ ul.pagination li {
 }
 
 .new_fast_cat li:first-child img {
-    height: 65px;
-    width: 34px;
+    height: 85px;
+    width: 54px;
 }
 
 .new_fast_cat li:nth-child(2) img {
-    height: 48px;
-    width: 60px;
+    height: 68px;
+    width: 80px;
 }
 
 .new_fast_cat li:nth-child(3) img {
-    height: 46px;
-    width: 60px;
+    height: 66px;
+    width: 80px;
 }
 
 .new_fast_cat li:nth-child(4) img {
-    height: 45px;
-    width: 70px;
+    height: 65px;
+    width: 90px;
 }
 
 .new_fast_cat li:nth-child(5) img {
-    height: 64px;
-    width: 60px;
+    height: 84px;
+    width: 80px;
 }
 
 .new_fast_cat li:nth-child(6) img {
-    height: 60px;
-    width: 60px;
+    height: 80px;
+    width: 80px;
 }
 
 .new_fast_cat li:nth-child(7) img {
-    height: 54px;
-    width: 60px;
+    height: 74px;
+    width: 80px;
 }
 
 .catalog-new ul.new_fast_cat li a {
