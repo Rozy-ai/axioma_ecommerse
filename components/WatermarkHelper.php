@@ -57,21 +57,24 @@ class WatermarkHelper
         //    }
 
             
-        if($size->getWidth() == 1400 && $size->getHeight() == 1400){
-            $watermark = Image::resize($watermark, 1000, 700, true, true); 
-            $watermarkSize = $watermark->getSize();
-        } elseif ($size->getWidth() == 1200 && $size->getHeight() == 800){
-            $watermark = Image::resize($watermark, 900, 600, true, true);
-            $watermarkSize = $watermark->getSize();
-        } elseif ($size->getWidth() == 1050 && $size->getHeight() == 700){
-            $watermark = Image::resize($watermark, 800, 500, true, true);
-            $watermarkSize = $watermark->getSize();
-        }elseif ($size->getWidth() == 1066 && $size->getHeight() == 1400){
-            $watermark = Image::resize($watermark, 800, 500, true, true);
-            $watermarkSize = $watermark->getSize();
-        } else {
-            continue;
-        }
+        // if($size->getWidth() == 1400 && $size->getHeight() == 1400){
+        //     $watermark = Image::resize($watermark, 1000, 700, true, true); 
+        //     $watermarkSize = $watermark->getSize();
+        // } elseif ($size->getWidth() == 1200 && $size->getHeight() == 800){
+        //     $watermark = Image::resize($watermark, 900, 600, true, true);
+        //     $watermarkSize = $watermark->getSize();
+        // } elseif ($size->getWidth() == 1050 && $size->getHeight() == 700){
+        //     $watermark = Image::resize($watermark, 800, 500, true, true);
+        //     $watermarkSize = $watermark->getSize();
+        // }elseif ($size->getWidth() == 1066 && $size->getHeight() == 1400){
+        //     $watermark = Image::resize($watermark, 800, 500, true, true);
+        //     $watermarkSize = $watermark->getSize();
+        // } else {
+        //     continue;
+        // }
+
+        $watermark = Image::resize($watermark, (($size->getWidth()/100)*60), null, true, true);
+        $watermarkSize = $watermark->getSize();
         $position = new Point(($size->getWidth() - $watermarkSize->getWidth()) / 2, ($size->getHeight() - $watermarkSize->getHeight()) / 2);
 
 
@@ -97,7 +100,10 @@ class WatermarkHelper
             //    }
             // }
 
-     
+                //resize image
+                // $newFilePath = $targetFolderPath . '/' . basename($file);
+                // $newSize = new \Imagine\Image\Box(1400, 933); // New width and height
+                // $image->resize($newSize)->save($newFilePath, ['quality' => 90]);
 
             //  $image->paste($watermark, $position);
             $image->paste($watermark, $position);
