@@ -623,7 +623,9 @@ ul.pagination li {
     height: 90px;
     width: 59px;
 }
-
+.new_fast_cat li:first-child .new_fast_cat_lable .inner{
+    margin-top: 8px;
+}
 .new_fast_cat li:nth-child(2) img {
     height: 73px;
     width: 85px;
