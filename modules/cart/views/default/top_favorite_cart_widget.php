@@ -4,13 +4,13 @@ use yii\bootstrap\Html;
 $session = Yii::$app->session;
 ?>
 
-<div class="cart-top"  data-container=".wrap"
+<div class="cart-top favorite-img-top" data-container=".wrap"
      data-html="true" data-title="ТОВАРЫ ДОБАВЛЕННЫЕ В ИЗБРАННОЕ"
      data-toggle="popover" data-placement="bottom" data-content='<?= $content ?>'>
 <!--    <span class="glyphicon glyphicon-shopping-cart">
 </span>-->
 
-    <?= Html::img('/image/ico/Избранное.svg', [ "onmouseover"=>"this.src='/image/ico/Избранное(зеленый).svg';", "onmouseout"=>"this.src='/image/ico/Избранное.svg';", 'class' => 'img', 'height' => '24px']) ?>
+    <?= Html::img('/image/ico/Избранное.svg', ['class' => 'img', 'height' => '24px']) ?>
 
     <?php  if(isset($session['favorite'])): ?>
     <span class="count badge"><?= count(array_unique($session['favorite'])) ?></span>

@@ -1,11 +1,5 @@
 $(document).ready(function () {
 
-    $("#catalog_button").on("mouseover", function(){
-        $(this).find("i").removeClass("fa-list").addClass("fa-angle-down icon_up");
-    }).on("mouseout", function(){
-        $(this).find("i").removeClass("fa-angle-down icon_up").addClass("fa-list");
-    });
-
     //product 
     $('.pgwSlider').pgwSlider({
         listPosition: 'right',
@@ -138,9 +132,11 @@ $('.header .catalog-button').click( function(e) {
     if (menu.style.display === "none") {
       $(this).addClass("active-button");
     menu.style.display = "block";
+    $("#catalog_button").find("i").removeClass("fa-list").addClass("fa-angle-up icon_up");
   } else {
     $(this).removeClass("active-button");
     menu.style.display = "none";
+    $("#catalog_button").find("i").removeClass("fa-angle-up").addClass("fa-angle-down");
   }
 });
 
@@ -197,4 +193,22 @@ function changeList() {
     list.style.display = "none";
     grid.style.display = "block";
 };
+
+$(".favorite-img-top").on("mouseover", function(){
+    $(this).find("img").attr("src","/image/ico/Избранное(зеленый).svg");
+}).on("mouseout", function(){
+    $(this).find("img").attr("src","/image/ico/Избранное.svg");
+});
+
+$(".cart-img-top").on("mouseover", function(){
+    $(this).find("img").attr("src","/image/ico/Cart(зеленый).svg");
+}).on("mouseout", function(){
+    $(this).find("img").attr("src","/image/ico/Cart.svg");
+});
+
+$(".enter-link").on("mouseover", function(){
+    $(this).find("img").attr("src","/image/ico/User.svg");
+}).on("mouseout", function(){
+    $(this).find("img").attr("src","/image/ico/Войти.svg");
+});
 

@@ -556,7 +556,11 @@ div.bhoechie-tab .list-group-item img {
     line-height: 1.4rem;
     font-size: 14px;
 }
-
+/* .footer .footer-top ul li a{
+    line-height: 2rem;
+    font-size: 12px;
+    font-weight: 300;
+} */
 .content .vacancy-index .vacancy .pay {
     color: #000;
 }
@@ -744,6 +748,9 @@ ul.pagination li {
 .cart-item .cart-add .btn-grey {
     border: 1px solid #ccc;
 }
+.header .city-choise-wrap .address{
+    line-height: 2rem;
+}
 
 .cart-item .cart-add [name=count] {
     border: 1px solid #ccc;
@@ -896,8 +903,8 @@ margin-top: 0;
 
 .footer .sosial-icons ul {
     display: flex;
-    justify-content: space-between;
-    padding-left: 38% !important;
+    justify-content: space-evenly;
+    /* padding-left: 38% !important; */
 }
 
 .sosial-icons {
@@ -1233,7 +1240,7 @@ margin-top: 0;
     .footer .footer-top .right-side .modal-dialog a {
         color: #000;
     }
-
+ 
     .cart-index .cart-index-wrap .tb-col {
         border-bottom: none;
     }

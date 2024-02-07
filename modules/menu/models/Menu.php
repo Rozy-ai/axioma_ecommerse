@@ -58,7 +58,7 @@ class Menu extends \app\models\Menu {
       //  $result['bottom'][] = ['label' => '<img class="img" id="favorite" style="height:24px" src="/image/ico/Избранное.svg"> <br>Избранное', 'url' => ['/favorite']];
         $result['bottom'][] = ['label' => \app\modules\cart\widgets\TopFavoriteWidget::widget(), 'url' => ['/favorite'], 'options' => ['class' => 'cart-top-btn favorite']];
         // $result['bottom'][] = ['label' => '<img class="img" style="height:24px" src="/image/ico/Сравнение.svg"> <br>Сравнение', 'url' => ['/compare']];
-        $result['bottom'][] = ['label' => \app\modules\cart\widgets\TopCartWidget::widget(), 'url' => ['/cart'], 'options' => ['class' => 'cart-top-btn cart hidden-xs hidden-sm']];
+        $result['bottom'][] = ['label' => \app\modules\cart\widgets\TopCartWidget::widget(), 'url' => ['/cart'], 'options' => ['class' => 'cart-img-top cart-top-btn cart hidden-xs hidden-sm']];
         $result['bottom'][] = ['label' => \app\modules\cart\widgets\TopCartWidget::widget(), 'url' => ['/cart'], 'options' => ['class' => 'cart-mobile hidden-md hidden-lg']];
         $result['bottom'][] = ['label' => '<img class="img" style="height:24px" onmouseover="this.src=\'/image/ico/User.svg\'" onmouseout="this.src=\'/image/ico/Войти.svg\'" src="/image/ico/Войти.svg"> <br>Войти', 'url' => [(Yii::$app->user->isGuest) ? '/enter' : '/products/admin/index'], 'options' => ['class' => 'enter-link']];
 
