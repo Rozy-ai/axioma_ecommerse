@@ -2,6 +2,7 @@
 
 use yii\bootstrap\Html;
 use yii\helpers\Url;
+use kv4nt\owlcarousel\OwlCarouselWidget;
 
 $this->registerJsFile('/js/product-cart-height.js', ['depends' => ['app\assets\AppAsset']]);
 
@@ -44,16 +45,56 @@ $otherWords =  implode(" ", array_slice($words, 2));
 
             <!-- <a href="#" onclick="Cart.Compare(<?= $model->id ?>)"><?= Html::img('/image/ico/Сравнение.svg', ['class' => 'comparison-img']) ?></a> -->
             <div class=" image-wrap">
-                <div class="image" data-url="<?= Url::to('/catalog/' . $model->url) ?>"
-                     onclick="window.location = $(this).attr('data-url')"
-                     style="background: url('<?= $model->image ?>') top center no-repeat;">
+            <div class="image" data-url="<?= Url::to('/catalog/' . $model->url) ?>">
+            <?php
+OwlCarouselWidget::begin([
+    'container' => 'div',
+    'containerOptions' => [
+        //        'id' => 'container-id',
+        'class' => 'lazy slider owl-theme'
+    ],
+    'pluginOptions' => [
+        'autoplay' => true,
+        //        'autoplay' => false,
+        'autoplayTimeout' => 8000,
+        'autoplayHoverPause' => true,
+        'items' => 1,
+        'loop' => true,
+        'dots' => true,
+        'nav' => false,
+        'navSpeed' => 1000,
+        //        'navText' => [Html::img('/image/_left.png'), Html::img('/image/_right.png')],
+        'navText' => [Html::tag('div', '', ['class' => 'nav-arr nav-left']), Html::tag('div', '', ['class' => 'nav-arr nav-right'])],
+        //        'animateOut' => 'fadeOut',
+//        'animateIn' => 'fadeIn',
+//        'animateOut' => 'slideOutLeft',
+//        'animateIn' => 'slideInRight',
+    ]
+]);
+?>
+<?php 
+    if(count($model->productImages) > 4){
+        $slicedImages = array_slice($model->productImages, 0, 3);
+    } else {
+        $slicedImages = $model->productImages;
+    }
+?>
+<?php foreach ($slicedImages as $item): ?>
 
-<!--                    <div class="gallery-popup-link-one" product-id="<?= $model->id ?>">
-                        <i class="fas fa-search-plus"></i>
-                    </div>-->
+    <div class="item-class">
+    <a href="<?= Url::to('/catalog/' . $model->url) ?>">
+        <img class="img img-fluid" src="<?= $item->Image ?>" data-srcset="" data-sizes="" alt="slider_img">
+        </a>
+    </div>
+   
+<?php endforeach; ?>
+
+
+<?php OwlCarouselWidget::end(); ?>
+
+                    </div>
+
                 </div>
-
-            </div>
 
             <!--<div class="product-description-wrap">-->
             <div class="h4">
