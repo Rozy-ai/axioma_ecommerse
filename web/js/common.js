@@ -207,7 +207,7 @@ $(".cart-img-top").on("mouseover", function(){
 });
 
 $(".enter-link").on("mouseover", function(){
-    $(this).find("img").attr("src","/image/ico/User.svg");
+    $(this).find("img").attr("src","/image/ico/Иконка login 24x24px(взаимодействие).svg");
 }).on("mouseout", function(){
     $(this).find("img").attr("src","/image/ico/Войти.svg");
 });
