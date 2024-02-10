@@ -614,7 +614,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                         </div>
                     </div>
                     <hr>
-                    <div class="row">
+                    <div class="row footer_center">
                         <div class="col-xs-12 col-sm-2">
                             <div class="city-choise-wrap">
 

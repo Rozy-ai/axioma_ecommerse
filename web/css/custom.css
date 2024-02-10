@@ -561,6 +561,15 @@ div.bhoechie-tab .list-group-item img {
     font-size: 12px;
     font-weight: 300;
 } */
+.footer_center_0{
+    margin-left: 30px;
+}
+.footer_center_2{
+    margin-left: -10px;
+}
+.footer_center_4{
+    margin-left: -10px;
+}
 .content .vacancy-index .vacancy .pay {
     color: #000;
 }
