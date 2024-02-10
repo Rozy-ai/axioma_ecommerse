@@ -253,7 +253,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                             </div> -->
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-12 col-md-2 text-right">
+                    <div class="col-xs-12 col-sm-12 col-md-2">
                         <div class="work-time">
                             <div class="wt-header">
                                 <i class="far fa-clock"></i>

@@ -564,11 +564,17 @@ div.bhoechie-tab .list-group-item img {
 .footer_center_0{
     margin-left: 30px;
 }
+.header .work-time .col-xs-5{
+    padding-left: 15px!important;
+}
+.header .work-time .col-xs-7{
+    padding-left: 10px!important;
+}
 .footer_center_2{
     margin-left: -20px;
 }
 .footer_center_4{
-    margin-left: -10px;
+    margin-left: -15px;
 }
 .content .vacancy-index .vacancy .pay {
     color: #000;
