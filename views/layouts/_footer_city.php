@@ -22,7 +22,7 @@ $cities = City::find()->where(['is_enable' => 1])->orderBy(['order' => SORT_DESC
 
     <?php endif; ?>
 <?php endforeach; ?>
-<div class="col-xs-12 col-sm-2" style="margin-left: 5px;">
+<div class="col-xs-12 col-sm-2 footer_center_last">
     <div class="new_tab_address">
         <a href="mailto: <?= Yii::$app->info::get('email') ?>"><i class="fas fa-envelope-square"
                 style="color: #b8cc76;"></i>

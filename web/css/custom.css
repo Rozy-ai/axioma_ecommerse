@@ -189,7 +189,9 @@ select {
 .w-80 {
     width: 80%;
 }
-
+.footer_center_last{
+    margin-left: 5px;
+}
 .vacancy-form .politic-text a {
     text-decoration: underline;
     color: red;
@@ -233,7 +235,7 @@ select {
 }
 
 .city-choise-wrap a.dropdown-toggle {
-    /* border-bottom: 1px solid #b8cc76; */
+    border-bottom: 1px solid #b8cc76;
     font-size: 14px;
     font-weight: 600;
 }
@@ -1271,5 +1273,17 @@ margin-top: 0;
 
     .footer .footer-top .right-side {
         padding-left: 15px;
+    }
+    .footer_center_0{
+        margin-left: 0;
+    }
+    .footer_center_2{
+        margin-left: 0;
+    }
+    .footer_center_4 {
+        margin-left: 0;
+    }
+    .footer_center_last{
+        margin-left: 0;
     }
 }
