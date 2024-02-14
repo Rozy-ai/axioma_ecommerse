@@ -80,13 +80,13 @@ OwlCarouselWidget::begin([
     }
 ?>
 <?php foreach ($slicedImages as $item): ?>
-
+	<?php if(isset($item->Image)): ?>
     <div class="item-class">
     <a href="<?= Url::to('/catalog/' . $model->url) ?>">
         <img class="img img-fluid" src="<?= $item->Image ?>" data-srcset="" data-sizes="" alt="slider_img">
         </a>
     </div>
-   
+   <?php endif; ?>
 <?php endforeach; ?>
 
 

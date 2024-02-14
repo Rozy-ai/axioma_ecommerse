@@ -72,7 +72,7 @@ $this->params['breadcrumbs'][] = $page->short_name ? $page->short_name : $page->
                             ?>
 
                             <li href="#">
-                                <?= Html::img($image->Image) ?>
+                                <?= Html::img('/image/ready/' .$image->image) ?>
 
                             </li>
 
@@ -84,7 +84,7 @@ $this->params['breadcrumbs'][] = $page->short_name ? $page->short_name : $page->
                         main['img_list_<?= $page->id ?>'] = [
                             <?php
                             foreach ($page->productImages as $item):
-                                echo "{ src: '" . $item->getImage() . "', type: 'image' },";
+                                echo "{ src: '" . '/image/ready/' .$item->image . "', type: 'image' },";
                             endforeach;
                             ?>
                         ];
