@@ -38,15 +38,16 @@ $categories = Category::find()->with('childs')->orderBy([
                         <div class="bhoechie-tab-content <?= ($key == 0) ? 'active' : ''; ?>">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                    <h4><?= $item->header ?></h4>
-
+                                <a href="<?= '/category' . '/' . $item->url ?>"><h4><?= $item->header ?></h4></a>
                                     <ul>
                                         <?php foreach ($childs as $child) : ?>
+                                            <?php if($child->is_enable == 1): ?>
                                             <li class="catalog">
                                                 <a href="<?= '/category' . '/' . $child->url ?>">
                                                     <?= $child->header ?>
                                                 </a>
                                             </li>
+                                            <?php endif; ?>
                                         <?php endforeach; ?>
                                     </ul>
                                 </div>
@@ -62,7 +63,7 @@ $categories = Category::find()->with('childs')->orderBy([
                         <div class="bhoechie-tab-content <?= ($key == 0) ? 'active' : ''; ?>">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                    <h4><?= $item->header ?></h4>
+                                <a href="<?= '/category' . '/' . $item->url ?>"><h4><?= $item->header ?></h4></a>
                                     <ul>
                                         <li class="catalog">
                                             <a href="<?= '/category' . '/' . $item->url ?>">
