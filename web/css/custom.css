@@ -1286,4 +1286,7 @@ margin-top: 0;
     .footer_center_last{
         margin-left: 0;
     }
+    .product_item h1{
+        margin-top: 8rem;
+    }
 }
