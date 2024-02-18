@@ -452,7 +452,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                     <div class="<?= Yii::$app->params['isFluid'] ? 'container' : '' ?>">
                         <?=
                             Breadcrumbs::widget([
-                                // 'links' => $this->params['breadcrumbs'] ?? [],
+                                'links' => $this->params['breadcrumbs'] ?? [],
                                 'options' => ['class' => 'breadcrumb', 'itemscope' => true, 'itemtype' => 'http://schema.org/BreadcrumbList'],
                                 'itemTemplate' => '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">{link}</li>' . PHP_EOL,
                                 'activeItemTemplate' => '<li class="active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">{link}</li>' . PHP_EOL,

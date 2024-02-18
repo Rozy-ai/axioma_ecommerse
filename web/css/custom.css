@@ -238,6 +238,7 @@ select {
     border-bottom: 1px solid #b8cc76;
     font-size: 14px;
     font-weight: 600;
+    color: #b8cc76;
 }
 
 .city-choise-wrap a.dropdown-toggle:hover {
