@@ -29,7 +29,7 @@ class ContactForm extends EmailForm {
         return ArrayHelper::merge($rules, [
                     [['name', 'email', 'message','phone'], 'required'],
                     ['email', 'email'],
-                    [['file'], 'file'],
+                    [['file'], 'file', 'extensions' => 'png, webp, jpg, pdf, txt, doc, docx, xlsx, xls', 'maxFiles' => 4],
         ]);
     }
 

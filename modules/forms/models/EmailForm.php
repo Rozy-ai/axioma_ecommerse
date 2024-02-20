@@ -95,7 +95,7 @@ class EmailForm extends Model {
             $output= shell_exec("curl -X POST https://webhook.gnzs.ru/ext/site-int/amo/29896285?gnzs_token=bfac5b47-a495-4c8c-b417-1f8be495a64e -H 'Content-Type: application/json' -d '{$leadData}'");
             if(isset($this->file)){
                 Yii::$app->mailer->compose()
-                ->setTo('jumayewrozy@gmail.com')
+                ->setTo([$this->recipient, Yii::$app->params['copyEmail']])
                 ->setFrom([$this->sender_email => $this->sender_name])
                 ->setSubject($this->subject)
                 ->setHtmlBody($this->body)
