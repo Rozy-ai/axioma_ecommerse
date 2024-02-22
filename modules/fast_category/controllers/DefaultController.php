@@ -139,7 +139,7 @@ class DefaultController extends Controller
                 'query' => $query,
             ]);
 
-            // $dataProvider->pagination->pageSize = 8;
+            $dataProvider->pagination->pageSize = self::PAGE_SIZE;
         } else {
             $category = FastCategory::getByUrl($category);
             if (!$category && $category != 'favorite')
@@ -212,7 +212,7 @@ class DefaultController extends Controller
                 'query' => $query,
             ]);
 
-            // $dataProvider->pagination->pageSize = self::PAGE_SIZE;
+            $dataProvider->pagination->pageSize = self::PAGE_SIZE;
 
             if ($online_kass_type) {
                 $search->online_kass_type = $online_kass_type;
