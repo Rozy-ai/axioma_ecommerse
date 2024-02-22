@@ -100,12 +100,12 @@ if ($category == 'favorite') {
                 'summary' => '',
                 'layout' => '{summary}{items}<div class="text-right col-xs-12">{pager}</div>',
                 'emptyText' => '<div class="col-xs-12">Ничего не найдено.</div>',
-                'pager' => [
-                    'class' => LinkPager::class,
-                    'maxButtonCount' => 6, // Set the maximum number of visible page buttons
-                    'nextPageLabel' => 'Следующая >', // Optional: customize the next page button label
-                    'prevPageLabel' => '< Предыдущая', // Optional: customize the previous page button label
-                ],
+                // 'pager' => [
+                //     'class' => LinkPager::class,
+                //     'maxButtonCount' => 6, // Set the maximum number of visible page buttons
+                //     'nextPageLabel' => 'Следующая >', // Optional: customize the next page button label
+                //     'prevPageLabel' => '< Предыдущая', // Optional: customize the previous page button label
+                // ],
             ]);
             ?>
         </div>
@@ -132,7 +132,7 @@ if ($category == 'favorite') {
     <?php endif; ?>
 
 
-    <?= $category->content ?>
+    <?php //echo $category->content ?>
 
     <?php
     if (
