@@ -212,3 +212,16 @@ $(".enter-link").on("mouseover", function(){
     $(this).find("img").attr("src","/image/ico/Войти.svg");
 });
 
+var accordions = document.querySelectorAll(".accordion");
+accordions.forEach((acc) =>
+  acc.addEventListener("click", () => {
+    if (acc.classList.contains("fa-plus-circle")) {
+      acc.classList.remove("fa-plus-circle");
+      acc.classList.add("fa-minus-circle");
+    } else {
+      acc.classList.remove("fa-minus-circle");
+      acc.classList.add("fa-plus-circle");
+    }
+  })
+);
+
