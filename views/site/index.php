@@ -31,20 +31,17 @@ use yii\bootstrap\Html;
 
                 <div class="row">
                     <?php
-                    foreach (\app\modules\content\models\Content::findAll([
-                        'is_enable' => 1,
-                        'type_id' => \app\modules\content\models\Content::TYPE['Услуги'],
-                    ]) as $page)
+                    foreach (\app\modules\content\models\Content::findAll(['is_enable' => 1, 'type_id' => \app\modules\content\models\Content::TYPE['Услуги'],]) as $page)
                         echo $this->render('@app/modules/content/views/get/_one_service', ['model' => $page])
-                        ?>
+                            ?>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="home-advantages">
-        <div class="container">
-            <div class="advantages-wrap">
+        <div class="home-advantages">
+            <div class="container">
+                <div class="advantages-wrap">
 
                 <?php echo $this->render('@app/modules/content/views/get/_advanteges_menu'); ?>
             </div>
@@ -52,7 +49,10 @@ use yii\bootstrap\Html;
     </div>
 
 
-
+    <div class="col-xs-12 thanks">
+        <?= app\modules\thanks\widgets\ThanksList::widget(); ?>
+    </div>
+    
     <div class="home-portfolio">
 
         <div class="container">
@@ -60,7 +60,7 @@ use yii\bootstrap\Html;
             <p class="h2">Нам доверяют</p>
         </div>
 
-        <div class="gallery-wrap">
+        <div class="container gallery-wrap">
             <?= app\modules\portfolio\widgets\PortfolioWidget::widget(); ?>
         </div>
     </div>

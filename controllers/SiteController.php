@@ -136,4 +136,7 @@ class SiteController extends Controller
     ////                    ->setTextBody($this->message)
     //                ->send();
     //    }
+    // public function actionTest() {
+    //     return $this->render('test');
+    // }
 }

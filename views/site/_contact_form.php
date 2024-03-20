@@ -5,9 +5,6 @@
  * and open the template in the editor.
  */
 ?>
-<div class="col-xs-12 thanks">
-    <?= app\modules\thanks\widgets\ThanksList::widget(); ?>
-</div>
 <div class="thanks-contact-form">
     <div class="container">
         <div class="row">

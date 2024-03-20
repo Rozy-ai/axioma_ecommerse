@@ -5,16 +5,18 @@ use yii\bootstrap\Html;
 $this->registerCssFile('/css/modules/advantages.css');
 
 $list = [
-    ['name' => 'О компании', 'url' => '/o_kompanii', 'image' => '/image/advantages/Аксиома.svg'],
-    ['name' => 'Контроль качества <br/>в Китае ', 'url' => '/kontrol-kachestva-v-kitae', 'image' => '/image/advantages/Контроль качества.svg'],
-    ['name' => 'Бесплатная доставка', 'url' => '/besplatnaya-dostavka', 'image' => '/image/advantages/Доставка.svg'],
-    ['name' => 'Сервис и гарантия', 'url' => '/garantiya-12-mesyacev', 'image' => '/image/advantages/гарантия.png'],
-    ['name' => 'Оборудование <br/>в рассрочку', 'url' => '/oborudovanie-v-rassrochku', 'image' => '/image/advantages/Рассрочка.svg'],
-    ['name' => 'Весь спектр <br/>монтажных услуг', 'url' => '/ves-spekt-montazhnyh-uslug', 'image' => '/image/advantages/Спектр услуг.svg'],
-    ['name' => 'Офис и склад <br/>в одном месте', 'url' => '/ofis-i-sklad-v-odnom-meste', 'image' => '/image/advantages/Офис и склад.svg'],
-    ['name' => 'Программа<br/>Trade In', 'url' => '/trade-in', 'image' => '/image/advantages/Trade-in.svg'],
+    ['name' => 'Контроль качества <br/> оборудования в Китае', 'url' => '/kontrol-kachestva-v-kitae', 'image' => '/image/advantages/new/Контроль качества в Китае 100х100px.svg'],
+    ['name' => 'Продуманная логистика <br/> бесплатная доставка', 'url' => '/besplatnaya-dostavka', 'image' => '/image/advantages/new/Бесплатная доставка 100х100px.svg'],
+    ['name' => 'Возможность приобрести оборудование в рассрочку', 'url' => '/oborudovanie-v-rassrochku', 'image' => '/image/advantages/new/Оборудование в рассрочку 100х100px.svg'],
+    ['name' => 'Программа TRAID IN', 'url' => '/trade-in', 'image' => '/image/advantages/new/Программа TradeIn 100х100px.svg'],
+    ['name' => 'Мы оказываем весь  <br/> спектр монтажных услуг', 'url' => '/ves-spekt-montazhnyh-uslug', 'image' => '/image/advantages/new/Монтажные услуги 100х100px.svg'],
+    ['name' => 'Офис и склад находятся в <br/> одном месте', 'url' => '/ofis-i-sklad-v-odnom-meste', 'image' => '/image/advantages/new/Офис и склад 100х100px.svg'],
+    ['name' => 'Гарантийные обязательства <br/> и удобный сервис', 'url' => '/garantiya-12-mesyacev', 'image' => '/image/advantages/new/Гарантия и сервис 100х100px.svg'],
+    ['name' => 'Опыт работы более 15 лет', 'url' => '/o_kompanii', 'image' => '/image/advantages/new/Опыт работы 100х100px.svg'],
+   
 ];
 ?>
+<div class="h2">ПОЧЕМУ С НАМИ КОМФОРТНО РАБОТАТЬ?</div>
 <div class="advantages-menu">
     <div class="advantages-wrap">
         <div class="row">

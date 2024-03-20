@@ -41,9 +41,9 @@ OwlCarouselWidget::begin([
         <img class="img img-fluid" src="<?= $item->Img ?>" data-srcset="" data-sizes="" alt="slider_img">
 
         <div class="btn-wrap">
-            <div class="container">
-                <?= !$item->link ?: Html::a($item->btnName, $item->link, ['class' => 'btn btn-primary']) ?>
-            </div>
+            <!-- <div class="container">
+                <?php //echo !$item->link ?: Html::a($item->btnName, $item->link, ['class' => 'btn btn-primary']) ?>
+            </div> -->  
         </div>
         </a>
     </div>

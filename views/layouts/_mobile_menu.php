@@ -1,22 +1,23 @@
 <?php
 
 use yii\bootstrap\Html;
+
 ?>
 
 <nav id="menu" class="">
     <ul>
         <li class="top-line m-text-top">
             <h2><strong>Каталог Товаров</strong></h2>
-            
+
         </li>
         <!--<li><?= Html::img('/image/logo-mobile.png') ?></li>-->
         <!-- <li class="top-line">
             <span class="city-wrap">
                 <span class="image">
-                    <?php //echo Html::img('/image/ico/Arrow.svg', ['height' => '40']) ?>
+                    <?php //echo Html::img('/image/ico/Arrow.svg', ['height' => '40'])  ?>
                 </span>
                 <span class="content">
-                    <?php //echo \app\modules\city\widgets\CityChoice::widget(['mobile' => true]) ?>
+                    <?php //echo \app\modules\city\widgets\CityChoice::widget(['mobile' => true])  ?>
                 </span>    
             </span>    
         </li> -->
@@ -24,11 +25,11 @@ use yii\bootstrap\Html;
         <!-- <li class="top-line">
             <span class="phone-wrap">
                 <span class="image">
-                    <?php //echo Html::img('/image/ico/Phone.svg', ['height' => '40']) ?>
+                    <?php //echo Html::img('/image/ico/Phone.svg', ['height' => '40'])  ?>
                 </span>
                 <span class="phone">
-                    <a href="tel:<?php //echo Yii::$app->info::get('headTelephone') ?>">
-                        <?php //echo Yii::$app->info::get('headTelephone') ?>
+                    <a href="tel:<?php //echo Yii::$app->info::get('headTelephone')  ?>">
+                        <?php //echo Yii::$app->info::get('headTelephone')  ?>
                     </a>
                     <span class="free-call">Звонок бесплатный</span>
 
@@ -38,10 +39,12 @@ use yii\bootstrap\Html;
 
         <!--<li class="devider"></li>-->
 
-<!--        <li><span> <?=
-        Html::img('/image/ico/Catalog.svg', ['height' => '30'
-            . ''])
-        ?>  КАТАЛОГ</span>
+        <!--        <li><span> <?=
+            Html::img('/image/ico/Catalog.svg', [
+                'height' => '30'
+                    . ''
+            ])
+            ?>  КАТАЛОГ</span>
             <ul>
 
 
@@ -62,20 +65,30 @@ use yii\bootstrap\Html;
 
             <a href="/uslugi">
 
-                <?= Html::img('/image/ico/Service.svg', ['height' => '26']) ?>  УСЛУГИ</a>
+                <?= Html::img('/image/ico/Service.svg', ['height' => '26']) ?> УСЛУГИ
+            </a>
         </li>
         <li>
 
             <a href="/dostavka-vozvrat">
                 <?= Html::img('/image/ico/Delivery.svg', ['height' => '26']) ?>
-                ДОСТАВКА И ОПЛАТА</a>
+                ДОСТАВКА И ОПЛАТА
+            </a>
+        </li>
+        <li>
+
+            <a href="/test">
+                <?= Html::img('/image/ico/Delivery.svg', ['height' => '26']) ?>
+                Test
+            </a>
         </li>
         <li>
 
             <a href="/kontaktyi">
 
                 <?= Html::img('/image/ico/Locate.svg', ['height' => '26']) ?>
-                КОНТАКТЫ</a>
+                КОНТАКТЫ
+            </a>
         </li>
         <li class="devider"></li>
         <!--<li><a href="/calc">Калькулятор</a></li>-->

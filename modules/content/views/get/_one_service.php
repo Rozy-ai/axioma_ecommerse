@@ -8,15 +8,18 @@ use yii\bootstrap\Html;
     <div class="service-wrap wrap-<?= $model->id ?>" 
          onClick="window.location = '<?= $model->url ?>'">
 
-        <div class="icon center-block hidden-sm hidden-md hidden-lg">
+        <!-- <div class="icon center-block hidden-sm hidden-md hidden-lg">
+        </div> -->
+        <div class="box_img_service">
+            <img src="/image/service/<?= $model->id ?>.svg" alt="">
         </div>
-
+        <div class="box_white"></div>
         <?= Html::a($model->header, $model->url, ['class' => 'title']) ?>
 
         <div class="content">
             <?= Html::tag('p', $model->anons, ['class' => 'anons']) ?>
 
-            <?= Html::a('Подробнее', $model->url, ['class' => 'link-next']) ?>
+            <?= Html::a('Узнать подробнее...', $model->url, ['class' => 'link-next']) ?>
 
         </div>
     </div>
