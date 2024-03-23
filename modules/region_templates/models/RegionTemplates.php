@@ -32,7 +32,7 @@ class RegionTemplates extends \app\models\RegionTemplates {
                     'name' => $val,
                     'city_id' => \Yii::$app->city->id,
         ]);
-        $value->value = str_replace("дом", "<br>дом", $value->value);
+        // $value->value = str_replace("дом", "<br>дом", $value->value);
 
         return (isset($value->value) && $value->value) ? $value->value : false;
     }
@@ -43,7 +43,7 @@ class RegionTemplates extends \app\models\RegionTemplates {
             'name' => $val,
             'city_id' => $id,
         ]);
-        $value->value = str_replace("дом", "<br>дом", $value->value);
+        // $value->value = str_replace("дом", "<br>дом", $value->value);
 
         return (isset($value->value) && $value->value) ? $value->value : false;
     }

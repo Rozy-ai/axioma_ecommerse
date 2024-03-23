@@ -90,10 +90,10 @@
 .uslugi .uslugi-grid-wrap .one-service .service-wrap{
     padding: 12rem 2rem 0;
 }
-.uslugi .uslugi-grid-wrap .one-service .service-wrap .link-next{
-    color: #0071BC;
+.service-wrap .link-next{
+    color: #0071BC!important;
     text-decoration: underline;
-    font-size: 14px;
+    font-size: 14px!important;
 }
 .uslugi .uslugi-grid-wrap .one-service .service-wrap.wrap-82{
     background: none;
@@ -143,7 +143,12 @@
 .btn {
     border-radius: 10px
 }
-
+.footer_center div.col-sm-2{
+    padding-right: 5px;
+}
+.footer_center p{
+    font-size: 12px;
+}
 /* img{
     border-radius: 10px!important;
 } */
@@ -241,6 +246,7 @@ select {
 .home-contact-form .contact-fields {
     box-shadow: rgba(149, 157, 165, 0.2) 2px 2px 20px;
     padding: 15px;
+    border-radius: 5px;
 }
 
 .home-contact-form .contact-fields input {
@@ -1208,10 +1214,13 @@ margin-top: 0;
 
 .home-contact-form div.form-group label.control-label {
     position: absolute;
-    top: -10px;
+    top: -8px;
     left: 10px;
-    color: #ccc;
+    color: #B3B3B3;
     background-color: #fff;
+    font-size: 12px;
+    font-family: 'Open Sans';
+    font-weight: 300;
 }
 
 .home-contact-form .form-control {
@@ -1241,6 +1250,7 @@ margin-top: 0;
 .slick-dots li button:before {
     font-size: 10px !important;
     line-height: 22px !important;
+    left: 0.5px!important;
 }
 
 .thanks {
@@ -1250,7 +1260,7 @@ margin-top: 0;
 }
 
 .thanks .service-wrap {
-    min-height: 36rem;
+    height: 38rem;
     padding: 2rem;
     cursor: pointer;
     position: relative;
@@ -1260,6 +1270,7 @@ margin-top: 0;
     position: relative;
     transition: .4s;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
 }
 
 .thanks .service-wrap .img-wrap {
@@ -1307,7 +1318,8 @@ margin-top: 0;
 }
 
 .thanks-contact-form .contact-form .home-contact-form .h2 {
-    margin-bottom: 0;
+    margin-bottom: 10px;
+    margin-top: 0;
 }
 
 @media (max-width: 994px) {
