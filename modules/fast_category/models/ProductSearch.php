@@ -60,9 +60,9 @@ class ProductSearch extends Model {
 //            'is_ip' => 'IP',
 //            'is_tvi' => 'HD-TVI',
             'in_stock' => 'Наличие',
-            'enter_width' => 'Ширина входной группы',
-            'detection_type' => 'Технология',
-            'video_type' => 'Тип передачи данных',
+            'enter_width' => 'Ширина входной группы: ',
+            'detection_type' => 'Технология: ',
+            'video_type' => 'Тип передачи данных: ',
         ];
     }
 

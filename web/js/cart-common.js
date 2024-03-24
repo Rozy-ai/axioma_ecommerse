@@ -32,7 +32,7 @@ var Cart = {
         $.post("/cart/default/add-to-cart", data)
                 .done(function (data) {
                     new jBox('Notice', {
-                        content: 'Товар добавлен в корзину',
+                        content: 'Товар успешно добавлен в корзину',
                         color: 'green',
                         attributes: {
                             x: 'right',
@@ -60,15 +60,16 @@ var Cart = {
         $.post("/cart/default/add-to-cart", data)
                 .done(function (data) {
                     new jBox('Notice', {
-                        content: 'Товар добавлен в корзину',
-                        color: 'green',
+                        content: "<i style='color: #b8cc76;' class='fa fa-check-circle'></i> Товар успешно добавлен в корзину",
+                        color: 'white',
+                        border: 'black',
                         attributes: {
                             x: 'right',
                             y: 'top'
                         },
                         position: {
-                            x: 20,
-                            y: 70
+                            x: 200,
+                            y: 60
                         },
                         responsivePositions: null
                     });

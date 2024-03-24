@@ -5,7 +5,7 @@ use yii\helpers\Html;
 
 <div class="row tb-header hidden-xs">
     <div class="col-sm-1"></div>
-    <div class="col-sm-2">Товар</div>
+    <div class="col-sm-2">Товар 1</div>
     <div class="col-sm-6"></div>
     <!--<div class="col-sm-2 text-center">ЦЕНА</div>-->
     <div class="col-sm-3">Количество</div>
@@ -24,10 +24,9 @@ if ($model) {
         echo $this->render('_cart_item'
                 , ['model' => $item, 'count' => $counts[$k]]);
         $summ += $item->price * $counts[$k];
-
     endforeach;
-    
-       echo $this->render('_cart_item_delete');
+
+       //echo $this->render('_cart_item_delete');
 } else
     echo 'Корзина пуста';
 ?>

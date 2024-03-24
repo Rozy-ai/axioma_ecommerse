@@ -48,7 +48,7 @@ $form = ActiveForm::begin([
                 ?>
                 <?php
                     echo $form->field($model, 'online_kass_type', [
-                        'inline' => true,
+                        'inline' => false,
                     ])->radioList(
                         $model::ONLINE_KASS_TYPE,
                         [
@@ -123,13 +123,13 @@ $form = ActiveForm::begin([
 
 
                     <?php
-                    $labels = [1 => 'Акустомагнитная', 2 => 'Радиочастотная'];
+                    $labels = [0 => 'Показать все', 1 => 'Акустомагнитная', 2 => 'Радиочастотная'];
 
                     if ($category->url == 'datchiki')
-                        $labels = [1 => 'Акустомагнитная', 2 => 'Радиочастотная'];
+                        $labels = [0 => 'Показать все', 1 => 'Акустомагнитная', 2 => 'Радиочастотная'];
 
                     if ($category->url == 'etiketki')
-                        $labels = [1 => 'Акустомагнитная', 2 => 'Радиочастотная'];
+                        $labels = [0 => 'Показать все', 1 => 'Акустомагнитная', 2 => 'Радиочастотная'];
 
                     //                     echo $form->field($model, 'detection_type', [
                     //                         'inline' => true,
@@ -159,7 +159,7 @@ $form = ActiveForm::begin([
                     <!-- kruglezki -->
                     <?php
                     echo $form->field($model, 'detection_type', [
-                        'inline' => true,
+                        'inline' => false,
                     ])->radioList(
                         $labels,
                         [
@@ -199,7 +199,7 @@ $form = ActiveForm::begin([
 
                     <?php
                     echo $form->field($model, 'video_type', [
-                        'inline' => true,
+                        'inline' => false,
                         //                            'inlineRadioListTemplate' => "<div class=\"checkbox checkbox-ext\">\n{beginLabel}\n{input}\n<span>{labelTitle}</span>\n{endLabel}\n{error}\n{hint}\n</div>",
                         //                                    'inlineRadioListTemplate' => '{beginWrapper} {input}  <span class="label-text"> {label} </span> {endWrapper} {hint}',
                         //                                    'inlineRadioListTemplate' => '{beginWrapper} {input}  <span class="label-text"> {label} </span> {endWrapper} {hint}',
@@ -313,7 +313,7 @@ $form = ActiveForm::begin([
 
 <?php endif; ?>
 <!-- </div> -->
-            <div class="col-xs-12 col-lg-3 text-right hidden-xs">
+            <div class="col-xs-12 col-lg-3 text-right hidden-xs" style="margin-top:8px">
                 <a href="#" onclick="changeGrid()"><?= Html::img('/image/ico/Подробный список.svg', ['class' => 'list-img']) ?></a>
                 <a href="#" onclick="changeList()"><?= Html::img('/image/ico/Краткий список.svg', ['class' => 'list-img']) ?></a>
             </div>

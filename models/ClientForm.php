@@ -24,7 +24,7 @@ class ClientForm extends Model {
     public function rules() {
         return [
             // name, email, subject and body are required
-            [['name', 'email', 'phone', 'personal_accept'], 'required'],
+            [['name', 'email', 'phone'], 'required'],
             // email has to be a valid email address
             ['personal_accept', 'in', 'range' => [1]],
             ['email', 'email'],

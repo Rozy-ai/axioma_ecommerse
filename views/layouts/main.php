@@ -367,7 +367,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                         ]);
                         ?>
                     </div>
-                    <?php echo $this->render('_category_menu') ?>
+                    <?php echo $this->render('_category_menu_small') ?>
 
 
 

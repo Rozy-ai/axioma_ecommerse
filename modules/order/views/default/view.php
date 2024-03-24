@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use yii\widgets\MaskedInput;
+
 // use yii\captcha\Captcha;
 
 $this->title = 'Оформить заказ';
@@ -11,7 +12,9 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 
 <div class="order-view col-xs-12">
-    <h1><?= $this->title ?></h1>
+    <h1>
+        <?= $this->title ?>
+    </h1>
 
     <div class="row cart-index">
         <div class="col-xs-12 col-sm-9">
@@ -33,14 +36,17 @@ $this->params['breadcrumbs'][] = $this->title;
                         echo $this->render('_cart_item', ['model' => $item, 'count' => $counts[$k]]);
                         $summ += $item->price * $counts[$k];
 
-                    endforeach;
-                else
+                    endforeach; else
                     echo 'Корзина пуста';
                 ?>
 
                 <tr>
-                    <th colspan="4"><p class="pull-right"><strong>Общая сумма:</strong></p></th>
-                    <th><?= $summ ?></th>
+                    <th colspan="4">
+                        <p class="pull-right"><strong>Общая сумма:</strong></p>
+                    </th>
+                    <th>
+                        <?= $summ ?>
+                    </th>
                 </tr>
 
             </table>
@@ -55,35 +61,41 @@ $this->params['breadcrumbs'][] = $this->title;
             <?= $form->field($client, 'email') ?>
 
             <?=
-            $form->field($client, 'phone')->widget(MaskedInput::className(), [
-                'mask' => '+7 (999) 999-9999',
-                'options' => ['class' => 'form-control'],
-            ])
-            ?>
-
-
-            <?=
-            $form->field($client, 'personal_accept')->checkbox()->label('Я даю согласие на обработку персональных данных. '
-                    . Html::a('Ознакомиться с условиями', ['/soglasie'], ['target' => '_blank'])
-            )
-            ?>
-            
-                <?php 
-        //         echo $form->field($client, 'captcha')
-        // ->hint('Нажмите на картинку, чтобы обновить')
-        // ->widget(Captcha::className(), [
-        //     'captchaAction'=> yii\helpers\Url::to('/captcha')
-        // ]) 
-        ?>
-
+                $form->field($client, 'phone')->widget(MaskedInput::className(), [
+                    'mask' => '+7 (999) 999-9999',
+                    'options' => ['class' => 'form-control'],
+                ])
+                ?>
             <div class="form-group">
-                <?= Html::submitButton('Оформить', ['class' => 'btn btn-lg btn-primary',
-                    'onClick' => "ym(53040199, 'reachGoal', 'send-order'); return true;",
-                    'name' => 'contact-button']) ?>
+                <p class="politic-text">*Нажимая кнопку «Оформить» Вы соглашаетесь с
+                    <a href="/soglasie">политикой конфиденциальности</a> сайта.
+                </p>
             </div>
 
-            <?php ActiveForm::end(); ?>
+                <?php
+                // echo $form->field($client, 'personal_accept')->checkbox()->label('Я даю согласие на обработку персональных данных. '
+                //         . Html::a('Ознакомиться с условиями', ['/soglasie'], ['target' => '_blank'])
+                // )
+                ?>
 
+                <?php
+                //         echo $form->field($client, 'captcha')
+                // ->hint('Нажмите на картинку, чтобы обновить')
+                // ->widget(Captcha::className(), [
+                //     'captchaAction'=> yii\helpers\Url::to('/captcha')
+                // ]) 
+                ?>
+
+                <div class="form-group">
+                    <?= Html::submitButton('Оформить заказ', [
+                        'class' => 'btn btn-lg btn-primary',
+                        'onClick' => "ym(53040199, 'reachGoal', 'send-order'); return true;",
+                        'name' => 'contact-button'
+                    ]) ?>
+                </div>
+
+                <?php ActiveForm::end(); ?>
+
+            </div>
         </div>
     </div>
-</div>
