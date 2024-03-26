@@ -23,7 +23,7 @@ $this->params['breadcrumbs'][] = $page->short_name ? $page->short_name : $page->
             if ($page->product_type)
                 echo Html::img('/image/razh.png', ['class' => 'pull-right'])
                     ?>
-            <?php
+                <?php
             $category = Category::findOne($page->category_id);
             // return Html::a($category->header, ['/category/' . $model->uri, 'title' => $category->header]);
             ?>
@@ -47,8 +47,25 @@ $this->params['breadcrumbs'][] = $page->short_name ? $page->short_name : $page->
                     <!-- <div class="gallery-popup-link" product-id="<?= $page->id ?>">
                         <i class="fas fa-search-plus"></i>
                     </div> -->
+                    <?php if ($page->is_akustika && !$page->is_radio): ?>
+
+                        <?= Html::img('/image/t-am.svg', ['class' => 'type-img']) ?>
+
+                    <?php endif; ?>
+
+                    <?php if ($page->is_radio && !$page->is_akustika): ?>
+
+                        <?= Html::img('/image/t-rc.svg', ['class' => 'type-img']) ?>
+
+                    <?php endif; ?>
+
+                    <?php if ($page->is_radio && $page->is_akustika): ?>
+
+                        <?= Html::img('/image/t-all.svg', ['class' => 'type-img']) ?>
+
+                    <?php endif; ?>
                     <?php
-                    if (isset(Yii::$app->session['favorite'])) {
+                    if (isset (Yii::$app->session['favorite'])) {
                         $data = array_unique(Yii::$app->session['favorite']);
                         if (in_array($page->id, $data))
                             $imgPath = '/image/ico/Избранное(зеленый).svg';
@@ -72,19 +89,19 @@ $this->params['breadcrumbs'][] = $page->short_name ? $page->short_name : $page->
                             ?>
 
                             <li href="#">
-                                <?= Html::img('/image/ready/' .$image->image) ?>
+                                <?= Html::img('/image/ready/' . $image->image) ?>
 
                             </li>
 
                         <?php endforeach; ?>
                     </ul>
-                    <?php // Html::img($page->image, ['class' => 'img img-responsive center-block', 'alt' => $page->header]);    ?>
+                    <?php // Html::img($page->image, ['class' => 'img img-responsive center-block', 'alt' => $page->header]);     ?>
 
                     <script type="text/javascript">
                         main['img_list_<?= $page->id ?>'] = [
                             <?php
                             foreach ($page->productImages as $item):
-                                echo "{ src: '" . '/image/ready/' .$item->image . "', type: 'image' },";
+                                echo "{ src: '" . '/image/ready/' . $item->image . "', type: 'image' },";
                             endforeach;
                             ?>
                         ];
@@ -160,7 +177,7 @@ $this->params['breadcrumbs'][] = $page->short_name ? $page->short_name : $page->
         </div>
 
         <!-- <div class="hidden-xs col-xs-12 col-sm-4  col-sm-pull-8 category-left-menu"> -->
-        <?php // echo app\modules\category\widgets\MenuCategory::widget(['active_id' => $page->category_id]); ?>
+        <?php // echo app\modules\category\widgets\MenuCategory::widget(['active_id' => $page->category_id]);  ?>
         <!-- </div> -->
     </div>
 </div>

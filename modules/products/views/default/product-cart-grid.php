@@ -99,7 +99,7 @@ OwlCarouselWidget::begin([
             <!--<div class="product-description-wrap">-->
             <div class="h4">
                 <?=
-                Html::a($model->short_name ?  "<span style='text-transform: capitalize;display: block;font-weight: 400;font-size: 1.6rem;'>$firstWord</span> " . $otherWords : $model->header,
+                Html::a($model->short_name ?  "<span style='text-transform: capitalize;display: block;font-weight: 400;font-size: 14px;'>$firstWord</span> " . $otherWords : $model->header,
                         ['/catalog/' . $model->url],
                         [
                             'class' => 'text-grid',

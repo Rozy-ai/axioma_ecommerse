@@ -21,6 +21,18 @@
 .owl-theme .owl-dots{
     text-align: center !important;
 }
+.product-cart .owl-theme .owl-dots .owl-dot span{
+    width: 5px!important;
+    height: 5px!important;
+    padding: 1px;
+    background: #D6D6D6!important;
+}
+.product-cart .owl-theme .owl-dots .owl-dot:hover span{
+    width: 5px!important;
+    height: 5px!important;
+    padding: 1px;
+    background: #D6D6D6!important;
+}
 .owl-theme .owl-dots .owl-dot span{
     font-size: 0;
     line-height: 0;
@@ -35,6 +47,17 @@
     position: relative;
     background: inherit!important;
     border: 1px solid #D6D6D6!important;
+}
+.product-cart .owl-theme .owl-dots .owl-dot.active span
+{
+    width: 5px!important;
+    height: 5px!important;
+    padding: 1px;
+}
+.product-cart .owl-theme .owl-dots .owl-dot.active span:before{
+    width: 5px!important;
+    height: 5px!important;
+    padding: 1px;
 }
 .owl-theme .owl-dots .owl-dot:hover span{
     font-size: 0;
@@ -51,6 +74,13 @@
     background: inherit!important;
     border: 1px solid #D6D6D6!important;
     border-radius: 30px;
+}
+.product_item .gallery-wrap .type-img {
+    position: absolute;
+    height: 34px;
+    z-index: 1;
+    left: 0;
+    top: 10px;
 }
 .owl-theme .owl-dots .owl-dot.active span{
     font-size: 0;
@@ -506,7 +536,9 @@ div.bhoechie-tab-menu div.list-group {
 div.bhoechie-tab-menu div.list-group>a {
     margin-bottom: 0;
 }
-
+.product-cart .panel .panel-heading .type-img{
+    top: 10px;
+}
 div.bhoechie-tab-menu div.list-group>a .glyphicon,
 div.bhoechie-tab-menu div.list-group>a .fa {
     color: #b8cc76;
@@ -915,11 +947,13 @@ ul.pagination li {
 .product-cart .panel .panel-heading .favorite-img {
     position: absolute;
     z-index: 1;
-    top: 54px;
+    top: 60px;
     left: 22px;
     height: 24px;
 }
-
+.delete-wrap img{
+    height: 16px;
+}
 .category-search #productsearch-detection_type label {
     padding-right: 3rem;
 }
@@ -1000,6 +1034,7 @@ margin-top: 0;
     z-index: 1;
     left: 22px;
     height: 24px;
+    top: 60px;
 }
 
 .gallery-wrap .comparison-img {
@@ -1068,7 +1103,7 @@ margin-top: 0;
 
 .product-cart .product-description-wrap .h4 a {
     text-decoration: underline;
-    text-decoration-color: #89a03c;
+    text-decoration-color: #B8CC76;
 }
 
 /* .list-view .product-cart .btn-default{

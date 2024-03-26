@@ -90,7 +90,7 @@ use kartik\popover\PopoverX;
          else {$imgPath = '/image/ico/Избранное.svg';}
         } else {$imgPath = '/image/ico/Избранное.svg';}
 ?>
-<a href="#" onclick="Cart.Favorite(this, <?= $model->id ?>)"><?= Html::img($imgPath, ['class' => 'favorite-img','style' => 'height: 16px;']) ?></a> 
+<a href="#" onclick="Cart.Favorite(this, <?= $model->id ?>)"><?= Html::img($imgPath, ['class' => 'favorite-img']) ?></a> 
             <button class="cart-delete btn btn-cart-checkout"
                     onclick="Cart.Delete(<?= $model->id ?>)">
                 <i class="fas fa-trash-alt"></i>

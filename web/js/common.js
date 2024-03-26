@@ -93,17 +93,17 @@ $(document).ready(function () {
 
     //cart
 
-    $('.navbar-nav .cart-top-btn').click(function (e) {
+//     $('.navbar-nav .cart-top-btn').click(function (e) {
 
-        e.preventDefault();
-        $(this).find('.cart-top').popover('show');
-//        if ($(this).find('.cart-top').is(':visible')) {
-//            $(this).find('.cart-top').popover('hide');
-//        } else {
-//            $(this).find('.cart-top').popover('show');
-//        }
+//         // e.preventDefault();
+//         $(this).find('.cart-top').popover('show');
+// //        if ($(this).find('.cart-top').is(':visible')) {
+// //            $(this).find('.cart-top').popover('hide');
+// //        } else {
+// //            $(this).find('.cart-top').popover('show');
+// //        }
 
-    })
+//     })
 
     $('body').on('click', '.popover-content .close-btn', function (e) {
         e.preventDefault();
@@ -198,6 +198,12 @@ $(".favorite-img-top").on("mouseover", function(){
     $(this).find("img").attr("src","/image/ico/Избранное(зеленый).svg");
 }).on("mouseout", function(){
     $(this).find("img").attr("src","/image/ico/Избранное.svg");
+});
+
+$(".favorite-img").on("mouseover", function(){
+    $(this).attr("src","/image/ico/Избранное(зеленый).svg");
+}).on("mouseout", function(){
+    $(this).attr("src","/image/ico/Избранное.svg");
 });
 
 $(".cart-img-top").on("mouseover", function(){
