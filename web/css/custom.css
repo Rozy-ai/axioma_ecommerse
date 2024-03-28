@@ -518,7 +518,9 @@ select {
 .header #popup-search {
     margin-top: -3px;
 }
-
+.uslugi .bottom-image{
+    margin-top: 2rem;
+}
 /* menu */
 
 div.bhoechie-tab-menu {
