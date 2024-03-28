@@ -562,6 +562,12 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                 <br />
                             </p>
                             <?= \app\modules\forms\widgets\CallBack::widget(); ?>
+                            <div class="new_tab_address text-center" style="margin-top:15px">
+                                <a href="mailto: <?= Yii::$app->info::get('email') ?>"><i class="fas fa-envelope-square"
+                                        style="color: #b8cc76;"></i>
+                                    <?= Yii::$app->info::get('email') ?>
+                                </a>
+                            </div>
                             <?php //echo \app\modules\forms\widgets\CallBackFooter::widget(); ?>
                             <div class="sosial-icons">
                                 <ul class="nav-justified" style="padding: 0;">

@@ -635,7 +635,7 @@ div.bhoechie-tab-menu div.list-group>a.active:after {
     text-transform: uppercase;
     background-color: #b8cc76;
     padding-right: 12px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .footer .footer-top .right-side .call-back:hover {
@@ -789,7 +789,7 @@ div.bhoechie-tab .list-group-item img {
     font-weight: 300;
 } */
 .footer_center_0{
-    margin-left: 30px;
+    /* margin-left: 30px; */
 }
 .header .work-time .col-xs-5{
     padding-left: 15px!important;
@@ -800,8 +800,14 @@ div.bhoechie-tab .list-group-item img {
 .footer_center_2{
     margin-left: -20px;
 }
-.footer_center_4{
-    margin-left: -15px;
+.footer_center_5{
+    margin-left: 10px;
+}
+.footer_center_3{
+    margin-left: -20px;
+}
+.footer_center_5 .new_tab_address{
+    margin-right: -20px;
 }
 .content .vacancy-index .vacancy .pay {
     color: #000;
@@ -1165,7 +1171,7 @@ margin-top: 0;
 }
 
 .sosial-icons {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .sosial-icons ul {
@@ -1528,6 +1534,12 @@ margin-top: 0;
         padding-left: 15px;
     }
     .footer_center_0{
+        margin-left: 0;
+    }
+    .footer_center_3 {
+        margin-left: 0;
+    }
+    .footer_center_5 {
         margin-left: 0;
     }
     .footer_center_2{
