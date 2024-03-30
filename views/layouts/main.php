@@ -176,15 +176,8 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
 
         <div class="header-mobile container hidden-md hidden-lg">
             <div class="row">
-                <div class="col-xs-7 logo-wrap text-center">
-                    <?php
-                    $img = Html::img('/image/logo-mobile.svg', ['class' => 'img', 'alt' => 'Логотип', 'height' => '46', 'onerror' => "this.src='/image/logo-mobile.png'"]);
-                    echo !$isHome ? Html::a($img, ['/']) : $img;
-                    ?>
-                </div>
-
-                <div class="col-xs-5">
-                    <div class="row">
+                <div class="col-xs-3">
+                    <div class="row mobile_new">
                         <!-- <div class="col-xs-5 text-center cart-wrap">
                             <a href="/cart">
                                 <div class="cart-top" data-container=".wrap" data-html="true" data-title="ТОВАРЫ ДОБАВЛЕННЫЕ В КОРЗИНУ" data-toggle="popover" data-placement="bottom" data-content="Корзина пуста" data-original-title="" title=""> -->
@@ -194,7 +187,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                                 </div>
                             </a>
                         </div> -->
-                        <div class="col-xs-12 text-right sm-hamburger">
+                        <div class="text-right sm-hamburger">
 
                             <div class="Fixed">
                                 <button id="mmenu-icon" class="hamburger hamburger--spin" type="button">
@@ -211,6 +204,12 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                             <?php Html::a(Html::img('/image/menu.png'), '#menu', ['alt' => 'image', 'classs' => 'mobile-menu-btn']) ?>
                         </div>
                     </div>
+                </div>
+                <div class="col-xs-6 logo-wrap text-center">
+                    <?php
+                    $img = Html::img('/image/logo_03.svg', ['class' => 'img', 'alt' => 'Логотип', 'height' => '46', 'onerror' => "this.src='/image/logo-mobile.png'"]);
+                    echo !$isHome ? Html::a($img, ['/']) : $img;
+                    ?>
                 </div>
                 <div class="col-xs-12 sm-menu">
                     <?php

@@ -27,7 +27,7 @@ class CallBackForm extends EmailForm {
         $rules = parent::rules();
 
         return ArrayHelper::merge($rules, [
-                    [['name', 'phone', 'personal_accept'], 'required'],
+                    [['name', 'phone'], 'required'],
 //            ['email', 'email'],
                     ['personal_accept', 'in', 'range' => [1], 'message' => 'Вы должны дать согласие на обработку персональных данных.'],
         ]);
@@ -38,8 +38,8 @@ class CallBackForm extends EmailForm {
      */
     public function attributeLabels() {
         return [
-            'name' => 'Ваше имя',
-            'phone' => 'Телефон',
+            'name' => 'Введите Ваше имя',
+            'Введите телефон' => 'Телефон',
             'personal_accept' => 'Я даю согласие на обработку персональных данных',
             'captcha' => 'Подтвердите, что вы не робот. Введите цифры с картинки.',
         ];

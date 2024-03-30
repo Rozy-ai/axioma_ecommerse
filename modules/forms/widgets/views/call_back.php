@@ -17,7 +17,7 @@ else
 <?php
 Modal::begin([
     'id' => 'callback-form-modal',
-    'header' => '<p class="h2 text-center">Заказать звонок</p>',
+    'header' => '<p class="text-center">Возникли вопросы?</p><p class="h2 text-center">ЗАКАЗАТЬ ОБРАТНЫЙ ЗВОНОК</p>',
     'toggleButton' => $label,
     'class' => 'text-left'
 ]);
@@ -33,16 +33,22 @@ Modal::begin([
         'options' => ['placeholder' => 'Телефон', 'class' => 'form-control'],
     ])
     ?>
-    <?=
-    $form->field($model, 'personal_accept')->checkbox()->label('Я даю согласие на обработку персональных данных. '
-            . Html::a('Ознакомиться с условиями', ['/soglasie'], ['target' => '_blank'])
-    )
-    ?>
+    <div class="form-group">
+        <p class="politic-text text-center">*Нажимая кнопку «Оформить» Вы соглашаетесь с
+            <a href="/soglasie">политикой конфиденциальности</a> сайта.
+        </p>
+    </div>
+    <?php
+    //  echo $form->field($model, 'personal_accept')->checkbox()->label(
+    //         'Я даю согласие на обработку персональных данных. '
+    //         . Html::a('Ознакомиться с условиями', ['/soglasie'], ['target' => '_blank'])
+    //     )
+        ?>
 
 
 </div>
-<div class="form-group">
-<input type="submit" class="btn btn-primary" onclick="ym(53040199, 'reachGoal', 'call-back'); return true;" value="Узнать цену" />
+<div class="form-group text-center">
+<input type="submit" class="btn btn-primary call_back_btn" onclick="ym(53040199, 'reachGoal', 'call-back'); return true;" value="ОТПРАВИТЬ" />
 
     <?php 
     // echo
