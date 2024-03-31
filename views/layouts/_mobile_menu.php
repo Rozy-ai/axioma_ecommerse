@@ -60,12 +60,12 @@ use yii\bootstrap\Html;
             </li>
         <?php endforeach; ?>
 
-        <li class="devider"></li>
+        <!-- <li class="devider"></li>
         <li>
 
             <a href="/uslugi">
 
-                <?= Html::img('/image/ico/Service.svg', ['height' => '26']) ?> УСЛУГИ
+                <?php //echo Html::img('/image/ico/Service.svg', ['height' => '26']) ?> УСЛУГИ
             </a>
         </li>
         <li>
@@ -78,7 +78,7 @@ use yii\bootstrap\Html;
         <li>
 
             <a href="/test">
-                <?= Html::img('/image/ico/Delivery.svg', ['height' => '26']) ?>
+                <?php //echo Html::img('/image/ico/Delivery.svg', ['height' => '26']) ?>
                 Test
             </a>
         </li>
@@ -86,11 +86,11 @@ use yii\bootstrap\Html;
 
             <a href="/kontaktyi">
 
-                <?= Html::img('/image/ico/Locate.svg', ['height' => '26']) ?>
+                <?php //echo Html::img('/image/ico/Locate.svg', ['height' => '26']) ?>
                 КОНТАКТЫ
             </a>
         </li>
-        <li class="devider"></li>
+        <li class="devider"></li> -->
         <!--<li><a href="/calc">Калькулятор</a></li>-->
 
     </ul>
