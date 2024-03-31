@@ -211,7 +211,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                     echo !$isHome ? Html::a($img, ['/']) : $img;
                     ?>
                 </div>
-                <div class="col-xs-12 sm-menu">
+                <div class="col-xs-12 sm-menu fixed_bottom_mobile">
                     <?php
                     echo Nav::widget([
                         'options' => ['class' => 'navbar-nav'],

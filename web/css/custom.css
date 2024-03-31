@@ -1619,4 +1619,14 @@ margin-top: 0;
     .new_tab_address{
         text-align: left!important;
     }
+    .contact-fields input[type="radio"]{
+        height: 10px;
+    }
+    .fixed_bottom_mobile{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4)
+    }
 }
