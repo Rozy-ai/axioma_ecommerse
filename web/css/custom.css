@@ -1616,4 +1616,7 @@ margin-top: 0;
     .services__columns[data-v-662be834]{
         display: block!important;
     }
+    .new_tab_address{
+        text-align: left!important;
+    }
 }

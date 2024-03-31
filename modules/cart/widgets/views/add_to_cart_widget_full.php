@@ -20,7 +20,7 @@ use kartik\popover\PopoverX;
                 <?php endif; ?>
             </div>
             <p><?= $model->content_info ?></p><br>
-            <a class="color-main" href="#" data-toggle="tab"  onclick="openTab('w1-tab1')">Все xарактеристики <i class="fa fa-long-arrow-alt-right"></i></p></a>
+            <a class="color-main hidden-xs" href="#" data-toggle="tab"  onclick="openTab('w1-tab1')">Все xарактеристики <i class="fa fa-long-arrow-alt-right"></i></p></a>
             </div>
             <div class="sol-xs-12 col-sm-4">
             <p class="price pull-right"><strong>Цена: </strong><span class="cart__summ_one"><?= $model->showPrice ?></span></p>
