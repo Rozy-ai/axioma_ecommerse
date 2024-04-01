@@ -1628,10 +1628,16 @@ margin-top: 0;
         left: 0;
         background-color: #fff;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-        width: 100%;
+        max-width: 100vw;
+    }
+    .fixed_bottom_mobile .navbar-nav{
+        max-width: 100vw;
     }
     ._orientationRight_ac53.wrap_ad00{
         bottom: 60px;
+    }
+    .header-mobile{
+        max-width: 100vw;
     }
     .footer{
         padding: 6rem 0 10rem!important;
