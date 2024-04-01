@@ -1630,4 +1630,10 @@ margin-top: 0;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
         width: 100%;
     }
+    ._orientationRight_ac53.wrap_ad00{
+        bottom: 60px;
+    }
+    .footer{
+        padding: 6rem 0 10rem!important;
+    }
 }
