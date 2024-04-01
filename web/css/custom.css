@@ -1642,4 +1642,7 @@ margin-top: 0;
     .footer{
         padding: 6rem 0 10rem!important;
     }
+    .fixed_bottom_mobile .nav>li>a{
+        padding: 10px;
+    }
 }
