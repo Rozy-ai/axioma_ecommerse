@@ -65,6 +65,40 @@ class Menu extends \app\models\Menu {
         return $result;
     }
 
+    public static function getTopItemsMobile() {
+
+        $model = self::find()->where([
+                            'is_enable' => 1,
+                            'menu_type' => 0,
+                            'parent_id' => [0, NULL],
+                        ])
+                        ->orderBy(['order' => SORT_DESC])->all();
+
+
+        foreach ($model as $item)
+            if ($item->childs) {
+
+                $items = [];
+
+                foreach ($item->childs as $child)
+                    if (isset($child->name))
+                        $items[] = ['label' => $child->name, 'url' => ['/' . $child->url]];
+
+                $result['top'][] = ['label' => $item->name, 'items' => $items];
+            } else
+                $result['top'][] = ['label' => $item->name, 'url' => ['/' . $item->url]];
+                
+        $result['bottom'][] = ['label' => '<img class="img" style="height:24px" src="/image/ico/Главная 30х30px.svg"> <br>Главная', 'url' => ['/'], 'options' => ['class' => 'cart-top-btn']];
+        $result['bottom'][] = ['label' => '<img class="img" style="height:24px" src="/image/ico/Каталог 30х30px.svg"> <br>Каталог', 'url' => ['/o_kompanii'], 'options' => ['class' => 'cart-top-btn']];
+        $result['bottom'][] = ['label' => '<img class="img" style="height:24px" src="/image/ico/Услуги 30х30px.svg"> <br>Услуги', 'url' => ['/uslugi'], 'options' => ['class' => 'cart-top-btn']];
+        // $result['bottom'][] = ['label' => \app\modules\cart\widgets\TopFavoriteWidget::widget(), 'url' => ['/favorite'], 'options' => ['class' => 'cart-top-btn favorite']];
+        $result['bottom'][] = ['label' => \app\modules\cart\widgets\TopCartWidget::widget(), 'url' => ['/cart'], 'options' => ['class' => 'cart-mobile hidden-xs hidden-sm']];
+        $result['bottom'][] = ['label' => \app\modules\cart\widgets\TopCartWidget::widget(), 'url' => ['/cart'], 'options' => ['class' => 'cart-mobile hidden-md hidden-lg']];
+        $result['bottom'][] = ['label' => '<img class="img" style="height:24px" src="/image/ico/Войти.svg"> <br>Войти', 'url' => [(Yii::$app->user->isGuest) ? '/enter' : '/products/admin/index'], 'options' => ['class' => 'enter-link']];
+
+        return $result;
+    }
+
     public static function getBottomMenu() {
 
         $model = self::find()->where([

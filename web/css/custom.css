@@ -1627,6 +1627,7 @@ margin-top: 0;
         bottom: 0;
         left: 0;
         background-color: #fff;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4)
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+        width: 100%;
     }
 }

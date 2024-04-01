@@ -216,7 +216,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                     echo Nav::widget([
                         'options' => ['class' => 'navbar-nav'],
                         'encodeLabels' => false,
-                        'items' => Menu::getTopItems()['bottom'],
+                        'items' => Menu::getTopItemsMobile()['bottom'],
                     ]);
                     ?>
                 </div>
