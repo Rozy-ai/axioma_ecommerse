@@ -1645,4 +1645,8 @@ margin-top: 0;
     .fixed_bottom_mobile .nav>li>a{
         padding: 10px;
     }
+    .mm-menu_fullscreen.mm-menu_position-bottom{
+        height: 89vh!important;
+    }
+
 }
