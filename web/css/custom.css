@@ -1646,7 +1646,8 @@ margin-top: 0;
         padding: 10px;
     }
     .mm-menu_fullscreen.mm-menu_position-bottom{
-        height: 89vh!important;
+        height: auto!important;
+        bottom: 7rem;
     }
     #catalog_mobile{
         position: fixed;
@@ -1656,10 +1657,17 @@ margin-top: 0;
         z-index: 1000;
         width: 100%;
         max-width: 100vw;
-        height: 89vh;
+        bottom: 7rem;
     }
     #catalog_mobile .mm-listitem {
         font-size: 1.6rem;
     }
-
+    #catalog_mobile li.m-text-top{
+        padding-top: 0!important;
+        padding-bottom: 0!important;
+    }
+    #catalog_mobile .mm-listitem a{
+    padding-bottom: 10px;
+    padding-top: 8px;
+    }
 }
