@@ -1648,5 +1648,18 @@ margin-top: 0;
     .mm-menu_fullscreen.mm-menu_position-bottom{
         height: 89vh!important;
     }
+    #catalog_mobile{
+        position: fixed;
+        top: 6rem;
+        left: 0;
+        background: #fff;
+        z-index: 1000;
+        width: 100%;
+        max-width: 100vw;
+        height: 89vh;
+    }
+    #catalog_mobile .mm-listitem {
+        font-size: 1.6rem;
+    }
 
 }

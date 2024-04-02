@@ -3,16 +3,10 @@
 use yii\bootstrap\Html;
 
 ?>
-<div class="container">
-<nav id="menu" class="">
-    <ul>
-        <li class="top-line m-text-top">
-            <h2><strong>
-
-<?= \app\modules\city\widgets\CityChoice::widget() ?>
-
-
-            </strong></h2>
+<nav id="catalog_mobile" style="display:none">
+    <ul class="mm-listview">
+        <li class="top-line m-text-top mm-listitem">
+            <h2><strong>Каталог Товаров</strong></h2>
 
         </li>
         <!--<li><?= Html::img('/image/logo-mobile.png') ?></li>-->
@@ -56,41 +50,16 @@ use yii\bootstrap\Html;
 
             </ul>
         </li>-->
-        <!-- <?php// foreach (\app\modules\fast_category\models\FastCategory::find()->all() as $item): ?>
-            <li class="catalog">
-                <a href="<?php //echo $item->link ? $item->link : $item->_url ?>">
-                    <?php //echo Html::img($item->_icon, ['height' => '26']) ?>
-                    <?php //echo $item->header ?>
+        <?php foreach (\app\modules\fast_category\models\FastCategory::find()->all() as $item): ?>
+            <li class="catalog mm-listitem">
+                <a href="<?php echo $item->link ? $item->link : $item->_url ?>" class="mm-listitem__text">
+                    <?php echo Html::img($item->_icon, ['height' => '26']) ?>
+                    <?php echo $item->header ?>
                 </a>
             </li>
-        <?php //endforeach; ?> -->
+        <?php endforeach; ?>
 
-        <!-- <li class="devider"></li>  -->
-        <li>
-            <a href="/#" class="mobile_catalog_btn"> КАТАЛОГ </a>
-        </li>
-        <li>
-            <a href="/o_kompanii"> О КОМПАНИИ </a>
-        </li>
-        <li>
-            <a href="/uslugi"> УСЛУГИ </a>
-        </li>
-        <li>
-            <a href="/dostavka-vozvrat">
-                Оплата и доставка
-            </a>
-        </li>
-        <li>
 
-            <a href="/kontaktyi">
-
-                <?php //echo Html::img('/image/ico/Locate.svg', ['height' => '26']) ?>
-                КОНТАКТЫ
-            </a>
-        </li>
-        <!--<li class="devider"></li> -->
-        <!--<li><a href="/calc">Калькулятор</a></li>-->
 
     </ul>
 </nav>
-</div>

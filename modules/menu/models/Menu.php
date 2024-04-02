@@ -89,7 +89,7 @@ class Menu extends \app\models\Menu {
                 $result['top'][] = ['label' => $item->name, 'url' => ['/' . $item->url]];
                 
         $result['bottom'][] = ['label' => '<img class="img" style="height:24px" src="/image/ico/Главная 30х30px.svg"> <br>Главная', 'url' => ['/'], 'options' => ['class' => 'cart-top-btn']];
-        $result['bottom'][] = ['label' => '<img class="img" style="height:24px" src="/image/ico/Каталог 30х30px.svg"> <br>Каталог', 'url' => ['/o_kompanii'], 'options' => ['class' => 'cart-top-btn']];
+        $result['bottom'][] = ['label' => '<img class="img" style="height:24px" src="/image/ico/Каталог 30х30px.svg"> <br>Каталог', 'url' => ['/o_kompanii'], 'options' => ['class' => 'cart-top-btn mobile_catalog_btn']];
         $result['bottom'][] = ['label' => '<img class="img" style="height:24px" src="/image/ico/Услуги 30х30px.svg"> <br>Услуги', 'url' => ['/uslugi'], 'options' => ['class' => 'cart-top-btn']];
         // $result['bottom'][] = ['label' => \app\modules\cart\widgets\TopFavoriteWidget::widget(), 'url' => ['/favorite'], 'options' => ['class' => 'cart-top-btn favorite']];
         $result['bottom'][] = ['label' => \app\modules\cart\widgets\TopCartWidget::widget(), 'url' => ['/cart'], 'options' => ['class' => 'cart-mobile hidden-xs hidden-sm']];

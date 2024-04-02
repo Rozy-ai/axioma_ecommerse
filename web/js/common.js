@@ -140,6 +140,18 @@ $('.header .catalog-button').click( function(e) {
   }
 });
 
+var catalog_mobile = document.getElementById("catalog_mobile");
+
+$('.mobile_catalog_btn').click( function(e) {
+    e.preventDefault();
+    if (catalog_mobile.style.display === "none") {
+        catalog_mobile.style.display = "block";
+  } else {
+        catalog_mobile.style.display = "none";
+  }
+});
+
+
 const header = document.querySelector('.fixed-header');
 const mainHeader = document.querySelector('.header');
 

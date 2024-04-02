@@ -676,6 +676,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
         <?php echo \app\modules\forms\widgets\OneClickOrder::widget() ?>
 
         <?php echo $this->render('_mobile_menu') ?>
+        <?php echo $this->render('_mobile_catalog') ?>
 
     </div>
 
