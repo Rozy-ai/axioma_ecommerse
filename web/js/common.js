@@ -154,24 +154,27 @@ $('.mobile_catalog_btn').click( function(e) {
 
 const header = document.querySelector('.fixed-header');
 const mainHeader = document.querySelector('.header');
+var bhoechie = document.querySelector('#bhoechie');
 
 window.addEventListener('scroll', () => {
     var scrollY = window.scrollY;
     //  var mt = 84 - scrollY;
   if (window.scrollY > 164) {
     header.classList.add('scrolled');
+    bhoechie.classList.add('small_bhoechie');
     // header.style.marginTop = '0px';
     header.style.display = 'block';
     header.append(menu);
   } else {
     header.classList.remove('scrolled');
+    bhoechie.classList.remove('small_bhoechie');
     // header.style.marginTop = mt+'px';
     header.style.display = 'none';
     mainHeader.append(menu);
   }
 });
 
-const scrollLinks = document.querySelectorAll('.scroll-link');
+const csrollLinks = document.querySelectorAll('.scroll-link');
 
 scrollLinks.forEach(link => {
   link.addEventListener('click', event => {
