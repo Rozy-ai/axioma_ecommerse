@@ -1657,10 +1657,10 @@ margin-top: 0;
     .fixed_bottom_mobile .nav>li>a{
         padding: 10px;
     }
-    .mm-menu_fullscreen.mm-menu_position-bottom{
+    /* .mm-menu_fullscreen.mm-menu_position-bottom{
         height: auto!important;
         bottom: 7rem;
-    }
+    } */
     #catalog_mobile{
         position: fixed;
         top: 6rem;

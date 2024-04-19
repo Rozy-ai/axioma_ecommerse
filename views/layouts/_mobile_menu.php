@@ -56,17 +56,17 @@ use yii\bootstrap\Html;
 
             </ul>
         </li>-->
-        <!-- <?php// foreach (\app\modules\fast_category\models\FastCategory::find()->all() as $item): ?>
+        <?php foreach (\app\modules\fast_category\models\FastCategory::find()->all() as $item): ?>
             <li class="catalog">
-                <a href="<?php //echo $item->link ? $item->link : $item->_url ?>">
-                    <?php //echo Html::img($item->_icon, ['height' => '26']) ?>
-                    <?php //echo $item->header ?>
+                <a href="<?php echo $item->link ? $item->link : $item->_url ?>">
+                    <?php echo Html::img($item->_icon, ['height' => '26']) ?>
+                    <?php echo $item->header ?>
                 </a>
             </li>
-        <?php //endforeach; ?> -->
+        <?php endforeach; ?>
 
         <!-- <li class="devider"></li>  -->
-        <li>
+        <!-- <li>
             <a href="/#" class="mobile_catalog_btn"> КАТАЛОГ </a>
         </li>
         <li>
@@ -87,7 +87,7 @@ use yii\bootstrap\Html;
                 <?php //echo Html::img('/image/ico/Locate.svg', ['height' => '26']) ?>
                 КОНТАКТЫ
             </a>
-        </li>
+        </li> -->
         <!--<li class="devider"></li> -->
         <!--<li><a href="/calc">Калькулятор</a></li>-->
 
