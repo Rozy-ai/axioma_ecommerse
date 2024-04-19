@@ -55,7 +55,7 @@ OwlCarouselWidget::begin([
         'class' => 'lazy slider owl-theme'
     ],
     'pluginOptions' => [
-        'autoplay' => true,
+        'autoplay' => false,
         //        'autoplay' => false,
         'autoplayTimeout' => 8000,
         'autoplayHoverPause' => true,
