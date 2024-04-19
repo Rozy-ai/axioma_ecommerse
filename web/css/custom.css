@@ -636,6 +636,7 @@ div.bhoechie-tab-menu div.list-group>a.active:after {
 
 .dropdown-menu {
     text-align: center;
+    display: none!important;
 }
 
 .footer .footer-top .right-side .call-back {
